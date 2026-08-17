@@ -20,18 +20,30 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   checksums, validation gates, corporate-action reconciliation + records,
   normalized parquet artifacts, DuckDB provenance registry, reproducibility
   check (99 tests). Run: `python scripts/phase3_run_all.py`.
+- Phase 4 (Point-in-Time & Temporal Truth Engine) - complete: temporal
+  classification of every record (publication/event/ingestion/effective),
+  strict `publication < as_of` availability (ties rejected), date-precision
+  next-day convention, market bars available at session close (16:00 ET,
+  never the session-open `ts_utc`), vintage resolution with superseded
+  versions audited not dropped, point-in-time snapshots with content digests
+  and provenance, temporal as-of joins, feature-time guards, 6 permanent
+  synthetic leak fixtures, macro schema v1.1.0 with `vintage_date` (ALFRED
+  ready), full test suite 168 tests. See `docs/phase4_temporal_truth.md`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;
-  ALFRED vintage access (currently gated - macro series are
-  latest-vintage-only until then).
+  ALFRED vintage access (schema-ready; revised macro series are
+  point-in-time blocked - reported as snapshot limitations - until then).
 
 ## Structure
 
 ```
-docs/                  Charter, seed hypotheses, gates, universe architecture
+docs/                  Charter, seed hypotheses, gates, universe architecture,
+                       phase4_temporal_truth.md (temporal engine conventions)
 src/orbit/schemas/     HypothesisSpec / ExperimentSpec / Instrument / data contracts
 src/orbit/universe/    Membership rules + delisting-aware reconstruction engine
+src/orbit/temporal/    Phase 4: times, rules, adapters, engine, snapshot,
+                       features, fixtures, contracts
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Ingestion (Phase 3): providers, parsing, registry, storage, validators
 scripts/               phase3_run_all.py - end-to-end ingest + verify + provenance

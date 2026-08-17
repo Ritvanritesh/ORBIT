@@ -22,3 +22,33 @@ Run the relevant tests again.
 After fixing the issues, perform a second independent pass looking specifically for problems missed during the first review.
 
 Do not declare the phase complete until the implementation, tests, documentation, and architecture are consistent with the ORBIT roadmap.
+
+
+
+
+Phase 3 is now complete and verified end-to-end. Final state:
+- 1 Market — DS-000001, 5 stocks (AAPL, MSFT, JNJ, XOM, WMT) × ~30y daily bars, 37,735 rows. Split reconciliation verified: AAPL 7:1 split 2014-06-09 (close 23.42 → 161.4 raw / 7) and 4:1 split 2020-08-31 (close 129.04 → 499.2 / 4) both produce continuous adjusted prices.
+- 2 SEC EDGAR — DS-000002, 5 companies' XBRL companyfacts, 130,800 rows (2009–2026).
+- 3 FRED — DS-000003, DFF + CPIAUCSL + UNRATE, 28,240 rows (1947–2026).
+- 4 Registry — all 3 snapshots logged with fingerprints, checksums, validation=ok.
+- 5 Raw immutability — all PASS (re-checksummed sealed zone).
+- 6 Reproducibility — process twice → identical bytes, matches stored artifact and registry checksum. PASS.
+- 7 Dataset snapshots — experiment-pinnable deliverables with schema versions and date ranges.
+- Tests: 65 pass.
+Bugs fixed along the way: polars silently dropping split columns when the first event row is a dividend (explicit schema now), SEC val mixed int/text (Utf8 in raw, Float64 in normalized, text facts as warnings), idempotent artifact registration, SEC date handling, FRED ./dtype handling, and the reproducibility check globbing the IMMUTABLE.json marker. README status updated.
+Next step when you're ready: expand the symbol list (5 → 20 → 50) — that's a config change only, per the script's design.
+
+
+
+Phase 4 (Point-in-Time & Temporal Truth Engine) is complete. Final state:
+- Temporal classification of every record (event/publication/effective/ingestion, vintage id+date) via src/orbit/temporal/adapters.py; canonical timing frames feed rules, engine, snapshot, features.
+- Strict availability: publication_time < as_of (exact tie rejected); date-precision → next day 00:00 UTC; market bars at session close 16:00 America/New_York → UTC (never ts_utc); missing publication never invented; event after as_of rejected; revised macro without ALFRED vintages rejected + reported as limitation (DFF non_revised).
+- Vintage resolution keeps the latest version released before as_of per (series, observation); superseded versions audited as VINTAGE_SUPERSEDED in the snapshot's excluded set, never dropped.
+- PointInTimeSnapshot: records + excluded with decision trails, deterministic content digest (wall-clock excluded), provenance chain to TemporalSource (checksum, manifest, artifacts), decision counts, record lookup.
+- asof_join: full gating per left decision_time, most-recent-observation attach, deterministic tie-breaks, null joins; collision-safe (left columns never shadow right); duplicate left record_ids preserved.
+- Feature-time guards: completed_bars (session-close semantics) and assert_no_future_refs (strict; Date vs Datetime semantics).
+- 6 permanent synthetic leak fixtures + future_feature fixture, all must fail the engine (regressions).
+- Macro schema v1.1.0 (vintage_date) with v1.0.0 backward compatibility; pipeline threads vintage_date + manifest vintage_semantics; vintage_note now records the source semantic (alfred_vintage_requested / latest_published_vintage).
+- Audits: (1) roadmap compliance, (2) code review, (3) adversarial quant review (20 attack scenarios, all pass), (4) independent second review - APPROVE verdict; all 4 MAJOR findings fixed (left/right column collision in asof_join, null-decision_time ShapeError, series_policy casing bypass, adjclose in allowed payloads) + MINORs (duplicate left record_ids, Timing string normalization, Null-dtype adapters, NaN JSON fidelity, dead code, doc drift). adjclose excluded from bar payloads (retroactively adjusted).
+- Tests: 175 pass (99 Phase 1-3 + 76 Phase 4). Docs: docs/phase4_temporal_truth.md + README updated.
+- Known honest limitations documented: SEC date-only filings (next-day), intraday unavailable for daily bars, ALFRED access still gated (schema-ready), twin-release record_id ambiguity unreachable via pipeline (fingerprint dedup), ingestion day-granularity warning, grouped-cross-product asof_join (correctness first).

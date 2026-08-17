@@ -1,0 +1,15 @@
+{
+  "engine_version": "v1.0.0",
+  "boundary": "strict_publication_less_than_asof",
+  "date_precision": "next_day_utc_midnight",
+  "market_bar_available": "session_close",
+  "exchange_tz": "America/New_York",
+  "session_close": "16:00",
+  "default_series_policy": "revised",
+  "series_policies": {
+    "DFF": "non_revised",
+    "CPIAUCSL": "revised",
+    "UNRATE": "revised"
+  },
+  "forward_dated_events": "exclude"
+}

@@ -419,10 +419,15 @@ class IngestionPipeline:
                 snapshot_id, "macro", provider, issues, raw_objects,
             )
 
+        vintage_requested = params.get("vintage_date")
         series_all = normalize_fred_series(
             pl.concat(parsed_frames),
-            vintage_note=params.get("vintage_date", "latest_published_vintage"),
+            vintage_note=(
+                "alfred_vintage_requested" if vintage_requested
+                else "latest_published_vintage"
+            ),
             provider=provider, snapshot_id=snapshot_id,
+            vintage_date=vintage_requested,
         )
         out = normalized_dir("macro", provider, snapshot_id)
         self._write_parquet(out, "series.parquet", series_all)
@@ -448,7 +453,22 @@ class IngestionPipeline:
             data_version="v1", license_ref=license_ref,
             row_count=row_count, validation_status=status,
             validation_issues=issues,
-            meta={"series": sorted(series_ids), "vintage_note": params.get("vintage_date", "latest_published_vintage")},
+            meta={
+                "series": sorted(series_ids),
+                "vintage_note": (
+                    "alfred_vintage_requested" if vintage_requested
+                    else "latest_published_vintage"
+                ),
+                "vintage_date": vintage_requested,
+                "vintage_semantics": (
+                    "when vintage_date is set this snapshot is ONE ALFRED "
+                    "vintage: every observation value is the value as it "
+                    "existed on vintage_date (point-in-time). When unset the "
+                    "snapshot is the latest published vintage and revised "
+                    "series are NOT point-in-time (Phase 4 engine rejects "
+                    "them unless ALFRED vintages are ingested)."
+                ),
+            },
         )
         manifest_path = manifest.write()
         self.registry.update_manifest_path(snapshot_id, manifest_path)
