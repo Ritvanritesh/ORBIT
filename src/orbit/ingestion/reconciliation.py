@@ -87,16 +87,29 @@ def reconcile_market(
         )
         for row in moves.iter_rows(named=True):
             d = row["trade_date"]
-            nearby = 0
+            explanation = "no corporate action within %d days" % EVENT_LOOKBACK_DAYS
             if ev.height:
-                ev_dates = ev.filter(pl.col("ts").dt.date() >= d - timedelta(days=EVENT_LOOKBACK_DAYS))
-                nearby = ev_dates.filter(pl.col("ts").dt.date() <= d).height
-            code = "explained_by_corporate_action" if nearby else "unexplained_discontinuity"
-            explanation = (
-                f"near corporate action ({nearby} events)"
-                if nearby
-                else f"no corporate action within {EVENT_LOOKBACK_DAYS} days"
-            )
+                window = ev.filter(
+                    (pl.col("ts").dt.date() >= d - timedelta(days=EVENT_LOOKBACK_DAYS))
+                    & (pl.col("ts").dt.date() <= d)
+                )
+                if not adjusted:
+                    # unadjusted series: a split mechanically halves/quarters
+                    # the price on the ex-date, explaining a large move
+                    splits = window.filter(pl.col("kind") == "splits").height
+                    if splits:
+                        explanation = f"near split ({splits} events)"
+                else:
+                    # split-adjusted series: a split causes NO price jump, so
+                    # it cannot explain a >25% move. Only an enormous cash
+                    # dividend (amount >= 25% of price) can - and it is
+                    # correctly rare.
+                    big_dividends = window.filter(
+                        (pl.col("kind") == "dividends") & (pl.col("ratio") >= MOVE_THRESHOLD * row["close"])
+                    ).height
+                    if big_dividends:
+                        explanation = f"near large cash dividend ({big_dividends} events)"
+            code = "explained_by_corporate_action" if "near" in explanation else "unexplained_discontinuity"
             report.findings.append(
                 Finding(
                     instrument_id=inst_id,

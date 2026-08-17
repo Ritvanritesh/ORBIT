@@ -476,6 +476,40 @@ def test_reconciliation_real_shaped_split_does_not_false_positive():
     assert not report.findings
 
 
+def test_reconciliation_split_does_not_explain_move_on_adjusted_series():
+    """A split causes NO price jump in a split-adjusted series, so a large
+    overnight move near a split must stay unexplained there. The pre-fix
+    check counted ANY corporate action in the window, so a split (or a
+    tiny dividend) wrongly 'explained' the move."""
+    bars = _recon_bars([100.0, 130.0, 129.0])  # +30% on the split ex-date
+    events = _recon_events(ratio=2.0)
+    report = reconcile_market(bars, events)
+    codes = {f.code for f in report.findings}
+    assert "unexplained_discontinuity" in codes
+    assert "explained_by_corporate_action" not in codes
+
+
+def test_reconciliation_dividend_does_not_explain_large_move():
+    """A small cash dividend never moves price 25%+; a move near one must
+    be unexplained, not attributed to it."""
+    bars = _recon_bars([100.0, 130.0, 129.0])
+    events = _recon_events(kind="dividends", ratio=0.5, ts=datetime(2020, 1, 3))
+    report = reconcile_market(bars, events)
+    codes = {f.code for f in report.findings}
+    assert "unexplained_discontinuity" in codes
+    assert "explained_by_corporate_action" not in codes
+
+
+def test_reconciliation_unadjusted_split_still_explains_move():
+    """On an UNADJUSTED series a split mechanically halves the price, so the
+    same move IS explained there."""
+    bars = _recon_bars([100.0, 50.0, 50.5], adjustment="unadjusted")
+    events = _recon_events(ratio=2.0)
+    report = reconcile_market(bars, events)
+    codes = {f.code for f in report.findings}
+    assert "explained_by_corporate_action" in codes
+
+
 def test_reconciliation_flags_volume_spike():
     vols = [100_000_000] * 59 + [7_400_000_000]  # 74x the trailing median
     bars = pl.DataFrame(

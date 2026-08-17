@@ -491,6 +491,17 @@ class IngestionPipeline:
                         f"raw zone tampered for {existing['snapshot_id']} - "
                         "refusing to reprocess it"
                     )
+                have = {r.filename for r in from_disk}
+                want = {
+                    self._request_filename(req, provider) for req in requests
+                }
+                missing = sorted(want - have)
+                if missing:
+                    raise RuntimeError(
+                        f"raw zone for {existing['snapshot_id']} is INCOMPLETE: "
+                        f"missing {missing} - refusing to silently drop data; "
+                        "delete the snapshot dir to force a clean re-download"
+                    )
                 return [
                     dataclasses.replace(obj, source_uri=existing["source_uri"])
                     for obj in from_disk
@@ -499,6 +510,15 @@ class IngestionPipeline:
         for req in requests:
             fetched.extend(connector.fetch(req))
         return fetched
+
+    @staticmethod
+    def _request_filename(request: dict[str, Any], provider: str) -> str:
+        if "symbol" in request:
+            ext = "csv" if provider == "stooq_csv" else "json"
+            return f"{request['symbol']}.{ext}"
+        if "cik" in request:
+            return f"cik{request['cik']:010d}_companyfacts.json"
+        return f"{request['series_id']}.csv"
 
     def _raw_objects_from_disk(
         self, domain: str, provider: str, snapshot_id: str

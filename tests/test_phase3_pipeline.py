@@ -179,6 +179,36 @@ def test_reuse_refuses_tampered_raw_zone(env):
         _ingest(env)
 
 
+def test_reprocessing_incomplete_raw_zone_is_refused(env):
+    """Regression: a snapshot whose raw zone holds only SOME of the
+    requested files must not be reprocessed into a silently-truncated
+    dataset (e.g. a fetch interrupted after 2 of 5 symbols)."""
+    payload = _yahoo_payload()
+    result = env["pipeline"].ingest_market(
+        FakeConnector({"AAPL": payload, "MSFT": payload}),
+        ["AAPL", "MSFT"],
+        {"AAPL": "INS-000001", "MSFT": "INS-000002"},
+        license_ref="test-license",
+        request_params={"range": "30y"},
+    )
+    zone = raw_dir("market", "yahoo_chart_api", result.snapshot_id)
+    # simulate an interrupted retry snapshot: failed validation, partial zone
+    env["registry"]._con.execute(
+        "UPDATE snapshots SET validation_status = 'failed' WHERE snapshot_id = ?",
+        [result.snapshot_id],
+    )
+    (zone / "AAPL.json").unlink()
+    (zone / "IMMUTABLE.json").unlink()
+    with pytest.raises(RuntimeError, match="INCOMPLETE"):
+        env["pipeline"].ingest_market(
+            FakeConnector({"AAPL": payload, "MSFT": payload}),
+            ["AAPL", "MSFT"],
+            {"AAPL": "INS-000001", "MSFT": "INS-000002"},
+            license_ref="test-license",
+            request_params={"range": "30y"},
+        )
+
+
 def test_stooq_duplicate_dates_are_caught(env):
     """Regression: the stooq path used date_col 'Date' but parse lowercases
     to 'date', so duplicate/continuity checks silently skipped."""
