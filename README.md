@@ -1,0 +1,31 @@
+# ORBIT
+
+**Optimized Research & Behavioral Intelligence Trading**
+
+A research operating system for discovering, testing, falsifying, explaining and
+replaying trading hypotheses. Paper-trading first, evidence-gated.
+
+Core thesis: the model is replaceable; the evidence chain is the product.
+
+## Status
+
+Phase 1 (Research Charter and Falsifiable Success Criteria) - in progress.
+
+## Structure
+
+```
+docs/                  Research charter, seed hypotheses, gates and policy
+src/orbit/schemas/     HypothesisSpec / ExperimentSpec (Pydantic) - Phase 1
+hypotheses/            Registered seed hypotheses (validated instances)
+src/orbit/             Future phases: data, temporal, features, models, backtest
+tests/                 Validation tests
+```
+
+## Rules
+
+- Paper trading only. No customer money, ever (Phase 1 policy).
+- Pre-register hypotheses before feature exploration.
+- The final holdout is quarantined and never a tuning surface.
+- Any known temporal leak is a hard stop.
+
+See `docs/` for the full charter, gates, and seed hypotheses.

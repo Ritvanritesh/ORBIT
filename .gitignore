@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# research artifacts (Phase 2+)
+data/
+artifacts/
+experiments/
+*.duckdb
+*.parquet
+
+# environment / secrets
+.env
+*.key
+*.pem
+
+# office temp files
+~$*.docx
+*.docx.tmp
