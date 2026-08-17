@@ -30,6 +30,12 @@ class DatasetSnapshot(BaseModel):
     ingest_time: datetime
     license_ref: str | None = None
 
+    @model_validator(mode="after")
+    def _check_range(self) -> "DatasetSnapshot":
+        if self.available_to < self.available_from:
+            raise ValueError("available_to cannot precede available_from")
+        return self
+
 
 class MarketBar(BaseModel):
     """Normalized daily bar. Timestamps are UTC, exchange-tz documented."""

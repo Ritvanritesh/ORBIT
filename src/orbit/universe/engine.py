@@ -48,6 +48,10 @@ class UniverseSnapshot(BaseModel):
 
     as_of: date
     rule: MembershipRule
+    data_ref: str | None = Field(
+        default=None,
+        description="Dataset snapshot / accessor version the membership was computed from.",
+    )
     members: list[UniverseMember] = Field(default_factory=list)
     excluded: list[Exclusion] = Field(default_factory=list)
 
@@ -59,9 +63,15 @@ class UniverseSnapshot(BaseModel):
 class UniverseEngine:
     """Deterministic membership reconstruction. Same inputs -> same snapshot."""
 
-    def __init__(self, accessor: DataAccessor, rule: MembershipRule):
+    def __init__(
+        self,
+        accessor: DataAccessor,
+        rule: MembershipRule,
+        data_ref: str | None = None,
+    ):
         self.accessor = accessor
         self.rule = rule
+        self.data_ref = data_ref
 
     def membership(self, as_of: date) -> UniverseSnapshot:
         members: list[UniverseMember] = []
@@ -75,10 +85,13 @@ class UniverseEngine:
                 continue
             if inst.security_type not in self.rule.security_types:
                 excluded.append(
-                    Exclusion(instrument_id=inst.instrument_id, reason=f"security_type={inst.security_type}")
+                    Exclusion(
+                        instrument_id=inst.instrument_id,
+                        reason=f"security_type={inst.security_type.value}",
+                    )
                 )
                 continue
-            if self.rule.exchanges is not None and inst.exchange_id not in self.rule.exchanges:
+            if inst.exchange_id not in self.rule.exchanges:
                 excluded.append(
                     Exclusion(instrument_id=inst.instrument_id, reason=f"exchange={inst.exchange_id}")
                 )
@@ -131,7 +144,10 @@ class UniverseEngine:
             m.model_copy(update={"rank": i + 1}) for i, m in enumerate(members)
         ]
 
-        return UniverseSnapshot(as_of=as_of, rule=self.rule, members=members, excluded=excluded)
+        return UniverseSnapshot(
+            as_of=as_of, rule=self.rule, data_ref=self.data_ref,
+            members=members, excluded=excluded,
+        )
 
     def _eligible(self, inst: Instrument, as_of: date) -> bool:
         if inst.listing_date > as_of:

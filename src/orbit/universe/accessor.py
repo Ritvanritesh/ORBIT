@@ -16,8 +16,10 @@ from orbit.schemas.instrument import Instrument
 class DataAccessor(Protocol):
     """Read-only access to instrument metadata and lagged market data.
 
-    All market data returned MUST be strictly before as_of (lagged). The
-    engine treats any violation as a leak and fails closed.
+    All market data returned MUST be strictly before as_of (lagged).
+    Phase 4's temporal-truth engine owns the adversarial leak tests that
+    prove an accessor obeys this; Phase 2's engine trusts the contract and
+    is tested against a synthetic accessor that enforces it.
     """
 
     def instruments(self) -> list[Instrument]:

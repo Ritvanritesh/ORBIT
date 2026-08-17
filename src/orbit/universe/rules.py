@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from orbit.schemas.common import UniverseScope
+from orbit.schemas.common import SecurityType, UniverseScope
 
 
 class MembershipRule(BaseModel):
@@ -21,13 +21,13 @@ class MembershipRule(BaseModel):
     version: str = Field(pattern=r"^v\d+(\.\d+)*$")
     universe_class: UniverseScope = UniverseScope.LIQUID_EQUITY_50_100
 
-    security_types: list[str] = Field(
-        default_factory=lambda: ["equity"],
+    security_types: list[SecurityType] = Field(
+        default_factory=lambda: [SecurityType.EQUITY],
         description="Allowed security types (e.g. equity, etf).",
     )
-    exchanges: list[str] | None = Field(
-        default=None,
-        description="Allowed exchange_ids; None = all.",
+    exchanges: list[str] = Field(
+        default_factory=lambda: ["XNYS", "XNAS"],
+        description="Allowed exchange_ids (NYSE/NASDAQ for rule v1).",
     )
     min_price: float | None = Field(
         default=5.0,

@@ -67,7 +67,8 @@ look easier than it was. This layer makes that impossible by construction.
 
 ## 4. Rule v1 (MVP)
 
-- Universe: 50-100 most liquid NYSE/NASDAQ-listed US equities
+- Universe: up to 100 most liquid NYSE/NASDAQ-listed US equities (typically
+  50-100 in practice)
 - Security types: equity (excluded: ADR/preferred/units for the first pass)
 - Min price: $5.00 (lagged last close)
 - Min trailing median dollar volume: $20M/day over 20 days (lagged)

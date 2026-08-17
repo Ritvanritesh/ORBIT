@@ -197,3 +197,75 @@ def test_every_exclusion_is_reasoned(fixtures):
     snap = _engine(fixtures).membership(date(2020, 6, 1))
     assert len(snap.excluded) >= 3
     assert all(e.reason for e in snap.excluded)
+
+
+def test_exchange_and_security_type_filters(fixtures):
+    instruments, bars, sym = fixtures
+    rule = MembershipRule(
+        rule_id="RULE-003", version="v1",
+        exchanges=["XNYS"], security_types=["equity"],
+    )
+    snap = UniverseEngine(SyntheticAccessor(instruments, bars, sym), rule).membership(date(2020, 6, 1))
+    assert all(m.instrument_id.startswith("INS-") for m in snap.members)
+
+
+def test_instrument_requires_delisting_date_for_reason():
+    from orbit.schemas.instrument import Instrument
+    with pytest.raises(Exception):
+        Instrument(
+            instrument_id="INS-000100", primary_ticker="X", exchange_id="XNYS",
+            name="X", security_type="equity", listing_date="2020-01-01",
+            delisting_reason="merger",
+        )
+
+
+def test_dataset_snapshot_rejects_reversed_range():
+    from datetime import datetime
+    from orbit.schemas.data import DatasetSnapshot
+    with pytest.raises(Exception):
+        DatasetSnapshot(
+            snapshot_id="DS-000001", provider="p", source_uri="u",
+            checksum="a" * 32, schema_version="v1",
+            available_from="2021-01-01", available_to="2020-01-01",
+            ingest_time=datetime(2026, 1, 1),
+        )
+
+
+def test_symbol_history_registry_rejects_overlap():
+    from orbit.schemas.instrument import SymbolHistory, SymbolHistoryRegistry
+    with pytest.raises(Exception):
+        SymbolHistoryRegistry(
+            entries=[
+                SymbolHistory(instrument_id="INS-000001", symbol="A", effective_from="2020-01-01", effective_to="2020-06-01"),
+                SymbolHistory(instrument_id="INS-000001", symbol="B", effective_from="2020-05-01"),
+            ]
+        )
+
+
+def test_symbol_history_registry_rejects_gapless_extension_after_open_end():
+    from orbit.schemas.instrument import SymbolHistory, SymbolHistoryRegistry
+    with pytest.raises(Exception):
+        SymbolHistoryRegistry(
+            entries=[
+                SymbolHistory(instrument_id="INS-000001", symbol="A", effective_from="2020-01-01"),
+                SymbolHistory(instrument_id="INS-000001", symbol="B", effective_from="2021-01-01"),
+            ]
+        )
+
+
+def test_symbol_history_registry_resolves():
+    from orbit.schemas.instrument import SymbolHistory, SymbolHistoryRegistry
+    reg = SymbolHistoryRegistry(
+        entries=[
+            SymbolHistory(instrument_id="INS-000001", symbol="A", effective_from="2020-01-01", effective_to="2020-06-01"),
+            SymbolHistory(instrument_id="INS-000001", symbol="B", effective_from="2020-06-02"),
+        ]
+    )
+    assert reg.resolve("INS-000001", date(2020, 3, 1)) == "A"
+    assert reg.resolve("INS-000001", date(2020, 9, 1)) == "B"
+
+
+def test_snapshot_carries_data_ref(fixtures):
+    engine = UniverseEngine(SyntheticAccessor(*fixtures), RULE, data_ref="synthetic_v1")
+    snap = engine.membership(date(2020, 6, 1))
+    assert snap.data_ref == "synthetic_v1"

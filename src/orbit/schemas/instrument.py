@@ -11,7 +11,7 @@ from datetime import date, datetime, time
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from orbit.schemas.common import UniverseScope
+from orbit.schemas.common import SecurityType, UniverseScope
 
 
 class Exchange(BaseModel):
@@ -53,9 +53,7 @@ class Instrument(BaseModel):
     primary_ticker: str
     exchange_id: str = Field(pattern=r"^X[A-Z]{3}$")
     name: str
-    security_type: str = Field(
-        description="equity | etf | benchmark | preferred | adr | unit"
-    )
+    security_type: SecurityType
     universe_class: UniverseScope = UniverseScope.LIQUID_EQUITY_50_100
 
     listing_date: date
@@ -79,6 +77,8 @@ class Instrument(BaseModel):
             and self.delisting_date < self.listing_date
         ):
             raise ValueError("delisting_date cannot precede listing_date")
+        if self.delisting_reason is not None and self.delisting_date is None:
+            raise ValueError("delisting_reason requires delisting_date")
         return self
 
 
@@ -102,6 +102,45 @@ class SymbolHistory(BaseModel):
         return self.effective_from <= d and (
             self.effective_to is None or d <= self.effective_to
         )
+
+
+class SymbolHistoryRegistry(BaseModel):
+    """Validated symbol history for the whole master.
+
+    Identity errors are a Phase 2 failure condition, so overlaps and
+    out-of-order periods are rejected at the registry level: a ticker can
+    never be ambiguous for any date.
+    """
+
+    model_config = ConfigDict(frozen=True)
+
+    entries: list[SymbolHistory] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def _check_no_overlaps(self) -> "SymbolHistoryRegistry":
+        by_inst: dict[str, list[SymbolHistory]] = {}
+        for e in self.entries:
+            by_inst.setdefault(e.instrument_id, []).append(e)
+        for inst_id, hist in by_inst.items():
+            ordered = sorted(hist, key=lambda h: h.effective_from)
+            for prev, nxt in zip(ordered, ordered[1:]):
+                if prev.effective_to is not None and nxt.effective_from <= prev.effective_to:
+                    raise ValueError(
+                        f"overlapping symbol history for {inst_id}: "
+                        f"{prev.symbol}({prev.effective_from}..{prev.effective_to}) vs "
+                        f"{nxt.symbol}({nxt.effective_from}..{nxt.effective_to})"
+                    )
+                if prev.effective_to is None:
+                    raise ValueError(
+                        f"open-ended history for {inst_id} followed by another entry"
+                    )
+        return self
+
+    def resolve(self, instrument_id: str, as_of: date) -> str | None:
+        for e in self.entries:
+            if e.instrument_id == instrument_id and e.covers(as_of):
+                return e.symbol
+        return None
 
 
 class CorporateAction(BaseModel):

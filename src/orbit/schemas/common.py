@@ -46,6 +46,17 @@ class UniverseScope(str, Enum):
     SNAPSHOT_RECONSTRUCTED = "snapshot_reconstructed"
 
 
+class SecurityType(str, Enum):
+    """Security types the instrument master distinguishes."""
+
+    EQUITY = "equity"
+    ETF = "etf"
+    BENCHMARK = "benchmark"
+    PREFERRED = "preferred"
+    ADR = "adr"
+    UNIT = "unit"
+
+
 class LeakageClass(str, Enum):
     """Leakage class a feature family must defend against.
 

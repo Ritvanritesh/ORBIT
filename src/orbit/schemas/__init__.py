@@ -8,6 +8,7 @@ from orbit.schemas.common import (
     HypothesisStatus,
     LabelType,
     LeakageClass,
+    SecurityType,
     UniverseScope,
 )
 from orbit.schemas.data import DatasetSnapshot, MarketBar
@@ -32,6 +33,7 @@ from orbit.schemas.instrument import (
     Instrument,
     SectorTaxonomy,
     SymbolHistory,
+    SymbolHistoryRegistry,
 )
 
 __all__ = [
@@ -42,6 +44,7 @@ __all__ = [
     "HypothesisStatus",
     "LabelType",
     "LeakageClass",
+    "SecurityType",
     "UniverseScope",
     "DatasetSnapshot",
     "MarketBar",
@@ -61,4 +64,5 @@ __all__ = [
     "Instrument",
     "SectorTaxonomy",
     "SymbolHistory",
+    "SymbolHistoryRegistry",
 ]
