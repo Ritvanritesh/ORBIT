@@ -104,15 +104,17 @@ def decide(timing: Timing, as_of: datetime | Any) -> AvailabilityDecision:
             ),
         )
 
-    # 2. date precision -> next-day availability; datetime -> strict '<'
+    # 2. date precision (or unknown/null) -> next-day availability;
+    #    datetime -> strict '<'. Unknown precision is treated as DATE (the
+    #    conservative direction: never available before the next day)
     pub: datetime = timing.publication_time
-    if timing.publication_precision == TimePrecision.DATE:
+    if timing.publication_precision != TimePrecision.DATETIME:
         available_instant = next_day_midnight(pub.date())
     else:
         available_instant = pub
 
     warnings: list[str] = []
-    if timing.publication_precision == TimePrecision.DATE:
+    if timing.publication_precision != TimePrecision.DATETIME:
         warnings.append(
             f"publication known to the day ({pub.date().isoformat()}); "
             "next-day availability applied"

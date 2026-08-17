@@ -619,3 +619,55 @@ def test_market_payload_excludes_retroactive_adjclose():
     for r in frame.iter_rows(named=True):
         assert "adjclose" not in json.loads(r["payload_json"])
         assert json.loads(r["payload_json"])["close"] == 101.0
+
+
+def test_timing_normalizes_aware_instants():
+    """Revision review R8: tz-aware instants passed to Timing are converted
+    to naive UTC at construction, so decide() never compares aware vs naive
+    (which would raise TypeError)."""
+    timing = Timing(
+        record_id="r1",
+        domain="fundamentals",
+        kind="fact",
+        event_time=datetime(2018, 1, 1, tzinfo=timezone.utc),
+        publication_time=datetime(2018, 1, 8, 15, 0, tzinfo=timezone.utc),
+        publication_precision=TimePrecision.DATETIME,
+    )
+    assert timing.publication_time.tzinfo is None
+    d = ENGINE.decide_record(timing, T)
+    assert d.allowed
+
+
+def test_timing_accepts_string_precision_and_vintage_date():
+    """Second review S6: plain-string publication_precision and ISO-8601
+    vintage_date are coerced at construction - a bare 'date' string must not
+    silently downgrade to DATETIME availability."""
+    timing = Timing(
+        record_id="r1",
+        domain="fundamentals",
+        kind="fact",
+        event_time="2018-01-01",
+        publication_time="2018-01-08T15:00:00",
+        publication_precision="date",
+        vintage_date="2018-01-07",
+    )
+    assert timing.publication_precision == TimePrecision.DATE
+    assert timing.vintage_date == date(2018, 1, 7)
+    assert isinstance(timing.event_time, datetime)
+    # date precision -> next-day 00:00, NOT pub-day midnight
+    assert not ENGINE.decide_record(timing, datetime(2018, 1, 8, 23, 59, 59)).allowed
+    assert ENGINE.decide_record(timing, datetime(2018, 1, 9, 0, 0, 1)).allowed
+
+
+def test_timing_accepts_z_suffixed_iso_strings():
+    """Second review S5: ISO-8601 strings with a trailing 'Z' parse on
+    Python 3.10 and normalize to naive UTC."""
+    timing = Timing(
+        record_id="r1",
+        domain="fundamentals",
+        kind="fact",
+        event_time="2018-01-01T00:00:00Z",
+        publication_time="2018-01-08T15:00:00Z",
+    )
+    assert timing.event_time == datetime(2018, 1, 1)
+    assert timing.publication_time == datetime(2018, 1, 8, 15, 0)

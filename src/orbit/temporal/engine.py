@@ -78,6 +78,19 @@ def _next_day_expr() -> pl.Expr:
     return pl.col("publication_time").dt.date() + pl.duration(days=1)
 
 
+# Decision columns appended by evaluate(), in append order. The collision
+# handling of asof_join must treat them as part of the right-side universe:
+# a left frame carrying e.g. its own `allowed` column must never collide
+# with the right's decision columns either.
+DECISION_COLUMNS: list[tuple[str, pl.DataType]] = [
+    ("available_instant", pl.Datetime("us")),
+    ("allowed", pl.Boolean),
+    ("decision_code", pl.Utf8),
+    ("warn_ingested_after_as_of", pl.Boolean),
+    ("decision_detail", pl.Utf8),
+]
+
+
 class TemporalTruthEngine:
     """Point-in-time availability engine over the normalized data layer."""
 
@@ -171,7 +184,16 @@ class TemporalTruthEngine:
             )
 
         step1 = frame.with_columns(
-            pl.when(pl.col("publication_precision") == "date")
+            # NULL precision is treated as DATE (most conservative): a
+            # record is never available BEFORE the next day when we do not
+            # know how precisely its publication time is known. If it were
+            # treated as an instant, available_instant could come out NULL
+            # and the strict-boundary rejection below would silently
+            # disarm (publication after as_of would be allowed).
+            pl.when(
+                pl.col("publication_precision").is_null()
+                | (pl.col("publication_precision") == "date")
+            )
             .then(_next_day_expr())
             .otherwise(pl.col("publication_time"))
             .alias("available_instant"),
@@ -207,7 +229,10 @@ class TemporalTruthEngine:
             .when(reject_event_after).then(pl.lit(DecisionCode.EVENT_AFTER_AS_OF.value))
             .when(pl.col("vintage_date").is_not_null())
             .then(pl.lit(DecisionCode.ALLOWED_VINTAGE_RESOLVED.value))
-            .when(pl.col("publication_precision") == "date")
+            .when(
+                pl.col("publication_precision").is_null()
+                | (pl.col("publication_precision") == "date")
+            )
             .then(pl.lit(DecisionCode.ALLOWED_DATE_PRECISION.value))
             .otherwise(pl.lit(DecisionCode.ALLOWED_BEFORE_PUBLICATION.value))
         )
@@ -309,18 +334,31 @@ class TemporalTruthEngine:
         Correctness first: this is a grouped cross-product, fine for the
         MVP; optimize only after profiling (prompt section 22).
         """
-        if right.height == 0 or left.height == 0:
+        if left.height == 0:
             return left
         # a row index keeps duplicate left record_ids distinct (the join
-        # picks ONE right record per LEFT ROW, not per record_id)
-        left = left.with_row_index("_join_idx")
+        # picks ONE right record per LEFT ROW, not per record_id); the name
+        # must not collide with a column the caller already has
+        idx_col = "_join_idx"
+        while idx_col in left.columns:
+            idx_col = f"_{idx_col}"
+        left = left.with_row_index(idx_col)
         # every right column that collides with a left column is renamed so
         # the filter below can never read the LEFT frame's column; column
-        # names in the joined output are therefore deterministic too
-        collisions = sorted(set(left.columns) & set(right.columns))
-        renamed_right = right.rename(
-            {c: (f"right_{c}" if c != "record_id" else "right_record_id") for c in collisions}
-        )
+        # names in the joined output are therefore deterministic too. The
+        # right-side schema (raw columns + decision columns appended by
+        # evaluate()) is computed ONCE so the joined and null groups always
+        # have identical names, order and types - whatever collides.
+        rename_map = self._right_rename_map(left.columns, right)
+        right_side_schema = self._right_side_schema(rename_map, right)
+        if right.height == 0:
+            # empty right: every left row gets a null join with the same
+            # right-side schema as the (never-materialized) joined groups
+            return self._null_right_group(left, right_side_schema).drop(idx_col)
+        right_event = rename_map.get("event_time", "event_time")
+        right_record = rename_map.get("record_id", "record_id")
+        tie_cols = [idx_col, right_event, right_record]
+
         groups: list[pl.DataFrame] = []
         for t_raw in sorted(
             left[left_time_col].unique().to_list(), key=lambda v: (v is None, v)
@@ -330,7 +368,8 @@ class TemporalTruthEngine:
                 # right record: it has no "moment in time" to be asked about
                 groups.append(
                     self._null_right_group(
-                        left.filter(pl.col(left_time_col).is_null()), renamed_right
+                        left.filter(pl.col(left_time_col).is_null()),
+                        right_side_schema,
                     )
                 )
                 continue
@@ -339,49 +378,90 @@ class TemporalTruthEngine:
             evaluated = self._resolve_vintages(self.evaluate(right, t).frame)
             avail = evaluated.filter(pl.col("allowed"))
             if avail.height == 0:
-                groups.append(self._null_right_group(group, renamed_right))
+                groups.append(self._null_right_group(group, right_side_schema))
                 continue
-            if collisions:
-                avail = avail.rename({c: (f"right_{c}" if c != "record_id" else "right_record_id") for c in collisions})
-            # the event-time filter must read the RIGHT column; the right
-            # frame's event_time may or may not have been renamed above
-            right_event = (
-                "right_event_time" if "event_time" in collisions else "event_time"
-            )
+            if rename_map:
+                avail = avail.rename(rename_map)
             candidates = group.join(avail, how="cross")
             candidates = candidates.filter(pl.col(right_event) <= t)
             # keep, per left row, the most recent observation (max event_time);
             # within a tie, the max right record_id for determinism
             joined = (
                 candidates
-                .sort(["_join_idx", right_event, "right_record_id"])
-                .unique(subset=["_join_idx"], keep="last")
+                .sort(tie_cols)
+                .unique(subset=[idx_col], keep="last")
             )
             groups.append(joined)
         out = pl.concat(groups) if groups else left
-        return out.drop("_join_idx")
+        return out.drop(idx_col)
 
     @staticmethod
-    def _null_right_group(group: pl.DataFrame, renamed_right: pl.DataFrame) -> pl.DataFrame:
+    def _right_rename_map(
+        left_cols: list[str], right: pl.DataFrame
+    ) -> dict[str, str]:
+        """Collision-safe rename targets for the right frame's columns.
+
+        A rename target must not collide with ANY left column (a left
+        'right_event_time' must not hijack the renamed right event_time) nor
+        with another right-side column (a right frame carrying its own
+        'right_source_key' must not collide with the renamed source_key).
+        Unused targets are escalated with a counter suffix. The name
+        universe is deduped: a decision-column name already present as a raw
+        right column (e.g. a chained asof_join output carries 'allowed') is
+        renamed once, for both occurrences.
+        """
+        right_cols = set(right.columns)
+        mapping: dict[str, str] = {}
+        for c in dict.fromkeys(
+            list(right.columns) + [c for c, _ in DECISION_COLUMNS]
+        ):
+            if c not in left_cols:
+                continue
+            base = "right_record_id" if c == "record_id" else f"right_{c}"
+            name = base
+            i = 2
+            while name in left_cols or (name != c and name in right_cols):
+                name = f"{base}__{i}"
+                i += 1
+            mapping[c] = name
+            left_cols = left_cols + [name]
+        return mapping
+
+    @staticmethod
+    def _right_side_schema(
+        rename_map: dict[str, str], right: pl.DataFrame
+    ) -> list[tuple[str, pl.DataType]]:
+        """The canonical right-side output schema: raw right columns (with
+        decision-named ones REPLACED in place by the engine's decision
+        column dtype, exactly as evaluate() overwrites them) followed by the
+        decision columns the engine appends. Names/order/types match the
+        joined groups exactly, so null groups can always be concatenated."""
+        decision_types = dict(DECISION_COLUMNS)
+        schema = [
+            (
+                rename_map.get(c, c),
+                decision_types[c] if c in decision_types else right.schema[c],
+            )
+            for c in right.columns
+        ]
+        schema += [
+            (rename_map.get(c, c), dtype)
+            for c, dtype in DECISION_COLUMNS
+            if c not in right.columns
+        ]
+        return schema
+
+    @staticmethod
+    def _null_right_group(
+        group: pl.DataFrame, right_side_schema: list[tuple[str, pl.DataType]]
+    ) -> pl.DataFrame:
         """A left group with no qualifying right record keeps its rows with
         NULL right-side columns (the 'null join'), with a schema identical to
-        the joined groups so they can be concatenated. Decision columns are
-        appended in the order `evaluate()` produces them. `renamed_right` is
-        the right frame with colliding columns already renamed."""
-        # column order must match the joined groups: right_record_id sits
-        # where record_id was (renamed in place)
-        nulls = [pl.lit(None, dtype=pl.Utf8).alias("right_record_id")]
-        nulls += [
-            pl.lit(None, dtype=renamed_right.schema[c]).alias(c)
-            for c in renamed_right.columns
-            if c != "right_record_id"
-        ]
-        nulls += [
-            pl.lit(None, dtype=pl.Datetime("us")).alias("available_instant"),
-            pl.lit(None, dtype=pl.Boolean).alias("allowed"),
-            pl.lit(None, dtype=pl.Utf8).alias("decision_code"),
-            pl.lit(None, dtype=pl.Boolean).alias("warn_ingested_after_as_of"),
-            pl.lit(None, dtype=pl.Utf8).alias("decision_detail"),
+        the joined groups (same names, order and types) so they can always be
+        concatenated."""
+        nulls = [
+            pl.lit(None, dtype=dtype).alias(name)
+            for name, dtype in right_side_schema
         ]
         return group.with_columns(nulls)
 

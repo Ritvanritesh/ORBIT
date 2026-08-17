@@ -123,9 +123,19 @@ def normalize_instant(value: date | datetime | str | None) -> datetime | None:
     if value is None:
         return None
     if isinstance(value, str):
-        value = datetime.fromisoformat(value)
+        s = value
+        # ISO-8601 'Z' (UTC designator): fromisoformat only learns it in
+        # Python 3.11+, so translate it to an explicit offset on 3.10
+        if s.endswith(("Z", "z")):
+            s = s[:-1] + "+00:00"
+        value = datetime.fromisoformat(s)
     if isinstance(value, date) and not isinstance(value, datetime):
         return datetime(value.year, value.month, value.day)
+    if not isinstance(value, datetime):
+        raise TypeError(
+            f"cannot normalize {type(value).__name__!r} to an instant; "
+            "expected date, datetime, ISO-8601 string or None"
+        )
     dt: datetime = value
     if dt.tzinfo is not None:
         dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
@@ -188,8 +198,21 @@ class Timing:
             "event_time", "publication_time", "effective_time", "ingestion_time",
         ):
             value = getattr(self, field_name)
-            if value is not None and not isinstance(value, datetime):
+            if value is not None:
+                # normalize_instant passes naive datetimes through unchanged,
+                # converts aware instants to naive UTC, and lifts date/str
+                # values to datetimes - so a comparison can never receive a
+                # raw aware datetime or a string by accident
                 object.__setattr__(self, field_name, normalize_instant(value))
+        if isinstance(self.publication_precision, str):
+            # accept the plain value ("date"/"datetime") as well as the enum;
+            # a bare string falling through would silently downgrade DATE
+            # precision to DATETIME and make the record available a day early
+            object.__setattr__(
+                self, "publication_precision", TimePrecision(self.publication_precision)
+            )
+        if isinstance(self.vintage_date, str):
+            object.__setattr__(self, "vintage_date", date.fromisoformat(self.vintage_date))
 
     def as_dict(self) -> dict[str, Any]:
         return {

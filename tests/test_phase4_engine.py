@@ -555,6 +555,143 @@ def test_asof_join_duplicate_left_record_ids_all_kept():
     assert all(json.loads(r["payload_json"])["value"] == 2.3 for r in joined.iter_rows(named=True))
 
 
+def test_asof_join_left_colliding_with_decision_columns():
+    """A left frame carrying its OWN allowed/decision_code columns must not
+    crash (revision review R1): the right side's decision columns are
+    renamed, and null joins keep identical schemas."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    left = pl.DataFrame(
+        {
+            "record_id": ["L1", "L2"],
+            "decision_time": [datetime(2018, 2, 15), None],
+            "allowed": [True, False],
+            "decision_code": ["x", "y"],
+        }
+    )
+    engine = TemporalTruthEngine()
+    joined = engine.asof_join(frame, left)
+    assert joined.height == 2
+    by_id = {r["record_id"]: r for r in joined.iter_rows(named=True)}
+    assert by_id["L1"]["event_time"] == datetime(2018, 1, 1)  # right's (no collision)
+    assert by_id["L1"]["allowed"] is True  # left column untouched
+    assert by_id["L2"]["event_time"] is None
+    assert by_id["L2"]["right_allowed"] is None
+    assert by_id["L2"]["right_decision_code"] is None
+
+
+def test_asof_join_left_without_record_id_column():
+    """An arbitrary signal frame (no record_id of its own) must join cleanly
+    (revision review R4): the right side's record_id stays unrenamed and the
+    tie-break skips it."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    left = pl.DataFrame({"decision_time": [datetime(2018, 2, 15)]})
+    engine = TemporalTruthEngine()
+    joined = engine.asof_join(frame, left)
+    assert joined.height == 1
+    assert joined["event_time"][0] == datetime(2018, 1, 1)
+    assert joined["allowed"][0] is True
+
+
+def test_asof_join_left_right_prefixed_column_cannot_gate():
+    """Second review S1: a left frame carrying its own right_event_time must
+    not hijack the renamed right event column - the rename escalates and the
+    join still attaches the right observation."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    left = pl.DataFrame(
+        {
+            "record_id": ["L1"],
+            "decision_time": [datetime(2018, 2, 15)],
+            "event_time": [datetime(2019, 1, 1)],
+            "right_event_time": [datetime(2026, 1, 1)],
+        }
+    )
+    joined = TemporalTruthEngine().asof_join(frame, left)
+    assert joined.height == 1
+    row = joined.row(0, named=True)
+    # the left's own right_event_time forces the rename to escalate
+    assert row["right_event_time__2"] == datetime(2018, 1, 1)
+    assert row["event_time"] == datetime(2019, 1, 1)  # left's own, untouched
+
+
+def test_asof_join_left_with_own_row_index_column():
+    """Second review S2: a left frame with its own _join_idx column joins
+    without collision (the engine's internal index escalates)."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    left = pl.DataFrame(
+        {
+            "_join_idx": ["mine"],
+            "record_id": ["L1"],
+            "decision_time": [datetime(2018, 2, 15)],
+        }
+    )
+    joined = TemporalTruthEngine().asof_join(frame, left)
+    assert joined.height == 1
+    assert joined["_join_idx"][0] == "mine"
+    assert joined["event_time"][0] == datetime(2018, 1, 1)
+
+
+def test_asof_join_right_with_right_prefixed_rename_target():
+    """Second review S3: a right frame carrying a column whose name equals a
+    rename target (right_source_key while left has source_key) must not
+    crash with a duplicate rename."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    frame = frame.with_columns(pl.lit("mine").alias("right_source_key"))
+    left = pl.DataFrame(
+        {
+            "record_id": ["L1"],
+            "decision_time": [datetime(2018, 2, 15)],
+            "source_key": ["left"],
+        }
+    )
+    joined = TemporalTruthEngine().asof_join(frame, left)
+    assert joined.height == 1
+    assert joined["event_time"][0] == datetime(2018, 1, 1)
+
+
+def test_asof_join_tie_break_without_left_record_id():
+    """Second review S4: without a left record_id column the tie-break must
+    still pick the largest right record_id, independent of right input
+    order."""
+    frame = pl.DataFrame(
+        {
+            "record_id": ["AA001", "BB002"],
+            "source_key": ["s", "s"], "domain": ["m", "m"], "kind": ["k", "k"],
+            "event_time": [datetime(2018, 1, 1), datetime(2018, 1, 1)],
+            "publication_time": [datetime(2018, 1, 2, 15, 0)] * 2,
+            "publication_precision": ["datetime"] * 2,
+            "effective_time": [None] * 2, "ingestion_time": [None] * 2,
+            "vintage_id": [None] * 2, "vintage_date": [None] * 2,
+            "series_policy": [None] * 2, "payload_json": ["{}"] * 2,
+        }
+    )
+    left = pl.DataFrame({"decision_time": [datetime(2018, 2, 15)]})
+    engine = TemporalTruthEngine()
+    w1 = engine.asof_join(frame, left).row(0, named=True)["record_id"]
+    w2 = engine.asof_join(frame.reverse(), left).row(0, named=True)["record_id"]
+    assert w1 == w2 == "BB002"
+
+
+def test_asof_join_empty_right_null_joins_consistently():
+    """Second review MINOR 9: an empty right frame yields the same null-join
+    schema as 'no qualifying record' instead of silently dropping the
+    right-side columns."""
+    left = pl.DataFrame({"record_id": ["L1"], "decision_time": [datetime(2018, 2, 15)]})
+    joined = TemporalTruthEngine().asof_join(pl.DataFrame(), left)
+    assert joined.height == 1
+    assert joined["allowed"][0] is None
+    assert joined["decision_code"][0] is None
+
+
 # --------------------------------------------------------- reproducibility
 
 
