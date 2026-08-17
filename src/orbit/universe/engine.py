@@ -126,10 +126,23 @@ class UniverseEngine:
                 )
                 continue
 
+            symbol_at_asof = self._resolve_symbol(inst, as_of)
+            if symbol_at_asof is None:
+                # A gap in symbol history while the instrument is active is a
+                # data-quality failure: flag it loudly, never emit a member
+                # with an unresolved ticker.
+                excluded.append(
+                    Exclusion(
+                        instrument_id=inst.instrument_id,
+                        reason=f"unresolved_symbol_at_asof({as_of})",
+                    )
+                )
+                continue
+
             members.append(
                 UniverseMember(
                     instrument_id=inst.instrument_id,
-                    symbol_at_asof=self._resolve_symbol(inst, as_of),
+                    symbol_at_asof=symbol_at_asof,
                     rank=0,  # assigned after sort
                     trailing_dollar_volume=dv,
                     last_close=close,
@@ -149,6 +162,9 @@ class UniverseEngine:
         members = [
             m.model_copy(update={"rank": i + 1}) for i, m in enumerate(members)
         ]
+        # Canonical order regardless of accessor iteration order, so the same
+        # inputs always produce the same snapshot.
+        excluded.sort(key=lambda e: e.instrument_id)
 
         return UniverseSnapshot(
             as_of=as_of, rule=self.rule, data_ref=self.data_ref,
@@ -167,12 +183,19 @@ class UniverseEngine:
         if history is None:
             return inst.primary_ticker
         if isinstance(history, SymbolHistoryRegistry):
+            if not any(e.instrument_id == inst.instrument_id for e in history.entries):
+                # No ticker changes on record: the instrument's symbol is its
+                # primary ticker. Only genuine gaps (entries exist but none
+                # covers as_of) resolve to None.
+                return inst.primary_ticker
             return history.resolve(inst.instrument_id, as_of)
         if callable(history):
             entries = history(inst.instrument_id)
         elif hasattr(history, "get"):
             entries = history.get(inst.instrument_id, [])
         else:
+            return inst.primary_ticker
+        if not entries:
             return inst.primary_ticker
         for entry in entries:
             if entry.covers(as_of):

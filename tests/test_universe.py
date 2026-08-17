@@ -342,3 +342,67 @@ def test_delisting_reason_is_distinct_from_future_listing(fixtures):
     reasons = {e.instrument_id: e.reason for e in snap.excluded}
     assert reasons["INS-000002"] == "delisted_asof(2018-06-01)"
     assert reasons["INS-000003"] == "listed_after_asof"
+
+
+def test_excluded_order_is_canonical_across_accessors(fixtures):
+    """'Same inputs -> same snapshot' must hold regardless of the accessor's
+    instrument iteration order; only members were sorted before."""
+    instruments, bars, sym = fixtures
+    a = UniverseEngine(SyntheticAccessor(instruments, bars, sym), RULE, data_ref="d")
+    b = UniverseEngine(
+        SyntheticAccessor(list(reversed(instruments)), bars, sym), RULE, data_ref="d"
+    )
+    assert a.membership(date(2020, 6, 1)) == b.membership(date(2020, 6, 1))
+
+
+def test_no_lagged_price_history_reason():
+    inst = _instrument("INS-000100", "NOHIST", date(2015, 1, 5))
+    engine = UniverseEngine(
+        SyntheticAccessor([inst], {}), RULE, data_ref="d"
+    )
+    snap = engine.membership(date(2020, 6, 1))
+    reasons = {e.instrument_id: e.reason for e in snap.excluded}
+    assert reasons["INS-000100"] == "no_lagged_price_history"
+
+
+def test_symbol_history_gap_excludes_instead_of_silent_none(fixtures):
+    """A gap in symbol history while the instrument is active is a loud
+    exclusion, never a member with symbol_at_asof=None."""
+    instruments, bars, _ = fixtures
+    gapped = {
+        "INS-000007": [
+            SymbolHistory(instrument_id="INS-000007", symbol="OLD", effective_from=date(2015, 1, 5), effective_to=date(2017, 2, 28)),
+            SymbolHistory(instrument_id="INS-000007", symbol="NEW", effective_from=date(2017, 3, 5)),
+        ]
+    }
+    engine = UniverseEngine(
+        SyntheticAccessor(instruments, bars, gapped), RULE, data_ref="d"
+    )
+    snap = engine.membership(date(2017, 3, 2))  # inside the 03-01..03-04 gap
+    assert "INS-000007" not in snap.instrument_ids
+    reasons = {e.instrument_id: e.reason for e in snap.excluded}
+    assert reasons["INS-000007"] == "unresolved_symbol_at_asof(2017-03-02)"
+    assert all(m.symbol_at_asof is not None for m in snap.members)
+
+
+def test_no_floors_and_no_cap_include_everything_with_history(fixtures):
+    open_rule = MembershipRule(
+        rule_id="RULE-003", version="v1",
+        min_price=None, min_trailing_dollar_volume=None, max_names=None,
+    )
+    snap = UniverseEngine(
+        SyntheticAccessor(*fixtures), open_rule, data_ref="d"
+    ).membership(date(2020, 6, 1))
+    assert "INS-000004" in snap.instrument_ids  # illiquid, but no floor
+    assert "INS-000005" in snap.instrument_ids  # penny, but no price floor
+    assert [m.rank for m in snap.members] == list(range(1, len(snap.members) + 1))
+    assert not any(e.reason == "below_liquidity_cap" for e in snap.excluded)
+
+
+def test_corporate_action_action_type_is_contractual():
+    from orbit.schemas.instrument import CorporateAction
+    with pytest.raises(Exception):
+        CorporateAction(
+            action_id="CA-000020", instrument_id="INS-000001",
+            action_type="Split", effective_date="2020-01-01", ratio=2.0,
+        )

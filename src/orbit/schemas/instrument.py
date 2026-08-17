@@ -8,6 +8,7 @@ any evaluation date can resolve which symbol an instrument traded under.
 from __future__ import annotations
 
 from datetime import date, datetime, time
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -156,9 +157,10 @@ class CorporateAction(BaseModel):
 
     action_id: str = Field(pattern=r"^CA-\d{6}$")
     instrument_id: str = Field(pattern=r"^INS-\d{6}$")
-    action_type: str = Field(
-        description="split | reverse_split | dividend | merger | spin_off | delisting | symbol_change | name_change"
-    )
+    action_type: Literal[
+        "split", "reverse_split", "dividend", "merger", "spin_off",
+        "delisting", "symbol_change", "name_change",
+    ] = Field(description="split | reverse_split | dividend | merger | spin_off | delisting | symbol_change | name_change")
     effective_date: date
     ex_date: date | None = None
     ratio: float | None = Field(

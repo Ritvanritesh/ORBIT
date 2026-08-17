@@ -14,12 +14,12 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   hypotheses, promotion gates.
 - Phase 2 (Universe and Data Architecture) - complete: instrument master,
   symbol history, corporate actions, benchmark set, versioned membership
-  rules, delisting-aware + lagged-liquidity reconstruction engine (23 tests).
+  rules, delisting-aware + lagged-liquidity reconstruction engine (26 tests).
 - Phase 3 (Raw Historical Data Ingestion) - complete: free-source ingestion
   (Yahoo chart API, SEC EDGAR companyfacts, FRED), immutable raw storage with
   checksums, validation gates, corporate-action reconciliation + records,
   normalized parquet artifacts, DuckDB provenance registry, reproducibility
-  check (87 tests). Run: `python scripts/phase3_run_all.py`.
+  check (92 tests). Run: `python scripts/phase3_run_all.py`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;
