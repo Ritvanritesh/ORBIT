@@ -56,6 +56,11 @@ def fetch_bytes(
                     time.sleep(backoff_seconds * attempt)
                     continue
                 if not (200 <= status < 300):
+                    if status in _RETRYABLE_STATUS:
+                        # Retries exhausted on a retryable status: fall through
+                        # to the aggregated error below (includes attempt count).
+                        last_status = status
+                        break
                     raise DownloadError(f"HTTP {status} for {url}")
                 return Downloaded(
                     body=resp.read(),

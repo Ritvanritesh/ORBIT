@@ -19,7 +19,7 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   (Yahoo chart API, SEC EDGAR companyfacts, FRED), immutable raw storage with
   checksums, validation gates, corporate-action reconciliation + records,
   normalized parquet artifacts, DuckDB provenance registry, reproducibility
-  check (84 tests). Run: `python scripts/phase3_run_all.py`.
+  check (87 tests). Run: `python scripts/phase3_run_all.py`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;

@@ -113,8 +113,10 @@ class MarketDataAccessor:
         self, instrument_id: str, as_of: date, window_days: int
     ) -> float | None:
         rows = self._rows_for(instrument_id)
-        dv = rows.filter(pl.col("trade_date") < as_of).select(
-            (pl.col("close") * pl.col("volume")).alias("dv")
+        dv = (
+            rows.filter(pl.col("trade_date") < as_of)
+            .sort("trade_date")
+            .select((pl.col("close") * pl.col("volume")).alias("dv"))
         )
         if dv.height == 0:
             return None

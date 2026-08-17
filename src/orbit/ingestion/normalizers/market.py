@@ -114,6 +114,11 @@ def normalize_market_bars(
 
     bars_all = pl.concat(bars_frames).select(list(BAR_COLUMNS)) if bars_frames else pl.DataFrame(schema=BAR_COLUMNS)
     events_all = pl.concat(event_frames).select(list(EVENT_COLUMNS)) if event_frames else pl.DataFrame(schema=EVENT_COLUMNS)
+    if bars_all.height:
+        # Canonical contract: bars are ALWAYS delivered in (instrument, date)
+        # ascending order. Downstream consumers (lagged accessor, move
+        # checks) depend on it; provider row order is not a guarantee.
+        bars_all = bars_all.sort(["instrument_id", "trade_date"])
     return {"bars": bars_all, "events": events_all}
 
 

@@ -74,7 +74,7 @@ def main() -> int:
     if result.reconciliation:
         print("reconciliation:", json.dumps(result.reconciliation, indent=2)[:2000])
     registry.close()
-    return 0
+    return 0 if result.validation.get("status") == "ok" else 1
 
 
 if __name__ == "__main__":

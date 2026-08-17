@@ -52,10 +52,17 @@ def validate_numerical(df: pl.DataFrame, report: ValidationReport, symbol: str =
             report.add("warning", "zero_volume_day", f"{no_vol.height} zero-volume rows (possible halt)", symbol)
 
     if "close" in df.columns and df.height > 1:
-        closes = df["close"]
+        # "Daily" moves must be computed against the previous CALENDAR row, so
+        # compute them on a date-ordered copy when a date column is present;
+        # provider row order is not guaranteed.
+        df_sorted = df
+        date_col = next((c for c in ("trade_date", "date", "ts") if c in df.columns), None)
+        if date_col is not None:
+            df_sorted = df.sort(date_col)
+        closes = df_sorted["close"]
         prev = closes.shift(1)
         move = (closes / prev) - 1
-        huge = df.filter(move.fill_null(0).abs() > 1.0)
+        huge = df_sorted.filter(move.fill_null(0).abs() > 1.0)
         if huge.height:
             report.add(
                 "warning",

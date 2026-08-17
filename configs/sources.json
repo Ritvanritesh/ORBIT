@@ -7,7 +7,7 @@
       "status": "working",
       "notes": "Free, keyless, bulk-ish (one JSON per symbol, full history). Unofficial: no license for redistribution, data may contain errors. OHLC is split-adjusted (confirmed: AAPL 2014-06 close ~23.06 implies 7:1 split 2014 + 4:1 split 2020 applied). Use only to prove the pipeline; never promote to authoritative without a license review.",
       "verified": "2026-08-17",
-      "verification": "downloaded AAPL 30y daily, 7547 bars, split/dividend events present",
+      "verification": "downloaded AAPL 30y daily, 7705 bars, split/dividend events present (re-verified during Phase 3 final audit; prior check recorded 7547)",
       "license_ref": "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html (unofficial API; redistribution not granted)"
     },
     "stooq_csv": {

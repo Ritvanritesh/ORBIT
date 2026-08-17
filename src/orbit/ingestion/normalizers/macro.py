@@ -32,5 +32,6 @@ def normalize_fred_series(
             pl.lit(provider).alias("provider"),
             pl.lit(snapshot_id).alias("snapshot_id"),
         )
+        .sort("observation_date")
         .select(list(SERIES_COLUMNS))
     )

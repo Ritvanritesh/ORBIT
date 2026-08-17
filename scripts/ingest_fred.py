@@ -41,7 +41,7 @@ def main() -> int:
     if result.validation.get("issues"):
         print(json.dumps(result.validation["issues"], indent=2)[:2000])
     registry.close()
-    return 0
+    return 0 if result.validation.get("status") == "ok" else 1
 
 
 if __name__ == "__main__":

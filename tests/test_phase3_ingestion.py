@@ -28,6 +28,7 @@ from orbit.ingestion.parsing import (
     parse_stooq_csv,
     parse_yahoo_chart,
 )
+from orbit.ingestion.pipeline import IngestResult
 from orbit.ingestion.reconciliation import reconcile_market
 from orbit.ingestion.storage import RawStore
 from orbit.ingestion.validators import (
@@ -577,3 +578,97 @@ def test_snapshot_accessor_is_strictly_lagged(tmp_path):
     dv = accessor.trailing_dollar_volume("INS-000001", as_of, 20)
     assert dv == pytest.approx(101000.0)  # median of 101000, 101000, 111650, 90450
     assert accessor.last_close("INS-000001", date(2020, 1, 2)) is None
+
+
+def test_normalize_market_bars_sorts_by_instrument_and_date(tmp_path):
+    """Canonical bars are date-ascending even when the provider delivers
+    rows in reverse order; order-dependent consumers rely on this."""
+    bars, events = parse_yahoo_chart(_yahoo_payload(), "AAPL")
+    reversed_bars = bars.reverse()  # simulate a provider delivering newest-first
+    normalized = normalize_market_bars(
+        {"AAPL": {"bars": reversed_bars, "events": events}},
+        {"AAPL": "INS-000001"},
+        "yahoo_chart_api", "u", "DS-000001",
+    )
+    dates = normalized["bars"]["trade_date"].to_list()
+    assert dates == sorted(dates)
+    assert dates[0] == date(2020, 1, 2)
+
+
+def test_accessor_trailing_dollar_volume_is_order_independent(tmp_path):
+    """The accessor must not depend on parquet row order: a reversed file
+    yields the same strictly-lagged median."""
+    from orbit.ingestion.snapshot import MarketDataAccessor
+    from orbit.schemas.instrument import Instrument
+
+    out = tmp_path / "normalized" / "market" / "yahoo_chart_api" / "DS-000001"
+    out.mkdir(parents=True)
+    bars, events = parse_yahoo_chart(_yahoo_payload(), "AAPL")
+    normalized = normalize_market_bars(
+        {"AAPL": {"bars": bars, "events": events}}, {"AAPL": "INS-000001"},
+        "yahoo_chart_api", "u", "DS-000001",
+    )
+    normalized["bars"].reverse().write_parquet(out / "bars.parquet")
+    inst = Instrument(
+        instrument_id="INS-000001", primary_ticker="AAPL", exchange_id="XNAS",
+        name="Apple", security_type="equity", listing_date=date(1980, 12, 12),
+    )
+    accessor = MarketDataAccessor([inst], "DS-000001", data_root=tmp_path)
+
+    as_of = date(2020, 1, 7)
+    assert accessor.last_close("INS-000001", as_of) == 100.5
+    assert accessor.trailing_dollar_volume("INS-000001", as_of, 20) == pytest.approx(101000.0)
+
+
+def test_ingest_market_script_exit_code_reflects_validation(monkeypatch, tmp_path):
+    """The CLI must fail loudly (non-zero) when a snapshot is not promoted,
+    so CI cannot report green on a failed validation."""
+    import importlib.util
+    import sys
+
+    repo = __file__.replace("\\", "/").split("/tests/")[0]
+    spec = importlib.util.spec_from_file_location(
+        "ingest_market_cli", f"{repo}/scripts/ingest_market.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    monkeypatch.setitem(sys.modules, "ingest_market_cli", mod)
+
+    class _Registry:
+        def close(self):
+            pass
+
+    class _StubPipeline:
+        def __init__(self, *a, **k):
+            pass
+
+        def ingest_market(self, *a, **k):
+            return IngestResult(
+                snapshot_id="DS-000001", reused=False, domain="market",
+                provider="yahoo_chart_api",
+                validation={"status": "failed", "issues": [{"severity": "error"}]},
+            )
+
+    spec.loader.exec_module(mod)
+
+    monkeypatch.setattr(mod, "ensure_layout", lambda: None)
+    monkeypatch.setattr(mod, "registry_path", lambda: str(tmp_path / "r.duckdb"))
+    monkeypatch.setattr(mod, "IngestionRegistry", lambda *a, **k: _Registry())
+    monkeypatch.setattr(mod, "RawStore", lambda: None)
+    monkeypatch.setattr(mod, "IngestionPipeline", _StubPipeline)
+    monkeypatch.setattr(mod, "symbol_map_from_master", lambda p: {"AAPL": "INS-000001"})
+    monkeypatch.setattr(mod, "YahooChartConnector", lambda: None)
+
+    monkeypatch.setattr(
+        sys, "argv", ["ingest_market.py", "--symbols", "AAPL", "--range", "1y"]
+    )
+    assert mod.main() == 1
+
+    monkeypatch.setattr(
+        _StubPipeline,
+        "ingest_market",
+        lambda self, *a, **k: IngestResult(
+            snapshot_id="DS-000001", reused=False, domain="market",
+            provider="yahoo_chart_api", validation={"status": "ok"},
+        ),
+    )
+    assert mod.main() == 0
