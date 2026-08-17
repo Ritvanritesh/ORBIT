@@ -58,11 +58,11 @@ class SyntheticAccessor:
         return closes[-1] if closes else None
 
 
-def _instrument(ins_id, ticker, listed, delisted=None, reason=None, stype="equity"):
+def _instrument(ins_id, ticker, listed, delisted=None, reason=None, stype="equity", exchange="XNYS"):
     return Instrument(
         instrument_id=ins_id,
         primary_ticker=ticker,
-        exchange_id="XNYS",
+        exchange_id=exchange,
         name=f"{ticker} Inc",
         security_type=stype,
         listing_date=listed,
@@ -86,10 +86,12 @@ def fixtures():
         _instrument("INS-000001", "LIQ1", start),                    # active, liquid
         _instrument("INS-000002", "DELIST", start, date(2018, 6, 1), "merger"),  # delisted
         _instrument("INS-000003", "LATE", date(2019, 3, 1)),         # listed later
-        _instrument("INS-000004", "ILLIQ", start),       # illiquid
+        _instrument("INS-000004", "ILLIQ", start),                   # illiquid
         _instrument("INS-000005", "PENNY", start),                   # penny stock
-        _instrument("INS-000006", "SPIKE", start),                   # volume spike on as_of
+        _instrument("INS-000006", "SPIKE", start),                   # liquidity regime change
         _instrument("INS-000007", "OLD", start),                     # ticker change
+        _instrument("INS-000008", "FOREIGN", start, stype="equity", exchange="XAMS"),  # non-NYSE/NASDAQ
+        _instrument("INS-000009", "THEETF", start, stype="etf"),     # ETF in equity universe
     ]
     gen("INS-000001", start, end, 100.0, 50_000_000)
     gen("INS-000002", start, end, 90.0, 40_000_000, until=date(2018, 5, 31))
@@ -102,6 +104,8 @@ def fixtures():
     # liquidity regime change: high volume from 2020-01-01 onward
     for d in _business_days(date(2020, 1, 1), end):
         bars["INS-000006"][d] = (60.0, 1_700_000)   # $102M/day
+    gen("INS-000008", start, end, 95.0, 60_000_000)
+    gen("INS-000009", start, end, 200.0, 80_000_000)
     gen("INS-000007", start, end, 55.0, 30_000_000)
 
     symbol_history = {
@@ -125,7 +129,9 @@ RULE = MembershipRule(
 
 def _engine(fixtures):
     instruments, bars, sym = fixtures
-    return UniverseEngine(SyntheticAccessor(instruments, bars, sym), RULE)
+    return UniverseEngine(
+        SyntheticAccessor(instruments, bars, sym), RULE, data_ref="synthetic_v1"
+    )
 
 
 def test_delisted_instrument_excluded_after_delisting(fixtures):
@@ -186,7 +192,9 @@ def test_ranking_and_cap(fixtures):
         rule_id="RULE-002", version="v1", max_names=2,
         min_price=5.0, min_trailing_dollar_volume=20_000_000.0,
     )
-    snap = UniverseEngine(SyntheticAccessor(*fixtures), capped).membership(date(2020, 6, 1))
+    snap = UniverseEngine(
+        SyntheticAccessor(*fixtures), capped, data_ref="synthetic_v1"
+    ).membership(date(2020, 6, 1))
     assert len(snap.members) == 2
     assert snap.members[0].rank == 1
     assert snap.members[1].rank == 2
@@ -201,12 +209,12 @@ def test_every_exclusion_is_reasoned(fixtures):
 
 def test_exchange_and_security_type_filters(fixtures):
     instruments, bars, sym = fixtures
-    rule = MembershipRule(
-        rule_id="RULE-003", version="v1",
-        exchanges=["XNYS"], security_types=["equity"],
-    )
-    snap = UniverseEngine(SyntheticAccessor(instruments, bars, sym), rule).membership(date(2020, 6, 1))
-    assert all(m.instrument_id.startswith("INS-") for m in snap.members)
+    snap = _engine(fixtures).membership(date(2020, 6, 1))
+    assert "INS-000008" not in snap.instrument_ids  # non-NYSE/NASDAQ exchange
+    assert "INS-000009" not in snap.instrument_ids  # ETF in equity universe
+    reasons = {e.instrument_id: e.reason for e in snap.excluded}
+    assert reasons["INS-000008"] == "exchange=XAMS"
+    assert reasons["INS-000009"] == "security_type=etf"
 
 
 def test_instrument_requires_delisting_date_for_reason():
@@ -269,3 +277,68 @@ def test_snapshot_carries_data_ref(fixtures):
     engine = UniverseEngine(SyntheticAccessor(*fixtures), RULE, data_ref="synthetic_v1")
     snap = engine.membership(date(2020, 6, 1))
     assert snap.data_ref == "synthetic_v1"
+
+
+def test_data_ref_is_required():
+    from orbit.universe.engine import UniverseEngine as UE
+    with pytest.raises(Exception):
+        UE(SyntheticAccessor(*fixtures), RULE)
+
+
+def test_corporate_action_validation():
+    from orbit.schemas.instrument import CorporateAction
+    with pytest.raises(Exception):
+        CorporateAction(
+            action_id="CA-000010", instrument_id="INS-000001",
+            action_type="dividend", effective_date="2020-01-01", ratio=-5.0,
+        )
+    with pytest.raises(Exception):
+        CorporateAction(
+            action_id="CA-000011", instrument_id="INS-000001",
+            action_type="split", effective_date="2020-01-01",
+            ex_date="2020-06-01", ratio=2.0,
+        )
+    CorporateAction(
+        action_id="CA-000012", instrument_id="INS-000001",
+        action_type="split", effective_date="2020-01-01",
+        ex_date="2020-01-01", ratio=2.0,
+    )
+
+
+def test_exchange_session_validation():
+    from orbit.schemas.instrument import Exchange
+    with pytest.raises(Exception):
+        Exchange(
+            exchange_id="XAAA", name="x", mic="AAAA", country="US",
+            tz="America/New_York", open_local="15:00", close_local="09:30",
+        )
+
+
+def test_engine_accepts_symbol_history_registry_accessor(fixtures):
+    from orbit.schemas.instrument import SymbolHistory, SymbolHistoryRegistry
+    instruments, bars, _ = fixtures
+    registry = SymbolHistoryRegistry(
+        entries=[
+            SymbolHistory(instrument_id="INS-000007", symbol="OLD", effective_from=date(2015, 1, 5), effective_to=date(2017, 2, 28)),
+            SymbolHistory(instrument_id="INS-000007", symbol="NEW", effective_from=date(2017, 3, 1)),
+        ]
+    )
+
+    class RegistryAccessor(SyntheticAccessor):
+        def __init__(self, instruments, bars, registry):
+            super().__init__(instruments, bars)
+            self.symbol_history = registry
+
+    engine = UniverseEngine(
+        RegistryAccessor(instruments, bars, registry), RULE, data_ref="synthetic_v1"
+    )
+    snap = engine.membership(date(2017, 6, 15))
+    member = next(m for m in snap.members if m.instrument_id == "INS-000007")
+    assert member.symbol_at_asof == "NEW"
+
+
+def test_delisting_reason_is_distinct_from_future_listing(fixtures):
+    snap = _engine(fixtures).membership(date(2018, 7, 1))
+    reasons = {e.instrument_id: e.reason for e in snap.excluded}
+    assert reasons["INS-000002"] == "delisted_asof(2018-06-01)"
+    assert reasons["INS-000003"] == "listed_after_asof"

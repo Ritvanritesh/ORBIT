@@ -27,6 +27,12 @@ class Exchange(BaseModel):
     open_local: time
     close_local: time
 
+    @model_validator(mode="after")
+    def _check_session(self) -> "Exchange":
+        if self.open_local >= self.close_local:
+            raise ValueError("open_local must precede close_local")
+        return self
+
     def local_to_utc(self, ts_local: datetime) -> datetime:
         """Convert a local timestamp to UTC. Raised in Phase 4 with as-of rules."""
         from zoneinfo import ZoneInfo
@@ -164,10 +170,18 @@ class CorporateAction(BaseModel):
 
     @model_validator(mode="after")
     def _check_ratio(self) -> "CorporateAction":
-        if self.action_type in ("split", "reverse_split") and (
-            self.ratio is None or self.ratio <= 0
+        if self.ratio is not None and self.ratio <= 0:
+            raise ValueError("ratio must be positive")
+        return self
+
+    @model_validator(mode="after")
+    def _check_dates(self) -> "CorporateAction":
+        if (
+            self.ex_date is not None
+            and self.effective_date is not None
+            and self.ex_date > self.effective_date
         ):
-            raise ValueError("split actions require a positive ratio")
+            raise ValueError("ex_date cannot follow effective_date")
         return self
 
 

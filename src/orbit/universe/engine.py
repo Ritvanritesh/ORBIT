@@ -13,7 +13,7 @@ from datetime import date
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from orbit.schemas.instrument import Instrument, SymbolHistory
+from orbit.schemas.instrument import Instrument, SymbolHistory, SymbolHistoryRegistry
 from orbit.universe.accessor import DataAccessor
 from orbit.universe.rules import MembershipRule
 
@@ -48,9 +48,8 @@ class UniverseSnapshot(BaseModel):
 
     as_of: date
     rule: MembershipRule
-    data_ref: str | None = Field(
-        default=None,
-        description="Dataset snapshot / accessor version the membership was computed from.",
+    data_ref: str = Field(
+        description="Dataset snapshot / accessor version the membership was computed from. Required: an unreferenced universe is ungovernable."
     )
     members: list[UniverseMember] = Field(default_factory=list)
     excluded: list[Exclusion] = Field(default_factory=list)
@@ -67,7 +66,7 @@ class UniverseEngine:
         self,
         accessor: DataAccessor,
         rule: MembershipRule,
-        data_ref: str | None = None,
+        data_ref: str,
     ):
         self.accessor = accessor
         self.rule = rule
@@ -80,7 +79,14 @@ class UniverseEngine:
         for inst in self.accessor.instruments():
             if not self._eligible(inst, as_of):
                 excluded.append(
-                    Exclusion(instrument_id=inst.instrument_id, reason="not_listed_or_delisted")
+                    Exclusion(
+                        instrument_id=inst.instrument_id,
+                        reason=(
+                            "listed_after_asof"
+                            if inst.listing_date > as_of
+                            else f"delisted_asof({inst.delisting_date})"
+                        ),
+                    )
                 )
                 continue
             if inst.security_type not in self.rule.security_types:
@@ -160,10 +166,14 @@ class UniverseEngine:
         history = getattr(self.accessor, "symbol_history", None)
         if history is None:
             return inst.primary_ticker
+        if isinstance(history, SymbolHistoryRegistry):
+            return history.resolve(inst.instrument_id, as_of)
         if callable(history):
             entries = history(inst.instrument_id)
-        else:
+        elif hasattr(history, "get"):
             entries = history.get(inst.instrument_id, [])
+        else:
+            return inst.primary_ticker
         for entry in entries:
             if entry.covers(as_of):
                 return entry.symbol

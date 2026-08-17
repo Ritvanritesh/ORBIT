@@ -62,8 +62,11 @@ look easier than it was. This layer makes that impossible by construction.
      membership once its days actually fill the window).
   5. Rank by dollar volume desc (tie-break by instrument_id for determinism),
      cap at max names.
-  - Every exclusion records a machine-readable reason. Same inputs always
-    produce the same snapshot (covered by a determinism test).
+  - Every exclusion records a machine-readable reason (distinct reasons for
+    future listings vs delisted names). Same inputs always produce the same
+    snapshot (covered by a determinism test).
+  - `data_ref` is REQUIRED: every snapshot pins the dataset/accessor version
+    it was computed from - an unreferenced universe is ungovernable.
 
 ## 4. Rule v1 (MVP)
 
