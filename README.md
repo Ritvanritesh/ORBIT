@@ -11,7 +11,7 @@ Core thesis: the model is replaceable; the evidence chain is the product.
 
 - Phase 1 (Research Charter and Falsifiable Success Criteria) - complete:
   charter, HypothesisSpec/ExperimentSpec schemas, 3 registered seed
-  hypotheses, promotion gates.
+  hypotheses, promotion gates (21 tests).
 - Phase 2 (Universe and Data Architecture) - complete: instrument master,
   symbol history, corporate actions, benchmark set, versioned membership
   rules, delisting-aware + lagged-liquidity reconstruction engine (26 tests).
@@ -19,7 +19,7 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   (Yahoo chart API, SEC EDGAR companyfacts, FRED), immutable raw storage with
   checksums, validation gates, corporate-action reconciliation + records,
   normalized parquet artifacts, DuckDB provenance registry, reproducibility
-  check (92 tests). Run: `python scripts/phase3_run_all.py`.
+  check (99 tests). Run: `python scripts/phase3_run_all.py`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;

@@ -53,6 +53,14 @@ class FeaturePin(BaseModel):
     feature_version: str = Field(pattern=r"^v\d+(\.\d+)*$")
 
 
+_KNOWN_MODEL_FAMILIES = frozenset(
+    {
+        "heuristic", "linear", "ridge", "logistic", "random_forest",
+        "xgboost", "lightgbm", "null_shuffle",
+    }
+)
+
+
 class ModelSpec(BaseModel):
     """Pinned model specification. No anonymous weights."""
 
@@ -62,6 +70,13 @@ class ModelSpec(BaseModel):
     hyperparameters: dict[str, Any] = Field(default_factory=dict)
     target_transform: str | None = None
     uncertainty: bool = Field(default=False)
+
+    @field_validator("family")
+    @classmethod
+    def _family_known(cls, v: str) -> str:
+        if v not in _KNOWN_MODEL_FAMILIES:
+            raise ValueError(f"unknown model family: {v}")
+        return v
 
 
 class ExperimentSpec(BaseModel):
@@ -123,10 +138,12 @@ class ExperimentRegistry(BaseModel):
         spec: ExperimentSpec,
         hypothesis_registry: HypothesisRegistry | None = None,
     ) -> ExperimentSpec:
-        """Register an experiment, optionally enforcing hypothesis lineage.
+        """Register an experiment, optionally enforcing hypothesis lineage and
+        the hypothesis family's research budget.
 
         When a hypothesis registry is supplied, the experiment's
-        hypothesis_id must exist there (governance: no orphaned results).
+        hypothesis_id must exist there (governance: no orphaned results) and
+        the hypothesis's declared max_trials budget is enforced.
         """
         if spec.experiment_id in {e.experiment_id for e in self.experiments}:
             raise ValueError(f"duplicate experiment id: {spec.experiment_id}")
@@ -134,13 +151,25 @@ class ExperimentRegistry(BaseModel):
             e.experiment_id for e in self.experiments
         }:
             raise ValueError(f"unknown parent experiment: {spec.parent_id}")
+        if spec.parent_id is not None:
+            parent = self.get(spec.parent_id)
+            if parent.hypothesis_id != spec.hypothesis_id:
+                raise ValueError(
+                    f"parent {spec.parent_id} belongs to {parent.hypothesis_id}, "
+                    f"not {spec.hypothesis_id}: genealogy is hypothesis-scoped"
+                )
         if hypothesis_registry is not None:
             try:
-                hypothesis_registry.get(spec.hypothesis_id)
+                hyp = hypothesis_registry.get(spec.hypothesis_id)
             except KeyError:
                 raise ValueError(
                     f"experiment references unknown hypothesis: {spec.hypothesis_id}"
                 ) from None
+            if self.trials_for(spec.hypothesis_id) >= hyp.research_budget.max_trials:
+                raise ValueError(
+                    f"research budget exhausted for {spec.hypothesis_id}: "
+                    f"{hyp.research_budget.max_trials} trials maximum"
+                )
         registered = spec.model_copy(update={"status": ExperimentStatus.REGISTERED})
         self.experiments.append(registered)
         return registered

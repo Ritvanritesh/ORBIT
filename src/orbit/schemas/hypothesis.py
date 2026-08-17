@@ -30,7 +30,7 @@ class LabelSpec(BaseModel):
         default=None,
         description="Benchmark for EXCESS_RETURN labels, e.g. SPY.",
     )
-    label_version: str = Field(default="v1")
+    label_version: str = Field(default="v1", pattern=r"^v\d+(\.\d+)*$")
     definition: str = Field(
         description="Exact mathematical definition. Must be unambiguous."
     )
@@ -38,6 +38,12 @@ class LabelSpec(BaseModel):
         default="purge+embargo",
         description="How overlapping horizons are handled in validation.",
     )
+
+    @model_validator(mode="after")
+    def _excess_requires_benchmark(self) -> "LabelSpec":
+        if self.label_type == LabelType.EXCESS_RETURN and not self.benchmark:
+            raise ValueError("EXCESS_RETURN labels require a benchmark")
+        return self
 
 
 class EconomicEvidence(BaseModel):
@@ -95,7 +101,7 @@ class HypothesisSpec(BaseModel):
 
     hypothesis_id: str = Field(pattern=r"^H-\d{3}$")
     title: str
-    version: str = Field(default="v1")
+    version: str = Field(default="v1", pattern=r"^v\d+(\.\d+)*$")
     author: str = "orbit-research"
 
     statement: str = Field(
@@ -139,10 +145,23 @@ class HypothesisSpec(BaseModel):
     @model_validator(mode="after")
     def _status_vs_registration(self) -> "HypothesisSpec":
         if (
-            self.status in (HypothesisStatus.REGISTERED, HypothesisStatus.ACTIVE)
+            self.status not in (HypothesisStatus.DRAFT, HypothesisStatus.PROPOSED)
             and self.registration_date is None
         ):
-            raise ValueError("registered/active hypotheses require registration_date")
+            raise ValueError(
+                "hypotheses beyond draft/proposed require registration_date"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def _feature_families_known(self) -> "HypothesisSpec":
+        known = {
+            "momentum", "reversal", "volatility", "liquidity",
+            "relative_strength", "fundamentals", "market_regime",
+        }
+        unknown = [f for f in self.feature_families if f not in known]
+        if unknown:
+            raise ValueError(f"unknown feature family: {unknown}")
         return self
 
     @model_validator(mode="after")
@@ -157,14 +176,18 @@ class HypothesisSpec(BaseModel):
             )
         return self
 
-    def register(self) -> "HypothesisSpec":
-        """Promote to REGISTERED, freezing the spec. Criteria cannot change after this."""
+    def register(self, registration_date: date | None = None) -> "HypothesisSpec":
+        """Promote to REGISTERED, freezing the spec. Criteria cannot change after this.
+
+        The registration date defaults to today; pass an explicit date for
+        deterministic replay (tests, historical backfills).
+        """
         if self.status not in (HypothesisStatus.DRAFT, HypothesisStatus.PROPOSED):
             raise ValueError(f"cannot register hypothesis in status {self.status.value}")
         return self.model_copy(
             update={
                 "status": HypothesisStatus.REGISTERED,
-                "registration_date": date.today(),
+                "registration_date": registration_date or date.today(),
             }
         )
 
@@ -180,18 +203,18 @@ class HypothesisRegistry(BaseModel):
                 return h
         raise KeyError(f"unknown hypothesis: {hypothesis_id}")
 
-    def register(self, spec: HypothesisSpec) -> HypothesisSpec:
+    def register(self, spec: HypothesisSpec, registration_date: date | None = None) -> HypothesisSpec:
         if spec.hypothesis_id in {h.hypothesis_id for h in self.hypotheses}:
             raise ValueError(f"duplicate hypothesis id: {spec.hypothesis_id}")
-        registered = spec.register()
+        registered = spec.register(registration_date=registration_date)
         self.hypotheses.append(registered)
         return registered
 
-    def register_all(self) -> "HypothesisRegistry":
+    def register_all(self, registration_date: date | None = None) -> "HypothesisRegistry":
         """Freeze every draft/proposed hypothesis (idempotent, strict on status)."""
         return HypothesisRegistry(
             hypotheses=[
-                h.register()
+                h.register(registration_date=registration_date)
                 if h.status in (HypothesisStatus.DRAFT, HypothesisStatus.PROPOSED)
                 else h
                 for h in self.hypotheses

@@ -2,6 +2,7 @@
 
 import pytest
 from pydantic import ValidationError
+from datetime import date
 
 from orbit.schemas.common import HypothesisStatus
 from orbit.schemas.experiment import ExperimentRegistry, ExperimentSpec, WindowSpec
@@ -278,3 +279,112 @@ def test_economic_evidence_cannot_be_vacuous():
         falsification_criteria="never",
         evidence_type="research_quality",
     )
+
+
+def _spec(hypothesis_id="H-001", **overrides):
+    base = dict(
+        title="t",
+        statement="x predicts y",
+        mechanism="reason",
+        baseline=["b1"],
+        universe="liquid_equity_50_100",
+        label={
+            "label_type": "excess_return",
+            "horizon": "5D",
+            "benchmark": "SPY",
+            "definition": "def",
+        },
+        feature_families=["momentum"],
+        data_sources=["src"],
+        economic_evidence={"oos_rank_ic": 0.03},
+        falsification_criteria="never",
+    )
+    base.update(overrides)
+    return HypothesisSpec(hypothesis_id=hypothesis_id, **base)
+
+
+def _exp(experiment_id="EXP-00010", hypothesis_id="H-001", **overrides):
+    base = dict(
+        title="t",
+        datasets=["d"],
+        features={"feature_names": ["f"], "feature_version": "v1"},
+        model={"family": "linear"},
+        windows={
+            "train_start": "2015-01-01",
+            "train_end": "2020-01-01",
+            "val_start": "2020-01-02",
+            "val_end": "2021-01-01",
+            "test_start": "2021-01-02",
+            "test_end": "2022-01-01",
+        },
+    )
+    base.update(overrides)
+    return ExperimentSpec(experiment_id=experiment_id, hypothesis_id=hypothesis_id, **base)
+
+
+def test_registration_date_is_injectable_and_deterministic():
+    registry = build_seed_registry()
+    pinned = date(2026, 1, 15)
+    once = registry.register_all(registration_date=pinned)
+    assert {h.registration_date for h in once.hypotheses} == {pinned}
+    twice = once.register_all(registration_date=date(2026, 2, 1))
+    assert [h.registration_date for h in twice.hypotheses] == [
+        h.registration_date for h in once.hypotheses
+    ]
+
+
+def test_terminal_statuses_require_registration():
+    with pytest.raises(ValidationError):
+        _spec(hypothesis_id="H-993", status="promoted")
+    with pytest.raises(ValidationError):
+        _spec(hypothesis_id="H-992", status="falsified")
+
+
+def test_excess_return_label_requires_benchmark():
+    with pytest.raises(ValidationError):
+        _spec(
+            hypothesis_id="H-991",
+            label={
+                "label_type": "excess_return",
+                "horizon": "5D",
+                "definition": "def",
+            },
+        )
+    # non-excess labels may carry a benchmark but do not require one
+    _spec(
+        hypothesis_id="H-990",
+        label={
+            "label_type": "forward_return",
+            "horizon": "5D",
+            "definition": "def",
+        },
+    )
+
+
+def test_unknown_feature_family_rejected():
+    with pytest.raises(ValidationError):
+        _spec(hypothesis_id="H-989", feature_families=["mommentum"])
+
+
+def test_unknown_model_family_rejected():
+    with pytest.raises(ValidationError):
+        _exp(model={"family": "neural_net"})
+
+
+def test_genealogy_is_hypothesis_scoped():
+    registry = ExperimentRegistry()
+    parent = _exp(experiment_id="EXP-00011", hypothesis_id="H-001")
+    registry.register(parent)
+    with pytest.raises(ValueError):
+        registry.register(
+            _exp(experiment_id="EXP-00012", hypothesis_id="H-002", parent_id="EXP-00011")
+        )
+
+
+def test_research_budget_is_enforced():
+    hypotheses = build_seed_registry()
+    hypotheses.hypotheses[0] = _spec(hypothesis_id="H-001", research_budget={"max_trials": 1})
+    registry = ExperimentRegistry()
+    registry.register(_exp(experiment_id="EXP-00013", hypothesis_id="H-001"), hypotheses)
+    with pytest.raises(ValueError):
+        registry.register(_exp(experiment_id="EXP-00014", hypothesis_id="H-001"), hypotheses)
