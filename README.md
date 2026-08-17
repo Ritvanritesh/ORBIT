@@ -9,16 +9,20 @@ Core thesis: the model is replaceable; the evidence chain is the product.
 
 ## Status
 
-Phase 1 (Research Charter and Falsifiable Success Criteria) - complete:
-charter, HypothesisSpec/ExperimentSpec schemas, 3 registered seed hypotheses,
-promotion gates, 13+ tests. Awaiting charter sign-off before Phase 2
-(Universe and Data Architecture).
+- Phase 1 (Research Charter and Falsifiable Success Criteria) - complete:
+  charter, HypothesisSpec/ExperimentSpec schemas, 3 registered seed
+  hypotheses, promotion gates.
+- Phase 2 (Universe and Data Architecture) - complete: instrument master,
+  symbol history, corporate actions, benchmark set, versioned membership
+  rules, delisting-aware + lagged-liquidity reconstruction engine (23 tests).
+- Awaiting charter sign-off before Phase 3 (Raw Historical Data Ingestion).
 
 ## Structure
 
 ```
-docs/                  Research charter, seed hypotheses, gates and policy
-src/orbit/schemas/     HypothesisSpec / ExperimentSpec (Pydantic) - Phase 1
+docs/                  Charter, seed hypotheses, gates, universe architecture
+src/orbit/schemas/     HypothesisSpec / ExperimentSpec / Instrument / data contracts
+src/orbit/universe/    Membership rules + delisting-aware reconstruction engine
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Future phases: data, temporal, features, models, backtest
 tests/                 Validation tests

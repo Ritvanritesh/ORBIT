@@ -1,4 +1,4 @@
-"""Phase 1 schema surface: HypothesisSpec, ExperimentSpec, registries."""
+"""Phase 1+2 schema surface: hypotheses, experiments, instruments, data."""
 
 from orbit.schemas.common import (
     CostModel,
@@ -10,6 +10,7 @@ from orbit.schemas.common import (
     LeakageClass,
     UniverseScope,
 )
+from orbit.schemas.data import DatasetSnapshot, MarketBar
 from orbit.schemas.experiment import (
     ExperimentRegistry,
     ExperimentSpec,
@@ -24,8 +25,17 @@ from orbit.schemas.hypothesis import (
     LabelSpec,
     ResearchBudget,
 )
+from orbit.schemas.instrument import (
+    Benchmark,
+    CorporateAction,
+    Exchange,
+    Instrument,
+    SectorTaxonomy,
+    SymbolHistory,
+)
 
 __all__ = [
+    "CostModel",
     "EvidenceType",
     "ExperimentStatus",
     "Horizon",
@@ -33,7 +43,8 @@ __all__ = [
     "LabelType",
     "LeakageClass",
     "UniverseScope",
-    "CostModel",
+    "DatasetSnapshot",
+    "MarketBar",
     "ExperimentRegistry",
     "ExperimentSpec",
     "FeaturePin",
@@ -44,4 +55,10 @@ __all__ = [
     "HypothesisSpec",
     "LabelSpec",
     "ResearchBudget",
+    "Benchmark",
+    "CorporateAction",
+    "Exchange",
+    "Instrument",
+    "SectorTaxonomy",
+    "SymbolHistory",
 ]
