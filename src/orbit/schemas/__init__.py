@@ -1,6 +1,7 @@
 """Phase 1 schema surface: HypothesisSpec, ExperimentSpec, registries."""
 
 from orbit.schemas.common import (
+    CostModel,
     EvidenceType,
     ExperimentStatus,
     Horizon,
@@ -10,7 +11,6 @@ from orbit.schemas.common import (
     UniverseScope,
 )
 from orbit.schemas.experiment import (
-    CostModel,
     ExperimentRegistry,
     ExperimentSpec,
     FeaturePin,

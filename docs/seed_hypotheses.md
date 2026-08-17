@@ -17,8 +17,8 @@ forward excess returns after costs.
 - Baselines: equal-weight top 50, SPY hold
 - Economic evidence: OOS rank IC >= 0.03, after-cost annual excess >= 3%,
   >= 3 regimes, >= 4 walk-forward windows
-- Falsified if: any threshold missed, or no incremental lift over baseline,
-  or no momentum family lift over equal-weight.
+- Falsified if: any threshold missed, or after-cost annualized excess vs the
+  equal-weight top-50 baseline < 1%.
 
 ## H-002: Low realized volatility anomaly
 
@@ -31,10 +31,10 @@ exposure to the same universe.
   minus the SPY equivalent (risk-adjusted excess, point-in-time)
 - Features: volatility, liquidity families
 - Baselines: equal-weight top 50, SPY hold
-- Economic evidence: OOS rank IC >= 0.02, after-cost risk-adjusted excess
-  >= 2%, >= 3 regimes, >= 4 walk-forward windows
-- Falsified if: effect vanishes under volatility targeting, or thresholds
-  missed.
+- Economic evidence: OOS rank IC >= 0.02, after-cost annual excess >= 2%,
+  >= 3 regimes, >= 4 walk-forward windows
+- Falsified if: thresholds missed, or risk-adjusted after-cost excess under
+  default volatility targeting < 1% vs the equal-weight baseline.
 
 ## H-003: Post-earnings-announcement drift (PEAD) via point-in-time fundamentals
 
@@ -49,8 +49,9 @@ forward excess returns in liquid US equities.
 - Baselines: equal-weight top 50, SPY hold, momentum baseline
 - Economic evidence: OOS rank IC >= 0.02, after-cost annual excess >= 2%,
   >= 2 regimes, >= 4 walk-forward windows
-- Falsified if: thresholds missed, no lift over momentum baseline, or any
-  synthetic future-leak test catches use of post-publication/revised data.
+- Falsified if: thresholds missed, after-cost excess vs momentum baseline
+  < 1%, or any synthetic future-leak test catches use of post-publication/
+  revised data.
 - Leakage class: `future_publication` (the entire point of the test is that
   point-in-time discipline removes it).
 

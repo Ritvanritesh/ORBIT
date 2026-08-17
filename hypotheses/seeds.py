@@ -54,7 +54,8 @@ def build_seed_registry() -> HypothesisRegistry:
             "Falsified if: (a) OOS rank IC < 0.03, or (b) after-cost annual "
             "excess vs SPY < 3%, or (c) the effect survives fewer than 3 "
             "distinct regimes or fewer than 4 sequential walk-forward windows, "
-            "or (d) momentum adds no OOS lift over the equal-weight baseline."
+            "or (d) after-cost annualized excess vs the equal-weight top-50 "
+            "baseline portfolio < 1%."
         ),
         non_goals=[
             "Intraday or order-book momentum",
@@ -102,9 +103,10 @@ def build_seed_registry() -> HypothesisRegistry:
         ),
         falsification_criteria=(
             "Falsified if: (a) risk-adjusted after-cost excess vs the "
-            "equal-weight baseline < 2% annualized, or (b) the effect "
-            "disappears under volatility-targeted sizing, or (c) it survives "
-            "fewer than 3 regimes / 4 walk-forward windows."
+            "equal-weight baseline < 2% annualized, or (b) the risk-adjusted "
+            "after-cost excess under the charter's default volatility "
+            "targeting < 1% annualized vs the equal-weight baseline, or "
+            "(c) it survives fewer than 3 regimes / 4 walk-forward windows."
         ),
         non_goals=[
             "Options or implied-volatility products",
@@ -151,8 +153,8 @@ def build_seed_registry() -> HypothesisRegistry:
         ),
         falsification_criteria=(
             "Falsified if: (a) OOS rank IC < 0.02 or after-cost annual excess "
-            "< 2%, (b) the signal's OOS lift over the momentum baseline is "
-            "not material, or (c) any synthetic future-leak test in the "
+            "< 2%, (b) after-cost annualized excess vs the momentum baseline "
+            "portfolio < 1%, or (c) any synthetic future-leak test in the "
             "temporal-truth engine catches the signal using post-publication "
             "or revised fundamentals."
         ),

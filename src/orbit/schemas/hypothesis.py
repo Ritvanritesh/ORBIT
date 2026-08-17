@@ -145,6 +145,18 @@ class HypothesisSpec(BaseModel):
             raise ValueError("registered/active hypotheses require registration_date")
         return self
 
+    @model_validator(mode="after")
+    def _economic_evidence_not_vacuous(self) -> "HypothesisSpec":
+        if (
+            self.evidence_type == EvidenceType.ECONOMIC
+            and self.economic_evidence.oos_rank_ic is None
+            and self.economic_evidence.after_cost_annual_excess is None
+        ):
+            raise ValueError(
+                "economic evidence requires oos_rank_ic and/or after_cost_annual_excess"
+            )
+        return self
+
     def register(self) -> "HypothesisSpec":
         """Promote to REGISTERED, freezing the spec. Criteria cannot change after this."""
         if self.status not in (HypothesisStatus.DRAFT, HypothesisStatus.PROPOSED):

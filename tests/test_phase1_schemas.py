@@ -236,3 +236,45 @@ def test_experiment_registry_enforces_hypothesis_lineage():
     )
     with pytest.raises(ValueError):
         registry.register(orphan, hypothesis_registry=hypotheses)
+
+
+def test_economic_evidence_cannot_be_vacuous():
+    with pytest.raises(ValidationError):
+        HypothesisSpec(
+            hypothesis_id="H-995",
+            title="no thresholds",
+            statement="x predicts y",
+            mechanism="reason",
+            baseline=["b1"],
+            universe="liquid_equity_50_100",
+            label={
+                "label_type": "excess_return",
+                "horizon": "5D",
+                "benchmark": "SPY",
+                "definition": "def",
+            },
+            feature_families=["momentum"],
+            data_sources=["src"],
+            economic_evidence={},
+            falsification_criteria="never",
+        )
+    # research-quality evidence may skip economic thresholds
+    HypothesisSpec(
+        hypothesis_id="H-994",
+        title="research quality ok",
+        statement="x predicts y",
+        mechanism="reason",
+        baseline=["b1"],
+        universe="liquid_equity_50_100",
+        label={
+            "label_type": "excess_return",
+            "horizon": "5D",
+            "benchmark": "SPY",
+            "definition": "def",
+        },
+        feature_families=["momentum"],
+        data_sources=["src"],
+        economic_evidence={},
+        falsification_criteria="never",
+        evidence_type="research_quality",
+    )

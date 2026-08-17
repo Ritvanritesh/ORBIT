@@ -9,7 +9,10 @@ Core thesis: the model is replaceable; the evidence chain is the product.
 
 ## Status
 
-Phase 1 (Research Charter and Falsifiable Success Criteria) - in progress.
+Phase 1 (Research Charter and Falsifiable Success Criteria) - complete:
+charter, HypothesisSpec/ExperimentSpec schemas, 3 registered seed hypotheses,
+promotion gates, 13+ tests. Awaiting charter sign-off before Phase 2
+(Universe and Data Architecture).
 
 ## Structure
 
