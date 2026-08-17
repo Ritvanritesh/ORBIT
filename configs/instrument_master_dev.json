@@ -1,0 +1,65 @@
+{
+  "description": "Minimal instrument master for the Phase 3 development sample. Phase 2 defined the schema; this file seeds the 5 dev instruments with stable ORBIT identities, exchange timezones, and SEC CIKs. Delisted names MUST be kept in the master for survivorship control; the dev sample is all currently-listed names and will be extended with delisted history in later phases.",
+  "exchanges": {
+    "XNYS": {"name": "NYSE", "mic": "XNYS", "country": "US", "tz": "America/New_York", "open_local": "09:30:00", "close_local": "16:00:00"},
+    "XNAS": {"name": "NASDAQ", "mic": "XNAS", "country": "US", "tz": "America/New_York", "open_local": "09:30:00", "close_local": "16:00:00"}
+  },
+  "instruments": [
+    {
+      "instrument_id": "INS-000001",
+      "primary_ticker": "AAPL",
+      "exchange_id": "XNAS",
+      "name": "Apple Inc.",
+      "security_type": "equity",
+      "sector_id": "S35",
+      "listing_date": "1980-12-12",
+      "delisting_date": null,
+      "cik": 320193
+    },
+    {
+      "instrument_id": "INS-000002",
+      "primary_ticker": "MSFT",
+      "exchange_id": "XNAS",
+      "name": "Microsoft Corporation",
+      "security_type": "equity",
+      "sector_id": "S45",
+      "listing_date": "1986-03-13",
+      "delisting_date": null,
+      "cik": 789019
+    },
+    {
+      "instrument_id": "INS-000003",
+      "primary_ticker": "JNJ",
+      "exchange_id": "XNYS",
+      "name": "Johnson & Johnson",
+      "security_type": "equity",
+      "sector_id": "S35",
+      "listing_date": "1944-01-01",
+      "delisting_date": null,
+      "cik": 200406
+    },
+    {
+      "instrument_id": "INS-000004",
+      "primary_ticker": "XOM",
+      "exchange_id": "XNYS",
+      "name": "Exxon Mobil Corporation",
+      "security_type": "equity",
+      "sector_id": "S10",
+      "listing_date": "1920-01-01",
+      "delisting_date": null,
+      "cik": 34088
+    },
+    {
+      "instrument_id": "INS-000005",
+      "primary_ticker": "WMT",
+      "exchange_id": "XNYS",
+      "name": "Walmart Inc.",
+      "security_type": "equity",
+      "sector_id": "S30",
+      "listing_date": "1970-10-01",
+      "delisting_date": null,
+      "cik": 104169
+    }
+  ],
+  "benchmarks": []
+}

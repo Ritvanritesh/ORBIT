@@ -1,0 +1,51 @@
+{
+  "description": "ORBIT source registry: classification (development | research_candidate | authoritative), verification record, and licensing notes. A source is only promoted to authoritative with evidence. Verified 2026-08-17.",
+  "sources": {
+    "yahoo_chart_api": {
+      "domain": "market",
+      "classification": "DEVELOPMENT",
+      "status": "working",
+      "notes": "Free, keyless, bulk-ish (one JSON per symbol, full history). Unofficial: no license for redistribution, data may contain errors. OHLC is split-adjusted (confirmed: AAPL 2014-06 close ~23.06 implies 7:1 split 2014 + 4:1 split 2020 applied). Use only to prove the pipeline; never promote to authoritative without a license review.",
+      "verified": "2026-08-17",
+      "verification": "downloaded AAPL 30y daily, 7547 bars, split/dividend events present",
+      "license_ref": "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html (unofficial API; redistribution not granted)"
+    },
+    "stooq_csv": {
+      "domain": "market",
+      "classification": "RESEARCH CANDIDATE",
+      "status": "gated",
+      "notes": "Bulk daily CSV, split-adjusted close. As of early 2026 programmatic downloads require an API key obtained via an on-site CAPTCHA; keyless automated access returned a JS verification challenge / Access denied on 2026-08-17. Connector implemented with key support; verify terms of use before any production use.",
+      "verified": "2026-08-17",
+      "verification": "keyless request blocked (JS challenge + Access denied); key-gated per apis.io/community reports",
+      "license_ref": "https://stooq.com/t/?id=5&l=en (terms to be re-verified)"
+    },
+    "sec_edgar_companyfacts": {
+      "domain": "fundamentals",
+      "classification": "AUTHORITATIVE",
+      "status": "working",
+      "notes": "Official SEC XBRL company facts, free, with filing metadata (accn, filed, fy, fp) for point-in-time reconstruction. Requires a declared User-Agent with contact; SEC asks <= 10 requests/second. Raw JSON is preserved verbatim; Phase 4 owns as-of logic.",
+      "verified": "2026-08-17",
+      "verification": "AAPL companyfacts JSON downloaded: 503 us-gaap facts, filing metadata present",
+      "license_ref": "https://www.sec.gov/page/edgar-frequently-asked-questions"
+    },
+    "fred_csv": {
+      "domain": "macro",
+      "classification": "AUTHORITATIVE",
+      "status": "working",
+      "notes": "Free keyless CSV per series. Delivers the latest published vintage only - NOT historical vintages. Missing values appear as '.' and are preserved as null, never filled.",
+      "verified": "2026-08-17",
+      "verification": "DFF downloaded: 26342 observations 1954-07-01 .. 2026-08-13",
+      "license_ref": "https://fred.stlouisfed.org/legal/"
+    },
+    "alfred_vintages": {
+      "domain": "macro",
+      "classification": "RESEARCH CANDIDATE",
+      "status": "gated",
+      "notes": "ALFRED is the archival vintage database Phase 4 needs. Programmatic CSV endpoint (alfred.stlouisfed.org/series/downloaddata) timed out from this machine on 2026-08-17; may require the free FRED API key. Connector attempts vintages only when explicitly requested.",
+      "verified": "2026-08-17",
+      "verification": "downloaddata?series_id=DFF timed out (60s x2); fredgraph.csv (latest vintage) works",
+      "license_ref": "https://fred.stlouisfed.org/legal/"
+    }
+  },
+  "macro_series": ["DFF", "CPIAUCSL", "UNRATE"]
+}

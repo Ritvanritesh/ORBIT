@@ -1,0 +1,24 @@
+Before declaring this phase complete, perform multiple independent reviews of the implementation.
+
+Review 1: Requirements audit
+Compare every implemented component against the ORBIT roadmap and the current phase requirements. Identify anything missing, incorrectly implemented, or inconsistent.
+
+Review 2: Technical audit
+Inspect the code for bugs, bad assumptions, unnecessary complexity, duplication, poor error handling, reproducibility problems, and architectural inconsistencies.
+
+Review 3: Research/quantitative audit
+Examine whether the implementation could introduce statistical bias, data leakage, survivorship bias, look-ahead information, incorrect timestamps, invalid financial assumptions, or misleading research results.
+
+Do not assume the current implementation is correct simply because tests pass.
+
+For every issue found:
+
+Explain the problem.
+Explain why it matters.
+Fix it.
+Add or improve a test that would catch the problem in the future.
+Run the relevant tests again.
+
+After fixing the issues, perform a second independent pass looking specifically for problems missed during the first review.
+
+Do not declare the phase complete until the implementation, tests, documentation, and architecture are consistent with the ORBIT roadmap.

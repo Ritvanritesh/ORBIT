@@ -1,0 +1,8 @@
+{
+  "description": "Phase 3 development sample: 5 US equities across sectors. Used to prove the ingestion pipeline before expanding 5 -> 20 -> 50 -> 100.",
+  "date_range": ["1996-01-01", "2026-08-17"],
+  "market_provider": "yahoo_chart_api",
+  "fundamentals_provider": "sec_edgar_companyfacts",
+  "macro_provider": "fred_csv",
+  "symbols": ["AAPL", "MSFT", "JNJ", "XOM", "WMT"]
+}

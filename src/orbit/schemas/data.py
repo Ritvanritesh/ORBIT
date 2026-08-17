@@ -13,7 +13,13 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class DatasetSnapshot(BaseModel):
-    """An immutable, checksummed delivery of a dataset."""
+    """An immutable, checksummed delivery of a dataset.
+
+    This is the provenance root: every experiment pins the exact snapshot it
+    consumed. Phase 3 extends the delivery record with row counts, coverage,
+    validation outcome, and the manifest path so the answer to "exactly what
+    data did ORBIT use?" is one lookup away.
+    """
 
     model_config = ConfigDict(frozen=True)
 
@@ -29,6 +35,17 @@ class DatasetSnapshot(BaseModel):
     available_to: date
     ingest_time: datetime
     license_ref: str | None = None
+
+    row_count: int | None = None
+    instrument_count: int | None = None
+    validation_status: str | None = Field(
+        default=None,
+        description="ok | failed | pending - gate for downstream use.",
+    )
+    manifest_path: str | None = Field(
+        default=None,
+        description="Path to the ingestion manifest recording checksums and provenance.",
+    )
 
     @model_validator(mode="after")
     def _check_range(self) -> "DatasetSnapshot":
