@@ -112,3 +112,15 @@ Targeted exit audit (last untouched corners before close-out):
 - E4: registry edge cases in build_temporal_source (missing manifest_path, null downloaded_at) are handled by Optional fields - no crash path found.
 - All fixes verified: 216 tests pass, no Phase 1-3 regression; README/docs updated.
 Final verdict: PASS. Phase 4 complete.
+
+
+Phase 5 (Labeling & Outcome Engine) - full 3-review protocol run on the shipped state:
+Review 1 (requirements) / Review 2 (technical) / Review 3 (research-quantitative) + second independent pass:
+- L1 (LOW): LabelSnapshot.equals() compared data_refs ORDER-sensitively while content_digest sorts them - two snapshots with identical digests could compare unequal, an identity inconsistency. Fixed: sorted comparison; regression test (reordered refs equal, genuinely different refs not).
+- L2 (MEDIUM): VOLATILITY/DRAWDOWN contracts silently accepted a SIMPLE_TOTAL_RETURN convention while the estimators/drawdown math is close-to-close PRICE returns only - the label row would record a convention that misdescribes the computed value. Fixed: validator rejects SIMPLE_TOTAL_RETURN for VOLATILITY/DRAWDOWN; regression tests.
+- L3 (LOW): __import__ hack in an engine test cleaned to a direct import.
+- L4 (DOC): MISSING_DIVIDEND_DATA reserved semantics documented (events artifact required for total return - its absence raises, never a silent price-return label; the artifact is the authoritative dividend ledger per instrument, an empty dividend list means no dividends).
+- L5 (LOW): empty_label_frame canonical-schema check tightened (was order-agnostic, now exact canonical column order) - 0-row frames are validated like non-empty frames.
+- Second independent pass: adversarial live probes on the shipped engine: reverse-split ratio 0.5 (as-published identity holds, no artificial returns), summer DST 20:00 UTC strict boundary, offset-aware ISO decision strings, benchmark dividends counted in excess total return - all pass. normalize_instant audited (tz-aware -> naive UTC) and reused verbatim from Phase 4; entry-bar/as-published agreement with TemporalTruthEngine and completed_bars verified by integration tests.
+- All fixes verified: 298 tests pass (216 Phase 1-4 + 82 Phase 5), no Phase 1-4 regression; README/docs updated.
+Final verdict: PASS. Phase 5 complete.

@@ -33,21 +33,40 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   volume basis), effective-time gate, release-calendar sharpening, contract
   convention validation, full test suite 216 tests. See
   `docs/phase4_temporal_truth.md`.
+- Phase 5 (Labeling & Outcome Engine) - complete: one immutable, versioned
+  `LabelContract` per prediction target (semantics required, nothing
+  inferred), `LabelEngine` computing exactly one reproducible future
+  outcome per decision row (trading-session horizons that never count
+  calendar gaps, strict session-close boundaries, POST_EVENT anchors,
+  split-continuous return basis with as-published audit closes, ex-date
+  dividends on the stored share basis, delisting vs data-shortfall
+  classification, explicit unavailable reasons, benchmark windows that
+  share the exact anchor/horizon), `LabelVersionRegistry` immutability
+  (no re-registration, no version inflation), `LabelSnapshot` with a
+  deterministic content digest, overlap metadata for later purging,
+  golden hand-calculation tests, Phase 4 integration tests (entry-bar and
+  as-published agreement, no label leakage, artifact separation), full
+  test suite 296 tests. Seed contracts registered: LAB-001 (H-001
+  momentum) and LAB-003 (H-003 PEAD); LAB-002 (H-002 risk-adjusted) is
+  deferred. See `docs/phase5_labels.md`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
-  benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;
-  ALFRED vintage access (schema-ready; revised macro series are
-  point-in-time blocked - reported as snapshot limitations - until then).
+  benchmark instruments (SPY + broad/sector ETFs) for excess-return labels
+  (the seed contracts require the SPY series); ALFRED vintage access
+  (schema-ready; revised macro series are point-in-time blocked - reported
+  as snapshot limitations - until then).
 
 ## Structure
 
 ```
 docs/                  Charter, seed hypotheses, gates, universe architecture,
-                       phase4_temporal_truth.md (temporal engine conventions)
+                       phase4_temporal_truth.md (temporal engine conventions),
+                       phase5_labels.md (label contract and outcome conventions)
 src/orbit/schemas/     HypothesisSpec / ExperimentSpec / Instrument / data contracts
 src/orbit/universe/    Membership rules + delisting-aware reconstruction engine
 src/orbit/temporal/    Phase 4: times, rules, adapters, engine, snapshot,
                        features, fixtures, contracts
+src/orbit/labels/      Phase 5: contract, outcomes, engine, snapshot, registry, seeds
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Ingestion (Phase 3): providers, parsing, registry, storage, validators
 scripts/               phase3_run_all.py - end-to-end ingest + verify + provenance
