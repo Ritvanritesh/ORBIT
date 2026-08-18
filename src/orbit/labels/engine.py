@@ -44,10 +44,9 @@ frame, row for row (the snapshot layer adds a content digest).
 from __future__ import annotations
 
 import math
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from enum import Enum
 from typing import Any
-from zoneinfo import ZoneInfo
 
 import polars as pl
 
@@ -60,10 +59,8 @@ from orbit.labels.outcomes import (
     realized_volatility,
     window_returns,
 )
-from orbit.temporal.adapters import _ADJUSTED_LABELS, as_published_bars
+from orbit.temporal.adapters import _ADJUSTED_LABELS, _ex_date_ny, as_published_bars
 from orbit.temporal.times import normalize_instant, session_close_utc
-
-_EXCHANGE_TZ = ZoneInfo("America/New_York")
 
 ENGINE_VERSION = "v1.0.0"
 
@@ -71,6 +68,20 @@ _BAR_REQUIRED = {
     "instrument_id", "trade_date", "open", "high", "low", "close", "volume",
 }
 _EVENT_REQUIRED = {"instrument_id", "kind", "ts", "ratio"}
+
+
+def _missing_price(value: Any) -> bool:
+    """A close that cannot participate in an outcome: None, NaN, infinite,
+    zero, or negative. A zero/negative/non-finite close is a defective or
+    degenerate price, never a legitimate -100% (or worse) return - treating
+    it as missing keeps the 'a reason is never a value' contract: the
+    outcome is explicitly unavailable, never silently fabricated."""
+    return (
+        value is None
+        or not isinstance(value, (int, float))
+        or not math.isfinite(value)
+        or value <= 0
+    )
 
 
 class UnavailableReason(str, Enum):
@@ -104,6 +115,7 @@ LABEL_OUTPUT_COLUMNS: list[tuple[str, pl.DataType]] = [
     ("version", pl.Utf8),
     ("contract_digest", pl.Utf8),
     ("engine_version", pl.Utf8),
+    ("price_basis", pl.Utf8),
     ("decision_id", pl.Utf8),
     ("instrument_id", pl.Utf8),
     ("decision_time", pl.Datetime("us")),
@@ -137,12 +149,12 @@ LABEL_OUTPUT_COLUMNS: list[tuple[str, pl.DataType]] = [
 ]
 
 
-def _event_session(ts: datetime) -> date | None:
+def _event_session(ts: Any) -> date | None:
     """Exchange-local session date of a corporate-action event timestamp
-    (the same rule as the Phase 3 normalizer's trade_date)."""
-    if ts is None:
-        return None
-    return ts.replace(tzinfo=timezone.utc).astimezone(_EXCHANGE_TZ).date()
+    (the same rule as the Phase 3 normalizer's trade_date, via the shared
+    adapter helper so strings, dates and tz-aware instants all resolve to
+    the correct exchange-local day)."""
+    return _ex_date_ny(ts)
 
 
 def empty_label_frame() -> pl.DataFrame:
@@ -174,17 +186,22 @@ class LabelEngine:
             self._instrument_by_id: dict[str, dict[str, Any]] = {}
         elif isinstance(instruments, pl.DataFrame):
             self._instrument_by_id = {
-                r["instrument_id"]: r for r in instruments.to_dicts()
+                r["instrument_id"]: self._normalize_instrument_row(r)
+                for r in instruments.to_dicts()
             }
         else:
             self._instrument_by_id = {}
             for it in instruments:
                 if isinstance(it, dict):
-                    self._instrument_by_id[it["instrument_id"]] = it
+                    self._instrument_by_id[it["instrument_id"]] = (
+                        self._normalize_instrument_row(it)
+                    )
                 else:
                     self._instrument_by_id[it.instrument_id] = {
                         "instrument_id": it.instrument_id,
-                        "delisting_date": getattr(it, "delisting_date", None),
+                        "delisting_date": self._as_date(
+                            getattr(it, "delisting_date", None)
+                        ),
                     }
 
         # Canonical basis guard: label returns require the split-continuous
@@ -214,6 +231,12 @@ class LabelEngine:
             )
 
         published = as_published_bars(bars, events, volume_basis=volume_basis)
+        basis = published["price_basis"].unique().to_list()
+        if len(basis) != 1:  # pragma: no cover - as_published_bars emits one
+            raise ValueError(
+                "price_basis must be uniform across the label engine's bars"
+            )
+        self._price_basis = basis[0]
         self._published = published.select(
             ["instrument_id", "trade_date", "close", "price_basis"]
         )
@@ -242,6 +265,31 @@ class LabelEngine:
 
     # ------------------------------------------------------------- queries
 
+    @staticmethod
+    def _as_date(value: Any) -> date | None:
+        """Normalize a delisting_date from the instrument master to a date
+        (the frame/dict path may carry Utf8 or Datetime values; comparing a
+        date against a str would crash the delisting classification)."""
+        if value is None:
+            return None
+        if isinstance(value, datetime):
+            return value.date()
+        if isinstance(value, date):
+            return value
+        if isinstance(value, str):
+            return date.fromisoformat(value)
+        raise TypeError(
+            f"cannot interpret delisting_date {value!r} "
+            f"({type(value).__name__})"
+        )
+
+    @staticmethod
+    def _normalize_instrument_row(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "instrument_id": row["instrument_id"],
+            "delisting_date": LabelEngine._as_date(row.get("delisting_date")),
+        }
+
     def bars_universe(self) -> list[str]:
         return sorted(self._series)
 
@@ -265,20 +313,17 @@ class LabelEngine:
             anchor = normalize_instant(anchor_instant)
             if anchor is None:
                 raise ValueError("anchor_instant is required for POST_EVENT")
-            for r in rows:
-                if r["session_close"] > anchor:
-                    return r
-            return None
-        t = normalize_instant(decision_time)
-        if t is None:
+        elif normalize_instant(decision_time) is None:
             raise ValueError("decision_time is required")
-        entry = None
-        for r in rows:
-            if r["session_close"] < t:
-                entry = r
-            else:
-                break
-        return entry
+        idx, row = self._entry_index(
+            rows,
+            anchor_mode,
+            {
+                "decision_time": normalize_instant(decision_time),
+                "anchor_instant": normalize_instant(anchor_instant),
+            },
+        )
+        return row
 
     def outcome_window(
         self, instrument_id: str, entry_session: date, horizon: int
@@ -397,10 +442,24 @@ class LabelEngine:
             "version": contract.version,
             "contract_digest": contract.content_hash(),
             "engine_version": ENGINE_VERSION,
+            # the basis of the *_as_published audit columns: with a
+            # corporate-actions artifact they are true as-published closes
+            # ("as_published"); without one they are the provider's
+            # split-adjusted values ("provider_split_adjusted") and are
+            # labeled exactly that - never silently presented as
+            # historical truth (the Phase 4 convention)
+            "price_basis": self._price_basis,
             "decision_id": d["decision_id"],
             "instrument_id": d["instrument_id"],
             "decision_time": d["decision_time"],
-            "anchor_instant": d["anchor_instant"],
+            # an anchor_instant only drives POST_EVENT anchors; a decision-
+            # instant contract must never record one (it would misdescribe
+            # what the computation actually used)
+            "anchor_instant": (
+                d["anchor_instant"]
+                if contract.anchor_mode == AnchorMode.POST_EVENT
+                else None
+            ),
             "anchor_mode": contract.anchor_mode.value,
             "entry_session": None,
             "entry_timestamp": None,
@@ -453,10 +512,11 @@ class LabelEngine:
                 base, UnavailableReason.NO_ENTRY_BAR,
                 "no completed bar qualifies as the reference session",
             )
-        if entry["close"] is None:
+        if _missing_price(entry["close"]):
             return self._unavailable(
                 base, UnavailableReason.MISSING_ENTRY_PRICE,
-                f"entry session {entry['trade_date']} has no close",
+                f"entry session {entry['trade_date']} has no close "
+                f"(missing, non-finite, zero or negative: {entry['close']!r})",
             )
         base["entry_session"] = entry["trade_date"]
         base["entry_timestamp"] = entry["session_close"]
@@ -471,10 +531,12 @@ class LabelEngine:
             reason, detail = self._shortfall(inst, rows, len(window), H)
             return self._unavailable(base, reason, detail)
         outcome = window[-1]
-        if outcome["close"] is None:
+        if _missing_price(outcome["close"]):
             return self._unavailable(
                 base, UnavailableReason.MISSING_OUTCOME_PRICE,
-                f"outcome session {outcome['trade_date']} has no close",
+                f"outcome session {outcome['trade_date']} has no close "
+                f"(missing, non-finite, zero or negative: "
+                f"{outcome['close']!r})",
             )
         base["outcome_session"] = outcome["trade_date"]
         base["outcome_timestamp"] = outcome["session_close"]
@@ -492,10 +554,12 @@ class LabelEngine:
             )
 
         closes = [r["close"] for r in rows]
-        if any(c is None for c in closes[entry_idx: entry_idx + 1 + H]):
+        if any(_missing_price(c) for c in closes[entry_idx: entry_idx + 1 + H]):
             return self._unavailable(
                 base, UnavailableReason.MISSING_WINDOW_PRICE,
-                "a close inside the outcome window is missing",
+                "a close inside the outcome window is missing (missing, "
+                "non-finite, zero or negative); the return cannot be "
+                "computed exactly",
             )
 
         target = contract.target_type
@@ -521,11 +585,11 @@ class LabelEngine:
                 asset_dividends,
             )
             bench = self._benchmark_return(contract, d)
-            if bench is None:
+            if bench is None or bench.get("value") is None:
                 return self._unavailable(
                     base, UnavailableReason.BENCHMARK_UNAVAILABLE,
                     f"benchmark {contract.benchmark} outcome unavailable for "
-                    "this decision",
+                    f"this decision: {bench.get('cause') if bench else 'unknown'}",
                 )
             base["benchmark_entry_session"] = bench["entry_session"]
             base["benchmark_outcome_session"] = bench["outcome_session"]
@@ -578,24 +642,48 @@ class LabelEngine:
     def _benchmark_return(
         self, contract: LabelContract, d: dict[str, Any]
     ) -> dict[str, Any] | None:
+        """Benchmark window return, or None with an explicit `cause` so the
+        label row can say WHY the benchmark was unavailable (a missing
+        series, a malformed event, a price defect and a short window are
+        all different failures and are never conflated)."""
         bench = contract.benchmark
         rows = self._series.get(bench) if bench else None
         if not rows:
-            return None
+            return {"cause": f"no bars for benchmark {bench}"}
         if bench in self._action_incomplete:
-            return None
+            return {
+                "cause": f"benchmark {bench} has incomplete corporate-action "
+                "data; its return basis cannot be established",
+            }
         entry_idx, entry = self._entry_index(rows, contract.anchor_mode, d)
-        if entry is None or entry["close"] is None:
-            return None
+        if entry is None:
+            return {
+                "cause": f"no completed bar for benchmark {bench} qualifies "
+                "at this decision instant",
+            }
+        if _missing_price(entry["close"]):
+            return {
+                "cause": f"benchmark {bench} entry close "
+                f"{entry['trade_date']} is missing or defective",
+            }
         window = rows[entry_idx + 1: entry_idx + 1 + contract.horizon]
         if len(window) < contract.horizon:
-            return None
+            return {
+                "cause": f"benchmark {bench} has only {len(window)} of "
+                f"{contract.horizon} sessions after its entry session",
+            }
         outcome = window[-1]
-        if outcome["close"] is None:
-            return None
+        if _missing_price(outcome["close"]):
+            return {
+                "cause": f"benchmark {bench} outcome close "
+                f"{outcome['trade_date']} is missing or defective",
+            }
         closes = [r["close"] for r in rows]
-        if any(c is None for c in closes[entry_idx: entry_idx + 1 + contract.horizon]):
-            return None
+        if any(_missing_price(c) for c in closes[entry_idx: entry_idx + 1 + contract.horizon]):
+            return {
+                "cause": f"benchmark {bench} has a missing or defective "
+                "close inside its outcome window",
+            }
         value = compute_return(
             closes, entry_idx, contract.horizon, contract.return_convention,
             self._window_dividends(bench, window),
@@ -604,6 +692,7 @@ class LabelEngine:
             "value": value,
             "entry_session": entry["trade_date"],
             "outcome_session": outcome["trade_date"],
+            "cause": None,
         }
 
     def _window_dividends(
@@ -673,7 +762,12 @@ class LabelEngine:
             inst = row["instrument_id"]
             ex_date = _event_session(row["ts"])
             ratio = row.get("ratio")
-            if ex_date is None or ratio is None or ratio <= 0:
+            # a ratio of NaN or inf is just as unusable as a missing one:
+            # `ratio <= 0` alone would let NaN through (NaN <= 0 is False)
+            # and poison the split factors / dividend amounts silently
+            if ex_date is None or ratio is None or not (
+                math.isfinite(ratio) and ratio > 0
+            ):
                 incomplete.add(inst)
                 continue
             if row["kind"] == "splits":

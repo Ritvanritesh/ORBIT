@@ -32,7 +32,12 @@ from typing import Any
 
 import polars as pl
 
-from orbit.temporal.times import EXCHANGE_TZ, TimePrecision, session_close_utc
+from orbit.temporal.times import (
+    EXCHANGE_TZ,
+    TimePrecision,
+    normalize_instant,
+    session_close_utc,
+)
 
 TIMING_SCHEMA: dict[str, pl.DataType] = {
     "record_id": pl.Utf8,
@@ -69,13 +74,26 @@ def _day_start(d: date | None) -> datetime | None:
     return datetime(d.year, d.month, d.day)
 
 
-def _ex_date_ny(ts: datetime | None) -> date | None:
+def _ex_date_ny(ts: Any | None) -> date | None:
     """The exchange-local session date of a corporate-action event instant
-    (same rule as the Phase 3 normalizer's trade_date)."""
-    if ts is None:
-        return None
+    (same rule as the Phase 3 normalizer's trade_date).
+
+    Accepts the same inputs as `normalize_instant` (naive datetime, date,
+    ISO string, tz-aware). An aware timestamp is first converted to UTC
+    (never re-labeled as UTC), so an ex-date can never land on the wrong
+    exchange-local day for an offset input."""
     from datetime import timezone
 
+    if ts is None:
+        return None
+    if isinstance(ts, str) or isinstance(ts, date) and not isinstance(ts, datetime):
+        ts = normalize_instant(ts)
+    if not isinstance(ts, datetime):
+        raise TypeError(
+            f"cannot interpret {ts!r} as a corporate-action event instant"
+        )
+    if ts.tzinfo is not None:
+        ts = ts.astimezone(timezone.utc).replace(tzinfo=None)
     return ts.replace(tzinfo=timezone.utc).astimezone(EXCHANGE_TZ).date()
 
 

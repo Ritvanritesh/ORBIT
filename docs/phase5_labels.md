@@ -27,9 +27,11 @@ is required (nothing inferred from prose, nothing silently defaulted):
 - `target_type` — `forward_return`, `excess_return`, `volatility`,
   `drawdown` (Phase 1's `risk_adjusted_return` is REJECTED: it is a
   composite whose assembly is deferred; its components exist here)
-- `horizon` ≥ 1, `horizon_semantics = "trading_sessions"` — H1/H5/H21/H63
-  from Phase 1 map to 1/5/21/63 **sessions**; calendar gaps (weekends,
-  holidays, gaps in the bar series) never count as sessions
+- `horizon` ≥ 1, `horizon_semantics` is a fixed `Literal["trading_sessions"]`
+  (a contract can never claim calendar-day semantics — the engine only
+  counts sessions); H1/H5/H21/H63 from Phase 1 map to 1/5/21/63 **sessions**;
+  calendar gaps (weekends, holidays, gaps in the bar series) never count as
+  sessions
 - `anchor_mode` — `decision_instant` (last completed bar strictly before
   the decision time) or `post_event` (first completed bar strictly after
   the event's availability instant — the PEAD anchor)
@@ -70,7 +72,11 @@ record the inclusive span [entry, outcome].
   the window never create artificial returns.
 - `entry_close_as_published` / `outcome_close_as_published` record the
   as-published closes (rebuilt through the same `as_published_bars`
-  reconstruction the Phase 4 temporal layer uses) for audit.
+  reconstruction the Phase 4 temporal layer uses) for audit. The
+  `price_basis` column says what those closes really are: `as_published`
+  when a corporate-actions artifact was supplied, `provider_split_adjusted`
+  otherwise — a provider-basis close is never silently presented as
+  historical truth (the Phase 4 convention).
 - Total-return labels require the corporate-actions events artifact; a
   price-return label ignores dividends exactly as the convention promises
   (a regression test pins that both conventions share one formula and
@@ -85,7 +91,15 @@ record the inclusive span [entry, outcome].
   column (0 for price-return labels).
 - A corporate-action event missing its ratio/timestamp makes the label
   unavailable (`corporate_action_data_incomplete`) — the basis must be
-  established before any return is computed.
+  established before any return is computed. Event timestamps may be naive
+  datetimes (canonical), ISO strings or tz-aware instants (converted to
+  UTC, then to the exchange-local ex-date — an aware non-UTC instant can
+  never land on the wrong day); a NaN/infinite/missing ratio is treated as
+  incomplete data, never accepted silently.
+- A missing, NaN, infinite, zero or negative close is a MISSING price:
+  the outcome is unavailable (`missing_*_price`) — a `0` close must never
+  become a fabricated −100% return, and `nan`/`inf` must never leak into
+  an `available` outcome value.
 
 ### Timing (Phase 4 conventions, verbatim)
 
@@ -101,7 +115,9 @@ record the inclusive span [entry, outcome].
   filings: a filing available at midnight of day D anchors the window on
   session D).
 - Naive datetimes are UTC by convention (same as Phase 4
-  `normalize_instant`); date inputs mean start-of-day UTC.
+  `normalize_instant`); date inputs mean start-of-day UTC. A `post_event`
+  row is anchored by `anchor_instant`; a `decision_instant` row never
+  records one (an ignored anchor would misdescribe what was computed).
 
 ### Delisting, missing data, unavailable reasons
 
@@ -118,21 +134,23 @@ A security whose bars end is `delisted` only when the instrument master
 records a delisting and the last bar session is ≤ the delisting date;
 otherwise `insufficient_future_data`. Bars extending past the recorded
 delisting date contradict the record and are classified as a data
-shortfall.
+shortfall. Instrument-master delisting dates may be dates, datetimes or
+ISO strings — all are normalized.
 
 ### Excess returns
 
 The benchmark is resolved in the engine's own bars universe under the same
 contract (same anchor, same horizon, same convention), so asset and
 benchmark always share the identical window. Missing/sparse benchmark
-bars → `benchmark_unavailable`. The seed contracts (H-001/H-003) require
-the SPY series (Phase 2's benchmark instrument set is a documented
-follow-up).
+bars → `benchmark_unavailable`, and the row's `outcome_detail` names the
+specific cause (no bars, malformed events, defective price, short
+window). The seed contracts (H-001/H-003) require the SPY series (Phase
+2's benchmark instrument set is a documented follow-up).
 
 ## One reproducible snapshot
 
 `LabelSnapshot` pins a batch: `label_id`, `version`, `contract_digest`,
-`engine_version`, `data_refs`, the canonical 34-column label frame, and a
+`engine_version`, `data_refs`, the canonical 35-column label frame, and a
 sha256 `content_digest` over the sorted content (wall-clock excluded —
 `created_at` is recorded but never part of identity). `equals()` compares
 identity; `provenance()` exposes row/available/unavailable counts.
@@ -197,7 +215,11 @@ dividend `1.02 × 103/101 − 1`, and split+dividend basis consistency
 
 ## Testing summary (Phase 5)
 
-80 tests: 14 golden hand-calculation, 15 contract validation, 27 engine
-behavior, 17 versioning/determinism, 7 Phase 4 integration
-(entry-bar agreement, as-published agreement, no-leakage, artifact
-separation, POST_EVENT availability convention).
+102 tests: 14 golden hand-calculation, 16 contract validation, 39 engine
+behavior, 18 versioning/determinism, 8 Phase 4 integration (entry-bar
+agreement, as-published agreement, no-leakage, artifact separation,
+POST_EVENT availability convention), and 7 seeded differential-fuzz /
+property tests (entry_bar vs compute_one agreement on random instants
+including exact-close boundaries, determinism across shuffled decision
+orders, overlap symmetry/determinism, exact overlap-session counts vs
+brute force, availability-only participation).

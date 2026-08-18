@@ -124,3 +124,31 @@ Review 1 (requirements) / Review 2 (technical) / Review 3 (research-quantitative
 - Second independent pass: adversarial live probes on the shipped engine: reverse-split ratio 0.5 (as-published identity holds, no artificial returns), summer DST 20:00 UTC strict boundary, offset-aware ISO decision strings, benchmark dividends counted in excess total return - all pass. normalize_instant audited (tz-aware -> naive UTC) and reused verbatim from Phase 4; entry-bar/as-published agreement with TemporalTruthEngine and completed_bars verified by integration tests.
 - All fixes verified: 298 tests pass (216 Phase 1-4 + 82 Phase 5), no Phase 1-4 regression; README/docs updated.
 Final verdict: PASS. Phase 5 complete.
+
+
+
+Sixth protocol run (full 3-review pass on the shipped Phase 5 state, fresh adversarial):
+Review 1 (requirements): roadmap re-verified - forward/excess returns, volatility/drawdown, event-based anchors, versioning, overlap handling, golden-vs-hand-calculation all implemented; Phase 1 LabelSpec bridge verified against the registered hypothesis schema.
+Review 2 (technical) / Review 3 (research-quantitative):
+- P1 (MAJOR): a NaN/inf/zero/negative close was NOT a missing price: NaN produced outcome_value=nan with outcome_status=available (silent corruption of every downstream statistic), a zero close fabricated a -100% return, inf leaked into available rows and could break snapshot serialization. Fixed: _missing_price() (None/non-finite/<=0 are MISSING) applied to entry/outcome/window closes in _compute_one and _benchmark_return - explicit unavailable reasons, never a value. Regression tests: nan window, zero outcome, inf outcome, nan entry, nan benchmark close.
+- P2 (MAJOR): a NaN event ratio passed the atio <= 0 guard (NaN <= 0 is False) and silently poisoned the split factors / dividend amounts. Fixed: ratios must be finite AND positive, else corporate_action_data_incomplete. Regression tests: nan ratio, inf ratio.
+- P3 (MEDIUM): _event_session/adapter _ex_date_ny crashed on ISO-string event timestamps and re-labeled tz-aware instants as UTC (an aware -05:00 02:00 event could land on the WRONG ex-date day). Fixed: the shared adapter helper now normalizes str/date/aware inputs to naive UTC first, then applies the Phase 3 exchange-local rule; the engine delegates to it (one source of truth). Regression test: string + naive + aware-offset crossing midnight.
+- P4 (MEDIUM): a Utf8 delisting_date in an instruments frame crashed the date <= str comparison on the delisting path. Fixed: _as_date() normalization (str/datetime/date) at construction. Regression test.
+- P5 (MEDIUM): a DECISION_INSTANT row recorded a supplied anchor_instant that was silently ignored - the row misdescribed what was computed. Fixed: anchor_instant is recorded only for POST_EVENT contracts. Regression test.
+- P6 (MEDIUM): without an events artifact the *_as_published audit closes silently carried the provider's split-adjusted values - the Phase 4 convention says never present those as historical truth. Fixed: new price_basis output column (as_published | provider_split_adjusted); label schema is now 35 columns. Regression test.
+- P7 (MEDIUM): horizon_semantics was a free str - a typo'd contract could claim calendar-day semantics while the engine counts sessions. Fixed: Literal["trading_sessions"]. Regression test.
+- P8 (LOW): benchmark_unavailable conflated every failure cause. Fixed: _benchmark_return reports an explicit cause (no bars / malformed events / defective price / short window) into outcome_detail. Regression test.
+- P9 (LOW): entry_bar duplicated the _entry_index logic (drift risk). Fixed: entry_bar delegates to _entry_index; None-decision_time guard preserved. Regression test.
+- Second independent pass: differential probe - engine _stored_basis_factor vs adapter _split_factors agree on a 7:1+4:1 multi-split chain (0 mismatches; ex-date itself never undone); remaining corners probed (decision rows on boundary instants, empty windows, POST_EVENT strictness, digest determinism) - clean.
+- All fixes verified: 311 tests pass (216 Phase 1-4 + 95 Phase 5), no Phase 1-4 regression; README/docs updated (35-column schema, guard semantics, cause-aware diagnostics).
+Final verdict: PASS. Phase 5 complete.
+
+
+
+Targeted third pass (per protocol, on the least-reviewed corners of the shipped state):
+- Differential fuzz (seeded, permanent tests in tests/test_phase5_fuzz.py): public entry_bar vs the compute path agree on 300+ randomized instants across both anchor modes, including exact session-close hits, one-microsecond-after, before-first-bar and after-last-bar instants (0 mismatches); compute is invariant to shuffled decision order.
+- Property tests: overlapping_pairs is symmetric (no (a,b)/(b,a) duplicates), deterministic under reversed frame order, overlap_sessions equals the actual session-intersection count computed from the engine's own session series, pair set matches a brute-force reference on random decisions, and non-overlapping / unavailable rows never pair.
+- Docs-vs-code cross-check (17 mechanical claims): 35-column schema incl. price_basis; UnavailableReason values match the documented list; total-return without events raises (never a silent price-return label); horizon mapping 1/5/21/63; seeds LAB-001/LAB-003 registered (LAB-002 absent) with the documented fields; content_hash versioned vs definition_identity version-independent; registry triple refusal (duplicate / identical-definition / out-of-order); horizon_semantics Literal. All 17 pass.
+- Docs updated: 102 Phase 5 tests (7 new fuzz/property tests).
+- All fixes verified: 318 tests pass (216 Phase 1-4 + 102 Phase 5), no Phase 1-4 regression.
+Final verdict: PASS. Phase 5 complete.

@@ -44,7 +44,7 @@ import hashlib
 import json
 from datetime import date
 from enum import Enum
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -199,7 +199,10 @@ class LabelContract(BaseModel):
 
     target_type: LabelType
     horizon: int = Field(ge=1, description="number of trading sessions")
-    horizon_semantics: str = "trading_sessions"
+    # a Literal, not a free str: the engine ONLY ever counts trading
+    # sessions, so a contract claiming any other semantics would silently
+    # misdescribe the computed label
+    horizon_semantics: Literal["trading_sessions"] = "trading_sessions"
 
     anchor_mode: AnchorMode
     price_field: PriceField = PriceField.CLOSE

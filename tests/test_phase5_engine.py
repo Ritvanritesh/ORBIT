@@ -365,6 +365,204 @@ def test_compute_output_sorted_by_instrument_then_time():
     ]
 
 
+# ----------------------------------------------- non-finite / degenerate prices
+
+def test_nan_close_is_missing_price_never_a_value():
+    # a NaN close inside the window must make the outcome explicitly
+    # unavailable - a 'nan' outcome_value with status available would
+    # silently corrupt every downstream statistic
+    bars = _bars(_sessions(3), [100.0, float("nan"), 110.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=2), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["outcome_status"] == "unavailable"
+    assert row["unavailable_reason"] == "missing_window_price"
+    assert row["outcome_value"] is None
+
+
+def test_zero_close_is_missing_price_not_a_minus_100_percent_return():
+    # 0/100 - 1 = -1.0 would fabricate a -100% crash that never happened
+    bars = _bars(_sessions(2), [100.0, 0.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["outcome_status"] == "unavailable"
+    assert row["unavailable_reason"] == "missing_outcome_price"
+
+
+def test_infinite_close_is_missing_price():
+    bars = _bars(_sessions(2), [100.0, float("inf")])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["unavailable_reason"] == "missing_outcome_price"
+    assert row["outcome_value"] is None
+
+
+def test_non_finite_entry_close_is_missing_entry_price():
+    bars = _bars(_sessions(2), [float("nan"), 100.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["unavailable_reason"] == "missing_entry_price"
+
+
+def test_non_finite_benchmark_close_is_benchmark_unavailable():
+    sessions = _sessions(3)
+    bars = pl.concat([
+        _bars(sessions, [100.0, 101.0, 102.0], inst="INS-000001"),
+        _bars(sessions, [300.0, float("nan"), 310.0], inst="SPY"),
+    ])
+    row = LabelEngine(bars).compute_one(
+        _contract(target_type="excess_return", benchmark="SPY", horizon=1),
+        "INS-000001", datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["unavailable_reason"] == "benchmark_unavailable"
+    assert "defective" in row["outcome_detail"]
+
+
+# ------------------------------------------------ corporate-action robustness
+
+def test_event_ts_accepts_iso_strings_and_aware_instants():
+    # a string ts used to crash _event_session; an aware ts outside UTC
+    # used to be re-labeled as UTC and could land on the wrong day
+    sessions = _sessions(3)
+    bars = _bars(sessions, [100.0, 110.0, 121.0])
+    for ts, expect in [
+        ("2020-01-07T12:00:00Z", 0.11),       # string, naive UTC
+        (datetime(2020, 1, 7, 12, 0), 0.11),  # naive datetime
+    ]:
+        events = pl.DataFrame({
+            "instrument_id": ["INS-000001"], "kind": ["dividends"],
+            "ts": [ts], "ratio": [1.0],
+        })
+        row = LabelEngine(bars, events=events).compute_one(
+            _contract(horizon=1,
+                      return_convention=ReturnConvention.SIMPLE_TOTAL_RETURN),
+            "INS-000001", datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+        )
+        assert abs(row["outcome_value"] - expect) < 1e-9, row["outcome_value"]
+    # 2020-01-08T02:00:00-05:00 = 07:00 UTC = 01-08 in New York; the old
+    # re-label-as-UTC behavior would have read the ex-date as 01-07 and
+    # counted the dividend a day early
+    aware = datetime(2020, 1, 8, 2, 0, tzinfo=timezone(timedelta(hours=-5)))
+    events2 = pl.DataFrame({
+        "instrument_id": ["INS-000001"], "kind": ["dividends"],
+        "ts": [aware], "ratio": [1.0],
+    })
+    row2 = LabelEngine(bars, events=events2).compute_one(
+        _contract(horizon=2,
+                  return_convention=ReturnConvention.SIMPLE_TOTAL_RETURN),
+        "INS-000001", datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert abs(row2["outcome_value"] - 0.22) < 1e-9, row2["outcome_value"]
+
+
+def test_nan_event_ratio_marks_instrument_incomplete():
+    # NaN <= 0 is False, so the old `ratio <= 0` guard silently accepted a
+    # NaN ratio and poisoned the dividend/factor math
+    bars = _bars(_sessions(2), [100.0, 110.0])
+    events = pl.DataFrame({
+        "instrument_id": ["INS-000001"], "kind": ["dividends"],
+        "ts": [datetime(2020, 1, 7, 12, 0)], "ratio": [float("nan")],
+    })
+    row = LabelEngine(bars, events=events).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["unavailable_reason"] == "corporate_action_data_incomplete"
+    events2 = events.with_columns(pl.lit(float("inf")).alias("ratio"))
+    row2 = LabelEngine(bars, events=events2).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row2["unavailable_reason"] == "corporate_action_data_incomplete"
+
+
+# ------------------------------------------------- instrument master robustness
+
+def test_delisting_date_as_string_is_normalized():
+    # a Utf8 delisting_date in an instruments frame used to crash the
+    # date <= str comparison on the shortfall path
+    bars = _bars(_sessions(5), [100.0 + i for i in range(5)])
+    instruments = pl.DataFrame({
+        "instrument_id": ["INS-000001"],
+        "delisting_date": ["2020-01-13"],
+    })
+    row = LabelEngine(bars, instruments=instruments).compute_one(
+        _contract(horizon=3), "INS-000001",
+        datetime(2020, 1, 9, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["unavailable_reason"] == "delisted"
+
+
+# ------------------------------------------------------ benchmark diagnostics
+
+def test_benchmark_unavailable_detail_names_the_cause():
+    sessions = _sessions(3)
+    bars = _bars(sessions, [100.0, 101.0, 102.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(target_type="excess_return", benchmark="SPY", horizon=1),
+        "INS-000001", datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert "no bars for benchmark" in row["outcome_detail"]
+    # benchmark window shortfall is a distinct cause from a missing series
+    sessions2 = _sessions(2)
+    bars2 = pl.concat([
+        _bars(sessions, [100.0, 101.0, 102.0], inst="INS-000001"),
+        _bars(sessions2, [300.0, 301.0], inst="SPY"),
+    ])
+    row2 = LabelEngine(bars2).compute_one(
+        _contract(target_type="excess_return", benchmark="SPY", horizon=2),
+        "INS-000001", datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert "only 1 of 2 sessions" in row2["outcome_detail"]
+
+
+def test_entry_bar_requires_decision_time_for_decision_anchor():
+    bars = _bars(_sessions(2), [100.0, 101.0])
+    with pytest.raises(ValueError, match="decision_time is required"):
+        LabelEngine(bars).entry_bar("INS-000001", None)
+
+
+def test_decision_instant_rows_never_record_an_anchor_instant():
+    # a supplied anchor_instant is IGNORED for DECISION_INSTANT contracts;
+    # recording it on the row would misdescribe what was computed
+    bars = _bars(_sessions(2), [100.0, 101.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+        anchor_instant=datetime(2020, 1, 6, 12, 0, tzinfo=WINTER),
+    )
+    assert row["anchor_instant"] is None
+    assert row["unavailable_reason"] is None  # computed normally
+
+
+def test_price_basis_column_is_honest_about_the_audit_closes():
+    # without an events artifact the *_as_published closes are the
+    # provider's split-adjusted values; the row must SAY so instead of
+    # silently presenting them as historical truth (Phase 4 convention)
+    bars = _bars(_sessions(2), [100.0, 101.0])
+    row = LabelEngine(bars).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row["price_basis"] == "provider_split_adjusted"
+    events = pl.DataFrame({
+        "instrument_id": ["INS-000001"], "kind": ["splits"],
+        "ts": [datetime(2020, 1, 8, 12, 0)], "ratio": [2.0],
+    })
+    row2 = LabelEngine(bars, events=events).compute_one(
+        _contract(horizon=1), "INS-000001",
+        datetime(2020, 1, 6, 21, 0, 1, tzinfo=WINTER),
+    )
+    assert row2["price_basis"] == "as_published"
+
+
 # -------------------------------------------------------------- overlap info
 
 def test_overlap_requires_available_labels_only():

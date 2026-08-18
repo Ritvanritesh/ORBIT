@@ -46,7 +46,7 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   deterministic content digest, overlap metadata for later purging,
   golden hand-calculation tests, Phase 4 integration tests (entry-bar and
   as-published agreement, no label leakage, artifact separation), full
-  test suite 296 tests. Seed contracts registered: LAB-001 (H-001
+  test suite 311 tests. Seed contracts registered: LAB-001 (H-001
   momentum) and LAB-003 (H-003 PEAD); LAB-002 (H-002 risk-adjusted) is
   deferred. See `docs/phase5_labels.md`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,

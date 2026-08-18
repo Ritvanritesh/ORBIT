@@ -58,6 +58,13 @@ def test_horizon_must_be_positive():
         _base(horizon=-3)
 
 
+def test_horizon_semantics_is_a_fixed_literal():
+    # the engine ONLY ever counts trading sessions; a contract claiming any
+    # other semantics would silently misdescribe the computed label
+    with pytest.raises(ValidationError):
+        _base(horizon_semantics="calendar_days")
+
+
 def test_label_id_and_version_patterns():
     with pytest.raises(ValidationError):
         _base(label_id="bad-id")
