@@ -1,5 +1,5 @@
 {
-  "description": "Minimal instrument master for the Phase 3 development sample. Phase 2 defined the schema; this file seeds the 5 dev instruments with stable ORBIT identities, exchange timezones, and SEC CIKs. Delisted names MUST be kept in the master for survivorship control; the dev sample is all currently-listed names and will be extended with delisted history in later phases.",
+  "description": "Instrument master for the Phase 3 development sample. Phase 2 defined the schema; this file seeds the 20 dev instruments with stable ORBIT identities, exchange timezones, and SEC CIKs. Delisted names MUST be kept in the master for survivorship control; the dev sample is all currently-listed names and will be extended with delisted history in later phases. Sector codes are descriptive depth-1 labels (S10 energy, S25 consumer discretionary, S30 consumer staples, S35 technology/healthcare, S40 financials, S45 software/communication).",
   "exchanges": {
     "XNYS": {"name": "NYSE", "mic": "XNYS", "country": "US", "tz": "America/New_York", "open_local": "09:30:00", "close_local": "16:00:00"},
     "XNAS": {"name": "NASDAQ", "mic": "XNAS", "country": "US", "tz": "America/New_York", "open_local": "09:30:00", "close_local": "16:00:00"}
@@ -59,6 +59,171 @@
       "listing_date": "1970-10-01",
       "delisting_date": null,
       "cik": 104169
+    },
+    {
+      "instrument_id": "INS-000006",
+      "primary_ticker": "AMZN",
+      "exchange_id": "XNAS",
+      "name": "Amazon.com, Inc.",
+      "security_type": "equity",
+      "sector_id": "S25",
+      "listing_date": "1997-05-15",
+      "delisting_date": null,
+      "cik": 1018724
+    },
+    {
+      "instrument_id": "INS-000007",
+      "primary_ticker": "GOOGL",
+      "exchange_id": "XNAS",
+      "name": "Alphabet Inc.",
+      "security_type": "equity",
+      "sector_id": "S45",
+      "listing_date": "2004-08-19",
+      "delisting_date": null,
+      "cik": 1652044
+    },
+    {
+      "instrument_id": "INS-000008",
+      "primary_ticker": "META",
+      "exchange_id": "XNAS",
+      "name": "Meta Platforms, Inc.",
+      "security_type": "equity",
+      "sector_id": "S45",
+      "listing_date": "2012-05-18",
+      "delisting_date": null,
+      "cik": 1326801
+    },
+    {
+      "instrument_id": "INS-000009",
+      "primary_ticker": "NVDA",
+      "exchange_id": "XNAS",
+      "name": "NVIDIA Corporation",
+      "security_type": "equity",
+      "sector_id": "S35",
+      "listing_date": "1999-01-22",
+      "delisting_date": null,
+      "cik": 1045810
+    },
+    {
+      "instrument_id": "INS-000010",
+      "primary_ticker": "TSLA",
+      "exchange_id": "XNAS",
+      "name": "Tesla, Inc.",
+      "security_type": "equity",
+      "sector_id": "S25",
+      "listing_date": "2010-06-29",
+      "delisting_date": null,
+      "cik": 1318605
+    },
+    {
+      "instrument_id": "INS-000011",
+      "primary_ticker": "JPM",
+      "exchange_id": "XNYS",
+      "name": "JPMorgan Chase & Co.",
+      "security_type": "equity",
+      "sector_id": "S40",
+      "listing_date": "1968-01-01",
+      "delisting_date": null,
+      "cik": 19617
+    },
+    {
+      "instrument_id": "INS-000012",
+      "primary_ticker": "BAC",
+      "exchange_id": "XNYS",
+      "name": "Bank of America Corporation",
+      "security_type": "equity",
+      "sector_id": "S40",
+      "listing_date": "1973-10-01",
+      "delisting_date": null,
+      "cik": 70858
+    },
+    {
+      "instrument_id": "INS-000013",
+      "primary_ticker": "V",
+      "exchange_id": "XNYS",
+      "name": "Visa Inc.",
+      "security_type": "equity",
+      "sector_id": "S40",
+      "listing_date": "2008-03-19",
+      "delisting_date": null,
+      "cik": 1403161
+    },
+    {
+      "instrument_id": "INS-000014",
+      "primary_ticker": "PG",
+      "exchange_id": "XNYS",
+      "name": "The Procter & Gamble Company",
+      "security_type": "equity",
+      "sector_id": "S30",
+      "listing_date": "1890-01-01",
+      "delisting_date": null,
+      "cik": 80424
+    },
+    {
+      "instrument_id": "INS-000015",
+      "primary_ticker": "KO",
+      "exchange_id": "XNYS",
+      "name": "The Coca-Cola Company",
+      "security_type": "equity",
+      "sector_id": "S30",
+      "listing_date": "1919-09-05",
+      "delisting_date": null,
+      "cik": 21344
+    },
+    {
+      "instrument_id": "INS-000016",
+      "primary_ticker": "HD",
+      "exchange_id": "XNYS",
+      "name": "The Home Depot, Inc.",
+      "security_type": "equity",
+      "sector_id": "S25",
+      "listing_date": "1981-09-22",
+      "delisting_date": null,
+      "cik": 354950
+    },
+    {
+      "instrument_id": "INS-000017",
+      "primary_ticker": "UNH",
+      "exchange_id": "XNYS",
+      "name": "UnitedHealth Group Incorporated",
+      "security_type": "equity",
+      "sector_id": "S35",
+      "listing_date": "1984-10-01",
+      "delisting_date": null,
+      "cik": 731766
+    },
+    {
+      "instrument_id": "INS-000018",
+      "primary_ticker": "CVX",
+      "exchange_id": "XNYS",
+      "name": "Chevron Corporation",
+      "security_type": "equity",
+      "sector_id": "S10",
+      "listing_date": "1911-01-01",
+      "delisting_date": null,
+      "cik": 93410
+    },
+    {
+      "instrument_id": "INS-000019",
+      "primary_ticker": "DIS",
+      "exchange_id": "XNYS",
+      "name": "The Walt Disney Company",
+      "security_type": "equity",
+      "sector_id": "S25",
+      "listing_date": "1957-11-14",
+      "delisting_date": null,
+      "cik": 1744489
+    },
+    {
+      "instrument_id": "INS-000020",
+      "primary_ticker": "PFE",
+      "exchange_id": "XNYS",
+      "name": "Pfizer Inc.",
+      "security_type": "equity",
+      "sector_id": "S35",
+      "listing_date": "1942-01-01",
+      "delisting_date": null,
+      "cik": 78003
     }
   ],
   "benchmarks": []
