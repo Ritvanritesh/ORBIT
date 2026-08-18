@@ -65,6 +65,10 @@ CONVENTIONS (documented, testable, conservative)
    observations are excluded and reported as limitations, never
    substituted.
 
+7. EFFECTIVE TIME -> REJECT. A record that becomes applicable only AFTER
+   the decision time (effective_time > as_of) is not part of the
+   historical information set even if it was already public.
+
 All conventions live here and in configs/temporal.json so future code can
 rely on them without re-deriving intent.
 """
@@ -101,6 +105,7 @@ class DecisionCode(str, Enum):
     # --- reject
     MISSING_PUBLICATION_TIME = "reject_missing_publication_time"
     PUBLICATION_AT_OR_AFTER_AS_OF = "reject_publication_at_or_after_as_of"
+    EFFECTIVE_AFTER_AS_OF = "reject_effective_after_as_of"
     EVENT_AFTER_AS_OF = "reject_event_after_as_of"
     NOT_POINT_IN_TIME = "reject_not_point_in_time_series"
     NO_VINTAGE_AT_AS_OF = "reject_no_vintage_at_as_of"
@@ -205,12 +210,20 @@ class Timing:
                 # raw aware datetime or a string by accident
                 object.__setattr__(self, field_name, normalize_instant(value))
         if isinstance(self.publication_precision, str):
-            # accept the plain value ("date"/"datetime") as well as the enum;
-            # a bare string falling through would silently downgrade DATE
-            # precision to DATETIME and make the record available a day early
-            object.__setattr__(
-                self, "publication_precision", TimePrecision(self.publication_precision)
-            )
+            # accept the plain value ("date"/"datetime") casefolded, exactly
+            # like the vectorized engine does; a bare string falling through
+            # would silently downgrade DATE precision to DATETIME and make
+            # the record available a day early. A genuinely invalid value
+            # raises instead of silently choosing a default.
+            try:
+                precision = TimePrecision(self.publication_precision.casefold())
+            except ValueError as exc:
+                raise ValueError(
+                    f"invalid publication_precision "
+                    f"{self.publication_precision!r}: expected 'date' or "
+                    "'datetime'"
+                ) from exc
+            object.__setattr__(self, "publication_precision", precision)
         if isinstance(self.vintage_date, str):
             object.__setattr__(self, "vintage_date", date.fromisoformat(self.vintage_date))
 

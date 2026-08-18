@@ -620,6 +620,68 @@ def test_accessor_trailing_dollar_volume_is_order_independent(tmp_path):
     assert accessor.trailing_dollar_volume("INS-000001", as_of, 20) == pytest.approx(101000.0)
 
 
+def test_accessor_serves_as_published_prices_across_a_split(tmp_path):
+    """Exit-audit finding: the accessor used to serve RETROACTIVELY
+    SPLIT-ADJUSTED closes as historical closes (a pre-split 'last close'
+    was the post-split price). It now reconstructs AS-PUBLISHED OHLCV from
+    the sibling events artifact - the same canonical reconstruction the
+    Temporal Truth Engine uses - so universe membership records never carry
+    post-split prices or dollar volumes."""
+    from datetime import datetime as _dt
+
+    from orbit.ingestion.snapshot import MarketDataAccessor
+    from orbit.schemas.instrument import Instrument
+
+    out = tmp_path / "normalized" / "market" / "yahoo_chart_api" / "DS-000001"
+    out.mkdir(parents=True)
+    # stored bars are retroactively split-adjusted (close 23.056 = 645.57/28)
+    pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 3,
+            "symbol": ["AAPL"] * 3,
+            "trade_date": [date(2014, 6, 6), date(2014, 6, 9), date(2014, 6, 10)],
+            "ts_utc": [_dt(2014, 6, 6, 14, 30)] * 3,
+            "open": [23.1, 23.17, 23.68],
+            "high": [23.2, 23.47, 23.76],
+            "low": [23.0, 22.94, 23.39],
+            "close": [23.05607, 23.424999, 23.5625],
+            "volume": [349_938_400, 62_766_800, 53_930_400],
+            "adjclose": [20.2, 20.5, 20.6],
+            "adjustment": ["split_adjusted"] * 3,
+            "provider": ["yahoo_chart_api"] * 3,
+            "source_uri": ["u"] * 3,
+            "snapshot_id": ["DS-000001"] * 3,
+        }
+    ).write_parquet(out / "bars.parquet")
+    pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 2,
+            "symbol": ["AAPL"] * 2,
+            "kind": ["splits", "splits"],
+            "ts": [_dt(2014, 6, 9, 13, 30), _dt(2020, 8, 31, 13, 30)],
+            "ratio": [7.0, 4.0],
+            "numerator": [7.0, 4.0],
+            "denominator": [1.0, 1.0],
+            "provider": ["yahoo_chart_api"] * 2,
+            "snapshot_id": ["DS-000001"] * 2,
+        }
+    ).write_parquet(out / "events.parquet")
+    inst = Instrument(
+        instrument_id="INS-000001", primary_ticker="AAPL", exchange_id="XNAS",
+        name="Apple", security_type="equity", listing_date=date(1980, 12, 12),
+    )
+    accessor = MarketDataAccessor([inst], "DS-000001", data_root=tmp_path)
+
+    # the pre-split session's close is the AS-PUBLISHED 645.57, never 23.06
+    assert accessor.last_close("INS-000001", date(2014, 6, 9)) == pytest.approx(
+        23.05607 * 28, abs=1e-6
+    )
+    # dollar volume is raw close x raw shares
+    dv = accessor.trailing_dollar_volume("INS-000001", date(2014, 6, 9), 20)
+    raw_volume = 349_938_400 / 28
+    assert dv == pytest.approx(23.05607 * 28 * raw_volume, abs=1e-3)
+
+
 def test_ingest_market_script_exit_code_reflects_validation(monkeypatch, tmp_path):
     """The CLI must fail loudly (non-zero) when a snapshot is not promoted,
     so CI cannot report green on a failed validation."""

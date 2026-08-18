@@ -29,7 +29,7 @@ from orbit.temporal.features import (
     FutureRefViolation,
 )
 from orbit.temporal.fixtures import ALL_LEAK_FIXTURES, future_feature_fixture, run_fixture
-from orbit.temporal.times import DecisionCode, Timing
+from orbit.temporal.times import DecisionCode, TimePrecision, Timing
 
 ENGINE = TemporalTruthEngine()
 
@@ -379,3 +379,118 @@ def test_sec_pipeline_engine_snapshot_excludes_future_filing(env):
 
     after = engine.snapshot(datetime(2019, 5, 3, 0, 0, 1))
     assert after.records.height == 1  # available the day after filing
+
+
+# ----------------------------------------- audit findings (adversarial form)
+
+
+def test_future_split_never_alters_historical_payload_price():
+    """Adversarial: a split that happens AFTER as_of is retroactively
+    applied to the stored bars. The temporal payload for the historical
+    snapshot must carry the AS-PUBLISHED (pre-split) price, never the
+    post-split value - a future corporate action must not travel back in
+    time into the information set."""
+    from orbit.temporal.adapters import market_timing_frame
+
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 2,
+            "symbol": ["AAPL"] * 2,
+            "trade_date": [date(2014, 6, 6), date(2014, 6, 9)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)] * 2,
+            "open": [23.1, 23.17], "high": [23.2, 23.47],
+            "low": [23.0, 22.94], "close": [23.05607, 23.424999],
+            "volume": [349_938_400, 62_766_800],
+            "adjclose": [20.2, 20.5],
+            "adjustment": ["split_adjusted"] * 2,
+        }
+    )
+    # the 7:1 split happened 2014-06-09; both bars' stored closes are
+    # retroactively adjusted - the historical information set (as of
+    # 2014-06-06) must show the real 645.57 close, not 23.06
+    events = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"],
+            "symbol": ["AAPL"],
+            "kind": ["splits"],
+            "ts": [datetime(2014, 6, 9, 13, 30)],
+            "ratio": [7.0],
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001", events=events)
+    # a decision ON 2014-06-06 after the close sees the 06-06 bar ONLY
+    t = datetime(2014, 6, 6, 21, 0, 1)
+    d = ENGINE.decide_record(
+        Timing(
+            record_id=frame.row(0, named=True)["record_id"],
+            domain="market", kind="bar",
+            event_time=frame.row(0, named=True)["event_time"],
+            publication_time=frame.row(0, named=True)["publication_time"],
+            publication_precision=TimePrecision.DATETIME,
+            effective_time=frame.row(0, named=True)["effective_time"],
+            payload=json.loads(frame.row(0, named=True)["payload_json"]),
+        ),
+        t,
+    )
+    assert d.allowed
+    # the payload's close is the as-published 645.57, never 23.06
+    row = frame.row(0, named=True)
+    payload = json.loads(row["payload_json"])
+    assert payload["close"] == pytest.approx(23.05607 * 7, abs=1e-6)
+    assert payload["price_basis"] == "as_published"
+    assert "adjclose" not in payload
+    # and the 06-09 bar (which did not exist at 06-06 16:00) stays excluded
+    d2 = ENGINE.decide_record(
+        Timing(
+            record_id=frame.row(1, named=True)["record_id"],
+            domain="market", kind="bar",
+            event_time=frame.row(1, named=True)["event_time"],
+            publication_time=frame.row(1, named=True)["publication_time"],
+            publication_precision=TimePrecision.DATETIME,
+            effective_time=frame.row(1, named=True)["effective_time"],
+        ),
+        t,
+    )
+    assert not d2.allowed
+
+
+def test_rejected_revision_survives_adversarial_snapshot_audit(env):
+    """Adversarial: a revision released after the decision must not only be
+    rejected - it must REMAIN VISIBLE in the snapshot's excluded set (a
+    dropped rejection hides the revision attempt and breaks auditability)."""
+    csv_orig = _fred_csv([("2018-01-01", 2.1)])
+    csv_rev = _fred_csv([("2018-01-01", 2.3)])
+
+    r1 = env["pipeline"].ingest_macro(
+        FakeFredVintageConnector({"2018-01-12": csv_orig}),
+        ["CPIAUCSL"], license_ref="test",
+        request_params={"vintage_date": "2018-01-12"},
+    )
+    r2 = env["pipeline"].ingest_macro(
+        FakeFredVintageConnector({"2018-02-01": csv_rev}),
+        ["CPIAUCSL"], license_ref="test",
+        request_params={"vintage_date": "2018-02-01"},
+    )
+
+    from orbit.temporal.adapters import fred_timing_frame
+    from orbit.temporal.snapshot import TemporalSource
+
+    def src(snapshot_id: str) -> TemporalSource:
+        return TemporalSource(
+            snapshot_id=snapshot_id, domain="macro", provider="fred_csv",
+            checksum=env["registry"].snapshot(snapshot_id)["checksum"],
+            manifest_path=env["registry"].snapshot(snapshot_id)["manifest_path"],
+            ingest_time=datetime(2018, 3, 1),
+        )
+
+    engine = TemporalTruthEngine(sources=[src(r1.snapshot_id), src(r2.snapshot_id)])
+    snap = engine.snapshot(datetime(2018, 1, 15, 16, 0))
+    # the original is the information set; the revision is rejected AND
+    # audited in the excluded set (never dropped)
+    assert snap.records.height == 1
+    assert json.loads(snap.records.row(0, named=True)["payload_json"])["value"] == 2.1
+    rej = {r["record_id"]: r for r in snap.excluded.iter_rows(named=True)}
+    assert len(rej) == 1
+    rid = list(rej)[0]
+    assert json.loads(rej[rid]["payload_json"])["value"] == 2.3
+    assert rej[rid]["decision_code"] == DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value

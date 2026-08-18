@@ -96,13 +96,11 @@ class TemporalTruthEngine:
 
     def __init__(
         self,
-        registry: Any | None = None,
         *,
         data_root: Path | None = None,
         contract: TemporalContract | None = None,
         sources: list[TemporalSource] | None = None,
     ):
-        self._registry = registry
         self._data_root = data_root
         self._contract = contract or load_temporal_contract()
         self._sources: list[TemporalSource] = sources or []
@@ -183,6 +181,25 @@ class TemporalTruthEngine:
                 excluded=empty.filter(~pl.col("allowed")),
             )
 
+        # publication_precision must be one of "date"/"datetime" (casefolded,
+        # like Timing's enum coercion). Anything else is a corrupted frame and
+        # must fail loudly instead of silently behaving like DATETIME.
+        if "publication_precision" in frame.columns:
+            bad_precision = frame.filter(
+                pl.col("publication_precision").is_not_null()
+                & ~pl.col("publication_precision")
+                .str.to_lowercase().is_in(["date", "datetime"])
+            )
+            if bad_precision.height:
+                raise ValueError(
+                    "invalid publication_precision value(s): "
+                    + sorted(set(bad_precision["publication_precision"].to_list())).__str__()
+                    + "; expected 'date' or 'datetime'"
+                )
+        pub_precision_date = (
+            pl.col("publication_precision").fill_null("date").str.to_lowercase()
+            == "date"
+        )
         step1 = frame.with_columns(
             # NULL precision is treated as DATE (most conservative): a
             # record is never available BEFORE the next day when we do not
@@ -190,10 +207,7 @@ class TemporalTruthEngine:
             # treated as an instant, available_instant could come out NULL
             # and the strict-boundary rejection below would silently
             # disarm (publication after as_of would be allowed).
-            pl.when(
-                pl.col("publication_precision").is_null()
-                | (pl.col("publication_precision") == "date")
-            )
+            pl.when(pub_precision_date)
             .then(_next_day_expr())
             .otherwise(pl.col("publication_time"))
             .alias("available_instant"),
@@ -202,8 +216,13 @@ class TemporalTruthEngine:
         # (e.g. series_policy is null for market rows) would poison the OR
         # chain with NULL and silently drop rows from BOTH sides - the
         # worst kind of leak, because it looks like a correct rejection.
+        # Policy rule mirrors decide(): ANY policy other than the empty
+        # string or "non_revised" marks a revised series (a casing accident
+        # or an unexpected policy value must never admit revised data as
+        # point-in-time).
+        policy = pl.col("series_policy").fill_null("").str.to_lowercase()
         reject_pit = (
-            (pl.col("series_policy").fill_null("").str.to_lowercase() == "revised")
+            (~policy.is_in(["", "non_revised"]))
             & pl.col("vintage_date").is_null()
         )
         reject_missing_pub = pl.col("publication_time").is_null()
@@ -211,8 +230,14 @@ class TemporalTruthEngine:
             pl.col("available_instant").is_not_null()
             & (pl.col("available_instant") >= t)
         )
+        reject_effective_after = (
+            pl.col("effective_time").is_not_null()
+            & (pl.col("effective_time") > t)
+        )
         reject_no_vintage = (
-            pl.col("vintage_date").is_not_null() & (pl.col("vintage_date") >= t.date())
+            pl.col("vintage_date").is_not_null()
+            & pub_precision_date
+            & (pl.col("vintage_date") >= t.date())
         )
         reject_event_after = (
             pl.col("event_time").is_not_null() & (pl.col("event_time") > t)
@@ -225,20 +250,18 @@ class TemporalTruthEngine:
             pl.when(reject_pit).then(pl.lit(DecisionCode.NOT_POINT_IN_TIME.value))
             .when(reject_missing_pub).then(pl.lit(DecisionCode.MISSING_PUBLICATION_TIME.value))
             .when(reject_pub_after).then(pl.lit(DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value))
+            .when(reject_effective_after).then(pl.lit(DecisionCode.EFFECTIVE_AFTER_AS_OF.value))
             .when(reject_no_vintage).then(pl.lit(DecisionCode.NO_VINTAGE_AT_AS_OF.value))
             .when(reject_event_after).then(pl.lit(DecisionCode.EVENT_AFTER_AS_OF.value))
             .when(pl.col("vintage_date").is_not_null())
             .then(pl.lit(DecisionCode.ALLOWED_VINTAGE_RESOLVED.value))
-            .when(
-                pl.col("publication_precision").is_null()
-                | (pl.col("publication_precision") == "date")
-            )
+            .when(pub_precision_date)
             .then(pl.lit(DecisionCode.ALLOWED_DATE_PRECISION.value))
             .otherwise(pl.lit(DecisionCode.ALLOWED_BEFORE_PUBLICATION.value))
         )
         is_allowed = ~(
             reject_pit | reject_missing_pub | reject_pub_after
-            | reject_no_vintage | reject_event_after
+            | reject_effective_after | reject_no_vintage | reject_event_after
         )
         step = step1.with_columns(
             is_allowed.alias("allowed"),
@@ -257,6 +280,12 @@ class TemporalTruthEngine:
             .then(
                 pl.lit("available_instant ") + pl.col("available_instant").cast(pl.Utf8)
                 + pl.lit(f" is not strictly before as_of={t.isoformat()}")
+            )
+            .when(pl.col("decision_code") == DecisionCode.EFFECTIVE_AFTER_AS_OF.value)
+            .then(
+                pl.lit("effective_time ") + pl.col("effective_time").cast(pl.Utf8)
+                + pl.lit(f" is after as_of={t.isoformat()}; the record was not "
+                         "yet applicable at the decision time")
             )
             .when(pl.col("decision_code") == DecisionCode.NO_VINTAGE_AT_AS_OF.value)
             .then(
@@ -491,22 +520,40 @@ class TemporalTruthEngine:
             return [p for p in src.artifact_paths if Path(p).exists()]
         if src.domain == "market":
             return [
-                str(normalized_dir("market", src.provider, src.snapshot_id) / "bars.parquet")
+                str(self._normalized_dir("market", src.provider, src.snapshot_id) / "bars.parquet")
             ]
         if src.domain in ("sec", "fundamentals"):
             return [
-                str(normalized_dir("fundamentals", src.provider, src.snapshot_id) / "facts.parquet")
+                str(self._normalized_dir("fundamentals", src.provider, src.snapshot_id) / "facts.parquet")
             ]
         if src.domain == "macro":
             return [
-                str(normalized_dir("macro", src.provider, src.snapshot_id) / "series.parquet")
+                str(self._normalized_dir("macro", src.provider, src.snapshot_id) / "series.parquet")
             ]
         return []
+
+    def _normalized_dir(
+        self, domain: str, provider: str, snapshot_id: str
+    ) -> Path:
+        """The normalized artifact directory for a source.
+
+        Honors the engine's `data_root` (hermetic/sandboxed evaluation);
+        without one the global data zone (normalized_dir) is used.
+        """
+        if self._data_root is not None:
+            return self._data_root / "normalized" / domain / provider / snapshot_id
+        return normalized_dir(domain, provider, snapshot_id)
 
     def _frame_for(self, src: TemporalSource, path: str) -> pl.DataFrame:
         df = pl.read_parquet(path)
         if src.domain == "market":
-            return market_timing_frame(df, src.snapshot_id, src.ingest_time)
+            # the sibling events artifact carries the corporate actions;
+            # split events let the adapter reconstruct AS-PUBLISHED OHLCV
+            # (the stored bars are retroactively split-adjusted and would
+            # otherwise leak post-decision splits into historical payloads)
+            events_path = Path(path).with_name("events.parquet")
+            events = pl.read_parquet(events_path) if events_path.exists() else None
+            return market_timing_frame(df, src.snapshot_id, src.ingest_time, events=events)
         if src.domain in ("sec", "fundamentals"):
             return sec_timing_frame(df, src.snapshot_id, src.ingest_time)
         if src.domain == "macro":
@@ -516,6 +563,7 @@ class TemporalTruthEngine:
                 src.ingest_time,
                 series_policies=self._contract.series_policies,
                 default_policy=self._contract.default_series_policy,
+                calendar=self._contract.release_calendar,
             )
         raise ValueError(f"unknown source domain: {src.domain}")
 
@@ -524,8 +572,11 @@ class TemporalTruthEngine:
     def _resolve_vintages(self, evaluated: pl.DataFrame) -> pl.DataFrame:
         """Keep, per (series, observation), the latest version RELEASED AND
         ALLOWED at as_of. Older allowed versions become VINTAGE_SUPERSEDED
-        (audited, not silently dropped). Rejected versions stay rejected:
-        a version that was not public at as_of can never be the 'latest'."""
+        (audited, not silently dropped). Rejected versions stay REJECTED with
+        their original decision codes: a version that was not public at as_of
+        can never be the 'latest', and the audit trail must keep every
+        rejection visible (a rejected revision is never dropped from the
+        snapshot's excluded set)."""
         if evaluated.height == 0:
             return evaluated
         vintage_rows = evaluated.filter(
@@ -553,7 +604,9 @@ class TemporalTruthEngine:
                 ).alias("decision_detail"),
             )
         )
-        rest = evaluated.filter(pl.col("vintage_date").is_null())
+        rest = evaluated.filter(
+            pl.col("vintage_date").is_null() | (~pl.col("allowed"))
+        )
         return pl.concat([rest, resolved, superseded]).sort("record_id")
 
     def _limitations(
@@ -590,6 +643,11 @@ class TemporalTruthEngine:
             limitations.append(
                 f"{code_counts[DecisionCode.EVENT_AFTER_AS_OF.value]} forward-dated records "
                 "(event after as_of) were excluded from the historical information set."
+            )
+        if code_counts.get(DecisionCode.EFFECTIVE_AFTER_AS_OF.value):
+            limitations.append(
+                f"{code_counts[DecisionCode.EFFECTIVE_AFTER_AS_OF.value]} records were "
+                "excluded because they only became applicable after this as_of."
             )
         return limitations
 

@@ -813,3 +813,523 @@ def test_decision_counts_include_all_codes(data_root):
     assert counts[DecisionCode.ALLOWED_BEFORE_PUBLICATION.value] == 4  # bars
     assert counts[DecisionCode.NOT_POINT_IN_TIME.value] == 1  # CPIAUCSL
     assert counts[DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value] == 2  # facts
+
+
+# ------------------------------------------------ audit findings regressions
+
+
+def test_rejected_revision_preserved_in_audit_trail():
+    """Audit finding: _resolve_vintages used to DROP rejected vintage rows
+    when another vintage of the same observation was allowed - the rejected
+    revision vanished from the snapshot's excluded set. It must stay."""
+    frame = fred_timing_frame(
+        _vintage_frame(), "DS-000020", series_policies={"CPIAUCSL": "revised"}
+    )
+    engine = TemporalTruthEngine()
+    # as_of 2018-01-15: original released 2018-01-12 (allowed next day),
+    # revision released 2018-02-01 (rejected - not yet public)
+    resolved = engine._resolve_vintages(engine.evaluate(frame, datetime(2018, 1, 15)).frame)
+    excluded = resolved.filter(~pl.col("allowed"))
+    codes = {r["record_id"]: r["decision_code"] for r in excluded.iter_rows(named=True)}
+    assert "obs|DS-000020|CPIAUCSL|2018-01-01|2018-02-01" in codes
+    assert codes["obs|DS-000020|CPIAUCSL|2018-02-01|2018-03-01"] == (
+        DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value
+    )
+    # the audit trail is complete: rejected + superseded + allowed all present
+    assert resolved.height == 3
+
+
+def test_rejected_revision_preserved_in_snapshot_excluded(data_root):
+    """Snapshot-level: the same guarantee through the public API."""
+    v = _vintage_frame()
+    d = data_root / "normalized" / "macro" / "fred_csv" / "DS-000020"
+    d.mkdir(parents=True, exist_ok=True)
+    v.write_parquet(d / "series.parquet")
+    src = TemporalSource(
+        snapshot_id="DS-000020", domain="macro", provider="fred_csv",
+        checksum="c" * 64, manifest_path="m.json",
+        artifact_paths=[str(d / "series.parquet")],
+    )
+    engine = TemporalTruthEngine(sources=[src])
+    snap = engine.snapshot(datetime(2018, 1, 15))
+    excl = {r["record_id"]: r["decision_code"] for r in snap.excluded.iter_rows(named=True)}
+    assert "obs|DS-000020|CPIAUCSL|2018-01-01|2018-02-01" in excl
+    assert excl["obs|DS-000020|CPIAUCSL|2018-01-01|2018-02-01"] == (
+        DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value
+    )
+    # the original vintage is the only allowed version of the Jan observation
+    jan = snap.records.filter(pl.col("event_time") == datetime(2018, 1, 1))
+    assert jan.height == 1
+    assert json.loads(jan.row(0, named=True)["payload_json"])["value"] == 2.1
+
+
+def test_market_payload_as_published_prices_from_split_events():
+    """Audit finding: stored bars are retroactively split-adjusted; the
+    payload must carry AS-PUBLISHED prices reconstructed from the sibling
+    events artifact - never the post-split values."""
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 3,
+            "symbol": ["AAPL"] * 3,
+            "trade_date": [date(2014, 6, 6), date(2014, 6, 9), date(2014, 6, 10)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)] * 3,
+            "open": [23.1, 23.17, 23.68],
+            "high": [23.2, 23.47, 23.76],
+            "low": [23.0, 22.94, 23.39],
+            "close": [23.05607, 23.424999, 23.5625],
+            "volume": [349_938_400, 62_766_800, 53_930_400],
+            "adjclose": [20.2, 20.5, 20.6],
+            "adjustment": ["split_adjusted"] * 3,
+        }
+    )
+    events = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 2,
+            "symbol": ["AAPL"] * 2,
+            "kind": ["splits", "splits"],
+            "ts": [datetime(2014, 6, 9, 13, 30), datetime(2020, 8, 31, 13, 30)],
+            "ratio": [7.0, 4.0],
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001", events=events)
+    rows = {json.loads(r["payload_json"])["trade_date"]: json.loads(r["payload_json"])
+            for r in frame.iter_rows(named=True)}
+    # pre-split: raw = adjusted * 7 * 4 (both splits after the bar)
+    assert rows["2014-06-06"]["close"] == pytest.approx(23.05607 * 28, abs=1e-6)
+    assert rows["2014-06-06"]["price_basis"] == "as_published"
+    assert rows["2014-06-06"]["volume"] == int(349_938_400 / 28)
+    # ex-date bar: only the 2020 split remains -> factor 4
+    assert rows["2014-06-09"]["close"] == pytest.approx(23.424999 * 4, abs=1e-6)
+    assert rows["2014-06-10"]["close"] == pytest.approx(23.5625 * 4, abs=1e-6)
+    # adjclose and adjustment never ride in the payload
+    for r in rows.values():
+        assert "adjclose" not in r
+        assert "adjustment" not in r
+
+
+def test_market_payload_without_events_marks_provider_basis():
+    """No events artifact -> the provider values stay verbatim and the
+    payload says so: never silently presented as historical truth."""
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"],
+            "trade_date": [date(2018, 1, 9)],
+            "ts_utc": [datetime(2018, 1, 9, 14, 30)],
+            "open": [100.0], "high": [102.0], "low": [99.0], "close": [101.0],
+            "volume": [1000], "adjclose": [95.0],
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001")
+    r = json.loads(frame.row(0, named=True)["payload_json"])
+    assert r["close"] == 101.0
+    assert r["price_basis"] == "provider_split_adjusted"
+
+
+def _split_events() -> pl.DataFrame:
+    return pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 2,
+            "symbol": ["AAPL"] * 2,
+            "kind": ["splits", "splits"],
+            "ts": [datetime(2014, 6, 9, 13, 30), datetime(2020, 8, 31, 13, 30)],
+            "ratio": [7.0, 4.0],
+        }
+    )
+
+
+def test_market_payload_raw_volume_provider_keeps_verbatim_shares():
+    """Audit finding (volume basis): stooq_csv volume is RAW shares (the
+    yahoo volume is split-adjusted). Dividing the raw volume by the split
+    factor would corrupt the as-published share count - OHLC is still
+    reconstructed, volume is not."""
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 3,
+            "symbol": ["AAPL"] * 3,
+            "trade_date": [date(2014, 6, 6), date(2014, 6, 9), date(2014, 6, 10)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)] * 3,
+            "open": [23.1, 23.17, 23.68],
+            "high": [23.2, 23.47, 23.76],
+            "low": [23.0, 22.94, 23.39],
+            "close": [23.05607, 23.424999, 23.5625],
+            "volume": [12_497_800, 62_766_800, 53_930_400],
+            "adjclose": [20.2, 20.5, 20.6],
+            "adjustment": ["split_adjusted"] * 3,
+            "provider": ["stooq_csv"] * 3,
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001", events=_split_events())
+    rows = {json.loads(r["payload_json"])["trade_date"]: json.loads(r["payload_json"])
+            for r in frame.iter_rows(named=True)}
+    # OHLC reconstructed (stooq OHLC is split-adjusted too)
+    assert rows["2014-06-06"]["close"] == pytest.approx(23.05607 * 28, abs=1e-6)
+    # volume is raw shares: NEVER divided by the split factor
+    assert rows["2014-06-06"]["volume"] == 12_497_800
+    assert rows["2014-06-06"]["price_basis"] == "as_published"
+    # the split-adjusted-volume path still divides (regression guard)
+    y = bars.with_columns(pl.lit("yahoo_chart_api").alias("provider"))
+    yf = market_timing_frame(y, "DS-000001", events=_split_events())
+    yrows = {json.loads(r["payload_json"])["trade_date"]: json.loads(r["payload_json"])
+             for r in yf.iter_rows(named=True)}
+    assert yrows["2014-06-06"]["volume"] == int(12_497_800 / 28)
+    # an explicit volume_basis overrides the provider inference
+    vf = market_timing_frame(y, "DS-000001", events=_split_events(), volume_basis="raw")
+    vrows = {json.loads(r["payload_json"])["trade_date"]: json.loads(r["payload_json"])
+             for r in vf.iter_rows(named=True)}
+    assert vrows["2014-06-06"]["volume"] == 12_497_800
+
+
+def test_market_payload_ohlc_reconstruction_guarded_by_adjustment_basis():
+    """Audit finding (adjustment guard): multiplying OHLC by the split
+    factor is only valid for SPLIT-ADJUSTED stored bars. A provider that
+    delivers raw OHLC must keep its verbatim as-published prices."""
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"],
+            "symbol": ["AAPL"],
+            "trade_date": [date(2014, 6, 6)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)],
+            "open": [645.5], "high": [646.0], "low": [643.0], "close": [645.57],
+            "volume": [12_497_800],
+            "adjclose": [645.57],
+            "adjustment": ["raw"],
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001", events=_split_events())
+    r = json.loads(frame.row(0, named=True)["payload_json"])
+    # already as-published: not multiplied by 28
+    assert r["close"] == 645.57
+    assert r["open"] == 645.5
+    assert r["volume"] == 12_497_800
+    assert r["price_basis"] == "as_published"
+
+
+def test_market_payload_factor_column_collision_is_safe():
+    """Second-pass finding: a bars frame that already carries its own
+    'factor' column used to make the polars join produce 'factor_right',
+    and the multiplier silently read the BARS' factor (999.0) instead of
+    the split factor - corrupting every reconstructed price. The joined
+    factor is now collision-free."""
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"],
+            "symbol": ["AAPL"],
+            "trade_date": [date(2014, 6, 6)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)],
+            "open": [23.1], "high": [23.2], "low": [23.0], "close": [23.05607],
+            "volume": [349_938_400],
+            "adjclose": [20.2],
+            "adjustment": ["split_adjusted"],
+            "factor": [999.0],
+        }
+    )
+    frame = market_timing_frame(bars, "DS-000001", events=_split_events())
+    r = json.loads(frame.row(0, named=True)["payload_json"])
+    assert r["close"] == pytest.approx(23.05607 * 28, abs=1e-6)
+    assert r["volume"] == int(349_938_400 / 28)
+
+
+def test_engine_loads_events_artifact_for_market_source(data_root):
+    """The engine finds the sibling events.parquet of a market source and
+    the snapshot payload then carries as-published prices."""
+    d = data_root / "normalized" / "market" / "yahoo_chart_api" / "DS-000099"
+    d.mkdir(parents=True, exist_ok=True)
+    bars = pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"] * 2,
+            "symbol": ["AAPL"] * 2,
+            "trade_date": [date(2014, 6, 6), date(2014, 6, 9)],
+            "ts_utc": [datetime(2014, 6, 6, 14, 30)] * 2,
+            "open": [23.1, 23.17], "high": [23.2, 23.47],
+            "low": [23.0, 22.94], "close": [23.05607, 23.424999],
+            "volume": [349_938_400, 62_766_800],
+            "adjclose": [20.2, 20.5],
+            "adjustment": ["split_adjusted"] * 2,
+            "provider": ["yahoo_chart_api"] * 2,
+            "source_uri": ["u"] * 2,
+            "snapshot_id": ["DS-000099"] * 2,
+        }
+    )
+    bars.write_parquet(d / "bars.parquet")
+    pl.DataFrame(
+        {
+            "instrument_id": ["INS-000001"],
+            "symbol": ["AAPL"],
+            "kind": ["splits"],
+            "ts": [datetime(2014, 6, 9, 13, 30)],
+            "ratio": [7.0],
+        }
+    ).write_parquet(d / "events.parquet")
+    src = TemporalSource(
+        snapshot_id="DS-000099", domain="market", provider="yahoo_chart_api",
+        checksum="a" * 64,
+        artifact_paths=[str(d / "bars.parquet")],
+    )
+    engine = TemporalTruthEngine(sources=[src])
+    snap = engine.snapshot(datetime(2014, 6, 10, 16, 0))
+    rows = {json.loads(r["payload_json"])["trade_date"]: json.loads(r["payload_json"])
+            for r in snap.records.iter_rows(named=True)}
+    assert rows["2014-06-06"]["close"] == pytest.approx(23.05607 * 7, abs=1e-6)  # as-published
+    assert rows["2014-06-06"]["price_basis"] == "as_published"
+    assert rows["2014-06-09"]["close"] == 23.424999  # post-split: factor 1
+
+
+def test_contract_rejects_mismatched_convention(tmp_path):
+    """A config that promises a convention the code does not implement must
+    fail loudly at load time (audit finding: conventions used to be parsed
+    and ignored)."""
+    from orbit.temporal.contracts import load_temporal_contract
+
+    p = tmp_path / "temporal.json"
+    p.write_text(
+        json.dumps(
+            {
+                "engine_version": "v1.0.0",
+                "session_close": "15:30",
+                "series_policies": {"DFF": "non_revised"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="session_close"):
+        load_temporal_contract(p)
+    # the default config is consistent with the implementation
+    from orbit.temporal.contracts import load_temporal_contract as _load
+
+    ok = _load()
+    assert ok.exchange_tz == "America/New_York"
+
+
+def test_contract_rejects_non_revised_default_policy(tmp_path):
+    """Audit finding: the documented conservative default is that an
+    UNKNOWN series counts as revised (rejected point-in-time). A config
+    flipping the default to non_revised would silently admit revised series
+    without vintage history - a leak-by-config - so it must fail loudly."""
+    from orbit.temporal.contracts import load_temporal_contract
+
+    p = tmp_path / "temporal.json"
+    p.write_text(
+        json.dumps(
+            {
+                "engine_version": "v1.0.0",
+                "default_series_policy": "non_revised",
+                "series_policies": {"DFF": "non_revised"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="default_series_policy"):
+        load_temporal_contract(p)
+
+
+def test_contract_normalizes_series_policy_values(tmp_path):
+    """Audit finding: garbage policy values were accepted silently. Values
+    are casefolded and normalized to the two canonical labels; anything else
+    raises instead of silently changing a series' revision status."""
+    from orbit.temporal.contracts import load_temporal_contract
+
+    p = tmp_path / "temporal.json"
+    p.write_text(
+        json.dumps(
+            {
+                "engine_version": "v1.0.0",
+                "series_policies": {"DFF": "Non_Revised", "CPIAUCSL": "revised "},
+            }
+        ),
+        encoding="utf-8",
+    )
+    c = load_temporal_contract(p)
+    assert c.series_policies == {
+        "DFF": "non_revised", "CPIAUCSL": "revised", "UNRATE": "revised",
+    }
+    p2 = tmp_path / "bad.json"
+    p2.write_text(
+        json.dumps({"series_policies": {"DFF": "sometimes_revised"}}),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="invalid series policy"):
+        load_temporal_contract(p2)
+
+
+def test_snapshot_does_not_mutate_source_frames(data_root):
+    """Invariant (prompt 16): requesting snapshots must never mutate the
+    underlying source data."""
+    engine = TemporalTruthEngine(sources=_sources(data_root))
+    before = {
+        src.snapshot_id: pl.read_parquet(src.artifact_paths[0]).hash_rows().to_list()
+        for src in engine.sources()
+    }
+    engine.snapshot(datetime(2020, 1, 8, 16, 0))
+    engine.snapshot(datetime(2020, 1, 9, 16, 0))
+    engine.snapshot(datetime(2019, 1, 1))
+    for src in engine.sources():
+        after = pl.read_parquet(src.artifact_paths[0]).hash_rows().to_list()
+        assert after == before[src.snapshot_id]
+
+
+def test_engine_data_root_redirects_artifact_resolution(data_root):
+    """Fifth-review finding: TemporalTruthEngine(data_root=...) was stored
+    but inert - artifact resolution always used the global data zone, so a
+    sandboxed engine silently read the WRONG data. data_root now redirects
+    the normalized artifact lookup, keeping sandboxed evaluation hermetic."""
+    _write_market(data_root)  # writes into data_root/normalized/market/...
+    engine = TemporalTruthEngine(
+        data_root=data_root,
+        sources=[
+            TemporalSource(
+                snapshot_id="DS-000001", domain="market",
+                provider="yahoo_chart_api",
+                checksum="a" * 64, manifest_path="m1.json",
+            )
+        ],
+    )
+    snap = engine.snapshot(datetime(2020, 1, 8, 16, 0))
+    assert snap.records.height == 4
+    # artifact resolution went to the sandboxed root, never the global zone
+    src = engine.sources()[0]
+    assert engine._artifact_paths(src) == [
+        str(data_root / "normalized" / "market" / "yahoo_chart_api"
+            / "DS-000001" / "bars.parquet")
+    ]
+
+
+def test_monotonic_information_set_no_future_backtravel():
+    """Invariants (prompt 16) over a deterministic corpus:
+
+      - no future visibility: every allowed record's available instant is
+        strictly before as_of;
+      - monotonic information: a non-vintage record allowed at t1 stays
+        allowed at every later t2;
+      - an observation available at t1 (some version) stays available at
+        every later t2;
+      - a future revision is never the version selected at t1.
+    """
+    from orbit.temporal.adapters import TIMING_SCHEMA
+    from orbit.temporal.times import Timing
+
+    def fact(rid: str, pub: datetime, event: datetime, ingest: datetime | None = None) -> Timing:
+        return Timing(
+            record_id=rid, domain="fundamentals", kind="fact",
+            event_time=event, publication_time=pub,
+            publication_precision=TimePrecision.DATETIME,
+            effective_time=pub, ingestion_time=ingest,
+        )
+
+    def vintage(rid: str, obs: date, released: date, value: float) -> Timing:
+        return Timing(
+            record_id=rid, domain="macro", kind="observation",
+            event_time=datetime(obs.year, obs.month, obs.day),
+            publication_time=datetime(released.year, released.month, released.day),
+            publication_precision=TimePrecision.DATE,
+            effective_time=datetime(released.year, released.month, released.day),
+            vintage_id=f"v{released.isoformat()}", vintage_date=released,
+            series_policy="revised",
+            payload={"series_id": "CPIAUCSL", "value": value},
+        )
+
+    corpus = [
+        fact("f_early", datetime(2018, 1, 2, 15), datetime(2018, 1, 1)),
+        fact("f_late", datetime(2018, 1, 15, 15), datetime(2018, 1, 10)),
+        fact("f_ingested_late", datetime(2018, 1, 5, 15), datetime(2018, 1, 4),
+             ingest=datetime(2018, 3, 1)),
+        vintage("v1", date(2018, 1, 1), date(2018, 1, 10), 2.1),
+        vintage("v2", date(2018, 1, 1), date(2018, 2, 5), 2.3),
+        vintage("v3", date(2018, 2, 1), date(2018, 3, 1), 2.2),
+    ]
+
+    def timing_frame(corpus: list[Timing]) -> pl.DataFrame:
+        return pl.DataFrame(
+            [
+                {
+                    "record_id": c.record_id,
+                    "source_key": c.payload.get("series_id", "s") if c.payload else "s",
+                    "domain": c.domain, "kind": c.kind,
+                    "event_time": c.event_time, "publication_time": c.publication_time,
+                    "publication_precision": c.publication_precision.value,
+                    "effective_time": c.effective_time, "ingestion_time": c.ingestion_time,
+                    "vintage_id": c.vintage_id, "vintage_date": c.vintage_date,
+                    "series_policy": c.series_policy,
+                    "payload_json": json.dumps(c.payload or {}),
+                }
+                for c in corpus
+            ],
+            schema=TIMING_SCHEMA,
+        )
+
+    engine = TemporalTruthEngine()
+    times = [
+        datetime(2018, 1, 1),
+        datetime(2018, 1, 8, 16, 0),
+        datetime(2018, 1, 12, 16, 0),
+        datetime(2018, 2, 7, 16, 0),
+        datetime(2018, 3, 5, 16, 0),
+    ]
+    resolved_by_t: list[tuple[datetime, pl.DataFrame]] = []
+    for t in times:
+        resolved = engine._resolve_vintages(engine.evaluate(timing_frame(corpus), t).frame)
+        resolved_by_t.append((t, resolved))
+
+    # (a) no future visibility: allowed records are strictly before as_of
+    for t, resolved in resolved_by_t:
+        allowed = resolved.filter(pl.col("allowed"))
+        if allowed.height:
+            assert (allowed["available_instant"] < t).all()
+
+    # (b) non-vintage records: allowed at t1 stays allowed at every later t2
+    def allowed_at(rid: str, t: datetime) -> bool:
+        for t2, resolved in resolved_by_t:
+            if t2 == t:
+                return resolved.filter(pl.col("record_id") == rid)["allowed"][0]
+        raise AssertionError(t)
+
+    for i in range(len(times) - 1):
+        for rid in ("f_early", "f_ingested_late"):
+            if allowed_at(rid, times[i]):
+                assert allowed_at(rid, times[i + 1]), f"{rid} regressed at {times[i+1]}"
+
+    # (c) the January observation exists (in some version) from 01-12 on
+    jan_at = {
+        t: resolved.filter(
+            (pl.col("source_key") == "CPIAUCSL")
+            & (pl.col("event_time") == datetime(2018, 1, 1))
+            & pl.col("allowed")
+        ).height
+        for t, resolved in resolved_by_t
+    }
+    assert jan_at[datetime(2018, 1, 1)] == 0
+    assert jan_at[datetime(2018, 1, 8, 16, 0)] == 0   # nothing released yet
+    assert jan_at[datetime(2018, 1, 12, 16, 0)] == 1  # original only
+    assert jan_at[datetime(2018, 2, 7, 16, 0)] == 1   # revision supersedes
+    assert jan_at[datetime(2018, 3, 5, 16, 0)] == 1
+
+    # (d) the version selected at t is never the future revision
+    t1_rows = {
+        json.loads(r["payload_json"])["value"]: r
+        for r in resolved_by_t[2][1]
+        .filter(
+            (pl.col("source_key") == "CPIAUCSL")
+            & (pl.col("event_time") == datetime(2018, 1, 1))
+            & pl.col("allowed")
+        )
+        .iter_rows(named=True)
+    }
+    assert list(t1_rows) == [2.1]
+    t2_rows = {
+        json.loads(r["payload_json"])["value"]: r
+        for r in resolved_by_t[4][1]
+        .filter(
+            (pl.col("source_key") == "CPIAUCSL")
+            & (pl.col("event_time") == datetime(2018, 1, 1))
+            & pl.col("allowed")
+        )
+        .iter_rows(named=True)
+    }
+    assert list(t2_rows) == [2.3]
+
+    # (e) the rejected revision stays in the audit trail at 01-12
+    codes = {
+        r["record_id"]: r["decision_code"]
+        for r in resolved_by_t[2][1].filter(~pl.col("allowed")).iter_rows(named=True)
+    }
+    assert codes["v2"] == DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value
+    assert codes["v3"] == DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value

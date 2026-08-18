@@ -109,7 +109,7 @@ class PointInTimeSnapshot:
 
     def _canonical_records_json(self) -> str:
         """Deterministic JSON of the full content (records + exclusions)."""
-        parts: list[Any] = {
+        parts: dict[str, Any] = {
             "as_of_time": self.as_of_time.isoformat(),
             "engine_version": self.engine_version,
             "sources": sorted(

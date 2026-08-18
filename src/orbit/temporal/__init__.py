@@ -18,6 +18,7 @@ Module layout:
 """
 
 from orbit.temporal.contracts import TemporalContract, load_temporal_contract
+from orbit.temporal.calendar import ReleaseCalendar, ReleaseCalendarEntry
 from orbit.temporal.engine import (
     Evaluation,
     SourceInput,
@@ -46,6 +47,8 @@ __all__ = [
     "DecisionCode",
     "Evaluation",
     "PointInTimeSnapshot",
+    "ReleaseCalendar",
+    "ReleaseCalendarEntry",
     "RuleTrace",
     "SourceInput",
     "TemporalContract",

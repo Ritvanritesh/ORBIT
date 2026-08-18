@@ -13,10 +13,15 @@ The rules are deliberately few, explicit, and conservative:
                                         known, so nothing from this series enters)
 2. MISSING_PUBLICATION_TIME          -> REJECT (availability is never invented)
 3. PUBLICATION_AT_OR_AFTER_AS_OF     -> REJECT (strict boundary, exact-tie rejects)
-4. NO_VINTAGE_AT_AS_OF               -> REJECT (no version released before t)
-5. EVENT_AFTER_AS_OF                 -> REJECT (forward-dated records are not
+4. EFFECTIVE_AFTER_AS_OF             -> REJECT (a record that only becomes
+                                        applicable after as_of is not part of
+                                        the historical information set)
+5. NO_VINTAGE_AT_AS_OF               -> REJECT (no version released before t;
+                                        skipped for instant-precision releases
+                                        whose publication instant is known)
+6. EVENT_AFTER_AS_OF                 -> REJECT (forward-dated records are not
                                         part of the historical information set)
-6. otherwise                         -> ALLOW (decision code records which
+7. otherwise                         -> ALLOW (decision code records which
                                         precision convention was applied)
 
 Warnings are attached but never flip a decision:
@@ -136,8 +141,32 @@ def decide(timing: Timing, as_of: datetime | Any) -> AvailabilityDecision:
             warnings=tuple(warnings),
         )
 
-    # 4. vintage data: a version must have been released before as_of
-    if timing.vintage_date is not None and timing.vintage_date >= t.date():
+    # 4. effective-time constraint: a record that becomes applicable only
+    #    AFTER as_of is not part of what was usable at as_of, even if it
+    #    was already public (e.g. a corporate action effective next week).
+    if timing.effective_time is not None and timing.effective_time > t:
+        return AvailabilityDecision(
+            record_id=timing.record_id, as_of_time=t, allowed=False,
+            code=DecisionCode.EFFECTIVE_AFTER_AS_OF,
+            detail=(
+                f"effective_time {timing.effective_time.isoformat()} is after "
+                f"as_of={t.isoformat()}; the record was not yet applicable at "
+                "the decision time"
+            ),
+            warnings=tuple(warnings),
+        )
+
+    # 5. vintage data: a version must have been released before as_of.
+    #    Instant-precision releases (publication instant known, e.g. a
+    #    release-calendar entry) are gated by the strict publication
+    #    boundary alone; the date check below applies only to
+    #    date-precision vintages, where the intraday release instant is
+    #    unknown and the next-day convention decides.
+    if (
+        timing.vintage_date is not None
+        and timing.publication_precision != TimePrecision.DATETIME
+        and timing.vintage_date >= t.date()
+    ):
         return AvailabilityDecision(
             record_id=timing.record_id, as_of_time=t, allowed=False,
             code=DecisionCode.NO_VINTAGE_AT_AS_OF,
@@ -149,7 +178,7 @@ def decide(timing: Timing, as_of: datetime | Any) -> AvailabilityDecision:
             warnings=tuple(warnings),
         )
 
-    # 5. forward-dated event records are not historical knowledge
+    # 6. forward-dated event records are not historical knowledge
     if timing.event_time is not None and timing.event_time > t:
         return AvailabilityDecision(
             record_id=timing.record_id, as_of_time=t, allowed=False,
@@ -162,12 +191,17 @@ def decide(timing: Timing, as_of: datetime | Any) -> AvailabilityDecision:
             warnings=tuple(warnings),
         )
 
+    # the code must use the SAME precision predicate as the boundary above:
+    # null/unknown precision is treated as DATE there, so it must also be
+    # labeled as the date-precision allowance here (an engine row with null
+    # precision reports allowed_date_precision_next_day; the record path
+    # must agree - the decision code is provenance)
     code = (
         DecisionCode.ALLOWED_VINTAGE_RESOLVED
         if timing.vintage_date is not None
         else (
             DecisionCode.ALLOWED_DATE_PRECISION
-            if timing.publication_precision == TimePrecision.DATE
+            if timing.publication_precision != TimePrecision.DATETIME
             else DecisionCode.ALLOWED_BEFORE_PUBLICATION
         )
     )
@@ -235,7 +269,10 @@ def trace_rule(timing: Timing, as_of: datetime | Any) -> RuleTrace:
         record_id=timing.record_id,
         normalized_as_of=t,
         publication_time=pub,
-        publication_precision=timing.publication_precision.value,
+        publication_precision=(
+            timing.publication_precision.value
+            if timing.publication_precision is not None else None
+        ),
         available_instant=available_instant,
         event_time=timing.event_time,
         ingestion_time=timing.ingestion_time,

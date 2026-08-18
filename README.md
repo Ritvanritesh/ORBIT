@@ -28,7 +28,11 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   versions audited not dropped, point-in-time snapshots with content digests
   and provenance, temporal as-of joins, feature-time guards, 6 permanent
   synthetic leak fixtures, macro schema v1.1.0 with `vintage_date` (ALFRED
-  ready), full test suite 168 tests. See `docs/phase4_temporal_truth.md`.
+  ready), as-published market payloads (split-adjusted OHLCV reconstructed
+  from the events artifact, `price_basis` in the payload, provider-aware
+  volume basis), effective-time gate, release-calendar sharpening, contract
+  convention validation, full test suite 216 tests. See
+  `docs/phase4_temporal_truth.md`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels;

@@ -11,5 +11,6 @@
     "CPIAUCSL": "revised",
     "UNRATE": "revised"
   },
-  "forward_dated_events": "exclude"
+  "forward_dated_events": "exclude",
+  "release_calendar": []
 }

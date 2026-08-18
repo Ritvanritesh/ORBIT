@@ -38,6 +38,20 @@ from orbit.temporal.times import (
 
 ENGINE = TemporalTruthEngine()
 
+TIMING_KEYS = [
+    "record_id", "domain", "kind", "event_time",
+    "publication_time", "publication_precision", "effective_time",
+    "ingestion_time", "vintage_id", "vintage_date", "series_policy",
+]
+
+
+def _timing_from_row(row: dict) -> Timing:
+    """Build a Timing from one timing-frame row (payload_json -> payload)."""
+    return Timing(
+        **{k: row[k] for k in TIMING_KEYS},
+        payload=json.loads(row["payload_json"]),
+    )
+
 
 def _timing(
     record_id: str,
@@ -50,6 +64,7 @@ def _timing(
     policy: str | None = None,
     domain: str = "fundamentals",
     kind: str = "fact",
+    effective: datetime | None = None,
 ) -> Timing:
     return Timing(
         record_id=record_id,
@@ -58,7 +73,7 @@ def _timing(
         event_time=event,
         publication_time=pub,
         publication_precision=precision,
-        effective_time=pub,
+        effective_time=effective if effective is not None else pub,
         ingestion_time=ingested,
         vintage_id=vintage_date.isoformat() if vintage_date else None,
         vintage_date=vintage_date,
@@ -564,6 +579,327 @@ def test_fred_adapter_v1_1_0_vintage_rows():
     assert original["series_policy"] == "revised"  # vintages override policy
 
 
+# --------------------------------------------------------------- effective
+
+
+def test_effective_time_after_decision_rejects():
+    """A record that is public but only becomes APPLICABLE after as_of is
+    not part of the historical information set."""
+    d = ENGINE.decide_record(
+        _timing(
+            "r1",
+            event=datetime(2018, 1, 5),
+            pub=datetime(2018, 1, 8),
+            effective=datetime(2018, 1, 15),
+        ),
+        T,
+    )
+    assert not d.allowed
+    assert d.code == DecisionCode.EFFECTIVE_AFTER_AS_OF
+
+
+def test_effective_time_at_decision_allows():
+    """effective_time == as_of is usable: the record becomes applicable at
+    the decision instant (publication still gates strictly)."""
+    d = ENGINE.decide_record(
+        _timing(
+            "r1",
+            event=datetime(2018, 1, 5),
+            pub=datetime(2018, 1, 8),
+            effective=T,
+        ),
+        T,
+    )
+    assert d.allowed
+
+
+def test_effective_time_before_decision_allows():
+    d = ENGINE.decide_record(
+        _timing(
+            "r1",
+            event=datetime(2018, 1, 5),
+            pub=datetime(2018, 1, 8),
+            effective=datetime(2018, 1, 9),
+        ),
+        T,
+    )
+    assert d.allowed
+
+
+def test_effective_after_but_publication_gate_still_strict():
+    """The effective rule is a SECOND gate: it never loosens publication."""
+    d = ENGINE.decide_record(
+        _timing(
+            "r1",
+            event=datetime(2018, 1, 5),
+            pub=datetime(2018, 1, 11),
+            effective=datetime(2018, 1, 20),
+        ),
+        T,
+    )
+    assert not d.allowed
+    assert d.code == DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF
+
+
+# --------------------------------------------------------- policy agreement
+
+
+def test_unknown_series_policy_rejected_by_both_paths():
+    """decide() and evaluate() must agree: ANY policy other than '' or
+    'non_revised' marks a revised series (audit finding: evaluate used to
+    only reject the exact literal 'revised')."""
+    timing = _timing(
+        "r1",
+        event=datetime(2018, 1, 1),
+        pub=datetime(2018, 1, 12),
+        precision=TimePrecision.DATE,
+        policy="unknown",
+        domain="macro",
+        kind="observation",
+    )
+    d = ENGINE.decide_record(timing, datetime(2018, 1, 15))
+    assert not d.allowed
+    assert d.code == DecisionCode.NOT_POINT_IN_TIME
+    frame = pl.DataFrame(
+        [
+            {
+                "record_id": "r1", "source_key": "SERIESX", "domain": "macro",
+                "kind": "observation", "event_time": datetime(2018, 1, 1),
+                "publication_time": datetime(2018, 1, 12),
+                "publication_precision": "date",
+                "effective_time": datetime(2018, 1, 12),
+                "ingestion_time": None, "vintage_id": None, "vintage_date": None,
+                "series_policy": "unknown",
+                "payload_json": "{}",
+            }
+        ]
+    )
+    ev = ENGINE.evaluate(frame, datetime(2018, 1, 15))
+    assert ev.excluded.height == 1
+    assert ev.excluded["decision_code"][0] == DecisionCode.NOT_POINT_IN_TIME.value
+
+
+def test_precision_case_insensitive_in_evaluate():
+    """'DATE' (uppercase) must be treated exactly like 'date' by the
+    vectorized engine, never silently upgraded to instant availability."""
+    timing = _timing(
+        "r1",
+        event=datetime(2018, 1, 5),
+        pub=datetime(2018, 1, 10),
+        precision=TimePrecision.DATE,
+    )
+    assert not ENGINE.decide_record(timing, datetime(2018, 1, 10, 23, 59, 59)).allowed
+    frame = pl.DataFrame(
+        [
+            {
+                "record_id": "r1", "source_key": "s", "domain": "fundamentals",
+                "kind": "fact", "event_time": datetime(2018, 1, 5),
+                "publication_time": datetime(2018, 1, 10),
+                "publication_precision": "DATE",
+                "effective_time": datetime(2018, 1, 10),
+                "ingestion_time": None, "vintage_id": None, "vintage_date": None,
+                "series_policy": None,
+                "payload_json": "{}",
+            }
+        ]
+    )
+    ev = ENGINE.evaluate(frame, datetime(2018, 1, 10, 23, 59, 59))
+    assert ev.excluded.height == 1
+    assert ev.excluded["decision_code"][0] == DecisionCode.PUBLICATION_AT_OR_AFTER_AS_OF.value
+
+
+def test_evaluate_rejects_invalid_precision_values():
+    """A corrupted precision value must fail loudly instead of silently
+    behaving like instant availability."""
+    frame = pl.DataFrame(
+        [
+            {
+                "record_id": "r1", "source_key": "s", "domain": "fundamentals",
+                "kind": "fact", "event_time": datetime(2018, 1, 5),
+                "publication_time": datetime(2018, 1, 8),
+                "publication_precision": "instant",
+                "effective_time": datetime(2018, 1, 8),
+                "ingestion_time": None, "vintage_id": None, "vintage_date": None,
+                "series_policy": None,
+                "payload_json": "{}",
+            }
+        ]
+    )
+    with pytest.raises(ValueError, match="publication_precision"):
+        ENGINE.evaluate(frame, T)
+
+
+# ------------------------------------------------------------ release calendar
+
+
+def test_calendar_absent_keeps_next_day_convention():
+    """No calendar -> vintage rows keep the conservative next-day rule."""
+    series = pl.DataFrame(
+        {
+            "series_id": ["CPIAUCSL"],
+            "observation_date": [date(2018, 1, 1)],
+            "value": [2.1],
+            "vintage_date": [date(2018, 1, 8)],  # a Monday
+            "vintage_note": ["alfred"],
+            "provider": ["fred_csv"],
+            "snapshot_id": ["DS-1"],
+        }
+    )
+    frame = fred_timing_frame(series, "DS-1", series_policies={"CPIAUCSL": "revised"})
+    row = frame.row(0, named=True)
+    assert row["publication_precision"] == "date"
+    d = ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 8, 16, 0)
+    )
+    assert not d.allowed  # 2018-01-08 filed -> available 2018-01-09
+
+
+def test_calendar_disabled_entry_is_inert():
+    """An entry that exists but is not enabled must not sharpen anything."""
+    from orbit.temporal.calendar import ReleaseCalendar, ReleaseCalendarEntry
+
+    cal = ReleaseCalendar(
+        entries=[
+            ReleaseCalendarEntry(
+                series_id="CPIAUCSL", release_time="08:30", weekday=0,
+                evidence="BLS release schedule", enabled=False,
+            )
+        ]
+    )
+    series = pl.DataFrame(
+        {
+            "series_id": ["CPIAUCSL"],
+            "observation_date": [date(2018, 1, 1)],
+            "value": [2.1],
+            "vintage_date": [date(2018, 1, 8)],  # Monday
+            "vintage_note": ["alfred"],
+            "provider": ["fred_csv"],
+            "snapshot_id": ["DS-1"],
+        }
+    )
+    frame = fred_timing_frame(
+        series, "DS-1", series_policies={"CPIAUCSL": "revised"}, calendar=cal
+    )
+    row = frame.row(0, named=True)
+    assert row["publication_precision"] == "date"
+    assert row["publication_time"] == datetime(2018, 1, 8)
+
+
+def test_calendar_enabled_sharpens_to_scheduled_instant_est():
+    """An enabled, evidenced entry sharpens a Monday vintage to 08:30
+    America/New_York (13:30 UTC in EST): available from that exact instant,
+    never before it."""
+    from orbit.temporal.calendar import ReleaseCalendar, ReleaseCalendarEntry
+
+    cal = ReleaseCalendar(
+        entries=[
+            ReleaseCalendarEntry(
+                series_id="CPIAUCSL", release_time="08:30", weekday=0,
+                evidence="BLS 8:30 ET release schedule (verified)",
+                enabled=True,
+            )
+        ]
+    )
+    series = pl.DataFrame(
+        {
+            "series_id": ["CPIAUCSL"],
+            "observation_date": [date(2018, 1, 1)],
+            "value": [2.1],
+            "vintage_date": [date(2018, 1, 8)],  # Monday 2018-01-08
+            "vintage_note": ["alfred"],
+            "provider": ["fred_csv"],
+            "snapshot_id": ["DS-1"],
+        }
+    )
+    frame = fred_timing_frame(
+        series, "DS-1", series_policies={"CPIAUCSL": "revised"}, calendar=cal
+    )
+    row = frame.row(0, named=True)
+    assert row["publication_precision"] == "datetime"
+    assert row["publication_time"] == datetime(2018, 1, 8, 13, 30)  # EST
+    assert not ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 8, 13, 29, 59)
+    ).allowed
+    assert ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 8, 13, 30, 1)
+    ).allowed
+    assert ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 9)
+    ).allowed
+
+
+def test_calendar_enabled_sharpens_to_scheduled_instant_edt():
+    """DST: the same 08:30 America/New_York entry is 12:30 UTC in EDT."""
+    from orbit.temporal.calendar import ReleaseCalendar, ReleaseCalendarEntry
+
+    cal = ReleaseCalendar(
+        entries=[
+            ReleaseCalendarEntry(
+                series_id="CPIAUCSL", release_time="08:30", weekday=0,
+                evidence="BLS 8:30 ET release schedule (verified)",
+                enabled=True,
+            )
+        ]
+    )
+    series = pl.DataFrame(
+        {
+            "series_id": ["CPIAUCSL"],
+            "observation_date": [date(2018, 6, 1)],
+            "value": [2.5],
+            "vintage_date": [date(2018, 6, 11)],  # Monday 2018-06-11
+            "vintage_note": ["alfred"],
+            "provider": ["fred_csv"],
+            "snapshot_id": ["DS-1"],
+        }
+    )
+    frame = fred_timing_frame(
+        series, "DS-1", series_policies={"CPIAUCSL": "revised"}, calendar=cal
+    )
+    row = frame.row(0, named=True)
+    assert row["publication_time"] == datetime(2018, 6, 11, 12, 30)  # EDT
+
+
+def test_calendar_weekday_mismatch_falls_back_to_next_day():
+    """A holiday-shifted release (release date weekday != entry weekday)
+    must NOT be sharpened with the wrong date - the conservative next-day
+    rule applies instead."""
+    from orbit.temporal.calendar import ReleaseCalendar, ReleaseCalendarEntry
+
+    cal = ReleaseCalendar(
+        entries=[
+            ReleaseCalendarEntry(
+                series_id="CPIAUCSL", release_time="08:30", weekday=0,
+                evidence="BLS 8:30 ET release schedule (verified)",
+                enabled=True,
+            )
+        ]
+    )
+    series = pl.DataFrame(
+        {
+            "series_id": ["CPIAUCSL"],
+            "observation_date": [date(2018, 1, 1)],
+            "value": [2.1],
+            "vintage_date": [date(2018, 1, 9)],  # Tuesday: mismatch
+            "vintage_note": ["alfred"],
+            "provider": ["fred_csv"],
+            "snapshot_id": ["DS-1"],
+        }
+    )
+    frame = fred_timing_frame(
+        series, "DS-1", series_policies={"CPIAUCSL": "revised"}, calendar=cal
+    )
+    row = frame.row(0, named=True)
+    assert row["publication_precision"] == "date"
+    assert row["publication_time"] == datetime(2018, 1, 9)
+    # next-day convention applies
+    assert not ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 9, 23, 59, 59)
+    ).allowed
+    assert ENGINE.decide_record(
+        _timing_from_row(row), datetime(2018, 1, 10, 0, 0, 1)
+    ).allowed
+
+
 # --------------------------------------------- audit-4 regression findings
 
 
@@ -671,3 +1007,44 @@ def test_timing_accepts_z_suffixed_iso_strings():
     )
     assert timing.event_time == datetime(2018, 1, 1)
     assert timing.publication_time == datetime(2018, 1, 8, 15, 0)
+
+
+def test_timing_precision_casefold_matches_engine():
+    """Fifth-review finding: the record path used to RAISE on 'DATE' while
+    the vectorized engine casefolds it - the same input decided differently
+    depending on the path. Timing now casefolds exactly like evaluate(); a
+    genuinely invalid value still raises."""
+    timing = Timing(
+        record_id="r1", domain="fundamentals", kind="fact",
+        event_time=datetime(2018, 1, 1),
+        publication_time=datetime(2018, 1, 8, 15, 0),
+        publication_precision="DATE",
+    )
+    assert timing.publication_precision == TimePrecision.DATE
+    # next-day convention applies (identical to the engine path)
+    assert not ENGINE.decide_record(timing, datetime(2018, 1, 9, 0, 0, 0)).allowed
+    assert ENGINE.decide_record(timing, datetime(2018, 1, 9, 0, 0, 1)).allowed
+    with pytest.raises(ValueError, match="invalid publication_precision"):
+        Timing(
+            record_id="r1", domain="fundamentals", kind="fact",
+            publication_time=datetime(2018, 1, 8, 15, 0),
+            publication_precision="sometimes",
+        )
+
+
+def test_trace_rule_handles_null_precision():
+    """Fifth-review finding: trace_rule crashed with AttributeError on
+    publication_precision=None while decide() treats it as DATE (next-day).
+    The trace now reports the null and stays consistent with the decision."""
+    from orbit.temporal.rules import trace_rule
+
+    timing = Timing(
+        record_id="r1", domain="fundamentals", kind="fact",
+        event_time=datetime(2018, 1, 1),
+        publication_time=datetime(2018, 1, 8, 15, 0),
+        publication_precision=None,
+    )
+    trace = trace_rule(timing, datetime(2018, 1, 9, 0, 0, 1))
+    assert trace.publication_precision is None
+    assert trace.decision.allowed
+    assert trace.decision.code == DecisionCode.ALLOWED_DATE_PRECISION

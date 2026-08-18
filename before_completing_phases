@@ -61,3 +61,54 @@ Revision notes: Phase 4 was initially committed at 3989b12 (175 tests). A formal
 All fixes verified: 185 tests pass, revision_probe.py R1-R13 + S1-S7 all pass, audit3.py 20 adversarial checks pass.
 
 Second independent pass: initial REJECT verdict (4 MAJOR findings in the restructured asof_join) → all 4 fixed plus 2 additional MAJOR regressions (rename-map dedup + empty-right column preservation) identified and fixed. Final verdict: APPROVE.
+
+
+
+Third independent pass (fresh adversarial audit of the shipped implementation, per protocol "second independent pass" escalation):
+- F1 (MAJOR): `_resolve_vintages` DROPPED rejected vintage rows whenever at least one other version of the same observation was allowed — the revision's rejection vanished from the audit trail, breaking auditability (a reviewer could not see the rejected release). Fixed: `rest` now keeps rows with null vintage_date OR disallowed (rejected rows survive as `excluded`), and the allowed/not-allowed resolution no longer destroys them. Regression tests: rejected revision preserved at evaluate level and snapshot level; adversarial end-to-end revision test; monotonic-information invariant.
+- F2 (MAJOR): market payloads contained RETROACTIVELY split-adjusted OHLCV presented as as-published values (verified on real DS-000001 data: 2014-06-06 AAPL close 23.05607 is the post-7:1/4:1 value; the real published close was 645.57 = x28). A pre-split historical snapshot was silently carrying post-split prices — a quantitative backtest leak. Fixed: `market_timing_frame` reconstructs as-published OHLCV from the sibling `events.parquet` (raw = adjusted x product of split ratios with ex_date > trade_date; raw volume = volume / factor; ex-date itself is NOT undone); payload gains `price_basis` = `as_published` or explicit `provider_split_adjusted` when no events artifact exists; `adjclose`/`adjustment` excluded; the engine auto-loads the sibling events artifact. Regression tests: unit reconstruction (x28, x4, factor-1), provider-basis fallback, engine snapshot with real split events, adversarial future-split leak test.
+- F3 (MAJOR): `effective_time` was parsed but never enforced — a record public at t but only applicable after t would be admitted. Fixed: new `EFFECTIVE_AFTER_AS_OF` gate in both `decide()` and `evaluate()` (rule 4), documented as a forward contract (current sources: effective == publication). Regression tests: after/at/before gates incl. a second-gate scenario.
+- F4 (MINOR): `evaluate()` vs `decide()` inconsistency — unknown `series_policy` values and precision case variants ("DATE" vs "date") were handled differently between the vectorized engine and the rule loop. Fixed: engine policy allow-list now matches the rule loop (`not in ["", "non_revised"]`), precision is casefolded, invalid precision values raise ValueError instead of silently defaulting. Regression tests: policy-agreement + precision-case + invalid-precision.
+- F5 (MINOR): contract config conventions (`exchange_tz`, `session_close`, ...) were parsed and ignored. Fixed: `IMPLEMENTED_CONVENTIONS` validation raises ValueError on any convention the engine does not enforce. Regression test: mismatched session_close rejected at load.
+- F6: release calendar (prompt §8) was absent. Implemented: `ReleaseCalendar`/`ReleaseCalendarEntry` with `enabled`/`evidence`/weekday guards; FRED timing sharpens a release to the scheduled instant (08:30 America/New_York) only for enabled+weekday-matching entries, else the next-day convention; `"release_calendar": []` in default config. Regression tests: absent/disabled/enabled EST/enabled EDT/weekday-mismatch.
+- All fixes verified: 207 tests pass (46 rules, 42 engine, 20 leaks + Phase 1-3), no Phase 1-3 regression.
+Final verdict: PASS — implementation, tests, documentation, and architecture consistent with the ORBIT roadmap.
+
+
+
+Fourth protocol run (full 3-review protocol executed again on the shipped state):
+Review 1 (requirements) / Review 2 (technical) / Review 3 (research-quantitative):
+- P1 (MEDIUM): volume as-published reconstruction divided the split factor out of EVERY provider's volume, but stooq_csv volume is RAW shares (documented in the market schema sidecar; yahoo volume is split-adjusted). Dividing raw shares corrupts the as-published share count and any dollar-volume feature built on it. Fixed: `_volume_is_split_adjusted()` (provider map yahoo_chart_api->split_adjusted, stooq_csv->raw; explicit `volume_basis` override; unknown provider keeps the canonical split-adjusted contract). Regression tests: stooq volume kept verbatim while OHLC still reconstructed; yahoo still divides; explicit override.
+- P2 (LOW): OHLC reconstruction multiplied by the split factor regardless of the recorded `adjustment` basis - a future raw-basis provider would have every price corrupted. Fixed: reconstruction runs only when the `adjustment` column (if present) is entirely within the adjusted labels; a raw-basis frame keeps verbatim prices and is still marked `price_basis: as_published` (they ARE as-published). Regression test.
+- P3 (MEDIUM): contract accepted `default_series_policy: "non_revised"` and garbage policy values (`"revised "`) silently - a config typo could admit revised series point-in-time (leak-by-config), contradicting the documented conservative default. Fixed: `default_series_policy` added to IMPLEMENTED_CONVENTIONS (must be "revised"; flipping refused at load), and pydantic validators casefold/normalize all policy values to {revised, non_revised}, raising on anything else. Regression tests: non_revised default rejected; values normalized; garbage rejected.
+- P4 (LOW): `TemporalTruthEngine(registry=...)` was a dead parameter (nothing used it) and snapshot.py had a wrong type annotation (`parts: list[Any]` for a dict). Fixed: parameter removed, annotation corrected.
+- Second independent pass:
+  - Differential fuzz: 400 randomized timing x as_of cases comparing `decide()` vs `evaluate()` — 0 mismatches (the two decision paths agree exactly).
+  - P5 (MAJOR-adjacent, second pass): a bars frame already carrying its own `factor` column made the split-factor join produce `factor_right`, and the multiplier silently read the BARS' factor (e.g. 999.0) — every reconstructed price corrupted (verified by probe: close 23.06 -> 23033 instead of 161.39). Fixed: the joined factor uses a collision-free reserved name (`_split_factor`). Regression test.
+  - P6: probe confirmed `available_instant` upcasts Date->Datetime in the engine's when/then branches, so asof_join null groups and joined groups keep identical schemas (no crash on date-precision rights).
+  - Verified: `observation_date` is pl.Date in the macro schema (adapter's `_day_start` path is type-safe); SEC end/filed are ISO strings handled with strict=False; events ts ex-date rule matches the Phase 3 normalizer's `_session_date`.
+- All fixes verified: 212 tests pass (46 rules, 47 engine, 20 leaks + 99 Phase 1-3), no Phase 1-3 regression; README/docs updated.
+Final verdict: PASS.
+
+
+
+Fifth protocol run (fresh 3-review pass on untouched areas):
+Review 1 (requirements): registry integration verified by test_build_temporal_source_from_registry (engine consumes Phase 3 registry records: domain/provider/checksum/manifest/downloaded_at); no requirement gaps found beyond the dead API surface below.
+Review 2 (technical):
+- P7: TemporalTruthEngine(data_root=...) was STORED BUT INERT - artifact resolution always used the global data zone, so a sandboxed engine silently read the wrong data (same class of bug as the removed registry param). Fixed: `_normalized_dir()` honors the engine data_root; `_artifact_paths` resolves through it. Regression test: sandboxed engine resolves to the temp root and snapshots its data.
+- P8: Timing(publication_precision='DATE') RAISED on the record path while the vectorized engine casefolds 'date' - identical input, different behavior per path. Fixed: Timing casefolds exactly like evaluate(); genuinely invalid values still raise ValueError. Regression test.
+- P9: trace_rule() crashed with AttributeError on publication_precision=None (decide() treated it as DATE); deeper, decide() ALSO mislabeled the allowance code for null precision (ALLOWED_BEFORE_PUBLICATION) while the engine reported ALLOWED_DATE_PRECISION - a provenance-code divergence. Fixed: trace handles null precision; decide() now uses the SAME precision predicate for the code as for the boundary (null/unknown -> allowed_date_precision_next_day). Regression tests.
+Review 3 (research): 600-case differential fuzz v2 with exotic inputs (null/uppercase/mixed-case precisions, policy casing, vintage+effective cross-products, random as-of instants) - decide() vs evaluate(): 0 mismatches; invariant `allowed -> available_instant < as_of`: 0 breaks.
+Second independent pass: probed missing-publication_precision frames (loud ColumnNotFoundError - acceptable for the documented timing-frame contract), empty-artifact snapshots (clean 0-record snapshot with stable digest), mixed-provider volume frames (documented canonical default).
+- All fixes verified: 215 tests pass (49 rules, 47 engine, 20 leaks + 99 Phase 1-3), no Phase 1-3 regression; README/docs updated.
+Final verdict: PASS.
+
+
+
+Targeted exit audit (last untouched corners before close-out):
+- E1 (MEDIUM): MarketDataAccessor (Phase 2, feeds the UniverseEngine membership/liquidity filters) served RETROACTIVELY SPLIT-ADJUSTED closes as historical closes - a pre-split 'last close' was the post-split price, and trailing dollar volume used adjusted dollars. Same leak class the temporal engine already fixes, still present in the accessor. Fixed: the accessor now loads the sibling events artifact and reconstructs AS-PUBLISHED OHLCV through `as_published_bars` (the canonical reconstruction extracted from market_timing_frame and now shared by the engine and the accessor - one source of point-in-time truth). Regression test: pre-split close 645.57 (never 23.06) and raw-dollar volume across the 7:1/4:1 split chain.
+- E2: verified the extraction did not change the temporal payload contract (all market payload tests still pass; price_basis is added exactly once).
+- E3: hypotheses/seeds.py + seed_hypotheses.md are consistent with the temporal conventions (publication-time semantics, point-in-time closes) - no contradiction.
+- E4: registry edge cases in build_temporal_source (missing manifest_path, null downloaded_at) are handled by Optional fields - no crash path found.
+- All fixes verified: 216 tests pass, no Phase 1-3 regression; README/docs updated.
+Final verdict: PASS. Phase 4 complete.

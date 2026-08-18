@@ -21,6 +21,7 @@ import polars as pl
 from orbit.ingestion.paths import normalized_dir
 from orbit.schemas.data import DatasetSnapshot
 from orbit.schemas.instrument import Instrument
+from orbit.temporal.adapters import as_published_bars
 
 
 def build_dataset_snapshot(
@@ -74,11 +75,12 @@ class MarketDataAccessor:
     volume uses close * volume; the median is taken over the window ending
     strictly before as_of (lagged liquidity, per the Phase 2 rule).
 
-    Volume basis: for yahoo_chart_api, close AND volume are on the same
-    split-adjusted share basis, so close*volume is true dollar volume. For
-    a provider that ships RAW volume next to adjusted closes (e.g.
-    stooq_csv), this product is discontinuous at splits and must be
-    reconstructed from events before use.
+    PRICE BASIS (Phase 4 audit): the stored bars are retroactively
+    SPLIT-ADJUSTED by the provider. Every value served by this accessor
+    (`last_close`, `trailing_dollar_volume`) is reconstructed AS-PUBLISHED
+    from the sibling events artifact via `as_published_bars` - the same
+    canonical reconstruction the Temporal Truth Engine uses - so a
+    historical membership record never carries a post-split price.
     """
 
     def __init__(
@@ -91,19 +93,26 @@ class MarketDataAccessor:
         self._instruments = instruments
         self._snapshot_id = snapshot_id
         self._bars: pl.DataFrame | None = None
-        path = (
-            (data_root / "normalized" / "market" / provider / snapshot_id / "bars.parquet")
+        base = (
+            (data_root / "normalized" / "market" / provider / snapshot_id)
             if data_root
-            else normalized_dir("market", provider, snapshot_id) / "bars.parquet"
+            else normalized_dir("market", provider, snapshot_id)
         )
-        self._bars_path = path
+        self._bars_path = base / "bars.parquet"
+        self._events_path = base / "events.parquet"
 
     def instruments(self) -> list[Instrument]:
         return self._instruments
 
     def _load(self) -> pl.DataFrame:
         if self._bars is None:
-            self._bars = pl.read_parquet(self._bars_path)
+            events = (
+                pl.read_parquet(self._events_path)
+                if self._events_path.exists() else None
+            )
+            self._bars = as_published_bars(
+                pl.read_parquet(self._bars_path), events=events
+            )
         return self._bars
 
     def _rows_for(self, instrument_id: str) -> pl.DataFrame:
