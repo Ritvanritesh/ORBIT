@@ -16,7 +16,9 @@ from orbit.schemas.experiment import (
     ExperimentRegistry,
     ExperimentSpec,
     FeaturePin,
+    FeatureRef,
     ModelSpec,
+    TemporalConfigRef,
     WindowSpec,
 )
 from orbit.schemas.hypothesis import (
@@ -51,7 +53,9 @@ __all__ = [
     "ExperimentRegistry",
     "ExperimentSpec",
     "FeaturePin",
+    "FeatureRef",
     "ModelSpec",
+    "TemporalConfigRef",
     "WindowSpec",
     "EconomicEvidence",
     "HypothesisRegistry",

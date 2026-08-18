@@ -49,6 +49,22 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   test suite 311 tests. Seed contracts registered: LAB-001 (H-001
   momentum) and LAB-003 (H-003 PEAD); LAB-002 (H-002 risk-adjusted) is
   deferred. See `docs/phase5_labels.md`.
+- Phase 6 (Experiment Registry Foundation) - complete: register-before-run
+  with an immutable canonical `ExperimentSpec` (content-hash identity,
+  DB-enforced against raw SQL), validated lifecycle state machine
+  (registered/running/completed/failed/rejected/promoted/retired) with a
+  recorded decision log, acyclic hypothesis-scoped genealogy, full lineage
+  pins (dataset snapshots, temporal contract, label versions, feature
+  refs, model/cost identity), code/config hashes captured before
+  execution, registry-computed trial numbers and search depth, failed and
+  null experiments retained (never hidden), FK-bound artifacts/results/
+  decisions with one immutable result per experiment, reproduction
+  specifications that resolve every lineage element (missing lineage is a
+  loud violation) with replay tests, invariant validation for audits
+  (content-hash recomputation, acyclicity, orphan counts), and concurrency
+  tests proving exactly-one-winner semantics under racing writers. Full
+  test suite 427 tests. See `docs/phase6_experiment_registry.md`; run the
+  end-to-end demo with `python scripts/phase6_demo.py`.
 - Follow-ups before modeling: universe expansion (5 -> 20 -> 50 -> 100,
   config-only) MUST include delisted names for survivorship control;
   benchmark instruments (SPY + broad/sector ETFs) for excess-return labels
@@ -61,15 +77,18 @@ Core thesis: the model is replaceable; the evidence chain is the product.
 ```
 docs/                  Charter, seed hypotheses, gates, universe architecture,
                        phase4_temporal_truth.md (temporal engine conventions),
-                       phase5_labels.md (label contract and outcome conventions)
+                       phase5_labels.md (label contract and outcome conventions),
+                       phase6_experiment_registry.md (registry design)
 src/orbit/schemas/     HypothesisSpec / ExperimentSpec / Instrument / data contracts
 src/orbit/universe/    Membership rules + delisting-aware reconstruction engine
 src/orbit/temporal/    Phase 4: times, rules, adapters, engine, snapshot,
                        features, fixtures, contracts
 src/orbit/labels/      Phase 5: contract, outcomes, engine, snapshot, registry, seeds
+src/orbit/experiments/ Phase 6: lifecycle, registry (DuckDB), reproduction, service
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Ingestion (Phase 3): providers, parsing, registry, storage, validators
 scripts/               phase3_run_all.py - end-to-end ingest + verify + provenance
+                       phase6_demo.py - experiment registry end-to-end example
 tests/                 Validation tests
 ```
 

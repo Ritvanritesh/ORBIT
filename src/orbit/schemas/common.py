@@ -80,13 +80,21 @@ class EvidenceType(str, Enum):
 
 
 class ExperimentStatus(str, Enum):
-    """Lifecycle per roadmap governance."""
+    """Lifecycle per roadmap governance.
+
+    REJECTED and PROMOTED are Phase 6 decision states, entered only from
+    COMPLETED and only through a recorded selection decision (never by a
+    bare status update). RETIRED is the archival/soft-deletion state;
+    history is never destroyed.
+    """
 
     DRAFT = "draft"
     REGISTERED = "registered"
     RUNNING = "running"
     COMPLETED = "completed"
     FAILED = "failed"
+    REJECTED = "rejected"
+    PROMOTED = "promoted"
     RETIRED = "retired"
 
 
