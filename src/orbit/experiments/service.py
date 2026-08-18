@@ -39,7 +39,7 @@ from orbit.experiments.lifecycle import (
     PARENT_ELIGIBLE_STATES,
     validate_transition,
 )
-from orbit.experiments.registry import ExperimentRegistry
+from orbit.experiments.registry import ExperimentRegistry, record_content_hash
 from orbit.experiments.reproduction import ReproductionSpec, build_reproduction_spec
 from orbit.schemas.common import ExperimentStatus
 from orbit.schemas.experiment import ExperimentSpec
@@ -224,6 +224,9 @@ class ExperimentService:
                     f"research budget exhausted for {spec.hypothesis_id}: "
                     f"{hyp.research_budget.max_trials} trials maximum"
                 )
+            max_trials = hyp.research_budget.max_trials
+        else:
+            max_trials = None
 
         if not spec.dataset_snapshot_ids:
             raise ValueError(
@@ -234,6 +237,13 @@ class ExperimentService:
             for ds in spec.dataset_snapshot_ids:
                 if self._datasets.snapshot(ds) is None:
                     raise ValueError(f"unknown dataset snapshot: {ds}")
+
+        if not spec.features.feature_refs:
+            raise ValueError(
+                "registration requires pinned feature_refs (feature_id + "
+                "feature_version for every feature): bare feature names are "
+                "not reproducible lineage"
+            )
 
         if spec.label_id is not None and self._labels is not None:
             try:
@@ -302,6 +312,7 @@ class ExperimentService:
             registered_at=reg_at.isoformat(),
             dataset_snapshot_ids=spec.dataset_snapshot_ids,
             feature_rows=feature_rows,
+            max_trials=max_trials,
         )
         return spec.model_copy(
             update={
@@ -330,6 +341,7 @@ class ExperimentService:
         research_epoch: str | None = None,
         selection_stage: str | None = None,
         label_id: str | None = None,
+        label_version: str | None = None,
         dataset_snapshot_id: str | None = None,
         feature_id: str | None = None,
         parent_id: str | None = None,
@@ -343,6 +355,7 @@ class ExperimentService:
             research_epoch=research_epoch,
             selection_stage=selection_stage,
             label_id=label_id,
+            label_version=label_version,
             dataset_snapshot_id=dataset_snapshot_id,
             feature_id=feature_id,
             parent_id=parent_id,
@@ -409,8 +422,12 @@ class ExperimentService:
             current = row["parent_id"]
 
     def count_trials(self, hypothesis_id: str) -> int:
-        """Active experiment count per hypothesis (Phase 1 budget semantics)."""
-        return self._registry.trial_count(hypothesis_id)
+        """Live experiment count per hypothesis (Phase 1 budget semantics).
+
+        Counts ALL live experiments under the hypothesis, regardless of the
+        declared hypothesis_family: a new family label cannot launder search
+        history or escape the hypothesis research budget."""
+        return self._registry.count_by_hypothesis(hypothesis_id)
 
     # -------------------------------------------------------- lifecycle
 
@@ -577,12 +594,19 @@ class ExperimentService:
         decided_at: datetime | None = None,
     ) -> ExperimentSpec:
         """Record a selection decision and move the experiment to REJECTED or
-        PROMOTED, atomically. Decisions require a COMPLETED experiment and a
-        substantive reason - 'we didn't like it' is not a research record."""
+        PROMOTED, atomically. Decisions require a COMPLETED experiment, a
+        recorded result (a decision must cite the evidence it was made on)
+        and a substantive reason - 'we didn't like it' is not a research
+        record."""
         exp = self._require(experiment_id)
         if exp.status not in _DECISION_REQUIRING_STATUSES:
             raise ValueError(
                 f"decision on {experiment_id} requires status COMPLETED, got {exp.status.value}"
+            )
+        if self._registry.result(experiment_id) is None:
+            raise ValueError(
+                f"decision on {experiment_id} requires a recorded result: a "
+                "selection decision must cite the evidence it was made on"
             )
         decision_value = decision.value if isinstance(decision, Decision) else str(decision)
         if decision_value not in {Decision.REJECTED.value, Decision.PROMOTED.value}:
@@ -693,6 +717,7 @@ class ExperimentService:
             for f in exp.features.feature_refs
         ]
 
+        decisions = self._registry.decisions(experiment_id)
         return build_reproduction_spec(
             spec=exp,
             status=exp.status,
@@ -705,11 +730,7 @@ class ExperimentService:
             label=label,
             features=features,
             result=self._registry.result(experiment_id),
-            decision=(
-                self._registry.decisions(experiment_id)[-1]
-                if self._registry.decisions(experiment_id)
-                else None
-            ),
+            decision=decisions[-1] if decisions else None,
             artifacts=self._registry.artifacts(experiment_id),
         )
 
@@ -756,22 +777,136 @@ class ExperimentService:
                     violations.append(f"{exp_id}: running/completed without config_hash")
 
             # decision/result consistency
-            has_decision = bool(self._registry.decisions(exp_id))
+            decisions = self._registry.decisions(exp_id)
             has_result = self._registry.result(exp_id) is not None
             if exp.status.value in ("rejected", "promoted"):
-                if not has_decision:
+                if not decisions:
                     violations.append(f"{exp_id}: status {exp.status.value} without a recorded decision")
+                else:
+                    if len(decisions) != 1:
+                        violations.append(
+                            f"{exp_id}: {len(decisions)} decisions recorded for a "
+                            "decision state (exactly one is allowed)"
+                        )
+                    elif decisions[-1]["decision"] != exp.status.value:
+                        violations.append(
+                            f"{exp_id}: decision {decisions[-1]['decision']!r} "
+                            f"does not match status {exp.status.value}"
+                        )
                 if not has_result:
                     violations.append(f"{exp_id}: status {exp.status.value} without a recorded result")
-            elif has_decision:
+            elif decisions:
                 violations.append(
                     f"{exp_id}: decision recorded but status is {exp.status.value}"
                 )
+
+            # state/audit-trail consistency: every status must be explained by
+            # the recorded transition chain. A raw-SQL UPDATE of the state
+            # table (which no foreign key references, so no index protects it)
+            # without a matching audit record is a violation.
+            chain = self._registry.transitions(exp_id)
+            if not chain:
+                if exp.status.value not in ("draft", "registered"):
+                    violations.append(
+                        f"{exp_id}: status {exp.status.value} with no transition "
+                        "record - the state was changed without an audit trail"
+                    )
+            else:
+                first = chain[0]
+                if first["from_status"] not in ("draft", "registered"):
+                    violations.append(
+                        f"{exp_id}: transition chain starts from "
+                        f"{first['from_status']!r} - an experiment is born, "
+                        "never teleported into a later state"
+                    )
+                try:
+                    validate_transition(
+                        ExperimentStatus(first["from_status"]),
+                        ExperimentStatus(first["to_status"]),
+                    )
+                except ValueError as exc:
+                    violations.append(f"{exp_id}: {exc}")
+                for prev, cur in zip(chain, chain[1:]):
+                    if prev["to_status"] != cur["from_status"]:
+                        violations.append(
+                            f"{exp_id}: transition chain breaks between "
+                            f"{prev['from_status']}->{prev['to_status']} and "
+                            f"{cur['from_status']}->{cur['to_status']}"
+                        )
+                        break
+                    try:
+                        validate_transition(
+                            ExperimentStatus(prev["to_status"]),
+                            ExperimentStatus(cur["to_status"]),
+                        )
+                    except ValueError as exc:
+                        violations.append(f"{exp_id}: {exc}")
+                if chain[-1]["to_status"] != exp.status.value:
+                    violations.append(
+                        f"{exp_id}: state {exp.status.value} does not match the "
+                        f"last recorded transition to {chain[-1]['to_status']} "
+                        "(state tampered without an audit record?)"
+                    )
+
+            # lineage join rows must match the pinned spec: experiment_datasets
+            # / experiment_features are FK-referencing tables, so a raw-SQL
+            # UPDATE or DELETE of a join row would otherwise silently rewrite
+            # (or erase) the experiment's real data/feature lineage while the
+            # hash-protected spec_json still pins the original.
+            joins = self._registry.lineage_joins(exp_id)
+            expected_datasets = sorted(set(exp.dataset_snapshot_ids))
+            if joins["datasets"] != expected_datasets:
+                violations.append(
+                    f"{exp_id}: dataset lineage join rows {joins['datasets']} "
+                    f"do not match the pinned spec {expected_datasets}"
+                )
+            expected_features = sorted(
+                {(f.feature_id, f.feature_version) for f in exp.features.feature_refs}
+            )
+            if joins["features"] != expected_features:
+                violations.append(
+                    f"{exp_id}: feature lineage join rows {joins['features']} "
+                    f"do not match the pinned spec {expected_features}"
+                )
+
+            # child-record content integrity: results, decisions, artifacts
+            # and transitions are FK-referencing tables, so no index protects
+            # their columns from raw-SQL UPDATE. Every record stores a
+            # content hash at write time; a rewritten summary, decision
+            # reason, checksum or note no longer matches it.
+            for table, records in self._registry.audit_records(exp_id).items():
+                for rec in records:
+                    payload = {
+                        key: value for key, value in rec.items()
+                        if key != "content_hash"
+                    }
+                    payload["experiment_id"] = exp_id
+                    if record_content_hash(payload) != rec["content_hash"]:
+                        violations.append(
+                            f"{exp_id}: {table} row content_hash mismatch - "
+                            "the record content was altered after it was "
+                            "written"
+                        )
 
         orphans = self._registry.orphan_counts()
         for table, count in orphans.items():
             if count:
                 violations.append(f"orphan records in {table}: {count}")
+
+        # trial-number integrity: within each search family, the registered
+        # ordinals must be exactly 1..n - duplicates or gaps mean the search
+        # depth was manipulated (e.g. a raw-SQL tamper of trial_counters)
+        family_numbers: dict[str, list[int]] = {}
+        for row in rows:
+            family = row["hypothesis_family"] or row["hypothesis_id"]
+            family_numbers.setdefault(family, []).append(int(row["trial_number"]))
+        for family, numbers in sorted(family_numbers.items()):
+            if sorted(numbers) != list(range(1, len(numbers) + 1)):
+                violations.append(
+                    f"trial-number integrity broken in family {family!r}: "
+                    f"ordinals {sorted(numbers)} are not the contiguous "
+                    f"sequence 1..{len(numbers)} (search depth tampered?)"
+                )
 
         return {
             "ok": not violations,

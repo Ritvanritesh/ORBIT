@@ -707,6 +707,7 @@ def test_decision_requires_completed_experiment(service, temporal_digest):
 def test_decision_reason_must_be_substantive(service, temporal_digest):
     _register(service, make_spec(temporal_digest=temporal_digest))
     _run(service, "EXP-00001")
+    service.record_result("EXP-00001", kind=ResultKind.NULL, summary="no evidence")
     with pytest.raises(ValueError, match="substantive"):
         service.record_decision(
             "EXP-00001", decision=Decision.REJECTED, reason="nope",

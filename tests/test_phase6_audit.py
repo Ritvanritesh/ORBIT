@@ -91,7 +91,8 @@ def test_foreign_keys_are_enforced_even_under_raw_sql(audited_service, tmp_path)
     with pytest.raises(duckdb.ConstraintException):
         con.execute(
             "INSERT INTO artifacts VALUES "
-            "('ART-99999', 'EXP-NOPE', 'csv', 'x.csv', NULL, '2026-01-01T00:00:00Z')"
+            "('ART-99999', 'EXP-NOPE', 'csv', 'x.csv', NULL, '2026-01-01T00:00:00Z', "
+            "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"
         )
     con.close()
 
@@ -102,7 +103,8 @@ def test_second_result_for_one_experiment_is_impossible(audited_service, tmp_pat
         con.execute(
             "INSERT INTO results VALUES "
             "('R-2', 'EXP-00001', 'negative', 'forged', NULL, "
-            "'2026-01-02T00:00:00Z', 'attacker')"
+            "'2026-01-02T00:00:00Z', 'attacker', "
+            "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"
         )
     con.close()
 

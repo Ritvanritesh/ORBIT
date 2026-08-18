@@ -38,12 +38,18 @@ code must not be trusted to enforce alone:
 
 from __future__ import annotations
 
+import hashlib
+import json
 import threading
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import duckdb
+
+from orbit.experiments.lifecycle import validate_transition
+from orbit.schemas.common import ExperimentStatus
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS experiments (
@@ -65,7 +71,11 @@ CREATE TABLE IF NOT EXISTS experiments (
     created_at               TIMESTAMP NOT NULL,
     registered_at            TIMESTAMP NOT NULL,
     FOREIGN KEY (parent_id) REFERENCES experiments(experiment_id),
-    CHECK (parent_id IS NULL OR parent_id <> experiment_id)
+    CHECK (experiment_id ~ '^EXP-[0-9]{5}$'),
+    CHECK (hypothesis_id ~ '^H-[0-9]{3}$'),
+    CHECK (parent_id IS NULL OR parent_id ~ '^EXP-[0-9]{5}$'),
+    CHECK (parent_id IS NULL OR parent_id <> experiment_id),
+    CHECK (label_id IS NULL OR label_version IS NOT NULL)
 );
 CREATE INDEX IF NOT EXISTS idx_experiments_hypothesis  ON experiments(hypothesis_id);
 
@@ -93,7 +103,8 @@ CREATE INDEX IF NOT EXISTS idx_state_status ON experiment_state(status);
 CREATE TABLE IF NOT EXISTS experiment_datasets (
     experiment_id       VARCHAR NOT NULL REFERENCES experiments(experiment_id),
     dataset_snapshot_id VARCHAR NOT NULL,
-    PRIMARY KEY (experiment_id, dataset_snapshot_id)
+    PRIMARY KEY (experiment_id, dataset_snapshot_id),
+    CHECK (dataset_snapshot_id ~ '^DS-[0-9]{6}$')
 );
 CREATE INDEX IF NOT EXISTS idx_experiment_datasets_snapshot
     ON experiment_datasets(dataset_snapshot_id);
@@ -102,17 +113,21 @@ CREATE TABLE IF NOT EXISTS experiment_features (
     experiment_id    VARCHAR NOT NULL REFERENCES experiments(experiment_id),
     feature_id       VARCHAR NOT NULL,
     feature_version  VARCHAR NOT NULL,
-    PRIMARY KEY (experiment_id, feature_id)
+    PRIMARY KEY (experiment_id, feature_id),
+    CHECK (feature_id ~ '^FEAT-[0-9]{3,}$')
 );
 CREATE INDEX IF NOT EXISTS idx_experiment_features_id
     ON experiment_features(feature_id);
 
 CREATE TABLE IF NOT EXISTS transitions (
     experiment_id    VARCHAR NOT NULL REFERENCES experiments(experiment_id),
-    from_status      VARCHAR NOT NULL,
-    to_status        VARCHAR NOT NULL,
+    from_status      VARCHAR NOT NULL CHECK (from_status IN
+        ('draft','registered','running','completed','failed','rejected','promoted','retired')),
+    to_status        VARCHAR NOT NULL CHECK (to_status IN
+        ('draft','registered','running','completed','failed','rejected','promoted','retired')),
     transitioned_at  TIMESTAMP NOT NULL,
-    note             VARCHAR
+    note             VARCHAR,
+    content_hash     VARCHAR NOT NULL CHECK (content_hash ~ '^[0-9a-f]{64}$')
 );
 CREATE INDEX IF NOT EXISTS idx_transitions_experiment ON transitions(experiment_id);
 
@@ -123,6 +138,7 @@ CREATE TABLE IF NOT EXISTS artifacts (
     path           VARCHAR NOT NULL,
     checksum       VARCHAR,
     created_at     TIMESTAMP NOT NULL,
+    content_hash   VARCHAR NOT NULL CHECK (content_hash ~ '^[0-9a-f]{64}$'),
     UNIQUE (experiment_id, path)
 );
 CREATE INDEX IF NOT EXISTS idx_artifacts_experiment ON artifacts(experiment_id);
@@ -135,7 +151,8 @@ CREATE TABLE IF NOT EXISTS results (
     summary       VARCHAR NOT NULL,
     metrics_json  VARCHAR,
     recorded_at   TIMESTAMP NOT NULL,
-    recorded_by   VARCHAR NOT NULL
+    recorded_by   VARCHAR NOT NULL,
+    content_hash  VARCHAR NOT NULL CHECK (content_hash ~ '^[0-9a-f]{64}$')
 );
 
 CREATE TABLE IF NOT EXISTS decisions (
@@ -145,7 +162,8 @@ CREATE TABLE IF NOT EXISTS decisions (
     reason          VARCHAR NOT NULL,
     policy_version  VARCHAR,
     decision_maker  VARCHAR NOT NULL,
-    decided_at      TIMESTAMP NOT NULL
+    decided_at      TIMESTAMP NOT NULL,
+    content_hash    VARCHAR NOT NULL CHECK (content_hash ~ '^[0-9a-f]{64}$')
 );
 CREATE INDEX IF NOT EXISTS idx_decisions_experiment ON decisions(experiment_id);
 
@@ -158,6 +176,12 @@ CREATE TABLE IF NOT EXISTS trial_counters (family VARCHAR PRIMARY KEY, value INT
 _VALID_STATUSES = frozenset(
     {"draft", "registered", "running", "completed", "failed", "rejected", "promoted", "retired"}
 )
+
+# The ONLY states an experiment may be born into. register() is the only
+# entry point of the ledger; a raw-registry user cannot create an experiment
+# that already lives in a later lifecycle state with no history behind it
+# (the audit trail must explain how it got there).
+_BIRTH_STATUSES = frozenset({"draft", "registered"})
 
 
 def _next_id(con: duckdb.DuckDBPyConnection, kind: str, prefix: str, width: int) -> str:
@@ -172,8 +196,10 @@ def _is_lock_error(exc: BaseException) -> bool:
     if isinstance(exc, duckdb.IOException) or "lock" in str(exc).lower():
         return True
     # concurrent schema creation: catalog write-write conflict
-    if isinstance(exc, duckdb.TransactionException) and "write-write conflict" in str(exc):
-        return True
+    if isinstance(exc, duckdb.TransactionException):
+        msg = str(exc).lower()
+        if "write-write conflict" in msg or "conflict on tuple deletion" in msg:
+            return True
     return False
 
 
@@ -197,6 +223,40 @@ def _retry(fn, attempts: int = 20, base_delay: float = 0.01) -> Any:
 
 def _constraint_error(exc: Exception) -> ValueError:
     return ValueError(f"registry constraint violation: {exc}")
+
+
+def record_content_hash(fields: dict[str, Any]) -> str:
+    """sha256 over the canonical content of a child record (result, decision,
+    artifact, transition).
+
+    The hash is computed at write time by the registry and stored in the
+    record's `content_hash` column; `validate_invariants()` recomputes it over
+    the stored row and flags any mismatch. Raw-SQL UPDATEs of child-record
+    content (summary, reason, checksum, note, metrics, ...) are therefore
+    detected even though DuckDB's index trick does not protect these
+    FK-referencing tables.
+
+    Timestamps are canonicalized because the registry receives ISO strings
+    while DuckDB returns naive datetimes: both sides must produce exactly the
+    same hash payload.
+    """
+    canon: dict[str, Any] = {}
+    for key, value in fields.items():
+        if isinstance(value, datetime):
+            value = value.replace(tzinfo=None).isoformat(sep=" ", timespec="seconds")
+        elif isinstance(value, str):
+            try:
+                parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            except ValueError:
+                pass
+            else:
+                if parsed.tzinfo is not None:
+                    value = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+                    value = value.isoformat(sep=" ", timespec="seconds")
+        canon[key] = value
+    return hashlib.sha256(
+        json.dumps(canon, sort_keys=True, default=str).encode("utf-8")
+    ).hexdigest()
 
 
 # Join used by every read: identity + operational state.
@@ -272,6 +332,7 @@ class ExperimentRegistry:
         registered_at: str,
         dataset_snapshot_ids: list[str],
         feature_rows: list[tuple[str, str]],
+        max_trials: int | None = None,
     ) -> tuple[int, int]:
         """Insert one experiment and its lineage join rows, atomically.
 
@@ -279,14 +340,36 @@ class ExperimentRegistry:
         inside the same transaction as the INSERT: concurrent registrations
         in one family can never collide on trial numbers, and a researcher-
         declared trial_number that disagrees with the assigned value rolls
-        the registration back (search depth cannot be declared). Returns
-        (trial_number, number_of_prior_trials)."""
-        if status not in _VALID_STATUSES:
-            raise ValueError(f"invalid experiment status: {status!r}")
+        the registration back (search depth cannot be declared). When
+        `max_trials` is given (hypothesis research budget), the count of
+        live experiments for that hypothesis is re-checked INSIDE the same
+        transaction, so concurrent registrations cannot overshoot the budget
+        (the application-level pre-check is only a fast fail, never the
+        guarantee). Returns (trial_number, number_of_prior_trials)."""
+        if status not in _BIRTH_STATUSES:
+            raise ValueError(
+                f"invalid birth status: {status!r} - an experiment may only "
+                "be registered as draft or registered, never into a later "
+                "lifecycle state"
+            )
 
         def _do() -> tuple[int, int]:
             self._con.execute("BEGIN TRANSACTION")
             try:
+                if max_trials is not None:
+                    row = self._con.execute(
+                        """
+                        SELECT COUNT(*) FROM experiments e
+                          JOIN experiment_state s ON s.experiment_id = e.experiment_id
+                         WHERE e.hypothesis_id = ? AND s.status NOT IN ('draft', 'retired')
+                        """,
+                        [hypothesis_id],
+                    ).fetchone()
+                    if int(row[0]) >= max_trials:
+                        raise ValueError(
+                            f"research budget exhausted for {hypothesis_id}: "
+                            f"{max_trials} trials maximum"
+                        )
                 # Bump the family's trial counter: UPDATE when the row exists
                 # (the common path, conflict-free under the writer lock), plain
                 # INSERT for the very first registration of a family (which
@@ -414,9 +497,26 @@ class ExperimentRegistry:
         The WHERE guard is the optimistic concurrency check: a transition
         racing with another writer fails loudly instead of silently
         overwriting it. code/config hashes are set once (COALESCE) and can
-        never be overwritten."""
+        never be overwritten.
+
+        The lifecycle state machine is enforced HERE, in the ledger itself,
+        not only in the service: a direct `ExperimentRegistry` user (an AI
+        agent, a script, a future service) cannot bypass it. REJECTED and
+        PROMOTED are decision states and refuse a bare transition - they are
+        only reachable through `record_decision()`."""
+        if from_status not in _VALID_STATUSES:
+            raise ValueError(f"invalid experiment status: {from_status!r}")
         if to_status not in _VALID_STATUSES:
             raise ValueError(f"invalid experiment status: {to_status!r}")
+        if to_status in ("rejected", "promoted"):
+            raise ValueError(
+                f"{to_status} is a decision state: it may only be entered "
+                "through record_decision() with a reason and decision-maker, "
+                "never by a bare status update"
+            )
+        validate_transition(
+            ExperimentStatus(from_status), ExperimentStatus(to_status)
+        )
 
         def _do() -> None:
             self._con.execute("BEGIN TRANSACTION")
@@ -438,12 +538,24 @@ class ExperimentRegistry:
                         "experiment missing"
                     )
                 self._con.execute(
-                    "INSERT INTO transitions VALUES (?, ?, ?, ?, ?)",
-                    [experiment_id, from_status, to_status, transitioned_at, note],
+                    "INSERT INTO transitions VALUES (?, ?, ?, ?, ?, ?)",
+                    [experiment_id, from_status, to_status, transitioned_at, note,
+                     record_content_hash(
+                         {
+                             "experiment_id": experiment_id,
+                             "from_status": from_status,
+                             "to_status": to_status,
+                             "transitioned_at": transitioned_at,
+                             "note": note,
+                         }
+                     )],
                 )
                 self._con.execute("COMMIT")
             except Exception:
-                self._con.execute("ROLLBACK")
+                try:
+                    self._con.execute("ROLLBACK")
+                except duckdb.TransactionException:
+                    pass  # a COMMIT-time failure already rolled the txn back
                 raise
 
         try:
@@ -464,7 +576,10 @@ class ExperimentRegistry:
         decided_at: str,
     ) -> str:
         """Append a decision and move the experiment to REJECTED/PROMOTED,
-        atomically. The experiment must be COMPLETED."""
+        atomically. The experiment must be COMPLETED and must carry a
+        recorded result: a selection decision cites evidence, and this
+        holds at the ledger level, not only in the service (a direct
+        `ExperimentRegistry` user cannot bypass it)."""
         if decision not in {"rejected", "promoted"}:
             raise ValueError(f"invalid decision: {decision!r}")
 
@@ -482,11 +597,30 @@ class ExperimentRegistry:
                         f"decision on {experiment_id} requires status COMPLETED, "
                         f"got {row[0]}"
                     )
+                if self._con.execute(
+                    "SELECT 1 FROM results WHERE experiment_id = ?",
+                    [experiment_id],
+                ).fetchone() is None:
+                    raise ValueError(
+                        f"decision on {experiment_id} requires a recorded result: "
+                        "a selection decision must cite the evidence it was made on"
+                    )
                 decision_id = _next_id(self._con, "decision", "DEC-", 6)
                 self._con.execute(
-                    "INSERT INTO decisions VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO decisions VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     [decision_id, experiment_id, decision, reason,
-                     policy_version, decision_maker, decided_at],
+                     policy_version, decision_maker, decided_at,
+                     record_content_hash(
+                         {
+                             "decision_id": decision_id,
+                             "experiment_id": experiment_id,
+                             "decision": decision,
+                             "reason": reason,
+                             "policy_version": policy_version,
+                             "decision_maker": decision_maker,
+                             "decided_at": decided_at,
+                         }
+                     )],
                 )
                 self._con.execute(
                     """
@@ -496,13 +630,26 @@ class ExperimentRegistry:
                     [decision, decided_at, experiment_id],
                 )
                 self._con.execute(
-                    "INSERT INTO transitions VALUES (?, ?, ?, ?, ?)",
-                    [experiment_id, "completed", decision, decided_at, f"decision {decision_id}"],
+                    "INSERT INTO transitions VALUES (?, ?, ?, ?, ?, ?)",
+                    [experiment_id, "completed", decision, decided_at,
+                     f"decision {decision_id}",
+                     record_content_hash(
+                         {
+                             "experiment_id": experiment_id,
+                             "from_status": "completed",
+                             "to_status": decision,
+                             "transitioned_at": decided_at,
+                             "note": f"decision {decision_id}",
+                         }
+                     )],
                 )
                 self._con.execute("COMMIT")
                 return decision_id
             except Exception:
-                self._con.execute("ROLLBACK")
+                try:
+                    self._con.execute("ROLLBACK")
+                except duckdb.TransactionException:
+                    pass  # a COMMIT-time failure already rolled the txn back
                 raise
 
         try:
@@ -547,14 +694,28 @@ class ExperimentRegistry:
                     )
                 result_id = _next_id(self._con, "result", "RES-", 6)
                 self._con.execute(
-                    "INSERT INTO results VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO results VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     [result_id, experiment_id, kind, summary, metrics_json,
-                     recorded_at, recorded_by],
+                     recorded_at, recorded_by,
+                     record_content_hash(
+                         {
+                             "result_id": result_id,
+                             "experiment_id": experiment_id,
+                             "kind": kind,
+                             "summary": summary,
+                             "metrics_json": metrics_json,
+                             "recorded_at": recorded_at,
+                             "recorded_by": recorded_by,
+                         }
+                     )],
                 )
                 self._con.execute("COMMIT")
                 return result_id
             except Exception:
-                self._con.execute("ROLLBACK")
+                try:
+                    self._con.execute("ROLLBACK")
+                except duckdb.TransactionException:
+                    pass  # a COMMIT-time failure already rolled the txn back
                 raise
 
         try:
@@ -584,8 +745,18 @@ class ExperimentRegistry:
         def _do() -> str:
             artifact_id = _next_id(self._con, "artifact", "ART-", 6)
             self._con.execute(
-                "INSERT INTO artifacts VALUES (?, ?, ?, ?, ?, ?)",
-                [artifact_id, experiment_id, kind, path, checksum, created_at],
+                "INSERT INTO artifacts VALUES (?, ?, ?, ?, ?, ?, ?)",
+                [artifact_id, experiment_id, kind, path, checksum, created_at,
+                 record_content_hash(
+                     {
+                         "artifact_id": artifact_id,
+                         "experiment_id": experiment_id,
+                         "kind": kind,
+                         "path": path,
+                         "checksum": checksum,
+                         "created_at": created_at,
+                     }
+                 )],
             )
             return artifact_id
 
@@ -619,6 +790,7 @@ class ExperimentRegistry:
         research_epoch: str | None = None,
         selection_stage: str | None = None,
         label_id: str | None = None,
+        label_version: str | None = None,
         dataset_snapshot_id: str | None = None,
         feature_id: str | None = None,
         parent_id: str | None = None,
@@ -657,6 +829,9 @@ class ExperimentRegistry:
         if label_id is not None:
             where.append("e.label_id = ?")
             params.append(label_id)
+        if label_version is not None:
+            where.append("e.label_version = ?")
+            params.append(label_version)
         if parent_id is not None:
             where.append("e.parent_id = ?")
             params.append(parent_id)
@@ -702,6 +877,24 @@ class ExperimentRegistry:
         ).fetchone()
         return int(row[0])
 
+    def count_by_hypothesis(self, hypothesis_id: str) -> int:
+        """Live experiment count for one hypothesis, REGARDLESS of the
+        declared hypothesis_family.
+
+        This is the research-budget number: a researcher must not be able to
+        escape a hypothesis budget by declaring a new family label per
+        attempt (search depth is recorded per hypothesis, not per chosen
+        family name)."""
+        row = self._con.execute(
+            """
+            SELECT COUNT(*) FROM experiments e
+              JOIN experiment_state s ON s.experiment_id = e.experiment_id
+             WHERE e.hypothesis_id = ? AND s.status NOT IN ('draft', 'retired')
+            """,
+            [hypothesis_id],
+        ).fetchone()
+        return int(row[0])
+
     def has_id(self, experiment_id: str) -> bool:
         row = self._con.execute(
             "SELECT 1 FROM experiments WHERE experiment_id = ?", [experiment_id]
@@ -740,11 +933,49 @@ class ExperimentRegistry:
     def transitions(self, experiment_id: str) -> list[dict[str, Any]]:
         rows = self._con.execute(
             "SELECT from_status, to_status, transitioned_at, note FROM transitions "
-            "WHERE experiment_id = ? ORDER BY transitioned_at",
+            "WHERE experiment_id = ? ORDER BY transitioned_at, rowid",
             [experiment_id],
         ).fetchall()
         cols = ["from_status", "to_status", "transitioned_at", "note"]
         return [dict(zip(cols, r)) for r in rows]
+
+    def lineage_joins(self, experiment_id: str) -> dict[str, list[Any]]:
+        """The lineage join rows (datasets, features) for audit verification."""
+        datasets = [
+            row[0]
+            for row in self._con.execute(
+                "SELECT dataset_snapshot_id FROM experiment_datasets "
+                "WHERE experiment_id = ?",
+                [experiment_id],
+            ).fetchall()
+        ]
+        features = [
+            tuple(row)
+            for row in self._con.execute(
+                "SELECT feature_id, feature_version FROM experiment_features "
+                "WHERE experiment_id = ?",
+                [experiment_id],
+            ).fetchall()
+        ]
+        return {"datasets": sorted(datasets), "features": sorted(features)}
+
+    def audit_records(self, experiment_id: str) -> dict[str, list[dict[str, Any]]]:
+        """Every child record (artifacts, results, decisions, transitions)
+        with its stored `content_hash`, for audit verification. The public
+        readers deliberately exclude the hash; this is the audit view."""
+        out: dict[str, list[dict[str, Any]]] = {}
+        for table, cols in (
+            ("artifacts", ["artifact_id", "kind", "path", "checksum", "created_at", "content_hash"]),
+            ("results", ["result_id", "kind", "summary", "metrics_json", "recorded_at", "recorded_by", "content_hash"]),
+            ("decisions", ["decision_id", "decision", "reason", "policy_version", "decision_maker", "decided_at", "content_hash"]),
+            ("transitions", ["from_status", "to_status", "transitioned_at", "note", "content_hash"]),
+        ):
+            rows = self._con.execute(
+                f"SELECT {', '.join(cols)} FROM {table} WHERE experiment_id = ?",
+                [experiment_id],
+            ).fetchall()
+            out[table] = [dict(zip(cols, r)) for r in rows]
+        return out
 
     def count(self) -> int:
         return int(self._con.execute("SELECT COUNT(*) FROM experiments").fetchone()[0])
@@ -788,4 +1019,4 @@ class ExperimentRegistry:
         return [self._parse_row(r, _ROW_COLUMNS) for r in rows]
 
 
-__all__ = ["ExperimentRegistry"]
+__all__ = ["ExperimentRegistry", "record_content_hash"]

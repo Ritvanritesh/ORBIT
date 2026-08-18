@@ -264,6 +264,15 @@ class ExperimentSpec(BaseModel):
         return self
 
     @model_validator(mode="after")
+    def _label_id_requires_version(self) -> "ExperimentSpec":
+        if self.label_id is not None and self.label_version is None:
+            raise ValueError(
+                "label_id requires label_version: an experiment must pin an "
+                "exact label version, never 'latest'"
+            )
+        return self
+
+    @model_validator(mode="after")
     def _seeded_requires_seed(self) -> "ExperimentSpec":
         if self.randomness_policy == "seeded" and self.seed is None:
             raise ValueError("seeded experiments require a seed")
