@@ -26,6 +26,38 @@ Do not declare the phase complete until the implementation, tests, documentation
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Phase 3 is now complete and verified end-to-end. Final state:
 - 1 Market — DS-000001, 5 stocks (AAPL, MSFT, JNJ, XOM, WMT) × ~30y daily bars, 37,735 rows. Split reconciliation verified: AAPL 7:1 split 2014-06-09 (close 23.42 → 161.4 raw / 7) and 4:1 split 2020-08-31 (close 129.04 → 499.2 / 4) both produce continuous adjusted prices.
 - 2 SEC EDGAR — DS-000002, 5 companies' XBRL companyfacts, 130,800 rows (2009–2026).
@@ -127,28 +159,120 @@ Final verdict: PASS. Phase 5 complete.
 
 
 
-Sixth protocol run (full 3-review pass on the shipped Phase 5 state, fresh adversarial):
-Review 1 (requirements): roadmap re-verified - forward/excess returns, volatility/drawdown, event-based anchors, versioning, overlap handling, golden-vs-hand-calculation all implemented; Phase 1 LabelSpec bridge verified against the registered hypothesis schema.
-Review 2 (technical) / Review 3 (research-quantitative):
-- P1 (MAJOR): a NaN/inf/zero/negative close was NOT a missing price: NaN produced outcome_value=nan with outcome_status=available (silent corruption of every downstream statistic), a zero close fabricated a -100% return, inf leaked into available rows and could break snapshot serialization. Fixed: _missing_price() (None/non-finite/<=0 are MISSING) applied to entry/outcome/window closes in _compute_one and _benchmark_return - explicit unavailable reasons, never a value. Regression tests: nan window, zero outcome, inf outcome, nan entry, nan benchmark close.
-- P2 (MAJOR): a NaN event ratio passed the atio <= 0 guard (NaN <= 0 is False) and silently poisoned the split factors / dividend amounts. Fixed: ratios must be finite AND positive, else corporate_action_data_incomplete. Regression tests: nan ratio, inf ratio.
-- P3 (MEDIUM): _event_session/adapter _ex_date_ny crashed on ISO-string event timestamps and re-labeled tz-aware instants as UTC (an aware -05:00 02:00 event could land on the WRONG ex-date day). Fixed: the shared adapter helper now normalizes str/date/aware inputs to naive UTC first, then applies the Phase 3 exchange-local rule; the engine delegates to it (one source of truth). Regression test: string + naive + aware-offset crossing midnight.
-- P4 (MEDIUM): a Utf8 delisting_date in an instruments frame crashed the date <= str comparison on the delisting path. Fixed: _as_date() normalization (str/datetime/date) at construction. Regression test.
-- P5 (MEDIUM): a DECISION_INSTANT row recorded a supplied anchor_instant that was silently ignored - the row misdescribed what was computed. Fixed: anchor_instant is recorded only for POST_EVENT contracts. Regression test.
-- P6 (MEDIUM): without an events artifact the *_as_published audit closes silently carried the provider's split-adjusted values - the Phase 4 convention says never present those as historical truth. Fixed: new price_basis output column (as_published | provider_split_adjusted); label schema is now 35 columns. Regression test.
-- P7 (MEDIUM): horizon_semantics was a free str - a typo'd contract could claim calendar-day semantics while the engine counts sessions. Fixed: Literal["trading_sessions"]. Regression test.
-- P8 (LOW): benchmark_unavailable conflated every failure cause. Fixed: _benchmark_return reports an explicit cause (no bars / malformed events / defective price / short window) into outcome_detail. Regression test.
-- P9 (LOW): entry_bar duplicated the _entry_index logic (drift risk). Fixed: entry_bar delegates to _entry_index; None-decision_time guard preserved. Regression test.
-- Second independent pass: differential probe - engine _stored_basis_factor vs adapter _split_factors agree on a 7:1+4:1 multi-split chain (0 mismatches; ex-date itself never undone); remaining corners probed (decision rows on boundary instants, empty windows, POST_EVENT strictness, digest determinism) - clean.
-- All fixes verified: 311 tests pass (216 Phase 1-4 + 95 Phase 5), no Phase 1-4 regression; README/docs updated (35-column schema, guard semantics, cause-aware diagnostics).
-Final verdict: PASS. Phase 5 complete.
 
 
 
-Targeted third pass (per protocol, on the least-reviewed corners of the shipped state):
-- Differential fuzz (seeded, permanent tests in tests/test_phase5_fuzz.py): public entry_bar vs the compute path agree on 300+ randomized instants across both anchor modes, including exact session-close hits, one-microsecond-after, before-first-bar and after-last-bar instants (0 mismatches); compute is invariant to shuffled decision order.
-- Property tests: overlapping_pairs is symmetric (no (a,b)/(b,a) duplicates), deterministic under reversed frame order, overlap_sessions equals the actual session-intersection count computed from the engine's own session series, pair set matches a brute-force reference on random decisions, and non-overlapping / unavailable rows never pair.
-- Docs-vs-code cross-check (17 mechanical claims): 35-column schema incl. price_basis; UnavailableReason values match the documented list; total-return without events raises (never a silent price-return label); horizon mapping 1/5/21/63; seeds LAB-001/LAB-003 registered (LAB-002 absent) with the documented fields; content_hash versioned vs definition_identity version-independent; registry triple refusal (duplicate / identical-definition / out-of-order); horizon_semantics Literal. All 17 pass.
-- Docs updated: 102 Phase 5 tests (7 new fuzz/property tests).
-- All fixes verified: 318 tests pass (216 Phase 1-4 + 102 Phase 5), no Phase 1-4 regression.
-Final verdict: PASS. Phase 5 complete.
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##how to get more data:
+Getting gigabytes of high-quality financial data for free can feel like a bottleneck, but you do not need to pay thousands of dollars for retail or machine learning projects. The trick is knowing which platforms allow bulk historical downloading without blocking your IP. [1, 2] 
+Here is the ultimate roadmap to sourcing gigabytes of clean financial data completely free, categorized by asset class and format.
+------------------------------
+## 🌐 1. Cryptocurrency (The Easiest Way to Get Gigabytes)
+Crypto exchanges are incredibly open with their historical data compared to traditional stock markets. You can easily pull millions of data points here. [3, 4] 
+
+* 
+* Binance Vision (data.binance.vision): This is the holy grail for free ML data. Binance hosts compressed ZIP files of every single trade and 1-minute candle (OHLCV) since their launch. You can download hundreds of gigabytes of historical data directly via a web browser or using a python script with the binance-historical-data library. [5, 6, 7] 
+* CryptoDataDownload: A fantastic website providing pre-compiled, free historical CSV files for dozens of major crypto exchanges (Binance, Bitfinex, Coinbase) mapped across daily and hourly timeframes. Excellent for immediate use without writing a scraper. [8, 9, 10] 
+* CCXT Library (Python): If you want to build a live data harvester, use the open-source [CCXT Library GitHub](https://github.com/ccxt/ccxt). It normalizes the APIs of over 100 crypto exchanges, allowing you to fetch historical candles recursively (fetch_ohlcv) without cost. [11, 12, 13, 14] 
+* 
+
+------------------------------
+## 📈 2. US Stocks & Equities
+Stock market data is heavily protected by licensing fees, but several excellent free options exist for personal research. [15, 16] 
+
+* 
+* Yahoo Finance (yfinance library): The most popular entryway for Python developers. By installing the library (pip install yfinance), you can pull decades of daily data for thousands of global stocks, indexes, and ETFs in seconds.
+* ⚠️ Limitation: Yahoo Finance handles data requests via unofficial endpoints. If you try to pull 1-minute data for 500 stocks over a long period sequentially, your IP address will get rate-limited or temporarily blocked. [1, 17, 18] 
+* Alpaca Markets: A developer-focused stock broker that offers a Free Tier API. By signing up for a free paper trading account, you gain access to high-quality, historical stock market data (up to 5 years of daily/hourly data, and 1-minute bars with certain lookback restrictions) via their Python SDK. [19, 20, 21, 22, 23] 
+* Polygon.io: Offers a very stable, official free tier. It provides 5 historical years of end-of-day stock options, but limits you to 5 API calls per minute. Great for building small daily tracking datasets. [24, 25, 26, 27, 28] 
+* 
+
+------------------------------
+## 📊 3. Macroeconomic & Alternative Data
+If you are building a multi-modal ML model or Transformer, price action alone isn't enough. You need alternative data to find an edge.
+
+* 
+* FRED (Federal Reserve Economic Data): Run by the Federal Reserve Bank of St. Louis. It contains over 800,000 free economic time series (Interest rates, GDP, CPI, employment figures). They offer a clean, free API (fredapi in Python) to dump this data straight into your model features. [29, 30, 31, 32, 33] 
+* Kenneth French Data Library: Completely free academic datasets containing the famous Fama-French benchmark factors (Market risk, size, value factors) updated monthly. This is standard institutional data for macro-quant testing. [34] 
+* 
+
+------------------------------
+## 🛠️ Execution Plan to Avoid Getting Blocked
+If you want to pull down 5 GB of data for an ML project, do not write a basic while True: loop. Follow this pipeline to scrape safely:
+
+   1. Leverage Dumps First: Download bulk historical .zip or .csv files from sources like Binance Vision or [CryptoDataDownload](https://www.cryptodatadownload.com/) first. This skips API rate limits entirely.
+   2. Implement Request Throttling: When using yfinance or exchange REST APIs, use the time.sleep(run_time) function between asset requests. Limit yourself to roughly 1 request every 1.5 seconds.
+   3. Store in Binary Formats: Do not save millions of lines into .csv files; your RAM will choke when loading it into an ML model. Use Parquet (df.to_parquet()) or HDF5. They compress data down to 20% of a normal CSV's size and load into Python up to 100x faster. [6, 8, 35] 
+
+------------------------------
+To narrow down your source, tell me:
+
+* 
+* Are you targeting Crypto or Stocks for this machine learning model?
+* What minimum time interval does your strategy need? (e.g., Daily bars, 1-Minute candles, or Tick data?)
+* 
+
+I can give you the exact, copy-paste Python code to pull that specific dataset down cleanly.
+
+[1] [https://marketxls.com](https://marketxls.com/blog/yahoo-finance-api-ultimate-guide)
+[2] [https://www.reddit.com](https://www.reddit.com/r/algotrading/comments/1kvm3wk/where_can_i_find_quality_datasets_for_algorithmic/)
+[3] [https://massive.com](https://massive.com/docs/flat-files/crypto/overview)
+[4] [https://javascript.plainenglish.io](https://javascript.plainenglish.io/so-you-want-to-build-a-stock-trading-app-like-robinhood-bd6903fc9ae7)
+[5] [https://pypi.org](https://pypi.org/project/binance-historical-data/)
+[6] [https://www.binance.com](https://www.binance.com/en/academy/articles/how-to-get-trading-data-via-the-binance-api)
+[7] [https://support.binance.us](https://support.binance.us/en/articles/9843310-introducing-historical-market-data-from-binance-us-download-for-free)
+[8] https://www.cryptodatadownload.com
+[9] [https://www.cryptodatadownload.com](https://www.cryptodatadownload.com/data/binance/)
+[10] https://www.cryptodatadownload.com
+[11] [https://www.linkedin.com](https://www.linkedin.com/pulse/download-historical-data-all-cryptocoins-ccxt-gursel-karacor)
+[12] [https://github.com](https://github.com/ccxt/ccxt)
+[13] https://ccxt.com
+[14] [https://medium.com](https://medium.com/zupitek/10-python-library-to-gather-market-data-easily-93bbe4c5f3a5)
+[15] [https://www.koji.so](https://www.koji.so/blog/best-free-user-research-tools-2026)
+[16] [https://www.xignite.com](https://www.xignite.com/product/global-real-time-stock-quote-data/)
+[17] [https://iproyal.com](https://iproyal.com/blog/yahoo-finance-api-python/)
+[18] [https://medium.com](https://medium.com/@trading.dude/why-yfinance-keeps-getting-blocked-and-what-to-use-instead-92d84bb2cc01)
+[19] [https://medium.com](https://medium.com/coinmonks/the-7-best-real-time-stock-data-apis-for-investors-and-developers-in-2026-in-depth-analysis-61614dc9bf6c)
+[20] [https://www.edgeful.com](https://www.edgeful.com/blog/posts/yahoo-finance-api-alternatives)
+[21] [https://github.com](https://github.com/MarketDataApp/sdk-py)
+[22] [https://medium.com](https://medium.com/@caiyuefeng0301/how-to-get-high-quality-us-stock-historical-data-1min-to-daily-f3b403f441e3)
+[23] [https://www.talkoptions.in](https://www.talkoptions.in/paper-trading-software)
+[24] [https://www.reddit.com](https://www.reddit.com/r/learnprogramming/comments/1svwqfn/best_way_to_obtain_quality_financial_data/)
+[25] [https://medium.com](https://medium.com/coinmonks/the-7-best-real-time-stock-data-apis-for-investors-and-developers-in-2026-in-depth-analysis-61614dc9bf6c)
+[26] [https://www.quantvps.com](https://www.quantvps.com/blog/market-data-sources-for-algorithmic-trading)
+[27] [https://dhan.co](https://dhan.co/support/platforms/dhanhq-api/how-can-i-retrieve-data-for-expired-futures-contracts-using-the-apis/)
+[28] [https://technologyadvice.com](https://technologyadvice.com/blog/sales/free-inventory-management-software/)
+[29] [https://openstax.org](https://openstax.org/books/principles-finance/pages/3-6-sources-and-characteristics-of-economic-data)
+[30] [https://guides.libraries.emory.edu](https://guides.libraries.emory.edu/c.php?g=50105&p=6546545)
+[31] [https://guides.library.cmu.edu](https://guides.library.cmu.edu/CMIST/data)
+[32] [https://blog.marketingdatascience.ai](https://blog.marketingdatascience.ai/how-to-create-your-own-basic-economic-forecast-using-multiple-regression-in-python-35c09bb9e6b3)
+[33] [https://play.google.com](https://play.google.com/store/apps/details?id=org.mifos.kmp.template)
+[34] [https://medium.com](https://medium.com/@_SSP/best-free-data-sources-for-algorithmic-trading-77a7c1c00356)
+[35] [https://medium.com](https://medium.com/@benthepythondev0/how-to-scrape-yahoo-finance-stock-data-in-2026-python-no-code-api-15a6025e4eb0)
