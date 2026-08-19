@@ -49,7 +49,9 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   test suite 311 tests. Seed contracts registered: LAB-001 (H-001
   momentum) and LAB-003 (H-003 PEAD); LAB-002 (H-002 risk-adjusted) is
   deferred. See `docs/phase5_labels.md`.
-- Phase 6 (Experiment Registry Foundation) - complete: register-before-run
+- Phase 6 (Experiment Registry Foundation) - complete: register-before-run\- Phase 7 (Event-Driven Backtesting Engine) - complete: deterministic replayable daily/EOD execution+accounting simulator (Python 3.10, pydantic 2.13.4, polars 1.43.2, DuckDB), integrated with Phases 4/5/6, 587 passed 6 xfailed across full suite, long-only enforcement (selling refused loudly), order IDs ORD-000000+, execution price OPEN/CLOSE, execution delay >= 1 for OPEN, default execution open delay=1, expiry: eligible + order_expiry_sessions, cash identity equity = cash + realized + unrealized - fees_total, Phase 4 temporal truth validation, Phase 5 label engine bridge (DECISION_INSTANT anchor), Phase 6 experiment lifecycle (run_backtest_experiment), manifest/run identity (BT-<config8>-<content12>), content_hash excludes created_at/run_id, 107 Phase 7-only tests PASS, Review 1/2/3 audits all PASS with second independent pass, PHASE 7 STATUS report PASS.
+
+
   with an immutable canonical `ExperimentSpec` (content-hash identity,
   DB-enforced against raw SQL), validated lifecycle state machine
   (registered/running/completed/failed/rejected/promoted/retired) with a
