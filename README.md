@@ -114,12 +114,15 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   FS-003 rows recomputed from truncated bars, 0 mismatches); train-only
   feature diagnostics (quality + redundancy); register-before-run with a
   feature-mutation-detecting config hash; benchmark 52/52 completed with
-  runner audit 45/45 PASS, Review 1 (structural audit incl. cross-phase
-  base-anchor: FS-001 runs exactly reproduce the Phase 9 parents bitwise)
-  10/10 PASS, Review 2 (reproducibility double-run) 3/3 PASS; 76 Phase 10
-  tests incl. 18 adversarial scenarios (A1..A20); full suite 792 passed,
-  6 xfailed. Verdict: C - limited, non-robust feature sensitivity; no
-  economically meaningful family-specific signal; the Phase 9 DEFENSIBLE
+  runner audit 48/48 PASS (incl. row-identity gates: all Phase 10 sets
+  resolve identical rows, every FS-001-only row explained by the Phase 10
+  warm-up policy), Review 1 (structural audit incl. cross-phase
+  base-anchor: FS-001 runs exactly reproduce the Phase 9 parents bitwise,
+  and the deep checks exercised against real artifacts) 12/12 PASS with a
+  53/53 audit pass, Review 2 (reproducibility double-run) 3/3 PASS; 90
+  Phase 10 tests incl. 18 adversarial scenarios (A1..A20); full suite 807
+  passed, 6 xfailed. Verdict: C - limited, non-robust feature sensitivity;
+  no economically meaningful family-specific signal; the Phase 9 DEFENSIBLE
   NULL stands in substance. Run/review:
   `python scripts/phase10_run_all.py`, `scripts/phase10_review1.py`,
   `scripts/phase10_review2.py`. See `PHASE_10_STATUS.md`.

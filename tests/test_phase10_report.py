@@ -131,3 +131,38 @@ def test_research_report_embeds_digest_and_inventory(patched_paths):
     assert "Feature inventory" in text
     assert fs001.content_digest[:16] in text
     assert "EXP-10001" in text
+
+
+def test_research_report_inventory_has_no_placeholders(patched_paths):
+    """The permanent inventory must name the family of every feature (never
+    '?') and snapshot versions must render as 'v1' (never 'vv1')."""
+    from orbit.ml.features import (
+        build_feature_snapshot,
+        build_feature_snapshot_phase10,
+        build_phase10_all_feature_frame,
+        build_phase10_feature_set_snapshot,
+    )
+    from tests.phase9_testutils import make_canonical_bars
+
+    fs001 = build_feature_snapshot(make_canonical_bars(), data_refs=["DS-000001"])
+    allf = build_phase10_all_feature_frame(make_canonical_bars())
+    snapshots = {
+        "FS-001": fs001,
+        "FS-002": build_feature_snapshot_phase10(make_canonical_bars(), data_refs=["DS-000001"]),
+        "FS-003": build_phase10_feature_set_snapshot("FS-003", allf, data_refs=["DS-000001"]),
+        "FS-004": build_phase10_feature_set_snapshot("FS-004", allf, data_refs=["DS-000001"]),
+    }
+    md = report_mod.write_research_report(
+        plan=phase10_plan(),
+        diagnostics={"scope": "train"},
+        snapshots=snapshots,
+        phase9_fs001_digest=fs001.content_digest,
+    )
+    text = md.read_text(encoding="utf-8")
+    assert "| ? |" not in text
+    assert "vv1" not in text
+    assert "| FEAT-101 | ret_5 | momentum |" in text
+    assert "| FEAT-106 | price_distance_200ma | trend |" in text
+    assert "| FEAT-115 | normalized_range_20 | range |" in text
+    assert "| FS-001 v1 | base (frozen) |" in text
+    assert "| FS-002 v1 | new |" in text

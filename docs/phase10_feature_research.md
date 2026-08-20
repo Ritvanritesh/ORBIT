@@ -32,21 +32,21 @@ Every feature: ID, name, family, definition, lookback, temporal boundary, missin
 | FEAT-006 | vol_10 | phase9_base | realized_volatility | 10 |  |  |
 | FEAT-007 | vol_30 | phase9_base | realized_volatility | 30 |  |  |
 | FEAT-008 | log_dv_med_20 | phase9_base | liquidity | 20 |  |  |
-| FEAT-101 | ret_5 | ? | close(D-1)/close(D-5) - 1 | 5 | close | null until 5 completed sessions before D |
-| FEAT-102 | ret_60 | ? | close(D-1)/close(D-60) - 1 | 60 | close | null until 60 completed sessions before D |
-| FEAT-103 | ret_120 | ? | close(D-1)/close(D-120) - 1 | 120 | close | null until 120 completed sessions before D |
-| FEAT-104 | sma_ratio_10_30 | ? | SMA10(D-1)/SMA30(D-1) (ratio, same form as FEAT-004/005) |  | close | null until 30 completed sessions before D |
-| FEAT-105 | sma_ratio_20_50 | ? | SMA20(D-1)/SMA50(D-1) (ratio, same form as FEAT-004/005) |  | close | null until 50 completed sessions before D |
-| FEAT-106 | price_distance_200ma | ? | (close(D-1) - SMA200(D-1)) / SMA200(D-1) | 200 | close | null until 200 completed sessions before D |
-| FEAT-107 | vol_60 | ? | sample std of daily close-to-close returns over the 60 sessions ending at D-1 (same rolling_std semantics as FEAT-006/007) | 60 | close | null until 60 completed sessions before D |
-| FEAT-108 | vol_90 | ? | sample std of daily close-to-close returns over the 90 sessions ending at D-1 | 90 | close | null until 90 completed sessions before D |
-| FEAT-109 | vol_ratio_10_30 | ? | vol_10(D-1) / vol_30(D-1) (short/long realized-volatility ratio) |  | close | null until 30 completed sessions before D; null when vol_30 is 0 |
-| FEAT-110 | dv_med_10 | ? | log1p(median(close*volume) over the 10 sessions ending at D-1) (same form as FEAT-008) | 10 | close,volume | null until 10 completed sessions before D |
-| FEAT-111 | dv_med_30 | ? | log1p(median(close*volume) over the 30 sessions ending at D-1) | 30 | close,volume | null until 30 completed sessions before D |
-| FEAT-112 | vol_zscore_20 | ? | (dv(D-1) - mean(dv over 20 sessions ending at D-1)) / std(dv over 20 sessions ending at D-1); dv = close*volume | 20 | close,volume | null until 20 completed sessions before D; null when the 20-session std is 0 |
-| FEAT-113 | high_low_10_pos | ? | (close(D-1) - min(low over 10 sessions ending at D-1)) / (max(high over 10 sessions ending at D-1) - min(low over 10 sessions ending at D-1)) | 10 | close,high,low | null until 10 completed sessions before D; null when the 10-session range is 0 |
-| FEAT-114 | high_low_30_pos | ? | (close(D-1) - min(low over 30 sessions ending at D-1)) / (max(high over 30 sessions ending at D-1) - min(low over 30 sessions ending at D-1)) | 30 | close,high,low | null until 30 completed sessions before D; null when the 30-session range is 0 |
-| FEAT-115 | normalized_range_20 | ? | (max(high over 20 sessions ending at D-1) - min(low over 20 sessions ending at D-1)) / close(D-1) | 20 | close,high,low | null until 20 completed sessions before D |
+| FEAT-101 | ret_5 | momentum | close(D-1)/close(D-5) - 1 | 5 | close | null until 5 completed sessions before D |
+| FEAT-102 | ret_60 | momentum | close(D-1)/close(D-60) - 1 | 60 | close | null until 60 completed sessions before D |
+| FEAT-103 | ret_120 | momentum | close(D-1)/close(D-120) - 1 | 120 | close | null until 120 completed sessions before D |
+| FEAT-104 | sma_ratio_10_30 | trend | SMA10(D-1)/SMA30(D-1) (ratio, same form as FEAT-004/005) |  | close | null until 30 completed sessions before D |
+| FEAT-105 | sma_ratio_20_50 | trend | SMA20(D-1)/SMA50(D-1) (ratio, same form as FEAT-004/005) |  | close | null until 50 completed sessions before D |
+| FEAT-106 | price_distance_200ma | trend | (close(D-1) - SMA200(D-1)) / SMA200(D-1) | 200 | close | null until 200 completed sessions before D |
+| FEAT-107 | vol_60 | volatility | sample std of daily close-to-close returns over the 60 sessions ending at D-1 (same rolling_std semantics as FEAT-006/007) | 60 | close | null until 60 completed sessions before D |
+| FEAT-108 | vol_90 | volatility | sample std of daily close-to-close returns over the 90 sessions ending at D-1 | 90 | close | null until 90 completed sessions before D |
+| FEAT-109 | vol_ratio_10_30 | volatility | vol_10(D-1) / vol_30(D-1) (short/long realized-volatility ratio) |  | close | null until 30 completed sessions before D; null when vol_30 is 0 |
+| FEAT-110 | dv_med_10 | volume | log1p(median(close*volume) over the 10 sessions ending at D-1) (same form as FEAT-008) | 10 | close,volume | null until 10 completed sessions before D |
+| FEAT-111 | dv_med_30 | volume | log1p(median(close*volume) over the 30 sessions ending at D-1) | 30 | close,volume | null until 30 completed sessions before D |
+| FEAT-112 | vol_zscore_20 | volume | (dv(D-1) - mean(dv over 20 sessions ending at D-1)) / std(dv over 20 sessions ending at D-1); dv = close*volume | 20 | close,volume | null until 20 completed sessions before D; null when the 20-session std is 0 |
+| FEAT-113 | high_low_10_pos | range | (close(D-1) - min(low over 10 sessions ending at D-1)) / (max(high over 10 sessions ending at D-1) - min(low over 10 sessions ending at D-1)) | 10 | close,high,low | null until 10 completed sessions before D; null when the 10-session range is 0 |
+| FEAT-114 | high_low_30_pos | range | (close(D-1) - min(low over 30 sessions ending at D-1)) / (max(high over 30 sessions ending at D-1) - min(low over 30 sessions ending at D-1)) | 30 | close,high,low | null until 30 completed sessions before D; null when the 30-session range is 0 |
+| FEAT-115 | normalized_range_20 | range | (max(high over 20 sessions ending at D-1) - min(low over 20 sessions ending at D-1)) / close(D-1) | 20 | close,high,low | null until 20 completed sessions before D |
 
 ## 3. Feature snapshots
 
@@ -54,19 +54,19 @@ FS-001 v1 is frozen (digest 1137e3fda1fa8656...). New immutable snapshots:
 
 | Snapshot | Role | Members | Digest |
 |----------|------|---------|--------|
-| FS-001 vv1 | base (frozen) | 8 | 1137e3fda1fa8656... |
-| FS-002 vv1 | new | 15 | 03d6f45483a6b7f3... |
-| FS-003 vv1 | all | 23 | 966db59a346d1805... |
-| FS-004 vv1 | base_plus_family | 11 | 83a9d5803d57e26a... |
-| FS-005 vv1 | base_plus_family | 11 | 0c923e2950cd60e7... |
-| FS-006 vv1 | base_plus_family | 11 | 40b4590d5d420aae... |
-| FS-007 vv1 | base_plus_family | 11 | 9eab7bf46089ea7a... |
-| FS-008 vv1 | base_plus_family | 11 | 45968259497fa0b0... |
-| FS-009 vv1 | all_minus_family | 20 | 9fe80a99f543528e... |
-| FS-010 vv1 | all_minus_family | 20 | 101c4fff5978ae62... |
-| FS-011 vv1 | all_minus_family | 20 | 314d45e83c09fc03... |
-| FS-012 vv1 | all_minus_family | 20 | a4afbcb4d9f879e3... |
-| FS-013 vv1 | all_minus_family | 20 | b30143c99de3b4cc... |
+| FS-001 v1 | base (frozen) | 8 | 1137e3fda1fa8656... |
+| FS-002 v1 | new | 15 | 03d6f45483a6b7f3... |
+| FS-003 v1 | all | 23 | 966db59a346d1805... |
+| FS-004 v1 | base_plus_family | 11 | 83a9d5803d57e26a... |
+| FS-005 v1 | base_plus_family | 11 | 0c923e2950cd60e7... |
+| FS-006 v1 | base_plus_family | 11 | 40b4590d5d420aae... |
+| FS-007 v1 | base_plus_family | 11 | 9eab7bf46089ea7a... |
+| FS-008 v1 | base_plus_family | 11 | 45968259497fa0b0... |
+| FS-009 v1 | all_minus_family | 20 | 9fe80a99f543528e... |
+| FS-010 v1 | all_minus_family | 20 | 101c4fff5978ae62... |
+| FS-011 v1 | all_minus_family | 20 | 314d45e83c09fc03... |
+| FS-012 v1 | all_minus_family | 20 | a4afbcb4d9f879e3... |
+| FS-013 v1 | all_minus_family | 20 | b30143c99de3b4cc... |
 
 ## 4. Diagnostics
 

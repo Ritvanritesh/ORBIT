@@ -182,15 +182,14 @@ def redundancy_report(
     redundancy; incremental value is judged by the ablation experiments.
     """
     feats = [f for f in feature_names if f in frame.columns]
+    pearson = _corr_matrix(frame, feats, spearman=False)
+    spearman = _corr_matrix(frame, feats, spearman=True)
     return {
         "train_rows": int(frame.height),
-        "pearson": _corr_matrix(frame, feats, spearman=False),
-        "spearman": _corr_matrix(frame, feats, spearman=True),
+        "pearson": pearson,
+        "spearman": spearman,
         "duplicates": _duplicate_columns(frame, feats),
-        "high_correlation_pairs": _high_correlation_pairs(
-            _corr_matrix(frame, feats, spearman=False),
-            _corr_matrix(frame, feats, spearman=True),
-        ),
+        "high_correlation_pairs": _high_correlation_pairs(pearson, spearman),
     }
 
 

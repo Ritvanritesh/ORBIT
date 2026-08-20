@@ -537,6 +537,8 @@ def run_phase10_all(windows: dict | None = None) -> dict[str, Any]:
         datasets_by_set=datasets_by_set,
         phase9_fs001_digest=phase9_fs001_digest,
         bars=bars,
+        test_predictions=datasets_by_set["FS-001"]["test"][3],
+        windows=w,
     )
     summary = audit_summary(checks)
     _log(f"audit: {summary}")

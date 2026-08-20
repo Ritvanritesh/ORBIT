@@ -14,7 +14,10 @@ verified snapshot cache. Verifies:
                            the current definitions (a mutated feature or set
                            after the run is detected here).
    5. audit_pass           the independent Phase 10 audit re-runs clean over
-                           the cached snapshots and datasets.
+                           the cached snapshots and datasets (strong temporal
+                           boundary + row-identity + test lock + registry
+                           lineage + model/seed/preprocessing pins, exercised
+                           against the stored EXP-10001 artifacts).
    6. cross_phase_base     the FS-001 base runs (EXP-10001..10004) EXACTLY
                            reproduce the Phase 9 parent experiments
                            (EXP-90003/90006/90015/90019) - the ablation is
@@ -22,6 +25,8 @@ verified snapshot cache. Verifies:
                            includes a bitwise sha256 comparison of the stored
                            test-prediction parquet files.
    7. diagnostics_scope    diagnostics.json is train-only scoped.
+   8. report_pins          every report row pins seed 42, CM-001, LAB-004,
+                           DS-000004, and the locked test window.
 
 Exit code 0 = all checks PASS.
 """
@@ -51,6 +56,7 @@ from orbit.ml.features import (  # noqa: E402
 from orbit.ml.phase10_audit import audit_summary, run_phase10_audit  # noqa: E402
 from orbit.ml.phase10_plan import PHASE10_MODEL_POINTS, phase10_plan_digest  # noqa: E402
 from orbit.ml.phase10_report import (  # noqa: E402
+    ARTIFACTS_ROOT,
     DIAGNOSTICS_JSON,
     PLAN_JSON,
     REPORT_PARQUET,
@@ -99,6 +105,7 @@ _STEPS = [
     "independent audit (label snapshot + datasets + strong temporal boundary ~6 min)",
     "cross-phase base consistency",
     "diagnostics scope",
+    "report pins",
 ]
 
 
@@ -217,6 +224,29 @@ def main() -> None:
             else list(FEATURE_NAMES) + list(FEATURE_NAMES_PHASE10)
         )
         datasets_by_set[sid] = assemble_datasets(snapshots[sid], ls, feature_names=names)
+    # exercise the checks the runner cannot: test_lock (real test rows),
+    # registry_lineage (a real pinned spec for EXP-10001), and the model
+    # pins (grid lock / model scope / seed / preprocessing) against the
+    # stored EXP-10001 metrics.
+    import types
+
+    exp10001_metrics = json.loads(
+        (ARTIFACTS_ROOT / "EXP-10001" / "metrics.json").read_text(encoding="utf-8")
+    )
+    fitted = types.SimpleNamespace(
+        family=exp10001_metrics["model_family"],
+        hyperparameters=exp10001_metrics["hyperparameters"],
+        preprocessing="standardized",
+        seed=42,
+    )
+    _, exp10001_spec = __import__(
+        "orbit.ml.phase10_registry", fromlist=["register_phase10_experiment"]
+    ).register_phase10_experiment(
+        experiment_id="EXP-10001", hypothesis_id="H-001",
+        feature_set_id="FS-001", feature_set_version="v1",
+        family="ridge", params={"alpha": 1.0}, seed=42,
+        plan_digest=plan["plan_digest"],
+    )
     audit_checks = run_phase10_audit(
         snapshots=snapshots,
         base_snapshot=snapshots.get("FS-001"),
@@ -224,6 +254,9 @@ def main() -> None:
         datasets_by_set=datasets_by_set,
         phase9_fs001_digest=snapshots["FS-001"].content_digest,
         bars=bars,
+        test_predictions=datasets_by_set["FS-001"]["test"][3],
+        fitted_model=fitted,
+        experiment_spec=exp10001_spec,
         progress=True,
     )
     audit = audit_summary(audit_checks)
@@ -232,6 +265,19 @@ def main() -> None:
         audit["failed"] == 0,
         f"{audit['passed']}/{audit['checks']} PASS; "
         f"failed: {audit['failed_checks']}",
+    ))
+    exercised = {
+        "test_lock", "grid_lock", "model_scope_guard", "seed_lock",
+        "preprocessing_train_only", "registry_lineage",
+        "row_identity_phase10_sets", "row_identity_fs001_warmup",
+    }
+    missing = sorted(
+        exercised - {c["check"] for c in audit_checks}
+    )
+    checks.append(_check(
+        "audit_exercises_deep_checks",
+        not missing,
+        f"all deep checks emitted on the real run; missing: {missing}",
     ))
 
     # 6. cross-phase base consistency (anchor to the DEFENSIBLE NULL) -------
@@ -273,6 +319,34 @@ def main() -> None:
         "diagnostics_scope",
         diag.get("scope") == "train split only (never test)",
         f"scope={diag.get('scope')}",
+    ))
+
+    # 8. report pins (every run used the locked protocol exactly) ------------
+    _step(8, "report pins")
+    pins = {
+        "seed": [row["seed"] for row in frame.iter_rows(named=True)],
+        "cost_model_id": [row["cost_model_id"] for row in frame.iter_rows(named=True)],
+        "label_id": [row["label_id"] for row in frame.iter_rows(named=True)],
+        "dataset_snapshot_ids": [row["dataset_snapshot_ids"] for row in frame.iter_rows(named=True)],
+        "evaluation_window": [row["evaluation_window"] for row in frame.iter_rows(named=True)],
+    }
+    pin_fail = []
+    if set(pins["seed"]) != {42}:
+        pin_fail.append(f"seed != 42: {sorted(set(pins['seed']))}")
+    if set(pins["cost_model_id"]) != {"CM-001"}:
+        pin_fail.append(f"cost_model_id != CM-001")
+    if set(pins["label_id"]) != {"LAB-004"}:
+        pin_fail.append(f"label_id != LAB-004")
+    if set(pins["dataset_snapshot_ids"]) != {"DS-000004"}:
+        pin_fail.append(f"dataset_snapshot_ids != DS-000004")
+    expected_window = "2022-01-03..2026-06-30"
+    if set(pins["evaluation_window"]) != {expected_window}:
+        pin_fail.append(f"evaluation_window != {expected_window}")
+    checks.append(_check(
+        "report_pins",
+        not pin_fail,
+        "; ".join(pin_fail) if pin_fail else
+        "52/52 rows: seed 42, CM-001, LAB-004, DS-000004, locked test window",
     ))
 
     # verdict ----------------------------------------------------------------

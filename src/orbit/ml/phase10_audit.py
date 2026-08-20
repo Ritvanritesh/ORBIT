@@ -208,6 +208,90 @@ def assert_feature_set_membership(feature_set_id: str, members: list[str]) -> No
         raise AssertionError(f"{feature_set_id} is not ALL-{family}")
 
 
+def _session_index_by_instrument(bars: pl.DataFrame) -> dict[str, dict]:
+    """Map (instrument_id, trade_date) -> 0-based position in that instrument's
+    sorted session series (used to classify warm-up rows precisely)."""
+    out: dict[str, dict] = {}
+    for inst, g in bars.sort("trade_date").group_by("instrument_id"):
+        key = inst[0] if isinstance(inst, tuple) else inst
+        out[key] = {
+            d: i for i, d in enumerate(g["trade_date"].to_list())
+        }
+    return out
+
+
+def verify_row_identity(
+    snapshots: dict[str, Any],
+    bars: pl.DataFrame,
+    *,
+    max_warm_up: int | None = None,
+) -> dict[str, Any]:
+    """Verify the ablation is row-fair across feature sets.
+
+    (a) FS-002..FS-013 are all column projections of the FS-003 superset
+        frame, so they MUST resolve EXACTLY the same (instrument_id,
+        decision_session) rows. Any drift (a set built from different bars,
+        a changed warm-up policy, or a dropped-row regression) fails here.
+
+    (b) FS-001 (frozen Phase 9, 40-session warm-up) legitimately keeps extra
+        rows that the Phase 10 sets cannot produce: sessions in the first
+        `max_warm_up` sessions of an instrument's bar history, where the
+        longest Phase 10 primitive (price_distance_200ma, 200 sessions) is
+        still incomplete. Every FS-001-only row must fall inside that zone;
+        any FS-001-only row beyond it is a real row-fairness break (e.g. a
+        short-history instrument whose Phase 10 warm-up overlaps the train
+        window would be exposed here with its exact session counts).
+    """
+    from orbit.ml.features import MAX_FEATURE_WINDOW_PHASE10
+
+    warm_up = max_warm_up or MAX_FEATURE_WINDOW_PHASE10
+    key_sets: dict[str, set] = {}
+    for sid, snap in snapshots.items():
+        key_sets[sid] = set(
+            snap.records.select("instrument_id", "decision_session").iter_rows()
+        )
+    if "FS-001" not in key_sets:
+        return {"valid": False, "reason": "FS-001 snapshot missing"}
+
+    phase10_sets = {sid: ks for sid, ks in key_sets.items() if sid != "FS-001"}
+    if not phase10_sets:
+        return {"valid": False, "reason": "no Phase 10 feature set snapshots to compare"}
+
+    ref_sid = min(phase10_sets)
+    ref_keys = phase10_sets[ref_sid]
+    drift = []
+    for sid, ks in sorted(phase10_sets.items()):
+        if sid == ref_sid:
+            continue
+        if ks != ref_keys:
+            drift.append(
+                f"{sid} {len(ks)} rows != {ref_sid} {len(ref_keys)} rows "
+                f"({len(ks - ref_keys)} only in {sid}, "
+                f"{len(ref_keys - ks)} only in {ref_sid})"
+            )
+
+    base_keys = key_sets["FS-001"]
+    only_base = base_keys - ref_keys
+    only_phase10 = ref_keys - base_keys
+    index_by_inst = _session_index_by_instrument(bars)
+    beyond = sorted(
+        (inst, d)
+        for (inst, d) in only_base
+        if inst in index_by_inst
+        and index_by_inst[inst].get(d, float("inf")) >= warm_up
+    )
+    return {
+        "phase10_sets_identical": not drift,
+        "fs001_only_rows": len(only_base),
+        "fs001_only_within_warm_up": len(only_base) - len(beyond),
+        "fs001_only_beyond_warm_up": len(beyond),
+        "phase10_only_rows": len(only_phase10),
+        "beyond_examples": [str(x) for x in beyond[:5]],
+        "drift": drift,
+        "valid": not drift and not beyond and not only_phase10,
+    }
+
+
 def run_phase10_audit(
     *,
     snapshots: dict[str, Any],
@@ -222,8 +306,14 @@ def run_phase10_audit(
     phase9_fs001_digest: str | None = None,
     bars: pl.DataFrame | None = None,
     progress: bool = False,
+    windows: dict | None = None,
 ) -> list[dict[str, Any]]:
-    """Run the full Phase 10 independent audit. Returns a list of check dicts."""
+    """Run the full Phase 10 independent audit. Returns a list of check dicts.
+
+    `windows` defaults to the locked Phase 9 protocol (PHASE9_WINDOWS);
+    hermetic tests inject tighter windows and the test-lock check must
+    compare against the windows the run actually used.
+    """
     checks: list[dict[str, Any]] = []
     all_snapshots = dict(snapshots)
     if base_snapshot is not None:
@@ -281,6 +371,36 @@ def run_phase10_audit(
             )
         )
 
+    # 2c. row fairness: FS-002..FS-013 must resolve EXACTLY the same rows, and
+    #     every FS-001-only row must be explained by the Phase 10 warm-up
+    #     policy (sessions in the first `max_warm_up` of an instrument's
+    #     history, where the longest Phase 10 primitive is still incomplete).
+    if bars is not None and len(all_snapshots) >= 2:
+        ri = verify_row_identity(all_snapshots, bars)
+        checks.append(
+            _check(
+                "row_identity_phase10_sets",
+                ri["phase10_sets_identical"],
+                "all Phase 10 sets (FS-002..FS-013) resolve identical rows"
+                + ("" if ri["phase10_sets_identical"] else f"; drift: {ri['drift']}"),
+            )
+        )
+        checks.append(
+            _check(
+                "row_identity_fs001_warmup",
+                ri["valid"] and ri["phase10_sets_identical"],
+                f"FS-001-only rows {ri['fs001_only_rows']} "
+                f"(within warm-up {ri['fs001_only_within_warm_up']}, "
+                f"beyond warm-up {ri['fs001_only_beyond_warm_up']}); "
+                f"Phase-10-only rows {ri['phase10_only_rows']}"
+                + (
+                    f"; beyond warm-up examples: {ri['beyond_examples']}"
+                    if ri["fs001_only_beyond_warm_up"]
+                    else ""
+                ),
+            )
+        )
+
     # 3. feature scope guard (no Phase 11+ features, no zoo)
     for sid, snap in sorted(all_snapshots.items()):
         refs = set(snap.feature_refs or [])
@@ -335,15 +455,13 @@ def run_phase10_audit(
                     ok = False
                     evidence += f"; PURGE VIOLATION: {exc}"
             checks.append(_check(f"split_integrity_{sid}", ok, evidence))
-            # all feature sets must resolve the same test rows (fair comparison)
-            if sid in ("FS-001", "FS-003") and "test_row_keys" not in checks:
-                pass
 
     if test_predictions is not None and test_predictions.height:
+        w = windows or PHASE9_WINDOWS
         sessions = test_predictions["decision_session"].unique().to_list()
         outside = [
             s for s in sessions
-            if s < PHASE9_WINDOWS["test_start"] or s > PHASE9_WINDOWS["test_end"]
+            if s < w["test_start"] or s > w["test_end"]
         ]
         checks.append(
             _check(
@@ -459,5 +577,6 @@ __all__ = [
     "audit_summary",
     "verify_dataset_unchanged",
     "verify_feature_temporal_boundary",
+    "verify_row_identity",
     "assert_feature_set_membership",
 ]

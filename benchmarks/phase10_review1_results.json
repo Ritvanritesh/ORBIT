@@ -37,7 +37,12 @@
     },
     {
       "check": "audit_pass",
-      "evidence": "45/45 PASS; failed: []",
+      "evidence": "53/53 PASS; failed: []",
+      "status": "PASS"
+    },
+    {
+      "check": "audit_exercises_deep_checks",
+      "evidence": "all deep checks emitted on the real run; missing: []",
       "status": "PASS"
     },
     {
@@ -49,9 +54,14 @@
       "check": "diagnostics_scope",
       "evidence": "scope=train split only (never test)",
       "status": "PASS"
+    },
+    {
+      "check": "report_pins",
+      "evidence": "52/52 rows: seed 42, CM-001, LAB-004, DS-000004, locked test window",
+      "status": "PASS"
     }
   ],
-  "completed_at": "2026-08-20T19:37:56",
+  "completed_at": "2026-08-20T20:40:56",
   "protocol": "phase10_review1_v1",
   "verdict": "PASS"
 }

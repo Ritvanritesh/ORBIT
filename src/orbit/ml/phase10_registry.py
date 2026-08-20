@@ -161,7 +161,7 @@ def register_phase10_experiment(
         experiment_id=experiment_id,
         hypothesis_id=hypothesis_id,
         title=(
-            f"Phase 10 feature ablation: {feature_set_id} v"
+            f"Phase 10 feature ablation: {feature_set_id} "
             f"{feature_set_version} {family} {params}"
         ),
         parent_id=None,
@@ -201,7 +201,7 @@ def register_phase10_experiment(
         researcher=researcher,
         evaluation_protocol="fixed_split_v1",
         notes=(
-            f"Phase 10 ablation set {feature_set_id} v{feature_set_version}; "
+            f"Phase 10 ablation set {feature_set_id} {feature_set_version}; "
             f"model point phase9_parent={point['phase9_parent']}; "
             f"plan_digest={plan_digest}"
             + (f"; {notes}" if notes else "")

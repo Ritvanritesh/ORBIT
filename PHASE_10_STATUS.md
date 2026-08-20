@@ -21,10 +21,11 @@ SENSITIVITY; THE PHASE 9 NULL STANDS IN SUBSTANCE.**
 
 The benchmark ran to completion: 52/52 experiments (EXP-10001..EXP-10052,
 13 feature sets x 4 models) through the canonical Phase 7 path, audited
-three times (runner audit 45/45, Review 1 structural audit 10/10,
-Review 2 reproducibility double-run 3/3). The cross-phase anchor is
-verified bitwise: the FS-001 base runs reproduce the Phase 9 parents
-EXP-90003/90006/90015/90019 exactly (identical predictions and metrics).
+three times (runner audit 48/48, Review 1 structural audit 12/12 with a
+53/53 audit pass, Review 2 reproducibility double-run 3/3). The
+cross-phase anchor is verified bitwise: the FS-001 base runs reproduce
+the Phase 9 parents EXP-90003/90006/90015/90019 exactly (identical
+predictions and metrics).
 
 The feature representation is NOT irrelevant: ridge and lasso OOS ICs
 improve with the new features (ridge -0.0003 -> +0.0202, lasso +0.0226 ->
@@ -39,12 +40,15 @@ with hit rates 0.517-0.537 (coin-flip), i.e. economically negligible on
 signal is established; the effect is consistent with noise under 52
 comparisons.
 
-- **792 tests passed, 6 xfailed** across the full suite (Phases 1-9 stay green)
-- **76 Phase 10 tests pass** (incl. 18 adversarial scenarios, A1..A20)
+- **807 tests passed, 6 xfailed** across the full suite (Phases 1-9 stay green)
+- **90 Phase 10 tests pass** (incl. 18 adversarial scenarios, A1..A20)
 - **52/52 benchmark rows completed** (0 failed) in the permanent report
-- **Runner audit: 45/45 PASS** (incl. strong temporal boundary: 45,326
-  sampled FS-003 rows recomputed from truncated bars, 0 mismatches)
-- **Audit Review 1: 10/10 PASS** (`scripts/phase10_review1.py`; results in
+- **Runner audit: 48/48 PASS** (incl. strong temporal boundary: 45,326
+  sampled FS-003 rows recomputed from truncated bars, 0 mismatches; the
+  test-lock and both row-identity checks now exercise real artifacts)
+- **Audit Review 1: 12/12 PASS** (`scripts/phase10_review1.py`; audit pass
+  53/53 incl. the deep checks — grid/model/seed locks, preprocessing
+  train-only, registry lineage, test lock, row identity; results in
   `benchmarks/phase10_review1_results.json`)
 - **Audit Review 2: 3/3 PASS** (reproducibility double-run; bitwise-
   identical predictions + exactly equal metrics vs stored artifacts for
@@ -123,6 +127,13 @@ Same as Phase 9: no SPY/market-benchmark series in DS-000004, so
 excess-return labels (LAB-001/LAB-003) remain unresolved and all
 comparisons are absolute after-cost total return, not benchmark-relative.
 
+Phase 10 adds one disclosed comparison limitation: 320 train rows (0.7%,
+2 mid-window-listed instruments) exist only in FS-001 because the Phase 10
+warm-up policy drops their first 200 sessions. Val/test and the remaining
+99.3% of train are row-identical across sets, and the row-identity audit
+gates make any further set drift structurally impossible to miss (see
+FEATURE SETS).
+
 ---
 
 ## PRE-REGISTERED PROTOCOL (locked before any execution)
@@ -154,7 +165,7 @@ point-in-time at the strict boundary: `window_end_session = D-1 < D`.
 | trend | FEAT-104 sma_ratio_10_30, FEAT-105 sma_ratio_20_50, FEAT-106 price_distance_200ma | moving-average structure |
 | volatility | FEAT-107 vol_60, FEAT-108 vol_90, FEAT-109 vol_ratio_10_30 | realized-vol horizons |
 | volume / liquidity | FEAT-110 dv_med_10, FEAT-111 dv_med_30, FEAT-112 vol_zscore_20 | dollar-volume medians + trailing z-score |
-| range / price structure | FEAT-113 high_low_10_pos, FEAT-114 high_low_30_pos, FEAT-115 close_in_range_10 | position within rolling range |
+| range / price structure | FEAT-113 high_low_10_pos, FEAT-114 high_low_30_pos, FEAT-115 normalized_range_20 | position within rolling range |
 
 ## FEATURE SETS (13 snapshots)
 
@@ -166,8 +177,21 @@ point-in-time at the strict boundary: `window_end_session = D-1 < D`.
 | FS-004..FS-008 v1 | BASE + one family (momentum..range) | 11 each |
 | FS-009..FS-013 v1 | ALL - one family (momentum..range) | 20 each |
 
-All sets resolve IDENTICAL rows inside the split windows (warm-up is
-complete before 2010), so every comparison is a clean feature-only ablation.
+All sets resolve IDENTICAL rows in the VAL and TEST splits and on 44,079
+of 44,399 train rows; the remaining 320 train rows (0.7%) exist only in
+FS-001 (2 instruments, 160 rows each, listed mid-train-window). Root cause
+is the Phase 10 warm-up policy (price_distance_200ma needs 200 completed
+sessions, MAX_FEATURE_WINDOW_PHASE10=200): instruments listed after
+2009-05 — INS-000008 (bars start 2012-05-18) and INS-000010 (bars start
+2010-06-29) — drop their first 200 sessions from the Phase 10 sets,
+i.e. 160 in-train sessions per instrument that FS-001 keeps. Across the
+full history all 3,200 FS-001-only rows sit inside the first 200 sessions
+of their instrument (verified 3,200 within warm-up, 0 beyond). The
+ablation is therefore feature-only on val/test and on 99.3% of train; the
+0.7% train difference is quantified, disclosed, and structurally checked
+by the `row_identity_phase10_sets` / `row_identity_fs001_warmup` audit
+gates (they FAIL if any Phase 10 set drifts from its siblings or if any
+FS-001 row falls outside the explainable warm-up zone).
 Snapshots are immutable: the `transformation` field binds set id + version +
 definitions digest, and each snapshot is cached digest-verified under
 `data/cache/phase10_snapshots/`.
@@ -196,27 +220,36 @@ its Phase 9 parent in the registry notes.
 
 ### Runner audit (inside `scripts/phase10_run_all.py`)
 
-**Status: PASS — 45/45 checks**
+**Status: PASS — 48/48 checks**
 
 Includes: plan lock, every snapshot point-in-time valid + exact membership
 (13 sets), feature-scope guard, frozen FS-001 digest, label contract,
 split integrity + locked windows, dataset unchanged vs manifest, model
-scope guard, seed lock, test lock, backtest uniformity, registry lineage,
-data expansion guard, and the **strong temporal boundary**: 45,326 sampled
-FS-003 rows recomputed from truncated bar history (bars <= D) and compared
-to the snapshot — 0 mismatches.
+scope guard, seed lock, test lock (exercised against the run's own test
+predictions), backtest uniformity, registry lineage, data expansion guard,
+the **row-identity gates** (all Phase 10 sets resolve identical rows; every
+FS-001-only row is inside the Phase 10 warm-up zone), and the **strong
+temporal boundary**: 45,326 sampled FS-003 rows recomputed from truncated
+bar history (bars <= D) and compared to the snapshot — 0 mismatches.
 
 ### Review 1: Independent structural audit (`scripts/phase10_review1.py`)
 
-**Status: PASS — 10/10 checks**
+**Status: PASS — 12/12 checks**
 
 plan_lock (digest match), plan_count (52), plan_set_order (13 sets in
 locked order), report_complete (EXP-10001..EXP-10052, 52 rows),
 report_no_hidden_failures (all completed), set_membership (8/15/23/11x5/
-20x5), snapshot_digests (all 13 match the cache), audit_pass (45/45),
+20x5), snapshot_digests (all 13 match the cache), **audit_pass (53/53)**
+— the audit is fed real artifacts (test predictions, fitted-model stand-in
+from EXP-10001's metrics, the registered EXP-10001 spec, bars), so the
+deep checks that a bare run can miss are exercised: test_lock, grid_lock,
+model_scope_guard, seed_lock, preprocessing_train_only, registry_lineage,
+row_identity_phase10_sets, row_identity_fs001_warmup —
+audit_exercises_deep_checks (no silent checks on the real run),
 **cross_phase_base_consistency** (EXP-10001..10004 == EXP-90003/90006/
 90015/90019: bitwise-identical predictions + exactly equal substantive
-metrics), diagnostics_scope (train split only).
+metrics), diagnostics_scope (train split only), report_pins (all 52 rows:
+seed 42, CM-001, LAB-004 v1, DS-000004, locked test window).
 
 ### Review 2: Independent reproducibility double-run
 (`scripts/phase10_review2.py`)
@@ -239,10 +272,10 @@ cached snapshots:
 ## TEST SUITE RESULTS
 
 ```
-Full suite:         792 passed, 6 xfailed
-Phase 10 only:        76 passed, 0 xfailed
-  features 12  plan 9  registry 6  dataset 5  diagnostics 6
-  adversarial 18 (A1..A20)  audit 6  report 7  pipeline 7 (52-exp run)
+Full suite:         807 passed, 6 xfailed
+Phase 10 only:        90 passed, 0 xfailed
+  features 16  plan 11  registry 7  dataset 5  diagnostics 7
+  adversarial 18 (A1..A20)  audit 11  report 8  pipeline 7 (52-exp run)
 ```
 
 The full-pipeline integration test runs the ENTIRE locked plan (52
@@ -251,6 +284,45 @@ every experiment, bit-identical reproducibility across two full runs, an
 audit with 0 failures, and the permanent report/plan/diagnostics artifacts.
 
 Phase 1-9 baseline remains green: 717 passed, 6 xfailed.
+
+---
+
+## REVIEW-HARDENING PASS (post-benchmark, before sign-off)
+
+A full independent review of the Phase 10 implementation (all modules,
+scripts, tests, and the permanent artifacts) surfaced five defects plus a
+disclosed limitation; every defect is fixed, regression-tested, and
+re-verified on the real artifacts:
+
+1. **Permanent inventory rendered family as `?`** for Phase 10 features
+   (`_feature_inventory_lines` looked families up in the Phase 9 map).
+   Fixed via `FEATURE_FAMILY_BY_ID_PHASE10`; the research doc was
+   regenerated (families present, digests unchanged).
+2. **Snapshot table rendered `FS-002 vv1`** (extra `v` prepended to the
+   stored `v1`). Fixed in the report and in registry title/notes.
+3. **Deep audit gates were structurally dead on the real run** — the
+   runner and Review 1 never passed test predictions / fitted-model /
+   experiment spec, so test_lock, grid_lock, model_scope_guard, seed_lock,
+   preprocessing_train_only and registry_lineage were never exercised
+   (45/45 was misleading). The runner now feeds test predictions; Review 1
+   feeds the full artifact set and asserts `audit_exercises_deep_checks`
+   (audit now 53/53 on the real run).
+4. **Redundancy diagnostics computed the correlation matrices 4x** per
+   call (pearson + spearman recomputed inside the pair filter). Now
+   computed once and passed through; a consistency regression test pins
+   the pair list to the published matrices.
+5. **Row identity between sets was never verified.** New
+   `verify_row_identity` gate + two audit checks: FS-002..FS-013 must
+   resolve exactly the same rows, and every FS-001-only row must be inside
+   the Phase 10 warm-up zone. On the real data: 3,200 FS-001-only rows,
+   3,200 within warm-up, 0 beyond (see the disclosed 0.7% train
+   difference above).
+6. **`FEAT-115` was misnamed `close_in_range_10` in the status doc** (the
+   feature is `normalized_range_20`). Corrected here and in the research
+   doc.
+
+Re-verification: Review 1 PASS 12/12 (audit 53/53), Review 2 PASS 3/3
+(bitwise), full Phase 10 suite 90/90, full repo suite 807 passed.
 
 ---
 
@@ -316,9 +388,9 @@ expansion detected · A20 split-integrity violation flagged.
 
 **Runner / reviews / docs / tests:**
 - `scripts/phase10_run_all.py` — full end-to-end benchmark runner
-- `scripts/phase10_review1.py` — independent structural audit (10/10 PASS,
+- `scripts/phase10_review1.py` — independent structural audit (12/12 PASS,
   incl. cross-phase base anchor: FS-001 runs exactly reproduce the Phase 9
-  parents)
+  parents, and the deep audit gates exercised on real artifacts)
 - `scripts/phase10_review2.py` — reproducibility double-run (3/3 PASS,
   bitwise)
 - `benchmarks/phase10_plan.json` / `phase10_diagnostics.json` — locked plan
@@ -332,7 +404,7 @@ expansion detected · A20 split-integrity violation flagged.
 - `data/cache/phase10_snapshots/` — digest-verified snapshot cache (13 sets)
 - `docs/phase10_feature_research.md` — full protocol, feature inventory,
   diagnostics, and methodology
-- `tests/test_phase10_*.py` (9 files, 76 tests incl. 18 adversarial)
+- `tests/test_phase10_*.py` (9 files, 90 tests incl. 18 adversarial)
 - `PHASE_10_STATUS.md` + `README.md` — status and structure updated
 
 **Registry:** 52 experiment specs (EXP-10001..EXP-10052) with full lineage

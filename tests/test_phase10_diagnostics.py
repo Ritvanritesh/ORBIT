@@ -129,3 +129,31 @@ def test_duplicate_detection_finds_exact_copies():
     dups = rep["duplicates"]
     assert len(dups) == 1
     assert set(dups[0]["features"]) == {"a", "b"}
+
+
+def test_high_correlation_pairs_consistent_with_published_matrices(train_frame):
+    """The high-correlation pair list must be derived from the SAME matrices
+    the report publishes: every |r| >= 0.95 pair appears, and no phantom pair
+    (|r| < 0.95 in both published matrices) is listed."""
+    names = list(FEATURE_NAMES) + list(FEATURE_NAMES_PHASE10)
+    rep = redundancy_report(train_frame, names)
+    listed = {
+        tuple(sorted((r["feature_a"], r["feature_b"]))): r
+        for r in rep["high_correlation_pairs"]
+    }
+    published = {method: {} for method in ("pearson", "spearman")}
+    for method in ("pearson", "spearman"):
+        for p in rep[method]["pairs"]:
+            published[method][tuple(sorted((p["feature_a"], p["feature_b"])))] = p["correlation"]
+    for key, r in listed.items():
+        assert key in published["pearson"] and key in published["spearman"]
+        assert any(
+            v is not None and abs(v) >= 0.95
+            for v in (r.get("pearson"), r.get("spearman"))
+        )
+    for key in published["pearson"]:
+        if any(
+            v is not None and abs(v) >= 0.95
+            for v in (published["pearson"][key], published["spearman"][key])
+        ):
+            assert key in listed

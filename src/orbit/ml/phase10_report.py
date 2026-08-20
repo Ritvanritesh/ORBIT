@@ -23,6 +23,7 @@ import polars as pl
 from orbit.ml.features import (
     ALL_PHASE10_DEFINITIONS,
     FEATURE_DEFINITIONS,
+    FEATURE_FAMILY_BY_ID_PHASE10,
     PHASE10_FEATURE_SET_ORDER,
 )
 
@@ -174,7 +175,7 @@ def _feature_inventory_lines() -> list[str]:
         family = (
             "phase9_base"
             if f["feature_id"] in {x["feature_id"] for x in FEATURE_DEFINITIONS}
-            else "?"
+            else FEATURE_FAMILY_BY_ID_PHASE10.get(f["feature_id"], "unknown")
         )
         lines.append(
             f"| {f['feature_id']} | {f['name']} | {family} | "
@@ -262,7 +263,7 @@ def write_research_report(
         if snap is None:
             continue
         lines.append(
-            f"| {sid} v{snap.feature_set_version} | "
+            f"| {sid} {snap.feature_set_version} | "
             f"{'base (frozen)' if sid == 'FS-001' else PHASE10_FEATURE_SETS[sid]['role']} | "
             f"{len(snap.feature_refs)} | {snap.content_digest[:16]}... |"
         )

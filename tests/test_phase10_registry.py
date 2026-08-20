@@ -76,6 +76,24 @@ def test_registration_pins_feature_lineage(tmp_path):
     assert all("phase10_feature_set_v1" in r.transformation for r in spec.features.feature_refs)
 
 
+def test_registration_title_and_notes_use_version_once():
+    """The registered title/notes must render the version as 'v1' (never the
+    doubled 'vv1' that a 'v' + 'v1' concatenation would produce)."""
+    service, spec = register_phase10_experiment(
+        experiment_id="EXP-10013",
+        hypothesis_id="H-001",
+        feature_set_id="FS-003",
+        feature_set_version="v1",
+        family="ridge",
+        params={"alpha": 1.0},
+        seed=42,
+    )
+    assert "vv1" not in spec.title
+    assert "FS-003 v1" in spec.title
+    assert "vv1" not in spec.notes
+    assert "FS-003 v1" in spec.notes
+
+
 def test_run_lifecycle_records_single_result(tmp_path):
     service, spec = register_phase10_experiment(
         experiment_id="EXP-10010",
