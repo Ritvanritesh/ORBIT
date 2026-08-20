@@ -71,7 +71,16 @@ PHASE9_PARENTS = {
     "EXP-10004": ("EXP-90019", "xgboost", {"n_estimators": 200, "max_depth": 3, "learning_rate": 0.1}),
 }
 
-_EXCLUDED_METRIC_KEYS = {"created_at"}
+_EXCLUDED_METRIC_KEYS = {
+    "created_at",  # timing metadata
+    "run_id",  # identity metadata: content hash differs because the Phase 10
+    # spec adds feature_set_id (a new lineage field); the config hash
+    # (BT-8-hex prefix) is identical
+    "coefs",  # coefficient persistence is a Phase 9 serialization detail; the
+    # Phase 10 runner stores model_family/hyperparameters instead. The
+    # substantive anchor is bitwise predictions + all shared metrics.
+    "feature_set_id",  # Phase 10 lineage field; absent in Phase 9 metrics
+}
 
 
 def _sha256_file(path: Path) -> str:
@@ -82,10 +91,26 @@ def _check(name: str, passed: bool, evidence: str) -> dict:
     return {"check": name, "status": "PASS" if passed else "FAIL", "evidence": evidence}
 
 
+_STEPS = [
+    "plan lock + order",
+    "report completeness",
+    "set membership",
+    "snapshot digests",
+    "independent audit (label snapshot + datasets + strong temporal boundary ~6 min)",
+    "cross-phase base consistency",
+    "diagnostics scope",
+]
+
+
+def _step(idx: int, label: str) -> None:
+    print(f"[review1] step {idx}/{len(_STEPS)}: {label} ...", flush=True)
+
+
 def main() -> None:
     checks: list[dict] = []
 
     # 1. plan lock --------------------------------------------------------
+    _step(1, "plan lock + order")
     plan = json.loads(PLAN_JSON.read_text(encoding="utf-8"))
     checks.append(_check(
         "plan_lock",
@@ -98,10 +123,9 @@ def main() -> None:
         plan["experiment_count"] == 52,
         f"experiment_count {plan['experiment_count']}",
     ))
-    plan_ids = [
-        s["feature_set_id"]
-        for s in __import__("orbit.ml.features", fromlist=["PHASE10_FEATURE_SET_ORDER"]).PHASE10_FEATURE_SET_ORDER
-    ]
+    plan_ids = list(
+        __import__("orbit.ml.features", fromlist=["PHASE10_FEATURE_SET_ORDER"]).PHASE10_FEATURE_SET_ORDER
+    )
     checks.append(_check(
         "plan_set_order",
         [s["feature_set_id"] for s in plan["feature_sets"]] == plan_ids,
@@ -109,6 +133,7 @@ def main() -> None:
     ))
 
     # 2. report completeness ----------------------------------------------
+    _step(2, "report completeness")
     frame = pl.read_parquet(REPORT_PARQUET)
     expected_ids = {f"EXP-{i:05d}" for i in range(10001, 10053)}
     checks.append(_check(
@@ -123,6 +148,7 @@ def main() -> None:
     ))
 
     # 3. set membership -----------------------------------------------------
+    _step(3, "set membership")
     base_ids = [f["feature_id"] for f in FEATURE_DEFINITIONS]
     membership_ok = True
     membership_evidence = []
@@ -141,6 +167,7 @@ def main() -> None:
     ))
 
     # 4. snapshot digests match the cache ----------------------------------
+    _step(4, "snapshot digests")
     bars = load_snapshot_bars()
     events = load_snapshot_events()
     instruments = load_instrument_master()
@@ -177,6 +204,7 @@ def main() -> None:
     ))
 
     # 5. independent audit over cached snapshots ----------------------------
+    _step(5, "independent audit (~6 min: strong temporal boundary)")
     decisions = snapshots["FS-001"].records.select("instrument_id", "decision_time")
     ls = __import__("orbit.ml.labels", fromlist=["build_phase9_label_snapshot"]).build_phase9_label_snapshot(
         bars, events, instruments, decisions, data_refs=["DS-000004"]
@@ -196,6 +224,7 @@ def main() -> None:
         datasets_by_set=datasets_by_set,
         phase9_fs001_digest=snapshots["FS-001"].content_digest,
         bars=bars,
+        progress=True,
     )
     audit = audit_summary(audit_checks)
     checks.append(_check(
@@ -206,6 +235,7 @@ def main() -> None:
     ))
 
     # 6. cross-phase base consistency (anchor to the DEFENSIBLE NULL) -------
+    _step(6, "cross-phase base consistency")
     base_ok = True
     base_evidence = []
     for exp10_id, (p9_id, fam, params) in sorted(PHASE9_PARENTS.items()):
@@ -237,6 +267,7 @@ def main() -> None:
     ))
 
     # 7. diagnostics scope ---------------------------------------------------
+    _step(7, "diagnostics scope")
     diag = json.loads(DIAGNOSTICS_JSON.read_text(encoding="utf-8"))
     checks.append(_check(
         "diagnostics_scope",

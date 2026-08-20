@@ -1,0 +1,365 @@
+{
+  "cost_model_id": "CM-001",
+  "dataset_snapshot_ids": [
+    "DS-000004"
+  ],
+  "experiment_count": 52,
+  "experiment_id_base": 10001,
+  "experiment_id_range": "EXP-10001..EXP-10052",
+  "feature_sets": [
+    {
+      "definitions_digest": "568bed1ebf94fe4e34ac6f7939bac045bd3b049f016d8db941c9203434026e8b",
+      "family": null,
+      "feature_set_id": "FS-001",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008"
+      ],
+      "role": "base"
+    },
+    {
+      "definitions_digest": "f862104c93d6c60d2f70a05320aad34ae5e53369c92c7d59a32a862e8f9e08e8",
+      "family": null,
+      "feature_set_id": "FS-002",
+      "members": [
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "new"
+    },
+    {
+      "definitions_digest": "b2dec65b7bc447cdfb6add46465bee211f4c0061ea79937abbf73513c0cc7996",
+      "family": null,
+      "feature_set_id": "FS-003",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "all"
+    },
+    {
+      "definitions_digest": "792e54d0fa9c828de029973fca521a7d93a9cf932915ab62cab22260b97f2101",
+      "family": "momentum",
+      "feature_set_id": "FS-004",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103"
+      ],
+      "role": "base_plus_family"
+    },
+    {
+      "definitions_digest": "6f97a463cf29f0d2ca94649a1d430936c4864121097ec20cf51863125b168362",
+      "family": "trend",
+      "feature_set_id": "FS-005",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106"
+      ],
+      "role": "base_plus_family"
+    },
+    {
+      "definitions_digest": "27662c8a559ea4f60d5b958a3122abc20da839b0f673b5d0629a72d3ac6af405",
+      "family": "volatility",
+      "feature_set_id": "FS-006",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109"
+      ],
+      "role": "base_plus_family"
+    },
+    {
+      "definitions_digest": "d30a6bb756c1ba1f19e006cdbb92081e04c9a98b4dcb17159ca835d5d6825fac",
+      "family": "volume",
+      "feature_set_id": "FS-007",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112"
+      ],
+      "role": "base_plus_family"
+    },
+    {
+      "definitions_digest": "b4d717141ebc7f2e700ff2e4c9a477c0fe1fc2a0bc7ebfcfa52041db89ca28e5",
+      "family": "range",
+      "feature_set_id": "FS-008",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "base_plus_family"
+    },
+    {
+      "definitions_digest": "61b6808831721c0e392c466922ea3586aa18364c52e9d8fa5b9fc228859988ec",
+      "family": "momentum",
+      "feature_set_id": "FS-009",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "all_minus_family"
+    },
+    {
+      "definitions_digest": "e0cf47e3ccebda2e05dfbf9afbf7cbc6288e64547290a315713d8c20ef176808",
+      "family": "trend",
+      "feature_set_id": "FS-010",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "all_minus_family"
+    },
+    {
+      "definitions_digest": "e506508cd3c3d71e6bb0794523eb510486c805358b59addf07221cf68318f45d",
+      "family": "volatility",
+      "feature_set_id": "FS-011",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "all_minus_family"
+    },
+    {
+      "definitions_digest": "304b8a35ddfa01a976ae21a542c7b46cb4afa619a3a6ca61715c0ea41ee817c5",
+      "family": "volume",
+      "feature_set_id": "FS-012",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-113",
+        "FEAT-114",
+        "FEAT-115"
+      ],
+      "role": "all_minus_family"
+    },
+    {
+      "definitions_digest": "1fa7e4adeaa3d1b796bc221382581d310e024785527886969f8423b5394b52ab",
+      "family": "range",
+      "feature_set_id": "FS-013",
+      "members": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-101",
+        "FEAT-102",
+        "FEAT-103",
+        "FEAT-104",
+        "FEAT-105",
+        "FEAT-106",
+        "FEAT-107",
+        "FEAT-108",
+        "FEAT-109",
+        "FEAT-110",
+        "FEAT-111",
+        "FEAT-112"
+      ],
+      "role": "all_minus_family"
+    }
+  ],
+  "label_id": "LAB-004",
+  "label_version": "v1",
+  "models": [
+    {
+      "family": "ridge",
+      "justification": "linear family; midpoint of the Phase 9 ridge grid and the representative point used by the Phase 9 Review-1 deep audit (EXP-90003)",
+      "params": {
+        "alpha": 1.0
+      },
+      "phase9_parent": "EXP-90003"
+    },
+    {
+      "family": "lasso",
+      "justification": "sparse linear family; midpoint of the Phase 9 lasso grid (1e-4 .. 1e-1)",
+      "params": {
+        "alpha": 0.001
+      },
+      "phase9_parent": "EXP-90006"
+    },
+    {
+      "family": "random_forest",
+      "justification": "nonlinear tree family; highest-capacity pre-registered RF point, the representative point used by the Phase 9 Review-1 deep audit (EXP-90015)",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "phase9_parent": "EXP-90015"
+    },
+    {
+      "family": "xgboost",
+      "justification": "gradient boosting family; mirrors the random_forest point within the pre-registered XGB grid (n_estimators=200, max_depth=3, lr=0.1)",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "phase9_parent": "EXP-90019"
+    }
+  ],
+  "plan_digest": "16d62bff387704746fe2ac23742045dcf27314109957752473ed4b0edff64910",
+  "protocol": "phase10_v1",
+  "seed": 42,
+  "signal_construction": "top-3 long, equal weight 1/3 (Phase 9 path)",
+  "splits": {
+    "test": "2022-01-03..2026-06-30",
+    "train": "2010-01-04..2018-12-31",
+    "val": "2019-01-02..2021-12-31"
+  },
+  "windows": "fixed_chronological_v1 (Phase 9 protocol, locked)"
+}

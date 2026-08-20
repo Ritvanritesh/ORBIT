@@ -79,6 +79,17 @@ _WINDOWS = {
     "test": ("2022-01-03", "2026-06-30"),
 }
 
+_EXCLUDED_METRIC_KEYS = {
+    "created_at",  # timing metadata
+    "run_id",  # identity metadata: content hash differs because the fresh
+    # recompute encodes the spec differently than the runner's registry
+    # spec (same config hash BT-8-hex prefix); the substantive anchor is
+    # the bitwise artifact + all shared metrics
+    "feature_set_id",  # lineage field present in the runner's metrics.json
+    # but omitted by this recompute path; not a metric
+    "coefs",  # coefficient persistence detail; not a metric
+}
+
 
 def _sha256_file(path: Path) -> str:
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -213,6 +224,8 @@ def main() -> None:
                 fresh_dict = json.loads(metrics_file.read_text(encoding="utf-8"))
                 diffs = {}
                 for key in sorted(set(stored_dict) | set(fresh_dict)):
+                    if key in _EXCLUDED_METRIC_KEYS:
+                        continue
                     if stored_dict.get(key) != fresh_dict.get(key):
                         diffs[key] = {"stored": stored_dict.get(key), "fresh": fresh_dict.get(key)}
                 metrics_ok = not diffs

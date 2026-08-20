@@ -1,0 +1,72 @@
+{
+  "completed_at": "2026-08-20T19:52:10",
+  "dataset_snapshot_ids": [
+    "DS-000004"
+  ],
+  "label_id": "LAB-004",
+  "protocol": "phase10_review2_v1",
+  "runs": [
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "test_predictions.parquet",
+        "fresh_sha256": "e76fea1f0673389a0b46319299ca20a8abd38291b2d2fc66e48412b95b719c1a",
+        "stored_sha256": "e76fea1f0673389a0b46319299ca20a8abd38291b2d2fc66e48412b95b719c1a"
+      },
+      "experiment_id": "EXP-10001",
+      "family": "ridge",
+      "feature_set_id": "FS-001",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "alpha": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "test_predictions.parquet",
+        "fresh_sha256": "61646ff2df14fbfe49e06fe2d78544a87cff6d47f6f2a5686572542e45dbdfc5",
+        "stored_sha256": "61646ff2df14fbfe49e06fe2d78544a87cff6d47f6f2a5686572542e45dbdfc5"
+      },
+      "experiment_id": "EXP-10009",
+      "family": "ridge",
+      "feature_set_id": "FS-003",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "alpha": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "test_predictions.parquet",
+        "fresh_sha256": "8d5ddccaf77f3a8e7585aded22cdb46bc691bf3c5e77c0ac41ab614a58f0bbaa",
+        "stored_sha256": "8d5ddccaf77f3a8e7585aded22cdb46bc691bf3c5e77c0ac41ab614a58f0bbaa"
+      },
+      "experiment_id": "EXP-10052",
+      "family": "xgboost",
+      "feature_set_id": "FS-013",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "status": "PASS"
+    }
+  ],
+  "seed": 42,
+  "test_window": "2022-01-03..2026-06-30",
+  "verdict": "PASS"
+}

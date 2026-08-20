@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "check": "plan_lock",
+      "evidence": "plan.json digest 16d62bff38770474... vs locked 16d62bff38770474...",
+      "status": "PASS"
+    },
+    {
+      "check": "plan_count",
+      "evidence": "experiment_count 52",
+      "status": "PASS"
+    },
+    {
+      "check": "plan_set_order",
+      "evidence": "13 feature sets in locked order",
+      "status": "PASS"
+    },
+    {
+      "check": "report_complete",
+      "evidence": "52 rows; ids match EXP-10001..EXP-10052",
+      "status": "PASS"
+    },
+    {
+      "check": "report_no_hidden_failures",
+      "evidence": "statuses: ['completed']",
+      "status": "PASS"
+    },
+    {
+      "check": "set_membership",
+      "evidence": "FS-001=8; FS-002=15; FS-003=23; FS-004=11; FS-005=11; FS-006=11; FS-007=11; FS-008=11; FS-009=20; FS-010=20; FS-011=20; FS-012=20; FS-013=20",
+      "status": "PASS"
+    },
+    {
+      "check": "snapshot_digests",
+      "evidence": "all 13 set digests match the cache",
+      "status": "PASS"
+    },
+    {
+      "check": "audit_pass",
+      "evidence": "45/45 PASS; failed: []",
+      "status": "PASS"
+    },
+    {
+      "check": "cross_phase_base_consistency",
+      "evidence": "EXP-10001==EXP-90003: metrics match; predictions bitwise-identical (sha e76fea1f0673 vs e76fea1f0673); EXP-10002==EXP-90006: metrics match; predictions bitwise-identical (sha 1daab3f34174 vs 1daab3f34174); EXP-10003==EXP-90015: metrics match; predictions bitwise-identical (sha eb1986ddae6c vs eb1986ddae6c); EXP-10004==EXP-90019: metrics match; predictions bitwise-identical (sha e81941ff548c vs e81941ff548c)",
+      "status": "PASS"
+    },
+    {
+      "check": "diagnostics_scope",
+      "evidence": "scope=train split only (never test)",
+      "status": "PASS"
+    }
+  ],
+  "completed_at": "2026-08-20T19:37:56",
+  "protocol": "phase10_review1_v1",
+  "verdict": "PASS"
+}

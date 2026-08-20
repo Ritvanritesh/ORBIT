@@ -88,8 +88,19 @@ P9_CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "phase9_
 P10_CACHE_DIR = PHASE10_SNAPSHOT_CACHE_DIR
 
 
-def _log(msg: str) -> None:
+def _log(msg: str, *, flush: bool = False) -> None:
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+def _fmt_dur(seconds: float) -> str:
+    seconds = int(seconds)
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    if h:
+        return f"{h}h{m:02d}m"
+    if m:
+        return f"{m}m{s:02d}s"
+    return f"{s}s"
 
 
 def _test_sessions(bars: pl.DataFrame, windows: dict | None = None) -> list:
@@ -441,8 +452,12 @@ def run_phase10_all(windows: dict | None = None) -> dict[str, Any]:
     write_diagnostics(diagnostics)
 
     rows = []
+    _total = plan["experiment_count"]
+    _done = 0
+    _t_exp_start = time.time()
     for feature_set_id in PHASE10_FEATURE_SET_ORDER:
         for model_point in PHASE10_MODEL_POINTS:
+            _t_exp_start = time.time()
             try:
                 rows.append(
                     run_one_experiment(
@@ -485,6 +500,19 @@ def run_phase10_all(windows: dict | None = None) -> dict[str, Any]:
                         "notes": f"{type(exc).__name__}: {exc}",
                     }
                 )
+            _done += 1
+            _t_exp = time.time() - _t_exp_start
+            _t_elapsed = time.time() - t_start
+            _avg = _t_elapsed / _done
+            _remaining = max(1, _total - _done)
+            _eta_s = _avg * _remaining
+            _log(
+                f"[progress] {_done}/{_total} ({_done / _total:.0%}) "
+                f"last={feature_set_id}/{model_point['family']} {_t_exp:.1f}s "
+                f"elapsed={_fmt_dur(_t_elapsed)} avg={_avg:.1f}s/exp "
+                f"ETA={_fmt_dur(_eta_s)}",
+                flush=True,
+            )
 
     write_plan(plan)
     report_path = append_report_rows(rows)

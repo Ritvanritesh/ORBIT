@@ -103,6 +103,8 @@ def verify_feature_temporal_boundary(
     snapshot_records: pl.DataFrame,
     bars: pl.DataFrame,
     feature_names: list[str],
+    *,
+    progress: bool = False,
 ) -> dict[str, Any]:
     """Strong point-in-time check: each feature row at decision session D must
     be reproducible from bars with session < D ONLY.
@@ -124,7 +126,17 @@ def verify_feature_temporal_boundary(
         .agg(pl.col("decision_session").gather(pl.int_range(0, pl.len(), 3)))
         .explode("decision_session")
     )
-    for row in sample.iter_rows(named=True):
+    sample_rows = sample.height
+    _t0 = __import__("time").time()
+    for i, row in enumerate(sample.iter_rows(named=True), start=1):
+        if progress and (i % 5000 == 0 or i == sample_rows):
+            _elapsed = __import__("time").time() - _t0
+            _eta = (_elapsed / i) * (sample_rows - i)
+            print(
+                f"[audit.temporal] {i}/{sample_rows} ({i / sample_rows:.0%}) "
+                f"checked={checked} elapsed={_elapsed:.0f}s ETA={_eta:.0f}s",
+                flush=True,
+            )
         inst = row["instrument_id"]
         d = row["decision_session"]
         # Features recorded at decision session D reference sessions <= D-1, so
@@ -209,6 +221,7 @@ def run_phase10_audit(
     experiment_spec: Any | None = None,
     phase9_fs001_digest: str | None = None,
     bars: pl.DataFrame | None = None,
+    progress: bool = False,
 ) -> list[dict[str, Any]]:
     """Run the full Phase 10 independent audit. Returns a list of check dicts."""
     checks: list[dict[str, Any]] = []
@@ -256,7 +269,7 @@ def run_phase10_audit(
     #     point-in-time validity is covered by the frozen-digest check.
     if bars is not None and "FS-003" in all_snapshots:
         tb = verify_feature_temporal_boundary(
-            all_snapshots["FS-003"].records, bars, FEATURE_NAMES_PHASE10
+            all_snapshots["FS-003"].records, bars, FEATURE_NAMES_PHASE10, progress=progress
         )
         checks.append(
             _check(

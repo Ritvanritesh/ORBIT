@@ -16,21 +16,112 @@ CM-001 costs, Phase 7 backtester, top-3 WEIGHT signals, seed 42,
 validation-only calibration) and ablating a pre-registered set of five
 point-in-time-valid feature families.
 
-**Status: CODE COMPLETE — FULL BENCHMARK RUN PENDING.**
+**Phase 10 is COMPLETE. Verdict: C — LIMITED, NON-ROBUST FEATURE
+SENSITIVITY; THE PHASE 9 NULL STANDS IN SUBSTANCE.**
 
-- The locked ablation plan (13 feature sets x 4 model points = 52
-  experiments, EXP-10001..EXP-10052) is implemented and digest-pinned.
-- All 15 new point-in-time features (FEAT-101..FEAT-115) are implemented,
-  documented, and verified leak-free (strong boundary recomputation).
-- The full end-to-end pipeline (runner, registry, diagnostics, reports,
-  audit, reviews) is implemented and green on hermetic synthetic data.
-- **792 tests passed, 6 xfailed** across the full suite (Phases 1-9 stay
-  green; ~75 new Phase 10 tests incl. 18 adversarial scenarios A1..A20).
-- The permanent benchmark artifacts (52 real-data experiments), Review 1
-  (structural audit) and Review 2 (reproducibility double-run), and the
-  scientific verdict are PENDING: run `python scripts/phase10_run_all.py`
-  (~2-3 h), then `scripts/phase10_review1.py` and `scripts/phase10_review2.py`.
-  This section will be replaced by the verdict once those complete.
+The benchmark ran to completion: 52/52 experiments (EXP-10001..EXP-10052,
+13 feature sets x 4 models) through the canonical Phase 7 path, audited
+three times (runner audit 45/45, Review 1 structural audit 10/10,
+Review 2 reproducibility double-run 3/3). The cross-phase anchor is
+verified bitwise: the FS-001 base runs reproduce the Phase 9 parents
+EXP-90003/90006/90015/90019 exactly (identical predictions and metrics).
+
+The feature representation is NOT irrelevant: ridge and lasso OOS ICs
+improve with the new features (ridge -0.0003 -> +0.0202, lasso +0.0226 ->
++0.0254..+0.0312), and two of 52 runs (lasso FS-009 +221%, xgboost FS-013
++241%) exceed the best documented Phase 8 control (+205%, moving_average
+5/30). But the effect is small, inconsistent across model families
+(random forest DECREASES, IC -0.018), and the best returns come from
+LEAVE-ONE-FAMILY-OUT sets (reduced feature zoos), not from any family's
+incremental signal. Every OOS IC across all 52 runs sits at |IC| <= 0.032
+with hit rates 0.517-0.537 (coin-flip), i.e. economically negligible on
+1,071 test sessions. No robust, family-specific, economically meaningful
+signal is established; the effect is consistent with noise under 52
+comparisons.
+
+- **792 tests passed, 6 xfailed** across the full suite (Phases 1-9 stay green)
+- **76 Phase 10 tests pass** (incl. 18 adversarial scenarios, A1..A20)
+- **52/52 benchmark rows completed** (0 failed) in the permanent report
+- **Runner audit: 45/45 PASS** (incl. strong temporal boundary: 45,326
+  sampled FS-003 rows recomputed from truncated bars, 0 mismatches)
+- **Audit Review 1: 10/10 PASS** (`scripts/phase10_review1.py`; results in
+  `benchmarks/phase10_review1_results.json`)
+- **Audit Review 2: 3/3 PASS** (reproducibility double-run; bitwise-
+  identical predictions + exactly equal metrics vs stored artifacts for
+  EXP-10001, EXP-10009, EXP-10052; results in
+  `benchmarks/phase10_review2_results.json`)
+
+---
+
+## BENCHMARK RESULTS (test window 2022-01-03 .. 2026-06-30, CM-001 costs)
+
+### Per family: FS-001 (base) vs FS-002 (new-only) vs FS-003 (ALL) vs best set
+
+| family | FS-001 IC / ret | FS-002 IC / ret | FS-003 IC / ret | best set (IC / ret) |
+|--------|-----------------|-----------------|-----------------|---------------------|
+| ridge | -0.0003 / +49.3% | +0.0148 / +24.0% | +0.0202 / +7.6% | FS-010 (+0.0196 / +66.2%) |
+| lasso | +0.0226 / +21.1% | +0.0256 / +201.9% | +0.0254 / +200.4% | FS-009 (+0.0312 / +221.2%) |
+| random_forest | +0.0119 / +127.1% | +0.0013 / +146.6% | -0.0056 / +94.9% | FS-002 (+0.0013 / +146.6%) |
+| xgboost | +0.0113 / +23.7% | -0.0021 / +57.1% | +0.0100 / +116.6% | FS-013 (+0.0070 / +241.2%) |
+
+### Headline numbers
+
+- **All 52 runs: |OOS IC| <= 0.0312, |rank IC| <= 0.0270, hit rate
+  0.517-0.537** — economically negligible on 1,071 test sessions with
+  20-name cross-sections.
+- Best after-cost returns: **+241.2%** (EXP-10052, xgboost FS-013) and
+  **+221.2%** (EXP-10034, lasso FS-009) — above the best Phase 9 ML
+  (+127.1%, EXP-90015) and the best Phase 8 control (+205.5%,
+  moving_average 5/30).
+- Both best runs use **ALL-minus-family** sets (FS-009 = ALL - momentum,
+  FS-013 = ALL - range): removing features helped more than any family
+  added, a signature of regularization/noise effects rather than a
+  family-specific predictive signal.
+- Feature-set sensitivity is real but directionally inconsistent:
+  ridge IC +0.020, lasso IC +0.003..+0.009, but random_forest IC -0.018
+  and its return falls; ridge's IC gain does not translate to return
+  (return -42 points).
+- FS-001 base rows reproduce the Phase 9 parents **bitwise**: EXP-10001
+  == EXP-90003, EXP-10002 == EXP-90006, EXP-10003 == EXP-90015,
+  EXP-10004 == EXP-90019 (identical test predictions sha256 + identical
+  metrics; the only stored-field differences are non-metric metadata:
+  run_id content hash, coefs persistence, feature_set_id lineage field).
+
+### Verdict reasoning
+
+1. **The strict null (representation is irrelevant) is weakened but not
+   refuted.** Ridge/lasso ICs improve with the extended representation and
+   two runs beat the best documented control on after-cost return; yet
+   every IC remains null-adjacent (<= 0.032), every hit rate remains a
+   coin flip, and the improvement is family-dependent (RF worsens).
+2. **No feature family carries identifiable incremental signal.**
+   BASE+family sets (FS-004..008) never dominate; the two best returns
+   come from ALL-minus-family sets, i.e. from REMOVING families. This is
+   the pattern expected under noise/overfitting, not under a real
+   family-specific effect.
+3. **52 comparisons with no pre-registered multiple-comparison guard:**
+   selecting the 2 best of 52 outcomes (+241%, +221%) without correction
+   is not evidence of a deployable edge. The pre-registered plan requires
+   robustness criteria that these runs do not meet (no consistency across
+   families, no separation in IC space).
+4. **The benchmark is permanent and reproducible.** Bitwise reproducibility
+   (Review 2), structural audit (Review 1), the strong temporal-boundary
+   recomputation (45,326 sampled rows, 0 mismatches), and the cross-phase
+   anchor (FS-001 == Phase 9 parents, bitwise) all PASS.
+
+**Conclusion:** Phase 10 does NOT overturn the Phase 9 DEFENSIBLE NULL.
+The new point-in-time features change results at the margin and in
+family-dependent directions, but no economically meaningful, robust,
+family-specific signal is established on DS-000004. Feature
+representation alone does not rescue the benchmark on this universe; the
+bottleneck is more plausibly information (20-name universe, OHLCV-only
+inputs, no market-benchmark series) than representation.
+
+### Documented limitation
+
+Same as Phase 9: no SPY/market-benchmark series in DS-000004, so
+excess-return labels (LAB-001/LAB-003) remain unresolved and all
+comparisons are absolute after-cost total return, not benchmark-relative.
 
 ---
 
@@ -101,6 +192,50 @@ its Phase 9 parent in the registry notes.
 
 ---
 
+## AUDIT GATES
+
+### Runner audit (inside `scripts/phase10_run_all.py`)
+
+**Status: PASS — 45/45 checks**
+
+Includes: plan lock, every snapshot point-in-time valid + exact membership
+(13 sets), feature-scope guard, frozen FS-001 digest, label contract,
+split integrity + locked windows, dataset unchanged vs manifest, model
+scope guard, seed lock, test lock, backtest uniformity, registry lineage,
+data expansion guard, and the **strong temporal boundary**: 45,326 sampled
+FS-003 rows recomputed from truncated bar history (bars <= D) and compared
+to the snapshot — 0 mismatches.
+
+### Review 1: Independent structural audit (`scripts/phase10_review1.py`)
+
+**Status: PASS — 10/10 checks**
+
+plan_lock (digest match), plan_count (52), plan_set_order (13 sets in
+locked order), report_complete (EXP-10001..EXP-10052, 52 rows),
+report_no_hidden_failures (all completed), set_membership (8/15/23/11x5/
+20x5), snapshot_digests (all 13 match the cache), audit_pass (45/45),
+**cross_phase_base_consistency** (EXP-10001..10004 == EXP-90003/90006/
+90015/90019: bitwise-identical predictions + exactly equal substantive
+metrics), diagnostics_scope (train split only).
+
+### Review 2: Independent reproducibility double-run
+(`scripts/phase10_review2.py`)
+
+**Status: PASS — 3/3 runs**
+
+Recomputes EXP-10001 (FS-001/ridge), EXP-10009 (FS-003/ridge), EXP-10052
+(FS-013/xgboost) from scratch through the full pipeline from digest-verified
+cached snapshots:
+
+- test predictions parquet: **bitwise identical** (sha256 equal) for all 3
+- metrics (OOS IC / rank IC / MSE / hit rate / ECE / Brier / turnover /
+  after-cost return / calibration coefficients / backtest counts): exactly
+  equal; the only stored-field differences are non-metric metadata
+  (run_id content hash from the registry spec encoding, coefs persistence,
+  feature_set_id lineage field)
+
+---
+
 ## TEST SUITE RESULTS
 
 ```
@@ -135,6 +270,32 @@ expansion detected · A20 split-integrity violation flagged.
 
 ---
 
+## BENCHMARK RUN LOG
+
+- Full runner: `python scripts/phase10_run_all.py` (deterministic ids
+  EXP-10001..EXP-10052, register-before-run, diagnostics, reports, audit,
+  live progress lines). Wall time on the real run: 1,600 s (26.7 min),
+  of which the strong temporal-boundary audit ~6 min.
+- Two review-script fixes surfaced during execution, both regression-tested:
+  1. `phase10_review1.py` read `PHASE10_FEATURE_SET_ORDER` as dicts (it is
+     a list of ids); fixed, plus live step markers (7 steps) and a
+     progress line in the audit's temporal-boundary loop.
+  2. Both reviews initially compared ALL stored metric keys strictly,
+     which flagged non-metric metadata (run_id content hash, coefs
+     persistence, feature_set_id lineage field) as diffs. The substantive
+     anchor — bitwise predictions + every shared metric exactly equal —
+     held for all pairs; the checks now exclude the documented metadata
+     keys and PASS 10/10 and 3/3.
+- A partial run reached EXP-10010 before being stopped for live-progress
+  instrumentation; the final run upserted every experiment id with fresh
+  results, so nothing is polluted.
+- Feature diagnostics (train-only) recorded: FS-002 has 2 high-correlation
+  pairs (dv_med_10/dv_med_30 r=0.98; vol_60/vol_90 r=0.96) and FS-001 has
+  none; no exact duplicates in any set. Redundancy is documented, never
+  auto-removed.
+
+---
+
 ## DELIVERABLES
 
 **Implementation (`src/orbit/ml/`):**
@@ -148,38 +309,52 @@ expansion detected · A20 split-integrity violation flagged.
 - `phase10_registry.py` — register-before-run + config hash (feature
   mutation detectable)
 - `phase10_audit.py` — independent audit incl. strong temporal boundary
+  (progress instrumentation)
 - `phase10_report.py` — permanent report writers
-- `phase10_runner.py` — full pipeline runner
+- `phase10_runner.py` — full pipeline runner with live progress lines
 - `snapshot_cache.py` — Phase 10 snapshot cache (digest-verified)
 
 **Runner / reviews / docs / tests:**
 - `scripts/phase10_run_all.py` — full end-to-end benchmark runner
-- `scripts/phase10_review1.py` — independent structural audit (incl.
-  cross-phase anchor: FS-001 base runs must EXACTLY reproduce the Phase 9
-  parents EXP-90003/90006/90015/90019)
-- `scripts/phase10_review2.py` — reproducibility double-run (bitwise
-  artifact comparison for EXP-10001, EXP-10009, EXP-10052)
+- `scripts/phase10_review1.py` — independent structural audit (10/10 PASS,
+  incl. cross-phase base anchor: FS-001 runs exactly reproduce the Phase 9
+  parents)
+- `scripts/phase10_review2.py` — reproducibility double-run (3/3 PASS,
+  bitwise)
 - `benchmarks/phase10_plan.json` / `phase10_diagnostics.json` — locked plan
-  + train-only diagnostics (plan/diagnostics written on first run)
+  + train-only diagnostics
 - `benchmarks/phase10_feature_research.parquet` + `.md` — permanent report
-  (52 rows, upsert-by-experiment-id; PENDING the full run)
+  (52 rows, upsert-by-experiment-id, all completed)
+- `benchmarks/phase10_review1_results.json` + `phase10_review2_results.json`
+  — permanent review records
 - `benchmarks/phase10_runs/EXP-1xxxx/` — per-experiment artifacts
-  (PENDING the full run)
-- `docs/phase10_feature_research.md` — permanent research report (generated
-  by the runner; PENDING the full run)
+  (test predictions, signals, metrics.json)
+- `data/cache/phase10_snapshots/` — digest-verified snapshot cache (13 sets)
+- `docs/phase10_feature_research.md` — full protocol, feature inventory,
+  diagnostics, and methodology
 - `tests/test_phase10_*.py` (9 files, 76 tests incl. 18 adversarial)
+- `PHASE_10_STATUS.md` + `README.md` — status and structure updated
+
+**Registry:** 52 experiment specs (EXP-10001..EXP-10052) with full lineage
+pins (DS-000004, LAB-004 v1, CM-001, feature-set id + version + definitions
+digest, temporal digest, seed 42, Phase 9 parent in notes), code/config
+hashes captured at run start, single immutable result per experiment,
+artifacts checksummed on attach.
 
 ---
 
-## PENDING (run at the end)
+## STATUS: COMPLETE — C (LIMITED, NON-ROBUST FEATURE SENSITIVITY)
 
-1. `python scripts/phase10_run_all.py` — full 52-experiment benchmark on
-   DS-000004 (est. 2-3 h; snapshots already cached, so it starts fast).
-2. `python scripts/phase10_review1.py` — independent structural audit.
-3. `python scripts/phase10_review2.py` — independent reproducibility
-   double-run.
-4. Fill in the BENCHMARK RESULTS + VERDICT sections above and commit.
+Phase 10 is complete and all gates cleared. The feature-representation
+ablation is permanent, reproducible, and honest: it reports that the new
+point-in-time features move results at the margin and in family-dependent
+directions, that no family carries identifiable incremental signal, that
+every IC remains null-adjacent, and that the Phase 9 DEFENSIBLE NULL
+therefore stands in substance. The infrastructure for the next
+information-adding steps (market-benchmark series for excess-return labels,
+universe expansion with delisted names for survivorship, and genuinely new
+data domains) is ready and gated on data acquisition, not on methodology.
 
-A benign early note: a partial run reached EXP-10010 before being stopped;
-those per-experiment artifacts are legitimate executions and the final run
-upserts every experiment id with fresh results, so nothing is polluted.
+**Next:** benchmark-relative evaluation (requires SPY/broad-ETF ingestion)
+or universe expansion (50 -> 100 names with delisted history) — both are
+now gated on data, not on Phase 10 methodology.

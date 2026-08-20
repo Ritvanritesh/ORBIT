@@ -101,26 +101,28 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   (after-cost total return), not benchmark-relative. See
 `docs/phase9_ml_benchmark.md`; run everything with
    `python scripts/phase9_run_all.py`.
-- Phase 10 (Feature Engineering + Ablation) - implemented, benchmark run
-  pending: 15 new point-in-time features (FEAT-101..FEAT-115) in 5
-  documented families (momentum, trend, volatility, volume/liquidity,
-  range/price structure) computed from DS-000004 OHLCV bars only, all at
-  the strict boundary (window end strictly before decision session); a
-  locked 13-set x 4-model ablation plan (FS-002..FS-013 vs the frozen
-  Phase 9 FS-001 v1, 52 experiments EXP-10001..EXP-10052, digest-pinned,
-  one model point per Phase 9 family with parent linkage EXP-90003/
-  90006/90015/90019, deterministic id mapping); immutable digest-bound
-  feature snapshots cached digest-verified; strong temporal-boundary
-  audit (every 3rd FS-003 row recomputed from bars <= D); train-only
+- Phase 10 (Feature Engineering + Ablation) - complete: 15 new
+  point-in-time features (FEAT-101..FEAT-115) in 5 documented families
+  (momentum, trend, volatility, volume/liquidity, range/price structure)
+  computed from DS-000004 OHLCV bars only, all at the strict boundary
+  (window end strictly before decision session); a locked 13-set x 4-model
+  ablation plan (FS-002..FS-013 vs the frozen Phase 9 FS-001 v1, 52
+  experiments EXP-10001..EXP-10052, digest-pinned, one model point per
+  Phase 9 family with parent linkage EXP-90003/90006/90015/90019,
+  deterministic id mapping); immutable digest-bound feature snapshots
+  cached digest-verified; strong temporal-boundary audit (45,326 sampled
+  FS-003 rows recomputed from truncated bars, 0 mismatches); train-only
   feature diagnostics (quality + redundancy); register-before-run with a
-  feature-mutation-detecting config hash; independent Review 1 (structural
-  audit incl. cross-phase base-anchor: FS-001 runs must exactly reproduce
-  the Phase 9 parents) and Review 2 (reproducibility double-run) scripts;
-  76 Phase 10 tests incl. 18 adversarial scenarios (A1..A20); full suite
-  792 passed, 6 xfailed. Run the benchmark with
-  `python scripts/phase10_run_all.py`, then review with
-  `python scripts/phase10_review1.py` and `scripts/phase10_review2.py`.
-  See `PHASE_10_STATUS.md`.
+  feature-mutation-detecting config hash; benchmark 52/52 completed with
+  runner audit 45/45 PASS, Review 1 (structural audit incl. cross-phase
+  base-anchor: FS-001 runs exactly reproduce the Phase 9 parents bitwise)
+  10/10 PASS, Review 2 (reproducibility double-run) 3/3 PASS; 76 Phase 10
+  tests incl. 18 adversarial scenarios (A1..A20); full suite 792 passed,
+  6 xfailed. Verdict: C - limited, non-robust feature sensitivity; no
+  economically meaningful family-specific signal; the Phase 9 DEFENSIBLE
+  NULL stands in substance. Run/review:
+  `python scripts/phase10_run_all.py`, `scripts/phase10_review1.py`,
+  `scripts/phase10_review2.py`. See `PHASE_10_STATUS.md`.
 
 ## Structure
 
