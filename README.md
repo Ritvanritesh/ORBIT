@@ -73,6 +73,34 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   (the seed contracts require the SPY series); ALFRED vintage access
   (schema-ready; revised macro series are point-in-time blocked - reported
   as snapshot limitations - until then).
+- Phase 8 (Documented Baseline Strategies) - complete: five parameterized
+  documented strategies (momentum, mean reversion, moving average,
+  volatility targeting, buy-and-hold) plus null/random baselines,
+  cross-validated parameter grids, and a benchmark report module executed
+  on synthetic bars. Phase 9 re-executes these same rules on the real
+  dataset as controls.
+- Phase 9 (Baseline ML Benchmark) - complete: first falsifiable ML
+  benchmark - 5 model families x 20 pre-registered grid points (ridge,
+  lasso, logistic, random forest, xgboost, seed 42) on FS-001 v1
+  point-in-time features (8 numerics, strict boundary) against LAB-004 v1
+  (5-session forward total return), locked chronological split
+  (train 2010-2018 / val 2019-2021 / test 2022-2026, exact outcome-window
+  purge, test never purged), register-before-run experiments
+  (EXP-90001..EXP-90036) with full lineage pins and code/config hashes,
+  validation-only Platt calibration with `assert_no_test_fit`, per-session
+  OOS/rank IC, ECE/Brier/MSE/hit rate, canonical Phase 7 backtest with
+  CM-001 costs and WEIGHT sizing identical to the 16 Phase 8 controls on
+  real bars, permanent parquet+markdown report
+  (`benchmarks/phase9_ml_benchmark.*`), digest-verified snapshot cache,
+  full audit, 130 Phase 9 tests including 24 adversarial scenarios, and
+  two independent review passes (deep-input audit:
+  `python scripts/phase9_audit_deep.py`; reproducibility double-run:
+  `python scripts/phase9_review2_reproducibility.py`). Documented
+  limitation: no SPY series in DS-000004, so excess-return labels
+  (LAB-001/LAB-003) are unresolved and the comparison is absolute
+  (after-cost total return), not benchmark-relative. See
+  `docs/phase9_ml_benchmark.md`; run everything with
+  `python scripts/phase9_run_all.py`.
 
 ## Structure
 
@@ -80,17 +108,23 @@ Core thesis: the model is replaceable; the evidence chain is the product.
 docs/                  Charter, seed hypotheses, gates, universe architecture,
                        phase4_temporal_truth.md (temporal engine conventions),
                        phase5_labels.md (label contract and outcome conventions),
-                       phase6_experiment_registry.md (registry design)
+                       phase6_experiment_registry.md (registry design),
+                       phase9_ml_benchmark.md (Phase 9 protocol)
 src/orbit/schemas/     HypothesisSpec / ExperimentSpec / Instrument / data contracts
 src/orbit/universe/    Membership rules + delisting-aware reconstruction engine
 src/orbit/temporal/    Phase 4: times, rules, adapters, engine, snapshot,
                        features, fixtures, contracts
 src/orbit/labels/      Phase 5: contract, outcomes, engine, snapshot, registry, seeds
 src/orbit/experiments/ Phase 6: lifecycle, registry (DuckDB), reproduction, service
+src/orbit/ml/          Phase 9: features, labels, splits, grids, models, ranking,
+                       calibration, metrics, signals, registry, baselines, report, audit
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Ingestion (Phase 3): providers, parsing, registry, storage, validators
 scripts/               phase3_run_all.py - end-to-end ingest + verify + provenance
                        phase6_demo.py - experiment registry end-to-end example
+                       phase9_run_all.py - Phase 9 ML benchmark end-to-end
+                       phase9_audit_deep.py - Phase 9 deep-input independent audit
+                       phase9_review2_reproducibility.py - Phase 9 reproducibility double-run
 tests/                 Validation tests
 ```
 

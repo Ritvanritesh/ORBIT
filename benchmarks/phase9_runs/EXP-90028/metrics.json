@@ -1,0 +1,1 @@
+{"after_cost_final_equity": 760526.201384357, "after_cost_total_return": -0.2394737986156431, "hyperparameters": {"lookback": 30}, "model_family": "mean_reversion", "n_fills": 773, "n_rejects": 549, "n_signals": 22520, "run_id": "BT-8279e640-accf53c2a629", "seed": 42, "total_costs": 24345.791628496172, "turnover": 243.45796338289782}

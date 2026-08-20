@@ -1,0 +1,494 @@
+{
+  "all_checks_exercised": [
+    "backtest_uniformity",
+    "calibration_val_only",
+    "data_expansion_guard",
+    "feature_point_in_time",
+    "feature_scope_guard",
+    "grid_lock",
+    "label_availability",
+    "label_contract",
+    "model_scope_guard",
+    "registry_lineage",
+    "seed_lock",
+    "split_integrity",
+    "test_lock",
+    "unavailable_documented"
+  ],
+  "completed_at": "2026-08-20T13:28:53",
+  "dataset_snapshot_ids": [
+    "DS-000004"
+  ],
+  "families_audited": [
+    "ridge",
+    "lasso",
+    "logistic",
+    "random_forest",
+    "xgboost"
+  ],
+  "feature_set_id": "FS-001",
+  "label_id": "LAB-004",
+  "missing_checks": [],
+  "protocol": "phase9_deep_audit_v1",
+  "runs": [
+    {
+      "checks": [
+        {
+          "check": "feature_point_in_time",
+          "evidence": "all 139161 feature rows reference sessions strictly before their decision session",
+          "status": "PASS"
+        },
+        {
+          "check": "feature_scope_guard",
+          "evidence": "feature set FS-001 vv1: exactly 8 documented refs, feature columns ['log_dv_med_20', 'ret_10', 'ret_20', 'ret_30', 'sma_ratio_15_40', 'sma_ratio_5_30', 'vol_10', 'vol_30']; no feature zoo",
+          "status": "PASS"
+        },
+        {
+          "check": "label_contract",
+          "evidence": "label LAB-004 vv1 (digest d6894fa3eb13f375...)",
+          "status": "PASS"
+        },
+        {
+          "check": "label_availability",
+          "evidence": "139081 available / 80 unavailable",
+          "status": "PASS"
+        },
+        {
+          "check": "split_integrity",
+          "evidence": "train 44399 / val 15060 / test 22520 rows; exact purge boundaries verified",
+          "status": "PASS"
+        },
+        {
+          "check": "unavailable_documented",
+          "evidence": "80 unavailable rows ([{'unavailable_reason': 'insufficient_future_data', 'n': 80}])",
+          "status": "PASS"
+        },
+        {
+          "check": "calibration_val_only",
+          "evidence": "calibration map fitted on validation only",
+          "status": "PASS"
+        },
+        {
+          "check": "grid_lock",
+          "evidence": "ridge params {'alpha': 1.0} are a pre-registered grid point",
+          "status": "PASS"
+        },
+        {
+          "check": "seed_lock",
+          "evidence": "seed 42",
+          "status": "PASS"
+        },
+        {
+          "check": "model_scope_guard",
+          "evidence": "family 'ridge' in the Phase 9 families ['lasso', 'logistic', 'random_forest', 'ridge', 'xgboost']",
+          "status": "PASS"
+        },
+        {
+          "check": "test_lock",
+          "evidence": "1126 test sessions, all within the locked window",
+          "status": "PASS"
+        },
+        {
+          "check": "backtest_uniformity",
+          "evidence": "costs 2.0/1.0/2.0 bps, sizing weight, long_only True",
+          "status": "PASS"
+        },
+        {
+          "check": "registry_lineage",
+          "evidence": "snapshots ['DS-000004'], label LAB-004 vv1, cost model CM-001",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "experiment pins only the validated dev snapshot ['DS-000004']; no data expansion",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "feature snapshot data refs ['DS-000004']; no data expansion",
+          "status": "PASS"
+        }
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "summary": {
+        "blocked": false,
+        "checks": 15,
+        "failed": 0,
+        "failed_checks": [],
+        "passed": 15
+      }
+    },
+    {
+      "checks": [
+        {
+          "check": "feature_point_in_time",
+          "evidence": "all 139161 feature rows reference sessions strictly before their decision session",
+          "status": "PASS"
+        },
+        {
+          "check": "feature_scope_guard",
+          "evidence": "feature set FS-001 vv1: exactly 8 documented refs, feature columns ['log_dv_med_20', 'ret_10', 'ret_20', 'ret_30', 'sma_ratio_15_40', 'sma_ratio_5_30', 'vol_10', 'vol_30']; no feature zoo",
+          "status": "PASS"
+        },
+        {
+          "check": "label_contract",
+          "evidence": "label LAB-004 vv1 (digest d6894fa3eb13f375...)",
+          "status": "PASS"
+        },
+        {
+          "check": "label_availability",
+          "evidence": "139081 available / 80 unavailable",
+          "status": "PASS"
+        },
+        {
+          "check": "split_integrity",
+          "evidence": "train 44399 / val 15060 / test 22520 rows; exact purge boundaries verified",
+          "status": "PASS"
+        },
+        {
+          "check": "unavailable_documented",
+          "evidence": "80 unavailable rows ([{'unavailable_reason': 'insufficient_future_data', 'n': 80}])",
+          "status": "PASS"
+        },
+        {
+          "check": "calibration_val_only",
+          "evidence": "calibration map fitted on validation only",
+          "status": "PASS"
+        },
+        {
+          "check": "grid_lock",
+          "evidence": "lasso params {'alpha': 0.001} are a pre-registered grid point",
+          "status": "PASS"
+        },
+        {
+          "check": "seed_lock",
+          "evidence": "seed 42",
+          "status": "PASS"
+        },
+        {
+          "check": "model_scope_guard",
+          "evidence": "family 'lasso' in the Phase 9 families ['lasso', 'logistic', 'random_forest', 'ridge', 'xgboost']",
+          "status": "PASS"
+        },
+        {
+          "check": "test_lock",
+          "evidence": "1126 test sessions, all within the locked window",
+          "status": "PASS"
+        },
+        {
+          "check": "backtest_uniformity",
+          "evidence": "costs 2.0/1.0/2.0 bps, sizing weight, long_only True",
+          "status": "PASS"
+        },
+        {
+          "check": "registry_lineage",
+          "evidence": "snapshots ['DS-000004'], label LAB-004 vv1, cost model CM-001",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "experiment pins only the validated dev snapshot ['DS-000004']; no data expansion",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "feature snapshot data refs ['DS-000004']; no data expansion",
+          "status": "PASS"
+        }
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "summary": {
+        "blocked": false,
+        "checks": 15,
+        "failed": 0,
+        "failed_checks": [],
+        "passed": 15
+      }
+    },
+    {
+      "checks": [
+        {
+          "check": "feature_point_in_time",
+          "evidence": "all 139161 feature rows reference sessions strictly before their decision session",
+          "status": "PASS"
+        },
+        {
+          "check": "feature_scope_guard",
+          "evidence": "feature set FS-001 vv1: exactly 8 documented refs, feature columns ['log_dv_med_20', 'ret_10', 'ret_20', 'ret_30', 'sma_ratio_15_40', 'sma_ratio_5_30', 'vol_10', 'vol_30']; no feature zoo",
+          "status": "PASS"
+        },
+        {
+          "check": "label_contract",
+          "evidence": "label LAB-004 vv1 (digest d6894fa3eb13f375...)",
+          "status": "PASS"
+        },
+        {
+          "check": "label_availability",
+          "evidence": "139081 available / 80 unavailable",
+          "status": "PASS"
+        },
+        {
+          "check": "split_integrity",
+          "evidence": "train 44399 / val 15060 / test 22520 rows; exact purge boundaries verified",
+          "status": "PASS"
+        },
+        {
+          "check": "unavailable_documented",
+          "evidence": "80 unavailable rows ([{'unavailable_reason': 'insufficient_future_data', 'n': 80}])",
+          "status": "PASS"
+        },
+        {
+          "check": "calibration_val_only",
+          "evidence": "calibration map fitted on validation only",
+          "status": "PASS"
+        },
+        {
+          "check": "grid_lock",
+          "evidence": "logistic params {'C': 1.0} are a pre-registered grid point",
+          "status": "PASS"
+        },
+        {
+          "check": "seed_lock",
+          "evidence": "seed 42",
+          "status": "PASS"
+        },
+        {
+          "check": "model_scope_guard",
+          "evidence": "family 'logistic' in the Phase 9 families ['lasso', 'logistic', 'random_forest', 'ridge', 'xgboost']",
+          "status": "PASS"
+        },
+        {
+          "check": "test_lock",
+          "evidence": "1126 test sessions, all within the locked window",
+          "status": "PASS"
+        },
+        {
+          "check": "backtest_uniformity",
+          "evidence": "costs 2.0/1.0/2.0 bps, sizing weight, long_only True",
+          "status": "PASS"
+        },
+        {
+          "check": "registry_lineage",
+          "evidence": "snapshots ['DS-000004'], label LAB-004 vv1, cost model CM-001",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "experiment pins only the validated dev snapshot ['DS-000004']; no data expansion",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "feature snapshot data refs ['DS-000004']; no data expansion",
+          "status": "PASS"
+        }
+      ],
+      "family": "logistic",
+      "params": {
+        "C": 1.0
+      },
+      "summary": {
+        "blocked": false,
+        "checks": 15,
+        "failed": 0,
+        "failed_checks": [],
+        "passed": 15
+      }
+    },
+    {
+      "checks": [
+        {
+          "check": "feature_point_in_time",
+          "evidence": "all 139161 feature rows reference sessions strictly before their decision session",
+          "status": "PASS"
+        },
+        {
+          "check": "feature_scope_guard",
+          "evidence": "feature set FS-001 vv1: exactly 8 documented refs, feature columns ['log_dv_med_20', 'ret_10', 'ret_20', 'ret_30', 'sma_ratio_15_40', 'sma_ratio_5_30', 'vol_10', 'vol_30']; no feature zoo",
+          "status": "PASS"
+        },
+        {
+          "check": "label_contract",
+          "evidence": "label LAB-004 vv1 (digest d6894fa3eb13f375...)",
+          "status": "PASS"
+        },
+        {
+          "check": "label_availability",
+          "evidence": "139081 available / 80 unavailable",
+          "status": "PASS"
+        },
+        {
+          "check": "split_integrity",
+          "evidence": "train 44399 / val 15060 / test 22520 rows; exact purge boundaries verified",
+          "status": "PASS"
+        },
+        {
+          "check": "unavailable_documented",
+          "evidence": "80 unavailable rows ([{'unavailable_reason': 'insufficient_future_data', 'n': 80}])",
+          "status": "PASS"
+        },
+        {
+          "check": "calibration_val_only",
+          "evidence": "calibration map fitted on validation only",
+          "status": "PASS"
+        },
+        {
+          "check": "grid_lock",
+          "evidence": "random_forest params {'n_estimators': 50, 'max_depth': 3} are a pre-registered grid point",
+          "status": "PASS"
+        },
+        {
+          "check": "seed_lock",
+          "evidence": "seed 42",
+          "status": "PASS"
+        },
+        {
+          "check": "model_scope_guard",
+          "evidence": "family 'random_forest' in the Phase 9 families ['lasso', 'logistic', 'random_forest', 'ridge', 'xgboost']",
+          "status": "PASS"
+        },
+        {
+          "check": "test_lock",
+          "evidence": "1126 test sessions, all within the locked window",
+          "status": "PASS"
+        },
+        {
+          "check": "backtest_uniformity",
+          "evidence": "costs 2.0/1.0/2.0 bps, sizing weight, long_only True",
+          "status": "PASS"
+        },
+        {
+          "check": "registry_lineage",
+          "evidence": "snapshots ['DS-000004'], label LAB-004 vv1, cost model CM-001",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "experiment pins only the validated dev snapshot ['DS-000004']; no data expansion",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "feature snapshot data refs ['DS-000004']; no data expansion",
+          "status": "PASS"
+        }
+      ],
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 50
+      },
+      "summary": {
+        "blocked": false,
+        "checks": 15,
+        "failed": 0,
+        "failed_checks": [],
+        "passed": 15
+      }
+    },
+    {
+      "checks": [
+        {
+          "check": "feature_point_in_time",
+          "evidence": "all 139161 feature rows reference sessions strictly before their decision session",
+          "status": "PASS"
+        },
+        {
+          "check": "feature_scope_guard",
+          "evidence": "feature set FS-001 vv1: exactly 8 documented refs, feature columns ['log_dv_med_20', 'ret_10', 'ret_20', 'ret_30', 'sma_ratio_15_40', 'sma_ratio_5_30', 'vol_10', 'vol_30']; no feature zoo",
+          "status": "PASS"
+        },
+        {
+          "check": "label_contract",
+          "evidence": "label LAB-004 vv1 (digest d6894fa3eb13f375...)",
+          "status": "PASS"
+        },
+        {
+          "check": "label_availability",
+          "evidence": "139081 available / 80 unavailable",
+          "status": "PASS"
+        },
+        {
+          "check": "split_integrity",
+          "evidence": "train 44399 / val 15060 / test 22520 rows; exact purge boundaries verified",
+          "status": "PASS"
+        },
+        {
+          "check": "unavailable_documented",
+          "evidence": "80 unavailable rows ([{'unavailable_reason': 'insufficient_future_data', 'n': 80}])",
+          "status": "PASS"
+        },
+        {
+          "check": "calibration_val_only",
+          "evidence": "calibration map fitted on validation only",
+          "status": "PASS"
+        },
+        {
+          "check": "grid_lock",
+          "evidence": "xgboost params {'n_estimators': 50, 'max_depth': 3, 'learning_rate': 0.1} are a pre-registered grid point",
+          "status": "PASS"
+        },
+        {
+          "check": "seed_lock",
+          "evidence": "seed 42",
+          "status": "PASS"
+        },
+        {
+          "check": "model_scope_guard",
+          "evidence": "family 'xgboost' in the Phase 9 families ['lasso', 'logistic', 'random_forest', 'ridge', 'xgboost']",
+          "status": "PASS"
+        },
+        {
+          "check": "test_lock",
+          "evidence": "1126 test sessions, all within the locked window",
+          "status": "PASS"
+        },
+        {
+          "check": "backtest_uniformity",
+          "evidence": "costs 2.0/1.0/2.0 bps, sizing weight, long_only True",
+          "status": "PASS"
+        },
+        {
+          "check": "registry_lineage",
+          "evidence": "snapshots ['DS-000004'], label LAB-004 vv1, cost model CM-001",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "experiment pins only the validated dev snapshot ['DS-000004']; no data expansion",
+          "status": "PASS"
+        },
+        {
+          "check": "data_expansion_guard",
+          "evidence": "feature snapshot data refs ['DS-000004']; no data expansion",
+          "status": "PASS"
+        }
+      ],
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 50
+      },
+      "summary": {
+        "blocked": false,
+        "checks": 15,
+        "failed": 0,
+        "failed_checks": [],
+        "passed": 15
+      }
+    }
+  ],
+  "verdict": "PASS",
+  "windows": {
+    "test": "2022-01-03..2026-06-30",
+    "train": "2010-01-04..2018-12-31",
+    "val": "2019-01-02..2021-12-31"
+  }
+}

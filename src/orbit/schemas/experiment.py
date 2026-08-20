@@ -125,7 +125,7 @@ class TemporalConfigRef(BaseModel):
 
 _KNOWN_MODEL_FAMILIES = frozenset(
     {
-        "heuristic", "linear", "ridge", "logistic", "random_forest",
+        "heuristic", "linear", "ridge", "lasso", "logistic", "random_forest",
         "xgboost", "lightgbm", "null_shuffle",
     }
 )

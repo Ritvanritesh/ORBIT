@@ -1,0 +1,1 @@
+{"after_cost_final_equity": 2613140.1393016735, "after_cost_total_return": 1.6131401393016733, "hyperparameters": {"lookback": 30}, "model_family": "momentum", "n_fills": 742, "n_rejects": 548, "n_signals": 22520, "run_id": "BT-8279e640-90ae961d855b", "seed": 42, "total_costs": 68891.11631443806, "turnover": 688.9114253016189}

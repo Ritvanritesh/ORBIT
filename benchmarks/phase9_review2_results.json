@@ -1,0 +1,72 @@
+{
+  "completed_at": "2026-08-20T13:27:27",
+  "dataset_snapshot_ids": [
+    "DS-000004"
+  ],
+  "feature_set_id": "FS-001",
+  "label_id": "LAB-004",
+  "protocol": "phase9_review2_v1",
+  "runs": [
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "test_predictions.parquet",
+        "fresh_sha256": "e76fea1f0673389a0b46319299ca20a8abd38291b2d2fc66e48412b95b719c1a",
+        "stored_sha256": "e76fea1f0673389a0b46319299ca20a8abd38291b2d2fc66e48412b95b719c1a"
+      },
+      "experiment_id": "EXP-90003",
+      "family": "ridge",
+      "kind": "ml",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "alpha": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "test_predictions.parquet",
+        "fresh_sha256": "eb1986ddae6c9a15b071d92d926f11a843acd8f1a9c4aef900f47e48f0670fe5",
+        "stored_sha256": "eb1986ddae6c9a15b071d92d926f11a843acd8f1a9c4aef900f47e48f0670fe5"
+      },
+      "experiment_id": "EXP-90015",
+      "family": "random_forest",
+      "kind": "ml",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "status": "PASS"
+    },
+    {
+      "artifact": {
+        "bitwise_identical": true,
+        "file": "signals.parquet",
+        "fresh_sha256": "d2957e01508607be5d54aec087a0b1da1506b25e1551ef46c4eb562ac251ef70",
+        "stored_sha256": "d2957e01508607be5d54aec087a0b1da1506b25e1551ef46c4eb562ac251ef70"
+      },
+      "experiment_id": "EXP-90024",
+      "family": "momentum",
+      "kind": "control",
+      "metrics": {
+        "diffs": {},
+        "exactly_equal": true
+      },
+      "params": {
+        "lookback": 20
+      },
+      "status": "PASS"
+    }
+  ],
+  "seed": 42,
+  "test_window": "2022-01-03..2026-06-30",
+  "verdict": "PASS"
+}
