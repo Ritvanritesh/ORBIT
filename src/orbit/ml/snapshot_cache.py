@@ -123,6 +123,43 @@ def build_or_load_snapshots(
     return fs, ls
 
 
+PHASE10_SNAPSHOT_CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "phase10_snapshots"
+
+
+def cache_phase10_snapshot(
+    snapshot: FeatureSnapshot, dir_path: Path = PHASE10_SNAPSHOT_CACHE_DIR
+) -> Path:
+    """Cache one Phase 10 feature-set snapshot (digest-verified on load)."""
+    meta = snapshot.provenance()
+    meta["content_digest"] = snapshot.content_digest
+    return _write(dir_path, f"feature_set_{snapshot.feature_set_id}", snapshot.records, meta)
+
+
+def load_cached_phase10_snapshot(
+    feature_set_id: str, dir_path: Path = PHASE10_SNAPSHOT_CACHE_DIR
+) -> FeatureSnapshot | None:
+    name = f"feature_set_{feature_set_id}"
+    if not (dir_path / f"{name}_records.parquet").exists():
+        return None
+    records, meta = _read(dir_path, name)
+    snapshot = FeatureSnapshot(
+        feature_set_id=meta["feature_set_id"],
+        feature_set_version=meta["feature_set_version"],
+        feature_refs=meta["feature_refs"],
+        data_refs=meta["data_refs"],
+        records=records,
+        transformation=meta["transformation"],
+        limitations=meta.get("limitations") or [],
+    )
+    if snapshot.content_digest != meta["content_digest"]:
+        raise RuntimeError(
+            f"cached Phase 10 snapshot {feature_set_id} digest mismatch - "
+            "source data or code changed; delete data/cache/phase10_snapshots "
+            "to rebuild"
+        )
+    return snapshot
+
+
 __all__ = [
     "SNAPSHOT_CACHE_DIR",
     "cache_feature_snapshot",
@@ -130,4 +167,7 @@ __all__ = [
     "cache_label_snapshot",
     "load_cached_label_snapshot",
     "build_or_load_snapshots",
+    "PHASE10_SNAPSHOT_CACHE_DIR",
+    "cache_phase10_snapshot",
+    "load_cached_phase10_snapshot",
 ]

@@ -99,8 +99,28 @@ Core thesis: the model is replaceable; the evidence chain is the product.
   limitation: no SPY series in DS-000004, so excess-return labels
   (LAB-001/LAB-003) are unresolved and the comparison is absolute
   (after-cost total return), not benchmark-relative. See
-  `docs/phase9_ml_benchmark.md`; run everything with
-  `python scripts/phase9_run_all.py`.
+`docs/phase9_ml_benchmark.md`; run everything with
+   `python scripts/phase9_run_all.py`.
+- Phase 10 (Feature Engineering + Ablation) - implemented, benchmark run
+  pending: 15 new point-in-time features (FEAT-101..FEAT-115) in 5
+  documented families (momentum, trend, volatility, volume/liquidity,
+  range/price structure) computed from DS-000004 OHLCV bars only, all at
+  the strict boundary (window end strictly before decision session); a
+  locked 13-set x 4-model ablation plan (FS-002..FS-013 vs the frozen
+  Phase 9 FS-001 v1, 52 experiments EXP-10001..EXP-10052, digest-pinned,
+  one model point per Phase 9 family with parent linkage EXP-90003/
+  90006/90015/90019, deterministic id mapping); immutable digest-bound
+  feature snapshots cached digest-verified; strong temporal-boundary
+  audit (every 3rd FS-003 row recomputed from bars <= D); train-only
+  feature diagnostics (quality + redundancy); register-before-run with a
+  feature-mutation-detecting config hash; independent Review 1 (structural
+  audit incl. cross-phase base-anchor: FS-001 runs must exactly reproduce
+  the Phase 9 parents) and Review 2 (reproducibility double-run) scripts;
+  76 Phase 10 tests incl. 18 adversarial scenarios (A1..A20); full suite
+  792 passed, 6 xfailed. Run the benchmark with
+  `python scripts/phase10_run_all.py`, then review with
+  `python scripts/phase10_review1.py` and `scripts/phase10_review2.py`.
+  See `PHASE_10_STATUS.md`.
 
 ## Structure
 
@@ -116,8 +136,10 @@ src/orbit/temporal/    Phase 4: times, rules, adapters, engine, snapshot,
                        features, fixtures, contracts
 src/orbit/labels/      Phase 5: contract, outcomes, engine, snapshot, registry, seeds
 src/orbit/experiments/ Phase 6: lifecycle, registry (DuckDB), reproduction, service
-src/orbit/ml/          Phase 9: features, labels, splits, grids, models, ranking,
-                       calibration, metrics, signals, registry, baselines, report, audit
+src/orbit/ml/          Phase 9/10: features, labels, splits, grids, models, ranking,
+                       calibration, metrics, signals, registry, baselines, report,
+                       audit + phase10_* modules (plan, diagnostics, registry, audit,
+                       report, runner), snapshot_cache
 hypotheses/            Registered seed hypotheses (validated instances)
 src/orbit/             Ingestion (Phase 3): providers, parsing, registry, storage, validators
 scripts/               phase3_run_all.py - end-to-end ingest + verify + provenance
@@ -125,6 +147,9 @@ scripts/               phase3_run_all.py - end-to-end ingest + verify + provenan
                        phase9_run_all.py - Phase 9 ML benchmark end-to-end
                        phase9_audit_deep.py - Phase 9 deep-input independent audit
                        phase9_review2_reproducibility.py - Phase 9 reproducibility double-run
+                       phase10_run_all.py - Phase 10 feature-ablation benchmark end-to-end
+                       phase10_review1.py - Phase 10 independent structural audit
+                       phase10_review2.py - Phase 10 reproducibility double-run
 tests/                 Validation tests
 ```
 

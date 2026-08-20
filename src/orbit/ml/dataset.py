@@ -40,6 +40,7 @@ def assemble_datasets(
     feature_snapshot: Any,
     label_snapshot: Any,
     windows: dict | None = None,
+    feature_names: list[str] | None = None,
 ) -> dict[str, Any]:
     """Assemble (train, val, test) matrices with metadata and a report.
 
@@ -47,8 +48,11 @@ def assemble_datasets(
     "report": {...}}. meta is a polars frame with instrument_id,
     decision_session, decision_time, split, outcome_value, window_end_session
     (row-ordered exactly like X/y). `windows` defaults to the Phase 9
-    protocol; tests inject tighter windows for speed.
+    protocol; tests inject tighter windows for speed. `feature_names`
+    defaults to the FS-001 set (Phase 9 behavior unchanged); Phase 10 passes
+    the member columns of the feature snapshot it assembled.
     """
+    names = list(feature_names or FEATURE_NAMES)
     joined = _join_features_labels(feature_snapshot, label_snapshot)
     total = joined.height
 
@@ -66,10 +70,10 @@ def assemble_datasets(
     split_frame = purge_outcome_windows(split_frame, windows=windows)
     assert_split_integrity(split_frame, windows=windows)
 
-    complete = split_frame.drop_nulls(subset=FEATURE_NAMES)
+    complete = split_frame.drop_nulls(subset=names)
     incomplete = split_frame.height - complete.height
 
-    X = complete.select(FEATURE_NAMES).to_numpy()
+    X = complete.select(names).to_numpy()
     y_reg = complete["outcome_value"].to_numpy()
     meta = complete.select(
         "instrument_id",
@@ -102,7 +106,9 @@ def assemble_datasets(
         "train_rows": int(parts["train"][0].shape[0]),
         "val_rows": int(parts["val"][0].shape[0]),
         "test_rows": int(parts["test"][0].shape[0]),
-        "feature_names": list(FEATURE_NAMES),
+        "feature_names": list(names),
+        "feature_set_id": getattr(feature_snapshot, "feature_set_id", None),
+        "feature_set_version": getattr(feature_snapshot, "feature_set_version", None),
     }
     return {
         "train": parts["train"],
