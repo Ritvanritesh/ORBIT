@@ -1,0 +1,10 @@
+{
+  "phase_12e_label": "LAB-006 v1 (corrected excess return vs SPY)",
+  "phase_12d_label": "LAB-005 (was identical to LAB-004 - DEFECT)",
+  "env_050": {
+    "lab006_mean_ic": 0.014324406629628023
+  },
+  "env_100": {
+    "lab006_mean_ic": 0.0035864627767030004
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "status": "OK",
+  "raw_cik_dirs": 100,
+  "normalized_datasets": {
+    "DS-000002": 3,
+    "DS-000004": 20,
+    "DS-000005": 3,
+    "DS-EXP-050": 50,
+    "DS-EXP-100": 97
+  },
+  "pit_checks": {
+    "filing_date_logic": true,
+    "staleness_logic": true,
+    "pit_join": true,
+    "synthetic_check": true
+  },
+  "identity_mapping_count": 6
+}

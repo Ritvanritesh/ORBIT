@@ -1,0 +1,92 @@
+{
+  "scoring_rule": "PASS / LIMITATION / FAIL per dimension; FAIL never hidden inside averages",
+  "critical_fail_visible": true,
+  "candidates": {
+    "CAND-03": {
+      "dimensions": {
+        "temporal_consistency": {
+          "cell": "LIMITATION",
+          "rationale": "75% positive windows, 1 sign flip, survives best-window removal; 2022 negative; window-level p≈0.21 not significant"
+        },
+        "regime_consistency": {
+          "cell": "LIMITATION",
+          "rationale": "Effect absent/negative in 2022 bear + high-vol regime; per-session regime stratification unavailable (window-level only)"
+        },
+        "universe_consistency": {
+          "cell": "PASS",
+          "rationale": "Positive across ENV-050, ENV-100, TOP25, BOT25 (+0.0228..+0.0349); ENV-100 n=4 windows"
+        },
+        "model_family_consistency": {
+          "cell": "FAIL",
+          "rationale": "Effect does not replicate in nonlinear families (RF/XGB negative mean IC historically); only linear models carry it"
+        },
+        "statistical_support": {
+          "cell": "FAIL",
+          "rationale": "Window-level t-test p≈0.20-0.22; 95% CI includes zero; fails Holm correction; n=8 windows limits power but evidence remains insignificant"
+        },
+        "economic_materiality": {
+          "cell": "FAIL",
+          "rationale": "Mean sequential IC ≈0.02-0.03 (below 0.05 academic ref); economic usefulness remains untested at the portfolio-construction layer"
+        },
+        "perturbation_stability": {
+          "cell": "LIMITATION",
+          "rationale": "Cost/slippage graceful; LOO benign; BUT feature-noise cliff (CAND-04 sign-flips at 5% noise), parameter sweep NaN gaps, delay degrades IC"
+        },
+        "reproducibility": {
+          "cell": "LIMITATION",
+          "rationale": "Historical phases replicated (12.9B B) but 13A-vs-13B independent implementations diverge on identical window (ratio 3.1x) due to purge-boundary defect in 13B; conservative 13A basis adopted"
+        },
+        "pit_data_integrity": {
+          "cell": "PASS",
+          "rationale": "12.9C red-team PASS on leakage/labels/PIT joins; shift(1) boundary verified adversarially; no future-data access detected"
+        }
+      },
+      "pass": 2,
+      "limitation": 4,
+      "fail": 3
+    },
+    "CAND-04": {
+      "dimensions": {
+        "temporal_consistency": {
+          "cell": "LIMITATION",
+          "rationale": "75% positive windows, 1 sign flip, survives best-window removal; 2022 negative; window-level p≈0.21 not significant"
+        },
+        "regime_consistency": {
+          "cell": "LIMITATION",
+          "rationale": "Effect absent/negative in 2022 bear + high-vol regime; per-session regime stratification unavailable (window-level only)"
+        },
+        "universe_consistency": {
+          "cell": "LIMITATION",
+          "rationale": "Positive in ENV-050/TOP25/BOT25; ENV-100 run failed (infrastructure error) — universe replication incomplete"
+        },
+        "model_family_consistency": {
+          "cell": "FAIL",
+          "rationale": "Effect does not replicate in nonlinear families (RF/XGB negative mean IC historically); only linear models carry it"
+        },
+        "statistical_support": {
+          "cell": "FAIL",
+          "rationale": "Window-level t-test p≈0.20-0.22; 95% CI includes zero; fails Holm correction; n=8 windows limits power but evidence remains insignificant"
+        },
+        "economic_materiality": {
+          "cell": "FAIL",
+          "rationale": "Mean sequential IC ≈0.02-0.03 (below 0.05 academic ref); economic usefulness remains untested at the portfolio-construction layer"
+        },
+        "perturbation_stability": {
+          "cell": "LIMITATION",
+          "rationale": "Cost/slippage graceful; LOO benign; BUT feature-noise cliff (CAND-04 sign-flips at 5% noise), parameter sweep NaN gaps, delay degrades IC"
+        },
+        "reproducibility": {
+          "cell": "LIMITATION",
+          "rationale": "Historical phases replicated (12.9B B) but 13A-vs-13B independent implementations diverge on identical window (ratio 1.6x) due to purge-boundary defect in 13B; conservative 13A basis adopted"
+        },
+        "pit_data_integrity": {
+          "cell": "PASS",
+          "rationale": "12.9C red-team PASS on leakage/labels/PIT joins; shift(1) boundary verified adversarially; no future-data access detected"
+        }
+      },
+      "pass": 1,
+      "limitation": 5,
+      "fail": 3
+    }
+  }
+}

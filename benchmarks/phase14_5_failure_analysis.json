@@ -1,0 +1,284 @@
+{
+  "phase": "14.5",
+  "step": 1,
+  "title": "Research Failure Analysis",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+
+  "A_information_tested": {
+    "families": [
+      {
+        "family": "OHLCV_momentum",
+        "phase": "9",
+        "features": ["ret_10", "ret_20", "ret_30"],
+        "result": "NULL",
+        "mean_ic_range": [-0.0003, 0.0202],
+        "note": "Phase 9 baseline. All ICs <= 0.02, hit rates 0.51-0.54."
+      },
+      {
+        "family": "OHLCV_trend",
+        "phase": "9",
+        "features": ["sma_ratio_5_30", "sma_ratio_15_40"],
+        "result": "NULL",
+        "note": "SMA ratios carry no independent predictive information."
+      },
+      {
+        "family": "OHLCV_volatility",
+        "phase": "9",
+        "features": ["vol_10", "vol_30"],
+        "result": "NULL",
+        "note": "Volatility levels alone do not predict returns."
+      },
+      {
+        "family": "OHLCV_liquidity",
+        "phase": "9",
+        "features": ["log_dv_med_20"],
+        "result": "NULL",
+        "note": "Dollar volume as a standalone feature has no predictive power."
+      },
+      {
+        "family": "extended_momentum",
+        "phase": "10",
+        "features": ["ret_5", "ret_60", "ret_120"],
+        "result": "MARGINAL",
+        "note": "Extended lookbacks improved ridge/lasso ICs slightly but no clear incremental signal."
+      },
+      {
+        "family": "extended_trend",
+        "phase": "10",
+        "features": ["sma_ratio_10_30", "sma_ratio_20_50", "price_distance_200ma"],
+        "result": "MARGINAL",
+        "note": "200-day MA distance is the most novel but inconsistent."
+      },
+      {
+        "family": "extended_volatility",
+        "phase": "10",
+        "features": ["vol_60", "vol_90", "vol_ratio_10_30"],
+        "result": "MARGINAL",
+        "note": "vol_ratio_10_30 captures vol regime but inconsistent across universes."
+      },
+      {
+        "family": "extended_volume",
+        "phase": "10",
+        "features": ["dv_med_10", "dv_med_30", "vol_zscore_20"],
+        "result": "NULL",
+        "note": "Volume features show no predictive power. High correlation with liquidity."
+      },
+      {
+        "family": "extended_range",
+        "phase": "10",
+        "features": ["high_low_10_pos", "high_low_30_pos", "normalized_range_20"],
+        "result": "MARGINAL",
+        "note": "Range position within window captures some information but inconsistent."
+      },
+      {
+        "family": "market_regime",
+        "phase": "12A",
+        "features": ["mkt_ret_5", "mkt_ret_20", "mkt_vol_20", "mkt_vol_60", "mkt_trend_20_50", "mkt_drawdown_from_peak_60"],
+        "result": "INCONSISTENT",
+        "note": "Modest improvement in some configurations but inconsistent across universes."
+      },
+      {
+        "family": "sector_context",
+        "phase": "12A",
+        "features": ["sector_ret_20", "sector_vol_20", "sector_ret_5", "sector_trend_5_30", "sector_dispersion_20"],
+        "result": "WEAK",
+        "note": "Sector-level features do not add convincing incremental value."
+      },
+      {
+        "family": "cross_sectional",
+        "phase": "12A",
+        "features": ["xs_rank_ret_20", "xs_rank_vol_10", "xs_ret_vs_median_20", "xs_ret_vs_mean_20", "xs_dispersion_ret_20"],
+        "result": "WEAK",
+        "note": "Cross-sectional ranks and relative features do not improve prediction."
+      },
+      {
+        "family": "fundamentals_valuation",
+        "phase": "12B",
+        "features": ["earnings_yield", "book_to_market", "sales_to_price"],
+        "result": "INCOMPLETE",
+        "note": "Partially implemented. Earnings_yield and book_to_market not fully wired."
+      },
+      {
+        "family": "fundamentals_profitability",
+        "phase": "12B",
+        "features": ["roa", "roe", "operating_margin", "gross_profitability"],
+        "result": "POSITIVE_BUT_INCONSISTENT",
+        "note": "Highest IC 0.0429 (lasso, FS-12B-E on ENV-12E-050). Below 0.05 threshold. Inconsistent across universes."
+      },
+      {
+        "family": "fundamentals_growth",
+        "phase": "12B",
+        "features": ["revenue_growth", "earnings_growth", "cash_flow_growth"],
+        "result": "INCOMPLETE",
+        "note": "Growth features are stubbed (require prior-period comparison). Not fully implemented."
+      },
+      {
+        "family": "fundamentals_leverage",
+        "phase": "12B",
+        "features": ["debt_to_equity", "debt_to_assets", "current_ratio"],
+        "result": "POSITIVE_BUT_INCONSISTENT",
+        "note": "Leverage features (FS-12B-E) produced some of the highest ICs but inconsistent."
+      }
+    ],
+    "total_features_tested": 55,
+    "total_families_tested": 14
+  },
+
+  "B_information_weak_or_inconsistent": {
+    "items": [
+      {
+        "domain": "OHLCV levels and ratios",
+        "status": "NULL across all tests",
+        "evidence": "Phase 9 baseline: all ICs <= 0.02. Phase 10 ablation: no feature family carries identifiable incremental signal."
+      },
+      {
+        "domain": "Extended OHLCV features",
+        "status": "MARGINAL, inconsistent",
+        "evidence": "Phase 10: ridge improved from -0.0003 to +0.0202, lasso to +0.0312. But RF IC DECREASED from +0.0119 to -0.018. Best returns came from removing features (FS-009 ALL-momentum: +221%)."
+      },
+      {
+        "domain": "Market/sector/cross-sectional context",
+        "status": "INCONSISTENT",
+        "evidence": "Phase 12A: modest improvement in some configs. Universe-dependent. No convincing incremental value."
+      },
+      {
+        "domain": "Fundamentals",
+        "status": "POSITIVE_BUT_INCONSISTENT",
+        "evidence": "Phase 12D/12E: lasso with leverage/earnings features produced ICs 0.034-0.043. Below 0.05 threshold. Inconsistent across universes. Partially implemented."
+      },
+      {
+        "domain": "Nonlinear model families",
+        "status": "DEGRADATION",
+        "evidence": "Linear mean IC = 0.0147, nonlinear mean IC = -0.0038. Sign reversal, not merely degradation. RF/XGB consistently produce negative or near-zero ICs."
+      }
+    ]
+  },
+
+  "C_assumptions_that_failed": {
+    "items": [
+      {
+        "assumption": "OHLCV features contain robust predictive signal",
+        "result": "NULL",
+        "evidence": "Phase 9: all 20 ML runs had |OOS IC| <= 0.02, hit rates 0.51-0.54. Best ML (+127%) below best control (+205%)."
+      },
+      {
+        "assumption": "Adding more features improves prediction",
+        "result": "NEGATIVE",
+        "evidence": "Phase 10: removing features helped more than adding them. FS-009 (ALL-momentum) and FS-013 (ALL-range) outperformed FS-003 (ALL)."
+      },
+      {
+        "assumption": "Nonlinear models capture complex patterns",
+        "result": "REVERSAL",
+        "evidence": "Phase 12.9C: linear mean IC = +0.0147, nonlinear mean IC = -0.0038. Trees reverse the direction of the effect."
+      },
+      {
+        "assumption": "Universe expansion strengthens signal",
+        "result": "DILUTION",
+        "evidence": "Phase 11: signal dilution on larger universes. 4 sign reversals, 8 magnitude collapses across universes."
+      },
+      {
+        "assumption": "Effect is regime-consistent",
+        "result": "REGIME_DEPENDENT",
+        "evidence": "Phase 13A: effect absent or negative in 2022 bear market. IC for 2022 windows consistently negative (-0.031 to -0.068)."
+      },
+      {
+        "assumption": "Effect is statistically significant",
+        "result": "INSIGNIFICANT",
+        "evidence": "Phase 13A: both candidates p~0.20, 95% CI spans zero, fail Holm correction. Effect sizes moderate (Cohen's d ~0.5) but underpowered at n=8 windows."
+      },
+      {
+        "assumption": "Effect is economically meaningful",
+        "result": "UNTESTED",
+        "evidence": "Mean IC 0.018-0.027 below 0.05 academic threshold. No Sharpe, turnover, or capacity evidence. Portfolio validation entirely absent."
+      }
+    ]
+  },
+
+  "D_classification_of_effects": {
+    "universe_dependent": {
+      "description": "4 sign reversals and 8 magnitude collapses when comparing across universes",
+      "severity": "HIGH",
+      "evidence": "Phase 12.9C stability analysis"
+    },
+    "regime_dependent": {
+      "description": "Effect absent in 2022 bear/high-volatility regime, appears only in 2023-2025",
+      "severity": "HIGH",
+      "evidence": "Phase 13A sequential windows: 2022 ICs negative, 2023-2025 positive"
+    },
+    "model_family_dependent": {
+      "description": "Effect strictly linear-only. Trees reverse direction.",
+      "severity": "HIGH",
+      "evidence": "Phase 12.9C: linear IC = +0.0147, nonlinear IC = -0.0038"
+    },
+    "economically_weak": {
+      "description": "IC 0.018-0.027 below 0.05 academic threshold. No portfolio test.",
+      "severity": "HIGH",
+      "evidence": "Phase 13C: economic materiality FAIL"
+    },
+    "statistically_weak": {
+      "description": "p~0.20, CI spans zero, fails Holm correction",
+      "severity": "HIGH",
+      "evidence": "Phase 13A inference: CAND-03 p=0.216, CAND-04 p=0.200"
+    },
+    "perturbation_sensitive": {
+      "description": "CAND-04 sign-flips at 5% feature noise. CAND-03 collapses at 10%.",
+      "severity": "MEDIUM",
+      "evidence": "Phase 13B feature sensitivity"
+    }
+  },
+
+  "E_unexplored_information_domains": {
+    "items": [
+      {
+        "domain": "Return path structure",
+        "description": "How returns arrive within a window (path smoothness, max drawdown, up/down ratio, largest move). Captures temporal dynamics that levels miss.",
+        "available_in_data": true,
+        "data_source": "OHLCV bars (DS-000004, DS-EXP-050, DS-EXP-100)",
+        "novelty": "HIGH — existing features capture only total return over a window, not the path taken",
+        "overlap_with_existing": "LOW — path features are orthogonal to levels and ratios"
+      },
+      {
+        "domain": "Return asymmetry and tail risk",
+        "description": "Skewness, kurtosis, downside volatility of return distributions within a window.",
+        "available_in_data": true,
+        "data_source": "OHLCV bars",
+        "novelty": "HIGH — existing features are symmetric (mean, std). Skewness captures asymmetry.",
+        "overlap_with_existing": "LOW — skewness is orthogonal to level and volatility features"
+      },
+      {
+        "domain": "Volatility dynamics",
+        "description": "Vol-of-vol, volatility regime transitions, volatility change rates. Not just levels.",
+        "available_in_data": true,
+        "data_source": "OHLCV bars (derived from existing vol features)",
+        "novelty": "MEDIUM — existing vol_ratio_10_30 captures some regime info, but vol-of-vol is genuinely new",
+        "overlap_with_existing": "MEDIUM — partially correlated with vol_ratio_10_30"
+      },
+      {
+        "domain": "Macro regime conditioning",
+        "description": "Fed Funds Rate level and changes, unemployment rate, CPI inflation. Macro context that conditions all stock-level signals.",
+        "available_in_data": true,
+        "data_source": "FRED data (DS-000003: CPI, DFF, UNRATE)",
+        "novelty": "HIGH — no existing feature uses macro data",
+        "overlap_with_existing": "NONE — macro data is completely untested"
+      },
+      {
+        "domain": "Autocorrelation structure",
+        "description": "First-order autocorrelation of returns within a window. Captures momentum vs mean-reversion dynamics.",
+        "available_in_data": true,
+        "data_source": "OHLCV bars",
+        "novelty": "LOW — likely redundant with momentum features",
+        "overlap_with_existing": "HIGH — autocorrelation is closely related to momentum"
+      }
+    ]
+  },
+
+  "summary": {
+    "total_information_domains_tested": 14,
+    "total_features_tested": 55,
+    "strongest_effect_found": "IC 0.0429 (lasso, leverage features, ENV-12E-050)",
+    "strongest_effect_assessment": "Below 0.05 academic threshold. Inconsistent across universes. Not statistically significant.",
+    "canonical_conclusion": "No convincing, robust predictive relationship has been established.",
+    "primary_bottleneck": "All tested features are levels or simple ratios of price/volume/fundamentals. No temporal dynamics, path structure, asymmetry, or macro regime information has been tested.",
+    "recommended_next_direction": "Test genuinely new information domains: path structure, return asymmetry, volatility dynamics, and macro regime conditioning."
+  }
+}

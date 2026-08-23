@@ -1,0 +1,31 @@
+{
+  "env": {
+    "python": "3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19041-SP0",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 165 Stepping 3, GenuineIntel",
+    "numpy": "2.2.6",
+    "polars": "1.43.2",
+    "timestamp": "2026-08-23T12:10:47.203301",
+    "sklearn": "1.7.2",
+    "xgboost": "3.2.0",
+    "scipy": "1.15.3"
+  },
+  "dataset_hashes": {
+    "DS-000004": "5f3921f36b39cec365eddd45d88261337ccffccaca802fb832d80e22fc959fc9",
+    "DS-EXP-050": "1b62a6afe39e0bb19393aa93d12ca52830f098ad694ab19dad8436a85db983bc",
+    "DS-EXP-100": "138fa4a1cb3b1575b2e7d99a27d66edc27ff6d39a594867c0b6c8b9e10138dbf"
+  },
+  "benchmark_hash": "568f89b5173aa7c7ae0ad58caa0d7b1d39be32ef0218415d47e9593c8b0ac633",
+  "plan_digests": {
+    "phase10_plan.json": "15c392b9b91eede8",
+    "phase11_1_stage_a_plan.json": "f88f4d516c8bec2c",
+    "phase11_1_universe_plan_v1.json": "f8c3b729b9d96c11",
+    "phase11_inference_plan.json": "26ee28adee1d19d2",
+    "phase12a_plan.json": "9974609fbf561973",
+    "phase12b_plan.json": "3b271bc1f86e803f",
+    "phase12c_plan.json": "136845f856d42cdd",
+    "phase12d_plan.json": "90b3ec40b0a11142",
+    "phase12e_plan.json": "59c42ed1a8f01c0d"
+  }
+}

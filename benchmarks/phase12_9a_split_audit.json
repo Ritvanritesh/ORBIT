@@ -1,0 +1,44 @@
+{
+  "windows": {
+    "train_start": "2010-01-04",
+    "train_end": "2018-12-31",
+    "val_start": "2019-01-02",
+    "val_end": "2021-12-31",
+    "test_start": "2022-01-03",
+    "test_end": "2026-06-30",
+    "embargo_days": 0,
+    "purge_days": 0,
+    "protocol": "fixed_chronological_v1"
+  },
+  "split_integrity": "PASS",
+  "dataset_report": {
+    "total_rows": 347374,
+    "available_rows": 347174,
+    "unavailable_rows": 200,
+    "unavailable_reasons": [
+      {
+        "unavailable_reason": "insufficient_future_data",
+        "n": 200
+      }
+    ],
+    "post_purge_rows": 205355,
+    "purged_rows": 141819,
+    "nan_feature_rows_dropped": 0,
+    "train_rows": 111405,
+    "val_rows": 37650,
+    "test_rows": 56300,
+    "feature_names": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "feature_set_id": "FS-001",
+    "feature_set_version": "v1"
+  },
+  "leakage_check": "PASS"
+}

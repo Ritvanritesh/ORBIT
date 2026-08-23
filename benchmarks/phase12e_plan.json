@@ -1,0 +1,51 @@
+{
+  "phase": "12E",
+  "label_id": "LAB-006",
+  "label_version": "v1",
+  "benchmark": "BENCH-001",
+  "horizon": 5,
+  "environments": [
+    "ENV-12E-050",
+    "ENV-12E-100"
+  ],
+  "models": [
+    {
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      }
+    },
+    {
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    }
+  ],
+  "feature_sets": [
+    "FS-12B-A",
+    "FS-12B-B",
+    "FS-12B-C",
+    "FS-12B-D",
+    "FS-12B-E",
+    "FS-12B-F"
+  ],
+  "n_experiments_per_env": 48,
+  "total_experiments": 96,
+  "plan_hash": "799d9d7018f99e0bec74e71e6e4201fbf1417742d317c1f9c7ce8b83f6dc0d97"
+}

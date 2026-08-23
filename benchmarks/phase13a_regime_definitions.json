@@ -1,0 +1,120 @@
+{
+  "definitions": {
+    "direction": {
+      "source": "BENCH-001 (SPY)",
+      "calculation": "252-day rolling return",
+      "thresholds": {
+        "bull": "> +10%",
+        "bear": "< -10%",
+        "neutral": "between"
+      },
+      "version": "v1"
+    },
+    "volatility": {
+      "source": "BENCH-001 (SPY)",
+      "calculation": "63-day annualized rolling volatility, tertile split",
+      "thresholds": {
+        "low": "<=33rd pctl",
+        "medium": "33rd-67th pctl",
+        "high": ">67th pctl"
+      },
+      "version": "v1"
+    },
+    "stress": {
+      "source": "Pre-defined historical periods",
+      "periods": [
+        {
+          "name": "covid_crash_2020",
+          "start": "2020-02-20",
+          "end": "2020-03-23"
+        },
+        {
+          "name": "rate_hikes_2022_2023",
+          "start": "2022-01-01",
+          "end": "2023-07-01"
+        }
+      ],
+      "version": "v1"
+    }
+  },
+  "summary": {
+    "direction_regime": {
+      "neutral": {
+        "n_sessions": 2500,
+        "mean_return": 0.0004755737309432823,
+        "start_date": "1994-01-28",
+        "end_date": "2025-06-24"
+      },
+      "unknown": {
+        "n_sessions": 252,
+        "mean_return": 0.0003467190433338017,
+        "start_date": "1993-02-01",
+        "end_date": "1994-01-27"
+      },
+      "bear": {
+        "n_sessions": 995,
+        "mean_return": 0.00047285245317488884,
+        "start_date": "2000-12-21",
+        "end_date": "2023-04-06"
+      },
+      "bull": {
+        "n_sessions": 4699,
+        "mean_return": 0.00035900933489102,
+        "start_date": "1995-03-30",
+        "end_date": "2026-08-20"
+      }
+    },
+    "volatility_regime": {
+      "high": {
+        "n_sessions": 2767,
+        "mean_return": 0.0004972994078397986,
+        "start_date": "1997-04-16",
+        "end_date": "2025-07-14"
+      },
+      "medium": {
+        "n_sessions": 2849,
+        "mean_return": 0.0004933770934160738,
+        "start_date": "1993-05-03",
+        "end_date": "2026-08-20"
+      },
+      "unknown": {
+        "n_sessions": 63,
+        "mean_return": 6.131135806440644e-05,
+        "start_date": "1993-02-01",
+        "end_date": "1993-04-30"
+      },
+      "low": {
+        "n_sessions": 2767,
+        "mean_return": 0.00023428231501520293,
+        "start_date": "1993-05-18",
+        "end_date": "2026-03-18"
+      }
+    },
+    "stress_regime": {
+      "rate_hikes_2022_2023": {
+        "n_sessions": 375,
+        "mean_return": -9.178872045645685e-05,
+        "start_date": "2022-01-03",
+        "end_date": "2023-06-30"
+      },
+      "normal": {
+        "n_sessions": 8048,
+        "mean_return": 0.00047905286499974663,
+        "start_date": "1993-02-01",
+        "end_date": "2026-08-20"
+      },
+      "covid_crash_2020": {
+        "n_sessions": 23,
+        "mean_return": -0.01683548284811079,
+        "start_date": "2020-02-20",
+        "end_date": "2020-03-23"
+      }
+    }
+  },
+  "n_sessions": 8446,
+  "date_range": [
+    "1993-02-01",
+    "2026-08-20"
+  ],
+  "regime_digest": "e0815b7a4535d73c"
+}

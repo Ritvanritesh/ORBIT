@@ -1,0 +1,46 @@
+{
+  "status": "OK",
+  "feature_names": [
+    "ret_10",
+    "ret_20",
+    "ret_30",
+    "sma_ratio_5_30",
+    "sma_ratio_15_40",
+    "vol_10",
+    "vol_30",
+    "log_dv_med_20"
+  ],
+  "n_rows": 347374,
+  "build_time_s": 6.3,
+  "pit_violations": 0,
+  "feature_set_id": "FS-001",
+  "feature_set_version": "v1",
+  "digest": null,
+  "null_counts": {
+    "ret_10": 0,
+    "ret_20": 0,
+    "ret_30": 0,
+    "sma_ratio_5_30": 0,
+    "sma_ratio_15_40": 0,
+    "vol_10": 0,
+    "vol_30": 0,
+    "log_dv_med_20": 0
+  },
+  "phase10_features": [
+    "ret_5",
+    "ret_60",
+    "ret_120",
+    "sma_ratio_10_30",
+    "sma_ratio_20_50",
+    "price_distance_200ma",
+    "vol_60",
+    "vol_90",
+    "vol_ratio_10_30",
+    "dv_med_10",
+    "dv_med_30",
+    "vol_zscore_20",
+    "high_low_10_pos",
+    "high_low_30_pos",
+    "normalized_range_20"
+  ]
+}

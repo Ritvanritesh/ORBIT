@@ -1,0 +1,23 @@
+{
+  "robust_candidate_count": 0,
+  "candidates": {
+    "CAND-03": {
+      "model_id": "MODEL-00009",
+      "status": "RESEARCH",
+      "phase13c_classification": "RESEARCH_ONLY",
+      "blockers": [
+        "RESEARCH_TO_VALIDATED=FAIL",
+        "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000116'])"
+      ]
+    },
+    "CAND-04": {
+      "model_id": "MODEL-00010",
+      "status": "RESEARCH",
+      "phase13c_classification": "FRAGILE",
+      "blockers": [
+        "RESEARCH_TO_VALIDATED=FAIL",
+        "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000129'])"
+      ]
+    }
+  }
+}

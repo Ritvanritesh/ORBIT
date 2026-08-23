@@ -1,0 +1,91 @@
+{
+  "phase": "13C",
+  "title": "Robustness Synthesis & Final Gate",
+  "canonical_conclusion": "No convincing, robust predictive relationship has been established across Phases 9-13B. Sequential evaluation isolated a weak, linear-only, post-2022 rank-information effect in two baseline-OHLCV candidates; it is statistically insignificant at the window level, concentrated in one sub-period, and economically unvalidated.",
+  "evidence_chain_summary": {
+    "locked_protocol_era": "Phase 9-12E on the fixed 2022-2026 holdout: null persists (best baseline IC ≈ 0.000-0.011 absolute, ≈0.014 excess)",
+    "sequential_era": "Phase 13A decomposes the null: year-resolved ICs reveal negative 2022, positive 2023-2025 (mean 0.018-0.027, insignificant)",
+    "stress_era": "Phase 13B: graceful under cost/slippage; cliffs under feature corruption; purge-defect caveat applies to all 13B absolute levels",
+    "audit_era": "12.9A/B/C integrity confirmed (leakage/PIT clean; multiple-testing and materiality limitations documented)"
+  },
+  "robustness_matrix": {
+    "CAND-03": {
+      "temporal_consistency": "LIMITATION",
+      "regime_consistency": "LIMITATION",
+      "universe_consistency": "PASS",
+      "model_family_consistency": "FAIL",
+      "statistical_support": "FAIL",
+      "economic_materiality": "FAIL",
+      "perturbation_stability": "LIMITATION",
+      "reproducibility": "LIMITATION",
+      "pit_data_integrity": "PASS"
+    },
+    "CAND-04": {
+      "temporal_consistency": "LIMITATION",
+      "regime_consistency": "LIMITATION",
+      "universe_consistency": "LIMITATION",
+      "model_family_consistency": "FAIL",
+      "statistical_support": "FAIL",
+      "economic_materiality": "FAIL",
+      "perturbation_stability": "LIMITATION",
+      "reproducibility": "LIMITATION",
+      "pit_data_integrity": "PASS"
+    }
+  },
+  "promotions": {
+    "CAND-03": "RESEARCH_ONLY",
+    "CAND-04": "FRAGILE"
+  },
+  "failure_region_headlines": [
+    "Regime: bear/high-volatility 2022 destroys the effect",
+    "Model family: strictly linear-only; trees reverse",
+    "Data quality: ≥5% feature noise flips CAND-04; ≥10% collapses CAND-03's excess",
+    "Execution: each session of delay erodes rank information",
+    "Period: all net evidence is post-2022"
+  ],
+  "economic_materiality": {
+    "separation_principle": {
+      "statistical_detectability": "Weak-positive and UNPROVEN: window-level p≈0.20, CI spans zero; rank-information present in 6/8 sequential windows",
+      "practical_usefulness": "UNTESTED — Economic usefulness remains untested at the portfolio-construction layer."
+    },
+    "joint_assessment": {
+      "magnitude": "Mean sequential IC 0.018 (ridge) / 0.027 (lasso) — below the 0.05 academic reference; 13B figures (up to 0.07-0.10) are inflated by the documented purge defect and are discounted",
+      "consistency": "6/8 windows positive; 1 sign cluster (2022)",
+      "persistence": "Concentrated in 2023-2025; locked-protocol aggregate over 2022-2026 is ≈0",
+      "degradation": "Gradual under cost/slippage multipliers (rank-based IC); cliff under feature corruption; monotone decay under execution delay",
+      "cost_sensitivity": "Directional estimate only — at assumed 5 bps baseline, 5x costs erode ≈12% of signal proxy; NO turnover-aware portfolio simulation exists to confirm",
+      "uncertainty": "Dominant: n=8 windows, implementation-sensitivity (13A vs 13B divergence), and unquantified selection over the 2010-2021 training span"
+    },
+    "explicit_limitation_statement": "Economic usefulness remains untested at the portfolio-construction layer. IC alone does not demonstrate profitability; no Sharpe/turnover/capacity evidence exists for any ORBIT candidate."
+  },
+  "phase14_readiness": {
+    "question": "Do we have sufficiently well-characterized candidate models to justify formal model identity, lifecycle management, and promotion controls?",
+    "answer": "YES, conditionally",
+    "characterization_evidence": [
+      "Both candidates carry complete identity tuples (family/params/feature-set/label/environment)",
+      "Temporal profile mapped across 8 sequential windows with explicit failure year",
+      "Perturbation response curves recorded for 7 stress dimensions",
+      "Failure regions enumerated explicitly (regime, model-family, noise thresholds)",
+      "Reproducibility defect identified and root-caused (13B purge boundary)"
+    ],
+    "conditions": [
+      "All candidates enter at RESEARCH tier — nothing is production-eligible",
+      "Promotion Gate must require: window-level significance, cross-universe completion, portfolio-level cost simulation, and independent reimplementation agreement",
+      "The 13B purge defect must be fixed and 13B re-run before any 13B-derived number is reused"
+    ],
+    "final_gate": "YELLOW",
+    "gate_rationale": "No candidate qualifies as ROBUST_CANDIDATE (statistical and economic FAIL cells stand), so GREEN is unavailable. Both candidates survive outright rejection and are exhaustively characterized, so RED (return to hypothesis design) would discard usable characterization. YELLOW applies: proceed to Phase 14 with research-only/fragile statuses and documented limitations."
+  },
+  "final_gate": "YELLOW",
+  "final_gate_statement": "Proceed to Phase 14, but only with research-only/fragile candidate status and documented limitations",
+  "answers_to_mandate_questions": {
+    "q1_survivors": "None fully; two partially (ridge/lasso FS-12B-A) as RESEARCH_ONLY/FRAGILE",
+    "q2_distribution": "Concentrated — 2023-2025 only; absent 2022 and pre-2022 holdout aggregate",
+    "q3_destroying_regimes": "Bear + high-volatility (2022); feature corruption ≥5-10%; ≥1-session delays",
+    "q4_best_window_removal": "Yes — means stay positive without the best window (ridge +0.0121, lasso +0.0203), though weaker",
+    "q5_env_consistency": "Ridge: consistent 050/100/TOP/BOT; Lasso: incomplete (ENV-100 run failed)",
+    "q6_model_consistency": "Inconsistent — linear-only; RF/XGBoost negative chain-wide",
+    "q7_further_stress_testing": "Yes — both merit: per-session regime stratification, ENV-100 completion for lasso, turnover-aware cost simulation, and 13B re-run post-fix"
+  },
+  "stop_directive": "Phase 13C ends here. Phase 14 not started."
+}

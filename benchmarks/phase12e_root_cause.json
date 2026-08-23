@@ -1,0 +1,36 @@
+{
+  "phase": "12E",
+  "section": "root_cause",
+  "defect_id": "LAB-005-IDENTITY",
+  "expected_behavior": "LAB-005 computes 5-session forward excess return vs BENCH-001 (SPY): R_stock(t,h) - R_benchmark(t,h)",
+  "actual_behavior": "LAB-005 was set identical to LAB-004 (absolute return) via direct assignment: lab005 = lab004",
+  "root_cause": "In scripts/phase12d_run.py line 151, the label was set as: lab005 = lab004  # Same data for now. The correct implementation exists in src/orbit/ml/phase11_1_labels.py (compute_excess_return_label) but was never called in the Phase 12D execution script.",
+  "failure_location": "scripts/phase12d_run.py:151",
+  "failure_mechanism": "Direct Python variable aliasing. lab005 pointed to the same LabelSnapshot object as lab004. Both contained absolute forward returns with no benchmark subtraction.",
+  "why_tests_did_not_detect": [
+    "Phase 12D run script tested pipeline completion, not label value correctness",
+    "No regression test existed to verify LAB-005 != LAB-004 at the value level",
+    "The test in test_phase10_adversarial.py checked label_id strings, not actual values",
+    "The Phase 11.1 tests (test_phase11_1.py) tested the compute_excess_return_label function in isolation but it was never integrated into the Phase 12D pipeline"
+  ],
+  "earlier_phases_affected": {
+    "phase_12b": true,
+    "phase_12b_evidence": "scripts/phase12b_run.py:147 also has lab005 = lab004",
+    "phase_11_2": "Phase 11.2 used the correct compute_excess_return_label via phase11_2_benchmark.py",
+    "phase_9": "Phase 9 only used LAB-004 (absolute return) - not affected"
+  },
+  "historical_impact": {
+    "phase_12d_lab004": "VALID - absolute return results are correct",
+    "phase_12d_lab005": "INVALID - these are absolute returns mislabeled as excess returns",
+    "phase_12d_comparison": "INVALID - LAB-004 vs LAB-005 comparison is meaningless",
+    "phase_11_2": "NOT AFFECTED - used correct implementation",
+    "phase_12b": "AFFECTED - same defect pattern"
+  },
+  "corrective_action": [
+    "Create LAB-006 v1 as the corrected excess-return label (preserving LAB-005 historical artifact)",
+    "Use compute_excess_return_label from phase11_1_labels.py with BENCH-001 SPY data",
+    "Re-run only affected experiments (all LAB-005 experiments from Phase 12D)",
+    "Do NOT overwrite Phase 12D artifacts"
+  ],
+  "regression_test": "Assert that LAB-006 values differ from LAB-004 values for >1% of observations"
+}

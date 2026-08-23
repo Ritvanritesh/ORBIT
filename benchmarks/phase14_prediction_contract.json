@@ -1,0 +1,38 @@
+{
+  "status": "schema-only interface test (no production service built)",
+  "required_fields": [
+    "prediction_id",
+    "timestamp",
+    "symbol",
+    "model_id",
+    "model_version",
+    "dataset_snapshot_id",
+    "feature_snapshot_id",
+    "feature_version_digest",
+    "prediction_value",
+    "uncertainty?",
+    "attribution_reference?",
+    "generated_at",
+    "provenance_digest"
+  ],
+  "validation_rules": [
+    "prediction referencing unknown model => FAIL",
+    "prediction referencing RETIRED model => FAIL",
+    "prediction without feature provenance => FAIL"
+  ],
+  "interface_tests": {
+    "valid_prediction_accepted": {
+      "passed": true,
+      "detail": "ok"
+    },
+    "unknown_model_rejected": {
+      "passed": true
+    },
+    "retired_model_rejected": {
+      "passed": true
+    },
+    "missing_feature_provenance_rejected": {
+      "passed": true
+    }
+  }
+}

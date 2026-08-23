@@ -1,0 +1,264 @@
+{
+  "elapsed_seconds": 0.22825264930725098,
+  "phase": "11.1",
+  "stage_a": {
+    "alignment_errors": [],
+    "alignment_valid": true,
+    "benchmark_id": "BENCH-001",
+    "benchmark_row_count": 8447,
+    "benchmark_sessions": 8447,
+    "excess_labels_available": 139861,
+    "excess_labels_total": 139961,
+    "instrument_bars_count": 139961,
+    "plan_digest": "5deda458f38a4f414710eea66cbefe510bb80789583362b351a5fb1bbb65d264",
+    "stage": "A",
+    "suite_digest": "c47e22650452f2775f1e3c6f78a79e1a3661b9f8762facda7998e33a7c5ae846",
+    "timestamp": "2026-08-21T14:25:55"
+  },
+  "stage_b": {
+    "evaluation_environments": {
+      "ENV-1": {
+        "bars_checksum": "5f3921f36b39cec365eddd45d88261337ccffccaca802fb832d80e22fc959fc9",
+        "benchmark_id": null,
+        "dataset_id": "DS-000004",
+        "description": "Historical 20-symbol baseline (no benchmark context)",
+        "env_id": "ENV-1",
+        "n_instruments": 20
+      },
+      "ENV-2": {
+        "bars_checksum": "5f3921f36b39cec365eddd45d88261337ccffccaca802fb832d80e22fc959fc9",
+        "benchmark_id": "BENCH-001",
+        "dataset_id": "DS-000004",
+        "description": "20 symbols + benchmark context (BENCH-001)",
+        "env_id": "ENV-2",
+        "n_instruments": 20
+      },
+      "ENV-3": {
+        "bars_checksum": null,
+        "benchmark_id": "BENCH-001",
+        "dataset_id": null,
+        "description": "~50 symbols + benchmark context",
+        "env_id": "ENV-3",
+        "n_instruments": 20
+      },
+      "ENV-4": {
+        "bars_checksum": null,
+        "benchmark_id": "BENCH-001",
+        "dataset_id": null,
+        "description": "~100 symbols + benchmark context",
+        "env_id": "ENV-4",
+        "n_instruments": 20
+      }
+    },
+    "stage": "B",
+    "timestamp": "2026-08-21T14:25:55",
+    "universe_100": [
+      {
+        "instrument_id": "INS-000001",
+        "session_count": 7705,
+        "symbol": "AAPL"
+      },
+      {
+        "instrument_id": "INS-000002",
+        "session_count": 7705,
+        "symbol": "MSFT"
+      },
+      {
+        "instrument_id": "INS-000003",
+        "session_count": 7705,
+        "symbol": "JNJ"
+      },
+      {
+        "instrument_id": "INS-000004",
+        "session_count": 7705,
+        "symbol": "XOM"
+      },
+      {
+        "instrument_id": "INS-000005",
+        "session_count": 7705,
+        "symbol": "WMT"
+      },
+      {
+        "instrument_id": "INS-000011",
+        "session_count": 7705,
+        "symbol": "JPM"
+      },
+      {
+        "instrument_id": "INS-000012",
+        "session_count": 7705,
+        "symbol": "BAC"
+      },
+      {
+        "instrument_id": "INS-000014",
+        "session_count": 7705,
+        "symbol": "PG"
+      },
+      {
+        "instrument_id": "INS-000015",
+        "session_count": 7705,
+        "symbol": "KO"
+      },
+      {
+        "instrument_id": "INS-000016",
+        "session_count": 7705,
+        "symbol": "HD"
+      },
+      {
+        "instrument_id": "INS-000017",
+        "session_count": 7705,
+        "symbol": "UNH"
+      },
+      {
+        "instrument_id": "INS-000018",
+        "session_count": 7705,
+        "symbol": "CVX"
+      },
+      {
+        "instrument_id": "INS-000019",
+        "session_count": 7705,
+        "symbol": "DIS"
+      },
+      {
+        "instrument_id": "INS-000020",
+        "session_count": 7705,
+        "symbol": "PFE"
+      },
+      {
+        "instrument_id": "INS-000006",
+        "session_count": 7358,
+        "symbol": "AMZN"
+      },
+      {
+        "instrument_id": "INS-000009",
+        "session_count": 6933,
+        "symbol": "NVDA"
+      },
+      {
+        "instrument_id": "INS-000007",
+        "session_count": 5532,
+        "symbol": "GOOGL"
+      },
+      {
+        "instrument_id": "INS-000013",
+        "session_count": 4631,
+        "symbol": "V"
+      },
+      {
+        "instrument_id": "INS-000010",
+        "session_count": 4057,
+        "symbol": "TSLA"
+      },
+      {
+        "instrument_id": "INS-000008",
+        "session_count": 3580,
+        "symbol": "META"
+      }
+    ],
+    "universe_100_count": 20,
+    "universe_50": [
+      {
+        "instrument_id": "INS-000001",
+        "session_count": 7705,
+        "symbol": "AAPL"
+      },
+      {
+        "instrument_id": "INS-000002",
+        "session_count": 7705,
+        "symbol": "MSFT"
+      },
+      {
+        "instrument_id": "INS-000003",
+        "session_count": 7705,
+        "symbol": "JNJ"
+      },
+      {
+        "instrument_id": "INS-000004",
+        "session_count": 7705,
+        "symbol": "XOM"
+      },
+      {
+        "instrument_id": "INS-000005",
+        "session_count": 7705,
+        "symbol": "WMT"
+      },
+      {
+        "instrument_id": "INS-000011",
+        "session_count": 7705,
+        "symbol": "JPM"
+      },
+      {
+        "instrument_id": "INS-000012",
+        "session_count": 7705,
+        "symbol": "BAC"
+      },
+      {
+        "instrument_id": "INS-000014",
+        "session_count": 7705,
+        "symbol": "PG"
+      },
+      {
+        "instrument_id": "INS-000015",
+        "session_count": 7705,
+        "symbol": "KO"
+      },
+      {
+        "instrument_id": "INS-000016",
+        "session_count": 7705,
+        "symbol": "HD"
+      },
+      {
+        "instrument_id": "INS-000017",
+        "session_count": 7705,
+        "symbol": "UNH"
+      },
+      {
+        "instrument_id": "INS-000018",
+        "session_count": 7705,
+        "symbol": "CVX"
+      },
+      {
+        "instrument_id": "INS-000019",
+        "session_count": 7705,
+        "symbol": "DIS"
+      },
+      {
+        "instrument_id": "INS-000020",
+        "session_count": 7705,
+        "symbol": "PFE"
+      },
+      {
+        "instrument_id": "INS-000006",
+        "session_count": 7358,
+        "symbol": "AMZN"
+      },
+      {
+        "instrument_id": "INS-000009",
+        "session_count": 6933,
+        "symbol": "NVDA"
+      },
+      {
+        "instrument_id": "INS-000007",
+        "session_count": 5532,
+        "symbol": "GOOGL"
+      },
+      {
+        "instrument_id": "INS-000013",
+        "session_count": 4631,
+        "symbol": "V"
+      },
+      {
+        "instrument_id": "INS-000010",
+        "session_count": 4057,
+        "symbol": "TSLA"
+      },
+      {
+        "instrument_id": "INS-000008",
+        "session_count": 3580,
+        "symbol": "META"
+      }
+    ],
+    "universe_50_count": 20,
+    "universe_plan_digest": "1b350818ea0255c61a2c2cd36a99232c51eb6aea3a21c41a2355fdc8d93661a7"
+  },
+  "timestamp": "2026-08-21T14:25:55"
+}

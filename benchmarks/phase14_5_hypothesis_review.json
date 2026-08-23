@@ -1,0 +1,107 @@
+{
+  "phase": "14.5",
+  "step": 4,
+  "title": "Pre-Execution Hypothesis Review",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+
+  "review_results": [
+    {
+      "hypothesis_id": "H-1",
+      "claim_summary": "Path structure (max drawdown, up/down ratio, largest move) adds predictive value beyond levels and volatility",
+      "verdict": "ACCEPT",
+      "reasons_for_accept": [
+        "Genuinely new computation — existing features capture only total return, not path dynamics",
+        "Economically motivated — path quality is a real risk dimension",
+        "All data available — OHLCV bars for all universes",
+        "Low leakage risk — trailing windows only",
+        "Low implementation difficulty — standard rolling computations",
+        "No duplicate of prior work — path features were never tested in Phases 9-14"
+      ],
+      "concerns": [
+        "Path max_drawdown may correlate with vol_10/30 (higher vol → higher drawdown). Mitigation: include vol_10/30 in baseline feature set to measure incremental value.",
+        "Up/down ratio may be noisy at small window sizes. Mitigation: use 20-day window (16+ observations minimum)."
+      ],
+      "maxConcern": "MEDIUM"
+    },
+    {
+      "hypothesis_id": "H-2",
+      "claim_summary": "Return skewness and kurtosis add predictive value as higher-order moments",
+      "verdict": "ACCEPT",
+      "reasons_for_accept": [
+        "Genuinely new — all existing features are symmetric (mean, std, ratio)",
+        "Economically motivated — skewness captures tail risk, a priced risk factor in academic literature",
+        "All data available — OHLCV bars for all universes",
+        "Low leakage risk",
+        "Orthogonal to existing features by construction (different moment)"
+      ],
+      "concerns": [
+        "Skewness estimates are noisy with only 20 observations. Mitigation: test with 30-day window as robustness.",
+        "The sign of the skewness-return relationship is ambiguous (risk premium vs selling pressure). This is a feature, not a bug — we test both directions."
+      ],
+      "maxConcern": "MEDIUM"
+    },
+    {
+      "hypothesis_id": "H-3",
+      "claim_summary": "Macro regime (rates, inflation, unemployment) conditions stock-level prediction",
+      "verdict": "ACCEPT",
+      "reasons_for_accept": [
+        "Completely new information source — no existing feature uses macro data",
+        "Economically motivated — macro conditions change how stock signals translate to returns",
+        "Data available — FRED series (DS-000003) covers CPI, DFF, UNRATE from 1947+",
+        "Low leakage risk — macro data published with known lags",
+        "Applies to all instruments uniformly — no cross-sectional leakage"
+      ],
+      "concerns": [
+        "Low frequency (monthly/quarterly) vs daily stock data — may be too slow for 5-day returns. Mitigation: use level and 3-month change, which capture both level and direction.",
+        "DFF is the most frequently updated (daily effective rate). UNRATE and CPI are monthly. Use last-available observation for PIT."
+      ],
+      "maxConcern": "LOW-MEDIUM"
+    },
+    {
+      "hypothesis_id": "H-4",
+      "claim_summary": "Volatility dynamics (vol-of-vol, vol change) add value beyond vol levels",
+      "verdict": "ACCEPT",
+      "reasons_for_accept": [
+        "Genuinely new dimension — vol_ratio_10_30 captures level comparison, not stability",
+        "Economically motivated — vol regime transitions signal uncertainty changes",
+        "Data available — derived from existing OHLCV",
+        "Low leakage risk"
+      ],
+      "concerns": [
+        "Partial overlap with vol_ratio_10_30 — may not add much incremental value. This is testable.",
+        "Nested rolling computation (vol of vol) may be noisy. Mitigation: use 5-day inner window, 20-day outer window."
+      ],
+      "maxConcern": "MEDIUM"
+    },
+    {
+      "hypothesis_id": "H-5",
+      "claim_summary": "Dynamic beta and correlation add value beyond static cross-sectional ranks",
+      "verdict": "REJECT",
+      "reasons_for_reject": [
+        "High overlap with existing market context features (mkt_ret_20, mkt_vol_20) and cross-sectional features (xs_rank_ret_20)",
+        "Beta/correlation estimates are noisy with 20-day windows — high estimation error",
+        "Market context features (Phase 12A) already tested and showed inconsistent improvement",
+        "Rolling beta requires SPY benchmark — adds dependency but existing market features already use SPY",
+        "The incremental information beyond what market context already captures is likely minimal"
+      ],
+      "rejection_severity": "CLEAR_REJECT",
+      "note": "While dynamic beta is conceptually interesting, the existing market context features (FEAT-201..206) already capture market-level information. The marginal contribution of rolling beta is likely too small to justify the additional complexity and estimation noise."
+    }
+  ],
+
+  "summary": {
+    "total_reviewed": 5,
+    "accepted": 3,
+    "rejected": 1,
+    "requires_data": 0,
+    "accepted_hypotheses": ["H-1", "H-2", "H-3"],
+    "accepted_features": {
+      "H-1_path_structure": ["FEAT-401", "FEAT-402", "FEAT-403"],
+      "H-2_asymmetry": ["FEAT-411", "FEAT-412", "FEAT-413"],
+      "H-3_macro_regime": ["FEAT-431", "FEAT-432", "FEAT-433", "FEAT-434"]
+    },
+    "total_accepted_features": 10,
+    "max_concern_level": "MEDIUM",
+    "note": "H-4 (vol dynamics) is ACCEPT for robustness testing only — it is included as a supplementary feature family but not as a primary hypothesis. H-5 (dynamic beta) is REJECTED due to high overlap with existing market context features."
+  }
+}

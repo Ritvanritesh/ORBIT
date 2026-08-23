@@ -1,0 +1,57 @@
+{
+  "phase": "14.5",
+  "step": 14,
+  "title": "Audit",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+
+  "checks": {
+    "historical_artifacts_unchanged": true,
+    "historical_artifacts_detail": "No Phases 9-14 artifacts were modified. All new outputs are in phase14_5_* files.",
+
+    "plan_digest_unchanged": true,
+    "plan_digest_detail": "Phase 14.5 plan SHA-256: bb2c11b08e6f09eaddaa4963160e0bc5a58f62b1a9782fd43fc437c5a5b43893. Verified post-execution.",
+
+    "hypothesis_inventory_unchanged": true,
+    "hypothesis_inventory_detail": "3 hypotheses (H-1, H-2, H-3) accepted. H-4 supplementary. H-5 rejected. No changes after lock.",
+
+    "experiment_inventory_complete": true,
+    "experiment_inventory_detail": "24 experiments executed (14 ENV-050 + 10 ENV-100). 0 failed. 0 silently excluded.",
+
+    "failed_experiments_retained": true,
+    "failed_experiments_detail": "No experiments failed. All 24 completed successfully.",
+
+    "multiple_testing_correctly_applied": true,
+    "multiple_testing_detail": "Holm and BH corrections applied over 3 primary hypotheses (H-1, H-2, H-3). H-4 supplementary excluded from primary family.",
+
+    "no_future_information_in_features": true,
+    "no_future_detail": "All features computed from trailing windows of past data only. Macro data uses last-available observation (PIT-respecting).",
+
+    "no_train_test_leakage": true,
+    "leakage_detail": "StandardScaler fit on train only. Features computed per-instrument with no cross-instrument leakage. Splits strictly chronological.",
+
+    "no_selective_result_exclusion": true,
+    "exclusion_detail": "All 24 planned experiments executed and reported. No results excluded.",
+
+    "registry_integration_deterministic": true,
+    "registry_detail": "Phase 14 registry not modified. New candidates (if any) would be registered as RESEARCH only.",
+  },
+
+  "adversarial_tests": {
+    "V1_no_future_data": "PASS",
+    "V2_labels_correct": "PASS",
+    "V3_plan_digest_unchanged": "PASS",
+    "V4_feature_isolation": "PASS",
+    "V5_hypothesis_set_matches_plan": "PASS",
+    "all_pass": true
+  },
+
+  "all_checks_pass": true,
+
+  "known_limitations": [
+    "Lasso produces IC=0.000 in non-macro experiments — possible implementation issue with alpha tuning",
+    "Bootstrap p-values may be unreliable (some show exactly 0.000)",
+    "Single test period (2022-2026) — no walk-forward validation",
+    "No portfolio construction or economic validation",
+    "Macro features are slow-moving (monthly/quarterly) — may not capture intra-month regime changes"
+  ]
+}

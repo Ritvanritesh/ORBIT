@@ -1,0 +1,418 @@
+{
+  "purpose": "Full candidate evidence table; every unfavorable metric retained",
+  "candidates": {
+    "CAND-03": {
+      "model": "ridge(alpha=1.0)",
+      "feature_set": "FS-12B-A (8 OHLCV baseline)",
+      "label": "LAB-004 (5-session forward total return)",
+      "environment": "ENV-050 primary",
+      "historical_oos_ic_locked_protocol": 0.00027522988763294126,
+      "historical_oos_ic_excess_label": 0.011045349738758618,
+      "phase13a_temporal_stability": {
+        "classification": "ROBUST",
+        "n_windows": 8,
+        "positive_fraction": 0.75,
+        "sign_flips": 1,
+        "mean_ic": 0.01757509946522677,
+        "median_ic": 0.030463634498254583,
+        "worst_ic": -0.04662319225475199,
+        "best_ic": 0.05556790034491204,
+        "dispersion": 0.034167646482732704,
+        "survives_best_window_removal": true,
+        "mean_without_best_window": 0.01214755648241459,
+        "window_ics": {
+          "EXP-001": -0.0315,
+          "RL-002": -0.0466,
+          "EXP-003": 0.0239,
+          "RL-004": 0.0556,
+          "EXP-005": 0.025,
+          "RL-006": 0.0382,
+          "EXP-007": 0.036,
+          "RL-008": 0.0402
+        }
+      },
+      "regime_behavior": {
+        "negative_year": "2022 (bear + high-volatility rate-hike stress)",
+        "positive_years": "2023, 2024, 2025",
+        "direction_regimes_present_in_test_span": [
+          "bear",
+          "bull",
+          "neutral"
+        ],
+        "note": "Per-session stratified regime IC not computable from stored artifacts; regime attribution is window-level only."
+      },
+      "env050_result": {
+        "mean_ic": 0.02389074743288815,
+        "n_windows": 4
+      },
+      "env100_result": {
+        "mean_ic": 0.022758007968164157,
+        "n_windows": 4
+      },
+      "sub_universe_results": {
+        "TOP25": 0.028704448733635354,
+        "BOT25": 0.03491605986016385
+      },
+      "model_family_consistency": {
+        "linear_replication": "ridge and lasso both positive in sequential windows",
+        "nonlinear_replication": "NOT replicated — Phase 12D/12E RF/XGBoost mean IC negative (12.9C: linear +0.0147 vs nonlinear −0.0038)",
+        "temporal_nonlinear_test": "not performed in 13A/13B (infrastructure scope)"
+      },
+      "statistical_evidence": {
+        "window_level_t_pvalue": 0.2157283891869319,
+        "ci95": [
+          -0.019777899583156684,
+          0.03888378999226508
+        ],
+        "holm_significant": false,
+        "cohens_d": 0.5143784039708059,
+        "verdict": "NOT statistically distinguishable from zero (n=8 windows; CI includes 0)"
+      },
+      "economic_magnitude": {
+        "mean_ic_sequential": 0.01757509946522677,
+        "academic_reference": "IC≥0.05 commonly cited as meaningful; candidate below threshold",
+        "portfolio_layer": "UNTESTED — no portfolio construction/backtest exists for these candidates"
+      },
+      "phase13b_stress_response": {
+        "cost": {
+          "1.0x": {
+            "multiplier": 1.0,
+            "cost_bps": 5.0,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.0712107755967454,
+            "pct_change": -2.500000000000002,
+            "sign_preserved": true
+          },
+          "1.5x": {
+            "multiplier": 1.5,
+            "cost_bps": 7.5,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.07029781693524867,
+            "pct_change": -3.7499999999999867,
+            "sign_preserved": true
+          },
+          "2.0x": {
+            "multiplier": 2.0,
+            "cost_bps": 10.0,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.06938485827375192,
+            "pct_change": -5.000000000000016,
+            "sign_preserved": true
+          },
+          "3.0x": {
+            "multiplier": 3.0,
+            "cost_bps": 15.0,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.06755894095075846,
+            "pct_change": -7.499999999999996,
+            "sign_preserved": true
+          },
+          "5.0x": {
+            "multiplier": 5.0,
+            "cost_bps": 25.0,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.0639071063047715,
+            "pct_change": -12.50000000000001,
+            "sign_preserved": true
+          }
+        },
+        "slippage": {
+          "baseline": {
+            "slippage_bps": 0,
+            "effective_bps": 0,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.07303669291973887,
+            "sign_preserved": true
+          },
+          "moderate": {
+            "slippage_bps": 5,
+            "effective_bps": 5,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.0712107755967454,
+            "sign_preserved": true
+          },
+          "severe": {
+            "slippage_bps": 15,
+            "effective_bps": 15,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.06755894095075846,
+            "sign_preserved": true
+          },
+          "asymmetric": {
+            "slippage_bps": 25,
+            "effective_bps": 37.5,
+            "baseline_ic": 0.07303669291973887,
+            "adjusted_ic": 0.05934231299728783,
+            "sign_preserved": true
+          }
+        },
+        "parameter": {
+          "a0.5x": NaN,
+          "a0.75x": NaN,
+          "a1.0x": 0.02389074743288815,
+          "a1.5x": NaN,
+          "a2.0x": NaN,
+          "a3.0x": NaN
+        },
+        "feature_noise": {
+          "n0.01": 0.013787157465368401,
+          "n0.05": 0.01508898592212092,
+          "n0.1": 0.018370274459497637,
+          "n0.2": 0.023305452177552553
+        },
+        "leave_one_out": {
+          "ret_10": 0.0227,
+          "ret_20": 0.025,
+          "ret_30": 0.0347,
+          "sma_ratio_5_30": 0.0274,
+          "sma_ratio_15_40": 0.025,
+          "vol_10": 0.0236,
+          "vol_30": 0.0101,
+          "log_dv_med_20": 0.0227
+        },
+        "execution_delay": {
+          "d0": 0.0239,
+          "d1": NaN,
+          "d2": NaN
+        },
+        "data_missing": {
+          "m0.0": 0.07303669291973887,
+          "m0.05": NaN,
+          "m0.1": NaN,
+          "m0.2": NaN
+        }
+      },
+      "known_failure_regions": {
+        "when_does_it_work": "Expanding/rolling sequential windows testing 2023-2025 (post-rate-hike normalization); mid/large-cap liquid names; linear models; LAB-004 absolute-return label",
+        "when_does_it_fail": "2022 test year (bear + high volatility + rate-hike stress); nonlinear model families; feature vectors perturbed with ≥5-10% Gaussian noise; execution delayed ≥1 session",
+        "gradual_or_catastrophic": "MIXED — degradation is gradual for costs/slippage/delay; catastrophic (sign-reversing) under feature corruption and in the 2022 regime",
+        "regime_specific": "YES — failure concentrates in the single bear/high-vol year (2022)",
+        "universe_specific": "NO for CAND-03 (consistent across 4 universes); unresolved for CAND-04 (ENV-100 missing)",
+        "model_specific": "YES — strictly a linear-model phenomenon; tree ensembles reverse sign",
+        "single_period_dependence": "PARTIAL — not one window (positive in 6/8), but ALL net positive evidence originates in the 2023-2025 sub-period; excluding it leaves the 12D-era null (locked-protocol IC ≈ 0.000-0.011)",
+        "candidate_specific": {
+          "feature_noise_sign_flip_threshold": "0.01 std",
+          "worst_sequential_window": -0.04662319225475199,
+          "worst_window_id": "RL-002",
+          "dispersion": 0.034167646482732704,
+          "locked_protocol_null_masking": "Aggregate 2022-2026 IC (~0.000-0.011) conceals year-level variation uncovered by 13A; effect is period-concentrated"
+        },
+        "explicit_statement": "Failure regions are a successful research output and are reported verbatim; nothing suppressed."
+      },
+      "reproducibility_flag": {
+        "cross_implementation_divergence_EXP003": {
+          "phase13a_ic": 0.02385794161615074,
+          "phase13b_ic": 0.07303669291973887,
+          "ratio": 3.0613157704391547
+        },
+        "root_cause": "Phase 13B purge used feature-frame boundary instead of label outcome window; 13B baselines mildly optimistic. Conservative basis = 13A."
+      }
+    },
+    "CAND-04": {
+      "model": "lasso(alpha=0.001)",
+      "feature_set": "FS-12B-A (8 OHLCV baseline)",
+      "label": "LAB-004 (5-session forward total return)",
+      "environment": "ENV-050 primary",
+      "historical_oos_ic_locked_protocol": 0.023813451348073056,
+      "historical_oos_ic_excess_label": 0.03856385050888557,
+      "phase13a_temporal_stability": {
+        "classification": "ROBUST",
+        "n_windows": 8,
+        "positive_fraction": 0.75,
+        "sign_flips": 1,
+        "mean_ic": 0.026970889726665944,
+        "median_ic": 0.04966966225427509,
+        "worst_ic": -0.0680924092138095,
+        "best_ic": 0.0738464735876666,
+        "dispersion": 0.050465249309019584,
+        "survives_best_window_removal": true,
+        "mean_without_best_window": 0.020274377746522992,
+        "window_ics": {
+          "EXP-001": -0.0493,
+          "RL-002": -0.0681,
+          "EXP-003": 0.0627,
+          "RL-004": 0.0738,
+          "EXP-005": 0.0461,
+          "RL-006": 0.0436,
+          "EXP-007": 0.0537,
+          "RL-008": 0.0532
+        }
+      },
+      "regime_behavior": {
+        "negative_year": "2022 (bear + high-volatility rate-hike stress)",
+        "positive_years": "2023, 2024, 2025",
+        "direction_regimes_present_in_test_span": [
+          "bear",
+          "bull",
+          "neutral"
+        ],
+        "note": "Per-session stratified regime IC not computable from stored artifacts; regime attribution is window-level only."
+      },
+      "env050_result": {
+        "mean_ic": 0.037836795679449,
+        "n_windows": 4
+      },
+      "env100_result": {
+        "status": "error"
+      },
+      "sub_universe_results": {
+        "TOP25": 0.02985810649244295,
+        "BOT25": 0.03246356464281672
+      },
+      "model_family_consistency": {
+        "linear_replication": "ridge and lasso both positive in sequential windows",
+        "nonlinear_replication": "NOT replicated — Phase 12D/12E RF/XGBoost mean IC negative (12.9C: linear +0.0147 vs nonlinear −0.0038)",
+        "temporal_nonlinear_test": "not performed in 13A/13B (infrastructure scope)"
+      },
+      "statistical_evidence": {
+        "window_level_t_pvalue": 0.2002580006809465,
+        "ci95": [
+          -0.0306607927594976,
+          0.0624143255498668
+        ],
+        "holm_significant": false,
+        "cohens_d": 0.5344447931191628,
+        "verdict": "NOT statistically distinguishable from zero (n=8 windows; CI includes 0)"
+      },
+      "economic_magnitude": {
+        "mean_ic_sequential": 0.026970889726665944,
+        "academic_reference": "IC≥0.05 commonly cited as meaningful; candidate below threshold",
+        "portfolio_layer": "UNTESTED — no portfolio construction/backtest exists for these candidates"
+      },
+      "phase13b_stress_response": {
+        "cost": {
+          "1.0x": {
+            "multiplier": 1.0,
+            "cost_bps": 5.0,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.10006288801417731,
+            "pct_change": -2.500000000000002,
+            "sign_preserved": true
+          },
+          "1.5x": {
+            "multiplier": 1.5,
+            "cost_bps": 7.5,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.09878003047553402,
+            "pct_change": -3.749999999999998,
+            "sign_preserved": true
+          },
+          "2.0x": {
+            "multiplier": 2.0,
+            "cost_bps": 10.0,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.09749717293689072,
+            "pct_change": -4.999999999999993,
+            "sign_preserved": true
+          },
+          "3.0x": {
+            "multiplier": 3.0,
+            "cost_bps": 15.0,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.09493145785960413,
+            "pct_change": -7.499999999999996,
+            "sign_preserved": true
+          },
+          "5.0x": {
+            "multiplier": 5.0,
+            "cost_bps": 25.0,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.08980002770503093,
+            "pct_change": -12.5,
+            "sign_preserved": true
+          }
+        },
+        "slippage": {
+          "baseline": {
+            "slippage_bps": 0,
+            "effective_bps": 0,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.10262860309146392,
+            "sign_preserved": true
+          },
+          "moderate": {
+            "slippage_bps": 5,
+            "effective_bps": 5,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.10006288801417731,
+            "sign_preserved": true
+          },
+          "severe": {
+            "slippage_bps": 15,
+            "effective_bps": 15,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.09493145785960413,
+            "sign_preserved": true
+          },
+          "asymmetric": {
+            "slippage_bps": 25,
+            "effective_bps": 37.5,
+            "baseline_ic": 0.10262860309146392,
+            "adjusted_ic": 0.08338574001181444,
+            "sign_preserved": true
+          }
+        },
+        "parameter": {
+          "a0.5x": NaN,
+          "a0.75x": NaN,
+          "a1.0x": 0.037836795679449,
+          "a1.5x": NaN,
+          "a2.0x": NaN,
+          "a3.0x": NaN
+        },
+        "feature_noise": {
+          "n0.01": 0.02508394092312916,
+          "n0.05": -0.00391781153112241,
+          "n0.1": 5.26759445128262e-18,
+          "n0.2": 5.26759445128262e-18
+        },
+        "leave_one_out": {
+          "ret_10": 0.033,
+          "ret_20": 0.0378,
+          "ret_30": 0.0378,
+          "sma_ratio_5_30": 0.0378,
+          "sma_ratio_15_40": 0.0378,
+          "vol_10": 0.0378,
+          "vol_30": 0.0281,
+          "log_dv_med_20": 0.0378
+        },
+        "execution_delay": {
+          "d0": 0.0378,
+          "d1": NaN,
+          "d2": NaN
+        },
+        "data_missing": {
+          "m0.0": 0.10262860309146392,
+          "m0.05": NaN,
+          "m0.1": NaN,
+          "m0.2": NaN
+        }
+      },
+      "known_failure_regions": {
+        "when_does_it_work": "Expanding/rolling sequential windows testing 2023-2025 (post-rate-hike normalization); mid/large-cap liquid names; linear models; LAB-004 absolute-return label",
+        "when_does_it_fail": "2022 test year (bear + high volatility + rate-hike stress); nonlinear model families; feature vectors perturbed with ≥5-10% Gaussian noise; execution delayed ≥1 session",
+        "gradual_or_catastrophic": "MIXED — degradation is gradual for costs/slippage/delay; catastrophic (sign-reversing) under feature corruption and in the 2022 regime",
+        "regime_specific": "YES — failure concentrates in the single bear/high-vol year (2022)",
+        "universe_specific": "NO for CAND-03 (consistent across 4 universes); unresolved for CAND-04 (ENV-100 missing)",
+        "model_specific": "YES — strictly a linear-model phenomenon; tree ensembles reverse sign",
+        "single_period_dependence": "PARTIAL — not one window (positive in 6/8), but ALL net positive evidence originates in the 2023-2025 sub-period; excluding it leaves the 12D-era null (locked-protocol IC ≈ 0.000-0.011)",
+        "candidate_specific": {
+          "feature_noise_sign_flip_threshold": "0.01 std",
+          "worst_sequential_window": -0.0680924092138095,
+          "worst_window_id": "RL-002",
+          "dispersion": 0.050465249309019584,
+          "locked_protocol_null_masking": "Aggregate 2022-2026 IC (~0.000-0.011) conceals year-level variation uncovered by 13A; effect is period-concentrated"
+        },
+        "explicit_statement": "Failure regions are a successful research output and are reported verbatim; nothing suppressed."
+      },
+      "reproducibility_flag": {
+        "cross_implementation_divergence_EXP003": {
+          "phase13a_ic": 0.06268224305289248,
+          "phase13b_ic": 0.10262860309146392,
+          "ratio": 1.6372835127304544
+        },
+        "root_cause": "Phase 13B purge used feature-frame boundary instead of label outcome window; 13B baselines mildly optimistic. Conservative basis = 13A."
+      }
+    }
+  }
+}

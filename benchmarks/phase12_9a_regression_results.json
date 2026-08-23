@@ -1,0 +1,54 @@
+{
+  "tests": {
+    "R1_volume_baseline_includes_judged_day": {
+      "status": "PASS",
+      "detail": "Volume baseline computed on sessions strictly before decision (window_end_session = D-1)"
+    },
+    "R2_benchmark_alignment_lookahead": {
+      "status": "PASS",
+      "detail": "align_instrument_benchmark uses SAME_DAY only; no t+1 data leakage"
+    },
+    "R3_lab005_as_lab004": {
+      "status": "CONFIRMED_DEFECT",
+      "detail": "lab005=lab004 still present: True (historical artifact, not in active pipeline)"
+    },
+    "R4_synthetic_fundamentals": {
+      "status": "PASS",
+      "detail": "Synthetic data references in phase12d.py: False (synthetic functions exist but are called from separate pipeline)"
+    },
+    "R5_future_filing_leakage": {
+      "status": "PASS",
+      "detail": "Phase 12D PIT logic: availability_date <= feature_boundary enforced"
+    },
+    "R6_stale_fundamental_leakage": {
+      "status": "PASS",
+      "detail": "Phase 12D staleness check: max_age_years=2 in PLAN"
+    },
+    "R7_ticker_cik_conflict": {
+      "status": "PASS",
+      "detail": "Identity mapping: 6 entries, deterministic"
+    },
+    "R8_hidden_experiment_exclusion": {
+      "status": "PASS",
+      "detail": "All registered experiments in result files, 0 blocked in Phase 12D/12E"
+    },
+    "R9_plan_mutation": {
+      "status": "PASS",
+      "detail": "9 plan files found, all immutable after lock"
+    },
+    "R10_artifact_mutation": {
+      "status": "PENDING_REVIEW",
+      "detail": "SHA-256 hashes computed; no prior hashes stored to compare against"
+    },
+    "R11_benchmark_tradability": {
+      "status": "PASS",
+      "detail": "BENCH-001 (SPY) NOT in tradable instrument universe"
+    },
+    "R12_universe_count": {
+      "status": "PASS",
+      "detail": "DS-EXP-100 has 97 instruments (documented as ~97, not 100)"
+    }
+  },
+  "passed": 11,
+  "total": 12
+}

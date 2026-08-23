@@ -1,0 +1,2957 @@
+{
+  "phase": "12A",
+  "version": "v1",
+  "created_at": "2026-08-21T19:54:28.321816",
+  "research_question": "Does adding market regime, sector context, and cross-sectional information provide predictive information that isolated instrument-level OHLCV representations do not?",
+  "information_families": {
+    "A_market_regime": {
+      "features": [
+        {
+          "feature_id": "FEAT-201",
+          "name": "mkt_ret_5",
+          "family": "market_regime",
+          "formula": "close(D-1)/close(D-5) - 1 on SPY",
+          "window": 5,
+          "kind": "momentum_return",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-202",
+          "name": "mkt_ret_20",
+          "family": "market_regime",
+          "formula": "close(D-1)/close(D-20) - 1 on SPY",
+          "window": 20,
+          "kind": "momentum_return",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-203",
+          "name": "mkt_vol_20",
+          "family": "market_regime",
+          "formula": "std(daily_returns, 20) on SPY",
+          "window": 20,
+          "kind": "realized_volatility",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-204",
+          "name": "mkt_vol_60",
+          "family": "market_regime",
+          "formula": "std(daily_returns, 60) on SPY",
+          "window": 60,
+          "kind": "realized_volatility",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-205",
+          "name": "mkt_trend_20_50",
+          "family": "market_regime",
+          "formula": "sma(SPY, 20) / sma(SPY, 50) - 1",
+          "short": 20,
+          "long": 50,
+          "kind": "moving_average_ratio",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-206",
+          "name": "mkt_drawdown_from_peak_60",
+          "family": "market_regime",
+          "formula": "close(D-1)/max(close, 60) - 1 on SPY",
+          "window": 60,
+          "kind": "drawdown",
+          "source": "BENCH-001 (SPY)",
+          "pit_boundary": "window_end_session < decision_session"
+        }
+      ],
+      "n_features": 6,
+      "source": "BENCH-001 (SPY)"
+    },
+    "B_sector_context": {
+      "features": [
+        {
+          "feature_id": "FEAT-211",
+          "name": "sector_ret_20",
+          "family": "sector_context",
+          "formula": "mean(instrument_returns, sector, 20)",
+          "window": 20,
+          "kind": "sector_momentum",
+          "source": "instrument returns within sector",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-212",
+          "name": "sector_vol_20",
+          "family": "sector_context",
+          "formula": "std(daily_returns, sector, 20)",
+          "window": 20,
+          "kind": "sector_volatility",
+          "source": "instrument returns within sector",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-213",
+          "name": "sector_ret_5",
+          "family": "sector_context",
+          "formula": "mean(instrument_returns, sector, 5)",
+          "window": 5,
+          "kind": "sector_momentum",
+          "source": "instrument returns within sector",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-214",
+          "name": "sector_trend_5_30",
+          "family": "sector_context",
+          "formula": "sma(sector_return, 5) / sma(sector_return, 30) - 1",
+          "short": 5,
+          "long": 30,
+          "kind": "sector_trend",
+          "source": "instrument returns within sector",
+          "pit_boundary": "window_end_session < decision_session"
+        },
+        {
+          "feature_id": "FEAT-215",
+          "name": "sector_dispersion_20",
+          "family": "sector_context",
+          "formula": "std(sector_member_returns, 20) - mean(std(member_returns, 20))",
+          "window": 20,
+          "kind": "sector_dispersion",
+          "source": "instrument returns within sector",
+          "pit_boundary": "window_end_session < decision_session"
+        }
+      ],
+      "n_features": 5,
+      "source": "instrument returns within sector"
+    },
+    "C_cross_sectional": {
+      "features": [
+        {
+          "feature_id": "FEAT-221",
+          "name": "xs_rank_ret_20",
+          "family": "cross_sectional",
+          "formula": "percentile_rank(ret_20, universe, D)",
+          "window": 20,
+          "kind": "cross_sectional_rank",
+          "source": "instrument ret_20 within universe",
+          "pit_boundary": "window_end_session < decision_session",
+          "min_population": 5
+        },
+        {
+          "feature_id": "FEAT-222",
+          "name": "xs_rank_vol_10",
+          "family": "cross_sectional",
+          "formula": "percentile_rank(vol_10, universe, D)",
+          "window": 20,
+          "kind": "cross_sectional_rank",
+          "source": "instrument vol_20 within universe",
+          "pit_boundary": "window_end_session < decision_session",
+          "min_population": 5
+        },
+        {
+          "feature_id": "FEAT-223",
+          "name": "xs_ret_vs_median_20",
+          "family": "cross_sectional",
+          "formula": "ret_20(D) - median(ret_20, universe, D)",
+          "window": 20,
+          "kind": "cross_sectional_relative",
+          "source": "instrument ret_20 within universe",
+          "pit_boundary": "window_end_session < decision_session",
+          "min_population": 5
+        },
+        {
+          "feature_id": "FEAT-224",
+          "name": "xs_ret_vs_mean_20",
+          "family": "cross_sectional",
+          "formula": "ret_20(D) - mean(ret_20, universe, D)",
+          "window": 20,
+          "kind": "cross_sectional_relative",
+          "source": "instrument ret_20 within universe",
+          "pit_boundary": "window_end_session < decision_session",
+          "min_population": 5
+        },
+        {
+          "feature_id": "FEAT-225",
+          "name": "xs_dispersion_ret_20",
+          "family": "cross_sectional",
+          "formula": "std(ret_20, universe, D)",
+          "window": 20,
+          "kind": "cross_sectional_dispersion",
+          "source": "instrument ret_20 within universe",
+          "pit_boundary": "window_end_session < decision_session",
+          "min_population": 5
+        }
+      ],
+      "n_features": 5,
+      "source": "instrument features within universe"
+    }
+  },
+  "feature_sets": {
+    "FS-101": {
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "description": "Baseline OHLCV (FS-001) + market regime context",
+      "role": "market_context",
+      "feature_refs": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-201",
+        "FEAT-202",
+        "FEAT-203",
+        "FEAT-204",
+        "FEAT-205",
+        "FEAT-206"
+      ],
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ]
+    },
+    "FS-102": {
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "description": "Baseline OHLCV (FS-001) + sector context",
+      "role": "sector_context",
+      "feature_refs": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-211",
+        "FEAT-212",
+        "FEAT-213",
+        "FEAT-214",
+        "FEAT-215"
+      ],
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ]
+    },
+    "FS-103": {
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "description": "Baseline OHLCV (FS-001) + cross-sectional context",
+      "role": "cross_sectional",
+      "feature_refs": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-221",
+        "FEAT-222",
+        "FEAT-223",
+        "FEAT-224",
+        "FEAT-225"
+      ],
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ]
+    },
+    "FS-104": {
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "description": "Baseline OHLCV + all Phase 12A context families",
+      "role": "all_context",
+      "feature_refs": [
+        "FEAT-001",
+        "FEAT-002",
+        "FEAT-003",
+        "FEAT-004",
+        "FEAT-005",
+        "FEAT-006",
+        "FEAT-007",
+        "FEAT-008",
+        "FEAT-201",
+        "FEAT-202",
+        "FEAT-203",
+        "FEAT-204",
+        "FEAT-205",
+        "FEAT-206",
+        "FEAT-211",
+        "FEAT-212",
+        "FEAT-213",
+        "FEAT-214",
+        "FEAT-215",
+        "FEAT-221",
+        "FEAT-222",
+        "FEAT-223",
+        "FEAT-224",
+        "FEAT-225"
+      ],
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ]
+    }
+  },
+  "environments": {
+    "ENV-12A-050": {
+      "env_id": "ENV-12A-050",
+      "description": "50-symbol universe with benchmark and sector context",
+      "dataset_id": "DS-EXP-050",
+      "benchmark_id": "BENCH-001",
+      "n_instruments_target": 50,
+      "has_sector_classification": true
+    },
+    "ENV-12A-100": {
+      "env_id": "ENV-12A-100",
+      "description": "100-symbol universe with benchmark and sector context",
+      "dataset_id": "DS-EXP-100",
+      "benchmark_id": "BENCH-001",
+      "n_instruments_target": 100,
+      "has_sector_classification": true
+    }
+  },
+  "models": [
+    {
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "phase10_parent": "ridge+FS-003"
+    },
+    {
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "phase10_parent": "lasso+FS-003"
+    },
+    {
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "phase10_parent": "rf+FS-003"
+    },
+    {
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "phase10_parent": "xgb+FS-003"
+    }
+  ],
+  "labels": {
+    "LAB-004": {
+      "label_id": "LAB-004",
+      "version": "v1",
+      "type": "forward_return",
+      "description": "5-session forward total return (absolute)"
+    },
+    "LAB-005": {
+      "label_id": "LAB-005",
+      "version": "v1",
+      "type": "excess_return",
+      "description": "5-session benchmark-relative excess return"
+    }
+  },
+  "windows": {
+    "train": [
+      "2010-01-04",
+      "2018-12-31"
+    ],
+    "val": [
+      "2019-01-02",
+      "2021-12-31"
+    ],
+    "test": [
+      "2022-01-03",
+      "2026-06-30"
+    ]
+  },
+  "cost_model": {
+    "spread_bps": 2.0,
+    "fees_bps": 1.0,
+    "slippage_bps": 2.0
+  },
+  "cross_sectional_config": {
+    "min_universe_population": 5,
+    "missing_policy": "drop_session_for_instrument",
+    "new_listing_warmup": 20,
+    "tie_breaking": "average",
+    "universe_source": "instrument_master"
+  },
+  "sector_config": {
+    "taxonomy": "GICS_depth1",
+    "sector_codes": [
+      "S10",
+      "S20",
+      "S25",
+      "S30",
+      "S35",
+      "S40",
+      "S45",
+      "S50",
+      "S55"
+    ],
+    "sector_min_members": 2,
+    "sector_missing_policy": "drop_sector_features",
+    "sector_source": "instrument_master_sector_field",
+    "pit_note": "sector membership treated as time-invariant (documented limitation)"
+  },
+  "inference": {
+    "seed": 42,
+    "confidence_level": 0.95,
+    "bootstrap_resamples": 10000,
+    "block_length": "auto_rule_of_thumb",
+    "multiple_testing": [
+      "holm_bonferroni",
+      "benjamini_hochberg"
+    ],
+    "effect_size_thresholds": {
+      "ic_small": 0.02,
+      "ic_medium": 0.05,
+      "ic_large": 0.1
+    }
+  },
+  "experiments": [
+    {
+      "experiment_id": "EXP-12A-0001",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0002",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0003",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0004",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0005",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0006",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0007",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0008",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0009",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0010",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0011",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0012",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0013",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0014",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0015",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0016",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0017",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0018",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0019",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0020",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0021",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0022",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0023",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0024",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0025",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0026",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0027",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0028",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0029",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0030",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0031",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0032",
+      "env_id": "ENV-12A-050",
+      "dataset_id": "DS-EXP-050",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0033",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0034",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0035",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0036",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0037",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0038",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0039",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0040",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-101",
+      "feature_set_version": "v1",
+      "n_features": 14,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0041",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0042",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0043",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0044",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0045",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0046",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0047",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0048",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-102",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "sector_context"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0049",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0050",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0051",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0052",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0053",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0054",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0055",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0056",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-103",
+      "feature_set_version": "v1",
+      "n_features": 13,
+      "families": [
+        "baseline_ohlcv",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0057",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0058",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0059",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0060",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0061",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0062",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "random_forest",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0063",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-004",
+      "label_type": "forward_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    },
+    {
+      "experiment_id": "EXP-12A-0064",
+      "env_id": "ENV-12A-100",
+      "dataset_id": "DS-EXP-100",
+      "feature_set_id": "FS-104",
+      "feature_set_version": "v1",
+      "n_features": 23,
+      "families": [
+        "baseline_ohlcv",
+        "market_regime",
+        "sector_context",
+        "cross_sectional"
+      ],
+      "family": "xgboost",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.1
+      },
+      "label_id": "LAB-005",
+      "label_type": "excess_return",
+      "windows": {
+        "train": [
+          "2010-01-04",
+          "2018-12-31"
+        ],
+        "val": [
+          "2019-01-02",
+          "2021-12-31"
+        ],
+        "test": [
+          "2022-01-03",
+          "2026-06-30"
+        ]
+      },
+      "cost_model": {
+        "spread_bps": 2.0,
+        "fees_bps": 1.0,
+        "slippage_bps": 2.0
+      },
+      "seed": 42
+    }
+  ],
+  "n_experiments": 64,
+  "n_environments": 2,
+  "n_feature_sets": 4,
+  "n_models": 4,
+  "n_labels": 2,
+  "plan_digest": "5e35ebe99cf4b60b9f9a573ed471cec486f4356f3acf0a646c7f602fc7b18642"
+}

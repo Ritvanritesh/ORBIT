@@ -1,0 +1,731 @@
+{
+  "count": 13,
+  "decisions": [
+    {
+      "decision_id": "PROM-000001",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RETIRED",
+      "action": "RETIRE",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RETIREMENT": "PASS"
+      },
+      "gate_details": {
+        "RETIREMENT": {
+          "note": "retirement always permitted with immutable record"
+        }
+      },
+      "blocking_conditions": [],
+      "rationale": "Retired: trained against LAB-005 v1, a defective alias of LAB-004 (documented Phase 12D defect); superseded by the LAB-006 excess-return contract",
+      "evidence_references": [
+        "EVID-000131",
+        "EVID-000132",
+        "EVID-000133",
+        "EVID-000134",
+        "EVID-000135",
+        "EVID-000136",
+        "EVID-000137",
+        "EVID-000138",
+        "EVID-000139",
+        "EVID-000140",
+        "EVID-000141",
+        "EVID-000142",
+        "EVID-000143"
+      ],
+      "evidence_digests": [
+        "5be617de720b97d4",
+        "e6e3521a03e9911c",
+        "1c126a1d4af9b90d",
+        "429506361ec222af",
+        "4e7ac96e5dc5f81d",
+        "deed169dfc6e2088",
+        "9cd13cf1202455b1",
+        "52e9043b4a606fad",
+        "47a41673a52a2773",
+        "3ea01ebe4941ce6e",
+        "2170d4a9eb09e828",
+        "16f49b07f1af0dd3",
+        "ea61ab14160c5bfd"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "6f414d24a7b49917"
+    },
+    {
+      "decision_id": "PROM-000002",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000012"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000012'])",
+      "evidence_references": [
+        "EVID-000001",
+        "EVID-000002",
+        "EVID-000003",
+        "EVID-000004",
+        "EVID-000005",
+        "EVID-000006",
+        "EVID-000007",
+        "EVID-000008",
+        "EVID-000009",
+        "EVID-000010",
+        "EVID-000011",
+        "EVID-000012",
+        "EVID-000013"
+      ],
+      "evidence_digests": [
+        "3dd36d2aec6c1253",
+        "ae4fa031ff38335f",
+        "44e0f3cb32741429",
+        "e4ca23b88d83dd5b",
+        "116e4d5019b735f5",
+        "8055454019091ff9",
+        "5cb64df0cd21aa73",
+        "034431097c23edea",
+        "87acc13a98fd9d7c",
+        "36b1bc54e904d337",
+        "d9b5a10b246fbc6b",
+        "ff9339db3c01d44f",
+        "ceb77c1e6333e045"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "65950db067a9a427"
+    },
+    {
+      "decision_id": "PROM-000003",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000025"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000025'])",
+      "evidence_references": [
+        "EVID-000014",
+        "EVID-000015",
+        "EVID-000016",
+        "EVID-000017",
+        "EVID-000018",
+        "EVID-000019",
+        "EVID-000020",
+        "EVID-000021",
+        "EVID-000022",
+        "EVID-000023",
+        "EVID-000024",
+        "EVID-000025",
+        "EVID-000026"
+      ],
+      "evidence_digests": [
+        "dc625837b156a87b",
+        "2179f3b703dcf4a4",
+        "e981bb659d1d6f03",
+        "6c650bb56adcbe4f",
+        "8134b11c80665dda",
+        "a80c4f4f5cf1be00",
+        "ee9f2a690479ac38",
+        "c47e689e4f1b09ed",
+        "b22489b7382245dc",
+        "40244d7b5cec29a1",
+        "e99e527479a2f5c6",
+        "30fdbdd861c87af0",
+        "7aab6a8a6b90df6a"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "83064ef73c09c9b9"
+    },
+    {
+      "decision_id": "PROM-000004",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000038"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000038'])",
+      "evidence_references": [
+        "EVID-000027",
+        "EVID-000028",
+        "EVID-000029",
+        "EVID-000030",
+        "EVID-000031",
+        "EVID-000032",
+        "EVID-000033",
+        "EVID-000034",
+        "EVID-000035",
+        "EVID-000036",
+        "EVID-000037",
+        "EVID-000038",
+        "EVID-000039"
+      ],
+      "evidence_digests": [
+        "4e079040a586568b",
+        "776bcab93cf82183",
+        "cc99aba23ef021b5",
+        "19374dbc1fc6c68b",
+        "b73ec5bb0c5cf828",
+        "b9e320379edf8703",
+        "9f713a5b0ca43dc4",
+        "bce42bd2c6bdcce0",
+        "189891299bcae1af",
+        "d6a5595e084bd42e",
+        "1eef2d90c5601fd8",
+        "7ebd05239af98003",
+        "a18b0aef69d554de"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "7e69467678dca260"
+    },
+    {
+      "decision_id": "PROM-000005",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000051"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000051'])",
+      "evidence_references": [
+        "EVID-000040",
+        "EVID-000041",
+        "EVID-000042",
+        "EVID-000043",
+        "EVID-000044",
+        "EVID-000045",
+        "EVID-000046",
+        "EVID-000047",
+        "EVID-000048",
+        "EVID-000049",
+        "EVID-000050",
+        "EVID-000051",
+        "EVID-000052"
+      ],
+      "evidence_digests": [
+        "da4f6b7538197c1c",
+        "2a58dc6bec973c07",
+        "47b4193b0ebafdab",
+        "73c5d53e47849b5f",
+        "d7f1d3b7622e9921",
+        "b914c680515cfd2d",
+        "47a25a0750fc4ca0",
+        "6bfda1c398c0fd31",
+        "12b5b202f40018e9",
+        "74b7b1b8dfab631a",
+        "887619d827a8192b",
+        "c7407b16ddf89298",
+        "c7313145dca21c9c"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "8c884ea9955caeaa"
+    },
+    {
+      "decision_id": "PROM-000006",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000064"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000064'])",
+      "evidence_references": [
+        "EVID-000053",
+        "EVID-000054",
+        "EVID-000055",
+        "EVID-000056",
+        "EVID-000057",
+        "EVID-000058",
+        "EVID-000059",
+        "EVID-000060",
+        "EVID-000061",
+        "EVID-000062",
+        "EVID-000063",
+        "EVID-000064",
+        "EVID-000065"
+      ],
+      "evidence_digests": [
+        "16134d3fc9191ad2",
+        "13d4bd1c2e2bfbc9",
+        "a121a586549c412a",
+        "031c12907bcfdaa9",
+        "ea5d4a65e910e918",
+        "fba8302685900d24",
+        "fec224f07f288dc1",
+        "d699863aad5b98ce",
+        "2812f8f7440f496b",
+        "2e657d2a3d21538f",
+        "fcf543d42cecad37",
+        "b794bd2f7ec706e6",
+        "249365869a658218"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "d5c567d26f05d15a"
+    },
+    {
+      "decision_id": "PROM-000007",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000077"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000077'])",
+      "evidence_references": [
+        "EVID-000066",
+        "EVID-000067",
+        "EVID-000068",
+        "EVID-000069",
+        "EVID-000070",
+        "EVID-000071",
+        "EVID-000072",
+        "EVID-000073",
+        "EVID-000074",
+        "EVID-000075",
+        "EVID-000076",
+        "EVID-000077",
+        "EVID-000078"
+      ],
+      "evidence_digests": [
+        "b902b8bd2ad3a16b",
+        "e9625b0bf43cf74d",
+        "16277229daec0414",
+        "575ea6cedcc53067",
+        "81044474470cbc77",
+        "5baf6edd35d02b26",
+        "a975ea6cf4f93cc1",
+        "64768728549133ee",
+        "bafce190f10fd7bc",
+        "68589072d8527798",
+        "74e7b036fa6257ce",
+        "6b21799a9ee73ff1",
+        "876f52022a6e21c2"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "39e7ce0b5d2ab061"
+    },
+    {
+      "decision_id": "PROM-000008",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000090"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000090'])",
+      "evidence_references": [
+        "EVID-000079",
+        "EVID-000080",
+        "EVID-000081",
+        "EVID-000082",
+        "EVID-000083",
+        "EVID-000084",
+        "EVID-000085",
+        "EVID-000086",
+        "EVID-000087",
+        "EVID-000088",
+        "EVID-000089",
+        "EVID-000090",
+        "EVID-000091"
+      ],
+      "evidence_digests": [
+        "d2a868c4e6452f8e",
+        "99693689c2139456",
+        "b0293c67e874056a",
+        "e68e48a796ad622f",
+        "650668a2e6a98b5f",
+        "08523283678e91c6",
+        "73d6113b62519c88",
+        "52f7d74e36605c7f",
+        "692cf21698cc9e7b",
+        "4746de4de6e09f0e",
+        "b7e4119eddf1afbc",
+        "77138f05b0e4f27f",
+        "64d9076b612c0537"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "05f28968f100d304"
+    },
+    {
+      "decision_id": "PROM-000009",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000103"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000103'])",
+      "evidence_references": [
+        "EVID-000092",
+        "EVID-000093",
+        "EVID-000094",
+        "EVID-000095",
+        "EVID-000096",
+        "EVID-000097",
+        "EVID-000098",
+        "EVID-000099",
+        "EVID-000100",
+        "EVID-000101",
+        "EVID-000102",
+        "EVID-000103",
+        "EVID-000104"
+      ],
+      "evidence_digests": [
+        "070ff3ed766f8544",
+        "5e7d58eb73eada5f",
+        "aa60c87d20e3e61e",
+        "4546b372891bccec",
+        "1687d9854b75f43d",
+        "aeb28788e5726cd4",
+        "00e6196609e55c2a",
+        "e9ffe9f35d29ef4b",
+        "9e84f19b21448d77",
+        "58c8225171264d2c",
+        "5e1454e3841d0220",
+        "afd1c0e64cada3c4",
+        "de7e3f13e3a30051"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "ae5db7ffde56ee6b"
+    },
+    {
+      "decision_id": "PROM-000010",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000116"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000116'])",
+      "evidence_references": [
+        "EVID-000105",
+        "EVID-000106",
+        "EVID-000107",
+        "EVID-000108",
+        "EVID-000109",
+        "EVID-000110",
+        "EVID-000111",
+        "EVID-000112",
+        "EVID-000113",
+        "EVID-000114",
+        "EVID-000115",
+        "EVID-000116",
+        "EVID-000117",
+        "EVID-000144",
+        "EVID-000146",
+        "EVID-000148"
+      ],
+      "evidence_digests": [
+        "7340e18ddd28f9a4",
+        "7c084a283c1ae2c9",
+        "080c1b48de05a462",
+        "19dabfde66dbb0a1",
+        "fef816c67513dfeb",
+        "5be4acd776c9acc4",
+        "355e91eff801493b",
+        "262b94b739299542",
+        "e1b06aed5ff02e8b",
+        "29e445f5fcf607c5",
+        "6365cbc590332a1b",
+        "eca8f013280fb310",
+        "80bedfa1949e5b96",
+        "5d1b77a3c3d93bd8",
+        "e07226d70ca91568",
+        "27d9f1c59ecc852a"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "82c5c11c25bb9d8a"
+    },
+    {
+      "decision_id": "PROM-000011",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "BLOCK",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {
+        "RESEARCH_TO_VALIDATED": "FAIL"
+      },
+      "gate_details": {
+        "RESEARCH_TO_VALIDATED": {
+          "reason": "unresolved critical defect(s)",
+          "defects": [
+            "EVID-000129"
+          ]
+        }
+      },
+      "blocking_conditions": [
+        "RESEARCH_TO_VALIDATED=FAIL"
+      ],
+      "rationale": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000129'])",
+      "evidence_references": [
+        "EVID-000118",
+        "EVID-000119",
+        "EVID-000120",
+        "EVID-000121",
+        "EVID-000122",
+        "EVID-000123",
+        "EVID-000124",
+        "EVID-000125",
+        "EVID-000126",
+        "EVID-000127",
+        "EVID-000128",
+        "EVID-000129",
+        "EVID-000130",
+        "EVID-000145",
+        "EVID-000147",
+        "EVID-000149"
+      ],
+      "evidence_digests": [
+        "eb19f56a7a8da094",
+        "ab9377cf630e6a16",
+        "266518df14153c86",
+        "2c6de9e081528afe",
+        "0522d3533a7d465b",
+        "881bf1f0c4342d11",
+        "b5698d097e2977c4",
+        "bced1c8e02711506",
+        "5762539e99f7f511",
+        "620a144623a27215",
+        "c179d705b5a1f5c3",
+        "c153bd4bb524c7c9",
+        "38b39a75aaa4bd6e",
+        "0b7e4dba5dd364e8",
+        "f63799cdec39c9d6",
+        "063f7ecb3f819191"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "c8d523feeec40e6d"
+    },
+    {
+      "decision_id": "PROM-000012",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "RETAIN",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {},
+      "gate_details": {},
+      "blocking_conditions": [],
+      "rationale": "RETAIN at RESEARCH per Phase 13C RESEARCH_ONLY classification: statistically insufficient window-level support, economically unvalidated, period-concentrated post-2022",
+      "evidence_references": [
+        "EVID-000105",
+        "EVID-000106",
+        "EVID-000107",
+        "EVID-000108",
+        "EVID-000109",
+        "EVID-000110",
+        "EVID-000111",
+        "EVID-000112",
+        "EVID-000113",
+        "EVID-000114",
+        "EVID-000115",
+        "EVID-000116",
+        "EVID-000117",
+        "EVID-000144",
+        "EVID-000146",
+        "EVID-000148"
+      ],
+      "evidence_digests": [
+        "7340e18ddd28f9a4",
+        "7c084a283c1ae2c9",
+        "080c1b48de05a462",
+        "19dabfde66dbb0a1",
+        "fef816c67513dfeb",
+        "5be4acd776c9acc4",
+        "355e91eff801493b",
+        "262b94b739299542",
+        "e1b06aed5ff02e8b",
+        "29e445f5fcf607c5",
+        "6365cbc590332a1b",
+        "eca8f013280fb310",
+        "80bedfa1949e5b96",
+        "5d1b77a3c3d93bd8",
+        "e07226d70ca91568",
+        "27d9f1c59ecc852a"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "f1c8261620507bef"
+    },
+    {
+      "decision_id": "PROM-000013",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "from_status": "RESEARCH",
+      "to_status": "RESEARCH",
+      "action": "RETAIN",
+      "promotion_policy_version": "v1",
+      "gates_evaluated": {},
+      "gate_details": {},
+      "blocking_conditions": [],
+      "rationale": "RETAIN at RESEARCH per Phase 13C FRAGILE classification: feature-noise sign-flip, incomplete ENV-100 replication, widest IC dispersion",
+      "evidence_references": [
+        "EVID-000118",
+        "EVID-000119",
+        "EVID-000120",
+        "EVID-000121",
+        "EVID-000122",
+        "EVID-000123",
+        "EVID-000124",
+        "EVID-000125",
+        "EVID-000126",
+        "EVID-000127",
+        "EVID-000128",
+        "EVID-000129",
+        "EVID-000130",
+        "EVID-000145",
+        "EVID-000147",
+        "EVID-000149"
+      ],
+      "evidence_digests": [
+        "eb19f56a7a8da094",
+        "ab9377cf630e6a16",
+        "266518df14153c86",
+        "2c6de9e081528afe",
+        "0522d3533a7d465b",
+        "881bf1f0c4342d11",
+        "b5698d097e2977c4",
+        "bced1c8e02711506",
+        "5762539e99f7f511",
+        "620a144623a27215",
+        "c179d705b5a1f5c3",
+        "c153bd4bb524c7c9",
+        "38b39a75aaa4bd6e",
+        "0b7e4dba5dd364e8",
+        "f63799cdec39c9d6",
+        "063f7ecb3f819191"
+      ],
+      "decision_timestamp": "2026-08-23T00:00:00+00:00",
+      "decision_digest": "7d4205ac2f6721f1"
+    }
+  ],
+  "chain_integrity_problems": []
+}

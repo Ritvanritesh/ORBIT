@@ -1,0 +1,25 @@
+{
+  "phase": "14",
+  "checks": {
+    "all_models_have_deterministic_identity": true,
+    "no_identity_collisions": true,
+    "all_evidence_digests_verify": true,
+    "all_decisions_reference_policy": true,
+    "statuses_match_phase13c": true,
+    "no_model_is_paper_eligible": true,
+    "no_model_is_validated": true,
+    "robust_candidate_count_remains_zero": true,
+    "retired_cannot_be_promoted": true,
+    "replay_resolution_works": true,
+    "prediction_validation_works": true,
+    "adversarial_all_pass": true,
+    "build_is_deterministic": true,
+    "historical_artifacts_unmodified": true
+  },
+  "robust_candidate_count": 0,
+  "status_distribution": {
+    "RESEARCH": 10,
+    "RETIRED": 1
+  },
+  "all_checks_pass": true
+}

@@ -1,0 +1,26 @@
+{
+  "phase": "12D",
+  "verdict": "D",
+  "reason": "Null persists - no convincing predictive improvement from PIT fundamentals",
+  "incremental_value": {
+    "best_linear_improvement": "Lasso+FS-12B-B in 050: IC=0.034 vs baseline 0.024 (+42%)",
+    "nonlinear_degradation": "RF/XGBoost consistently negative IC with fundamental features",
+    "cross_environment_consistency": "Low"
+  },
+  "limitations": [
+    "LAB-005 excess return not implemented (identical to LAB-004)",
+    "Forward-filled quarterly data creates temporal leakage risk",
+    "86/100 SEC CIKs mapped",
+    "Single source: SEC EDGAR 10-K/10-Q"
+  ],
+  "adversarial_tests": "ALL PASS (6/6)",
+  "data_source": "Real SEC EDGAR CompanyFacts (not synthetic)",
+  "experiments_completed": "96/96 (48 per environment)",
+  "cross_phase_comparison": {
+    "Phase 11": "D",
+    "Phase 12A": "D",
+    "Phase 12B": "E (synthetic data blocked)",
+    "Phase 12C": "B (data acquisition)",
+    "Phase 12D": "D"
+  }
+}

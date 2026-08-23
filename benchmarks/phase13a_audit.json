@@ -1,0 +1,136 @@
+{
+  "phase": "13A",
+  "status": "complete",
+  "n_candidates": 10,
+  "n_windows": 8,
+  "n_results": 16,
+  "adversarial_checks": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "checks": [
+      {
+        "check": "window_ordering",
+        "window_id": "EXP-001",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "RL-002",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "EXP-003",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "RL-004",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "EXP-005",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "RL-006",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "EXP-007",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "window_ordering",
+        "window_id": "RL-008",
+        "passed": true,
+        "evidence": "chronological ordering verified"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "EXP-001",
+        "passed": true,
+        "evidence": "gap=3 calendar days (2021-12-31 to 2022-01-03)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "RL-002",
+        "passed": true,
+        "evidence": "gap=3 calendar days (2021-12-31 to 2022-01-03)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "EXP-003",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2022-12-31 to 2023-01-01)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "RL-004",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2022-12-31 to 2023-01-01)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "EXP-005",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2023-12-31 to 2024-01-01)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "RL-006",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2023-12-31 to 2024-01-01)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "EXP-007",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2024-12-31 to 2025-01-01)"
+      },
+      {
+        "check": "purge_gap",
+        "window_id": "RL-008",
+        "passed": true,
+        "evidence": "gap=1 calendar days (2024-12-31 to 2025-01-01)"
+      },
+      {
+        "check": "regime_pre_registered",
+        "passed": true,
+        "evidence": "Regime definitions created before experiment execution (this script)"
+      },
+      {
+        "check": "no_duplicate_windows",
+        "passed": true,
+        "evidence": "8 windows, 8 unique"
+      },
+      {
+        "check": "candidates_pre_registered",
+        "passed": true,
+        "evidence": "10 candidates defined before execution"
+      },
+      {
+        "check": "no_silent_failures",
+        "passed": true,
+        "evidence": "16 successful results, failures logged"
+      }
+    ]
+  },
+  "robustness_classifications": {
+    "CAND-03": "ROBUST",
+    "CAND-04": "ROBUST"
+  },
+  "plan_digest": "b7bf1bdec4ada312",
+  "elapsed_seconds": 317.6
+}

@@ -1,0 +1,93 @@
+{
+  "analysis_summary": {
+    "n_inference_results": 692,
+    "n_phase10_experiments": 52,
+    "n_phase9_experiments": 36,
+    "plan_digest": "0195e06c616a3108f70768e34d341921ddc27011be24dac055e6edfa02f46b3d"
+  },
+  "checks": [
+    {
+      "check": "inference_plan_digest",
+      "evidence": "plan digest 0195e06c616a3108... verified=True; family_members=52",
+      "status": "PASS"
+    },
+    {
+      "check": "source_experiment_inventory",
+      "evidence": "expected 52 experiments, found 52 (0 missing, 0 extra)",
+      "status": "PASS"
+    },
+    {
+      "check": "no_hidden_exclusion",
+      "evidence": "all 52 family members present",
+      "status": "PASS"
+    },
+    {
+      "check": "source_artifacts_exist",
+      "evidence": "phase9=True, phase10=True, plan=True",
+      "status": "PASS"
+    },
+    {
+      "check": "artifact_checksums_match",
+      "evidence": "phase9: stored=0ce0ca1f0a4a5497... actual=0ce0ca1f0a4a5497...; phase10: stored=3dfb714a517e9589... actual=3dfb714a517e9589...",
+      "status": "PASS"
+    },
+    {
+      "check": "seed_lock",
+      "evidence": "expected seed 42, all results use seed 42",
+      "status": "PASS"
+    },
+    {
+      "check": "confidence_level_lock",
+      "evidence": "expected CL 0.95, all results match",
+      "status": "PASS"
+    },
+    {
+      "check": "multiple_comparison_family_complete",
+      "evidence": "family has 52 members, expected 52",
+      "status": "PASS"
+    },
+    {
+      "check": "supported_metric_test_combination",
+      "evidence": "all 692 results use supported metrics",
+      "status": "PASS"
+    },
+    {
+      "check": "assumptions_present",
+      "evidence": "all results have stated assumptions",
+      "status": "PASS"
+    },
+    {
+      "check": "stat_econ_separation",
+      "evidence": "all results have both CI (statistical) and effect_size (economic)",
+      "status": "PASS"
+    },
+    {
+      "check": "artifacts_unchanged",
+      "evidence": "Phase 9/10 parquet checksums unchanged since analysis",
+      "status": "PASS"
+    },
+    {
+      "check": "synthetic_validation_passed",
+      "evidence": "synthetic validation must pass before real-data interpretation",
+      "status": "PASS"
+    },
+    {
+      "check": "plan_digest_match",
+      "evidence": "stored=0195e06c616a3108... computed=0195e06c616a3108...",
+      "status": "PASS"
+    },
+    {
+      "check": "inference_result_ids_valid",
+      "evidence": "692 results all have valid IDs",
+      "status": "PASS"
+    }
+  ],
+  "phase": 11,
+  "summary": {
+    "blocked": false,
+    "checks": 15,
+    "failed": 0,
+    "failed_checks": [],
+    "passed": 15
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "CAND-03": {
+    "n_windows": 8,
+    "n_valid": 8,
+    "positive_ic_fraction": 0.75,
+    "sign_flips": 1,
+    "median_ic": 0.030463634498254583,
+    "mean_ic": 0.01757509946522677,
+    "worst_ic": -0.04662319225475199,
+    "best_ic": 0.05556790034491204,
+    "ic_dispersion": 0.034167646482732704,
+    "best_window_id": "RL-004",
+    "worst_window_id": "RL-002",
+    "mean_without_best_window": 0.01214755648241459,
+    "mean_without_worst_window": 0.02674628399665231,
+    "best_window_destroyed_result": false,
+    "classification": "ROBUST",
+    "all_ics": [
+      -0.03148764596966501,
+      -0.04662319225475199,
+      0.02385794161615074,
+      0.05556790034491204,
+      0.024972053637833738,
+      0.03820442033933713,
+      0.03595521535867543,
+      0.0401541026493221
+    ]
+  },
+  "CAND-04": {
+    "n_windows": 8,
+    "n_valid": 8,
+    "positive_ic_fraction": 0.75,
+    "sign_flips": 1,
+    "median_ic": 0.04966966225427509,
+    "mean_ic": 0.026970889726665944,
+    "worst_ic": -0.0680924092138095,
+    "best_ic": 0.0738464735876666,
+    "ic_dispersion": 0.050465249309019584,
+    "best_window_id": "RL-004",
+    "worst_window_id": "RL-002",
+    "mean_without_best_window": 0.020274377746522992,
+    "mean_without_worst_window": 0.04055136100387672,
+    "best_window_destroyed_result": false,
+    "classification": "ROBUST",
+    "all_ics": [
+      -0.04930573517193657,
+      -0.0680924092138095,
+      0.06268224305289248,
+      0.0738464735876666,
+      0.046091514483065615,
+      0.04363693999419147,
+      0.0536602810557729,
+      0.053247810025484565
+    ]
+  }
+}

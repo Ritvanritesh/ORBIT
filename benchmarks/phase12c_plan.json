@@ -1,0 +1,131 @@
+{
+  "phase": "12C",
+  "version": "1.0.0",
+  "created_at": "2026-08-22",
+  "research_question": "Can ORBIT construct a real, point-in-time-safe fundamental dataset with valid instrument identity, filing availability, historical lineage, and sufficient coverage to permit valid fundamental ML experiments?",
+  "data_source": {
+    "source_id": "SEC-EDGAR-CompanyFacts",
+    "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22companyfacts%22",
+    "api_base": "https://data.sec.gov/api/xbrl/companyfacts",
+    "user_agent": "ORBIT-Research orbit@example.com",
+    "rate_limit_seconds": 0.1,
+    "data_type": "REAL",
+    "license": "Public domain (SEC EDGAR is public)",
+    "notes": [
+      "SEC EDGAR Company Facts provides structured XBRL data",
+      "Filing dates and acceptance timestamps are from SEC records",
+      "All data is real SEC filings"
+    ]
+  },
+  "staleness": {
+    "max_age_years": 2,
+    "invalidation_behavior": "null_out_session",
+    "record_age": "compute_age_from_availability_timestamp",
+    "policy_enforced_before": "model_training"
+  },
+  "after_close_policy": {
+    "description": "Filing submitted after the market close (16:00 ET) on date T becomes available for features starting on the NEXT trading session T+1. Filing submitted before market open (09:30 ET) on date T becomes available for features on date T. Filing submitted during market hours (09:30-16:00 ET) on date T becomes available for features on the NEXT trading session T+1 (conservative treatment to avoid intraday lookahead).",
+    "market_open": "09:30 ET",
+    "market_close": "16:00 ET",
+    "before_open": "same_session",
+    "during_market": "next_session",
+    "after_close": "next_session",
+    "weekend_filing": "next_trading_session",
+    "holiday_filing": "next_trading_session"
+  },
+  "availability_hierarchy": [
+    "1. SEC acceptance_timestamp (preferred)",
+    "2. filing_date with conservative after-close treatment (fallback)",
+    "3. filing_date + 1 business day (last resort, documented)"
+  ],
+  "xbrl_tags": {
+    "valuation": {
+      "earnings": [
+        "EarningsPerShareDiluted",
+        "EarningsPerShareBasic",
+        "EPS"
+      ],
+      "book_value": [
+        "StockholdersEquity",
+        "CommonStockholdersEquity",
+        "TotalStockholdersEquity"
+      ],
+      "revenue": [
+        "Revenues",
+        "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "SalesRevenueNet"
+      ]
+    },
+    "profitability": {
+      "net_income": [
+        "NetIncomeLoss",
+        "ProfitLoss"
+      ],
+      "operating_income": [
+        "OperatingIncomeLoss",
+        "IncomeLossFromContinuingOperations"
+      ],
+      "total_assets": [
+        "Assets"
+      ],
+      "shareholders_equity": [
+        "StockholdersEquity",
+        "CommonStockholdersEquity"
+      ],
+      "gross_profit": [
+        "GrossProfit"
+      ]
+    },
+    "growth": {
+      "revenue": [
+        "Revenues",
+        "RevenueFromContractWithCustomerExcludingAssessedTax"
+      ],
+      "earnings": [
+        "NetIncomeLoss",
+        "EarningsPerShareDiluted"
+      ],
+      "operating_cash_flow": [
+        "NetCashProvidedByUsedInOperatingActivities",
+        "OperatingCashFlow"
+      ]
+    },
+    "leverage": {
+      "total_debt": [
+        "LongTermDebt",
+        "LongTermDebtNoncurrent",
+        "LongTermDebtAndCapitalLeaseObligations"
+      ],
+      "total_assets": [
+        "Assets"
+      ],
+      "current_assets": [
+        "AssetsCurrent"
+      ],
+      "current_liabilities": [
+        "LiabilitiesCurrent"
+      ]
+    }
+  },
+  "form_types": [
+    "10-K",
+    "10-K/A",
+    "10-Q",
+    "10-Q/A",
+    "20-F",
+    "20-F/A"
+  ],
+  "environments": {
+    "ENV-12C-050": {
+      "description": "50-instrument universe with real SEC fundamentals",
+      "dataset_id": "DS-EXP-050",
+      "n_instruments_target": 50
+    },
+    "ENV-12C-100": {
+      "description": "100-instrument universe with real SEC fundamentals",
+      "dataset_id": "DS-EXP-100",
+      "n_instruments_target": 100
+    }
+  },
+  "plan_digest": "d528ba373b4cfc32916ae864122a5d99d7a1f0046f6cedd8b72d6013a76adbeb"
+}

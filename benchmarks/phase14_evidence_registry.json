@@ -1,0 +1,2966 @@
+{
+  "count": 149,
+  "records": [
+    {
+      "evidence_id": "EVID-000001",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "3dd36d2aec6c1253"
+    },
+    {
+      "evidence_id": "EVID-000002",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ae4fa031ff38335f"
+    },
+    {
+      "evidence_id": "EVID-000003",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "44e0f3cb32741429"
+    },
+    {
+      "evidence_id": "EVID-000004",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e4ca23b88d83dd5b"
+    },
+    {
+      "evidence_id": "EVID-000005",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "116e4d5019b735f5"
+    },
+    {
+      "evidence_id": "EVID-000006",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "8055454019091ff9"
+    },
+    {
+      "evidence_id": "EVID-000007",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5cb64df0cd21aa73"
+    },
+    {
+      "evidence_id": "EVID-000008",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "034431097c23edea"
+    },
+    {
+      "evidence_id": "EVID-000009",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "87acc13a98fd9d7c"
+    },
+    {
+      "evidence_id": "EVID-000010",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "36b1bc54e904d337"
+    },
+    {
+      "evidence_id": "EVID-000011",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "d9b5a10b246fbc6b"
+    },
+    {
+      "evidence_id": "EVID-000012",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ff9339db3c01d44f"
+    },
+    {
+      "evidence_id": "EVID-000013",
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ceb77c1e6333e045"
+    },
+    {
+      "evidence_id": "EVID-000014",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "dc625837b156a87b"
+    },
+    {
+      "evidence_id": "EVID-000015",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2179f3b703dcf4a4"
+    },
+    {
+      "evidence_id": "EVID-000016",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e981bb659d1d6f03"
+    },
+    {
+      "evidence_id": "EVID-000017",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "6c650bb56adcbe4f"
+    },
+    {
+      "evidence_id": "EVID-000018",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "8134b11c80665dda"
+    },
+    {
+      "evidence_id": "EVID-000019",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "a80c4f4f5cf1be00"
+    },
+    {
+      "evidence_id": "EVID-000020",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ee9f2a690479ac38"
+    },
+    {
+      "evidence_id": "EVID-000021",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "c47e689e4f1b09ed"
+    },
+    {
+      "evidence_id": "EVID-000022",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b22489b7382245dc"
+    },
+    {
+      "evidence_id": "EVID-000023",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "40244d7b5cec29a1"
+    },
+    {
+      "evidence_id": "EVID-000024",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e99e527479a2f5c6"
+    },
+    {
+      "evidence_id": "EVID-000025",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "30fdbdd861c87af0"
+    },
+    {
+      "evidence_id": "EVID-000026",
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "7aab6a8a6b90df6a"
+    },
+    {
+      "evidence_id": "EVID-000027",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "4e079040a586568b"
+    },
+    {
+      "evidence_id": "EVID-000028",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "776bcab93cf82183"
+    },
+    {
+      "evidence_id": "EVID-000029",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "cc99aba23ef021b5"
+    },
+    {
+      "evidence_id": "EVID-000030",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "19374dbc1fc6c68b"
+    },
+    {
+      "evidence_id": "EVID-000031",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b73ec5bb0c5cf828"
+    },
+    {
+      "evidence_id": "EVID-000032",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b9e320379edf8703"
+    },
+    {
+      "evidence_id": "EVID-000033",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "9f713a5b0ca43dc4"
+    },
+    {
+      "evidence_id": "EVID-000034",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "bce42bd2c6bdcce0"
+    },
+    {
+      "evidence_id": "EVID-000035",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "189891299bcae1af"
+    },
+    {
+      "evidence_id": "EVID-000036",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "d6a5595e084bd42e"
+    },
+    {
+      "evidence_id": "EVID-000037",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "1eef2d90c5601fd8"
+    },
+    {
+      "evidence_id": "EVID-000038",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "7ebd05239af98003"
+    },
+    {
+      "evidence_id": "EVID-000039",
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "a18b0aef69d554de"
+    },
+    {
+      "evidence_id": "EVID-000040",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "da4f6b7538197c1c"
+    },
+    {
+      "evidence_id": "EVID-000041",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2a58dc6bec973c07"
+    },
+    {
+      "evidence_id": "EVID-000042",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "47b4193b0ebafdab"
+    },
+    {
+      "evidence_id": "EVID-000043",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "73c5d53e47849b5f"
+    },
+    {
+      "evidence_id": "EVID-000044",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "d7f1d3b7622e9921"
+    },
+    {
+      "evidence_id": "EVID-000045",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b914c680515cfd2d"
+    },
+    {
+      "evidence_id": "EVID-000046",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "47a25a0750fc4ca0"
+    },
+    {
+      "evidence_id": "EVID-000047",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "6bfda1c398c0fd31"
+    },
+    {
+      "evidence_id": "EVID-000048",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "12b5b202f40018e9"
+    },
+    {
+      "evidence_id": "EVID-000049",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "74b7b1b8dfab631a"
+    },
+    {
+      "evidence_id": "EVID-000050",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "887619d827a8192b"
+    },
+    {
+      "evidence_id": "EVID-000051",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "c7407b16ddf89298"
+    },
+    {
+      "evidence_id": "EVID-000052",
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "c7313145dca21c9c"
+    },
+    {
+      "evidence_id": "EVID-000053",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "16134d3fc9191ad2"
+    },
+    {
+      "evidence_id": "EVID-000054",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "13d4bd1c2e2bfbc9"
+    },
+    {
+      "evidence_id": "EVID-000055",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "a121a586549c412a"
+    },
+    {
+      "evidence_id": "EVID-000056",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "031c12907bcfdaa9"
+    },
+    {
+      "evidence_id": "EVID-000057",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ea5d4a65e910e918"
+    },
+    {
+      "evidence_id": "EVID-000058",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "fba8302685900d24"
+    },
+    {
+      "evidence_id": "EVID-000059",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "fec224f07f288dc1"
+    },
+    {
+      "evidence_id": "EVID-000060",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "d699863aad5b98ce"
+    },
+    {
+      "evidence_id": "EVID-000061",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2812f8f7440f496b"
+    },
+    {
+      "evidence_id": "EVID-000062",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2e657d2a3d21538f"
+    },
+    {
+      "evidence_id": "EVID-000063",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "fcf543d42cecad37"
+    },
+    {
+      "evidence_id": "EVID-000064",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b794bd2f7ec706e6"
+    },
+    {
+      "evidence_id": "EVID-000065",
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "249365869a658218"
+    },
+    {
+      "evidence_id": "EVID-000066",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b902b8bd2ad3a16b"
+    },
+    {
+      "evidence_id": "EVID-000067",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e9625b0bf43cf74d"
+    },
+    {
+      "evidence_id": "EVID-000068",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "16277229daec0414"
+    },
+    {
+      "evidence_id": "EVID-000069",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "575ea6cedcc53067"
+    },
+    {
+      "evidence_id": "EVID-000070",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "81044474470cbc77"
+    },
+    {
+      "evidence_id": "EVID-000071",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5baf6edd35d02b26"
+    },
+    {
+      "evidence_id": "EVID-000072",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "a975ea6cf4f93cc1"
+    },
+    {
+      "evidence_id": "EVID-000073",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "64768728549133ee"
+    },
+    {
+      "evidence_id": "EVID-000074",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "bafce190f10fd7bc"
+    },
+    {
+      "evidence_id": "EVID-000075",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "68589072d8527798"
+    },
+    {
+      "evidence_id": "EVID-000076",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "74e7b036fa6257ce"
+    },
+    {
+      "evidence_id": "EVID-000077",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "6b21799a9ee73ff1"
+    },
+    {
+      "evidence_id": "EVID-000078",
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "876f52022a6e21c2"
+    },
+    {
+      "evidence_id": "EVID-000079",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "d2a868c4e6452f8e"
+    },
+    {
+      "evidence_id": "EVID-000080",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "99693689c2139456"
+    },
+    {
+      "evidence_id": "EVID-000081",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b0293c67e874056a"
+    },
+    {
+      "evidence_id": "EVID-000082",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e68e48a796ad622f"
+    },
+    {
+      "evidence_id": "EVID-000083",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "650668a2e6a98b5f"
+    },
+    {
+      "evidence_id": "EVID-000084",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "08523283678e91c6"
+    },
+    {
+      "evidence_id": "EVID-000085",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "73d6113b62519c88"
+    },
+    {
+      "evidence_id": "EVID-000086",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "52f7d74e36605c7f"
+    },
+    {
+      "evidence_id": "EVID-000087",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "692cf21698cc9e7b"
+    },
+    {
+      "evidence_id": "EVID-000088",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "4746de4de6e09f0e"
+    },
+    {
+      "evidence_id": "EVID-000089",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b7e4119eddf1afbc"
+    },
+    {
+      "evidence_id": "EVID-000090",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "77138f05b0e4f27f"
+    },
+    {
+      "evidence_id": "EVID-000091",
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "64d9076b612c0537"
+    },
+    {
+      "evidence_id": "EVID-000092",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "070ff3ed766f8544"
+    },
+    {
+      "evidence_id": "EVID-000093",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5e7d58eb73eada5f"
+    },
+    {
+      "evidence_id": "EVID-000094",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "aa60c87d20e3e61e"
+    },
+    {
+      "evidence_id": "EVID-000095",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "4546b372891bccec"
+    },
+    {
+      "evidence_id": "EVID-000096",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "1687d9854b75f43d"
+    },
+    {
+      "evidence_id": "EVID-000097",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "aeb28788e5726cd4"
+    },
+    {
+      "evidence_id": "EVID-000098",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "00e6196609e55c2a"
+    },
+    {
+      "evidence_id": "EVID-000099",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e9ffe9f35d29ef4b"
+    },
+    {
+      "evidence_id": "EVID-000100",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "9e84f19b21448d77"
+    },
+    {
+      "evidence_id": "EVID-000101",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "58c8225171264d2c"
+    },
+    {
+      "evidence_id": "EVID-000102",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5e1454e3841d0220"
+    },
+    {
+      "evidence_id": "EVID-000103",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "afd1c0e64cada3c4"
+    },
+    {
+      "evidence_id": "EVID-000104",
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "de7e3f13e3a30051"
+    },
+    {
+      "evidence_id": "EVID-000105",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "7340e18ddd28f9a4"
+    },
+    {
+      "evidence_id": "EVID-000106",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "7c084a283c1ae2c9"
+    },
+    {
+      "evidence_id": "EVID-000107",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "080c1b48de05a462"
+    },
+    {
+      "evidence_id": "EVID-000108",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "19dabfde66dbb0a1"
+    },
+    {
+      "evidence_id": "EVID-000109",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "fef816c67513dfeb"
+    },
+    {
+      "evidence_id": "EVID-000110",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5be4acd776c9acc4"
+    },
+    {
+      "evidence_id": "EVID-000111",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "355e91eff801493b"
+    },
+    {
+      "evidence_id": "EVID-000112",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "262b94b739299542"
+    },
+    {
+      "evidence_id": "EVID-000113",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e1b06aed5ff02e8b"
+    },
+    {
+      "evidence_id": "EVID-000114",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "29e445f5fcf607c5"
+    },
+    {
+      "evidence_id": "EVID-000115",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "6365cbc590332a1b"
+    },
+    {
+      "evidence_id": "EVID-000116",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "eca8f013280fb310"
+    },
+    {
+      "evidence_id": "EVID-000117",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "80bedfa1949e5b96"
+    },
+    {
+      "evidence_id": "EVID-000118",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "eb19f56a7a8da094"
+    },
+    {
+      "evidence_id": "EVID-000119",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ab9377cf630e6a16"
+    },
+    {
+      "evidence_id": "EVID-000120",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "266518df14153c86"
+    },
+    {
+      "evidence_id": "EVID-000121",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2c6de9e081528afe"
+    },
+    {
+      "evidence_id": "EVID-000122",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "0522d3533a7d465b"
+    },
+    {
+      "evidence_id": "EVID-000123",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "881bf1f0c4342d11"
+    },
+    {
+      "evidence_id": "EVID-000124",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "b5698d097e2977c4"
+    },
+    {
+      "evidence_id": "EVID-000125",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "bced1c8e02711506"
+    },
+    {
+      "evidence_id": "EVID-000126",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5762539e99f7f511"
+    },
+    {
+      "evidence_id": "EVID-000127",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "620a144623a27215"
+    },
+    {
+      "evidence_id": "EVID-000128",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "c179d705b5a1f5c3"
+    },
+    {
+      "evidence_id": "EVID-000129",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "c153bd4bb524c7c9"
+    },
+    {
+      "evidence_id": "EVID-000130",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "38b39a75aaa4bd6e"
+    },
+    {
+      "evidence_id": "EVID-000131",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "DATA_INTEGRITY",
+      "source_phase": "Phase 12.9A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9a_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9a_audit.json": "614adbde461e057fb60aad54270315770a39a5e527fb36d7f3b51cc9a2bd9429"
+      },
+      "result_summary": "161 artifacts inventoried; dataset row counts and PIT boundaries verified (12.9A verdict B)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5be617de720b97d4"
+    },
+    {
+      "evidence_id": "EVID-000132",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "PIT_INTEGRITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_leakage.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_leakage.json": "e0a77df9a5d6da076c7825528a376c3d631218ed6e4d69653f22b0881058763d"
+      },
+      "result_summary": "Red-team Attack 3 PASS: future filings rejected, staleness handled, no PIT violations detected",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e6e3521a03e9911c"
+    },
+    {
+      "evidence_id": "EVID-000133",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "LABEL_VALIDITY",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_redteam.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_redteam.json": "f47ee2776310df27a415550a5afb9857e19180d5d35ffa4e16dae3e1aa4c0daf"
+      },
+      "result_summary": "Attack 2 PASS: hand-computed LAB-004 matches engine <1e-6; LAB-005 alias defect documented and superseded by LAB-006",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "1c126a1d4af9b90d"
+    },
+    {
+      "evidence_id": "EVID-000134",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "REPRODUCIBILITY",
+      "source_phase": "Phase 12.9B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9b_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9b_audit.json": "5e345d216c52f96b4b6b8859dbcdfcb34b618d9d8852f23b70ad47c270b16abc"
+      },
+      "result_summary": "12.9B clean-run replication: 16/16 experiments reproduced (4 EXACT_MATCH, 11 NUMERICALLY_EQUIVALENT, 1 MINOR_DRIFT)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "429506361ec222af"
+    },
+    {
+      "evidence_id": "EVID-000135",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "AUDIT",
+      "source_phase": "Phase 12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_audit.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_audit.json": "8cbf2118d9529649a7ad7d492116eb7e4e5c0da9938a6b79d648a66bc0f9d9b9"
+      },
+      "result_summary": "Red-team gate GREEN with 4 non-critical limitations; no material concerns",
+      "gate_result": "PASS",
+      "limitations": [
+        "multiple-testing inflation possible in 12E family",
+        "universe dependence 050 vs 100",
+        "nonlinear families degrade",
+        "max IC below 0.05 academic reference"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "4e7ac96e5dc5f81d"
+    },
+    {
+      "evidence_id": "EVID-000136",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "MULTIPLE_TESTING",
+      "source_phase": "Phases 11/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_statistics.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_statistics.json": "28248ab1bc82c1f04464623286307abf8ba62cf49bde93fe4c3d0745c89614a8"
+      },
+      "result_summary": "Holm/BH applied per-phase; 12/24 Holm-significant flagged as possible inflation; pooled cross-phase correction not performed",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "deed169dfc6e2088"
+    },
+    {
+      "evidence_id": "EVID-000137",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "STATISTICAL_INFERENCE",
+      "source_phase": "Phases 11-13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_inference.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_inference.json": "c6847efc30b1368c7b4b59c0bc943dbde4aad02bbf16135b0c0876ddec2c8a7c"
+      },
+      "result_summary": "Window-level t-test p~0.20-0.22, CI includes zero, fails Holm; locked-protocol aggregate ~0 (null persists)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "9cd13cf1202455b1"
+    },
+    {
+      "evidence_id": "EVID-000138",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "MODEL_FAMILY_STABILITY",
+      "source_phase": "Phases 12D/12.9C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase12_9c_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase12_9c_stability.json": "ab1fa4be2793785807fb2df4dc44754898b9735017f1941bb84e980533607cb0"
+      },
+      "result_summary": "Effect does not replicate in nonlinear families (linear +0.0147 vs nonlinear -0.0038 mean IC)",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "52e9043b4a606fad"
+    },
+    {
+      "evidence_id": "EVID-000139",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "ECONOMIC_MATERIALITY",
+      "source_phase": "Phases 12.9C/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13c_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13c_report.json": "50068828b5d0e00931729ac1c50b979472c1cad60e3e23158636d5170cb8aeaa"
+      },
+      "result_summary": "Mean IC below academic reference; economic usefulness remains untested at the portfolio-construction layer",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "47a41673a52a2773"
+    },
+    {
+      "evidence_id": "EVID-000140",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "PORTFOLIO_VALIDATION",
+      "source_phase": "n/a",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "No portfolio construction/backtest exists for any candidate",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "3ea01ebe4941ce6e"
+    },
+    {
+      "evidence_id": "EVID-000141",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "EXECUTION_VALIDATION",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [],
+      "artifact_checksums": {},
+      "result_summary": "Execution simulation not built (cost/slippage impacts are analytical estimates only)",
+      "gate_result": "NOT_EVALUATED",
+      "limitations": [
+        "13B absolute levels quarantined pending corrected rerun"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "2170d4a9eb09e828"
+    },
+    {
+      "evidence_id": "EVID-000142",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "DEFECT",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "Phase 13B purge-boundary defect: purge used feature-frame window instead of label outcome window, inflating baselines up to 3.06x on identical windows; 13B stress absolutes NOT canonical until corrected rerun",
+      "gate_result": "FAIL",
+      "limitations": [
+        "corrected implementation + separately versioned evidence required"
+      ],
+      "severity": "HIGH",
+      "resolved": false,
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "16f49b07f1af0dd3"
+    },
+    {
+      "evidence_id": "EVID-000143",
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_audit.json",
+        "benchmarks\\phase13b_report.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_audit.json": "8f14117835907dd34f88dd55108f83456c996c549c131755cdb441e4fa8db968",
+        "phase13b_report.json": "84fa94a43f4f2b8686c3e18769c11954d16c1eb34a0eeebe09245050f818d973"
+      },
+      "result_summary": "7 perturbation dimensions exercised; cost/slippage graceful, LOO benign; feature-noise cliff observed; ABSOLUTE LEVELS QUARANTINED due to 13B purge defect (relative patterns only)",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "CAND-04 sign-flip at 5% noise",
+        "parameter sweep NaN gaps"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "ea61ab14160c5bfd"
+    },
+    {
+      "evidence_id": "EVID-000144",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "TEMPORAL_STABILITY",
+      "source_phase": "Phase 13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_stability.json",
+        "benchmarks\\phase13a_results.json",
+        "benchmarks\\phase13a_regime_results.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_stability.json": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25",
+        "phase13a_results.json": "d548c16470a463fc77382259879e31f7640774b04fe8b6e10d0c45dc6ca107de",
+        "phase13a_regime_results.json": "382573dc1fa1d2f3390b658f506f1bf571a97bbef2b0b8dc5ca7d1d705cb76a0"
+      },
+      "result_summary": "CAND-03: 75% positive windows across 8 sequential evaluations, 1 sign flip(s); survives best-window removal; net evidence concentrated in 2023-2025; window-level p=0.216 insignificant",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "2022 failure year (bear/high-vol regime)",
+        "per-session regime stratification unavailable"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "5d1b77a3c3d93bd8"
+    },
+    {
+      "evidence_id": "EVID-000145",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "TEMPORAL_STABILITY",
+      "source_phase": "Phase 13A",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13a_stability.json",
+        "benchmarks\\phase13a_results.json",
+        "benchmarks\\phase13a_regime_results.json"
+      ],
+      "artifact_checksums": {
+        "phase13a_stability.json": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25",
+        "phase13a_results.json": "d548c16470a463fc77382259879e31f7640774b04fe8b6e10d0c45dc6ca107de",
+        "phase13a_regime_results.json": "382573dc1fa1d2f3390b658f506f1bf571a97bbef2b0b8dc5ca7d1d705cb76a0"
+      },
+      "result_summary": "CAND-04: 75% positive windows across 8 sequential evaluations, 1 sign flip(s); survives best-window removal; net evidence concentrated in 2023-2025; window-level p=0.200 insignificant",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "2022 failure year (bear/high-vol regime)",
+        "per-session regime stratification unavailable"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "0b7e4dba5dd364e8"
+    },
+    {
+      "evidence_id": "EVID-000146",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "UNIVERSE_STABILITY",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_universe_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_universe_stability.json": "ce184a6964f54a303d2b933585681218d4b3ed6818acb4f1707267627c39bf06"
+      },
+      "result_summary": "CAND-03 positive across all tested universes: ENV-050=0.0239, ENV-100=0.0228, TOP25=0.0287, BOT25=0.0349 (relative patterns; absolutes quarantined)",
+      "gate_result": "PASS",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "e07226d70ca91568"
+    },
+    {
+      "evidence_id": "EVID-000147",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "UNIVERSE_STABILITY",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_universe_stability.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_universe_stability.json": "ce184a6964f54a303d2b933585681218d4b3ed6818acb4f1707267627c39bf06"
+      },
+      "result_summary": "CAND-04 ENV-100 replication run failed (infrastructure error); only ENV-050/TOP25/BOT25 completed - required replication incomplete",
+      "gate_result": "BLOCKED",
+      "limitations": [
+        "ENV-100 completion required before any VALIDATED claim"
+      ],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "f63799cdec39c9d6"
+    },
+    {
+      "evidence_id": "EVID-000148",
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phase 13B",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_feature_sensitivity.json",
+        "benchmarks\\phase13b_cost_stress.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_feature_sensitivity.json": "804e8d9f01a3dec6174118eeee0396215917deab3f20170fd73c09a21ddf57b1",
+        "phase13b_cost_stress.json": "4694b30154a5eb0dbfbc6e17a865b532e5a57d81f7c2f06c77f0126da4e12e28"
+      },
+      "result_summary": "Sequential behavior stable under cost/slippage multipliers (rank-based IC); feature-noise degradation gradual but level-shifted; see DEFECT record for 13B absolute-level quarantine",
+      "gate_result": "BLOCKED",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "27d9f1c59ecc852a"
+    },
+    {
+      "evidence_id": "EVID-000149",
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "evidence_type": "STRESS_TESTING",
+      "source_phase": "Phases 13B/13C",
+      "source_experiment_ids": [],
+      "source_artifacts": [
+        "benchmarks\\phase13b_feature_sensitivity.json",
+        "benchmarks\\phase13c_candidate_registry.json"
+      ],
+      "artifact_checksums": {
+        "phase13b_feature_sensitivity.json": "804e8d9f01a3dec6174118eeee0396215917deab3f20170fd73c09a21ddf57b1",
+        "phase13c_candidate_registry.json": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+      },
+      "result_summary": "Feature-noise sign-flip at 5% std (mean_ic=-0.0039 vs positive baseline): fragility marker per Phase 13C FRAGILE classification",
+      "gate_result": "FAIL",
+      "limitations": [],
+      "generated_at": "2026-08-23T00:00:00+00:00",
+      "evidence_digest": "063f7ecb3f819191"
+    }
+  ]
+}

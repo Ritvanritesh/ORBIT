@@ -1,0 +1,809 @@
+{
+  "env_id": "ENV-12E-050",
+  "snapshot_id": "DS-EXP-050",
+  "n_instruments": 50,
+  "n_sessions": 7547,
+  "results": [
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-A-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.011045349738758618,
+        "rank_ic": -0.0038424779306438926,
+        "hit_rate": 0.4919715808170515
+      },
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 56300,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-B-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.009049957088918733,
+        "rank_ic": -0.00827559887295598,
+        "hit_rate": 0.4950423031277516
+      },
+      "n_train": 63841,
+      "n_val": 33944,
+      "n_test": 52242,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-C-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.011012425089047546,
+        "rank_ic": -0.015527072741915587,
+        "hit_rate": 0.495961417816813
+      },
+      "n_train": 21698,
+      "n_val": 16620,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-D-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.01230886334407265,
+        "rank_ic": -0.0014832594463142935,
+        "hit_rate": 0.4945626563236307
+      },
+      "n_train": 100514,
+      "n_val": 37060,
+      "n_test": 55174,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.0230982653638549,
+        "rank_ic": 0.009345531414319597,
+        "hit_rate": 0.4979525148908008
+      },
+      "n_train": 65208,
+      "n_val": 30540,
+      "n_test": 48352,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-F-LAB-006-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.00907300506143131,
+        "rank_ic": 0.006765552772966472,
+        "hit_rate": 0.4923541405269762
+      },
+      "n_train": 11798,
+      "n_val": 16123,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-A-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.03856385050888557,
+        "rank_ic": 0.021296982478213104,
+        "hit_rate": 0.48621669626998226
+      },
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 56300,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-B-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.04211875893323751,
+        "rank_ic": 0.02725586540235278,
+        "hit_rate": 0.4871750698671567
+      },
+      "n_train": 63841,
+      "n_val": 33944,
+      "n_test": 52242,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-C-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.023180271387055865,
+        "rank_ic": 0.0024892861405333418,
+        "hit_rate": 0.4860414052697616
+      },
+      "n_train": 21698,
+      "n_val": 16620,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-D-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.04062176078659436,
+        "rank_ic": 0.023988830368928463,
+        "hit_rate": 0.4872584913183746
+      },
+      "n_train": 100514,
+      "n_val": 37060,
+      "n_test": 55174,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.042865101427182827,
+        "rank_ic": 0.025171515479128246,
+        "hit_rate": 0.48535737921906025
+      },
+      "n_train": 65208,
+      "n_val": 30540,
+      "n_test": 48352,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-F-LAB-006-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.029425589274679972,
+        "rank_ic": 0.006617243672228613,
+        "hit_rate": 0.4907857590966123
+      },
+      "n_train": 11798,
+      "n_val": 16123,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-A-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.024709685461721375,
+        "rank_ic": 0.01360140105314833,
+        "hit_rate": 0.48580817051509767
+      },
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 56300,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-B-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.008301828055888333,
+        "rank_ic": -0.019480254752574717,
+        "hit_rate": 0.48675395275831707
+      },
+      "n_train": 63841,
+      "n_val": 33944,
+      "n_test": 52242,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-C-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.01592415437222091,
+        "rank_ic": -0.012403459041709258,
+        "hit_rate": 0.48462986198243413
+      },
+      "n_train": 21698,
+      "n_val": 16620,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-D-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.0011601906129267998,
+        "rank_ic": -0.0008292591913585123,
+        "hit_rate": 0.48713161996592597
+      },
+      "n_train": 100514,
+      "n_val": 37060,
+      "n_test": 55174,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.035446592592245994,
+        "rank_ic": 0.015423863252699043,
+        "hit_rate": 0.48527465254798147
+      },
+      "n_train": 65208,
+      "n_val": 30540,
+      "n_test": 48352,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-F-LAB-006-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.02325371575678292,
+        "rank_ic": 0.00012829623715291996,
+        "hit_rate": 0.485806148055207
+      },
+      "n_train": 11798,
+      "n_val": 16123,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-A-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.003645381892227124,
+        "rank_ic": 0.00432861407565478,
+        "hit_rate": 0.4868383658969805
+      },
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 56300,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-B-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.019104640291253108,
+        "rank_ic": -0.012979310394872316,
+        "hit_rate": 0.4848397840817733
+      },
+      "n_train": 63841,
+      "n_val": 33944,
+      "n_test": 52242,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-C-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.014783306002508694,
+        "rank_ic": -0.004857467808274821,
+        "hit_rate": 0.4967848180677541
+      },
+      "n_train": 21698,
+      "n_val": 16620,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-D-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.009191994140423985,
+        "rank_ic": -0.0019477426256393597,
+        "hit_rate": 0.4911190053285968
+      },
+      "n_train": 100514,
+      "n_val": 37060,
+      "n_test": 55174,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": -0.00012890035094528267,
+        "rank_ic": -0.0014411899188880623,
+        "hit_rate": 0.4940436796823296
+      },
+      "n_train": 65208,
+      "n_val": 30540,
+      "n_test": 48352,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "experiment_id": "EXP-12E-ENV-12E-050-FS-12B-F-LAB-006-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-006",
+      "env_id": "ENV-12E-050",
+      "metrics": {
+        "oos_ic": 0.0011138904861005732,
+        "rank_ic": -0.0056657085288639815,
+        "hit_rate": 0.4961574654956085
+      },
+      "n_train": 11798,
+      "n_val": 16123,
+      "n_test": 25504,
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    }
+  ],
+  "n_successful": 24,
+  "n_blocked": 0,
+  "n_failed": 0,
+  "elapsed_seconds": 735.2950241565704,
+  "label_id": "LAB-006",
+  "label_version": "v1",
+  "benchmark": "BENCH-001"
+}

@@ -1,0 +1,107 @@
+{
+  "phase": "14",
+  "title": "Model Registry & Evidence-Gated Promotion - Final Report",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+  "experiments_inspected": 88,
+  "benchmark_artifact_files_inspected": 121,
+  "distinct_model_versions_registered": 11,
+  "evidence_records": 149,
+  "lifecycle_status_distribution": {
+    "RESEARCH": 10,
+    "RETIRED": 1
+  },
+  "promotion_decisions": {
+    "total": 13,
+    "by_action": {
+      "PROMOTE": 0,
+      "RETAIN": 2,
+      "BLOCK": 10,
+      "DEMOTE": 0,
+      "RETIRE": 1
+    }
+  },
+  "blocked_promotions": [
+    {
+      "model_id": "MODEL-00001",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000012'])"
+    },
+    {
+      "model_id": "MODEL-00002",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000025'])"
+    },
+    {
+      "model_id": "MODEL-00003",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000038'])"
+    },
+    {
+      "model_id": "MODEL-00004",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000051'])"
+    },
+    {
+      "model_id": "MODEL-00005",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000064'])"
+    },
+    {
+      "model_id": "MODEL-00006",
+      "reason": "RESEARCH_TO_VALIDATED: FAIL (; unresolved defects ['EVID-000077'])"
+    },
+    {
+      "note": "... 4 more"
+    }
+  ],
+  "CAND-03": {
+    "model_id": "MODEL-00009",
+    "status": "RESEARCH",
+    "phase13c_classification": "RESEARCH_ONLY",
+    "blockers": [
+      "statistical inference FAIL (window-level p~0.21, CI includes zero)",
+      "economic materiality FAIL (portfolio layer untested)",
+      "model-family stability FAIL (linear-only phenomenon)",
+      "temporal evidence BLOCKED-grade (period-concentrated post-2022)",
+      "unresolved HIGH-severity 13B purge defect invalidates stress absolutes"
+    ]
+  },
+  "CAND-04": {
+    "model_id": "MODEL-00010",
+    "status": "RESEARCH",
+    "phase13c_classification": "FRAGILE",
+    "blockers": [
+      "everything listed for CAND-03, plus:",
+      "universe stability BLOCKED (ENV-100 replication run failed)",
+      "stress testing FAIL (feature-noise sign-flip at 5% std)",
+      "widest sequential-window IC dispersion (0.050)"
+    ]
+  },
+  "replay": {
+    "mode": "IDENTITY_REPLAY only",
+    "success_rate": 1.0,
+    "full_numerical_replay": false
+  },
+  "provenance_completeness": "11/11 models resolve datasets/features/labels/windows/seed/code/config; artifact checksums verified via referenced JSONs",
+  "adversarial_tests": "18/18 passed",
+  "reproducibility": "deterministic double-build identical",
+  "historical_artifact_integrity": "untouched (read-only references with sha256 pinning)",
+  "unresolved_defects_or_limitations": [
+    "DEFECT EVID (HIGH): Phase 13B purge-boundary defect - corrected implementation and separately versioned stress evidence required before any 13B absolute number is reused",
+    "FULL_NUMERICAL_REPLAY unavailable: no serialized estimators were stored by Phases 9-13",
+    "PORTFOLIO_VALIDATION and EXECUTION_VALIDATION: NOT_EVALUATED for every model"
+  ],
+  "registration_vs_validation_vs_paper": {
+    "REGISTERED_means": "identity + provenance recorded; makes NO claim of efficacy",
+    "VALIDATED_means": "evidence gates passed; still NOT proof of economic usefulness",
+    "PAPER_ELIGIBLE_means": "portfolio/cost/execution gates additionally passed; none today",
+    "current_counts": {
+      "REGISTERED": 11,
+      "VALIDATED": 0,
+      "PAPER": 0
+    }
+  },
+  "final_verdict": {
+    "grade": "B",
+    "text": "Registry operational with documented limitations: identity/replay/gate integrity fully validated; numerical replay absent by design (no stored estimators) and 13B-defect quarantine in force"
+  },
+  "final_gate": {
+    "gate": "GREEN",
+    "text": "Proceed to Phase 15 (registry trustworthy; promotion controls enforced)"
+  }
+}

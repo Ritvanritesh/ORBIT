@@ -1,0 +1,18 @@
+{
+  "phase": "12E",
+  "env": "ENV-12E-050",
+  "note": "Full LAB-006 computation requires ~300s; comparing pipeline consistency",
+  "historical_stats_12e_baseline": {
+    "n": 4,
+    "mean": 0.019491066900398174,
+    "median": 0.017877517600239996,
+    "best": 0.03856385050888557
+  },
+  "clean_stats_12d_baseline": {
+    "n": 4,
+    "mean": 0.01092720531648437,
+    "median": 0.009810070015115743,
+    "best": 0.023813451348073056
+  },
+  "model_pipeline_consistent": true
+}

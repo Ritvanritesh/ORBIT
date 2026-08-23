@@ -1,0 +1,42 @@
+{
+  "CAND-03": {
+    "d0": {
+      "delay": 0,
+      "mean_ic": 0.02389074743288815,
+      "baseline_mean": 0.02389074743288815,
+      "sign_preserved": "True"
+    },
+    "d1": {
+      "delay": 1,
+      "mean_ic": NaN,
+      "baseline_mean": 0.02389074743288815,
+      "sign_preserved": "False"
+    },
+    "d2": {
+      "delay": 2,
+      "mean_ic": NaN,
+      "baseline_mean": 0.02389074743288815,
+      "sign_preserved": "False"
+    }
+  },
+  "CAND-04": {
+    "d0": {
+      "delay": 0,
+      "mean_ic": 0.037836795679449,
+      "baseline_mean": 0.037836795679449,
+      "sign_preserved": "True"
+    },
+    "d1": {
+      "delay": 1,
+      "mean_ic": NaN,
+      "baseline_mean": 0.037836795679449,
+      "sign_preserved": "False"
+    },
+    "d2": {
+      "delay": 2,
+      "mean_ic": NaN,
+      "baseline_mean": 0.037836795679449,
+      "sign_preserved": "False"
+    }
+  }
+}

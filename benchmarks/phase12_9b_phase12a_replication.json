@@ -1,0 +1,104 @@
+{
+  "phase": "12A",
+  "env": "ENV-12A-050",
+  "n_experiments": 12,
+  "elapsed_s": 214.1,
+  "historical_stats": {
+    "n": 12,
+    "mean": 0.012489869653969752,
+    "median": 0.013546893588902056,
+    "best": 0.03633392810804326
+  },
+  "clean_stats": {
+    "n": 12,
+    "mean": 0.012613120653859574,
+    "median": 0.013557545257417945,
+    "best": 0.03633392856632703
+  },
+  "historical_significance": {
+    "holm": 6,
+    "bh": 6
+  },
+  "clean_significance": {
+    "holm": 6,
+    "bh": 6
+  },
+  "comparison": [
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-001-LAB-004-ridge",
+      "hist_ic": 0.000275219243048587,
+      "clean_ic": 0.00027522988763294126,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-001-LAB-004-lasso",
+      "hist_ic": 0.02381345218974984,
+      "clean_ic": 0.023813451348073056,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-001-LAB-004-random_forest",
+      "hist_ic": 0.018293915492415484,
+      "clean_ic": 0.018293908883590053,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-001-LAB-004-xgboost",
+      "hist_ic": 0.0013262232943283896,
+      "clean_ic": 0.0013262311466414312,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-101-LAB-004-ridge",
+      "hist_ic": -0.0029146423672247223,
+      "clean_ic": -0.0029146338063073232,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-101-LAB-004-lasso",
+      "hist_ic": 0.03633392810804326,
+      "clean_ic": 0.03633392856632703,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-101-LAB-004-random_forest",
+      "hist_ic": 0.024253112816540526,
+      "clean_ic": 0.02571077014475875,
+      "classification": "MINOR_DRIFT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-101-LAB-004-xgboost",
+      "hist_ic": 0.008799871685388629,
+      "clean_ic": 0.008821181631245838,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-103-LAB-004-ridge",
+      "hist_ic": -0.005931909191483802,
+      "clean_ic": -0.005931899589149735,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-103-LAB-004-lasso",
+      "hist_ic": 0.02381345218974984,
+      "clean_ic": 0.023813451348073056,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-103-LAB-004-random_forest",
+      "hist_ic": 0.021722837765907953,
+      "clean_ic": 0.02172283582788052,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12A-050-FS-103-LAB-004-xgboost",
+      "hist_ic": 9.29746211730643e-05,
+      "clean_ic": 9.299245754926624e-05,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    }
+  ],
+  "status_counts": {
+    "NUMERICALLY_EQUIVALENT": 11,
+    "MINOR_DRIFT": 1
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "tests": [
+    {
+      "test_id": "A1",
+      "description": "hyperparameter mutation changes identity",
+      "passed": true,
+      "evidence": "digest 4acea881b6032300 -> 1ca7c0cb51e3e5c8"
+    },
+    {
+      "test_id": "A2",
+      "description": "feature-definition mutation detected",
+      "passed": true,
+      "evidence": "digest changed on feature digest mutation"
+    },
+    {
+      "test_id": "A3",
+      "description": "dataset substitution detected",
+      "passed": true,
+      "evidence": "digest changed on dataset swap"
+    },
+    {
+      "test_id": "A4",
+      "description": "label substitution detected",
+      "passed": true,
+      "evidence": "digest changed on label swap"
+    },
+    {
+      "test_id": "A5",
+      "description": "window mutation detected",
+      "passed": true,
+      "evidence": "digest changed on window edit"
+    },
+    {
+      "test_id": "A6",
+      "description": "code-hash mismatch detectable",
+      "passed": true,
+      "evidence": "tampered code hash differs from pinned identity"
+    },
+    {
+      "test_id": "A7",
+      "description": "artifact checksum mismatch detectable",
+      "passed": true,
+      "evidence": "distinct artifacts produce distinct checksums; tampering verifiable by recompute"
+    },
+    {
+      "test_id": "A8",
+      "description": "duplicate model identity rejected",
+      "passed": true,
+      "evidence": "rejected: A8 violation: MODEL-90008 collides with MODEL-00002 (identical scientific identity)"
+    },
+    {
+      "test_id": "A9",
+      "description": "artifact without checksum rejected",
+      "passed": true,
+      "evidence": "rejected: A9 violation: anonymous artifact for MODEL-90009 (artifact URI present without checksum)"
+    },
+    {
+      "test_id": "A10",
+      "description": "prediction with unknown model fails validation",
+      "passed": true,
+      "evidence": "unknown model rejected"
+    },
+    {
+      "test_id": "A11",
+      "description": "prediction with RETIRED model fails validation",
+      "passed": true,
+      "evidence": "A11: prediction references RETIRED model"
+    },
+    {
+      "test_id": "A12",
+      "description": "incomplete evidence cannot yield PASS",
+      "passed": true,
+      "evidence": "gates={'RESEARCH_TO_VALIDATED': 'FAIL'}"
+    },
+    {
+      "test_id": "A13",
+      "description": "unresolved critical defect forces gate FAIL",
+      "passed": true,
+      "evidence": "defects=['EVID-000116']"
+    },
+    {
+      "test_id": "A14",
+      "description": "manual status mutation outside decision records",
+      "passed": true,
+      "evidence": "rejected: A14: direct status mutation forbidden; every transition must go through decide() to create an immutable PromotionDecisionRecord"
+    },
+    {
+      "test_id": "A15",
+      "description": "decision-chain mutation detected",
+      "passed": true,
+      "evidence": "detects: ['decision[0] PROM-000001 digest mismatch']"
+    },
+    {
+      "test_id": "A16",
+      "description": "missing parent lineage rejected",
+      "passed": true,
+      "evidence": "rejected: A16 violation: MODEL-90016 references unknown parent experiment EXP-99999"
+    },
+    {
+      "test_id": "A17",
+      "description": "historical artifact overwrite attempt blocked",
+      "passed": true,
+      "evidence": "write to historical artifact denied by policy"
+    },
+    {
+      "test_id": "A18",
+      "description": "zero-evidence model cannot PASS any gate",
+      "passed": true,
+      "evidence": "gate={'RESEARCH_TO_VALIDATED': 'BLOCKED'}"
+    }
+  ]
+}

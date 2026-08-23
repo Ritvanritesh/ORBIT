@@ -1,0 +1,1132 @@
+{
+  "artifacts": [
+    {
+      "path": "benchmarks/phase10_diagnostics.json",
+      "type": "json",
+      "sha256": "a0bc845c418db3c1eb192db9499e4535302516cc4986624b29061781c729ed10",
+      "size": 195563,
+      "mtime": "2026-08-20T18:40:11.305311"
+    },
+    {
+      "path": "benchmarks/phase10_plan.json",
+      "type": "json",
+      "sha256": "45c0df0695338238a378770789b03be984120af13fa63cf5bdea63020189b4c3",
+      "size": 9164,
+      "mtime": "2026-08-20T18:59:46.490149"
+    },
+    {
+      "path": "benchmarks/phase10_review1_results.json",
+      "type": "json",
+      "sha256": "a53068ab81cbb0fe1558184110eb76639bdcbe7f26b490408e22b7df520b4246",
+      "size": 2242,
+      "mtime": "2026-08-20T20:40:56.222247"
+    },
+    {
+      "path": "benchmarks/phase10_review2_results.json",
+      "type": "json",
+      "sha256": "0dc4744229b64cc784a67239069cf908059f905952b5ebc8743533da98d7865b",
+      "size": 2031,
+      "mtime": "2026-08-20T20:48:06.129290"
+    },
+    {
+      "path": "benchmarks/phase11_1_audit.json",
+      "type": "json",
+      "sha256": "d29b38b2e0e29f8b872b49d86cc883f957d1ea70c98a9d3fe9f121e4f5b9a108",
+      "size": 4058,
+      "mtime": "2026-08-21T14:18:12.407178"
+    },
+    {
+      "path": "benchmarks/phase11_1_benchmark_suite.json",
+      "type": "json",
+      "sha256": "f455496c47c4855b9e380a33432fe3de82fef3af1e62bc7afad6ef126fd01600",
+      "size": 2345,
+      "mtime": "2026-08-21T14:25:55.222920"
+    },
+    {
+      "path": "benchmarks/phase11_1_results.json",
+      "type": "json",
+      "sha256": "eaafb24ef596849d6b7f4910f9f054662ade207ee34627b229c92806e9707331",
+      "size": 6758,
+      "mtime": "2026-08-21T14:25:55.346253"
+    },
+    {
+      "path": "benchmarks/phase11_1_stage_a_plan.json",
+      "type": "json",
+      "sha256": "6326a33fd24d7537c81193fbcb795ef55d718bd463962b30fd0ad9fa969c8d4e",
+      "size": 1802,
+      "mtime": "2026-08-21T14:25:55.111026"
+    },
+    {
+      "path": "benchmarks/phase11_1_status.json",
+      "type": "json",
+      "sha256": "04b937456805a0efec5c57926276ae4664c2643a525db6a109f58bce34ff3c78",
+      "size": 432,
+      "mtime": "2026-08-21T14:25:55.347252"
+    },
+    {
+      "path": "benchmarks/phase11_1_universe-050_manifest.json",
+      "type": "json",
+      "sha256": "34682cfb1968177e1c32d33f8d4f12b89dd0b1226fdc851fb4107742c9635e8c",
+      "size": 2386,
+      "mtime": "2026-08-21T14:25:55.300495"
+    },
+    {
+      "path": "benchmarks/phase11_1_universe-100_manifest.json",
+      "type": "json",
+      "sha256": "df8a89ad4cfef8e76187dd2de3aa1000c5c15a5ef192f9d25294e3fb14299af5",
+      "size": 2386,
+      "mtime": "2026-08-21T14:25:55.301493"
+    },
+    {
+      "path": "benchmarks/phase11_1_universe_plan_v1.json",
+      "type": "json",
+      "sha256": "0fd8d1711a0909cc3806ece21decb2615990f4b43b771b985b80a5531ce625b0",
+      "size": 2971,
+      "mtime": "2026-08-21T14:25:55.224915"
+    },
+    {
+      "path": "benchmarks/phase11_2_comparison.json",
+      "type": "json",
+      "sha256": "54cd72ef93536294bef02c3a84eb02903dde282016ee9e95689ea50bd7496d11",
+      "size": 1238,
+      "mtime": "2026-08-21T17:57:23.508839"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-12A-050_results.json",
+      "type": "json",
+      "sha256": "bf27315f719e1d225e0e22f9b1bf06cbfb47184aa2934520edc160bdc7ab9429",
+      "size": 7720,
+      "mtime": "2026-08-21T20:05:35.104631"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-12A-100_results.json",
+      "type": "json",
+      "sha256": "f6ecd63d9480f12185bf21dd7bf670309adbb05de0ffdf2b4e05326b3d4ebb0a",
+      "size": 7323,
+      "mtime": "2026-08-21T20:29:02.586208"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-12B-050_results.json",
+      "type": "json",
+      "sha256": "dac7fed94aea5cb6966f24ad3cbf4cb540256e90b52b133ad0310c2a019f660d",
+      "size": 24153,
+      "mtime": "2026-08-22T16:13:28.945924"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-12B-100_results.json",
+      "type": "json",
+      "sha256": "af3baa9d76db700c7cf29e633e0d67efe599c6726ffa1d4d5acfdd340de8ae8c",
+      "size": 24166,
+      "mtime": "2026-08-22T16:24:59.286540"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-1_results.json",
+      "type": "json",
+      "sha256": "12d5c7e64c63807feed137501379ed4e548e187aea2a8da2446ded809da857ed",
+      "size": 4731,
+      "mtime": "2026-08-21T17:55:34.931078"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-2_results.json",
+      "type": "json",
+      "sha256": "79d0bf45ce9393ffc43244cbe4fe163d28ab0f33117c9f8dbb42616dfe4cc023",
+      "size": 4731,
+      "mtime": "2026-08-21T17:56:52.899383"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-3_results.json",
+      "type": "json",
+      "sha256": "519bd4676be333adef1e893ba02ef57e368a5b4bed9bf9b07230aa6a8a441cc6",
+      "size": 4728,
+      "mtime": "2026-08-21T17:51:36.226845"
+    },
+    {
+      "path": "benchmarks/phase11_2_ENV-4_results.json",
+      "type": "json",
+      "sha256": "54bc3a786f276fc6b8e1e60e9ab406e1b4045e04eac542f98de45591ff12b85e",
+      "size": 4744,
+      "mtime": "2026-08-21T17:42:58.555407"
+    },
+    {
+      "path": "benchmarks/phase11_2_status.json",
+      "type": "json",
+      "sha256": "6991cc7f9c756aac6b519b8ce4d078e48e8d6ccc3e895537657aa316441921c2",
+      "size": 714,
+      "mtime": "2026-08-21T17:57:44.170214"
+    },
+    {
+      "path": "benchmarks/phase11_audit_results.json",
+      "type": "json",
+      "sha256": "3b609177f276058178e91551e4a9a0ddbc94169586d917f65a63e46f2757fc6f",
+      "size": 2707,
+      "mtime": "2026-08-21T13:17:20.981491"
+    },
+    {
+      "path": "benchmarks/phase11_inference_plan.json",
+      "type": "json",
+      "sha256": "4dc9e0fe34833a60100aeb59be98faee3fb45df561b9345f38890259d52cfa06",
+      "size": 5063,
+      "mtime": "2026-08-21T13:16:10.497798"
+    },
+    {
+      "path": "benchmarks/phase12_9a_artifact_inventory.json",
+      "type": "json",
+      "sha256": "0e4a972e94366873c1b37afb503523af5a398540576c417ae047486f6ac82c3b",
+      "size": 40256,
+      "mtime": "2026-08-23T11:43:41.319659"
+    },
+    {
+      "path": "benchmarks/phase12_9a_audit.json",
+      "type": "json",
+      "sha256": "38c68aef5090a8b6e5ff1d24a68005894fb225b4b6b06da50ca8ca19e625ac7a",
+      "size": 857,
+      "mtime": "2026-08-23T11:42:35.145599"
+    },
+    {
+      "path": "benchmarks/phase12_9a_dataset_audit.json",
+      "type": "json",
+      "sha256": "7687fc246e5b66378bbb6eeffa973df374978fc31b318d4f4ef33e43c9f22abd",
+      "size": 1952,
+      "mtime": "2026-08-23T11:43:41.537752"
+    },
+    {
+      "path": "benchmarks/phase12_9a_experiment_audit.json",
+      "type": "json",
+      "sha256": "d60b8411746156bea167eba41ed77a083a2b91154c1fba279f31160ad7f909ba",
+      "size": 1924,
+      "mtime": "2026-08-23T11:42:33.473138"
+    },
+    {
+      "path": "benchmarks/phase12_9a_feature_audit.json",
+      "type": "json",
+      "sha256": "d712dc8255b5833d15e6d298f4e555dcbd90da284b88e58d78d21d0e26dfb985",
+      "size": 877,
+      "mtime": "2026-08-23T11:43:47.577991"
+    },
+    {
+      "path": "benchmarks/phase12_9a_label_audit.json",
+      "type": "json",
+      "sha256": "5ba586adcca217cf5d7daa18561bdcdba056d8b05afa44c83c0d23eece427b79",
+      "size": 149,
+      "mtime": "2026-08-23T11:42:33.334572"
+    },
+    {
+      "path": "benchmarks/phase12_9a_pit_audit.json",
+      "type": "json",
+      "sha256": "e0a060cc460b37308f23c6d57878b059b3042971bd92f39a06909baaa27604d1",
+      "size": 360,
+      "mtime": "2026-08-23T11:42:33.361565"
+    },
+    {
+      "path": "benchmarks/phase12_9a_regression_results.json",
+      "type": "json",
+      "sha256": "f8719ee2a0d47b033f3e238f03c5268fcee1176fa27f2226c0d403c606af82bd",
+      "size": 1937,
+      "mtime": "2026-08-23T11:42:35.144600"
+    },
+    {
+      "path": "benchmarks/phase12_9a_report.json",
+      "type": "json",
+      "sha256": "38c68aef5090a8b6e5ff1d24a68005894fb225b4b6b06da50ca8ca19e625ac7a",
+      "size": 857,
+      "mtime": "2026-08-23T11:42:35.146596"
+    },
+    {
+      "path": "benchmarks/phase12_9a_reproduction.json",
+      "type": "json",
+      "sha256": "2045b149e2a610a0dda79fc44e7080785bcafd94f3a4ad52e4394f3f35d2d174",
+      "size": 899,
+      "mtime": "2026-08-23T11:42:33.501624"
+    },
+    {
+      "path": "benchmarks/phase12_9a_split_audit.json",
+      "type": "json",
+      "sha256": "f87549b349b40ec84f2a6a6840692545d6fc90446fbd4b5bdc05e1224f06aeb7",
+      "size": 109,
+      "mtime": "2026-08-23T11:42:33.421518"
+    },
+    {
+      "path": "benchmarks/phase12_9a_statistics_audit.json",
+      "type": "json",
+      "sha256": "49009a6644718b0d71a038203d20074182ae36d6d82c2b3cbf272cca34b7c468",
+      "size": 1311,
+      "mtime": "2026-08-23T11:42:35.064667"
+    },
+    {
+      "path": "benchmarks/phase12a_ENV-12A-050_results.json",
+      "type": "json",
+      "sha256": "93c9bd3a6465a7478a3234f2fa15f0a60419bd69820dc85451118eb692f84b06",
+      "size": 7720,
+      "mtime": "2026-08-21T20:05:35.105600"
+    },
+    {
+      "path": "benchmarks/phase12a_ENV-12A-100_results.json",
+      "type": "json",
+      "sha256": "681ceac5ea12594c84cc245c9b917738dae641f47d37941c7c3e644c48049092",
+      "size": 7323,
+      "mtime": "2026-08-21T20:29:02.586208"
+    },
+    {
+      "path": "benchmarks/phase12a_plan.json",
+      "type": "json",
+      "sha256": "42fc2afc9e98b72ccc74e25b1dd305d7750bd77f134efb2e18e39fab28e5b14a",
+      "size": 70036,
+      "mtime": "2026-08-21T19:54:28.337932"
+    },
+    {
+      "path": "benchmarks/phase12a_report.json",
+      "type": "json",
+      "sha256": "2625bdef3dfa9e6dbb59bde8ed9a83e15071d191367ebfea80f60987f48b5974",
+      "size": 584,
+      "mtime": "2026-08-21T20:30:44.004458"
+    },
+    {
+      "path": "benchmarks/phase12b_audit.json",
+      "type": "json",
+      "sha256": "628474a297d0e5eb5c0f0026910e3b9b2431146f8325cd6e962282cf16ac1a20",
+      "size": 5631,
+      "mtime": "2026-08-22T16:29:16.859386"
+    },
+    {
+      "path": "benchmarks/phase12b_comparison.json",
+      "type": "json",
+      "sha256": "c61d79fc1af3f539afb4c958a180841c3a089fafb9867fc0d3b00837c6bfb689",
+      "size": 2373,
+      "mtime": "2026-08-22T16:28:35.636539"
+    },
+    {
+      "path": "benchmarks/phase12b_data_provenance.json",
+      "type": "json",
+      "sha256": "b0e489ce95c1953046358e774d7f19a36a82144096a4d4bd95bd2d4cddb7be1c",
+      "size": 2991,
+      "mtime": "2026-08-22T16:26:09.918764"
+    },
+    {
+      "path": "benchmarks/phase12b_ENV-12B-050_results.json",
+      "type": "json",
+      "sha256": "9b88fa34d8e04c7d706529b9367db3e8f7ca99fbe8d2dc7e4b1c0499713e6bca",
+      "size": 24153,
+      "mtime": "2026-08-22T16:13:28.947648"
+    },
+    {
+      "path": "benchmarks/phase12b_ENV-12B-100_results.json",
+      "type": "json",
+      "sha256": "91dd15a7f06846dc419208a77c4c02dba1378f84056448e15819a3641ed118a6",
+      "size": 24166,
+      "mtime": "2026-08-22T16:24:59.288507"
+    },
+    {
+      "path": "benchmarks/phase12b_identity_mapping.json",
+      "type": "json",
+      "sha256": "c8804f2abf2355f9b9c90c3a0c55755600cbbe978edff42227f9ddd5538b0676",
+      "size": 29681,
+      "mtime": "2026-08-22T16:26:56.844244"
+    },
+    {
+      "path": "benchmarks/phase12b_inference_results.json",
+      "type": "json",
+      "sha256": "383a8e217f0b222e2a98c68d8dbf6aab29efe64a4680a15769f7cc2fb5bbf9af",
+      "size": 1314,
+      "mtime": "2026-08-22T16:27:56.031473"
+    },
+    {
+      "path": "benchmarks/phase12b_plan.json",
+      "type": "json",
+      "sha256": "7e882cb88035b2b0f555418f2f8f1a65c495842581a7a14f9668d1df48f3d3cc",
+      "size": 95540,
+      "mtime": "2026-08-22T16:07:24.894722"
+    },
+    {
+      "path": "benchmarks/phase12b_report.json",
+      "type": "json",
+      "sha256": "921e34d3c2056148bd1bd13a9cd98a696cbb155f4e6d28106b00e21a506f4d85",
+      "size": 3032,
+      "mtime": "2026-08-22T16:30:31.449140"
+    },
+    {
+      "path": "benchmarks/phase12c_plan.json",
+      "type": "json",
+      "sha256": "ddcd39fc9e975c83e1273ef0749769397e1d995826187ac6232f67c27407fb66",
+      "size": 4237,
+      "mtime": "2026-08-22T17:02:00.470228"
+    },
+    {
+      "path": "benchmarks/phase12c_report.json",
+      "type": "json",
+      "sha256": "f5978d800454b9c2b82984f5590e55962598f2eaba4f5a64faadbb5de279e314",
+      "size": 68940882,
+      "mtime": "2026-08-22T17:04:29.149991"
+    },
+    {
+      "path": "benchmarks/phase12d_ENV-12D-050_inference.json",
+      "type": "json",
+      "sha256": "af7e1a56fbe20b3aa51bb3a94d312a59a7522d73eee9fe20da8c3e6b55708c15",
+      "size": 22684,
+      "mtime": "2026-08-22T21:53:32.505800"
+    },
+    {
+      "path": "benchmarks/phase12d_ENV-12D-050_results.json",
+      "type": "json",
+      "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f",
+      "size": 42460,
+      "mtime": "2026-08-22T21:27:46.521802"
+    },
+    {
+      "path": "benchmarks/phase12d_ENV-12D-100_inference.json",
+      "type": "json",
+      "sha256": "b72609365f55d621e7149de1882409c5e7e02a87b77bcf7a69734436b3fb65fa",
+      "size": 22601,
+      "mtime": "2026-08-22T21:53:32.552222"
+    },
+    {
+      "path": "benchmarks/phase12d_ENV-12D-100_results.json",
+      "type": "json",
+      "sha256": "126fce6abd647bd64bcd597182361d5f820bf87888e941f8c48c7a22898658d5",
+      "size": 42465,
+      "mtime": "2026-08-22T21:53:18.997277"
+    },
+    {
+      "path": "benchmarks/phase12d_final_report.json",
+      "type": "json",
+      "sha256": "aaf3b2ed7cb59b2b181ba8f7b6a7d653dc42f3e22b37108c2b96cd4349c78d36",
+      "size": 990,
+      "mtime": "2026-08-22T22:00:42.865944"
+    },
+    {
+      "path": "benchmarks/phase12d_plan.json",
+      "type": "json",
+      "sha256": "bd9853c78475b1a881bca0deb460806ec7d057867f6d4c0db9f5587008ff039b",
+      "size": 690,
+      "mtime": "2026-08-22T21:15:21.114479"
+    },
+    {
+      "path": "benchmarks/phase12d_report.json",
+      "type": "json",
+      "sha256": "d6805a2c0ac41df4eee18791abf85e68cb38a54e3e97f10731c701562c486048",
+      "size": 99341,
+      "mtime": "2026-08-22T21:53:32.559754"
+    },
+    {
+      "path": "benchmarks/phase12e_comparison.json",
+      "type": "json",
+      "sha256": "e82986e38ce21e948d041db5a23ff923680bee0c84a16ee4f145c87974851317",
+      "size": 274,
+      "mtime": "2026-08-22T23:59:51.802906"
+    },
+    {
+      "path": "benchmarks/phase12e_ENV-12E-050_results.json",
+      "type": "json",
+      "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb",
+      "size": 20590,
+      "mtime": "2026-08-22T23:35:17.121984"
+    },
+    {
+      "path": "benchmarks/phase12e_ENV-12E-100_results.json",
+      "type": "json",
+      "sha256": "86de5a7def8be1deedfafc3b6bfadbd520a6dea1ea6eabb8a102ba61fad77ce3",
+      "size": 20558,
+      "mtime": "2026-08-23T01:43:59.244651"
+    },
+    {
+      "path": "benchmarks/phase12e_plan.json",
+      "type": "json",
+      "sha256": "d7a0f4e9571b82741bb1bd26c65c96994c2b4eefdbb049e11030d1fb397fec56",
+      "size": 949,
+      "mtime": "2026-08-22T23:22:59.014641"
+    },
+    {
+      "path": "benchmarks/phase12e_report.json",
+      "type": "json",
+      "sha256": "1e13f550dd492b93c500655d95d1b7e911c051a14e9a8c1bd729ef14af275f62",
+      "size": 536,
+      "mtime": "2026-08-23T00:03:25.497571"
+    },
+    {
+      "path": "benchmarks/phase12e_root_cause.json",
+      "type": "json",
+      "sha256": "1084e1c152f39ed69b7b22e3be2ab901cd104fab8d378c487e0fe1237f420933",
+      "size": 2462,
+      "mtime": "2026-08-22T22:08:50.383480"
+    },
+    {
+      "path": "benchmarks/phase9_audit_results.json",
+      "type": "json",
+      "sha256": "7dfe8eeaf3ec27366c70147c607f6a77ed81b7615fd755489e10b48bbd698f08",
+      "size": 16386,
+      "mtime": "2026-08-20T13:28:53.141423"
+    },
+    {
+      "path": "benchmarks/phase9_review2_results.json",
+      "type": "json",
+      "sha256": "d891d43961faf1fd3453ec6ae77e7549f9e58a81ab002e67431e7c8e2c6b24d1",
+      "size": 1995,
+      "mtime": "2026-08-20T13:55:46.230623"
+    },
+    {
+      "path": "benchmarks/phase10_feature_research.parquet",
+      "type": "parquet",
+      "sha256": "3dfb714a517e9589537ccb8a0cf0a97a7e337f4749ff1ec51bda5890308d4d17",
+      "size": 19495,
+      "mtime": "2026-08-20T18:59:46.517048"
+    },
+    {
+      "path": "benchmarks/phase11_inference_results.parquet",
+      "type": "parquet",
+      "sha256": "fe901f72c449687a2614f92e368e182ee00ace92981a610fec9b17238ee44a3b",
+      "size": 31121,
+      "mtime": "2026-08-21T13:17:20.976428"
+    },
+    {
+      "path": "benchmarks/phase9_ml_benchmark.parquet",
+      "type": "parquet",
+      "sha256": "0ce0ca1f0a4a5497c1f2218b5f45bce919c2376e3d7fac0f1dcd9fa6c0a791b0",
+      "size": 12445,
+      "mtime": "2026-08-20T13:22:27.605753"
+    },
+    {
+      "path": "benchmarks/phase10_feature_research.md",
+      "type": "doc",
+      "sha256": "5dc95c299da8ff9e2448d2f1b0224a7d5b0f5d16d26ad5cb1eb652de914e126e",
+      "size": 20003,
+      "mtime": "2026-08-20T18:59:46.591477"
+    },
+    {
+      "path": "benchmarks/phase11_2_progress.md",
+      "type": "doc",
+      "sha256": "5ac97eeaa7c94a067f654aa43008f66c89bb00dde4589294407824f98dbf62a9",
+      "size": 1249,
+      "mtime": "2026-08-21T17:57:34.361872"
+    },
+    {
+      "path": "benchmarks/phase11_inference_results.md",
+      "type": "doc",
+      "sha256": "72a13bfcf5eddbbca97acca5b1f19f1beab62463bcfb66aada67dfe8fabbf86b",
+      "size": 42906,
+      "mtime": "2026-08-21T13:17:20.983483"
+    },
+    {
+      "path": "benchmarks/phase9_ml_benchmark.md",
+      "type": "doc",
+      "sha256": "7284e99fb9bfef87fa8b76ec119d75b889c53fef8147e8422b70a9acea94f701",
+      "size": 11072,
+      "mtime": "2026-08-20T13:22:27.607747"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90001/metrics.json",
+      "type": "json",
+      "sha256": "30db14140d87f45deca08651d38a3140e32041037cf36f58aadf9875353dab8e",
+      "size": 931,
+      "mtime": "2026-08-20T13:12:21.718950"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90002/metrics.json",
+      "type": "json",
+      "sha256": "7d719e9095bf69673abacf2b0756ce29054835eca724d38391abf99f63934536",
+      "size": 928,
+      "mtime": "2026-08-20T13:12:33.976209"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90003/metrics.json",
+      "type": "json",
+      "sha256": "ca18f808e4d9eb169e1b7d607729388981cc63a979673eed4574f23f4328d47f",
+      "size": 927,
+      "mtime": "2026-08-20T13:12:46.402289"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90004/metrics.json",
+      "type": "json",
+      "sha256": "459f83c900ba2f172e04b64a8e0964a6aab223815300acbc4cb7b1b3025d4068",
+      "size": 933,
+      "mtime": "2026-08-20T13:12:58.565621"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90005/metrics.json",
+      "type": "json",
+      "sha256": "8f95b1e1750552fd85d26d0db17b085af0fe63b8d7c58c1dcf0aa0b4c2d086d9",
+      "size": 891,
+      "mtime": "2026-08-20T13:13:10.576837"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90006/metrics.json",
+      "type": "json",
+      "sha256": "20e0ccec7a2cf79266371ac77e1a0d91ed9e68068a60bed5b8804dd133fb9347",
+      "size": 834,
+      "mtime": "2026-08-20T13:13:22.154003"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90007/metrics.json",
+      "type": "json",
+      "sha256": "54959e49154e1dbe465cac97b9976a2f9bfe33ad6d02f14f28cc4139887ff998",
+      "size": 749,
+      "mtime": "2026-08-20T13:13:32.224028"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90008/metrics.json",
+      "type": "json",
+      "sha256": "3f62647de53205492ecd6bc34396f968bcf62fe154f06b948fc7ff41f7e8abba",
+      "size": 748,
+      "mtime": "2026-08-20T13:13:42.205204"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90009/metrics.json",
+      "type": "json",
+      "sha256": "96745f850178ae3d7b68b013cd642bc775dd07d433397519e8ffea82d3a7f773",
+      "size": 914,
+      "mtime": "2026-08-20T13:13:54.583736"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90010/metrics.json",
+      "type": "json",
+      "sha256": "583bc9475b73a480776348b87b707812ac8b43ac6bd524f0c88d6bf44d52cf35",
+      "size": 912,
+      "mtime": "2026-08-20T13:14:06.939447"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90011/metrics.json",
+      "type": "json",
+      "sha256": "46cf199903023cf81af3ddee06ed22a3e0afd47e2a1f7b83eff1ff6a534416f5",
+      "size": 912,
+      "mtime": "2026-08-20T13:14:19.238145"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90012/metrics.json",
+      "type": "json",
+      "sha256": "e6f317392aa7216c7b4aaf59c5f3c7eea408dde4ada4a7fdf12e8d27596c34f4",
+      "size": 911,
+      "mtime": "2026-08-20T13:14:31.634179"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90013/metrics.json",
+      "type": "json",
+      "sha256": "cc7c643555fe794a73141968e3922cf14de02acf2beeef7a1cec414c69ca3c5c",
+      "size": 668,
+      "mtime": "2026-08-20T13:14:48.628383"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90014/metrics.json",
+      "type": "json",
+      "sha256": "9754ff014c2730000d2961cd16459a84524bf8e185c5cfd0ddca1390f1705f85",
+      "size": 672,
+      "mtime": "2026-08-20T13:15:10.083471"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90015/metrics.json",
+      "type": "json",
+      "sha256": "e6caf592697c11d379b9c66736779dc61da7bdbc752792966649114f3ce001b8",
+      "size": 668,
+      "mtime": "2026-08-20T14:20:56.617467"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90016/metrics.json",
+      "type": "json",
+      "sha256": "cc211d7c06cb19d4d8d59d03bda6d81b244f7725adad8518aef1b267cf49026d",
+      "size": 669,
+      "mtime": "2026-08-20T13:16:33.488490"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90017/metrics.json",
+      "type": "json",
+      "sha256": "64eab6936c89c2dd29062f7120765d05d86dcae19d3e37ad947a11aecf6d602f",
+      "size": 685,
+      "mtime": "2026-08-20T13:16:47.217584"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90018/metrics.json",
+      "type": "json",
+      "sha256": "78a707cf58264cea4393a64080a450522ab47fa7e9ede501ce8e92d0fcba19be",
+      "size": 686,
+      "mtime": "2026-08-20T13:17:00.770634"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90019/metrics.json",
+      "type": "json",
+      "sha256": "e4823d81c06337c49d70018bf92152f60aa4b71d40a2092de81a3b7335862048",
+      "size": 684,
+      "mtime": "2026-08-20T13:17:14.215662"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90020/metrics.json",
+      "type": "json",
+      "sha256": "df8aaf46cc425a6823103cd321e1039997db24530c46a24e3cddf20d7ec1c75a",
+      "size": 682,
+      "mtime": "2026-08-20T13:17:28.342577"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90021/metrics.json",
+      "type": "json",
+      "sha256": "606362223c64c94bd5367eb20906ae2093816a8778a1b2c2acc627e57624ed2b",
+      "size": 311,
+      "mtime": "2026-08-20T13:17:30.148130"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90022/metrics.json",
+      "type": "json",
+      "sha256": "12fa52e1b1369a02fe19c20eae692c2c41f5ecf2603e5bf98e55d8acd64ffad3",
+      "size": 319,
+      "mtime": "2026-08-20T13:18:21.232665"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90023/metrics.json",
+      "type": "json",
+      "sha256": "e572f86ee1a98b022fe59beebfc209e23596fb6011946ae71aaa42cb0b13074f",
+      "size": 329,
+      "mtime": "2026-08-20T13:18:28.219730"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90024/metrics.json",
+      "type": "json",
+      "sha256": "27a50d5af6ab0fa739068ec71153ea1f74e4e7ae472c7f1c34dad7f3217467ac",
+      "size": 328,
+      "mtime": "2026-08-20T13:18:34.904807"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90025/metrics.json",
+      "type": "json",
+      "sha256": "79f6d76e4de73b8a05d3f4a92867a057bffc3055ada4dc088f58fae26b99daf3",
+      "size": 328,
+      "mtime": "2026-08-20T13:18:41.446779"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90026/metrics.json",
+      "type": "json",
+      "sha256": "0790308dfe3d606dad8abe9763399c5a39999a246cc6c6d84d514f5f4beba770",
+      "size": 336,
+      "mtime": "2026-08-20T13:18:48.532717"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90027/metrics.json",
+      "type": "json",
+      "sha256": "e1a4567a87f86f87cd459136f688250d99a1b2b27e5f58e658252d2d8932ec00",
+      "size": 335,
+      "mtime": "2026-08-20T13:18:55.289374"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90028/metrics.json",
+      "type": "json",
+      "sha256": "8a6aebf5eca3003c9729bfdc459b562d679deb96e94af8b47688c3965a79a0d6",
+      "size": 335,
+      "mtime": "2026-08-20T13:19:01.917065"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90029/metrics.json",
+      "type": "json",
+      "sha256": "3c4a2f779dcce94b2d146acd2e34df1e0b22af616504553301c655cef9458cd7",
+      "size": 357,
+      "mtime": "2026-08-20T13:19:08.514199"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90030/metrics.json",
+      "type": "json",
+      "sha256": "ce08bc9bd8139a91a80dacd33f0e8002447c9020237f6346a5217a869a9e3fce",
+      "size": 357,
+      "mtime": "2026-08-20T13:19:15.123488"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90031/metrics.json",
+      "type": "json",
+      "sha256": "b53047f2915c5f3ab81f78c25a7850829beff9ea93730e60a7379813f0e7c294",
+      "size": 358,
+      "mtime": "2026-08-20T13:19:21.481924"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90032/metrics.json",
+      "type": "json",
+      "sha256": "e3a0ac35753ad18167daf7619781a8f4bc5788b74b3990569cf63c1074740fa3",
+      "size": 375,
+      "mtime": "2026-08-20T13:20:08.716437"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90033/metrics.json",
+      "type": "json",
+      "sha256": "6a504d48f7f83f995ad208aaf002d89e85a01a47a38fd70a181e0b8c4a081163",
+      "size": 376,
+      "mtime": "2026-08-20T13:21:08.030496"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90034/metrics.json",
+      "type": "json",
+      "sha256": "06662546825c3a861ab88fa227b37d106325e3f06780386895880a24f143233a",
+      "size": 375,
+      "mtime": "2026-08-20T13:22:07.635214"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90035/metrics.json",
+      "type": "json",
+      "sha256": "9539e5e3606cfceac9d490baca379b03f4970e1160a42f8ac7d541747cfec901",
+      "size": 321,
+      "mtime": "2026-08-20T13:22:23.520405"
+    },
+    {
+      "path": "benchmarks/phase9_runs/EXP-90036/metrics.json",
+      "type": "json",
+      "sha256": "96a3e985bea7ce448d1a9084650a9026129e5103f3b2fdd60d5c6ec074b3712c",
+      "size": 259,
+      "mtime": "2026-08-20T13:22:27.403243"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10001/metrics.json",
+      "type": "json",
+      "sha256": "f59c3873e001818ba6c900f5672ac950de1c5b69882830f91fbfd793e68b54a3",
+      "size": 653,
+      "mtime": "2026-08-20T18:40:26.035966"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10002/metrics.json",
+      "type": "json",
+      "sha256": "119b55f18a1ccad4cd215dbd2113a912fbbe06996263b0443e3dc30591b283b6",
+      "size": 651,
+      "mtime": "2026-08-20T18:40:47.217051"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10003/metrics.json",
+      "type": "json",
+      "sha256": "06bdfc2f197dd47cb640d1ac36ef5f360d5e2aa1d173443c9b06512576bd0f44",
+      "size": 681,
+      "mtime": "2026-08-20T18:41:21.085617"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10004/metrics.json",
+      "type": "json",
+      "sha256": "6b36987164dc49ff64a66a6644d6af6ebc2890b19ec625cea977cd977c9bf603",
+      "size": 697,
+      "mtime": "2026-08-20T18:41:38.542855"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10005/metrics.json",
+      "type": "json",
+      "sha256": "81662c56ac6728a923ec6831b6fb9a1d85fe0fb6096c0a58db263447cb8a3cc0",
+      "size": 650,
+      "mtime": "2026-08-20T18:41:55.070085"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10006/metrics.json",
+      "type": "json",
+      "sha256": "f68c8253805d97ce6d4f3da3988014ac9331a8db0d48eedb1535e12abb5989d0",
+      "size": 652,
+      "mtime": "2026-08-20T18:42:08.263408"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10007/metrics.json",
+      "type": "json",
+      "sha256": "6bbbec3b3d0dec20250134d59d511195ce0d2f2051b72b151578bd30ca6579e9",
+      "size": 684,
+      "mtime": "2026-08-20T18:42:52.656631"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10008/metrics.json",
+      "type": "json",
+      "sha256": "76f7826b18061cbbaf27eaed5fed546778c7a3872d424728ac0a9fecaaf89f8a",
+      "size": 701,
+      "mtime": "2026-08-20T18:43:06.090524"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10009/metrics.json",
+      "type": "json",
+      "sha256": "1c26dcb4d10f056519ea820ebb82c626e1bff6324ea7f40164744af54a45c278",
+      "size": 651,
+      "mtime": "2026-08-20T18:43:19.010474"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10010/metrics.json",
+      "type": "json",
+      "sha256": "117a4c1e5634ef6c0564d6e378c95b77d144f974897a561e2e7e5a502c5da62c",
+      "size": 653,
+      "mtime": "2026-08-20T18:43:33.602405"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10011/metrics.json",
+      "type": "json",
+      "sha256": "8b1d832a5d78e16aa571be0c2d324fe378bf5a5ba69418b766dff62753b106dd",
+      "size": 684,
+      "mtime": "2026-08-20T18:44:38.514563"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10012/metrics.json",
+      "type": "json",
+      "sha256": "60665ea17f4020911fc92ff724fd3523a6ca3477bf0911f459fcced6b70c0d1b",
+      "size": 699,
+      "mtime": "2026-08-20T18:44:55.230218"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10013/metrics.json",
+      "type": "json",
+      "sha256": "2a4116421f58fae33dcbd89d3e25293b2e24173fc448a147186c681b9fd59dfe",
+      "size": 651,
+      "mtime": "2026-08-20T18:45:18.964830"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10014/metrics.json",
+      "type": "json",
+      "sha256": "dba5330c45dd4adb098a1792d18d222c6d07cc0a48a3461eaf3952db2f98ce37",
+      "size": 653,
+      "mtime": "2026-08-20T18:45:37.819665"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10015/metrics.json",
+      "type": "json",
+      "sha256": "06957b7fa1e511045909165e35375c9128f472a837286d3cbf7489555116ac01",
+      "size": 680,
+      "mtime": "2026-08-20T18:46:14.594349"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10016/metrics.json",
+      "type": "json",
+      "sha256": "3091eb46c3683b2edb13ef0228fd85ac40076bfb6d3ea98abba619cd1b451261",
+      "size": 701,
+      "mtime": "2026-08-20T18:46:27.963521"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10017/metrics.json",
+      "type": "json",
+      "sha256": "20c2b4db1b66a0f1554775acd387e5061ab3052dd1d15bac96ad4dd9dcc889fb",
+      "size": 653,
+      "mtime": "2026-08-20T18:46:40.098945"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10018/metrics.json",
+      "type": "json",
+      "sha256": "77132478427a48abb6d352085e654f11da322b97774cc2b3f885b497f37f27b6",
+      "size": 653,
+      "mtime": "2026-08-20T18:46:51.824606"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10019/metrics.json",
+      "type": "json",
+      "sha256": "956f6653cf1eb2d17cb35f8b09e45d45398b8d866d1a1e53dbf6d718e3ba25c4",
+      "size": 678,
+      "mtime": "2026-08-20T18:47:30.754714"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10020/metrics.json",
+      "type": "json",
+      "sha256": "532d02bd964e9f6dba1187244e3e982fbac48a6efea3425af60ba964488805e4",
+      "size": 697,
+      "mtime": "2026-08-20T18:47:46.093418"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10021/metrics.json",
+      "type": "json",
+      "sha256": "ef8894cfdea5a6cd64744c16861454461b469404e1b6d467fdabe93e2b391d69",
+      "size": 650,
+      "mtime": "2026-08-20T18:47:57.992914"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10022/metrics.json",
+      "type": "json",
+      "sha256": "831f3e082e0831f9a3bf0151e703fd803457ddc4c9501c3afb593b96a1811391",
+      "size": 652,
+      "mtime": "2026-08-20T18:48:09.166574"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10023/metrics.json",
+      "type": "json",
+      "sha256": "b3348df5429c6410b51b7262c6b61eaf8f727241454f6333b684e9eb2fd50fd2",
+      "size": 680,
+      "mtime": "2026-08-20T18:48:47.721729"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10024/metrics.json",
+      "type": "json",
+      "sha256": "115fc868c0374288ec98d716fe50717193426fe777ad17946f21ed9fae5c6c21",
+      "size": 697,
+      "mtime": "2026-08-20T18:49:16.834298"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10025/metrics.json",
+      "type": "json",
+      "sha256": "5ea72089ce2a29411831bf8f9de420f6e5cf5c7e9bd6c8dc918b3f448438135b",
+      "size": 653,
+      "mtime": "2026-08-20T18:49:31.372128"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10026/metrics.json",
+      "type": "json",
+      "sha256": "50abfa7c1201db13af4fdf086b9c53fea60c7bd786461fae55ed24d1f57259ce",
+      "size": 653,
+      "mtime": "2026-08-20T18:49:43.374769"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10027/metrics.json",
+      "type": "json",
+      "sha256": "78132e8d7c9685b7aa73868844bdf52921c6e2c8677752f7b181b1ce4e3dabe9",
+      "size": 682,
+      "mtime": "2026-08-20T18:50:19.381184"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10028/metrics.json",
+      "type": "json",
+      "sha256": "e1555d5086a064b86296afdf532553e3b2dd7cb5185b5bbd591fd2c2629720d4",
+      "size": 697,
+      "mtime": "2026-08-20T18:50:33.593072"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10029/metrics.json",
+      "type": "json",
+      "sha256": "616fa9d3d23aa82dc55d5baad535c2fcbd63ca6a4c8972f4744004b40a62aec3",
+      "size": 653,
+      "mtime": "2026-08-20T18:50:45.752824"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10030/metrics.json",
+      "type": "json",
+      "sha256": "f41858d8b93141d606870c572f613179212717cc0af027c5d247c3516d17ca18",
+      "size": 652,
+      "mtime": "2026-08-20T18:50:57.603387"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10031/metrics.json",
+      "type": "json",
+      "sha256": "7d3cd01da3bbd86ccf5b17a39d41682c48060294cc37baef519704d0eb97b419",
+      "size": 682,
+      "mtime": "2026-08-20T18:51:34.629868"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10032/metrics.json",
+      "type": "json",
+      "sha256": "a5bc2450a6164849119a21b2ab033f780988c2ac8d6e16954c504bd7dc756f7d",
+      "size": 697,
+      "mtime": "2026-08-20T18:51:47.698279"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10033/metrics.json",
+      "type": "json",
+      "sha256": "58914737b50a74f41dd470b97976355a3cf62f3545b141a07278a00239394442",
+      "size": 649,
+      "mtime": "2026-08-20T18:52:00.783308"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10034/metrics.json",
+      "type": "json",
+      "sha256": "447d2ac15a9c347fc153d9520b80f8efad6337b3af9cfca993ebcc7abc0a0c3c",
+      "size": 652,
+      "mtime": "2026-08-20T18:52:12.541532"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10035/metrics.json",
+      "type": "json",
+      "sha256": "8a26acab12c3c495d5c4e025341b5649137d71d5a5807ff0a60f0d1303a1be1f",
+      "size": 678,
+      "mtime": "2026-08-20T18:53:07.329130"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10036/metrics.json",
+      "type": "json",
+      "sha256": "b1b616b7b1f3b5d3eb40c128de38d5e245ebb0c77e8a55c82fc0f29382d85640",
+      "size": 696,
+      "mtime": "2026-08-20T18:53:20.281624"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10037/metrics.json",
+      "type": "json",
+      "sha256": "c9d0b75fc5344aa72dabc08588690327bdb700792fd759a891641b1b0a3a882a",
+      "size": 652,
+      "mtime": "2026-08-20T18:53:32.324570"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10038/metrics.json",
+      "type": "json",
+      "sha256": "0a32cb0c1f7959a7a2867d97c4acb1531aaf7f8b813335818f25100ea75ac658",
+      "size": 652,
+      "mtime": "2026-08-20T18:53:44.521709"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10039/metrics.json",
+      "type": "json",
+      "sha256": "a1e3387ac5c9b8f0f7620c666515ea98237be802e9b8907347aba8c93103da34",
+      "size": 683,
+      "mtime": "2026-08-20T18:54:40.587071"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10040/metrics.json",
+      "type": "json",
+      "sha256": "f331428fe3144e188703aeb78b5218f83badaad1528bd2ddade399d9b28e5b32",
+      "size": 699,
+      "mtime": "2026-08-20T18:54:55.430473"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10041/metrics.json",
+      "type": "json",
+      "sha256": "beb0c28975852d348179ceb46788cedbd167efa8a62658d830252cb080e36de5",
+      "size": 651,
+      "mtime": "2026-08-20T18:55:08.777433"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10042/metrics.json",
+      "type": "json",
+      "sha256": "8158cbbdc7d353dd807bb9a1fe4f27bfe918844b8fe22de3a92ebd6d32d8457f",
+      "size": 654,
+      "mtime": "2026-08-20T18:55:21.801630"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10043/metrics.json",
+      "type": "json",
+      "sha256": "5ac642e0f77c10856c7175228c06e32a6fa0bb641847b3004f95b8a6b6b36b83",
+      "size": 684,
+      "mtime": "2026-08-20T18:56:18.905033"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10044/metrics.json",
+      "type": "json",
+      "sha256": "d19f9753caac0140a1c73560f54105d4e6bba01dff9a0155420c787b1a32a01f",
+      "size": 699,
+      "mtime": "2026-08-20T18:56:31.841426"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10045/metrics.json",
+      "type": "json",
+      "sha256": "1fcacc474d6c2e9bd19347a24c21050e70be17c9850a637a019772765c6cf0ae",
+      "size": 648,
+      "mtime": "2026-08-20T18:56:43.641311"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10046/metrics.json",
+      "type": "json",
+      "sha256": "52dac87a048910614f2ab4555c4f3be1ac012c0d56a25bb6879626b22362d4c5",
+      "size": 652,
+      "mtime": "2026-08-20T18:56:55.298962"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10047/metrics.json",
+      "type": "json",
+      "sha256": "49a8eb1ea4a7df9ca178b6e55011f22b2b50a4884862d780e949d25031940216",
+      "size": 681,
+      "mtime": "2026-08-20T18:57:50.941086"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10048/metrics.json",
+      "type": "json",
+      "sha256": "46de472c5fa99b17eb71a55395732033e99db2682732b15861177bbadfee82a4",
+      "size": 697,
+      "mtime": "2026-08-20T18:58:04.549072"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10049/metrics.json",
+      "type": "json",
+      "sha256": "07ff533a2ff5ccab0af10d9e1ce8be7d1b794cb5a006d7befdefb6920293e1dd",
+      "size": 649,
+      "mtime": "2026-08-20T18:58:20.505313"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10050/metrics.json",
+      "type": "json",
+      "sha256": "d13dfd00367ccbeaceb0307528bc55e209ed3d3c304d492123ebe4a8cc944c20",
+      "size": 649,
+      "mtime": "2026-08-20T18:58:33.941444"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10051/metrics.json",
+      "type": "json",
+      "sha256": "0c04de9b8e460af967d5fc311a5156d88cdece07e757c28066b6de7d4bc0f0fe",
+      "size": 681,
+      "mtime": "2026-08-20T18:59:32.465929"
+    },
+    {
+      "path": "benchmarks/phase10_runs/EXP-10052/metrics.json",
+      "type": "json",
+      "sha256": "372f681a239de6935f2e7926b885181f3aa46b852f5e2ad53bbdfc6558bbc2db",
+      "size": 699,
+      "mtime": "2026-08-20T18:59:46.168427"
+    }
+  ],
+  "count": 161
+}

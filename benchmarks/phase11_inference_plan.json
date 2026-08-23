@@ -1,0 +1,147 @@
+{
+  "block_length_diagnostics": true,
+  "block_length_policy": "rule_of_thumb",
+  "confidence_level": 0.95,
+  "created_at": "2026-08-21T13:16:10",
+  "economic_interpretation_thresholds": {
+    "ic_meaningful": 0.03,
+    "ic_negligible": 0.01,
+    "return_meaningful": 0.1,
+    "return_negligible": 0.0
+  },
+  "hypothesis_families": {
+    "phase10_grid": {
+      "description": "The full 52-experiment Phase 10 grid (13 feature sets x 4 models) is treated as a SINGLE locked comparison family. No post-hoc exclusion of inconvenient experiments is permitted.",
+      "members": [
+        "EXP-10001",
+        "EXP-10002",
+        "EXP-10003",
+        "EXP-10004",
+        "EXP-10005",
+        "EXP-10006",
+        "EXP-10007",
+        "EXP-10008",
+        "EXP-10009",
+        "EXP-10010",
+        "EXP-10011",
+        "EXP-10012",
+        "EXP-10013",
+        "EXP-10014",
+        "EXP-10015",
+        "EXP-10016",
+        "EXP-10017",
+        "EXP-10018",
+        "EXP-10019",
+        "EXP-10020",
+        "EXP-10021",
+        "EXP-10022",
+        "EXP-10023",
+        "EXP-10024",
+        "EXP-10025",
+        "EXP-10026",
+        "EXP-10027",
+        "EXP-10028",
+        "EXP-10029",
+        "EXP-10030",
+        "EXP-10031",
+        "EXP-10032",
+        "EXP-10033",
+        "EXP-10034",
+        "EXP-10035",
+        "EXP-10036",
+        "EXP-10037",
+        "EXP-10038",
+        "EXP-10039",
+        "EXP-10040",
+        "EXP-10041",
+        "EXP-10042",
+        "EXP-10043",
+        "EXP-10044",
+        "EXP-10045",
+        "EXP-10046",
+        "EXP-10047",
+        "EXP-10048",
+        "EXP-10049",
+        "EXP-10050",
+        "EXP-10051",
+        "EXP-10052"
+      ],
+      "n_members": 52,
+      "rationale": "Phase 10 is an ablation study over a pre-registered grid. All 52 experiments belong to the same researcher search space. Treating them as a single family is the conservative choice."
+    }
+  },
+  "inference_methods": {
+    "confidence_intervals": {
+      "iid_bootstrap": {
+        "assumptions": "observations are independent and identically distributed",
+        "description": "Ordinary bootstrap; valid only for i.i.d. observations"
+      },
+      "moving_block_bootstrap": {
+        "assumptions": "stationary time series with short-range dependence",
+        "block_length_policy": "rule_of_thumb",
+        "description": "Moving block bootstrap with deterministic block length"
+      }
+    },
+    "effect_sizes": {
+      "ic_magnitude": "raw IC value",
+      "relative_improvement": "fractional change vs. zero-effect baseline",
+      "return_magnitude": "raw after-cost return"
+    },
+    "multiple_testing": {
+      "benjamini_hochberg": {
+        "description": "False discovery rate control (less conservative)"
+      },
+      "holm_bonferroni": {
+        "description": "Family-wise error rate control (conservative)"
+      }
+    }
+  },
+  "known_limitations": [
+    "Inference is on a 20-symbol development universe; generalization to larger universes is not tested.",
+    "Block length is set by rule of thumb, not optimized against outcomes.",
+    "The label (5-session forward return) creates overlapping outcomes; dependence diagnostics will disclose this.",
+    "Backtest metrics inherit all backtester assumptions (costs, execution, sizing).",
+    "Bootstrap CIs are approximate; they do not provide exact finite-sample coverage.",
+    "The inference layer analyzes evidence; it does not generate new signals or strategies."
+  ],
+  "metrics_in_scope": {
+    "calibration": [
+      "brier",
+      "ece"
+    ],
+    "economic": [
+      "after_cost_total_return",
+      "turnover",
+      "total_costs"
+    ],
+    "prediction": [
+      "oos_ic",
+      "rank_ic",
+      "hit_rate",
+      "mse"
+    ]
+  },
+  "n_bootstrap_resamples": 1000,
+  "phase": 11,
+  "plan_digest": "0195e06c616a3108f70768e34d341921ddc27011be24dac055e6edfa02f46b3d",
+  "protocol": "phase11_v1",
+  "seed": 42,
+  "source_experiments": {
+    "phase10": {
+      "artifact_parquet": "benchmarks/phase10_feature_research.parquet",
+      "artifact_runs_dir": "benchmarks/phase10_runs/",
+      "description": "Phase 10 feature ablation grid (13 feature sets x 4 models = 52)",
+      "experiment_ids": "EXP-10001..EXP-10052",
+      "locked_plan": "benchmarks/phase10_plan.json",
+      "locked_plan_digest": "16d62bff387704746fe2ac23742045dcf27314109957752473ed4b0edff64910"
+    },
+    "phase9": {
+      "artifact_parquet": "benchmarks/phase9_ml_benchmark.parquet",
+      "artifact_runs_dir": "benchmarks/phase9_runs/",
+      "description": "Phase 9 baseline ML benchmark",
+      "experiment_ids": "EXP-90001..EXP-90036"
+    }
+  },
+  "statistical_vs_economic_separation": "Every result must separately report: (1) statistical evidence, (2) effect magnitude, (3) uncertainty bounds, and (4) economic interpretation. Statistical significance is NEVER treated as equivalent to deployable trading edge.",
+  "version": "1.0.0"
+}

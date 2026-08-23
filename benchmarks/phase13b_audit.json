@@ -1,0 +1,30 @@
+{
+  "phase": "13B",
+  "status": "complete",
+  "verdict": "B",
+  "verdict_text": "Generally stable with known failure regions",
+  "cliff_count": 2,
+  "graceful_count": 4,
+  "classification_by_candidate": {
+    "CAND-03": {
+      "cost": "GRACEFUL",
+      "slippage": "GRACEFUL",
+      "parameter": "MIXED",
+      "feature_noise": "CLIFF",
+      "data_missing": "MIXED"
+    },
+    "CAND-04": {
+      "cost": "GRACEFUL",
+      "slippage": "GRACEFUL",
+      "parameter": "MIXED",
+      "feature_noise": "CLIFF",
+      "data_missing": "MIXED"
+    }
+  },
+  "adversarial": {
+    "total": 6,
+    "passed": 6
+  },
+  "plan_digest": "8c7fc8de876dff3f",
+  "elapsed": 1629.2
+}

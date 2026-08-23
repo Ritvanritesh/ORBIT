@@ -1,0 +1,90 @@
+{
+  "CAND-03": {
+    "a0.5x": {
+      "alpha": 0.5,
+      "factor": 0.5,
+      "mean_ic": NaN,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": false
+    },
+    "a0.75x": {
+      "alpha": 0.75,
+      "factor": 0.75,
+      "mean_ic": NaN,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": false
+    },
+    "a1.0x": {
+      "alpha": 1.0,
+      "factor": 1.0,
+      "mean_ic": 0.02389074743288815,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": true
+    },
+    "a1.5x": {
+      "alpha": 1.5,
+      "factor": 1.5,
+      "mean_ic": NaN,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": false
+    },
+    "a2.0x": {
+      "alpha": 2.0,
+      "factor": 2.0,
+      "mean_ic": NaN,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": false
+    },
+    "a3.0x": {
+      "alpha": 3.0,
+      "factor": 3.0,
+      "mean_ic": NaN,
+      "baseline_ic": 0.07303669291973887,
+      "sign_preserved": false
+    }
+  },
+  "CAND-04": {
+    "a0.5x": {
+      "alpha": 0.0005,
+      "factor": 0.5,
+      "mean_ic": NaN,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": false
+    },
+    "a0.75x": {
+      "alpha": 0.00075,
+      "factor": 0.75,
+      "mean_ic": NaN,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": false
+    },
+    "a1.0x": {
+      "alpha": 0.001,
+      "factor": 1.0,
+      "mean_ic": 0.037836795679449,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": true
+    },
+    "a1.5x": {
+      "alpha": 0.0015,
+      "factor": 1.5,
+      "mean_ic": NaN,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": false
+    },
+    "a2.0x": {
+      "alpha": 0.002,
+      "factor": 2.0,
+      "mean_ic": NaN,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": false
+    },
+    "a3.0x": {
+      "alpha": 0.003,
+      "factor": 3.0,
+      "mean_ic": NaN,
+      "baseline_ic": 0.10262860309146392,
+      "sign_preserved": false
+    }
+  }
+}

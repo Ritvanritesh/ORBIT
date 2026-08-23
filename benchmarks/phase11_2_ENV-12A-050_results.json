@@ -1,0 +1,280 @@
+{
+  "elapsed_seconds": 213.42538475990295,
+  "env_id": "ENV-12A-050",
+  "n_failed": 8,
+  "n_instruments": 50,
+  "n_sessions": 7547,
+  "n_successful": 12,
+  "results": [
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-001-LAB-004-ridge",
+      "family": "ridge",
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.000275219243048587,
+        "oos_ic_sessions": 1126,
+        "rank_ic": -0.0031312276242646277
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-101-LAB-004-ridge",
+      "family": "ridge",
+      "feature_set_id": "FS-101",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": -0.0029146423672247223,
+        "oos_ic_sessions": 1126,
+        "rank_ic": -0.014737717467093406
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-102-LAB-004-ridge"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-103-LAB-004-ridge",
+      "family": "ridge",
+      "feature_set_id": "FS-103",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": -0.005931909191483802,
+        "oos_ic_sessions": 1126,
+        "rank_ic": -0.01621727198872444
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 1.0
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-104-LAB-004-ridge"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-001-LAB-004-lasso",
+      "family": "lasso",
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.02381345218974984,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.01759370888675186
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 0.001
+      }
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-101-LAB-004-lasso",
+      "family": "lasso",
+      "feature_set_id": "FS-101",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.03633392810804326,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.018744719912831914
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 0.001
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-102-LAB-004-lasso"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-103-LAB-004-lasso",
+      "family": "lasso",
+      "feature_set_id": "FS-103",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.02381345218974984,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.01759370888675186
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "alpha": 0.001
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-104-LAB-004-lasso"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-001-LAB-004-random_forest",
+      "family": "random_forest",
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.018293915492415484,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.00474456438348616
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-101-LAB-004-random_forest",
+      "family": "random_forest",
+      "feature_set_id": "FS-101",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.024253112816540526,
+        "oos_ic_sessions": 1041,
+        "rank_ic": 0.018258238262221258
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-102-LAB-004-random_forest"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-103-LAB-004-random_forest",
+      "family": "random_forest",
+      "feature_set_id": "FS-103",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.021722837765907953,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.006797858253561839
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-104-LAB-004-random_forest"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-001-LAB-004-xgboost",
+      "family": "xgboost",
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.0013262232943283896,
+        "oos_ic_sessions": 1126,
+        "rank_ic": -0.008015015668566904
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-101-LAB-004-xgboost",
+      "family": "xgboost",
+      "feature_set_id": "FS-101",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 0.008799871685388629,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.005540858561724696
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-102-LAB-004-xgboost"
+    },
+    {
+      "env_id": "ENV-12A-050",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-103-LAB-004-xgboost",
+      "family": "xgboost",
+      "feature_set_id": "FS-103",
+      "label_id": "LAB-004",
+      "metrics": {
+        "hit_rate": 0.528348134991119,
+        "oos_ic": 9.29746211730643e-05,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.0014450545544925104
+      },
+      "n_test": 56300,
+      "n_train": 111405,
+      "n_val": 37650,
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      }
+    },
+    {
+      "error": "insufficient data",
+      "experiment_id": "EXP-12A-ENV-12A-050-FS-104-LAB-004-xgboost"
+    }
+  ],
+  "snapshot_id": "DS-EXP-050"
+}

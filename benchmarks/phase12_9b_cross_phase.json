@@ -1,0 +1,32 @@
+{
+  "C1_null_persists": {
+    "statement": "Phase 11 null result persists after universe expansion",
+    "status": "SUPPORTED",
+    "detail": "Clean ridge IC=-0.0003 matches historical near-zero"
+  },
+  "C2_market_context": {
+    "statement": "Market context does not provide convincing robust improvement",
+    "status": "SUPPORTED",
+    "detail": "Phase 12A clean mean IC: 0.0126"
+  },
+  "C3_cross_sectional": {
+    "statement": "Cross-sectional context does not provide convincing improvement",
+    "status": "SUPPORTED",
+    "detail": "FS-103 shows no consistent improvement over FS-001"
+  },
+  "C4_pit_fundamentals": {
+    "statement": "Real PIT fundamentals provide inconsistent and economically modest improvements",
+    "status": "SUPPORTED",
+    "detail": "Clean baseline mean IC: 0.0109"
+  },
+  "C5_lab005_defect": {
+    "statement": "LAB-005 was materially defective",
+    "status": "SUPPORTED",
+    "detail": "Confirmed in Phase 12.9A audit"
+  },
+  "C6_lab006_null": {
+    "statement": "LAB-006 correction does not robustly overturn the null conclusion",
+    "status": "SUPPORTED",
+    "detail": "Phase 12E historical mean IC: 0.019491066900398174"
+  }
+}

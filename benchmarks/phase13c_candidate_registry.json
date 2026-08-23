@@ -1,0 +1,73 @@
+{
+  "gate_definitions": {
+    "REJECTED": "Fails temporal or stress validation",
+    "FRAGILE": "Positive evidence exists but is highly environment/model/regime-dependent",
+    "RESEARCH_ONLY": "Some evidence survives; robustness or economic usefulness insufficient for promotion",
+    "ROBUST_CANDIDATE": "Survives temporal, regime, universe, and perturbation testing with no major contradiction (does NOT mean profitable)"
+  },
+  "decision_rules_locked_before_assignment": true,
+  "registry": {
+    "CAND-03": {
+      "classification": "RESEARCH_ONLY",
+      "matrix_cells": {
+        "temporal_consistency": "LIMITATION",
+        "regime_consistency": "LIMITATION",
+        "universe_consistency": "PASS",
+        "model_family_consistency": "FAIL",
+        "statistical_support": "FAIL",
+        "economic_materiality": "FAIL",
+        "perturbation_stability": "LIMITATION",
+        "reproducibility": "LIMITATION",
+        "pit_data_integrity": "PASS"
+      },
+      "justification": "2 FAIL (statistics, economics) prevent promotion; but universe-consistent (4/4), temporally persistent ex-2022, PIT-clean, survives best-window removal — earns controlled further investigation, not production proximity",
+      "promotion_blocked_by": [
+        "statistical insignificance",
+        "portfolio-layer untested",
+        "period concentration 2023-2025"
+      ],
+      "allowed_next_steps": [
+        "registry entry at research tier",
+        "pre-registered longer-window re-evaluation",
+        "per-session regime stratification",
+        "turnover-aware cost simulation"
+      ],
+      "forbidden_next_steps": [
+        "production deployment",
+        "capital allocation",
+        "hyperparameter expansion search"
+      ]
+    },
+    "CAND-04": {
+      "classification": "FRAGILE",
+      "matrix_cells": {
+        "temporal_consistency": "LIMITATION",
+        "regime_consistency": "LIMITATION",
+        "universe_consistency": "LIMITATION",
+        "model_family_consistency": "FAIL",
+        "statistical_support": "FAIL",
+        "economic_materiality": "FAIL",
+        "perturbation_stability": "LIMITATION",
+        "reproducibility": "LIMITATION",
+        "pit_data_integrity": "PASS"
+      },
+      "justification": "Higher headline IC than CAND-03 but: ENV-100 replication missing, sign-flip under 5% feature noise, widest IC dispersion (0.050), and identical statistical/economic failures. Evidence exists yet is environment-sensitive",
+      "promotion_blocked_by": [
+        "incomplete universe replication",
+        "feature-noise fragility",
+        "statistical insignificance",
+        "portfolio-layer untested"
+      ],
+      "allowed_next_steps": [
+        "registry entry at research tier (fragile flag)",
+        "ENV-100 completion run",
+        "noise-robustness investigation"
+      ],
+      "forbidden_next_steps": [
+        "production deployment",
+        "capital allocation"
+      ]
+    }
+  },
+  "n_robust_candidates": 0
+}

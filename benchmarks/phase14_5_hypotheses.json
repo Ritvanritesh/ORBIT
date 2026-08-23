@@ -1,0 +1,97 @@
+{
+  "phase": "14.5",
+  "step": 3,
+  "title": "Hypothesis Generation",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+
+  "hypotheses": [
+    {
+      "hypothesis_id": "H-1",
+      "claim": "Stocks whose recent returns exhibit persistent directional structure under low path volatility behave differently from stocks with equivalent total returns generated through unstable, high-volatility paths.",
+      "economic_intuition": "A stock that rose 5% over 20 days through steady daily gains is fundamentally different from one that rose 5% through alternating +10% and -5% moves. The former has positive momentum with low uncertainty and likely continues; the latter has high path volatility suggesting disagreement, news uncertainty, or mean-reversion pressure. Path structure captures the quality of a price move, not just its magnitude.",
+      "information_source": "Daily OHLCV bars (existing data, new computation)",
+      "proposed_feature_family": "Path structure features: path_max_drawdown_20, path_up_down_ratio_20, path_largest_move_20",
+      "target_relationship": "Path structure features should add incremental predictive value beyond total-return features (ret_10/20/30) and volatility features (vol_10/30).",
+      "expected_failure_mode": "Path features may be redundant with existing volatility features if vol_10/30 already capture path dynamics indirectly.",
+      "leakage_risks": "LOW — all features use trailing windows of past data only",
+      "universe_applicability": "All universes (20, 50, 97 instruments) — OHLCV data available for all",
+      "required_data": "OHLCV bars — already available",
+      "data_already_exists": true,
+      "why_genuinely_different": "Existing features capture only total return (ret_10/20/30) and volatility (vol_10/30) over a window. Path structure captures the temporal dynamics WITHIN the window — how the return was generated, not just what it was.",
+      "feature_ids": ["FEAT-401", "FEAT-402", "FEAT-403"],
+      "domain_id": "DOM-1"
+    },
+    {
+      "hypothesis_id": "H-2",
+      "claim": "Stocks with negatively skewed recent return distributions (more frequent or larger negative moves) carry different forward-return expectations than stocks with symmetric or positively skewed distributions, and this asymmetry information is not captured by existing symmetric features.",
+      "economic_intuition": "Negative skewness indicates tail risk — the stock has experienced more downside surprises. This could signal (a) ongoing selling pressure that will continue, or (b) a risk premium that will be compensated. Either way, the direction of the effect is a testable prediction. The key insight is that skewness is a genuinely different moment from mean and variance — it captures asymmetry that symmetric features miss.",
+      "information_source": "Daily OHLCV bars (existing data, new computation)",
+      "proposed_feature_family": "Asymmetry features: return_skew_20, return_kurt_20, downside_vol_20",
+      "target_relationship": "Asymmetry features should add incremental predictive value beyond momentum and volatility features. Negative skewness may predict either positive returns (risk premium) or negative returns (continued selling).",
+      "expected_failure_mode": "Skewness estimates are noisy with short windows (20 days). May require longer windows or be dominated by estimation error.",
+      "leakage_risks": "LOW — trailing windows only",
+      "universe_applicability": "All universes — OHLCV data available for all",
+      "required_data": "OHLCV bars — already available",
+      "data_already_exists": true,
+      "why_genuinely_different": "Existing features are all symmetric (means, standard deviations, ratios). Skewness and kurtosis are higher-order moments that capture distributional shape — information that symmetric features structurally cannot represent.",
+      "feature_ids": ["FEAT-411", "FEAT-412", "FEAT-413"],
+      "domain_id": "DOM-2"
+    },
+    {
+      "hypothesis_id": "H-3",
+      "claim": "The macroeconomic regime (interest rate environment, inflation, labor market conditions) conditions the predictive relationship between stock-level features and forward returns, and incorporating macro regime information as conditioning features adds predictive value.",
+      "economic_intuition": "A momentum signal may work differently in a rising-rate environment (where discount rates are increasing) vs a falling-rate environment (where discount rates are decreasing). Inflation changes the real return calculus. Labor market conditions affect consumption and earnings expectations. These macro factors create regime shifts that change how stock-level signals translate into forward returns. No existing feature captures this conditioning.",
+      "information_source": "FRED data (DS-000003): Fed Funds Rate, CPI, Unemployment Rate",
+      "proposed_feature_family": "Macro regime features: macro_dff_level, macro_dff_change_3m, macro_unemployment_level, macro_cpi_yoy",
+      "target_relationship": "Macro features should add incremental predictive value beyond all stock-level features. They capture economy-wide regime that conditions all stock-level signals.",
+      "expected_failure_mode": "Macro data has low frequency (monthly) vs daily stock data. The slow-moving nature may not provide enough granularity. Also, macro effects may be too slow to matter for 5-day forward returns.",
+      "leakage_risks": "LOW — macro data published with known lags; using published values respects PIT",
+      "universe_applicability": "All universes — macro data applies uniformly to all US-listed instruments",
+      "required_data": "FRED data (DS-000003) — already available",
+      "data_already_exists": true,
+      "why_genuinely_different": "No existing feature uses macro data. This is a genuinely new information source that captures economy-wide regime effects.",
+      "feature_ids": ["FEAT-431", "FEAT-432", "FEAT-433", "FEAT-434"],
+      "domain_id": "DOM-4"
+    },
+    {
+      "hypothesis_id": "H-4",
+      "claim": "The stability of a stock's realized volatility (vol-of-vol) and the direction of volatility change carry predictive information not captured by volatility levels alone.",
+      "economic_intuition": "A stock in a stable high-volatility regime is different from one transitioning from low to high volatility. The transition signals regime change — uncertainty is increasing, which may precede directional moves. Vol-of-vol captures whether the volatility environment itself is stable or turbulent. This is distinct from vol level (vol_10/30) and vol regime ratio (vol_ratio_10_30).",
+      "information_source": "Daily OHLCV bars (derived from existing vol features)",
+      "proposed_feature_family": "Volatility dynamics: vol_of_vol_20, vol_change_20",
+      "target_relationship": "Vol dynamics features should add incremental value beyond vol levels and vol ratio. Rising vol-of-vol may predict directional moves; vol_change captures the direction of regime transition.",
+      "expected_failure_mode": "May be partially redundant with vol_ratio_10_30. Nested rolling computations may introduce noise.",
+      "leakage_risks": "LOW — trailing windows only",
+      "universe_applicability": "All universes",
+      "required_data": "OHLCV bars — already available",
+      "data_already_exists": true,
+      "why_genuinely_different": "Existing vol_ratio_10_30 captures short-vs-long vol comparison. Vol-of-vol captures the stability of volatility itself — a genuinely different dimension. Vol_change captures the direction of regime transition.",
+      "feature_ids": ["FEAT-421", "FEAT-422"],
+      "domain_id": "DOM-3"
+    },
+    {
+      "hypothesis_id": "H-5",
+      "claim": "A stock's dynamic beta (time-varying market sensitivity) and correlation with the market carry predictive information not captured by static cross-sectional features.",
+      "economic_intuition": "A stock whose beta is increasing (becoming more market-sensitive) may be entering a different risk regime than one with stable beta. Correlation changes signal whether the stock is becoming more or less integrated with market movements. This is dynamic relationship information that static cross-sectional ranks (xs_rank_ret_20) cannot capture.",
+      "information_source": "Daily OHLCV bars + SPY benchmark (existing data)",
+      "proposed_feature_family": "Cross-asset dynamics: rolling_beta_20, rolling_corr_20",
+      "target_relationship": "Dynamic beta and correlation should add incremental value beyond cross-sectional ranks and sector features.",
+      "expected_failure_mode": "Beta/correlation estimates are noisy with short windows. May be highly correlated with market context features (mkt_ret_20, mkt_vol_20).",
+      "leakage_risks": "LOW — trailing windows only",
+      "universe_applicability": "All universes with SPY benchmark available (all tested universes)",
+      "required_data": "OHLCV bars + SPY benchmark — already available",
+      "data_already_exists": true,
+      "why_genuinely_different": "Existing cross-sectional features (xs_rank_ret_20, etc.) are static snapshot ranks. Dynamic beta/correlation captures how the stock-market relationship CHANGES over time — a temporal dimension not present in snapshot ranks.",
+      "feature_ids": ["FEAT-451", "FEAT-452"],
+      "domain_id": "DOM-6"
+    }
+  ],
+
+  "summary": {
+    "total_hypotheses": 5,
+    "hypothesis_ids": ["H-1", "H-2", "H-3", "H-4", "H-5"],
+    "information_domains": ["DOM-1", "DOM-2", "DOM-4", "DOM-3", "DOM-6"],
+    "total_new_features": 15,
+    "feature_ids": ["FEAT-401", "FEAT-402", "FEAT-403", "FEAT-411", "FEAT-412", "FEAT-413", "FEAT-421", "FEAT-422", "FEAT-431", "FEAT-432", "FEAT-433", "FEAT-434", "FEAT-451", "FEAT-452"]
+  }
+}

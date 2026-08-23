@@ -1,0 +1,22 @@
+{
+  "phase": "12A",
+  "environments": {
+    "ENV-12A-050": {
+      "n_instruments": 50,
+      "n_successful": 12,
+      "n_failed": 8
+    },
+    "ENV-12A-100": {
+      "n_instruments": 97,
+      "n_successful": 12,
+      "n_failed": 8
+    }
+  },
+  "verdict": "D",
+  "verdict_description": "No convincing predictive improvement from new information domains.",
+  "market_effect": 0.0019259431421464104,
+  "xs_effect": -0.0015181177428307737,
+  "baseline_mean_ic": 0.00822958275918819,
+  "market_mean_ic": 0.010155525901334601,
+  "xs_mean_ic": 0.006711465016357417
+}

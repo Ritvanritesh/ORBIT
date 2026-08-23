@@ -1,0 +1,1112 @@
+{
+  "registry_version": "phase14-v1",
+  "policy_version": "v1",
+  "models": {
+    "MODEL-00001": {
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "parent_experiment_id": "EXP-90001",
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-000004"
+      ],
+      "universe_id": "ENV-DEV20",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-001",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "71d7682d99e065cc",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "9d5598d691be8c5f",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 9",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        },
+        {
+          "name": "phase9_review2_results.json",
+          "path": "benchmarks\\phase9_review2_results.json",
+          "sha256": "d891d43961faf1fd3453ec6ae77e7549f9e58a81ab002e67431e7c8e2c6b24d1"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "65d0563b9e1f8258",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000001",
+        "EVID-000002",
+        "EVID-000003",
+        "EVID-000004",
+        "EVID-000005",
+        "EVID-000006",
+        "EVID-000007",
+        "EVID-000008",
+        "EVID-000009",
+        "EVID-000010",
+        "EVID-000011",
+        "EVID-000012",
+        "EVID-000013"
+      ]
+    },
+    "MODEL-00002": {
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12D-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-B",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "f34c677c97c0f4d6",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "64a2bb96171fea2e",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12D",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "4acea881b6032300",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000014",
+        "EVID-000015",
+        "EVID-000016",
+        "EVID-000017",
+        "EVID-000018",
+        "EVID-000019",
+        "EVID-000020",
+        "EVID-000021",
+        "EVID-000022",
+        "EVID-000023",
+        "EVID-000024",
+        "EVID-000025",
+        "EVID-000026"
+      ]
+    },
+    "MODEL-00003": {
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12D-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-C",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "a63585aab0a4d69a",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "da87c645d09b386b",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12D",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "84727b5da6d3b398",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000027",
+        "EVID-000028",
+        "EVID-000029",
+        "EVID-000030",
+        "EVID-000031",
+        "EVID-000032",
+        "EVID-000033",
+        "EVID-000034",
+        "EVID-000035",
+        "EVID-000036",
+        "EVID-000037",
+        "EVID-000038",
+        "EVID-000039"
+      ]
+    },
+    "MODEL-00004": {
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12D-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-D",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "9c1408ceeee963fd",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "4ab36debc9230c18",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12D",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "e8302c9dfd6c51a4",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000040",
+        "EVID-000041",
+        "EVID-000042",
+        "EVID-000043",
+        "EVID-000044",
+        "EVID-000045",
+        "EVID-000046",
+        "EVID-000047",
+        "EVID-000048",
+        "EVID-000049",
+        "EVID-000050",
+        "EVID-000051",
+        "EVID-000052"
+      ]
+    },
+    "MODEL-00005": {
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12D-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-E",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "81922185a3ab5150",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "8bf86504abde4673",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12D",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "84bd02c05132a485",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000053",
+        "EVID-000054",
+        "EVID-000055",
+        "EVID-000056",
+        "EVID-000057",
+        "EVID-000058",
+        "EVID-000059",
+        "EVID-000060",
+        "EVID-000061",
+        "EVID-000062",
+        "EVID-000063",
+        "EVID-000064",
+        "EVID-000065"
+      ]
+    },
+    "MODEL-00006": {
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12E-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-D",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "9c1408ceeee963fd",
+      "label_id": "LAB-006",
+      "label_version": "v1",
+      "label_contract_digest": "e32dc0cbdfd41fd6",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "c87d72604480ab00",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12E",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "6215a6f5a71fe50a",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000066",
+        "EVID-000067",
+        "EVID-000068",
+        "EVID-000069",
+        "EVID-000070",
+        "EVID-000071",
+        "EVID-000072",
+        "EVID-000073",
+        "EVID-000074",
+        "EVID-000075",
+        "EVID-000076",
+        "EVID-000077",
+        "EVID-000078"
+      ]
+    },
+    "MODEL-00007": {
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12E-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-E",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "81922185a3ab5150",
+      "label_id": "LAB-006",
+      "label_version": "v1",
+      "label_contract_digest": "e32dc0cbdfd41fd6",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "f0f37bb97d77bde3",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12E",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "2cb2566e462b230c",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000079",
+        "EVID-000080",
+        "EVID-000081",
+        "EVID-000082",
+        "EVID-000083",
+        "EVID-000084",
+        "EVID-000085",
+        "EVID-000086",
+        "EVID-000087",
+        "EVID-000088",
+        "EVID-000089",
+        "EVID-000090",
+        "EVID-000091"
+      ]
+    },
+    "MODEL-00008": {
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12E-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-A",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "82eff4caf3ebc213",
+      "label_id": "LAB-006",
+      "label_version": "v1",
+      "label_contract_digest": "e32dc0cbdfd41fd6",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "3de89d1c5ffa0ea0",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12E",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "88e4854c6eecba0b",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000092",
+        "EVID-000093",
+        "EVID-000094",
+        "EVID-000095",
+        "EVID-000096",
+        "EVID-000097",
+        "EVID-000098",
+        "EVID-000099",
+        "EVID-000100",
+        "EVID-000101",
+        "EVID-000102",
+        "EVID-000103",
+        "EVID-000104"
+      ]
+    },
+    "MODEL-00009": {
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": "CAND-03",
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-050-seq",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-001",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "71d7682d99e065cc",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "val_start": "2021-01-01",
+      "val_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "4d0891b62b52d9a7",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "1bb59698848e2284",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 13A",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "6bb9bb9aca231798",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000105",
+        "EVID-000106",
+        "EVID-000107",
+        "EVID-000108",
+        "EVID-000109",
+        "EVID-000110",
+        "EVID-000111",
+        "EVID-000112",
+        "EVID-000113",
+        "EVID-000114",
+        "EVID-000115",
+        "EVID-000116",
+        "EVID-000117",
+        "EVID-000144",
+        "EVID-000146",
+        "EVID-000148"
+      ]
+    },
+    "MODEL-00010": {
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": "CAND-04",
+      "hyperparameters": {
+        "alpha": 0.001
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-050-seq",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-001",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "71d7682d99e065cc",
+      "label_id": "LAB-004",
+      "label_version": "v1",
+      "label_contract_digest": "7e46bc484abe7ae1",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "val_start": "2021-01-01",
+      "val_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "4d0891b62b52d9a7",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "fb344f1c8b667ca7",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 13A",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RESEARCH",
+      "status_reason": "Initial registration",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        }
+      ],
+      "identity_digest": "d3f790aa27e30ca9",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": null,
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000118",
+        "EVID-000119",
+        "EVID-000120",
+        "EVID-000121",
+        "EVID-000122",
+        "EVID-000123",
+        "EVID-000124",
+        "EVID-000125",
+        "EVID-000126",
+        "EVID-000127",
+        "EVID-000128",
+        "EVID-000129",
+        "EVID-000130",
+        "EVID-000145",
+        "EVID-000147",
+        "EVID-000149"
+      ]
+    },
+    "MODEL-00011": {
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "parent_experiment_id": null,
+      "parent_model_id": null,
+      "hypothesis_id": null,
+      "candidate_id": null,
+      "hyperparameters": {
+        "alpha": 1.0
+      },
+      "preprocessing": {
+        "scaling": "standardized"
+      },
+      "target_transform": "identity",
+      "dataset_snapshot_ids": [
+        "DS-EXP-050"
+      ],
+      "universe_id": "ENV-12D-050",
+      "instrument_identity_version": "instrument_master_v1",
+      "feature_set_id": "FS-12B-A",
+      "feature_set_version": "v1",
+      "feature_definitions_digest": "82eff4caf3ebc213",
+      "label_id": "LAB-005",
+      "label_version": "v1",
+      "label_contract_digest": "580f0f0b51594652",
+      "benchmark_id": "BENCH-001",
+      "cost_model_id": "CM-001",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-02",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2026-06-30",
+      "purge_policy": "outcome_window_boundary",
+      "embargo_days": 5,
+      "window_protocol_digest": "103a60558f68de67",
+      "seed": 42,
+      "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+      "config_hash": "3afbbc5af598e0c4",
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "source_phase": "Phase 12D",
+      "source_artifact_files": [
+        {
+          "name": "phase12d_ENV-12D-050_results.json",
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "sha256": "b28fa45d906e4238b6a38e5e441902409e168733d9bd1a7f80f4023f33c3b10f"
+        },
+        {
+          "name": "phase12e_ENV-12E-050_results.json",
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "sha256": "0765fdc8e9d15a471ae5e2778867867af20a97f17da819dc26528bf49d12aacb"
+        },
+        {
+          "name": "phase13a_stability.json",
+          "path": "benchmarks\\phase13a_stability.json",
+          "sha256": "4015fe1cd9f90a5d3384c745ab484a036c92ef931bf2b553537f1540545a2b25"
+        },
+        {
+          "name": "phase13c_candidate_registry.json",
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "sha256": "66ff8496511ab9cdefcba319c7300d4f5c74358b7e74bfe126191f33e6364068"
+        }
+      ],
+      "status": "RETIRED",
+      "status_reason": "Retired: trained against LAB-005 v1, a defective alias of LAB-004 (documented Phase 12D defect); superseded by the LAB-006 excess-return contract",
+      "status_history": [
+        {
+          "status": "RESEARCH",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "reason": "Initial registration"
+        },
+        {
+          "from": "RESEARCH",
+          "to": "RETIRED",
+          "timestamp": "2026-08-23T00:00:00+00:00",
+          "decision_id": "PROM-000001"
+        }
+      ],
+      "identity_digest": "2fac8c88a19d5290",
+      "created_at": "2026-08-23T00:00:00+00:00",
+      "registered_at": "2026-08-23T00:00:00+00:00",
+      "retired_at": "2026-08-23T00:00:00+00:00",
+      "promotion_policy_version": "v1",
+      "evidence_ids": [
+        "EVID-000131",
+        "EVID-000132",
+        "EVID-000133",
+        "EVID-000134",
+        "EVID-000135",
+        "EVID-000136",
+        "EVID-000137",
+        "EVID-000138",
+        "EVID-000139",
+        "EVID-000140",
+        "EVID-000141",
+        "EVID-000142",
+        "EVID-000143"
+      ]
+    }
+  }
+}

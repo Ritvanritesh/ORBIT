@@ -1,0 +1,47 @@
+{
+  "phase": "12D",
+  "env": "ENV-12D-050",
+  "n_experiments": 4,
+  "note": "Baseline FS-12B-A only (full fundamental pipeline requires ~500s)",
+  "comparison": [
+    {
+      "eid": "EXP-12.9B-ENV-12D-050-FS-12B-A-LAB-004-ridge",
+      "hist_ic": 0.00027522988763294126,
+      "clean_ic": 0.00027522988763294126,
+      "classification": "EXACT_MATCH"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12D-050-FS-12B-A-LAB-004-lasso",
+      "hist_ic": 0.023813451348073056,
+      "clean_ic": 0.023813451348073056,
+      "classification": "EXACT_MATCH"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12D-050-FS-12B-A-LAB-004-random_forest",
+      "hist_ic": 0.018293908883590053,
+      "clean_ic": 0.018293908883590053,
+      "classification": "EXACT_MATCH"
+    },
+    {
+      "eid": "EXP-12.9B-ENV-12D-050-FS-12B-A-LAB-004-xgboost",
+      "hist_ic": 0.0013262311466414312,
+      "clean_ic": 0.0013262311466414312,
+      "classification": "EXACT_MATCH"
+    }
+  ],
+  "status_counts": {
+    "EXACT_MATCH": 4
+  },
+  "historical_stats": {
+    "n": 8,
+    "mean": 0.01092720531648437,
+    "median": 0.009810070015115743,
+    "best": 0.023813451348073056
+  },
+  "clean_stats": {
+    "n": 4,
+    "mean": 0.01092720531648437,
+    "median": 0.009810070015115743,
+    "best": 0.023813451348073056
+  }
+}

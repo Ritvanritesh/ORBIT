@@ -1,0 +1,146 @@
+{
+  "phase": "14.5",
+  "title": "Hypothesis-Driven Signal Discovery Reset — Final Report",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+  "plan_digest": "bb2c11b08e6f09eaddaa4963160e0bc5a58f62b1a9782fd43fc437c5a5b43893",
+
+  "1_prior_failure_diagnosis": {
+    "total_features_tested_prior": 55,
+    "total_families_tested_prior": 14,
+    "conclusion": "All OHLCV-based features produced null results. Fundamentals showed weak, inconsistent effects. Nonlinear models reversed linear effects. The primary bottleneck was information: all tested features were levels or simple ratios of price/volume/fundamentals.",
+    "unexplored_domains_identified": ["path structure", "return asymmetry", "volatility dynamics", "macro regime"]
+  },
+
+  "2_information_domains_reviewed": 6,
+  "domains": ["path structure", "return asymmetry", "volatility dynamics", "macro regime", "autocorrelation (rejected)", "cross-asset dynamics (rejected)"],
+
+  "3_hypotheses_proposed": 5,
+  "hypotheses": {
+    "H-1": "Path structure adds predictive value beyond levels",
+    "H-2": "Return asymmetry (skewness, kurtosis) adds predictive value",
+    "H-3": "Macro regime conditions stock-level prediction",
+    "H-4": "Volatility dynamics add value beyond vol levels (supplementary)",
+    "H-5": "Dynamic beta adds value (rejected — high overlap with existing features)"
+  },
+
+  "4_hypotheses_rejected": {
+    "H-5": "Rejected due to high overlap with existing market context features (FEAT-201..206) and cross-sectional features. Rolling beta estimates are noisy with 20-day windows."
+  },
+
+  "5_hypotheses_accepted": ["H-1", "H-2", "H-3"],
+  "supplementary": "H-4",
+
+  "6_locked_experiment_inventory": {
+    "total_experiments": 24,
+    "universes": ["ENV-050", "ENV-100"],
+    "models": ["ridge", "lasso"],
+    "feature_sets": ["FS-BASELINE", "FS-H1", "FS-H2", "FS-H3", "FS-H1H2", "FS-ALL-NEW", "FS-SUPPLEMENTARY"],
+    "label": "LAB-004 (5-day forward return)",
+    "train": "2010-01-04 to 2018-12-31",
+    "validation": "2019-01-02 to 2021-12-31",
+    "test": "2022-01-03 to 2026-06-30"
+  },
+
+  "7_main_results": {
+    "H-1_path_structure": {
+      "ENV-050_ridge_IC": 0.037,
+      "ENV-050_lasso_IC": 0.0,
+      "ENV-100_ridge_IC": -0.009,
+      "ENV-100_lasso_IC": 0.0,
+      "baseline_ridge_IC": 0.027,
+      "incremental_value": "Marginal (+0.010 on ENV-050, -0.001 on ENV-100)",
+      "classification": "FRAGILE"
+    },
+    "H-2_asymmetry": {
+      "ENV-050_ridge_IC": 0.035,
+      "ENV-050_lasso_IC": 0.0,
+      "ENV-100_ridge_IC": -0.013,
+      "ENV-100_lasso_IC": 0.0,
+      "baseline_ridge_IC": 0.027,
+      "incremental_value": "Marginal (+0.008 on ENV-050, -0.004 on ENV-100)",
+      "classification": "FRAGILE"
+    },
+    "H-3_macro_regime": {
+      "ENV-050_ridge_IC": 0.091,
+      "ENV-050_lasso_IC": 0.108,
+      "ENV-100_ridge_IC": 0.132,
+      "ENV-100_lasso_IC": 0.146,
+      "baseline_ridge_IC": 0.027,
+      "incremental_value": "Substantial (+0.064 ridge, +0.081 lasso on ENV-050)",
+      "classification": "PARTIALLY_ROBUST"
+    },
+    "H-4_vol_dynamics": {
+      "ENV-050_ridge_IC": 0.029,
+      "ENV-050_lasso_IC": 0.0,
+      "baseline_ridge_IC": 0.027,
+      "incremental_value": "Negligible (+0.002)",
+      "classification": "FRAGILE"
+    }
+  },
+
+  "8_statistical_results": {
+    "n_hypotheses_primary": 3,
+    "raw_p_values": {"H-1_ridge": 0.0, "H-1_lasso": 1.0, "H-2_ridge": 0.0, "H-2_lasso": 1.0, "H-3_ridge": 0.063, "H-3_lasso": 0.028},
+    "holm_adjusted": {"H-3_ridge": 0.251, "H-3_lasso": 0.197},
+    "bh_adjusted": {"H-3_ridge": 0.090, "H-3_lasso": 0.056},
+    "any_significant_holm": false,
+    "any_significant_bh": false,
+    "note": "H-3 lasso is borderline significant (BH p=0.056). After Holm correction, no hypothesis achieves significance at 0.05."
+  },
+
+  "9_universe_stability": {
+    "H-1": "FRAGILE — IC positive on ENV-050, negative on ENV-100 (sign reversal)",
+    "H-2": "FRAGILE — IC positive on ENV-050, negative on ENV-100 (sign reversal)",
+    "H-3": "PARTIALLY_ROBUST — IC positive on both ENV-050 (+0.091 ridge) and ENV-100 (+0.132 ridge). Sign consistent.",
+    "H-4": "FRAGILE — IC slightly positive on ENV-050, not tested on ENV-100"
+  },
+
+  "10_temporal_stability": {
+    "note": "Single test period (2022-2026). No walk-forward or sequential window analysis performed. Temporal stability is UNTESTED.",
+    "risk": "The macro regime of 2022-2026 (rising rates, high inflation, labor market strength) may be driving the H-3 effect. The effect may not persist in different macro environments."
+  },
+
+  "11_model_family_stability": {
+    "H-3": "PARTIALLY_ROBUST — ridge IC positive on both universes. Lasso produces zero IC in non-macro experiments but positive in H-3, suggesting macro features are informative enough to overcome lasso's sparsity.",
+    "H-1": "FRAGILE — ridge positive on ENV-050, lasso zero",
+    "H-2": "FRAGILE — ridge positive on ENV-050, lasso zero"
+  },
+
+  "12_economic_limitations": {
+    "portfolio_test_performed": false,
+    "sharpe_ratio_computed": false,
+    "turnover_analyzed": false,
+    "transaction_costs_tested": false,
+    "capacity_estimated": false,
+    "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED. IC magnitude of 0.09-0.15 is economically meaningful in academic context but no portfolio construction, transaction cost, or capacity analysis has been performed.",
+    "ic_magnitude": {
+      "H-3_ENV-050": {"min": 0.091, "max": 0.108, "mean": 0.100},
+      "H-3_ENV-100": {"min": 0.132, "max": 0.146, "mean": 0.139}
+    }
+  },
+
+  "13_registry_additions": {
+    "new_models_registered": 0,
+    "note": "No new candidates registered. H-3 is classified PARTIALLY_ROBUST but insufficient evidence for RESEARCH registration. The existing Phase 14 registry is not modified."
+  },
+
+  "14_audit_results": {
+    "all_checks_pass": true,
+    "adversarial_all_pass": true,
+    "known_limitations": [
+      "Lasso produces IC=0.000 in non-macro experiments",
+      "Bootstrap p-values may be unreliable",
+      "Single test period — no walk-forward",
+      "No portfolio validation",
+      "Macro features are slow-moving"
+    ]
+  },
+
+  "15_honest_scientific_conclusion": "Evidence suggests a candidate relationship between macro regime conditioning (Fed Funds Rate, unemployment, CPI) and stock-level predictive IC. The IC improvement is economically meaningful in magnitude (+0.064 over baseline) and consistent across universes and model families. However, the evidence is preliminary: (a) no walk-forward validation, (b) no portfolio economics tested, (c) the effect may be specific to the 2022-2026 macro environment, (d) statistical significance is borderline after multiple-testing correction. This represents a promising research direction but NOT a validated signal.",
+
+  "final_verdict": "C",
+  "final_verdict_explanation": "Weak or inconsistent candidate evidence. H-3 shows improvement but evidence is preliminary and requires further replication.",
+
+  "final_gate": "YELLOW",
+  "final_gate_explanation": "Continue research, but no candidate has earned additional confidence. H-3 macro regime conditioning warrants further investigation with walk-forward validation, portfolio construction, and testing across different macro environments."
+}

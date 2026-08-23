@@ -1,0 +1,17 @@
+{
+  "attack_6_universe": {
+    "result": "LIMITATION",
+    "sign_reversals": 4,
+    "magnitude_collapses": 8
+  },
+  "attack_7_model_family": {
+    "result": "LIMITATION",
+    "linear_mean_ic": 0.01473279675781996,
+    "nonlinear_mean_ic": -0.0037704656277931883
+  },
+  "attack_8_economic": {
+    "result": "LIMITATION",
+    "max_ic": 0.042865101427182827,
+    "mean_ic_12d": 0.005481165565013386
+  }
+}

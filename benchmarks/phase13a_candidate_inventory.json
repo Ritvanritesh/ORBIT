@@ -1,0 +1,276 @@
+{
+  "n_candidates": 10,
+  "candidates": [
+    {
+      "candidate_id": "CAND-01",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.027608757196023733,
+      "historical_ic_12e": 0.04062176078659436,
+      "reason": "Strongest fundamental candidate in Phase 12D (growth features, lasso). Consistent positive IC.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "candidate_id": "CAND-02",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.029939792773788745,
+      "historical_ic_12e": 0.042865101427182827,
+      "reason": "Best IC in Phase 12E excess return (leverage features). Tests if growth signal is distinct from leverage.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_debt_to_equity",
+        "f_debt_to_assets",
+        "f_current_ratio"
+      ]
+    },
+    {
+      "candidate_id": "CAND-03",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.00027522988763294126,
+      "historical_ic_12e": null,
+      "reason": "Baseline control. Pure OHLCV with ridge. Expected: null result provides falsification baseline.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "candidate_id": "CAND-04",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.023813451348073056,
+      "historical_ic_12e": null,
+      "reason": "Linear model on baseline features. Tests if lasso regularization adds value over ridge on pure OHLCV.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ]
+    },
+    {
+      "candidate_id": "CAND-05",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.005149562396134191,
+      "historical_ic_12e": null,
+      "reason": "Valuation fundamentals (earnings yield, book value, revenue). Tests if value factors survive.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "candidate_id": "CAND-06",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.008830190818752763,
+      "historical_ic_12e": null,
+      "reason": "Profitability fundamentals (ROA, ROE, margins). Tests if quality factors survive.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    },
+    {
+      "candidate_id": "CAND-07",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": null,
+      "historical_ic_12e": null,
+      "reason": "Nonlinear model on growth features. Tests if tree models capture interactions that lasso misses.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "candidate_id": "CAND-08",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": null,
+      "historical_ic_12e": null,
+      "reason": "XGBoost on growth features. Tests if gradient boosting provides robust signal.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_net_income",
+        "f_operating_cash_flow",
+        "f_total_assets"
+      ]
+    },
+    {
+      "candidate_id": "CAND-09",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.03434230305660979,
+      "historical_ic_12e": null,
+      "reason": "Lasso on valuation features. Tests if regularization improves value factor signal.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_eps_diluted",
+        "f_shareholders_equity",
+        "f_revenue"
+      ]
+    },
+    {
+      "candidate_id": "CAND-10",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "label_id_excess": "LAB-006",
+      "env_id": "ENV-12D-050",
+      "historical_ic_12d": 0.014951566746600834,
+      "historical_ic_12e": null,
+      "reason": "Lasso on profitability features. Tests if quality factors survive regularization.",
+      "feature_names": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20",
+        "f_roa",
+        "f_roe",
+        "f_operating_margin",
+        "f_gross_profitability"
+      ]
+    }
+  ],
+  "selection_criteria": "Pre-registered from Phase 12D/12E evidence. No post-hoc selection.",
+  "inventory_digest": "9a83a8a8e19bf546"
+}

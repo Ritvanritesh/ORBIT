@@ -1,0 +1,36 @@
+{
+  "CAND-03": {
+    "when_does_it_work": "Expanding/rolling sequential windows testing 2023-2025 (post-rate-hike normalization); mid/large-cap liquid names; linear models; LAB-004 absolute-return label",
+    "when_does_it_fail": "2022 test year (bear + high volatility + rate-hike stress); nonlinear model families; feature vectors perturbed with ≥5-10% Gaussian noise; execution delayed ≥1 session",
+    "gradual_or_catastrophic": "MIXED — degradation is gradual for costs/slippage/delay; catastrophic (sign-reversing) under feature corruption and in the 2022 regime",
+    "regime_specific": "YES — failure concentrates in the single bear/high-vol year (2022)",
+    "universe_specific": "NO for CAND-03 (consistent across 4 universes); unresolved for CAND-04 (ENV-100 missing)",
+    "model_specific": "YES — strictly a linear-model phenomenon; tree ensembles reverse sign",
+    "single_period_dependence": "PARTIAL — not one window (positive in 6/8), but ALL net positive evidence originates in the 2023-2025 sub-period; excluding it leaves the 12D-era null (locked-protocol IC ≈ 0.000-0.011)",
+    "candidate_specific": {
+      "feature_noise_sign_flip_threshold": "0.01 std",
+      "worst_sequential_window": -0.04662319225475199,
+      "worst_window_id": "RL-002",
+      "dispersion": 0.034167646482732704,
+      "locked_protocol_null_masking": "Aggregate 2022-2026 IC (~0.000-0.011) conceals year-level variation uncovered by 13A; effect is period-concentrated"
+    },
+    "explicit_statement": "Failure regions are a successful research output and are reported verbatim; nothing suppressed."
+  },
+  "CAND-04": {
+    "when_does_it_work": "Expanding/rolling sequential windows testing 2023-2025 (post-rate-hike normalization); mid/large-cap liquid names; linear models; LAB-004 absolute-return label",
+    "when_does_it_fail": "2022 test year (bear + high volatility + rate-hike stress); nonlinear model families; feature vectors perturbed with ≥5-10% Gaussian noise; execution delayed ≥1 session",
+    "gradual_or_catastrophic": "MIXED — degradation is gradual for costs/slippage/delay; catastrophic (sign-reversing) under feature corruption and in the 2022 regime",
+    "regime_specific": "YES — failure concentrates in the single bear/high-vol year (2022)",
+    "universe_specific": "NO for CAND-03 (consistent across 4 universes); unresolved for CAND-04 (ENV-100 missing)",
+    "model_specific": "YES — strictly a linear-model phenomenon; tree ensembles reverse sign",
+    "single_period_dependence": "PARTIAL — not one window (positive in 6/8), but ALL net positive evidence originates in the 2023-2025 sub-period; excluding it leaves the 12D-era null (locked-protocol IC ≈ 0.000-0.011)",
+    "candidate_specific": {
+      "feature_noise_sign_flip_threshold": "0.01 std",
+      "worst_sequential_window": -0.0680924092138095,
+      "worst_window_id": "RL-002",
+      "dispersion": 0.050465249309019584,
+      "locked_protocol_null_masking": "Aggregate 2022-2026 IC (~0.000-0.011) conceals year-level variation uncovered by 13A; effect is period-concentrated"
+    },
+    "explicit_statement": "Failure regions are a successful research output and are reported verbatim; nothing suppressed."
+  }
+}

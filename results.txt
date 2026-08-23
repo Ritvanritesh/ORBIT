@@ -1,0 +1,10 @@
+﻿python :   File "E:\Orbit (Optimized Research & Behavioral Intelligence Trading)\test_join.py", line 26
+At line:1 char:1
++ python test_join.py 2>&1 | out-file -encoding utf8 results.txt
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  File "E:\Orbi...in.py", line 26:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    })
+    ^
+SyntaxError: closing parenthesis '}' does not match opening parenthesis '(' on line 20

@@ -1,0 +1,138 @@
+{
+  "checks": [
+    {
+      "check": "stage_a_plan_digest",
+      "evidence": "stored=30d9cc9d1fe86d7f... computed=30d9cc9d1fe86d7f... verified=True",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark_configuration_locked",
+      "evidence": "benchmark_id=BENCH-001, symbol=SPY, role=broad_market",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark_not_tradable",
+      "evidence": "benchmark role is broad_market (not tradable)",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark_data_structure",
+      "evidence": "rows=8447, columns=['trade_date', 'instrument_id', 'symbol', 'open', 'high', 'low', 'close', 'volume']",
+      "status": "PASS"
+    },
+    {
+      "check": "ds000004_unchanged",
+      "evidence": "instruments=20, sessions=7705",
+      "status": "PASS"
+    },
+    {
+      "check": "lab004_unchanged",
+      "evidence": "label_id=LAB-004, version=v1, benchmark=None",
+      "status": "PASS"
+    },
+    {
+      "check": "lab005_contract_valid",
+      "evidence": "label_id=LAB-005, type=excess_return, benchmark=BENCH-001, horizon=5",
+      "status": "PASS"
+    },
+    {
+      "check": "alignment_no_lookahead",
+      "evidence": "alignment_valid=True, errors=0",
+      "status": "PASS"
+    },
+    {
+      "check": "excess_return_labels_computed",
+      "evidence": "available=139861, total=139961",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark_suite_locked",
+      "evidence": "models=4, feature_sets=2, labels=2",
+      "status": "PASS"
+    },
+    {
+      "check": "source_artifacts_intact",
+      "evidence": "phase9=True, phase10=True, plan=True",
+      "status": "PASS"
+    },
+    {
+      "check": "deterministic_reproducibility",
+      "evidence": "plan_digest_match=True, suite_digest_match=True",
+      "status": "PASS"
+    },
+    {
+      "check": "plan_digest_immutable",
+      "evidence": "stored=30d9cc9d1fe86d7f... recomputed=30d9cc9d1fe86d7f...",
+      "status": "PASS"
+    },
+    {
+      "check": "no_hidden_exclusion",
+      "evidence": "phase9_experiments=36, phase10_experiments=52",
+      "status": "PASS"
+    },
+    {
+      "check": "stage_a_validation_gates",
+      "evidence": "alignment_valid=True, labels_available=139861",
+      "status": "PASS"
+    },
+    {
+      "check": "universe_plan_digest",
+      "evidence": "stored=dfc7fc5c788dc6cc... computed=dfc7fc5c788dc6cc... verified=True",
+      "status": "PASS"
+    },
+    {
+      "check": "expansion_stages_defined",
+      "evidence": "stages: ['stage_0', 'stage_1', 'stage_2', 'stage_3']",
+      "status": "PASS"
+    },
+    {
+      "check": "selection_policy_rule_based",
+      "evidence": "method=deterministic_rule_based",
+      "status": "PASS"
+    },
+    {
+      "check": "survivorship_bias_disclosed",
+      "evidence": "status=NOT FULLY CONTROLLED",
+      "status": "PASS"
+    },
+    {
+      "check": "gate_forbids_performance",
+      "evidence": "forbidden_criteria=['model performance', 'returns', 'IC', 'statistical significance']",
+      "status": "PASS"
+    },
+    {
+      "check": "universe_sizes",
+      "evidence": "universe_50=20, universe_100=20",
+      "status": "PASS"
+    },
+    {
+      "check": "benchmark_in_suite",
+      "evidence": "environments with BENCH-001: 3",
+      "status": "PASS"
+    },
+    {
+      "check": "universe_plan_deterministic",
+      "evidence": "digest_match=True",
+      "status": "PASS"
+    }
+  ],
+  "phase": "11.1",
+  "stage_a_summary": {
+    "alignment_valid": true,
+    "benchmark_sessions": 8447,
+    "excess_labels_available": 139861,
+    "plan_digest": "30d9cc9d1fe86d7ff18f51298fed60641af85470713a84593773274f044cad3e"
+  },
+  "stage_b_summary": {
+    "universe_100_count": 20,
+    "universe_50_count": 20,
+    "universe_plan_digest": "dfc7fc5c788dc6cc02115fae31fe5a82c4a5fba1b641603b96f264801ea856dd"
+  },
+  "summary": {
+    "blocked": false,
+    "checks": 23,
+    "failed": 0,
+    "failed_checks": [],
+    "passed": 23
+  }
+}

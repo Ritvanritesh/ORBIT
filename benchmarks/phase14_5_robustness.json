@@ -1,0 +1,23 @@
+{
+  "H-1": {
+    "ic_050": 0.018354,
+    "ic_100": -0.004422,
+    "sign_consistent": false,
+    "model_consistent": false,
+    "classification": "FRAGILE"
+  },
+  "H-2": {
+    "ic_050": 0.017603,
+    "ic_100": -0.006607,
+    "sign_consistent": false,
+    "model_consistent": false,
+    "classification": "FRAGILE"
+  },
+  "H-3": {
+    "ic_050": 0.099679,
+    "ic_100": 0.139194,
+    "sign_consistent": true,
+    "model_consistent": true,
+    "classification": "PARTIALLY_ROBUST"
+  }
+}

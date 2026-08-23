@@ -1,0 +1,43 @@
+{
+  "phase": "11.2",
+  "environments": {
+    "ENV-1": {
+      "n_instruments": 20,
+      "n_sessions": 7705,
+      "n_experiments": 8,
+      "oos_ic_mean": 0.01193340580557093,
+      "oos_ic_median": 0.01162392852672305,
+      "oos_ic_min": -0.005582377677087161,
+      "oos_ic_max": 0.025422598558090523
+    },
+    "ENV-2": {
+      "n_instruments": 20,
+      "n_sessions": 7705,
+      "n_experiments": 8,
+      "oos_ic_mean": 0.01193340580557093,
+      "oos_ic_median": 0.01162392852672305,
+      "oos_ic_min": -0.005582377677087161,
+      "oos_ic_max": 0.025422598558090523
+    },
+    "ENV-3": {
+      "n_instruments": 50,
+      "n_sessions": 7547,
+      "n_experiments": 8,
+      "oos_ic_mean": 0.012832180131900843,
+      "oos_ic_median": 0.016141571700711153,
+      "oos_ic_min": 0.000275219243048587,
+      "oos_ic_max": 0.02381345218974984
+    },
+    "ENV-4": {
+      "n_instruments": 97,
+      "n_sessions": 7547,
+      "n_experiments": 8,
+      "oos_ic_mean": 0.006853445054516447,
+      "oos_ic_median": 0.006071867693289975,
+      "oos_ic_min": 0.0017037527305370755,
+      "oos_ic_max": 0.012888527512484494
+    }
+  },
+  "cross_generation": {},
+  "verdict": "D \u2014 Null persists"
+}

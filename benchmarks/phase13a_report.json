@@ -1,0 +1,38 @@
+{
+  "phase": "13A",
+  "research_question": "Do previously observed candidate effects survive sequential temporal evaluation across market regimes?",
+  "total_experiments": 16,
+  "robustness_summary": {
+    "CAND-03": {
+      "classification": "ROBUST",
+      "mean_ic": 0.01757509946522677,
+      "positive_fraction": 0.75,
+      "sign_flips": 1,
+      "best_window_destroyed": false
+    },
+    "CAND-04": {
+      "classification": "ROBUST",
+      "mean_ic": 0.026970889726665944,
+      "positive_fraction": 0.75,
+      "sign_flips": 1,
+      "best_window_destroyed": false
+    }
+  },
+  "which_effects_survive": [
+    {
+      "candidate": "CAND-03",
+      "classification": "ROBUST",
+      "mean_ic": 0.01757509946522677
+    },
+    {
+      "candidate": "CAND-04",
+      "classification": "ROBUST",
+      "mean_ic": 0.026970889726665944
+    }
+  ],
+  "regime_concentration": [],
+  "best_window_sensitivity": [],
+  "environment_consistency": [],
+  "model_consistency": [],
+  "candidates_for_further_testing": []
+}

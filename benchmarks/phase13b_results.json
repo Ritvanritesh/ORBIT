@@ -1,0 +1,630 @@
+{
+  "cost": {
+    "CAND-03": {
+      "1.0x": {
+        "multiplier": 1.0,
+        "cost_bps": 5.0,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.0712107755967454,
+        "pct_change": -2.500000000000002,
+        "sign_preserved": true
+      },
+      "1.5x": {
+        "multiplier": 1.5,
+        "cost_bps": 7.5,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.07029781693524867,
+        "pct_change": -3.7499999999999867,
+        "sign_preserved": true
+      },
+      "2.0x": {
+        "multiplier": 2.0,
+        "cost_bps": 10.0,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.06938485827375192,
+        "pct_change": -5.000000000000016,
+        "sign_preserved": true
+      },
+      "3.0x": {
+        "multiplier": 3.0,
+        "cost_bps": 15.0,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.06755894095075846,
+        "pct_change": -7.499999999999996,
+        "sign_preserved": true
+      },
+      "5.0x": {
+        "multiplier": 5.0,
+        "cost_bps": 25.0,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.0639071063047715,
+        "pct_change": -12.50000000000001,
+        "sign_preserved": true
+      }
+    },
+    "CAND-04": {
+      "1.0x": {
+        "multiplier": 1.0,
+        "cost_bps": 5.0,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.10006288801417731,
+        "pct_change": -2.500000000000002,
+        "sign_preserved": true
+      },
+      "1.5x": {
+        "multiplier": 1.5,
+        "cost_bps": 7.5,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.09878003047553402,
+        "pct_change": -3.749999999999998,
+        "sign_preserved": true
+      },
+      "2.0x": {
+        "multiplier": 2.0,
+        "cost_bps": 10.0,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.09749717293689072,
+        "pct_change": -4.999999999999993,
+        "sign_preserved": true
+      },
+      "3.0x": {
+        "multiplier": 3.0,
+        "cost_bps": 15.0,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.09493145785960413,
+        "pct_change": -7.499999999999996,
+        "sign_preserved": true
+      },
+      "5.0x": {
+        "multiplier": 5.0,
+        "cost_bps": 25.0,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.08980002770503093,
+        "pct_change": -12.5,
+        "sign_preserved": true
+      }
+    }
+  },
+  "slippage": {
+    "CAND-03": {
+      "baseline": {
+        "slippage_bps": 0,
+        "effective_bps": 0,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.07303669291973887,
+        "sign_preserved": true
+      },
+      "moderate": {
+        "slippage_bps": 5,
+        "effective_bps": 5,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.0712107755967454,
+        "sign_preserved": true
+      },
+      "severe": {
+        "slippage_bps": 15,
+        "effective_bps": 15,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.06755894095075846,
+        "sign_preserved": true
+      },
+      "asymmetric": {
+        "slippage_bps": 25,
+        "effective_bps": 37.5,
+        "baseline_ic": 0.07303669291973887,
+        "adjusted_ic": 0.05934231299728783,
+        "sign_preserved": true
+      }
+    },
+    "CAND-04": {
+      "baseline": {
+        "slippage_bps": 0,
+        "effective_bps": 0,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.10262860309146392,
+        "sign_preserved": true
+      },
+      "moderate": {
+        "slippage_bps": 5,
+        "effective_bps": 5,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.10006288801417731,
+        "sign_preserved": true
+      },
+      "severe": {
+        "slippage_bps": 15,
+        "effective_bps": 15,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.09493145785960413,
+        "sign_preserved": true
+      },
+      "asymmetric": {
+        "slippage_bps": 25,
+        "effective_bps": 37.5,
+        "baseline_ic": 0.10262860309146392,
+        "adjusted_ic": 0.08338574001181444,
+        "sign_preserved": true
+      }
+    }
+  },
+  "delay": {
+    "CAND-03": {
+      "d0": {
+        "delay": 0,
+        "mean_ic": 0.02389074743288815,
+        "baseline_mean": 0.02389074743288815,
+        "sign_preserved": "True"
+      },
+      "d1": {
+        "delay": 1,
+        "mean_ic": NaN,
+        "baseline_mean": 0.02389074743288815,
+        "sign_preserved": "False"
+      },
+      "d2": {
+        "delay": 2,
+        "mean_ic": NaN,
+        "baseline_mean": 0.02389074743288815,
+        "sign_preserved": "False"
+      }
+    },
+    "CAND-04": {
+      "d0": {
+        "delay": 0,
+        "mean_ic": 0.037836795679449,
+        "baseline_mean": 0.037836795679449,
+        "sign_preserved": "True"
+      },
+      "d1": {
+        "delay": 1,
+        "mean_ic": NaN,
+        "baseline_mean": 0.037836795679449,
+        "sign_preserved": "False"
+      },
+      "d2": {
+        "delay": 2,
+        "mean_ic": NaN,
+        "baseline_mean": 0.037836795679449,
+        "sign_preserved": "False"
+      }
+    }
+  },
+  "parameter": {
+    "CAND-03": {
+      "a0.5x": {
+        "alpha": 0.5,
+        "factor": 0.5,
+        "mean_ic": NaN,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": false
+      },
+      "a0.75x": {
+        "alpha": 0.75,
+        "factor": 0.75,
+        "mean_ic": NaN,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": false
+      },
+      "a1.0x": {
+        "alpha": 1.0,
+        "factor": 1.0,
+        "mean_ic": 0.02389074743288815,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": true
+      },
+      "a1.5x": {
+        "alpha": 1.5,
+        "factor": 1.5,
+        "mean_ic": NaN,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": false
+      },
+      "a2.0x": {
+        "alpha": 2.0,
+        "factor": 2.0,
+        "mean_ic": NaN,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": false
+      },
+      "a3.0x": {
+        "alpha": 3.0,
+        "factor": 3.0,
+        "mean_ic": NaN,
+        "baseline_ic": 0.07303669291973887,
+        "sign_preserved": false
+      }
+    },
+    "CAND-04": {
+      "a0.5x": {
+        "alpha": 0.0005,
+        "factor": 0.5,
+        "mean_ic": NaN,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": false
+      },
+      "a0.75x": {
+        "alpha": 0.00075,
+        "factor": 0.75,
+        "mean_ic": NaN,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": false
+      },
+      "a1.0x": {
+        "alpha": 0.001,
+        "factor": 1.0,
+        "mean_ic": 0.037836795679449,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": true
+      },
+      "a1.5x": {
+        "alpha": 0.0015,
+        "factor": 1.5,
+        "mean_ic": NaN,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": false
+      },
+      "a2.0x": {
+        "alpha": 0.002,
+        "factor": 2.0,
+        "mean_ic": NaN,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": false
+      },
+      "a3.0x": {
+        "alpha": 0.003,
+        "factor": 3.0,
+        "mean_ic": NaN,
+        "baseline_ic": 0.10262860309146392,
+        "sign_preserved": false
+      }
+    }
+  },
+  "feature": {
+    "CAND-03": {
+      "noise": {
+        "n0.01": {
+          "noise_std": 0.01,
+          "mean_ic": 0.013787157465368401,
+          "baseline_ic": 0.07303669291973887
+        },
+        "n0.05": {
+          "noise_std": 0.05,
+          "mean_ic": 0.01508898592212092,
+          "baseline_ic": 0.07303669291973887
+        },
+        "n0.1": {
+          "noise_std": 0.1,
+          "mean_ic": 0.018370274459497637,
+          "baseline_ic": 0.07303669291973887
+        },
+        "n0.2": {
+          "noise_std": 0.2,
+          "mean_ic": 0.023305452177552553,
+          "baseline_ic": 0.07303669291973887
+        }
+      },
+      "loo": {
+        "ret_10": {
+          "mean_ic": 0.022724470454003644,
+          "baseline_ic": 0.07303669291973887
+        },
+        "ret_20": {
+          "mean_ic": 0.02500737457119668,
+          "baseline_ic": 0.07303669291973887
+        },
+        "ret_30": {
+          "mean_ic": 0.034667224426023185,
+          "baseline_ic": 0.07303669291973887
+        },
+        "sma_ratio_5_30": {
+          "mean_ic": 0.027448862941781223,
+          "baseline_ic": 0.07303669291973887
+        },
+        "sma_ratio_15_40": {
+          "mean_ic": 0.025007379909542393,
+          "baseline_ic": 0.07303669291973887
+        },
+        "vol_10": {
+          "mean_ic": 0.023625123289798385,
+          "baseline_ic": 0.07303669291973887
+        },
+        "vol_30": {
+          "mean_ic": 0.010061491352989362,
+          "baseline_ic": 0.07303669291973887
+        },
+        "log_dv_med_20": {
+          "mean_ic": 0.022740664141148954,
+          "baseline_ic": 0.07303669291973887
+        }
+      }
+    },
+    "CAND-04": {
+      "noise": {
+        "n0.01": {
+          "noise_std": 0.01,
+          "mean_ic": 0.02508394092312916,
+          "baseline_ic": 0.10262860309146392
+        },
+        "n0.05": {
+          "noise_std": 0.05,
+          "mean_ic": -0.00391781153112241,
+          "baseline_ic": 0.10262860309146392
+        },
+        "n0.1": {
+          "noise_std": 0.1,
+          "mean_ic": 5.26759445128262e-18,
+          "baseline_ic": 0.10262860309146392
+        },
+        "n0.2": {
+          "noise_std": 0.2,
+          "mean_ic": 5.26759445128262e-18,
+          "baseline_ic": 0.10262860309146392
+        }
+      },
+      "loo": {
+        "ret_10": {
+          "mean_ic": 0.03303846051823239,
+          "baseline_ic": 0.10262860309146392
+        },
+        "ret_20": {
+          "mean_ic": 0.037836795679449,
+          "baseline_ic": 0.10262860309146392
+        },
+        "ret_30": {
+          "mean_ic": 0.037750380606635756,
+          "baseline_ic": 0.10262860309146392
+        },
+        "sma_ratio_5_30": {
+          "mean_ic": 0.037836795679449,
+          "baseline_ic": 0.10262860309146392
+        },
+        "sma_ratio_15_40": {
+          "mean_ic": 0.037836795679449,
+          "baseline_ic": 0.10262860309146392
+        },
+        "vol_10": {
+          "mean_ic": 0.037836795693496975,
+          "baseline_ic": 0.10262860309146392
+        },
+        "vol_30": {
+          "mean_ic": 0.028137470810785117,
+          "baseline_ic": 0.10262860309146392
+        },
+        "log_dv_med_20": {
+          "mean_ic": 0.037836795679449,
+          "baseline_ic": 0.10262860309146392
+        }
+      }
+    }
+  },
+  "universe": {
+    "CAND-03": {
+      "ENV-050": {
+        "mean_ic": 0.02389074743288815,
+        "n": 4
+      },
+      "ENV-100": {
+        "mean_ic": 0.022758007968164157,
+        "n": 4
+      },
+      "TOP25": {
+        "mean_ic": 0.028704448733635354,
+        "n": 4
+      },
+      "BOT25": {
+        "mean_ic": 0.03491605986016385,
+        "n": 4
+      }
+    },
+    "CAND-04": {
+      "ENV-050": {
+        "mean_ic": 0.037836795679449,
+        "n": 4
+      },
+      "ENV-100": {
+        "status": "error",
+        "msg": ""
+      },
+      "TOP25": {
+        "mean_ic": 0.02985810649244295,
+        "n": 4
+      },
+      "BOT25": {
+        "mean_ic": 0.03246356464281672,
+        "n": 4
+      }
+    }
+  },
+  "data": {
+    "CAND-03": {
+      "m0.0": {
+        "missing_frac": 0.0,
+        "mean_ic": 0.07303669291973887
+      },
+      "m0.05": {
+        "missing_frac": 0.05,
+        "mean_ic": NaN
+      },
+      "m0.1": {
+        "missing_frac": 0.1,
+        "mean_ic": NaN
+      },
+      "m0.2": {
+        "missing_frac": 0.2,
+        "mean_ic": NaN
+      }
+    },
+    "CAND-04": {
+      "m0.0": {
+        "missing_frac": 0.0,
+        "mean_ic": 0.10262860309146392
+      },
+      "m0.05": {
+        "missing_frac": 0.05,
+        "mean_ic": NaN
+      },
+      "m0.1": {
+        "missing_frac": 0.1,
+        "mean_ic": NaN
+      },
+      "m0.2": {
+        "missing_frac": 0.2,
+        "mean_ic": NaN
+      }
+    }
+  },
+  "curves": {
+    "CAND-03": {
+      "cost_x": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "cost_y": [
+        0.0712107755967454,
+        0.07029781693524867,
+        0.06938485827375192,
+        0.06755894095075846,
+        0.0639071063047715
+      ],
+      "slip_x": [
+        0,
+        5,
+        15,
+        25
+      ],
+      "slip_y": [
+        0.07303669291973887,
+        0.0712107755967454,
+        0.06755894095075846,
+        0.05934231299728783
+      ],
+      "param_x": [
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+      ],
+      "param_y": [
+        NaN,
+        NaN,
+        0.02389074743288815,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "noise_x": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "noise_y": [
+        0.013787157465368401,
+        0.01508898592212092,
+        0.018370274459497637,
+        0.023305452177552553
+      ],
+      "data_x": [
+        0.0,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "data_y": [
+        0.07303669291973887,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "baseline_ic": 0.07303669291973887,
+      "classification": {
+        "cost": "GRACEFUL",
+        "slippage": "GRACEFUL",
+        "parameter": "MIXED",
+        "feature_noise": "CLIFF",
+        "data_missing": "MIXED"
+      }
+    },
+    "CAND-04": {
+      "cost_x": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        5.0
+      ],
+      "cost_y": [
+        0.10006288801417731,
+        0.09878003047553402,
+        0.09749717293689072,
+        0.09493145785960413,
+        0.08980002770503093
+      ],
+      "slip_x": [
+        0,
+        5,
+        15,
+        25
+      ],
+      "slip_y": [
+        0.10262860309146392,
+        0.10006288801417731,
+        0.09493145785960413,
+        0.08338574001181444
+      ],
+      "param_x": [
+        0.5,
+        0.75,
+        1.0,
+        1.5,
+        2.0,
+        3.0
+      ],
+      "param_y": [
+        NaN,
+        NaN,
+        0.037836795679449,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "noise_x": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "noise_y": [
+        0.02508394092312916,
+        -0.00391781153112241,
+        5.26759445128262e-18,
+        5.26759445128262e-18
+      ],
+      "data_x": [
+        0.0,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "data_y": [
+        0.10262860309146392,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "baseline_ic": 0.10262860309146392,
+      "classification": {
+        "cost": "GRACEFUL",
+        "slippage": "GRACEFUL",
+        "parameter": "MIXED",
+        "feature_noise": "CLIFF",
+        "data_missing": "MIXED"
+      }
+    }
+  }
+}

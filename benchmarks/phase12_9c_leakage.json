@@ -1,0 +1,12 @@
+{
+  "attack": "ATTACK 1 - LOOKAHEAD LEAKAGE",
+  "result": "PASS",
+  "findings": [],
+  "details": {
+    "shift_1_verified": true,
+    "cross_sectional_safe": true,
+    "pit_asof_join_correct": true,
+    "split_construction_correct": true,
+    "scaler_fit_boundary": "training_only"
+  }
+}

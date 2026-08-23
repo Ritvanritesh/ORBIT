@@ -1,0 +1,96 @@
+{
+  "n_windows": 8,
+  "n_expanding": 4,
+  "n_rolling": 4,
+  "windows": [
+    {
+      "window_id": "EXP-001",
+      "window_type": "expanding",
+      "train_start": "2010-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-01",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "RL-002",
+      "window_type": "rolling",
+      "train_start": "2013-01-04",
+      "train_end": "2018-12-31",
+      "val_start": "2019-01-01",
+      "val_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "EXP-003",
+      "window_type": "expanding",
+      "train_start": "2010-01-04",
+      "train_end": "2019-12-31",
+      "val_start": "2020-01-01",
+      "val_end": "2022-12-31",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "RL-004",
+      "window_type": "rolling",
+      "train_start": "2014-01-04",
+      "train_end": "2019-12-31",
+      "val_start": "2020-01-01",
+      "val_end": "2022-12-31",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "EXP-005",
+      "window_type": "expanding",
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "val_start": "2021-01-01",
+      "val_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "RL-006",
+      "window_type": "rolling",
+      "train_start": "2015-01-04",
+      "train_end": "2020-12-31",
+      "val_start": "2021-01-01",
+      "val_end": "2023-12-31",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "EXP-007",
+      "window_type": "expanding",
+      "train_start": "2010-01-04",
+      "train_end": "2021-12-31",
+      "val_start": "2022-01-01",
+      "val_end": "2024-12-31",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "purge_sessions": 5
+    },
+    {
+      "window_id": "RL-008",
+      "window_type": "rolling",
+      "train_start": "2016-01-04",
+      "train_end": "2021-12-31",
+      "val_start": "2022-01-01",
+      "val_end": "2024-12-31",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "purge_sessions": 5
+    }
+  ],
+  "windows_digest": "6d9df5916b350a91"
+}

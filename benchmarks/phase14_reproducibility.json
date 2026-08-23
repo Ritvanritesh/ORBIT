@@ -1,0 +1,15 @@
+{
+  "method": "build_registry() executed twice from identical historical inputs",
+  "compared": [
+    "model ids",
+    "identity digests",
+    "evidence digests",
+    "promotion decisions",
+    "lifecycle statuses",
+    "registry manifest"
+  ],
+  "drift_found": [],
+  "deterministic": true,
+  "manifest_digest_run1": "c69e024a048e7203",
+  "manifest_digest_run2": "c69e024a048e7203"
+}

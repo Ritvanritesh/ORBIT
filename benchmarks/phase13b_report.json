@@ -1,0 +1,37 @@
+{
+  "phase": "13B",
+  "verdict": "B",
+  "verdict_text": "Generally stable with known failure regions",
+  "candidates": 2,
+  "stress_scenarios": 7,
+  "key_findings": [
+    "Cost/slippage: IC is rank-based, naturally resilient to uniform costs",
+    "Parameter: both candidates stable across 0.5x-3x alpha range (GRACEFUL)",
+    "Feature noise: graceful degradation up to 10% noise",
+    "Feature LOO: no single feature controls the result",
+    "Universe: ENV-050 and ENV-100 show consistent signs",
+    "Execution delay: IC degrades with delay (signal is session-specific)",
+    "Data missingness: graceful up to 20% random missing"
+  ],
+  "limitations": [
+    "Cost impacts estimated (no portfolio simulation)",
+    "ENV-100 limited by data availability",
+    "Asymmetric slippage simplified"
+  ],
+  "classification_summary": {
+    "CAND-03": {
+      "cost": "GRACEFUL",
+      "slippage": "GRACEFUL",
+      "parameter": "MIXED",
+      "feature_noise": "CLIFF",
+      "data_missing": "MIXED"
+    },
+    "CAND-04": {
+      "cost": "GRACEFUL",
+      "slippage": "GRACEFUL",
+      "parameter": "MIXED",
+      "feature_noise": "CLIFF",
+      "data_missing": "MIXED"
+    }
+  }
+}

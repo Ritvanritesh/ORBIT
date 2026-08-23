@@ -1,0 +1,807 @@
+{
+  "mode_claimed": "IDENTITY_REPLAY",
+  "full_numerical_replay_performed": false,
+  "numerical_replay_note": "no serialized estimators exist for historical runs; full numerical replay is NOT claimed",
+  "n_models": 11,
+  "resolution_complete": 11,
+  "success_rate": 1.0,
+  "results": {
+    "MODEL-00001": {
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "ridge",
+        "hyperparameters": {
+          "alpha": 1.0
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-000004"
+        ],
+        "universe_id": "ENV-DEV20",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-001",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "71d7682d99e065cc",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "9d5598d691be8c5f"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase9_review2_results.json": {
+          "path": "benchmarks\\phase9_review2_results.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00002": {
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12D-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-B",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "f34c677c97c0f4d6",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "64a2bb96171fea2e"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00003": {
+      "model_id": "MODEL-00003",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12D-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-C",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "a63585aab0a4d69a",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "da87c645d09b386b"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00004": {
+      "model_id": "MODEL-00004",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12D-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-D",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "9c1408ceeee963fd",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "4ab36debc9230c18"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00005": {
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12D-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-E",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "81922185a3ab5150",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "8bf86504abde4673"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00006": {
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12E-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-D",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "9c1408ceeee963fd",
+        "label_id": "LAB-006",
+        "label_version": "v1",
+        "label_contract_digest": "e32dc0cbdfd41fd6",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "c87d72604480ab00"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00007": {
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12E-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-E",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "81922185a3ab5150",
+        "label_id": "LAB-006",
+        "label_version": "v1",
+        "label_contract_digest": "e32dc0cbdfd41fd6",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "f0f37bb97d77bde3"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00008": {
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "ridge",
+        "hyperparameters": {
+          "alpha": 1.0
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12E-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-A",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "82eff4caf3ebc213",
+        "label_id": "LAB-006",
+        "label_version": "v1",
+        "label_contract_digest": "e32dc0cbdfd41fd6",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "3de89d1c5ffa0ea0"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00009": {
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "ridge",
+        "hyperparameters": {
+          "alpha": 1.0
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-050-seq",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-001",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "71d7682d99e065cc",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2020-12-31",
+        "val_start": "2021-01-01",
+        "val_end": "2023-12-31",
+        "test_start": "2024-01-01",
+        "test_end": "2024-12-31",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "4d0891b62b52d9a7",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "1bb59698848e2284"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00010": {
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "lasso",
+        "hyperparameters": {
+          "alpha": 0.001
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-050-seq",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-001",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "71d7682d99e065cc",
+        "label_id": "LAB-004",
+        "label_version": "v1",
+        "label_contract_digest": "7e46bc484abe7ae1",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2020-12-31",
+        "val_start": "2021-01-01",
+        "val_end": "2023-12-31",
+        "test_start": "2024-01-01",
+        "test_end": "2024-12-31",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "4d0891b62b52d9a7",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "fb344f1c8b667ca7"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    },
+    "MODEL-00011": {
+      "model_id": "MODEL-00011",
+      "model_version": "v1",
+      "replay_mode": "IDENTITY_REPLAY",
+      "resolved": {
+        "model_family": "ridge",
+        "hyperparameters": {
+          "alpha": 1.0
+        },
+        "preprocessing": {
+          "scaling": "standardized"
+        },
+        "target_transform": "identity",
+        "dataset_snapshot_ids": [
+          "DS-EXP-050"
+        ],
+        "universe_id": "ENV-12D-050",
+        "instrument_identity_version": "instrument_master_v1",
+        "feature_set_id": "FS-12B-A",
+        "feature_set_version": "v1",
+        "feature_definitions_digest": "82eff4caf3ebc213",
+        "label_id": "LAB-005",
+        "label_version": "v1",
+        "label_contract_digest": "580f0f0b51594652",
+        "benchmark_id": "BENCH-001",
+        "cost_model_id": "CM-001",
+        "train_start": "2010-01-04",
+        "train_end": "2018-12-31",
+        "val_start": "2019-01-02",
+        "val_end": "2021-12-31",
+        "test_start": "2022-01-03",
+        "test_end": "2026-06-30",
+        "purge_policy": "outcome_window_boundary",
+        "embargo_days": 5,
+        "window_protocol_digest": "103a60558f68de67",
+        "seed": 42,
+        "code_hash": "096e6092ad81e69008f76644f331d79050f41d096c6cb0c15bea21bd759e6e90",
+        "config_hash": "3afbbc5af598e0c4"
+      },
+      "artifacts": {
+        "model_artifact_uri": null,
+        "model_artifact_checksum": null,
+        "artifact_checksums": {},
+        "note": "no serialized estimator exists for historical runs; models are replayable at IDENTITY level only"
+      },
+      "referenced_evidence": [],
+      "artifact_verification": {
+        "phase12d_ENV-12D-050_results.json": {
+          "path": "benchmarks\\phase12d_ENV-12D-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase12e_ENV-12E-050_results.json": {
+          "path": "benchmarks\\phase12e_ENV-12E-050_results.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13a_stability.json": {
+          "path": "benchmarks\\phase13a_stability.json",
+          "exists": true,
+          "checksum_match": true
+        },
+        "phase13c_candidate_registry.json": {
+          "path": "benchmarks\\phase13c_candidate_registry.json",
+          "exists": true,
+          "checksum_match": true
+        }
+      },
+      "resolution_complete": true,
+      "missing_components": [],
+      "numerical_replay_performed": false
+    }
+  }
+}

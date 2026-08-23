@@ -1,0 +1,18 @@
+{
+  "phase": "12E",
+  "verdict": "D",
+  "reason": "Null persists - corrected excess return does not materially change evidence",
+  "label_defect_confirmed": true,
+  "label_divergence_pct": 99.8,
+  "env_050": {
+    "12d_mean_ic": 0.005481165565013386,
+    "12e_mean_ic": 0.014324406629628023
+  },
+  "env_100": {
+    "12d_mean_ic": 0.003592162779108305,
+    "12e_mean_ic": 0.0035864627767030004
+  },
+  "best_excess_ic_050": 0.0429,
+  "best_excess_ic_100": 0.0425,
+  "experiments_completed": "48/48 (24 per environment)"
+}

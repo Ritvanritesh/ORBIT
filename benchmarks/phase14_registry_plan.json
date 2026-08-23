@@ -1,0 +1,43 @@
+{
+  "phase": "14",
+  "created_at": "2026-08-23T00:00:00+00:00",
+  "principle": "A model is replaceable. The evidence chain is the asset.",
+  "hard_constraints_from_13C": {
+    "robust_candidate_count": 0,
+    "initial_status_for_all_models": "RESEARCH",
+    "paper_eligible_now": false,
+    "phase13b_absolute_levels_canonical": false
+  },
+  "architecture": [
+    "MODEL LAB",
+    "MODEL REGISTRY",
+    "PROMOTION POLICY",
+    "FUTURE PREDICTION SERVICE (schema-only interface test)"
+  ],
+  "reuse_not_duplicate": "Experiment identity remains owned by orbit.experiments (Phase 6) and orbit.ml.registry (register-before-run). The Phase 14 registry adds MODEL-VERSION identity ABOVE experiments: it references experiment ids as parents and benchmark JSONs as immutable evidence artifacts; it does not rewrite experiment identity.",
+  "lifecycle_states": {
+    "RESEARCH": "registered artifact; evidence may be weak/exploratory; never tradable",
+    "VALIDATED": "identity+reproducibility+required evidence gates passed; NOT economic proof",
+    "PAPER": "VALIDATED plus portfolio/cost/risk/execution gates; none currently eligible",
+    "RETIRED": "permanently ineligible; artifacts replayable; retirement reason immutable"
+  },
+  "inspected_phases": [
+    "9",
+    "10",
+    "11",
+    "11.1",
+    "11.2",
+    "12A",
+    "12B",
+    "12C",
+    "12D",
+    "12E",
+    "12.9A",
+    "12.9B",
+    "12.9C",
+    "13A",
+    "13B",
+    "13C"
+  ],
+  "policy_version": "v1"
+}

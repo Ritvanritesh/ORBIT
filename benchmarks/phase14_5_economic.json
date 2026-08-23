@@ -1,0 +1,21 @@
+{
+  "portfolio_tested": false,
+  "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED",
+  "ic_magnitude": {
+    "H-1": {
+      "min": 0.0,
+      "max": 0.036951,
+      "mean": 0.018354
+    },
+    "H-2": {
+      "min": 0.0,
+      "max": 0.035205,
+      "mean": 0.017603
+    },
+    "H-3": {
+      "min": 0.090892,
+      "max": 0.108106,
+      "mean": 0.099679
+    }
+  }
+}

@@ -1,0 +1,1189 @@
+{
+  "phase": "12B",
+  "report_type": "identity_mapping",
+  "created_at": "2026-08-22",
+  "data_type": "synthetic",
+  "note": "All CIKs and ticker mappings are synthetic - not real SEC identities",
+  "mappings": {
+    "DS-EXP-050": [
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-10-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-04-06",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2014-12-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2002-07-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2005-05-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-06-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2024-03-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2024-09-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-05-09",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2005-03-31",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-06-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-07-03",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-11-06",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-08-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2002-06-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-09-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2015-01-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2000-08-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2001-01-18",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-02-04",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2020-09-10",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-11-17",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2009-11-04",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-09-30",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-10-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2005-12-10",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2019-02-11",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-10-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-07-04",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-11-03",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-11-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2025-03-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2002-03-11",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2015-03-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-01-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2017-02-21",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-10-26",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-04-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-10-18",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-12-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-05-25",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2001-01-29",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2014-07-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-11-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2014-08-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-02-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-11-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1998-06-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2008-11-30",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-02-26",
+        "period_end_date": "N/A"
+      }
+    ],
+    "DS-EXP-100": [
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-02-15",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2004-05-18",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2021-08-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2014-10-20",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-09-17",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2020-03-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-03-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-04-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2014-09-10",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-09-04",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-03-28",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2002-03-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-01-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-04-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2020-03-07",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-02-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2025-02-27",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-06-07",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2019-02-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1998-08-17",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-02-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-10-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-09-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2017-07-17",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2017-06-30",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-10-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-03-29",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-02-26",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2004-06-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1998-01-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-12-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2021-12-15",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-05-25",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-11-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2011-11-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-12-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2000-11-29",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2004-07-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2000-10-24",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2021-12-30",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-03-09",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-11-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2024-10-09",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2022-02-26",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2025-09-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-02-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2004-06-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2019-10-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2017-04-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-03-20",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-08-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2021-02-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-10-16",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-08-07",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-06-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-10-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2011-03-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-09-02",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2000-11-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2008-05-29",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2005-03-27",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-08-04",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2023-07-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-04-29",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2001-07-01",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-04-28",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-03-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2013-07-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2017-03-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2008-02-11",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-01-10",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2015-02-14",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2016-09-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2025-11-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2012-07-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2004-02-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2025-07-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2009-01-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-07-06",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2005-09-05",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2008-03-08",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2006-02-15",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1998-10-30",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1999-01-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2018-09-12",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2009-12-03",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2010-07-18",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2000-06-22",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2003-10-19",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2020-06-28",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2011-11-17",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2002-03-13",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "1998-11-15",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2001-10-26",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2021-07-11",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2020-12-23",
+        "period_end_date": "N/A"
+      },
+      {
+        "instrument_id": "N/A",
+        "cik": "N/A",
+        "ticker": "N/A",
+        "company": "N/A",
+        "filing_date": "2007-12-16",
+        "period_end_date": "N/A"
+      }
+    ]
+  }
+}

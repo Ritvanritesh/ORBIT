@@ -1,0 +1,1125 @@
+{
+  "n_results": 112,
+  "results": [
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 88,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 106,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 57,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 224,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 27,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 0,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 251,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 0,
+      "window_ic": -0.03148764596966501,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 88,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 106,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 57,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 224,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 27,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 0,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 251,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 0,
+      "window_ic": -0.04662319225475199,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 110,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 28,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 112,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 50,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 141,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 59,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 124,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 126,
+      "window_ic": 0.02385794161615074,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 110,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 28,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 112,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 50,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 141,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 59,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 124,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 126,
+      "window_ic": 0.05556790034491204,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 0,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 252,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 0,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 134,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 118,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 252,
+      "window_ic": 0.024972053637833738,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 0,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 252,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 0,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 134,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 118,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 252,
+      "window_ic": 0.03820442033933713,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 39,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 211,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 68,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 114,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 68,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 250,
+      "window_ic": 0.03595521535867543,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 39,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 211,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 68,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 114,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 68,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 250,
+      "window_ic": 0.0401541026493221,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 88,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 106,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 57,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 224,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 27,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 0,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 251,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 0,
+      "window_ic": -0.04930573517193657,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 88,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 106,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 57,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 224,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 27,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 0,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 251,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 0,
+      "window_ic": -0.0680924092138095,
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 110,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 28,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 112,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 50,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 141,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 59,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 124,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 126,
+      "window_ic": 0.06268224305289248,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 110,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "bear",
+      "n_regime_sessions": 28,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 112,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 50,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 141,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 59,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "stress_regime",
+      "regime_value": "rate_hikes_2022_2023",
+      "n_regime_sessions": 124,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 126,
+      "window_ic": 0.0738464735876666,
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 0,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 252,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 0,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 134,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 118,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 252,
+      "window_ic": 0.046091514483065615,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 0,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 252,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 0,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 134,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 118,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 252,
+      "window_ic": 0.04363693999419147,
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 39,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 211,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 68,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 114,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 68,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 250,
+      "window_ic": 0.0536602810557729,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "direction_regime",
+      "regime_value": "neutral",
+      "n_regime_sessions": 39,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "direction_regime",
+      "regime_value": "bull",
+      "n_regime_sessions": 211,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "high",
+      "n_regime_sessions": 68,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "medium",
+      "n_regime_sessions": 114,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "volatility_regime",
+      "regime_value": "low",
+      "n_regime_sessions": 68,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    },
+    {
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "regime_type": "stress_regime",
+      "regime_value": "normal",
+      "n_regime_sessions": 250,
+      "window_ic": 0.053247810025484565,
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31"
+    }
+  ]
+}

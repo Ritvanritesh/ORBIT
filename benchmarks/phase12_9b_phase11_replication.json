@@ -1,0 +1,60 @@
+{
+  "phase": "11.2",
+  "env": "ENV-1",
+  "dataset": "DS-000004",
+  "n_experiments": 4,
+  "elapsed_s": 10.2,
+  "historical_stats": {
+    "n": 8,
+    "mean": 0.01193340580557093,
+    "median": 0.01162392852672305,
+    "best": 0.025422598558090523
+  },
+  "clean_stats": {
+    "n": 4,
+    "mean": NaN,
+    "median": NaN,
+    "best": NaN
+  },
+  "historical_significance": {
+    "holm": 3,
+    "bh": 3
+  },
+  "clean_significance": {
+    "holm": 0,
+    "bh": 0
+  },
+  "comparison": [
+    {
+      "eid": "EXP-11-ENV-1-FS-001-LAB-004-ridge",
+      "hist_ic": -0.0003179261081063741,
+      "clean_ic": -0.000317924774225456,
+      "classification": "NUMERICALLY_EQUIVALENT"
+    },
+    {
+      "eid": "EXP-11-ENV-1-FS-003-LAB-004-ridge",
+      "hist_ic": 0.020176335807586293,
+      "clean_ic": NaN,
+      "classification": "FAILED_TO_REPRODUCE"
+    },
+    {
+      "eid": "EXP-11-ENV-1-FS-001-LAB-004-lasso",
+      "hist_ic": 0.022560249237603122,
+      "clean_ic": 0.009984355272391153,
+      "classification": "FAILED_TO_REPRODUCE"
+    },
+    {
+      "eid": "EXP-11-ENV-1-FS-003-LAB-004-lasso",
+      "hist_ic": 0.025422598558090523,
+      "clean_ic": 0.0020949385201907687,
+      "classification": "FAILED_TO_REPRODUCE"
+    }
+  ],
+  "status_counts": {
+    "EXACT_MATCH": 0,
+    "NUMERICALLY_EQUIVALENT": 1,
+    "MINOR_DRIFT": 0,
+    "MATERIAL_DRIFT": 0,
+    "FAILED_TO_REPRODUCE": 3
+  }
+}

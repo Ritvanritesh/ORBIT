@@ -1,0 +1,66 @@
+{
+  "phase12e_ENV-12E-050_results.json": {
+    "n": 24,
+    "holm_sig": 12,
+    "bh_sig": 16,
+    "top_5": [
+      [
+        "EXP-12E-ENV-12E-050-FS-12B-A-LAB-006-lasso",
+        0.0386,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-050-FS-12B-B-LAB-006-lasso",
+        0.0421,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-050-FS-12B-D-LAB-006-lasso",
+        0.0406,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-lasso",
+        0.0429,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-050-FS-12B-E-LAB-006-random_forest",
+        0.0354,
+        0.0
+      ]
+    ]
+  },
+  "phase12e_ENV-12E-100_results.json": {
+    "n": 24,
+    "holm_sig": 11,
+    "bh_sig": 12,
+    "top_5": [
+      [
+        "EXP-12E-ENV-12E-100-FS-12B-E-LAB-006-lasso",
+        0.0425,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-100-FS-12B-B-LAB-006-random_forest",
+        -0.0254,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-100-FS-12B-E-LAB-006-ridge",
+        0.0264,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-100-FS-12B-F-LAB-006-lasso",
+        0.0331,
+        0.0
+      ],
+      [
+        "EXP-12E-ENV-12E-100-FS-12B-B-LAB-006-xgboost",
+        -0.0201,
+        0.0
+      ]
+    ]
+  }
+}

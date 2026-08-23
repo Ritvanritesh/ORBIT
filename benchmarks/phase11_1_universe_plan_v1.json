@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-08-21T14:25:55",
+  "expansion_stages": {
+    "stage_0": {
+      "dataset_id": "DS-000004",
+      "description": "20 symbols without benchmark context (existing DS-000004)",
+      "name": "historical_baseline",
+      "target_size": 20
+    },
+    "stage_1": {
+      "benchmark_id": "BENCH-001",
+      "dataset_id": "DS-000004",
+      "description": "20 symbols + benchmark context (BENCH-001)",
+      "name": "benchmark_context",
+      "target_size": 20
+    },
+    "stage_2": {
+      "description": "~50 symbols + benchmark context",
+      "name": "expanded_50",
+      "target_size_max": 55,
+      "target_size_min": 45
+    },
+    "stage_3": {
+      "description": "~100 symbols + benchmark context",
+      "name": "expanded_100",
+      "target_size_max": 110,
+      "target_size_min": 90
+    }
+  },
+  "gate_between_50_and_100": {
+    "forbidden_criteria": [
+      "model performance",
+      "returns",
+      "IC",
+      "statistical significance"
+    ],
+    "permitted_criteria": [
+      "infrastructure validity",
+      "data quality",
+      "identity integrity",
+      "universe-plan compliance",
+      "reproducibility"
+    ]
+  },
+  "identity_mapping": {
+    "description": "New instruments receive INS-XXXXXX IDs following ORBIT conventions. Ticker changes are tracked via SymbolHistory.",
+    "method": "canonical_ins_id"
+  },
+  "phase": "11.1",
+  "plan_digest": "1b350818ea0255c61a2c2cd36a99232c51eb6aea3a21c41a2355fdc8d93661a7",
+  "protocol": "phase11_1_universe_v1",
+  "purpose": "Controlled expansion of the tradable universe from ~20 to ~50 to ~100 symbols. The expansion policy is locked before any model performance is observed.",
+  "sector_representation": {
+    "description": "Selection follows deterministic liquidity and history rules. Sector diversity is a natural consequence, not a hard constraint.",
+    "method": "broad_market_coverage"
+  },
+  "selection_policy": {
+    "criteria": [
+      "US-listed equities",
+      "minimum 5 years of trading history by selection date",
+      "minimum average daily dollar volume > $10M (trailing 200 sessions)",
+      "must have point-in-time data available",
+      "no OTC/pink-sheet securities"
+    ],
+    "exclusion_criteria": [
+      "securities with < 5 years history",
+      "securities with < $10M average daily dollar volume",
+      "securities without point-in-time data",
+      "OTC/pink-sheet securities"
+    ],
+    "lookback_window": 200,
+    "method": "deterministic_rule_based",
+    "min_history_years": 5,
+    "selection_date": "2026-01-01"
+  },
+  "survivorship_bias": {
+    "description": "The development universe is constructed from currently available instruments with sufficient history. Historical delistings that occurred before the selection date may not be fully represented. This limitation is explicitly documented.",
+    "status": "NOT FULLY CONTROLLED"
+  },
+  "version": "1.0.0"
+}

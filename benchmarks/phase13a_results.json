@@ -1,0 +1,343 @@
+{
+  "n_candidates": 10,
+  "n_windows": 8,
+  "n_results": 16,
+  "results": [
+    {
+      "oos_ic": -0.03148764596966501,
+      "oos_ic_sessions": 251,
+      "rank_ic": -0.011371369264837413,
+      "hit_rate": 0.49816733067729085,
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 12550,
+      "test_date_range": [
+        "2022-01-03",
+        "2022-12-30"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-001",
+      "window_type": "expanding",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": -0.04662319225475199,
+      "oos_ic_sessions": 251,
+      "rank_ic": -0.03248336784913169,
+      "hit_rate": 0.4952191235059761,
+      "n_train": 75362,
+      "n_val": 37850,
+      "n_test": 12550,
+      "test_date_range": [
+        "2022-01-03",
+        "2022-12-30"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "RL-002",
+      "window_type": "rolling",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.02385794161615074,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.014822569027611044,
+      "hit_rate": 0.5412,
+      "n_train": 124205,
+      "n_val": 37800,
+      "n_test": 12500,
+      "test_date_range": [
+        "2023-01-03",
+        "2023-12-29"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-003",
+      "window_type": "expanding",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.05556790034491204,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.03761863145258103,
+      "hit_rate": 0.5396,
+      "n_train": 75400,
+      "n_val": 37800,
+      "n_test": 12500,
+      "test_date_range": [
+        "2023-01-03",
+        "2023-12-29"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "RL-004",
+      "window_type": "rolling",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.024972053637833738,
+      "oos_ic_sessions": 252,
+      "rank_ic": 0.007949084395663027,
+      "hit_rate": 0.5405555555555556,
+      "n_train": 136855,
+      "n_val": 37650,
+      "n_test": 12600,
+      "test_date_range": [
+        "2024-01-02",
+        "2024-12-31"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-005",
+      "window_type": "expanding",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.03820442033933713,
+      "oos_ic_sessions": 252,
+      "rank_ic": 0.01808723489395758,
+      "hit_rate": 0.5422222222222223,
+      "n_train": 75500,
+      "n_val": 37650,
+      "n_test": 12600,
+      "test_date_range": [
+        "2024-01-02",
+        "2024-12-31"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "RL-006",
+      "window_type": "rolling",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.03595521535867543,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.02177536614645858,
+      "hit_rate": 0.54048,
+      "n_train": 149455,
+      "n_val": 37650,
+      "n_test": 12500,
+      "test_date_range": [
+        "2025-01-02",
+        "2025-12-31"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "EXP-007",
+      "window_type": "expanding",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.0401541026493221,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.02582857142857143,
+      "hit_rate": 0.53992,
+      "n_train": 75550,
+      "n_val": 37650,
+      "n_test": 12500,
+      "test_date_range": [
+        "2025-01-02",
+        "2025-12-31"
+      ],
+      "candidate_id": "CAND-03",
+      "window_id": "RL-008",
+      "window_type": "rolling",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "family": "ridge",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": -0.04930573517193657,
+      "oos_ic_sessions": 251,
+      "rank_ic": -0.0358630782990487,
+      "hit_rate": 0.4932270916334661,
+      "n_train": 111605,
+      "n_val": 37850,
+      "n_test": 12550,
+      "test_date_range": [
+        "2022-01-03",
+        "2022-12-30"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-001",
+      "window_type": "expanding",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": -0.0680924092138095,
+      "oos_ic_sessions": 251,
+      "rank_ic": -0.06475610164384478,
+      "hit_rate": 0.4932270916334661,
+      "n_train": 75362,
+      "n_val": 37850,
+      "n_test": 12550,
+      "test_date_range": [
+        "2022-01-03",
+        "2022-12-30"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "RL-002",
+      "window_type": "rolling",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.06268224305289248,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.046646242496998794,
+      "hit_rate": 0.54464,
+      "n_train": 124205,
+      "n_val": 37800,
+      "n_test": 12500,
+      "test_date_range": [
+        "2023-01-03",
+        "2023-12-29"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-003",
+      "window_type": "expanding",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.0738464735876666,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.058533109243697465,
+      "hit_rate": 0.54512,
+      "n_train": 75400,
+      "n_val": 37800,
+      "n_test": 12500,
+      "test_date_range": [
+        "2023-01-03",
+        "2023-12-29"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "RL-004",
+      "window_type": "rolling",
+      "test_start": "2023-01-01",
+      "test_end": "2023-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.046091514483065615,
+      "oos_ic_sessions": 252,
+      "rank_ic": 0.02916214104689495,
+      "hit_rate": 0.5447619047619048,
+      "n_train": 136855,
+      "n_val": 37650,
+      "n_test": 12600,
+      "test_date_range": [
+        "2024-01-02",
+        "2024-12-31"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-005",
+      "window_type": "expanding",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.04363693999419147,
+      "oos_ic_sessions": 252,
+      "rank_ic": 0.0242348367918596,
+      "hit_rate": 0.5447619047619048,
+      "n_train": 75500,
+      "n_val": 37650,
+      "n_test": 12600,
+      "test_date_range": [
+        "2024-01-02",
+        "2024-12-31"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "RL-006",
+      "window_type": "rolling",
+      "test_start": "2024-01-01",
+      "test_end": "2024-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.0536602810557729,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.043142761104441776,
+      "hit_rate": 0.53984,
+      "n_train": 149455,
+      "n_val": 37650,
+      "n_test": 12500,
+      "test_date_range": [
+        "2025-01-02",
+        "2025-12-31"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "EXP-007",
+      "window_type": "expanding",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    },
+    {
+      "oos_ic": 0.053247810025484565,
+      "oos_ic_sessions": 250,
+      "rank_ic": 0.04081671068427371,
+      "hit_rate": 0.53984,
+      "n_train": 75550,
+      "n_val": 37650,
+      "n_test": 12500,
+      "test_date_range": [
+        "2025-01-02",
+        "2025-12-31"
+      ],
+      "candidate_id": "CAND-04",
+      "window_id": "RL-008",
+      "window_type": "rolling",
+      "test_start": "2025-01-01",
+      "test_end": "2025-12-31",
+      "family": "lasso",
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004"
+    }
+  ]
+}

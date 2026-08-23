@@ -1,0 +1,35 @@
+{
+  "phase": "12B",
+  "report_type": "inference",
+  "created_at": "2026-08-22",
+  "n_experiments_total": 96,
+  "n_experiments_executed": 16,
+  "n_experiments_blocked": 80,
+  "blocking_reason": "PIT non-compliance: synthetic fundamental data with future filing dates",
+  "env_12b_050": {
+    "n_successful": 8,
+    "mean_ic": 0.010927202554885575,
+    "median_ic": 0.009810069393371937
+  },
+  "env_12b_100": {
+    "n_successful": 8,
+    "mean_ic": 0.005531962963490806,
+    "median_ic": 0.006008228329019101
+  },
+  "multiple_testing": {
+    "n_tests": 16,
+    "holm_rejected": 0,
+    "bh_rejected": 0,
+    "alpha": 0.05
+  },
+  "cross_model_consistency": "Baseline models show low ICs consistent with noise",
+  "cross_universe_consistency": "IC decreases with larger universe (0.0109 -> 0.0055)",
+  "verdict": "E - Infrastructure/data limitations prevent valid interpretation",
+  "verdict_reasoning": [
+    "Fundamental feature sets could not be executed due to PIT non-compliance",
+    "Synthetic fundamental data has filing dates after trade date start",
+    "No real SEC EDGAR data available for PIT-safe feature computation",
+    "The central research question cannot be answered with current data",
+    "Baseline OHLCV results consistent with Phase 11/11.2 null findings"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "phase": "12B",
+  "report_type": "final_report",
+  "created_at": "2026-08-22",
+  "verdict": "E - Infrastructure/data limitations prevent valid interpretation",
+  "executive_summary": "Phase 12B attempted to test whether point-in-time fundamental information provides predictive evidence beyond OHLCV features. All fundamental feature sets were blocked because synthetic fundamental data has filing dates (1998-2013) that predate the trade date start (1996), violating PIT compliance. Only baseline OHLCV experiments (FS-12B-A) were executed, yielding ICs consistent with noise.",
+  "results_ENV-12B-050": {
+    "n_instruments": 50,
+    "n_sessions": 7547,
+    "n_successful": 8,
+    "n_blocked": 40,
+    "mean_ic": 0.010927202554885575,
+    "median_ic": 0.009810069393371937
+  },
+  "results_ENV-12B-100": {
+    "n_instruments": 97,
+    "n_sessions": 7547,
+    "n_successful": 8,
+    "n_blocked": 40,
+    "mean_ic": 0.005531962963490806,
+    "median_ic": 0.006008228329019101
+  },
+  "experiment_inventory": {
+    "registered": 96,
+    "completed": 16,
+    "blocked": 80,
+    "failed": 0,
+    "blocking_reason": "PIT non-compliance: synthetic fundamental data with future filing dates"
+  },
+  "feature_sets": {
+    "FS-12B-A": "EXECUTED - baseline OHLCV",
+    "FS-12B-B": "BLOCKED - valuation",
+    "FS-12B-C": "BLOCKED - profitability",
+    "FS-12B-D": "BLOCKED - growth",
+    "FS-12B-E": "BLOCKED - leverage",
+    "FS-12B-F": "BLOCKED - all fundamentals"
+  },
+  "cross_phase_comparison": {
+    "Phase_11_11_2": "Verdict D - null persists",
+    "Phase_12A": "Verdict D - market context modest",
+    "Phase_12B": "Verdict E - data limitations",
+    "combined": "D/E - null persists for tested information; fundamental question unanswered"
+  },
+  "honest_limitations": [
+    "All data is synthetic - no real SEC EDGAR filings used",
+    "Fundamental features could not be tested due to PIT non-compliance",
+    "80 of 96 registered experiments blocked",
+    "LAB-005 (excess return) uses same underlying as LAB-004",
+    "The central research question cannot be answered with current data",
+    "Baseline ICs are low and consistent with noise"
+  ],
+  "recommended_next_step": "Obtain real SEC EDGAR data with valid filing dates. The infrastructure is ready but the synthetic data prevents PIT-safe fundamental feature computation.",
+  "files_created": [
+    "scripts/phase12b_run.py",
+    "src/orbit/ml/phase12b_plan.py",
+    "src/orbit/ml/phase12b_fundamentals.py",
+    "src/orbit/ml/phase12b_features.py",
+    "src/orbit/ml/phase12b_validation.py",
+    "benchmarks/phase12b_plan.json",
+    "benchmarks/phase12b_ENV-12B-050_results.json",
+    "benchmarks/phase12b_ENV-12B-100_results.json",
+    "benchmarks/phase12b_data_provenance.json",
+    "benchmarks/phase12b_identity_mapping.json",
+    "benchmarks/phase12b_inference_results.json",
+    "benchmarks/phase12b_comparison.json",
+    "benchmarks/phase12b_audit.json",
+    "benchmarks/phase12b_report.json"
+  ]
+}

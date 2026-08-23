@@ -1,0 +1,23 @@
+{
+  "lab004": {
+    "total": 347374,
+    "available": 347174,
+    "unavailable": 200,
+    "digest": "d6894fa3eb13f37556be6faed8aa6e97eac8359d88904ee163caf23d3e89a5c0",
+    "compute_time_s": 287.8
+  },
+  "lab005_historical": {
+    "defect_confirmed": true,
+    "root_cause": "lab005 = lab004 (phase12d_run.py:151)",
+    "materiality": "99.8% different when corrected"
+  },
+  "lab006": {
+    "total": 347124,
+    "total_available": 347174,
+    "divergence_pct": 100.0,
+    "n_different": 347105,
+    "mean_excess": 0.0017251466396040974,
+    "mean_instrument_return": 0.0036615425584902326,
+    "mean_benchmark_return": 0.001936395918886136
+  }
+}

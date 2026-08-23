@@ -1,0 +1,854 @@
+{
+  "env_id": "ENV-12B-100",
+  "snapshot_id": "DS-EXP-100",
+  "n_instruments": 97,
+  "n_sessions": 7547,
+  "results": [
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.004859135858349446,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.00733082083391841,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.004859135858349446,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.00733082083391841,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-005-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.007157320799688757,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010847274162425178,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.007157320799688757,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010847274162425178,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-005-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.008407642465387945,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010104955054711404,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.008407642465387945,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010104955054711404,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-005-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.0017037527305370755,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.005516016649803969,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-A-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-A",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {
+        "oos_ic": 0.0017037527305370755,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.005516016649803969,
+        "hit_rate": 0.5291241691234366
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-B-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-B",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-C-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-C",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-D-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-D",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-E-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-E",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-004",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    },
+    {
+      "experiment_id": "EXP-12B-ENV-12B-100-FS-12B-F-LAB-005-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-12B-F",
+      "label_id": "LAB-005",
+      "env_id": "ENV-12B-100",
+      "metrics": {},
+      "error": "PIT non-compliant: synthetic fundamentals with future filing dates",
+      "n_train": 0,
+      "n_val": 0,
+      "n_test": 0,
+      "blocked": true
+    }
+  ],
+  "n_successful": 8,
+  "n_failed": 0,
+  "n_blocked": 40,
+  "blocked_feature_sets": [
+    "FS-12B-B",
+    "FS-12B-C",
+    "FS-12B-D",
+    "FS-12B-E",
+    "FS-12B-F"
+  ],
+  "pit_compliant": false,
+  "pit_result": {
+    "has_future_filings": true,
+    "too_stale": false,
+    "has_available": false,
+    "compliant": false
+  },
+  "elapsed_seconds": 225.7490005493164
+}

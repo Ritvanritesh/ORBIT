@@ -1,0 +1,26 @@
+{
+  "attack": "ATTACK 4 - MULTIPLE TESTING",
+  "result": "LIMITATION",
+  "findings": [
+    "Possible inflation: 12/24 Holm significant"
+  ],
+  "hypothesis_families": {
+    "Phase 11.2": {
+      "experiments": 32,
+      "correction": "pooled within phase"
+    },
+    "Phase 12A": {
+      "experiments": 40,
+      "correction": "pooled within phase"
+    },
+    "Phase 12D": {
+      "experiments": 96,
+      "correction": "pooled within phase"
+    },
+    "Phase 12E": {
+      "experiments": 48,
+      "correction": "pooled within phase"
+    }
+  },
+  "correction_applied_per_phase": true
+}

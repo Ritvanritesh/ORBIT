@@ -1,0 +1,86 @@
+{
+  "DS-000004": {
+    "status": "OK",
+    "n_instruments": 20,
+    "n_sessions": 7705,
+    "date_range": [
+      "1996-01-02",
+      "2026-08-14"
+    ],
+    "n_rows": 139961,
+    "columns": [
+      "adjclose",
+      "adjustment",
+      "close",
+      "high",
+      "instrument_id",
+      "low",
+      "open",
+      "provider",
+      "snapshot_id",
+      "source_uri",
+      "symbol",
+      "trade_date",
+      "ts_utc",
+      "volume"
+    ],
+    "bars_sha256": "5f3921f36b39cec365eddd45d88261337ccffccaca802fb832d80e22fc959fc9",
+    "events_sha256": "7a063131d1045e08a7fd6ad8b7ae6b50cf984470964fb73d366e6a795b10958d"
+  },
+  "DS-EXP-050": {
+    "status": "OK",
+    "n_instruments": 50,
+    "n_sessions": 7547,
+    "date_range": [
+      "1996-08-21",
+      "2026-08-20"
+    ],
+    "n_rows": 349374,
+    "columns": [
+      "adjclose",
+      "adjustment",
+      "close",
+      "high",
+      "instrument_id",
+      "low",
+      "open",
+      "provider",
+      "snapshot_id",
+      "source_uri",
+      "symbol",
+      "trade_date",
+      "ts_utc",
+      "volume"
+    ],
+    "bars_sha256": "1b62a6afe39e0bb19393aa93d12ca52830f098ad694ab19dad8436a85db983bc",
+    "events_sha256": "dd159f2c6a1ccccc6096700103b0d1ed17b458b13f6934521dc7ee3c9c828265"
+  },
+  "DS-EXP-100": {
+    "status": "OK",
+    "n_instruments": 97,
+    "n_sessions": 7547,
+    "date_range": [
+      "1996-08-21",
+      "2026-08-20"
+    ],
+    "n_rows": 680878,
+    "columns": [
+      "adjclose",
+      "adjustment",
+      "close",
+      "high",
+      "instrument_id",
+      "low",
+      "open",
+      "provider",
+      "snapshot_id",
+      "source_uri",
+      "symbol",
+      "trade_date",
+      "ts_utc",
+      "volume"
+    ],
+    "bars_sha256": "138fa4a1cb3b1575b2e7d99a27d66edc27ff6d39a594867c0b6c8b9e10138dbf",
+    "events_sha256": "8bf8450f4424d46883e5765a6d07960c6464fea49feb4666a479e0afc7af5798"
+  }
+}

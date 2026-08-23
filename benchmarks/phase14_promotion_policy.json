@@ -1,0 +1,63 @@
+{
+  "policy_version": "v1",
+  "locked_before_decisions": true,
+  "principles": [
+    "Missing evidence => BLOCKED / NOT_EVALUATED, never PASS",
+    "Any evidence record with gate_result=FAIL for a required type => gate FAIL",
+    "Unresolved DEFECT (severity >= HIGH, resolved=False) => immediate gate FAIL",
+    "Status changes only via immutable PromotionDecisionRecord"
+  ],
+  "gates": {
+    "RESEARCH_TO_VALIDATED": {
+      "description": "Research graduates to validated (still not economic proof)",
+      "required_evidence": [
+        "REPRODUCIBILITY",
+        "DATA_INTEGRITY",
+        "PIT_INTEGRITY",
+        "LABEL_VALIDITY",
+        "STATISTICAL_INFERENCE",
+        "MULTIPLE_TESTING",
+        "UNIVERSE_STABILITY",
+        "TEMPORAL_STABILITY",
+        "MODEL_FAMILY_STABILITY"
+      ],
+      "additional_rules": [
+        "G1 complete model identity",
+        "G2 dataset/feature provenance complete",
+        "G3 label contract valid",
+        "G4 PIT integrity present",
+        "G5 reproducibility present",
+        "G6 statistical inference completed",
+        "G7 multiple-testing documented",
+        "G8 no unresolved CRITICAL failure",
+        "G9 required universe replication completed",
+        "G10 temporal evidence not dependent on one unexplained window",
+        "G11 no implementation defect invalidating canonical evidence"
+      ]
+    },
+    "VALIDATED_TO_PAPER": {
+      "description": "Paper-trading eligibility (NOT satisfied by any current model)",
+      "required_evidence": [
+        "REPRODUCIBILITY",
+        "TEMPORAL_STABILITY",
+        "UNIVERSE_STABILITY",
+        "ECONOMIC_MATERIALITY",
+        "PORTFOLIO_VALIDATION",
+        "EXECUTION_VALIDATION",
+        "STRESS_TESTING"
+      ],
+      "additional_rules": [
+        "H1 robust cross-universe evidence",
+        "H2 temporal/regime stability",
+        "H3 economic materiality assessment",
+        "H4 portfolio construction evaluation",
+        "H5 realistic transaction-cost evaluation",
+        "H6 risk-engine compatibility",
+        "H7 execution simulation",
+        "H8 complete replayability",
+        "H9 no unresolved material implementation defects"
+      ],
+      "status_at_phase_end": "NOT_SATISFIED_BY_ANY_MODEL (per Phase 13C)"
+    }
+  }
+}

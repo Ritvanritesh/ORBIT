@@ -1,0 +1,88 @@
+{
+  "phase9": {
+    "count": 36,
+    "all_have_metrics": true
+  },
+  "phase10": {
+    "count": 52,
+    "all_have_metrics": true
+  },
+  "result_files": {
+    "phase10_review1_results.json": {
+      "n_results": 0
+    },
+    "phase10_review2_results.json": {
+      "n_results": 0
+    },
+    "phase11_1_results.json": {
+      "n_results": 0
+    },
+    "phase11_2_ENV-12A-050_results.json": {
+      "n_results": 20
+    },
+    "phase11_2_ENV-12A-100_results.json": {
+      "n_results": 20
+    },
+    "phase11_2_ENV-12B-050_results.json": {
+      "n_results": 48
+    },
+    "phase11_2_ENV-12B-100_results.json": {
+      "n_results": 48
+    },
+    "phase11_2_ENV-1_results.json": {
+      "n_results": 8
+    },
+    "phase11_2_ENV-2_results.json": {
+      "n_results": 8
+    },
+    "phase11_2_ENV-3_results.json": {
+      "n_results": 8
+    },
+    "phase11_2_ENV-4_results.json": {
+      "n_results": 8
+    },
+    "phase11_audit_results.json": {
+      "n_results": 0
+    },
+    "phase12_9a_regression_results.json": {
+      "n_results": 0
+    },
+    "phase12a_ENV-12A-050_results.json": {
+      "n_results": 20
+    },
+    "phase12a_ENV-12A-100_results.json": {
+      "n_results": 20
+    },
+    "phase12b_ENV-12B-050_results.json": {
+      "n_results": 48
+    },
+    "phase12b_ENV-12B-100_results.json": {
+      "n_results": 48
+    },
+    "phase12b_inference_results.json": {
+      "n_results": 0
+    },
+    "phase12d_ENV-12D-050_results.json": {
+      "n_results": 48
+    },
+    "phase12d_ENV-12D-100_results.json": {
+      "n_results": 48
+    },
+    "phase12e_ENV-12E-050_results.json": {
+      "n_results": 24
+    },
+    "phase12e_ENV-12E-100_results.json": {
+      "n_results": 24
+    },
+    "phase9_audit_results.json": {
+      "n_results": 0
+    },
+    "phase9_review2_results.json": {
+      "n_results": 0
+    }
+  },
+  "phase11_2_count": 168,
+  "phase12a_count": 40,
+  "phase12d_count": 96,
+  "phase12e_count": 48
+}

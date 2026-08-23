@@ -1,0 +1,715 @@
+{
+  "created_at": "2026-08-21T14:38:49",
+  "description": "ORBIT UNIVERSE-100 instrument master",
+  "instruments": [
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000001",
+      "name": "Apple Inc.",
+      "sector": "S35",
+      "ticker": "AAPL"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000002",
+      "name": "Microsoft Corporation",
+      "sector": "S45",
+      "ticker": "MSFT"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000003",
+      "name": "Johnson & Johnson",
+      "sector": "S35",
+      "ticker": "JNJ"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000004",
+      "name": "Exxon Mobil Corporation",
+      "sector": "S10",
+      "ticker": "XOM"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000005",
+      "name": "Walmart Inc.",
+      "sector": "S30",
+      "ticker": "WMT"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000006",
+      "name": "Amazon.com, Inc.",
+      "sector": "S25",
+      "ticker": "AMZN"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000007",
+      "name": "Alphabet Inc.",
+      "sector": "S45",
+      "ticker": "GOOGL"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000008",
+      "name": "Meta Platforms, Inc.",
+      "sector": "S45",
+      "ticker": "META"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000009",
+      "name": "NVIDIA Corporation",
+      "sector": "S35",
+      "ticker": "NVDA"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000010",
+      "name": "Tesla, Inc.",
+      "sector": "S25",
+      "ticker": "TSLA"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000011",
+      "name": "JPMorgan Chase & Co.",
+      "sector": "S40",
+      "ticker": "JPM"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000012",
+      "name": "Bank of America Corporation",
+      "sector": "S40",
+      "ticker": "BAC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000013",
+      "name": "Visa Inc.",
+      "sector": "S40",
+      "ticker": "V"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000014",
+      "name": "The Procter & Gamble Company",
+      "sector": "S30",
+      "ticker": "PG"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000015",
+      "name": "The Coca-Cola Company",
+      "sector": "S30",
+      "ticker": "KO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000016",
+      "name": "The Home Depot, Inc.",
+      "sector": "S25",
+      "ticker": "HD"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000017",
+      "name": "UnitedHealth Group Inc.",
+      "sector": "S35",
+      "ticker": "UNH"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000018",
+      "name": "Chevron Corporation",
+      "sector": "S10",
+      "ticker": "CVX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000019",
+      "name": "The Walt Disney Company",
+      "sector": "S25",
+      "ticker": "DIS"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000020",
+      "name": "Pfizer Inc.",
+      "sector": "S35",
+      "ticker": "PFE"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000021",
+      "name": "Berkshire Hathaway Inc.",
+      "sector": "S40",
+      "ticker": "BRK-B"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000022",
+      "name": "Union Pacific Corporation",
+      "sector": "S20",
+      "ticker": "UNP"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000023",
+      "name": "Mastercard Incorporated",
+      "sector": "S40",
+      "ticker": "MA"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000024",
+      "name": "Netflix, Inc.",
+      "sector": "S25",
+      "ticker": "NFLX"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000025",
+      "name": "Adobe Inc.",
+      "sector": "S45",
+      "ticker": "ADBE"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000026",
+      "name": "Salesforce, Inc.",
+      "sector": "S45",
+      "ticker": "CRM"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000027",
+      "name": "Intel Corporation",
+      "sector": "S35",
+      "ticker": "INTC"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000028",
+      "name": "Cisco Systems, Inc.",
+      "sector": "S45",
+      "ticker": "CSCO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000029",
+      "name": "PepsiCo, Inc.",
+      "sector": "S30",
+      "ticker": "PEP"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000030",
+      "name": "Abbott Laboratories",
+      "sector": "S35",
+      "ticker": "ABT"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000031",
+      "name": "Thermo Fisher Scientific Inc.",
+      "sector": "S35",
+      "ticker": "TMO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000032",
+      "name": "Merck & Co., Inc.",
+      "sector": "S35",
+      "ticker": "MRK"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000033",
+      "name": "AbbVie Inc.",
+      "sector": "S35",
+      "ticker": "ABBV"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000034",
+      "name": "Danaher Corporation",
+      "sector": "S35",
+      "ticker": "DHR"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000035",
+      "name": "Accenture plc",
+      "sector": "S45",
+      "ticker": "ACN"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000036",
+      "name": "Texas Instruments Incorporated",
+      "sector": "S35",
+      "ticker": "TXN"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000037",
+      "name": "Broadcom Inc.",
+      "sector": "S35",
+      "ticker": "AVGO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000038",
+      "name": "Lowe's Companies, Inc.",
+      "sector": "S25",
+      "ticker": "LOW"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000039",
+      "name": "Costco Wholesale Corporation",
+      "sector": "S30",
+      "ticker": "COST"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000040",
+      "name": "McDonald's Corporation",
+      "sector": "S25",
+      "ticker": "MCD"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000041",
+      "name": "NIKE, Inc.",
+      "sector": "S25",
+      "ticker": "NKE"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000042",
+      "name": "Starbucks Corporation",
+      "sector": "S25",
+      "ticker": "SBUX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000043",
+      "name": "Colgate-Palmolive Company",
+      "sector": "S30",
+      "ticker": "CL"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000044",
+      "name": "Emerson Electric Co.",
+      "sector": "S20",
+      "ticker": "EMR"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000045",
+      "name": "Southern Company",
+      "sector": "S50",
+      "ticker": "SO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000046",
+      "name": "Duke Energy Corporation",
+      "sector": "S50",
+      "ticker": "DUK"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000047",
+      "name": "EOG Resources, Inc.",
+      "sector": "S10",
+      "ticker": "EOG"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000048",
+      "name": "The Charles Schwab Corporation",
+      "sector": "S40",
+      "ticker": "SCHW"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000049",
+      "name": "Prologis, Inc.",
+      "sector": "S55",
+      "ticker": "PLD"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000050",
+      "name": "AT&T Inc.",
+      "sector": "S45",
+      "ticker": "T"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000051",
+      "name": "Verizon Communications Inc.",
+      "sector": "S45",
+      "ticker": "VZ"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000052",
+      "name": "Comcast Corporation",
+      "sector": "S45",
+      "ticker": "CMCSA"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000053",
+      "name": "Xcel Energy Inc.",
+      "sector": "S50",
+      "ticker": "XEL"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000054",
+      "name": "Becton, Dickinson and Company",
+      "sector": "S35",
+      "ticker": "BDX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000055",
+      "name": "Stryker Corporation",
+      "sector": "S35",
+      "ticker": "SYK"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000056",
+      "name": "Zoetis Inc.",
+      "sector": "S35",
+      "ticker": "ZTS"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000057",
+      "name": "Chubb Limited",
+      "sector": "S40",
+      "ticker": "CB"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000058",
+      "name": "Analog Devices, Inc.",
+      "sector": "S35",
+      "ticker": "ADI"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000059",
+      "name": "Mondelez International, Inc.",
+      "sector": "S30",
+      "ticker": "MDLZ"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000060",
+      "name": "Gilead Sciences, Inc.",
+      "sector": "S35",
+      "ticker": "GILD"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000061",
+      "name": "Intuitive Surgical, Inc.",
+      "sector": "S35",
+      "ticker": "ISRG"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000062",
+      "name": "CSX Corporation",
+      "sector": "S20",
+      "ticker": "CSX"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000063",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "sector": "S35",
+      "ticker": "VRTX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000064",
+      "name": "Dominion Energy, Inc.",
+      "sector": "S50",
+      "ticker": "D"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000065",
+      "name": "Intercontinental Exchange, Inc.",
+      "sector": "S40",
+      "ticker": "ICE"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000066",
+      "name": "U.S. Bancorp",
+      "sector": "S40",
+      "ticker": "USB"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000067",
+      "name": "Public Storage",
+      "sector": "S55",
+      "ticker": "PSA"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000068",
+      "name": "The PNC Financial Services Group, Inc.",
+      "sector": "S40",
+      "ticker": "PNC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000069",
+      "name": "Est\u00e9e Lauder Companies Inc.",
+      "sector": "S30",
+      "ticker": "EL"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000070",
+      "name": "Air Products and Chemicals, Inc.",
+      "sector": "S20",
+      "ticker": "APD"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000071",
+      "name": "The Sherwin-Williams Company",
+      "sector": "S20",
+      "ticker": "SHW"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000072",
+      "name": "Schlumberger Limited",
+      "sector": "S10",
+      "ticker": "SLB"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000073",
+      "name": "Truist Financial Corporation",
+      "sector": "S40",
+      "ticker": "TFC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000074",
+      "name": "Crown Castle Inc.",
+      "sector": "S45",
+      "ticker": "CCI"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000075",
+      "name": "Realty Income Corporation",
+      "sector": "S55",
+      "ticker": "O"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000076",
+      "name": "Northrop Grumman Corporation",
+      "sector": "S20",
+      "ticker": "NOC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000077",
+      "name": "Southern Company (dup)",
+      "sector": "S50",
+      "ticker": "SO"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000078",
+      "name": "Boston Scientific Corporation",
+      "sector": "S35",
+      "ticker": "BSX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000079",
+      "name": "Fidelity National Information Services, Inc.",
+      "sector": "S40",
+      "ticker": "FIS"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000080",
+      "name": "Marathon Petroleum Corporation",
+      "sector": "S10",
+      "ticker": "MPC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000081",
+      "name": "Aon plc",
+      "sector": "S40",
+      "ticker": "AON"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000082",
+      "name": "FedEx Corporation",
+      "sector": "S20",
+      "ticker": "FDX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000083",
+      "name": "General Motors Company",
+      "sector": "S25",
+      "ticker": "GM"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000084",
+      "name": "Ford Motor Company",
+      "sector": "S25",
+      "ticker": "F"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000085",
+      "name": "Lockheed Martin Corporation",
+      "sector": "S20",
+      "ticker": "LMT"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000086",
+      "name": "General Mills, Inc.",
+      "sector": "S30",
+      "ticker": "GIS"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000087",
+      "name": "Sysco Corporation",
+      "sector": "S30",
+      "ticker": "SYY"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000088",
+      "name": "Automatic Data Processing, Inc.",
+      "sector": "S45",
+      "ticker": "ADP"
+    },
+    {
+      "exchange": "XNAS",
+      "instrument_id": "INS-000089",
+      "name": "CME Group Inc.",
+      "sector": "S40",
+      "ticker": "CME"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000090",
+      "name": "American International Group, Inc.",
+      "sector": "S40",
+      "ticker": "AIG"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000091",
+      "name": "Caterpillar Inc.",
+      "sector": "S20",
+      "ticker": "CAT"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000092",
+      "name": "Deere & Company",
+      "sector": "S20",
+      "ticker": "DE"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000093",
+      "name": "U.S. Bancorp (dup)",
+      "sector": "S40",
+      "ticker": "USB"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000094",
+      "name": "Phillips 66",
+      "sector": "S10",
+      "ticker": "PSX"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000095",
+      "name": "The Williams Companies, Inc.",
+      "sector": "S10",
+      "ticker": "WMB"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000096",
+      "name": "Norfolk Southern Corporation",
+      "sector": "S20",
+      "ticker": "NSC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000097",
+      "name": "Marsh & McLennan Companies, Inc.",
+      "sector": "S40",
+      "ticker": "MMC"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000098",
+      "name": "Target Corporation",
+      "sector": "S30",
+      "ticker": "TGT"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000099",
+      "name": "Aflac Incorporated",
+      "sector": "S40",
+      "ticker": "AFL"
+    },
+    {
+      "exchange": "XNYS",
+      "instrument_id": "INS-000100",
+      "name": "McKesson Corporation",
+      "sector": "S35",
+      "ticker": "MCK"
+    }
+  ],
+  "selection_criteria": [
+    "US-listed equities",
+    "minimum 5 years of trading history",
+    "minimum average daily dollar volume > $10M",
+    "no OTC/pink-sheet securities"
+  ],
+  "selection_policy": "deterministic_rule_based",
+  "survivorship_bias": "NOT FULLY CONTROLLED",
+  "universe_id": "UNIVERSE-100"
+}

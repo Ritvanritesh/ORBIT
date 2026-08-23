@@ -1,0 +1,234 @@
+{
+  "phase": "14.5",
+  "step": 2,
+  "title": "Information Domain Inventory",
+  "generated_at": "2026-08-23T00:00:00+00:00",
+
+  "domains": [
+    {
+      "domain_id": "DOM-1",
+      "name": "Return Path Structure",
+      "category": "PRICE PATH / TEMPORAL STRUCTURE",
+      "information_source": "Daily OHLCV bars",
+      "historical_availability": "Full history (1996-present) for all universes",
+      "point_in_time_availability": "Yes — daily bars are available at decision time",
+      "coverage": "100% of instruments across all universes",
+      "expected_economic_mechanism": "Two stocks with identical total returns can have fundamentally different paths. A stock that rose steadily has positive momentum with low uncertainty; one that zigzagged has high path volatility suggesting disagreement or mean-reversion pressure. Path structure captures the quality of a price move, not just its magnitude.",
+      "overlap_with_tested": "LOW — existing features capture levels (ret_10/20/30) and volatility (vol_10/30) but not the temporal structure of the path within a window",
+      "implementation_difficulty": "LOW — all inputs are OHLCV bars, standard rolling computations",
+      "leakage_risk": "LOW — all path features use only past data within a trailing window",
+      "data_acquisition_requirements": "None — data already exists",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-401",
+          "name": "path_max_drawdown_20",
+          "formula": "max peak-to-trough decline in close prices over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "path_structure"
+        },
+        {
+          "feature_id": "FEAT-402",
+          "name": "path_up_down_ratio_20",
+          "formula": "count(daily_return > 0, 20) / count(daily_return < 0, 20)",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "path_structure"
+        },
+        {
+          "feature_id": "FEAT-403",
+          "name": "path_largest_move_20",
+          "formula": "max(|daily_return|, 20) — largest single-day absolute return",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "path_structure"
+        }
+      ]
+    },
+    {
+      "domain_id": "DOM-2",
+      "name": "Return Asymmetry and Tail Risk",
+      "category": "PRICE PATH / TEMPORAL STRUCTURE",
+      "information_source": "Daily OHLCV bars",
+      "historical_availability": "Full history for all universes",
+      "point_in_time_availability": "Yes",
+      "coverage": "100%",
+      "expected_economic_mechanism": "Negative skewness in recent returns indicates tail risk — more frequent or larger negative moves. Markets may compensate for tail risk with higher expected returns, or negative skewness may signal ongoing selling pressure that depresses future returns. Either way, asymmetry is information not captured by symmetric measures (mean, std).",
+      "overlap_with_tested": "LOW — existing features are symmetric (ret_10/20/30, vol_10/30). Skewness and kurtosis are orthogonal moments.",
+      "implementation_difficulty": "LOW — standard skewness/kurtosis computations on rolling windows",
+      "leakage_risk": "LOW — trailing window only",
+      "data_acquisition_requirements": "None",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-411",
+          "name": "return_skew_20",
+          "formula": "skewness of daily returns over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "asymmetry"
+        },
+        {
+          "feature_id": "FEAT-412",
+          "name": "return_kurt_20",
+          "formula": "excess kurtosis of daily returns over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "asymmetry"
+        },
+        {
+          "feature_id": "FEAT-413",
+          "name": "downside_vol_20",
+          "formula": "std(daily_return | daily_return < 0, 20) — downside deviation",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "asymmetry"
+        }
+      ]
+    },
+    {
+      "domain_id": "DOM-3",
+      "name": "Volatility Dynamics",
+      "category": "VOLATILITY CLUSTERING / REGIME",
+      "information_source": "Daily OHLCV bars (derived)",
+      "historical_availability": "Full history for all universes",
+      "point_in_time_availability": "Yes",
+      "coverage": "100%",
+      "expected_economic_mechanism": "Volatility is not static. A stock transitioning from low to high volatility is in a different regime than one with stable high volatility. The stability of volatility itself (vol-of-vol) and the direction of vol change carry information about regime transitions that vol levels miss.",
+      "overlap_with_tested": "MEDIUM — vol_ratio_10_30 captures some regime info. But vol-of-vol (stability of vol) and vol change rate are genuinely new.",
+      "implementation_difficulty": "LOW-MEDIUM — requires nested rolling computations (vol of vol)",
+      "leakage_risk": "LOW — all trailing windows",
+      "data_acquisition_requirements": "None",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-421",
+          "name": "vol_of_vol_20",
+          "formula": "std(rolling_std(daily_return, 5), 20) — volatility of 5-day rolling volatility over 20 days",
+          "window": 25,
+          "inputs": ["close"],
+          "information_family": "vol_dynamics"
+        },
+        {
+          "feature_id": "FEAT-422",
+          "name": "vol_change_20",
+          "formula": "vol_10(D-1) - vol_10(D-20) — change in short-term volatility over 20 days",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "vol_dynamics"
+        }
+      ]
+    },
+    {
+      "domain_id": "DOM-4",
+      "name": "Macro Regime Conditioning",
+      "category": "EXTERNAL MACRO INFORMATION",
+      "information_source": "FRED data (DS-000003): CPI, DFF (Fed Funds Rate), UNRATE (Unemployment Rate)",
+      "historical_availability": "CPI: 1947-present. DFF: 1954-present. UNRATE: 1948-present. All well before our stock data start (1996).",
+      "point_in_time_availability": "Yes, with publication lags: CPI ~2-3 weeks, DFF real-time, UNRATE ~1-2 weeks. Using published values respects PIT.",
+      "coverage": "Macroeconomic — applies to all instruments uniformly",
+      "expected_economic_mechanism": "Macro conditions (rate environment, inflation, labor market) change the regime in which all stock-level signals operate. A momentum signal may work differently in a rising-rate vs falling-rate environment. Macro features condition the interpretation of stock-level features.",
+      "overlap_with_tested": "NONE — no existing feature uses macro data",
+      "implementation_difficulty": "LOW — monthly/quarterly series merged to daily frequency via last-available observation",
+      "leakage_risk": "LOW — macro data published with known lags; using published values respects PIT",
+      "data_acquisition_requirements": "None — DS-000003 already exists",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-431",
+          "name": "macro_dff_level",
+          "formula": "Current Fed Funds Rate (daily, last available observation)",
+          "window": 1,
+          "inputs": ["DFF from FRED"],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-432",
+          "name": "macro_dff_change_3m",
+          "formula": "DFF(D) - DFF(D-63) — change in Fed Funds Rate over trailing 3 months",
+          "window": 63,
+          "inputs": ["DFF from FRED"],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-433",
+          "name": "macro_unemployment_level",
+          "formula": "Current unemployment rate (monthly, last available)",
+          "window": 1,
+          "inputs": ["UNRATE from FRED"],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-434",
+          "name": "macro_cpi_yoy",
+          "formula": "CPI(D) / CPI(D-252) - 1 — year-over-year inflation rate",
+          "window": 252,
+          "inputs": ["CPI from FRED"],
+          "information_family": "macro_regime"
+        }
+      ]
+    },
+    {
+      "domain_id": "DOM-5",
+      "name": "Autocorrelation Structure",
+      "category": "TEMPORAL DEPENDENCE",
+      "information_source": "Daily OHLCV bars",
+      "historical_availability": "Full history",
+      "point_in_time_availability": "Yes",
+      "coverage": "100%",
+      "expected_economic_mechanism": "First-order autocorrelation captures whether returns exhibit momentum (positive autocorrelation) or mean-reversion (negative autocorrelation) at short horizons.",
+      "overlap_with_tested": "HIGH — autocorrelation is closely related to momentum features already tested",
+      "implementation_difficulty": "LOW",
+      "leakage_risk": "LOW",
+      "data_acquisition_requirements": "None",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-441",
+          "name": "return_autocorr_20",
+          "formula": "autocorrelation of daily returns at lag 1 over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close"],
+          "information_family": "autocorrelation"
+        }
+      ]
+    },
+    {
+      "domain_id": "DOM-6",
+      "name": "Cross-Asset Relationships",
+      "category": "CROSS-ASSET RELATIONSHIPS",
+      "information_source": "OHLCV bars + SPY benchmark",
+      "historical_availability": "Full history for SPY and all universes",
+      "point_in_time_availability": "Yes",
+      "coverage": "Requires benchmark — limited to instruments with SPY relationship",
+      "expected_economic_mechanism": "Changes in beta, correlation with market, co-movement regimes. Beta changes may signal regime transitions.",
+      "overlap_with_tested": "PARTIALLY — sector features exist (Phase 12A) but are simple means/stds. Dynamic beta/correlation is new.",
+      "implementation_difficulty": "MEDIUM — requires rolling regression or rolling correlation",
+      "leakage_risk": "LOW — trailing windows only",
+      "data_acquisition_requirements": "None — SPY benchmark already available",
+      "candidate_features": [
+        {
+          "feature_id": "FEAT-451",
+          "name": "rolling_beta_20",
+          "formula": "OLS beta of instrument return on SPY return over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close", "SPY close"],
+          "information_family": "cross_asset"
+        },
+        {
+          "feature_id": "FEAT-452",
+          "name": "rolling_corr_20",
+          "formula": "Pearson correlation of instrument return with SPY return over trailing 20 sessions",
+          "window": 20,
+          "inputs": ["close", "SPY close"],
+          "information_family": "cross_asset"
+        }
+      ]
+    }
+  ],
+
+  "summary": {
+    "total_domains": 6,
+    "domains_with_no_overlap": 4,
+    "domains_with_existing_data": 6,
+    "highest_novelty": "DOM-4 (Macro Regime) — no existing feature uses macro data",
+    "lowest_implementation_difficulty": "DOM-1 (Path Structure), DOM-2 (Asymmetry) — standard rolling computations on existing OHLCV",
+    "recommended_for_hypothesis": ["DOM-1", "DOM-2", "DOM-4"]
+  }
+}

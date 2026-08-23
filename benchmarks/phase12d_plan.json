@@ -1,0 +1,15 @@
+{
+  "phase": "12D",
+  "version": "v1",
+  "created_at": "2026-08-22",
+  "research_question": "Do real, point-in-time fundamental features provide statistically convincing predictive information beyond ORBIT OHLCV?",
+  "data_source": "SEC EDGAR CompanyFacts (real, Phase 12C acquisition)",
+  "staleness_max_age_years": 2,
+  "availability_policy": "filing_date_next_session",
+  "market_timezone": "America/New_York",
+  "market_close_boundary": "16:00",
+  "after_close_policy": "next_session",
+  "restatement_policy": "amendments_available_at_own_filing_date",
+  "n_experiments_registered": 96,
+  "plan_digest": "7a335aac44ffff605f8e0a98c349f789ae9d5af5fa01eb9e6c5fb7c12d6ed6a7"
+}

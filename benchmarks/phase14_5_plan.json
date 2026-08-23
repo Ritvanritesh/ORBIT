@@ -1,0 +1,617 @@
+{
+  "phase": "14.5",
+  "step": 5,
+  "title": "Locked Discovery Plan",
+  "locked_at": "2026-08-23T00:00:00+00:00",
+  "policy": "NO new features, NO new hypotheses, NO model substitutions, NO parameter tuning, NO universe changes, NO experiment removal after this lock.",
+  "accepted_hypotheses": [
+    "H-1",
+    "H-2",
+    "H-3"
+  ],
+  "supplementary_hypothesis": "H-4",
+  "feature_definitions": {
+    "FS-14-5-A": {
+      "name": "path_structure",
+      "description": "Path structure features (H-1)",
+      "features": [
+        {
+          "feature_id": "FEAT-401",
+          "name": "path_max_drawdown_20",
+          "formula": "max(peak_to_trough_drawdown(close, 20))",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "path_structure"
+        },
+        {
+          "feature_id": "FEAT-402",
+          "name": "path_up_down_ratio_20",
+          "formula": "count(ret > 0, 20) / max(count(ret < 0, 20), 1)",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "path_structure"
+        },
+        {
+          "feature_id": "FEAT-403",
+          "name": "path_largest_move_20",
+          "formula": "max(|ret|, 20)",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "path_structure"
+        }
+      ]
+    },
+    "FS-14-5-B": {
+      "name": "asymmetry",
+      "description": "Return asymmetry features (H-2)",
+      "features": [
+        {
+          "feature_id": "FEAT-411",
+          "name": "return_skew_20",
+          "formula": "scipy.stats.skew(daily_returns, 20)",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "asymmetry"
+        },
+        {
+          "feature_id": "FEAT-412",
+          "name": "return_kurt_20",
+          "formula": "scipy.stats.kurtosis(daily_returns, 20)",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "asymmetry"
+        },
+        {
+          "feature_id": "FEAT-413",
+          "name": "downside_vol_20",
+          "formula": "std(ret[ret < 0], 20) where ret < 0 in trailing 20 sessions",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "asymmetry"
+        }
+      ]
+    },
+    "FS-14-5-C": {
+      "name": "macro_regime",
+      "description": "Macro regime features (H-3)",
+      "features": [
+        {
+          "feature_id": "FEAT-431",
+          "name": "macro_dff_level",
+          "formula": "DFF(D) — last available Fed Funds Rate observation",
+          "window": 1,
+          "inputs": [
+            "DFF from FRED DS-000003"
+          ],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-432",
+          "name": "macro_dff_change_3m",
+          "formula": "DFF(D) - DFF(D-63)",
+          "window": 63,
+          "inputs": [
+            "DFF from FRED DS-000003"
+          ],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-433",
+          "name": "macro_unemployment_level",
+          "formula": "UNRATE(D) — last available unemployment rate",
+          "window": 1,
+          "inputs": [
+            "UNRATE from FRED DS-000003"
+          ],
+          "information_family": "macro_regime"
+        },
+        {
+          "feature_id": "FEAT-434",
+          "name": "macro_cpi_yoy",
+          "formula": "CPI(D) / CPI(D-252) - 1",
+          "window": 252,
+          "inputs": [
+            "CPI from FRED DS-000003"
+          ],
+          "information_family": "macro_regime"
+        }
+      ]
+    },
+    "FS-14-5-D": {
+      "name": "vol_dynamics",
+      "description": "Volatility dynamics (H-4, supplementary)",
+      "features": [
+        {
+          "feature_id": "FEAT-421",
+          "name": "vol_of_vol_20",
+          "formula": "std(rolling_std(ret, 5), 20)",
+          "window": 25,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "vol_dynamics"
+        },
+        {
+          "feature_id": "FEAT-422",
+          "name": "vol_change_20",
+          "formula": "vol_10(D-1) - vol_10(D-20)",
+          "window": 20,
+          "inputs": [
+            "close"
+          ],
+          "information_family": "vol_dynamics"
+        }
+      ]
+    }
+  },
+  "datasets": {
+    "primary": "DS-EXP-050 (ENV-050, ~50 instruments)",
+    "expansion": "DS-EXP-100 (ENV-100, ~97 instruments)",
+    "baseline_comparison": "DS-000004 (ENV-DEV20, 20 instruments)"
+  },
+  "feature_set_compositions": {
+    "FS-BASELINE": {
+      "description": "Phase 9 baseline (8 features) — frozen",
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "vol_10",
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "count": 8
+    },
+    "FS-H1": {
+      "description": "Baseline + path structure (H-1)",
+      "features": [
+        "FS-BASELINE + path_max_drawdown_20, path_up_down_ratio_20, path_largest_move_20"
+      ],
+      "count": 11
+    },
+    "FS-H2": {
+      "description": "Baseline + asymmetry (H-2)",
+      "features": [
+        "FS-BASELINE + return_skew_20, return_kurt_20, downside_vol_20"
+      ],
+      "count": 11
+    },
+    "FS-H3": {
+      "description": "Baseline + macro regime (H-3)",
+      "features": [
+        "FS-BASELINE + macro_dff_level, macro_dff_change_3m, macro_unemployment_level, macro_cpi_yoy"
+      ],
+      "count": 12
+    },
+    "FS-H1H2": {
+      "description": "Baseline + path + asymmetry (H-1 + H-2)",
+      "features": [
+        "FS-BASELINE + FS-14-5-A + FS-14-5-B"
+      ],
+      "count": 14
+    },
+    "FS-ALL-NEW": {
+      "description": "Baseline + all accepted hypotheses (H-1 + H-2 + H-3)",
+      "features": [
+        "FS-BASELINE + FS-14-5-A + FS-14-5-B + FS-14-5-C"
+      ],
+      "count": 18
+    },
+    "FS-SUPPLEMENTARY": {
+      "description": "Baseline + vol dynamics (H-4, supplementary)",
+      "features": [
+        "FS-BASELINE + FS-14-5-D"
+      ],
+      "count": 10
+    }
+  },
+  "universes": [
+    {
+      "universe_id": "ENV-050",
+      "dataset": "DS-EXP-050",
+      "instruments": "~50",
+      "role": "PRIMARY"
+    },
+    {
+      "universe_id": "ENV-100",
+      "dataset": "DS-EXP-100",
+      "instruments": "~97",
+      "role": "EXPANSION"
+    }
+  ],
+  "labels": [
+    {
+      "label_id": "LAB-004",
+      "description": "5-day forward return (absolute)",
+      "role": "PRIMARY"
+    },
+    {
+      "label_id": "LAB-006",
+      "description": "5-day forward excess return vs SPY",
+      "role": "SECONDARY"
+    }
+  ],
+  "train_val_test": {
+    "train": {
+      "start": "2010-01-04",
+      "end": "2018-12-31"
+    },
+    "validation": {
+      "start": "2019-01-02",
+      "end": "2021-12-31"
+    },
+    "test": {
+      "start": "2022-01-03",
+      "end": "2026-06-30"
+    },
+    "purge_sessions": 5,
+    "protocol": "outcome_window_boundary"
+  },
+  "models": [
+    {
+      "model_id": "ridge",
+      "library": "sklearn",
+      "params": {
+        "alpha": 1.0
+      },
+      "preprocessing": "StandardScaler (fit on train)"
+    },
+    {
+      "model_id": "lasso",
+      "library": "sklearn",
+      "params": {
+        "alpha": 0.001
+      },
+      "preprocessing": "StandardScaler (fit on train)"
+    }
+  ],
+  "evaluation_metrics": [
+    "oos_ic (Pearson per-session mean)",
+    "rank_ic (Spearman per-session mean)",
+    "ic_std",
+    "ic_median",
+    "hit_rate",
+    "t_statistic",
+    "p_value"
+  ],
+  "statistical_tests": {
+    "family_wise": "Holm-Bonferroni",
+    "false_discovery_rate": "Benjamini-Hochberg",
+    "significance_level": 0.05,
+    "hypothesis_count": 3,
+    "note": "3 primary hypotheses (H-1, H-2, H-3). H-4 supplementary. Total family size = 3 primary."
+  },
+  "robustness_tests": {
+    "universe_stability": [
+      "ENV-050",
+      "ENV-100"
+    ],
+    "temporal_stability": "test period subwindows (2022, 2023, 2024, 2025)",
+    "model_family_stability": [
+      "ridge",
+      "lasso"
+    ],
+    "feature_ablation": "each hypothesis feature family removed from combined set",
+    "parameter_perturbation": "alpha multiplied by 0.5x and 2x",
+    "baseline_comparison": "IC improvement over FS-BASELINE"
+  },
+  "success_criteria": {
+    "statistical": "p < 0.05 after Holm correction for at least one hypothesis",
+    "economic": "IC > 0.03 (above baseline but realistic)",
+    "universe_consistent": "Same sign across ENV-050 and ENV-100",
+    "model_consistent": "Positive IC for both ridge and lasso",
+    "incremental": "Measurable improvement over FS-BASELINE"
+  },
+  "failure_criteria": {
+    "any": "Any of: p > 0.10 after Holm, sign reversal across universes, IC < 0.01, no incremental value over baseline"
+  },
+  "experiment_inventory": [
+    {
+      "experiment_id": "EXP-14-5-001",
+      "hypothesis_id": "H-1",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H1",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-002",
+      "hypothesis_id": "H-1",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H1",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-003",
+      "hypothesis_id": "H-2",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H2",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-004",
+      "hypothesis_id": "H-2",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H2",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-005",
+      "hypothesis_id": "H-3",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H3",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-006",
+      "hypothesis_id": "H-3",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H3",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-007",
+      "hypothesis_id": "H-1+H-2",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H1H2",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-008",
+      "hypothesis_id": "H-1+H-2",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-H1H2",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-009",
+      "hypothesis_id": "ALL",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-ALL-NEW",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-010",
+      "hypothesis_id": "ALL",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-ALL-NEW",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-011",
+      "hypothesis_id": "BASELINE",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-BASELINE",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-012",
+      "hypothesis_id": "BASELINE",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-BASELINE",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-013",
+      "hypothesis_id": "H-1",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H1",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-014",
+      "hypothesis_id": "H-1",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H1",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-015",
+      "hypothesis_id": "H-2",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H2",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-016",
+      "hypothesis_id": "H-2",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H2",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-017",
+      "hypothesis_id": "H-3",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H3",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-018",
+      "hypothesis_id": "H-3",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-H3",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-019",
+      "hypothesis_id": "ALL",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-ALL-NEW",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-020",
+      "hypothesis_id": "ALL",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-ALL-NEW",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-021",
+      "hypothesis_id": "BASELINE",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-BASELINE",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-022",
+      "hypothesis_id": "BASELINE",
+      "dataset": "DS-EXP-100",
+      "universe": "ENV-100",
+      "feature_set": "FS-BASELINE",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-023",
+      "hypothesis_id": "H-4-SUPP",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-SUPPLEMENTARY",
+      "model": "ridge",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    },
+    {
+      "experiment_id": "EXP-14-5-024",
+      "hypothesis_id": "H-4-SUPP",
+      "dataset": "DS-EXP-050",
+      "universe": "ENV-050",
+      "feature_set": "FS-SUPPLEMENTARY",
+      "model": "lasso",
+      "label": "LAB-004",
+      "train": "2010-01-04 to 2018-12-31",
+      "val": "2019-01-02 to 2021-12-31",
+      "test": "2022-01-03 to 2026-06-30"
+    }
+  ],
+  "total_experiments": 24,
+  "total_hypotheses_in_family": 3,
+  "total_features_new": 10,
+  "digest_note": "SHA-256 of this JSON document is the plan lock digest. After this point, no modifications are permitted.",
+  "plan_digest": "bb2c11b08e6f09eaddaa4963160e0bc5a58f62b1a9782fd43fc437c5a5b43893"
+}

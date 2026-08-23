@@ -1,0 +1,177 @@
+{
+  "env_id": "ENV-4",
+  "snapshot_id": "DS-EXP-100",
+  "n_instruments": 97,
+  "n_sessions": 7547,
+  "results": [
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-001-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.004859135858349446,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.00733082083391841,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.3296985535747973
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-003-LAB-004-ridge",
+      "family": "ridge",
+      "params": {
+        "alpha": 1.0
+      },
+      "feature_set_id": "FS-003",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.01128616800826305,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.00933361663579936,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.32969869978424854
+      },
+      "n_train": 214306,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-001-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.007157320799688757,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010847274162425178,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.3296985270395564
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-003-LAB-004-lasso",
+      "family": "lasso",
+      "params": {
+        "alpha": 0.001
+      },
+      "feature_set_id": "FS-003",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.012888527512484494,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.012068450995904645,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.3296986260943981
+      },
+      "n_train": 214306,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-001-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.008407642465387945,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.010104955054711404,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.3296985486064695
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-003-LAB-004-random_forest",
+      "family": "random_forest",
+      "params": {
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-003",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.0035385984745296157,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.009680736197139,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.32969877858824725
+      },
+      "n_train": 214306,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-001-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-001",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.0017037527305370755,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.005516016649803969,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.32969847577008854
+      },
+      "n_train": 215523,
+      "n_val": 73041,
+      "n_test": 109222
+    },
+    {
+      "experiment_id": "EXP-11-ENV-4-FS-003-LAB-004-xgboost",
+      "family": "xgboost",
+      "params": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 200
+      },
+      "feature_set_id": "FS-003",
+      "label_id": "LAB-004",
+      "env_id": "ENV-4",
+      "metrics": {
+        "oos_ic": 0.0049864145868911925,
+        "oos_ic_sessions": 1126,
+        "rank_ic": 0.01115498328079344,
+        "hit_rate": 0.5291241691234366,
+        "mse": 0.32969856849535983
+      },
+      "n_train": 214306,
+      "n_val": 73041,
+      "n_test": 109222
+    }
+  ],
+  "n_successful": 8,
+  "n_failed": 0,
+  "elapsed_seconds": 0
+}

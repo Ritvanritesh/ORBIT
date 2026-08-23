@@ -1,0 +1,37 @@
+{
+  "forbidden_phrases_checked": [
+    "ORBIT found alpha",
+    "the model predicts stocks",
+    "the signal works",
+    "no signal exists"
+  ],
+  "violations_found_in_chain": [
+    {
+      "artifact": "PHASE_9_STATUS.md",
+      "issue": "'no signal' without qualification",
+      "status": "carried from 12.9C; superseded by calibrated language here"
+    },
+    {
+      "artifact": "phase13b_report.json key_findings",
+      "issue": "'Universe: ENV-050 and ENV-100 show consistent signs' stated while ENV-100 errored for CAND-04",
+      "status": "flagged — overstated for CAND-04"
+    },
+    {
+      "artifact": "phase13b_report.json key_findings",
+      "issue": "'Parameter: both candidates stable across 0.5x-3x alpha range (GRACEFUL)' while 5/6 sweep points returned NaN",
+      "status": "flagged — unsupported claim; actual classification MIXED"
+    },
+    {
+      "artifact": "phase13b cost/slippage files",
+      "issue": "Adjusted-IC presented as measured metrics when they are analytical proxies (baseline_ic × cost-drag factor)",
+      "status": "flagged — must be read as estimates"
+    }
+  ],
+  "approved_language_for_phase13c": [
+    "No robust predictive relationship was established under the tested configurations.",
+    "Two linear baseline candidates (ridge/lasso on FS-12B-A) retained positive out-of-sample rank information in 6 of 8 sequential evaluation windows and across four tested universes, but window-level statistical significance was not established (p≈0.20, CI includes zero).",
+    "Candidate effects are concentrated in the 2023–2025 sub-period and absent in 2022 and in nonlinear models.",
+    "A candidate relationship survived specified robustness tests but economic usefulness remains unproven."
+  ],
+  "canonical_conclusion": "No convincing, robust predictive relationship has been established across Phases 9-13B. Sequential evaluation isolated a weak, linear-only, post-2022 rank-information effect in two baseline-OHLCV candidates; it is statistically insignificant at the window level, concentrated in one sub-period, and economically unvalidated."
+}
