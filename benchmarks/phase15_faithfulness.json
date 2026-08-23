@@ -1,0 +1,562 @@
+{
+  "MODEL-00002": {
+    "base_ic": 0.0,
+    "deletion_impacts": [
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "attribution_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "deletion_correlation": 1.0,
+    "insertion_correlation": 1.0,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00005": {
+    "base_ic": 0.0,
+    "deletion_impacts": [
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "attribution_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "deletion_correlation": 1.0,
+    "insertion_correlation": 1.0,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00006": {
+    "base_ic": 0.0,
+    "deletion_impacts": [
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "attribution_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "deletion_correlation": 1.0,
+    "insertion_correlation": 1.0,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00007": {
+    "base_ic": 0.0,
+    "deletion_impacts": [
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "attribution_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "deletion_correlation": 1.0,
+    "insertion_correlation": 1.0,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00008": {
+    "base_ic": 0.02706,
+    "deletion_impacts": [
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.017725
+      },
+      {
+        "feature": "vol_30",
+        "ic_drop": 0.004792
+      },
+      {
+        "feature": "vol_10",
+        "ic_drop": 0.000688
+      },
+      {
+        "feature": "log_dv_med_20",
+        "ic_drop": 0.000659
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.000587
+      }
+    ],
+    "ic_drop_ranking": [
+      "sma_ratio_5_30",
+      "vol_30",
+      "vol_10",
+      "log_dv_med_20",
+      "ret_20",
+      "ret_30",
+      "ret_10",
+      "sma_ratio_15_40"
+    ],
+    "attribution_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_correlation": 0.809524,
+    "insertion_correlation": 0.809524,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00009": {
+    "base_ic": 0.02706,
+    "deletion_impacts": [
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.017725
+      },
+      {
+        "feature": "vol_30",
+        "ic_drop": 0.004792
+      },
+      {
+        "feature": "vol_10",
+        "ic_drop": 0.000688
+      },
+      {
+        "feature": "log_dv_med_20",
+        "ic_drop": 0.000659
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.000587
+      }
+    ],
+    "ic_drop_ranking": [
+      "sma_ratio_5_30",
+      "vol_30",
+      "vol_10",
+      "log_dv_med_20",
+      "ret_20",
+      "ret_30",
+      "ret_10",
+      "sma_ratio_15_40"
+    ],
+    "attribution_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_correlation": 0.809524,
+    "insertion_correlation": 0.809524,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-00010": {
+    "base_ic": 0.0,
+    "deletion_impacts": [
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "attribution_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "deletion_correlation": 1.0,
+    "insertion_correlation": 1.0,
+    "classification": "FAITHFUL"
+  },
+  "MODEL-14-5-H3-RIDGE-050": {
+    "base_ic": 0.090892,
+    "deletion_impacts": [
+      {
+        "feature": "macro_dff_change_3m",
+        "ic_drop": 0.106389
+      },
+      {
+        "feature": "log_dv_med_20",
+        "ic_drop": 1.2e-05
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 5e-06
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 1e-06
+      },
+      {
+        "feature": "ret_10",
+        "ic_drop": -1e-06
+      }
+    ],
+    "ic_drop_ranking": [
+      "macro_dff_change_3m",
+      "log_dv_med_20",
+      "ret_30",
+      "ret_20",
+      "ret_10",
+      "macro_unemployment_level",
+      "vol_10",
+      "sma_ratio_15_40",
+      "vol_30",
+      "sma_ratio_5_30",
+      "macro_cpi_yoy",
+      "macro_dff_level"
+    ],
+    "attribution_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30",
+      "sma_ratio_5_30",
+      "ret_30",
+      "vol_10",
+      "sma_ratio_15_40",
+      "log_dv_med_20",
+      "ret_10",
+      "ret_20"
+    ],
+    "deletion_correlation": -0.300699,
+    "insertion_correlation": -0.300699,
+    "classification": "MISLEADING"
+  },
+  "MODEL-14-5-H3-LASSO-050": {
+    "base_ic": 0.108106,
+    "deletion_impacts": [
+      {
+        "feature": "macro_dff_change_3m",
+        "ic_drop": 0.134743
+      },
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "macro_dff_change_3m",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy",
+      "macro_unemployment_level",
+      "macro_dff_level"
+    ],
+    "attribution_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "deletion_correlation": 0.300699,
+    "insertion_correlation": 0.300699,
+    "classification": "WEAK"
+  },
+  "MODEL-14-5-H3-RIDGE-100": {
+    "base_ic": 0.131648,
+    "deletion_impacts": [
+      {
+        "feature": "macro_dff_change_3m",
+        "ic_drop": 0.095866
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.000164
+      },
+      {
+        "feature": "sma_ratio_15_40",
+        "ic_drop": 4.1e-05
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 1.2e-05
+      },
+      {
+        "feature": "vol_10",
+        "ic_drop": 1.1e-05
+      }
+    ],
+    "ic_drop_ranking": [
+      "macro_dff_change_3m",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "ret_30",
+      "vol_10",
+      "ret_10",
+      "ret_20",
+      "macro_unemployment_level",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy",
+      "macro_dff_level"
+    ],
+    "attribution_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20",
+      "sma_ratio_5_30",
+      "vol_30",
+      "ret_30",
+      "sma_ratio_15_40",
+      "ret_10",
+      "ret_20",
+      "vol_10"
+    ],
+    "deletion_correlation": -0.230769,
+    "insertion_correlation": -0.230769,
+    "classification": "MISLEADING"
+  },
+  "MODEL-14-5-H3-LASSO-100": {
+    "base_ic": 0.146357,
+    "deletion_impacts": [
+      {
+        "feature": "macro_dff_change_3m",
+        "ic_drop": 0.115877
+      },
+      {
+        "feature": "sma_ratio_5_30",
+        "ic_drop": 0.000121
+      },
+      {
+        "feature": "ret_10",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_20",
+        "ic_drop": 0.0
+      },
+      {
+        "feature": "ret_30",
+        "ic_drop": 0.0
+      }
+    ],
+    "ic_drop_ranking": [
+      "macro_dff_change_3m",
+      "sma_ratio_5_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy",
+      "macro_unemployment_level",
+      "macro_dff_level"
+    ],
+    "attribution_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "deletion_correlation": 0.300699,
+    "insertion_correlation": 0.300699,
+    "classification": "WEAK"
+  }
+}

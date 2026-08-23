@@ -1,0 +1,1218 @@
+{
+  "MODEL-00002": {
+    "model_id": "MODEL-00002",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 1
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 2
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 3
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral"
+    },
+    "coefficient_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00005": {
+    "model_id": "MODEL-00005",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 1
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 2
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 3
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral"
+    },
+    "coefficient_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00006": {
+    "model_id": "MODEL-00006",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 1
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 2
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 3
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral"
+    },
+    "coefficient_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00007": {
+    "model_id": "MODEL-00007",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 1
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 2
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 3
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral"
+    },
+    "coefficient_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00008": {
+    "model_id": "MODEL-00008",
+    "coefficients": {
+      "ret_10": 0.0002065547694691063,
+      "ret_20": -0.00020311908457032856,
+      "ret_30": -4.723606413951741e-05,
+      "sma_ratio_5_30": -0.00046941183846347306,
+      "sma_ratio_15_40": 1.1364554329750469e-05,
+      "vol_10": -0.0006468813953757961,
+      "vol_30": -0.0004051847004156436,
+      "log_dv_med_20": 0.00045334811040561473
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.00020655476946910832,
+      "ret_20": -0.00020311908457032685,
+      "ret_30": -4.7236064139517285e-05,
+      "sma_ratio_5_30": -0.0004694118384634708,
+      "sma_ratio_15_40": 1.1364554329750421e-05,
+      "vol_10": -0.0006468813953757989,
+      "vol_30": -0.0004051847004156456,
+      "log_dv_med_20": 0.00045334811040562026
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.001073,
+        "std_ic_drop": 0.000572,
+        "rank": 5
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.000987,
+        "std_ic_drop": 0.00063,
+        "rank": 6
+      },
+      "ret_30": {
+        "mean_ic_drop": 5.8e-05,
+        "std_ic_drop": 0.000101,
+        "rank": 7
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.00529,
+        "std_ic_drop": 0.001328,
+        "rank": 2
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 1.2e-05,
+        "std_ic_drop": 2.8e-05,
+        "rank": 8
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.012048,
+        "std_ic_drop": 0.002513,
+        "rank": 1
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.004624,
+        "std_ic_drop": 0.001315,
+        "rank": 4
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.005148,
+        "std_ic_drop": 0.000947,
+        "rank": 3
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "positive",
+      "ret_20": "negative",
+      "ret_30": "negative",
+      "sma_ratio_5_30": "negative",
+      "sma_ratio_15_40": "positive",
+      "vol_10": "negative",
+      "vol_30": "negative",
+      "log_dv_med_20": "positive"
+    },
+    "coefficient_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "permutation_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00009": {
+    "model_id": "MODEL-00009",
+    "coefficients": {
+      "ret_10": 0.0002065547694691063,
+      "ret_20": -0.00020311908457032856,
+      "ret_30": -4.723606413951741e-05,
+      "sma_ratio_5_30": -0.00046941183846347306,
+      "sma_ratio_15_40": 1.1364554329750469e-05,
+      "vol_10": -0.0006468813953757961,
+      "vol_30": -0.0004051847004156436,
+      "log_dv_med_20": 0.00045334811040561473
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.00020655476946910832,
+      "ret_20": -0.00020311908457032685,
+      "ret_30": -4.7236064139517285e-05,
+      "sma_ratio_5_30": -0.0004694118384634708,
+      "sma_ratio_15_40": 1.1364554329750421e-05,
+      "vol_10": -0.0006468813953757989,
+      "vol_30": -0.0004051847004156456,
+      "log_dv_med_20": 0.00045334811040562026
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.001073,
+        "std_ic_drop": 0.000572,
+        "rank": 5
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.000987,
+        "std_ic_drop": 0.00063,
+        "rank": 6
+      },
+      "ret_30": {
+        "mean_ic_drop": 5.8e-05,
+        "std_ic_drop": 0.000101,
+        "rank": 7
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.00529,
+        "std_ic_drop": 0.001328,
+        "rank": 2
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 1.2e-05,
+        "std_ic_drop": 2.8e-05,
+        "rank": 8
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.012048,
+        "std_ic_drop": 0.002513,
+        "rank": 1
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.004624,
+        "std_ic_drop": 0.001315,
+        "rank": 4
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.005148,
+        "std_ic_drop": 0.000947,
+        "rank": 3
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "positive",
+      "ret_20": "negative",
+      "ret_30": "negative",
+      "sma_ratio_5_30": "negative",
+      "sma_ratio_15_40": "positive",
+      "vol_10": "negative",
+      "vol_30": "negative",
+      "log_dv_med_20": "positive"
+    },
+    "coefficient_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "permutation_ranking": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-00010": {
+    "model_id": "MODEL-00010",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 1
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 2
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 3
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral"
+    },
+    "coefficient_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-14-5-H3-RIDGE-050": {
+    "model_id": "MODEL-14-5-H3-RIDGE-050",
+    "coefficients": {
+      "ret_10": 8.810543330878542e-05,
+      "ret_20": 4.429456101118025e-05,
+      "ret_30": 0.0005130005101867007,
+      "sma_ratio_5_30": 0.0008508768047117434,
+      "sma_ratio_15_40": 0.00027205700345590014,
+      "vol_10": 0.0004980050549903244,
+      "vol_30": -0.0021441014944785395,
+      "log_dv_med_20": -1.1770471749218224e-05,
+      "macro_dff_level": 0.0167484974647471,
+      "macro_dff_change_3m": -0.012754455247455396,
+      "macro_unemployment_level": 0.008245223642004735,
+      "macro_cpi_yoy": -0.0031724490864340716
+    },
+    "standardized_coefficients": {
+      "ret_10": 8.810543330878551e-05,
+      "ret_20": 4.42945610111802e-05,
+      "ret_30": 0.0005130005101867,
+      "sma_ratio_5_30": 0.0008508768047117429,
+      "sma_ratio_15_40": 0.00027205700345590014,
+      "vol_10": 0.0004980050549903247,
+      "vol_30": -0.0021441014944785382,
+      "log_dv_med_20": -1.177047174921822e-05,
+      "macro_dff_level": 0.016748497464747127,
+      "macro_dff_change_3m": -0.012754455247455377,
+      "macro_unemployment_level": 0.008245223642004588,
+      "macro_cpi_yoy": -0.003172449086434067
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": -1.5e-05,
+        "std_ic_drop": 0.000218,
+        "rank": 11
+      },
+      "ret_20": {
+        "mean_ic_drop": -1.8e-05,
+        "std_ic_drop": 0.000143,
+        "rank": 12
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.001192,
+        "std_ic_drop": 0.001194,
+        "rank": 7
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.001692,
+        "std_ic_drop": 0.002428,
+        "rank": 6
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.000338,
+        "std_ic_drop": 0.000674,
+        "rank": 9
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.001034,
+        "std_ic_drop": 0.001648,
+        "rank": 8
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.012412,
+        "std_ic_drop": 0.004613,
+        "rank": 5
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 7e-06,
+        "std_ic_drop": 2.8e-05,
+        "rank": 10
+      },
+      "macro_dff_level": {
+        "mean_ic_drop": 0.164958,
+        "std_ic_drop": 0.015537,
+        "rank": 2
+      },
+      "macro_dff_change_3m": {
+        "mean_ic_drop": 0.222092,
+        "std_ic_drop": 0.018464,
+        "rank": 1
+      },
+      "macro_unemployment_level": {
+        "mean_ic_drop": 0.14359,
+        "std_ic_drop": 0.014669,
+        "rank": 3
+      },
+      "macro_cpi_yoy": {
+        "mean_ic_drop": 0.025776,
+        "std_ic_drop": 0.005268,
+        "rank": 4
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "positive",
+      "ret_20": "positive",
+      "ret_30": "positive",
+      "sma_ratio_5_30": "positive",
+      "sma_ratio_15_40": "positive",
+      "vol_10": "positive",
+      "vol_30": "negative",
+      "log_dv_med_20": "negative",
+      "macro_dff_level": "positive",
+      "macro_dff_change_3m": "negative",
+      "macro_unemployment_level": "positive",
+      "macro_cpi_yoy": "negative"
+    },
+    "coefficient_ranking": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30",
+      "sma_ratio_5_30",
+      "ret_30",
+      "vol_10",
+      "sma_ratio_15_40",
+      "ret_10",
+      "ret_20",
+      "log_dv_med_20"
+    ],
+    "permutation_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30",
+      "sma_ratio_5_30",
+      "ret_30",
+      "vol_10",
+      "sma_ratio_15_40",
+      "log_dv_med_20",
+      "ret_10",
+      "ret_20"
+    ],
+    "ranking_agreement": 0.028
+  },
+  "MODEL-14-5-H3-LASSO-050": {
+    "model_id": "MODEL-14-5-H3-LASSO-050",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0,
+      "macro_dff_level": 0.007692278288868712,
+      "macro_dff_change_3m": -0.008288314013597088,
+      "macro_unemployment_level": 0.0034920952809775235,
+      "macro_cpi_yoy": -0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0,
+      "macro_dff_level": 0.007692278288868724,
+      "macro_dff_change_3m": -0.008288314013597076,
+      "macro_unemployment_level": 0.003492095280977461,
+      "macro_cpi_yoy": -0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 4
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 9
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 10
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 11
+      },
+      "macro_dff_level": {
+        "mean_ic_drop": 0.138893,
+        "std_ic_drop": 0.014084,
+        "rank": 2
+      },
+      "macro_dff_change_3m": {
+        "mean_ic_drop": 0.225699,
+        "std_ic_drop": 0.020126,
+        "rank": 1
+      },
+      "macro_unemployment_level": {
+        "mean_ic_drop": 0.081542,
+        "std_ic_drop": 0.013062,
+        "rank": 3
+      },
+      "macro_cpi_yoy": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 12
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "neutral",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral",
+      "macro_dff_level": "positive",
+      "macro_dff_change_3m": "negative",
+      "macro_unemployment_level": "positive",
+      "macro_cpi_yoy": "neutral"
+    },
+    "coefficient_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "permutation_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "ranking_agreement": 0.0
+  },
+  "MODEL-14-5-H3-RIDGE-100": {
+    "model_id": "MODEL-14-5-H3-RIDGE-100",
+    "coefficients": {
+      "ret_10": -6.24795080025355e-05,
+      "ret_20": -0.0001239524622936543,
+      "ret_30": 0.00038556409189277434,
+      "sma_ratio_5_30": 0.0011788337467495329,
+      "sma_ratio_15_40": 0.0004498108532073036,
+      "vol_10": 0.00013526701567027801,
+      "vol_30": -0.0013081419119824042,
+      "log_dv_med_20": 0.001605594782829751,
+      "macro_dff_level": 0.0159859012607351,
+      "macro_dff_change_3m": -0.013102315261848178,
+      "macro_unemployment_level": 0.008287211916041695,
+      "macro_cpi_yoy": -0.0027777171388189757
+    },
+    "standardized_coefficients": {
+      "ret_10": -6.247950800253543e-05,
+      "ret_20": -0.00012395246229365438,
+      "ret_30": 0.0003855640918927739,
+      "sma_ratio_5_30": 0.0011788337467495346,
+      "sma_ratio_15_40": 0.0004498108532073041,
+      "vol_10": 0.0001352670156702781,
+      "vol_30": -0.001308141911982401,
+      "log_dv_med_20": 0.00160559478282975,
+      "macro_dff_level": 0.01598590126073521,
+      "macro_dff_change_3m": -0.013102315261848234,
+      "macro_unemployment_level": 0.008287211916041693,
+      "macro_cpi_yoy": -0.0027777171388189844
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 7.1e-05,
+        "std_ic_drop": 0.0001,
+        "rank": 10
+      },
+      "ret_20": {
+        "mean_ic_drop": 3.4e-05,
+        "std_ic_drop": 0.000176,
+        "rank": 11
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.000457,
+        "std_ic_drop": 0.000589,
+        "rank": 8
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.004762,
+        "std_ic_drop": 0.001731,
+        "rank": 6
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.000271,
+        "std_ic_drop": 0.001004,
+        "rank": 9
+      },
+      "vol_10": {
+        "mean_ic_drop": 2.3e-05,
+        "std_ic_drop": 0.000267,
+        "rank": 12
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.004447,
+        "std_ic_drop": 0.001891,
+        "rank": 7
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.006724,
+        "std_ic_drop": 0.003171,
+        "rank": 5
+      },
+      "macro_dff_level": {
+        "mean_ic_drop": 0.152466,
+        "std_ic_drop": 0.010713,
+        "rank": 2
+      },
+      "macro_dff_change_3m": {
+        "mean_ic_drop": 0.243476,
+        "std_ic_drop": 0.011987,
+        "rank": 1
+      },
+      "macro_unemployment_level": {
+        "mean_ic_drop": 0.148419,
+        "std_ic_drop": 0.01001,
+        "rank": 3
+      },
+      "macro_cpi_yoy": {
+        "mean_ic_drop": 0.021088,
+        "std_ic_drop": 0.005395,
+        "rank": 4
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "negative",
+      "ret_20": "negative",
+      "ret_30": "positive",
+      "sma_ratio_5_30": "positive",
+      "sma_ratio_15_40": "positive",
+      "vol_10": "positive",
+      "vol_30": "negative",
+      "log_dv_med_20": "positive",
+      "macro_dff_level": "positive",
+      "macro_dff_change_3m": "negative",
+      "macro_unemployment_level": "positive",
+      "macro_cpi_yoy": "negative"
+    },
+    "coefficient_ranking": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20",
+      "vol_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "ret_30",
+      "vol_10",
+      "ret_20",
+      "ret_10"
+    ],
+    "permutation_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20",
+      "sma_ratio_5_30",
+      "vol_30",
+      "ret_30",
+      "sma_ratio_15_40",
+      "ret_10",
+      "ret_20",
+      "vol_10"
+    ],
+    "ranking_agreement": 0.049
+  },
+  "MODEL-14-5-H3-LASSO-100": {
+    "model_id": "MODEL-14-5-H3-LASSO-100",
+    "coefficients": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.00046603163969152376,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0,
+      "macro_dff_level": 0.007277571430532405,
+      "macro_dff_change_3m": -0.008489015540202115,
+      "macro_unemployment_level": 0.003926301400351457,
+      "macro_cpi_yoy": -0.0
+    },
+    "standardized_coefficients": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.00046603163969152447,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": -0.0,
+      "vol_30": -0.0,
+      "log_dv_med_20": 0.0,
+      "macro_dff_level": 0.007277571430532455,
+      "macro_dff_change_3m": -0.008489015540202151,
+      "macro_unemployment_level": 0.003926301400351456,
+      "macro_cpi_yoy": -0.0
+    },
+    "permutation_importance": {
+      "ret_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 5
+      },
+      "ret_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 6
+      },
+      "ret_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 7
+      },
+      "sma_ratio_5_30": {
+        "mean_ic_drop": 0.003634,
+        "std_ic_drop": 0.001124,
+        "rank": 4
+      },
+      "sma_ratio_15_40": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 8
+      },
+      "vol_10": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 9
+      },
+      "vol_30": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 10
+      },
+      "log_dv_med_20": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 11
+      },
+      "macro_dff_level": {
+        "mean_ic_drop": 0.124061,
+        "std_ic_drop": 0.009324,
+        "rank": 2
+      },
+      "macro_dff_change_3m": {
+        "mean_ic_drop": 0.240257,
+        "std_ic_drop": 0.013174,
+        "rank": 1
+      },
+      "macro_unemployment_level": {
+        "mean_ic_drop": 0.088247,
+        "std_ic_drop": 0.009356,
+        "rank": 3
+      },
+      "macro_cpi_yoy": {
+        "mean_ic_drop": 0.0,
+        "std_ic_drop": 0.0,
+        "rank": 12
+      }
+    },
+    "coefficient_direction": {
+      "ret_10": "neutral",
+      "ret_20": "neutral",
+      "ret_30": "neutral",
+      "sma_ratio_5_30": "positive",
+      "sma_ratio_15_40": "neutral",
+      "vol_10": "neutral",
+      "vol_30": "neutral",
+      "log_dv_med_20": "neutral",
+      "macro_dff_level": "positive",
+      "macro_dff_change_3m": "negative",
+      "macro_unemployment_level": "positive",
+      "macro_cpi_yoy": "neutral"
+    },
+    "coefficient_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "permutation_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "ranking_agreement": 0.0
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "plan_digest_match": true,
+  "n_models_trained": 11,
+  "global_attribution": {
+    "MODEL-00002": {
+      "ranking": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40"
+      ]
+    },
+    "MODEL-00005": {
+      "ranking": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40"
+      ]
+    },
+    "MODEL-00006": {
+      "ranking": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40"
+      ]
+    },
+    "MODEL-00007": {
+      "ranking": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40"
+      ]
+    },
+    "MODEL-00008": {
+      "ranking": [
+        "vol_10",
+        "sma_ratio_5_30",
+        "log_dv_med_20",
+        "vol_30",
+        "ret_10"
+      ]
+    },
+    "MODEL-00009": {
+      "ranking": [
+        "vol_10",
+        "sma_ratio_5_30",
+        "log_dv_med_20",
+        "vol_30",
+        "ret_10"
+      ]
+    },
+    "MODEL-00010": {
+      "ranking": [
+        "ret_10",
+        "ret_20",
+        "ret_30",
+        "sma_ratio_5_30",
+        "sma_ratio_15_40"
+      ]
+    },
+    "MODEL-14-5-H3-RIDGE-050": {
+      "ranking": [
+        "macro_dff_change_3m",
+        "macro_dff_level",
+        "macro_unemployment_level",
+        "macro_cpi_yoy",
+        "vol_30"
+      ]
+    },
+    "MODEL-14-5-H3-LASSO-050": {
+      "ranking": [
+        "macro_dff_change_3m",
+        "macro_dff_level",
+        "macro_unemployment_level",
+        "ret_10",
+        "ret_20"
+      ]
+    },
+    "MODEL-14-5-H3-RIDGE-100": {
+      "ranking": [
+        "macro_dff_change_3m",
+        "macro_dff_level",
+        "macro_unemployment_level",
+        "macro_cpi_yoy",
+        "log_dv_med_20"
+      ]
+    },
+    "MODEL-14-5-H3-LASSO-100": {
+      "ranking": [
+        "macro_dff_change_3m",
+        "macro_dff_level",
+        "macro_unemployment_level",
+        "sma_ratio_5_30",
+        "ret_10"
+      ]
+    }
+  },
+  "faithfulness_summary": {
+    "MODEL-00002": "FAITHFUL",
+    "MODEL-00005": "FAITHFUL",
+    "MODEL-00006": "FAITHFUL",
+    "MODEL-00007": "FAITHFUL",
+    "MODEL-00008": "FAITHFUL",
+    "MODEL-00009": "FAITHFUL",
+    "MODEL-00010": "FAITHFUL",
+    "MODEL-14-5-H3-RIDGE-050": "MISLEADING",
+    "MODEL-14-5-H3-LASSO-050": "WEAK",
+    "MODEL-14-5-H3-RIDGE-100": "MISLEADING",
+    "MODEL-14-5-H3-LASSO-100": "WEAK"
+  },
+  "sensitivity_summary": {
+    "MODEL-00002": "STABLE",
+    "MODEL-00005": "STABLE",
+    "MODEL-00006": "STABLE",
+    "MODEL-00007": "STABLE",
+    "MODEL-00008": "SENSITIVE",
+    "MODEL-00009": "SENSITIVE",
+    "MODEL-00010": "STABLE",
+    "MODEL-14-5-H3-RIDGE-050": "CLIFF",
+    "MODEL-14-5-H3-LASSO-050": "STABLE",
+    "MODEL-14-5-H3-RIDGE-100": "CLIFF",
+    "MODEL-14-5-H3-LASSO-100": "SENSITIVE"
+  },
+  "counterfactual_summary": {
+    "MODEL-00002": "NO_VALID_COUNTERFACTUAL",
+    "MODEL-00005": "NO_VALID_COUNTERFACTUAL",
+    "MODEL-00006": "NO_VALID_COUNTERFACTUAL",
+    "MODEL-00007": "NO_VALID_COUNTERFACTUAL",
+    "MODEL-00008": "CLEAR",
+    "MODEL-00009": "CLEAR",
+    "MODEL-00010": "NO_VALID_COUNTERFACTUAL",
+    "MODEL-14-5-H3-RIDGE-050": "UNSTABLE",
+    "MODEL-14-5-H3-LASSO-050": "UNSTABLE",
+    "MODEL-14-5-H3-RIDGE-100": "UNSTABLE",
+    "MODEL-14-5-H3-LASSO-100": "UNSTABLE"
+  },
+  "disagreement_summary": {
+    "test_obs_0": "SIGN_CONFLICT",
+    "test_obs_1": "SIGN_CONFLICT",
+    "test_obs_2": "SIGN_CONFLICT",
+    "test_obs_3": "SIGN_CONFLICT",
+    "test_obs_4": "SIGN_CONFLICT",
+    "test_obs_5": "SIGN_CONFLICT",
+    "test_obs_6": "SIGN_CONFLICT",
+    "test_obs_7": "SIGN_CONFLICT",
+    "test_obs_8": "SIGN_CONFLICT",
+    "test_obs_9": "SIGN_CONFLICT",
+    "test_obs_10": "SIGN_CONFLICT",
+    "test_obs_11": "SIGN_CONFLICT",
+    "test_obs_12": "SIGN_CONFLICT",
+    "test_obs_13": "SIGN_CONFLICT",
+    "test_obs_14": "SIGN_CONFLICT",
+    "test_obs_15": "SIGN_CONFLICT",
+    "test_obs_16": "SIGN_CONFLICT",
+    "test_obs_17": "SIGN_CONFLICT",
+    "test_obs_18": "SIGN_CONFLICT",
+    "test_obs_19": "SIGN_CONFLICT",
+    "test_obs_20": "SIGN_CONFLICT",
+    "test_obs_21": "SIGN_CONFLICT",
+    "test_obs_22": "SIGN_CONFLICT",
+    "test_obs_23": "SIGN_CONFLICT",
+    "test_obs_24": "SIGN_CONFLICT",
+    "test_obs_25": "SIGN_CONFLICT",
+    "test_obs_26": "SIGN_CONFLICT",
+    "test_obs_27": "SIGN_CONFLICT",
+    "test_obs_28": "SIGN_CONFLICT",
+    "test_obs_29": "SIGN_CONFLICT",
+    "test_obs_30": "SIGN_CONFLICT",
+    "test_obs_31": "SIGN_CONFLICT",
+    "test_obs_32": "SIGN_CONFLICT",
+    "test_obs_33": "SIGN_CONFLICT",
+    "test_obs_34": "SIGN_CONFLICT",
+    "test_obs_35": "SIGN_CONFLICT",
+    "test_obs_36": "SIGN_CONFLICT",
+    "test_obs_37": "SIGN_CONFLICT",
+    "test_obs_38": "SIGN_CONFLICT",
+    "test_obs_39": "SIGN_CONFLICT",
+    "test_obs_40": "SIGN_CONFLICT",
+    "test_obs_41": "SIGN_CONFLICT",
+    "test_obs_42": "SIGN_CONFLICT",
+    "test_obs_43": "SIGN_CONFLICT",
+    "test_obs_44": "SIGN_CONFLICT",
+    "test_obs_45": "SIGN_CONFLICT",
+    "test_obs_46": "SIGN_CONFLICT",
+    "test_obs_47": "SIGN_CONFLICT",
+    "test_obs_48": "SIGN_CONFLICT",
+    "test_obs_49": "SIGN_CONFLICT"
+  },
+  "explanation_confidence": {
+    "MODEL-00002": "LOW",
+    "MODEL-00005": "LOW",
+    "MODEL-00006": "LOW",
+    "MODEL-00007": "LOW",
+    "MODEL-00008": "MEDIUM",
+    "MODEL-00009": "MEDIUM",
+    "MODEL-00010": "LOW",
+    "MODEL-14-5-H3-RIDGE-050": "UNRELIABLE",
+    "MODEL-14-5-H3-LASSO-050": "LOW",
+    "MODEL-14-5-H3-RIDGE-100": "UNRELIABLE",
+    "MODEL-14-5-H3-LASSO-100": "LOW"
+  },
+  "synthetic_all_pass": true,
+  "provenance_all_pass": true,
+  "reproducibility_all_pass": true,
+  "h3_macro_analysis": {
+    "MODEL-14-5-H3-RIDGE-050": {
+      "macro_features": [
+        "macro_dff_level",
+        "macro_dff_change_3m",
+        "macro_unemployment_level",
+        "macro_cpi_yoy"
+      ],
+      "macro_coefficients": {
+        "macro_dff_level": 0.016748,
+        "macro_dff_change_3m": -0.012754,
+        "macro_unemployment_level": 0.008245,
+        "macro_cpi_yoy": -0.003172
+      },
+      "macro_share_of_total_effect": 0.9025,
+      "top_feature": "macro_dff_level"
+    },
+    "MODEL-14-5-H3-LASSO-050": {
+      "macro_features": [
+        "macro_dff_level",
+        "macro_dff_change_3m",
+        "macro_unemployment_level",
+        "macro_cpi_yoy"
+      ],
+      "macro_coefficients": {
+        "macro_dff_level": 0.007692,
+        "macro_dff_change_3m": -0.008288,
+        "macro_unemployment_level": 0.003492,
+        "macro_cpi_yoy": -0.0
+      },
+      "macro_share_of_total_effect": 1.0,
+      "top_feature": "macro_dff_change_3m"
+    },
+    "MODEL-14-5-H3-RIDGE-100": {
+      "macro_features": [
+        "macro_dff_level",
+        "macro_dff_change_3m",
+        "macro_unemployment_level",
+        "macro_cpi_yoy"
+      ],
+      "macro_coefficients": {
+        "macro_dff_level": 0.015986,
+        "macro_dff_change_3m": -0.013102,
+        "macro_unemployment_level": 0.008287,
+        "macro_cpi_yoy": -0.002778
+      },
+      "macro_share_of_total_effect": 0.8844,
+      "top_feature": "macro_dff_level"
+    },
+    "MODEL-14-5-H3-LASSO-100": {
+      "macro_features": [
+        "macro_dff_level",
+        "macro_dff_change_3m",
+        "macro_unemployment_level",
+        "macro_cpi_yoy"
+      ],
+      "macro_coefficients": {
+        "macro_dff_level": 0.007278,
+        "macro_dff_change_3m": -0.008489,
+        "macro_unemployment_level": 0.003926,
+        "macro_cpi_yoy": -0.0
+      },
+      "macro_share_of_total_effect": 0.9769,
+      "top_feature": "macro_dff_change_3m"
+    }
+  }
+}

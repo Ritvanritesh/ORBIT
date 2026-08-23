@@ -1,0 +1,77 @@
+{
+  "tests": [
+    {
+      "test_id": "A1",
+      "description": "Explanation references wrong model version",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A2",
+      "description": "Explanation uses feature values different from prediction inputs",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A3",
+      "description": "Feature snapshot mutation after explanation creation",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A4",
+      "description": "Future feature value injection",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A5",
+      "description": "Explanation timestamp before feature availability",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A6",
+      "description": "Prediction/explanation ID substitution",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A7",
+      "description": "Registry evidence mismatch",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A8",
+      "description": "Missing feature provenance",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A9",
+      "description": "Explanation generated from current data instead of historical snapshot",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A10",
+      "description": "LLM-generated rationale disagrees with structured attribution",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A11",
+      "description": "Correlated feature instability hidden",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    },
+    {
+      "test_id": "A12",
+      "description": "Failed explanation silently excluded",
+      "passed": true,
+      "status": "REJECT_INVALID"
+    }
+  ],
+  "all_pass": true
+}

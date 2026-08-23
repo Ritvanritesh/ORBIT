@@ -1,0 +1,130 @@
+{
+  "findings": [
+    {
+      "finding_id": "F1",
+      "description": "Coefficient vs permutation importance ranking agreement",
+      "avg_spearman_correlation": 0.993,
+      "classification": "PASS"
+    },
+    {
+      "finding_id": "F2",
+      "description": "Correlated feature instability across models",
+      "models_with_instability": 4,
+      "classification": "LIMITATION"
+    },
+    {
+      "finding_id": "F3",
+      "description": "Faithfulness test failures (misleading explanations)",
+      "misleading_count": 2,
+      "classification": "MATERIAL CONCERN"
+    },
+    {
+      "finding_id": "F4",
+      "description": "Model disagreement sign conflicts",
+      "sign_conflicts": 50,
+      "classification": "MATERIAL CONCERN"
+    },
+    {
+      "finding_id": "F5",
+      "description": "HIGH explanation confidence may be confused with trading confidence",
+      "high_confidence_count": 0,
+      "classification": "LIMITATION",
+      "note": "HIGH explanation confidence does NOT imply HIGH trading confidence"
+    },
+    {
+      "finding_id": "F6",
+      "description": "Synthetic ground-truth validation",
+      "all_pass": true,
+      "classification": "PASS"
+    },
+    {
+      "finding_id": "F7",
+      "description": "Provenance audit all invalid cases rejected",
+      "all_pass": true,
+      "classification": "PASS"
+    },
+    {
+      "finding_id": "F8",
+      "description": "Reproducibility test all models deterministic",
+      "all_pass": true,
+      "classification": "PASS"
+    },
+    {
+      "finding_id": "F9",
+      "description": "Phase 14.5 H-3 macro-regime explanation quality",
+      "details": {
+        "MODEL-14-5-H3-RIDGE-050": {
+          "macro_features": [
+            "macro_dff_level",
+            "macro_dff_change_3m",
+            "macro_unemployment_level",
+            "macro_cpi_yoy"
+          ],
+          "macro_coefficients": {
+            "macro_dff_level": 0.016748,
+            "macro_dff_change_3m": -0.012754,
+            "macro_unemployment_level": 0.008245,
+            "macro_cpi_yoy": -0.003172
+          },
+          "macro_share_of_total_effect": 0.9025,
+          "top_feature": "macro_dff_level"
+        },
+        "MODEL-14-5-H3-LASSO-050": {
+          "macro_features": [
+            "macro_dff_level",
+            "macro_dff_change_3m",
+            "macro_unemployment_level",
+            "macro_cpi_yoy"
+          ],
+          "macro_coefficients": {
+            "macro_dff_level": 0.007692,
+            "macro_dff_change_3m": -0.008288,
+            "macro_unemployment_level": 0.003492,
+            "macro_cpi_yoy": -0.0
+          },
+          "macro_share_of_total_effect": 1.0,
+          "top_feature": "macro_dff_change_3m"
+        },
+        "MODEL-14-5-H3-RIDGE-100": {
+          "macro_features": [
+            "macro_dff_level",
+            "macro_dff_change_3m",
+            "macro_unemployment_level",
+            "macro_cpi_yoy"
+          ],
+          "macro_coefficients": {
+            "macro_dff_level": 0.015986,
+            "macro_dff_change_3m": -0.013102,
+            "macro_unemployment_level": 0.008287,
+            "macro_cpi_yoy": -0.002778
+          },
+          "macro_share_of_total_effect": 0.8844,
+          "top_feature": "macro_dff_level"
+        },
+        "MODEL-14-5-H3-LASSO-100": {
+          "macro_features": [
+            "macro_dff_level",
+            "macro_dff_change_3m",
+            "macro_unemployment_level",
+            "macro_cpi_yoy"
+          ],
+          "macro_coefficients": {
+            "macro_dff_level": 0.007278,
+            "macro_dff_change_3m": -0.008489,
+            "macro_unemployment_level": 0.003926,
+            "macro_cpi_yoy": -0.0
+          },
+          "macro_share_of_total_effect": 0.9769,
+          "top_feature": "macro_dff_change_3m"
+        }
+      },
+      "classification": "LIMITATION",
+      "note": "H-3 improvement may be driven by narrow temporal period or single dominant feature"
+    }
+  ],
+  "n_pass": 4,
+  "n_limitation": 3,
+  "n_material_concern": 2,
+  "n_critical_failure": 0,
+  "overall": "MATERIAL CONCERN"
+}

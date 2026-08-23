@@ -1,0 +1,135 @@
+{
+  "MODEL-00002": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00005": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00006": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00007": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00008": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00009": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-00010": {
+    "n_features": 8,
+    "n_high_correlation_pairs": 0,
+    "high_correlation_pairs": [],
+    "instability_flags": [],
+    "instability_detected": false
+  },
+  "MODEL-14-5-H3-RIDGE-050": {
+    "n_features": 12,
+    "n_high_correlation_pairs": 1,
+    "high_correlation_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182
+      }
+    ],
+    "instability_flags": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182,
+        "coefficient_ratio_cv": 1.5218,
+        "instability": true
+      }
+    ],
+    "instability_detected": true
+  },
+  "MODEL-14-5-H3-LASSO-050": {
+    "n_features": 12,
+    "n_high_correlation_pairs": 1,
+    "high_correlation_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182
+      }
+    ],
+    "instability_flags": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182,
+        "coefficient_ratio_cv": 1.5218,
+        "instability": true
+      }
+    ],
+    "instability_detected": true
+  },
+  "MODEL-14-5-H3-RIDGE-100": {
+    "n_features": 12,
+    "n_high_correlation_pairs": 1,
+    "high_correlation_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818
+      }
+    ],
+    "instability_flags": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818,
+        "coefficient_ratio_cv": 1.6229,
+        "instability": true
+      }
+    ],
+    "instability_detected": true
+  },
+  "MODEL-14-5-H3-LASSO-100": {
+    "n_features": 12,
+    "n_high_correlation_pairs": 1,
+    "high_correlation_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818
+      }
+    ],
+    "instability_flags": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818,
+        "coefficient_ratio_cv": 1.6229,
+        "instability": true
+      }
+    ],
+    "instability_detected": true
+  }
+}

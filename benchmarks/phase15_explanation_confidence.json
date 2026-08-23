@@ -1,0 +1,134 @@
+{
+  "MODEL-00002": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "FAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 0
+  },
+  "MODEL-00005": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "FAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 0
+  },
+  "MODEL-00006": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "FAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 0
+  },
+  "MODEL-00007": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "FAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 0
+  },
+  "MODEL-00008": {
+    "confidence": "MEDIUM",
+    "inputs": {
+      "local_sensitivity": "CONCERNING",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "FAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 1,
+    "n_concerning": 1
+  },
+  "MODEL-00009": {
+    "confidence": "MEDIUM",
+    "inputs": {
+      "local_sensitivity": "CONCERNING",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "FAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 1,
+    "n_concerning": 1
+  },
+  "MODEL-00010": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "FAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "FAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "FAVORABLE"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 0
+  },
+  "MODEL-14-5-H3-RIDGE-050": {
+    "confidence": "UNRELIABLE",
+    "inputs": {
+      "local_sensitivity": "UNFAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "UNFAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "CONCERNING"
+    },
+    "n_unfavorable": 4,
+    "n_concerning": 1
+  },
+  "MODEL-14-5-H3-LASSO-050": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "CONCERNING",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "CONCERNING",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "CONCERNING"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 3
+  },
+  "MODEL-14-5-H3-RIDGE-100": {
+    "confidence": "UNRELIABLE",
+    "inputs": {
+      "local_sensitivity": "UNFAVORABLE",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "UNFAVORABLE",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "CONCERNING"
+    },
+    "n_unfavorable": 4,
+    "n_concerning": 1
+  },
+  "MODEL-14-5-H3-LASSO-100": {
+    "confidence": "LOW",
+    "inputs": {
+      "local_sensitivity": "CONCERNING",
+      "model_disagreement": "UNFAVORABLE",
+      "faithfulness": "CONCERNING",
+      "counterfactual_stability": "UNFAVORABLE",
+      "correlation_stability": "CONCERNING"
+    },
+    "n_unfavorable": 2,
+    "n_concerning": 3
+  }
+}

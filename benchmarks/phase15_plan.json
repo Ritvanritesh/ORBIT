@@ -1,0 +1,347 @@
+{
+  "phase": "15",
+  "title": "Deterministic Explainability & Decision Evidence Engine — Locked Plan",
+  "locked_at": "2026-08-23T00:00:00+00:00",
+  "policy": "NO explanation method, model, candidate, threshold, or evaluation scenario may be added after results are observed. Historical artifacts must remain unchanged.",
+  "model_inventory": [
+    {
+      "model_id": "MODEL-00001",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "status": "RESEARCH",
+      "feature_set": "FS-001",
+      "universe": "ENV-DEV20",
+      "label": "LAB-004",
+      "description": "Phase 9 baseline ridge on 20 instruments",
+      "phase14_identity_digest": "65d0563b9e1f8258",
+      "include_reason": "baseline_reference"
+    },
+    {
+      "model_id": "MODEL-00002",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-12B-B",
+      "universe": "ENV-12D-050",
+      "label": "LAB-004",
+      "description": "Phase 12D lasso with valuation features (EARNINGS)",
+      "phase14_identity_digest": "4acea881b6032300",
+      "include_reason": "relevant_baseline"
+    },
+    {
+      "model_id": "MODEL-00005",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-12B-E",
+      "universe": "ENV-12D-050",
+      "label": "LAB-004",
+      "description": "Phase 12D lasso with leverage features (DEBT_TO_EQUITY, etc.)",
+      "phase14_identity_digest": "84bd02c05132a485",
+      "include_reason": "relevant_baseline_high_ic"
+    },
+    {
+      "model_id": "MODEL-00006",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-12B-D",
+      "universe": "ENV-12E-050",
+      "label": "LAB-006",
+      "description": "Phase 12E lasso with growth features",
+      "phase14_identity_digest": "6215a6f5a71fe50a",
+      "include_reason": "relevant_baseline"
+    },
+    {
+      "model_id": "MODEL-00007",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-12B-E",
+      "universe": "ENV-12E-050",
+      "label": "LAB-006",
+      "description": "Phase 12E lasso with leverage features",
+      "phase14_identity_digest": "2cb2566e462b230c",
+      "include_reason": "relevant_baseline_high_ic"
+    },
+    {
+      "model_id": "MODEL-00008",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "status": "RESEARCH",
+      "feature_set": "FS-12B-A",
+      "universe": "ENV-12E-050",
+      "label": "LAB-006",
+      "description": "Phase 12E ridge with baseline features",
+      "phase14_identity_digest": "88e4854c6eecba0b",
+      "include_reason": "relevant_baseline"
+    },
+    {
+      "model_id": "MODEL-00009",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "status": "RESEARCH",
+      "feature_set": "FS-001",
+      "universe": "ENV-050-seq",
+      "label": "LAB-004",
+      "candidate_id": "CAND-03",
+      "description": "Phase 13A CAND-03 ridge (temporal robustness candidate)",
+      "phase14_identity_digest": "6bb9bb9aca231798",
+      "robustness_classification": "RESEARCH_ONLY",
+      "include_reason": "surviving_13_candidate"
+    },
+    {
+      "model_id": "MODEL-00010",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-001",
+      "universe": "ENV-050-seq",
+      "label": "LAB-004",
+      "candidate_id": "CAND-04",
+      "description": "Phase 13A CAND-04 lasso (temporal robustness candidate)",
+      "phase14_identity_digest": "d3f790aa27e30ca9",
+      "robustness_classification": "FRAGILE",
+      "include_reason": "surviving_13_candidate"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-RIDGE-050",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "status": "RESEARCH",
+      "feature_set": "FS-H3",
+      "universe": "ENV-050",
+      "label": "LAB-004",
+      "description": "Phase 14.5 H-3 macro-regime ridge (FS-H3: baseline + DFF, UNRATE, CPI)",
+      "parent_experiment": "EXP-14-5-005",
+      "oos_ic": 0.090892,
+      "include_reason": "14_5_hypothesis_model"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-LASSO-050",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-H3",
+      "universe": "ENV-050",
+      "label": "LAB-004",
+      "description": "Phase 14.5 H-3 macro-regime lasso (FS-H3: baseline + DFF, UNRATE, CPI)",
+      "parent_experiment": "EXP-14-5-006",
+      "oos_ic": 0.108106,
+      "include_reason": "14_5_hypothesis_model"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-RIDGE-100",
+      "model_version": "v1",
+      "model_family": "ridge",
+      "status": "RESEARCH",
+      "feature_set": "FS-H3",
+      "universe": "ENV-100",
+      "label": "LAB-004",
+      "description": "Phase 14.5 H-3 macro-regime ridge on ENV-100",
+      "parent_experiment": "EXP-14-5-017",
+      "oos_ic": 0.131648,
+      "include_reason": "14_5_hypothesis_model"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-LASSO-100",
+      "model_version": "v1",
+      "model_family": "lasso",
+      "status": "RESEARCH",
+      "feature_set": "FS-H3",
+      "universe": "ENV-100",
+      "label": "LAB-004",
+      "description": "Phase 14.5 H-3 macro-regime lasso on ENV-100",
+      "parent_experiment": "EXP-14-5-018",
+      "oos_ic": 0.146357,
+      "include_reason": "14_5_hypothesis_model"
+    }
+  ],
+  "datasets": {
+    "prediction_source": "DS-EXP-050 test period (2022-01-03 to 2026-06-30)",
+    "feature_snapshots": "Locked per model feature_set and universe",
+    "prediction_selection": {
+      "method": "stratified_quantile",
+      "categories": [
+        "top_1pct_prediction",
+        "bottom_1pct_prediction",
+        "near_zero_prediction",
+        "largest_disagreement",
+        "failure_region_2022"
+      ],
+      "n_per_category": 5,
+      "deterministic_seed": 42
+    }
+  },
+  "explanation_methods": {
+    "global": {
+      "linear": [
+        "coefficients",
+        "permutation_importance",
+        "standardized_coefficients"
+      ],
+      "tree": [
+        "permutation_importance"
+      ],
+      "all": [
+        "permutation_importance"
+      ]
+    },
+    "local": {
+      "methods": [
+        "shap_linear",
+        "permutation_local",
+        "sensitivity_analysis",
+        "counterfactual_threshold"
+      ],
+      "shap_backend": "KernelExplainer with deterministic seed",
+      "reference_value": "training_set_mean"
+    },
+    "counterfactual": {
+      "max_iterations": 100,
+      "step_size": 0.05,
+      "domain_bounds": "observed_min_max_per_feature",
+      "target_change": 0.1
+    }
+  },
+  "synthetic_validation_models": [
+    {
+      "id": "SYNTH-001",
+      "type": "single_feature",
+      "formula": "y = 2.0 * X1 + noise",
+      "n_features": 10,
+      "informative": [
+        "X1"
+      ],
+      "expected": "X1 dominates attribution"
+    },
+    {
+      "id": "SYNTH-002",
+      "type": "linear",
+      "formula": "y = 1.5*X1 - 0.8*X2 + 0.5*X3 + noise",
+      "n_features": 10,
+      "informative": [
+        "X1",
+        "X2",
+        "X3"
+      ],
+      "expected": "attribution ordering matches coefficients under scaling"
+    },
+    {
+      "id": "SYNTH-003",
+      "type": "interaction",
+      "formula": "y = X1 * X2 + noise",
+      "n_features": 10,
+      "informative": [
+        "X1",
+        "X2"
+      ],
+      "expected": "interaction dependence identified"
+    },
+    {
+      "id": "SYNTH-004",
+      "type": "redundant",
+      "formula": "y = 1.0 * X1 + noise, X2 = X1 + 0.01*noise",
+      "n_features": 10,
+      "informative": [
+        "X1"
+      ],
+      "expected": "instability or attribution sharing detected"
+    },
+    {
+      "id": "SYNTH-005",
+      "type": "noise_features",
+      "formula": "y = 1.0 * X1 + noise, 9 noise features",
+      "n_features": 10,
+      "informative": [
+        "X1"
+      ],
+      "expected": "noise importance remains low"
+    }
+  ],
+  "stability_tests": {
+    "permutation_stability": {
+      "n_repeats": 30,
+      "threshold": "rank_correlation > 0.9"
+    },
+    "sensitivity_perturbation": {
+      "n_perturbations": 100,
+      "perturbation_range": "0.5x to 2.0x feature std",
+      "cliff_threshold": "prediction_delta > 3x baseline_std"
+    },
+    "counterfactual_stability": {
+      "n_runs": 10,
+      "threshold": "same feature identified >= 80%"
+    }
+  },
+  "faithfulness_tests": {
+    "deletion": {
+      "method": "neutralize_top_k_features",
+      "k_values": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "neutralization": "set to training_mean"
+    },
+    "insertion": {
+      "method": "add_features_by_rank",
+      "k_values": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "baseline": "all_features_at_training_mean"
+    },
+    "metric": "rank_correlation_between_attribution_and_ablation_impact",
+    "thresholds": {
+      "FAITHFUL": "> 0.7",
+      "PARTIALLY_FAITHFUL": "> 0.4",
+      "WEAK": "> 0.1",
+      "MISLEADING": "<= 0.1"
+    }
+  },
+  "provenance_audit_tests": [
+    "A1_wrong_model_version",
+    "A2_feature_value_mismatch",
+    "A3_feature_snapshot_mutation",
+    "A4_future_feature_injection",
+    "A5_timestamp_before_availability",
+    "A6_id_substitution",
+    "A7_registry_evidence_mismatch",
+    "A8_missing_provenance",
+    "A9_current_data_instead_of_snapshot",
+    "A10_llm_claims_vs_structured_attribution",
+    "A11_correlated_instability_hidden",
+    "A12_failed_explanation_excluded"
+  ],
+  "acceptance_thresholds": {
+    "synthetic_ground_truth": "all 5 synthetic models PASS",
+    "faithfulness_deletion": "median rank_correlation >= 0.4",
+    "faithfulness_insertion": "median rank_correlation >= 0.4",
+    "local_stability": ">= 80% predictions STABLE",
+    "counterfactual_validity": ">= 80% counterfactuals CLEAR or HIGH_DIMENSIONAL",
+    "reproducibility": "EXACT_REPRODUCTION or NUMERICALLY_EQUIVALENT for all",
+    "provenance": "all adversarial tests REJECT invalid cases"
+  },
+  "explanation_confidence_inputs": [
+    "attribution_stability",
+    "permutation_stability",
+    "feature_correlation_max",
+    "local_sensitivity_classification",
+    "model_disagreement_classification",
+    "counterfactual_stability",
+    "missing_data_exposure",
+    "out_of_domain_distance"
+  ],
+  "explanation_confidence_thresholds": {
+    "HIGH": "all inputs favorable",
+    "MEDIUM": "1-2 inputs concerning",
+    "LOW": "3+ inputs concerning",
+    "UNRELIABLE": "faithfulness MISLEADING or provenance CRITICAL_FAILURE"
+  },
+  "output_schemas_version": "v1",
+  "plan_digest": "c0ca8fbe49a99bf81be1f1492e3913726a3fae57d20e55c62a7aabdb5d70cf7f"
+}

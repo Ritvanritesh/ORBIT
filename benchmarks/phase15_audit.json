@@ -1,0 +1,61 @@
+{
+  "checks": [
+    {
+      "check": "plan_digest_verified",
+      "passed": true
+    },
+    {
+      "check": "all_models_trained",
+      "passed": true
+    },
+    {
+      "check": "global_attribution_complete",
+      "passed": true
+    },
+    {
+      "check": "local_explanations_complete",
+      "passed": true
+    },
+    {
+      "check": "sensitivity_complete",
+      "passed": true
+    },
+    {
+      "check": "counterfactuals_complete",
+      "passed": true
+    },
+    {
+      "check": "disagreement_complete",
+      "passed": true
+    },
+    {
+      "check": "faithfulness_complete",
+      "passed": true
+    },
+    {
+      "check": "synthetic_validation_all_pass",
+      "passed": true
+    },
+    {
+      "check": "provenance_audit_all_pass",
+      "passed": true
+    },
+    {
+      "check": "reproducibility_all_pass",
+      "passed": true
+    },
+    {
+      "check": "historical_artifacts_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_model_promoted",
+      "passed": true
+    },
+    {
+      "check": "explanation_confidence_separate_from_trading",
+      "passed": true
+    }
+  ],
+  "all_checks_pass": true
+}

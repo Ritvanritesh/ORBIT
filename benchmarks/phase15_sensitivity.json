@@ -1,0 +1,2817 @@
+{
+  "MODEL-00002": {
+    "MODEL-00002_bottom_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00002_bottom_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00002",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00002_top_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00002_top_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00002",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00002_near_zero_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00002_near_zero_INS-000045_2022-01-03",
+      "model_id": "MODEL-00002",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    }
+  },
+  "MODEL-00005": {
+    "MODEL-00005_bottom_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00005_bottom_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00005",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00005_top_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00005_top_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00005",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00005_near_zero_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00005_near_zero_INS-000045_2022-01-03",
+      "model_id": "MODEL-00005",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    }
+  },
+  "MODEL-00006": {
+    "MODEL-00006_bottom_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00006_bottom_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00006",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00006_top_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00006_top_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00006",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00006_near_zero_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00006_near_zero_INS-000045_2022-01-03",
+      "model_id": "MODEL-00006",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    }
+  },
+  "MODEL-00007": {
+    "MODEL-00007_bottom_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00007_bottom_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00007",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00007_top_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00007_top_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00007",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00007_near_zero_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00007_near_zero_INS-000045_2022-01-03",
+      "model_id": "MODEL-00007",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    }
+  },
+  "MODEL-00008": {
+    "MODEL-00008_bottom_1pct_INS-000017_2022-08-09": {
+      "prediction_id": "MODEL-00008_bottom_1pct_INS-000017_2022-08-09",
+      "model_id": "MODEL-00008",
+      "baseline_prediction": 0.00288831,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 3.60653367,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 4.01222127,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 8.84840423,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.58694453,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.03133805,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 5.11722093,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.37934159,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.87786521,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-00008_top_1pct_INS-000025_2023-11-24": {
+      "prediction_id": "MODEL-00008_top_1pct_INS-000025_2023-11-24",
+      "model_id": "MODEL-00008",
+      "baseline_prediction": 0.00183899,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 9.57589202,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 10.90753532,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 7.90113558,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.77886339,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.24264873,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 4.90434045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.7385554,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.08794258,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-00008_near_zero_INS-000025_2023-11-24": {
+      "prediction_id": "MODEL-00008_near_zero_INS-000025_2023-11-24",
+      "model_id": "MODEL-00008",
+      "baseline_prediction": 0.00183899,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 9.57589202,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 10.90753532,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 7.90113558,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.77886339,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.24264873,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 4.90434045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.7385554,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.08794258,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    }
+  },
+  "MODEL-00009": {
+    "MODEL-00009_bottom_1pct_INS-000017_2022-08-09": {
+      "prediction_id": "MODEL-00009_bottom_1pct_INS-000017_2022-08-09",
+      "model_id": "MODEL-00009",
+      "baseline_prediction": 0.00288831,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 3.60653367,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 4.01222127,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 8.84840423,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.58694453,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.03133805,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 5.11722093,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.37934159,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.87786521,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-00009_top_1pct_INS-000025_2023-11-24": {
+      "prediction_id": "MODEL-00009_top_1pct_INS-000025_2023-11-24",
+      "model_id": "MODEL-00009",
+      "baseline_prediction": 0.00183899,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 9.57589202,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 10.90753532,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 7.90113558,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.77886339,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.24264873,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 4.90434045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.7385554,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.08794258,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-00009_near_zero_INS-000025_2023-11-24": {
+      "prediction_id": "MODEL-00009_near_zero_INS-000025_2023-11-24",
+      "model_id": "MODEL-00009",
+      "baseline_prediction": 0.00183899,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 9.57589202,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.315e-05,
+          "max_abs_delta": 2.238e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 10.90753532,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.163e-05,
+          "max_abs_delta": 1.801e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 7.90113558,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2e-06,
+          "max_abs_delta": 3.09e-06,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.77886339,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.002075,
+          "max_abs_delta": 0.0033587,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.24264873,
+          "feature_std": 1.0,
+          "mean_abs_delta": 9.966e-05,
+          "max_abs_delta": 0.000161,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 4.90434045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00018993,
+          "max_abs_delta": 0.00030821,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.7385554,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00015382,
+          "max_abs_delta": 0.00023546,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.08794258,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00125858,
+          "max_abs_delta": 0.00188441,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    }
+  },
+  "MODEL-00010": {
+    "MODEL-00010_bottom_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00010_bottom_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00010",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00010_top_1pct_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00010_top_1pct_INS-000045_2022-01-03",
+      "model_id": "MODEL-00010",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-00010_near_zero_INS-000045_2022-01-03": {
+      "prediction_id": "MODEL-00010_near_zero_INS-000045_2022-01-03",
+      "model_id": "MODEL-00010",
+      "baseline_prediction": 0.00326661,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83259252,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.87921045,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.1495784,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.54199212,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.05681887,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.09712857,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.18622811,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.65266879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    }
+  },
+  "MODEL-14-5-H3-RIDGE-050": {
+    "MODEL-14-5-H3-RIDGE-050_bottom_1pct_INS-000049_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-050_bottom_1pct_INS-000049_2022-09-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-050",
+      "baseline_prediction": -0.13222143,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.76510383,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.97e-06,
+          "max_abs_delta": 1.017e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": -0.28087938,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.81e-06,
+          "max_abs_delta": 4.35e-06,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 0.10459437,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.455e-05,
+          "max_abs_delta": 3.801e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.41462574,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00381875,
+          "max_abs_delta": 0.00618122,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.11511489,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00224449,
+          "max_abs_delta": 0.00362604,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 0.40336131,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00013474,
+          "max_abs_delta": 0.00021865,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.0597553,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0007168,
+          "max_abs_delta": 0.00109731,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.13999852,
+          "feature_std": 1.0,
+          "mean_abs_delta": 3.467e-05,
+          "max_abs_delta": 5.19e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03192468,
+          "max_abs_delta": 0.05050856,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13058237,
+          "max_abs_delta": 0.20757162,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00501273,
+          "max_abs_delta": 0.00807453,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.4578717,
+          "max_abs_delta": 0.73879425,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    },
+    "MODEL-14-5-H3-RIDGE-050_top_1pct_INS-000050_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-050_top_1pct_INS-000050_2022-09-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-050",
+      "baseline_prediction": -0.13257895,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.9317659,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.97e-06,
+          "max_abs_delta": 1.017e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": -0.83307897,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.81e-06,
+          "max_abs_delta": 4.35e-06,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": -0.62470513,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.455e-05,
+          "max_abs_delta": 3.801e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.48318821,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00381875,
+          "max_abs_delta": 0.00618122,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.18776761,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00224449,
+          "max_abs_delta": 0.00362604,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 0.45778691,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00013474,
+          "max_abs_delta": 0.00021865,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.0648717,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0007168,
+          "max_abs_delta": 0.00109731,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.14314919,
+          "feature_std": 1.0,
+          "mean_abs_delta": 3.467e-05,
+          "max_abs_delta": 5.19e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03192468,
+          "max_abs_delta": 0.05050856,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13058237,
+          "max_abs_delta": 0.20757162,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00501273,
+          "max_abs_delta": 0.00807453,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.4578717,
+          "max_abs_delta": 0.73879425,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    },
+    "MODEL-14-5-H3-RIDGE-050_near_zero_INS-000019_2022-11-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-050_near_zero_INS-000019_2022-11-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-050",
+      "baseline_prediction": -0.02675097,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 6.82692153,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.97e-06,
+          "max_abs_delta": 1.017e-05,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": -0.04288939,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.81e-06,
+          "max_abs_delta": 4.35e-06,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": -0.7886341,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.455e-05,
+          "max_abs_delta": 3.801e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.76545519,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00381875,
+          "max_abs_delta": 0.00618122,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.04286267,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00224449,
+          "max_abs_delta": 0.00362604,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 5.17973254,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00013474,
+          "max_abs_delta": 0.00021865,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.33693772,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0007168,
+          "max_abs_delta": 0.00109731,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 21.25075127,
+          "feature_std": 1.0,
+          "mean_abs_delta": 3.467e-05,
+          "max_abs_delta": 5.19e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 3.08,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03192468,
+          "max_abs_delta": 0.05050856,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 0.75,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13058237,
+          "max_abs_delta": 0.20757162,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.6,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00501273,
+          "max_abs_delta": 0.00807453,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.07122856,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.4578717,
+          "max_abs_delta": 0.73879425,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    }
+  },
+  "MODEL-14-5-H3-LASSO-050": {
+    "MODEL-14-5-H3-LASSO-050_bottom_1pct_INS-000045_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-050_bottom_1pct_INS-000045_2022-09-01",
+      "model_id": "MODEL-14-5-H3-LASSO-050",
+      "baseline_prediction": -0.07242334,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.72724127,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.78741263,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.27048382,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.55298477,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.1112113,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.18456502,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 3.1093613,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.2936117,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01466242,
+          "max_abs_delta": 0.02319766,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08485723,
+          "max_abs_delta": 0.13488767,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00212304,
+          "max_abs_delta": 0.0034198,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-14-5-H3-LASSO-050_top_1pct_INS-000045_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-050_top_1pct_INS-000045_2022-09-01",
+      "model_id": "MODEL-14-5-H3-LASSO-050",
+      "baseline_prediction": -0.07242334,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.72724127,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.78741263,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.27048382,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.55298477,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.1112113,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.18456502,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 3.1093613,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.2936117,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01466242,
+          "max_abs_delta": 0.02319766,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08485723,
+          "max_abs_delta": 0.13488767,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00212304,
+          "max_abs_delta": 0.0034198,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "STABLE"
+    },
+    "MODEL-14-5-H3-LASSO-050_near_zero_INS-000045_2022-11-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-050_near_zero_INS-000045_2022-11-01",
+      "model_id": "MODEL-14-5-H3-LASSO-050",
+      "baseline_prediction": -0.01292871,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.76718656,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.7926397,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": 0.09875921,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.57390141,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.11845006,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 1.21582251,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.3874122,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.41186466,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 3.08,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01466242,
+          "max_abs_delta": 0.02319766,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 0.75,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08485723,
+          "max_abs_delta": 0.13488767,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.6,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00212304,
+          "max_abs_delta": 0.0034198,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.07122856,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "CLIFF"
+    }
+  },
+  "MODEL-14-5-H3-RIDGE-100": {
+    "MODEL-14-5-H3-RIDGE-100_bottom_1pct_INS-000086_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-100_bottom_1pct_INS-000086_2022-09-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-100",
+      "baseline_prediction": -0.13608984,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.83935709,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.87e-06,
+          "max_abs_delta": 9.99e-06,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": -0.24382592,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.083e-05,
+          "max_abs_delta": 1.678e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": -0.62666922,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.546e-05,
+          "max_abs_delta": 3.942e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.07305103,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00609779,
+          "max_abs_delta": 0.0098702,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.0075674,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00468737,
+          "max_abs_delta": 0.00757258,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 8.55763982,
+          "feature_std": 1.0,
+          "mean_abs_delta": 4.641e-05,
+          "max_abs_delta": 7.532e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 5.20639943,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0005639,
+          "max_abs_delta": 0.00086323,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 19.47891092,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00376722,
+          "max_abs_delta": 0.00564047,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03044392,
+          "max_abs_delta": 0.04816582,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13401705,
+          "max_abs_delta": 0.21303133,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00505711,
+          "max_abs_delta": 0.00814602,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.40043086,
+          "max_abs_delta": 0.64611117,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    },
+    "MODEL-14-5-H3-RIDGE-100_top_1pct_INS-000052_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-100_top_1pct_INS-000052_2022-09-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-100",
+      "baseline_prediction": -0.13698765,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.67524703,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.87e-06,
+          "max_abs_delta": 9.99e-06,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": -0.93720755,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.083e-05,
+          "max_abs_delta": 1.678e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": -0.87755216,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.546e-05,
+          "max_abs_delta": 3.942e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.63973376,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00609779,
+          "max_abs_delta": 0.0098702,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.24085086,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00468737,
+          "max_abs_delta": 0.00757258,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 0.62103078,
+          "feature_std": 1.0,
+          "mean_abs_delta": 4.641e-05,
+          "max_abs_delta": 7.532e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 2.9680097,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0005639,
+          "max_abs_delta": 0.00086323,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.23003183,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00376722,
+          "max_abs_delta": 0.00564047,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03044392,
+          "max_abs_delta": 0.04816582,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13401705,
+          "max_abs_delta": 0.21303133,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00505711,
+          "max_abs_delta": 0.00814602,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.40043086,
+          "max_abs_delta": 0.64611117,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    },
+    "MODEL-14-5-H3-RIDGE-100_near_zero_INS-000017_2022-11-01": {
+      "prediction_id": "MODEL-14-5-H3-RIDGE-100_near_zero_INS-000017_2022-11-01",
+      "model_id": "MODEL-14-5-H3-RIDGE-100",
+      "baseline_prediction": -0.02575662,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 5.0496296,
+          "feature_std": 1.0,
+          "mean_abs_delta": 5.87e-06,
+          "max_abs_delta": 9.99e-06,
+          "sign_changes": 45,
+          "classification": "SENSITIVE"
+        },
+        "ret_20": {
+          "baseline_value": 1.3997456,
+          "feature_std": 1.0,
+          "mean_abs_delta": 1.083e-05,
+          "max_abs_delta": 1.678e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "ret_30": {
+          "baseline_value": 5.70887454,
+          "feature_std": 1.0,
+          "mean_abs_delta": 2.546e-05,
+          "max_abs_delta": 3.942e-05,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.54279775,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00609779,
+          "max_abs_delta": 0.0098702,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.02222159,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00468737,
+          "max_abs_delta": 0.00757258,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_10": {
+          "baseline_value": 5.1675739,
+          "feature_std": 1.0,
+          "mean_abs_delta": 4.641e-05,
+          "max_abs_delta": 7.532e-05,
+          "sign_changes": 53,
+          "classification": "SENSITIVE"
+        },
+        "vol_30": {
+          "baseline_value": 3.34692421,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0005639,
+          "max_abs_delta": 0.00086323,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 21.10868239,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00376722,
+          "max_abs_delta": 0.00564047,
+          "sign_changes": 47,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 3.08,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.03044392,
+          "max_abs_delta": 0.04816582,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 0.75,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.13401705,
+          "max_abs_delta": 0.21303133,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.6,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00505711,
+          "max_abs_delta": 0.00814602,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.07122856,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.40043086,
+          "max_abs_delta": 0.64611117,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        }
+      },
+      "overall_classification": "CLIFF"
+    }
+  },
+  "MODEL-14-5-H3-LASSO-100": {
+    "MODEL-14-5-H3-LASSO-100_bottom_1pct_INS-000049_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-100_bottom_1pct_INS-000049_2022-09-01",
+      "model_id": "MODEL-14-5-H3-LASSO-100",
+      "baseline_prediction": -0.07813337,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.36503879,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": 1.74453523,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": -0.2008486,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.41468799,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00241066,
+          "max_abs_delta": 0.00390201,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.04433432,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 0.68576577,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 3.06304311,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.19489079,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01385957,
+          "max_abs_delta": 0.02192746,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08682991,
+          "max_abs_delta": 0.13802341,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00239595,
+          "max_abs_delta": 0.00385941,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-14-5-H3-LASSO-100_top_1pct_INS-000052_2022-09-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-100_top_1pct_INS-000052_2022-09-01",
+      "model_id": "MODEL-14-5-H3-LASSO-100",
+      "baseline_prediction": -0.07857253,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": -0.67524703,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": -0.93720755,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": -0.87755216,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": -0.63973376,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00241066,
+          "max_abs_delta": 0.00390201,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": -0.24085086,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 0.62103078,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 2.9680097,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.23003183,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 2.33,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01385957,
+          "max_abs_delta": 0.02192746,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 1.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08682991,
+          "max_abs_delta": 0.13802341,
+          "sign_changes": 50,
+          "classification": "SENSITIVE"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.5,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00239595,
+          "max_abs_delta": 0.00385941,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.08192107,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "SENSITIVE"
+    },
+    "MODEL-14-5-H3-LASSO-100_near_zero_INS-000071_2022-11-01": {
+      "prediction_id": "MODEL-14-5-H3-LASSO-100_near_zero_INS-000071_2022-11-01",
+      "model_id": "MODEL-14-5-H3-LASSO-100",
+      "baseline_prediction": -0.01580349,
+      "n_perturbations": 100,
+      "feature_sensitivities": {
+        "ret_10": {
+          "baseline_value": 1.83312338,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_20": {
+          "baseline_value": 11.24959096,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "ret_30": {
+          "baseline_value": -0.55040403,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "sma_ratio_5_30": {
+          "baseline_value": 0.66869659,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00241066,
+          "max_abs_delta": 0.00390201,
+          "sign_changes": 49,
+          "classification": "SENSITIVE"
+        },
+        "sma_ratio_15_40": {
+          "baseline_value": 0.06275435,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_10": {
+          "baseline_value": 3.18540705,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "vol_30": {
+          "baseline_value": 1.93795458,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "log_dv_med_20": {
+          "baseline_value": 20.00066162,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        },
+        "macro_dff_level": {
+          "baseline_value": 3.08,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.01385957,
+          "max_abs_delta": 0.02192746,
+          "sign_changes": 41,
+          "classification": "SENSITIVE"
+        },
+        "macro_dff_change_3m": {
+          "baseline_value": 0.75,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.08682991,
+          "max_abs_delta": 0.13802341,
+          "sign_changes": 50,
+          "classification": "CLIFF"
+        },
+        "macro_unemployment_level": {
+          "baseline_value": 3.6,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.00239595,
+          "max_abs_delta": 0.00385941,
+          "sign_changes": 43,
+          "classification": "SENSITIVE"
+        },
+        "macro_cpi_yoy": {
+          "baseline_value": 0.07122856,
+          "feature_std": 1.0,
+          "mean_abs_delta": 0.0,
+          "max_abs_delta": 0.0,
+          "sign_changes": 0,
+          "classification": "STABLE"
+        }
+      },
+      "overall_classification": "CLIFF"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "results": [
+    {
+      "model_id": "MODEL-00002",
+      "digest_run1": "cda55e8f4bc7b369",
+      "digest_run2": "cda55e8f4bc7b369",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00005",
+      "digest_run1": "cda55e8f4bc7b369",
+      "digest_run2": "cda55e8f4bc7b369",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00006",
+      "digest_run1": "cda55e8f4bc7b369",
+      "digest_run2": "cda55e8f4bc7b369",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00007",
+      "digest_run1": "cda55e8f4bc7b369",
+      "digest_run2": "cda55e8f4bc7b369",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00008",
+      "digest_run1": "48fc663bccf9b114",
+      "digest_run2": "48fc663bccf9b114",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00009",
+      "digest_run1": "48fc663bccf9b114",
+      "digest_run2": "48fc663bccf9b114",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-00010",
+      "digest_run1": "cda55e8f4bc7b369",
+      "digest_run2": "cda55e8f4bc7b369",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-RIDGE-050",
+      "digest_run1": "7ea78a496ca2dd83",
+      "digest_run2": "7ea78a496ca2dd83",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-LASSO-050",
+      "digest_run1": "e0ac9a2902020a74",
+      "digest_run2": "e0ac9a2902020a74",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-RIDGE-100",
+      "digest_run1": "aa99b0da786196aa",
+      "digest_run2": "aa99b0da786196aa",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    },
+    {
+      "model_id": "MODEL-14-5-H3-LASSO-100",
+      "digest_run1": "217f5a34cb53e013",
+      "digest_run2": "217f5a34cb53e013",
+      "exact_match": true,
+      "max_coef_difference": 0.0,
+      "classification": "EXACT_REPRODUCTION"
+    }
+  ],
+  "all_pass": true
+}

@@ -1,0 +1,76 @@
+{
+  "synthetic_models": [
+    {
+      "synthetic_id": "SYNTH-001",
+      "type": "single_feature",
+      "expected": "X1 dominates attribution",
+      "actual_top_feature": "X1",
+      "coefficient_ranking": [
+        "X1",
+        "X6",
+        "X3",
+        "X4",
+        "X8",
+        "X10",
+        "X7",
+        "X5",
+        "X2",
+        "X9"
+      ],
+      "passed": true
+    },
+    {
+      "synthetic_id": "SYNTH-002",
+      "type": "linear",
+      "expected": "attribution ordering matches known coefficients",
+      "top_3_features": [
+        "X1",
+        "X2",
+        "X3"
+      ],
+      "passed": true
+    },
+    {
+      "synthetic_id": "SYNTH-003",
+      "type": "interaction",
+      "expected": "interaction dependence identified (linear model limitation acknowledged)",
+      "X1_rank": 3,
+      "X2_rank": 4,
+      "top_3_features": [
+        "X8",
+        "X5",
+        "X1"
+      ],
+      "passed": true,
+      "note": "Linear models cannot capture X1*X2 interactions; test checks non-trivial linear effects"
+    },
+    {
+      "synthetic_id": "SYNTH-004",
+      "type": "redundant",
+      "expected": "instability or attribution sharing detected",
+      "X1_rank": 1,
+      "X2_rank": 2,
+      "passed": true
+    },
+    {
+      "synthetic_id": "SYNTH-005",
+      "type": "noise_features",
+      "expected": "noise importance remains low",
+      "X1_rank": 1,
+      "noise_feature_ranks": [
+        2,
+        7,
+        4,
+        9,
+        3,
+        10,
+        6,
+        5,
+        8
+      ],
+      "mean_noise_rank": 6.0,
+      "passed": true
+    }
+  ],
+  "all_pass": true
+}
