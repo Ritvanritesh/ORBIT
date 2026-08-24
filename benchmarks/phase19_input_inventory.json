@@ -1,0 +1,200 @@
+{
+  "phase": "19",
+  "step": 1,
+  "timestamp": "2026-08-24T13:41:18.064199+00:00",
+  "phase18_status": "CLOSED",
+  "phase18_budget_exhausted": true,
+  "phase18_artifact_digests": {
+    "B001_hypotheses.json": "fdee2e2d3dcb4cd5fc6a3004ef0c41219b508b5cc5d4590f50cefca93fefc060",
+    "B001_plan.json": "8c5216b67b0265b390450d383a0115ce8ccb2babbc534e54883508c5135fbec1",
+    "phase18_exploratory_results.json": "04982f7e22cdc996455148bd69d54fa4e77a098a6a160573216db1d466466f3f",
+    "phase18_1_evidence_reconstruction.json": "cb373b9037e70e53dc734c1b130011566ff4d605f3e751d34a8c277f26d6e0e5",
+    "phase18_1_horizon_pattern_audit.json": "5c18ca507c383d2c5d446e8af336fd7a566c1ed6f2497576052ed88871b13a87",
+    "phase18_1_promotion_eligibility.json": "39329e30f819ad774a729deaff8ac51a6b26850c78bcb18894fad9841821b02a",
+    "phase18_1_audit.json": "33da358aa95957b0cdf9dd3ba2acc15756492bc7762d01fec5fbdcbf5a975118",
+    "phase18_statistics.json": "b63376e27757869ae50f26b8588257c3f9940b71c3a49b4685c842ac52fcfd27",
+    "baseline_registry.json": "ed787a4b4972affee2fbcf1bafcfbd7c0a8bd9dc141c15cbf412d6f36774890a"
+  },
+  "hypotheses": {
+    "HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "mechanism": "Price trends propagate through investor underreaction over multiple sessions",
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006 (excess return vs SPY)",
+      "candidate_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "preprocessing": "StandardScaler within walk-forward window",
+      "model_family": [
+        "ridge",
+        "lasso"
+      ],
+      "exploratory_experiment_count": 8,
+      "exploratory_result_summary": {
+        "mean_val_ic": 0.014178241208878383,
+        "universe_consistency": {
+          "mean_ic_050": 0.013700700595578496,
+          "mean_ic_100": 0.01497414223104486,
+          "consistent": true
+        },
+        "model_consistency": {
+          "ridge_mean": 0.01481556433330001,
+          "lasso_mean": 0.0122662718356135,
+          "consistent": true
+        },
+        "horizon_pattern": "BROAD_STABILITY"
+      },
+      "known_limitations": [
+        "Linear model only",
+        "Single alpha",
+        "OHLCV-only features"
+      ],
+      "eligibility_status": "CONFIRMATION_CANDIDATE",
+      "eligibility_criteria_met": 10
+    },
+    "HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "mechanism": "Volatility regimes persist over multi-session periods",
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006 (excess return vs SPY)",
+      "candidate_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "preprocessing": "StandardScaler within walk-forward window",
+      "model_family": [
+        "ridge",
+        "lasso"
+      ],
+      "exploratory_experiment_count": 8,
+      "exploratory_result_summary": {
+        "mean_val_ic": 0.011818332058451272,
+        "universe_consistency": {
+          "mean_ic_050": 0.010338740936275787,
+          "mean_ic_100": 0.014284317262077082,
+          "consistent": true
+        },
+        "model_consistency": {
+          "ridge_mean": 0.012943607899034662,
+          "lasso_mean": 0.008442504536701112,
+          "consistent": true
+        },
+        "horizon_pattern": "BROAD_STABILITY"
+      },
+      "known_limitations": [
+        "Only 2 volatility features",
+        "Linear model",
+        "Mean-reversion may confound"
+      ],
+      "eligibility_status": "CONFIRMATION_CANDIDATE",
+      "eligibility_criteria_met": 10
+    },
+    "HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "mechanism": "Macro conditions influence corporate earnings and discount rates over weeks to months",
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006 (excess return vs SPY)",
+      "candidate_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "preprocessing": "StandardScaler within walk-forward window",
+      "model_family": [
+        "ridge",
+        "lasso"
+      ],
+      "exploratory_experiment_count": 8,
+      "exploratory_result_summary": {
+        "mean_val_ic": 0.01974098966349202,
+        "universe_consistency": {
+          "mean_ic_050": 0.019656786964424498,
+          "mean_ic_100": 0.01988132749527122,
+          "consistent": true
+        },
+        "model_consistency": {
+          "ridge_mean": 0.019361273290732478,
+          "lasso_mean": 0.020880138781770648,
+          "consistent": true
+        },
+        "horizon_pattern": "MONOTONIC_IMPROVEMENT"
+      },
+      "known_limitations": [
+        "PIT limitation (revised macro data)",
+        "Only 2 proxy features",
+        "Regime dependence documented"
+      ],
+      "eligibility_status": "CONFIRMATION_CANDIDATE",
+      "eligibility_criteria_met": 10
+    },
+    "HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "mechanism": "Relative ranking captures mean-reversion and momentum across instruments",
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006 (excess return vs SPY)",
+      "candidate_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "preprocessing": "StandardScaler within walk-forward window",
+      "model_family": [
+        "ridge"
+      ],
+      "exploratory_experiment_count": 6,
+      "exploratory_result_summary": {
+        "mean_val_ic": 0.026446123622748483,
+        "universe_consistency": {
+          "mean_ic_050": 0.02710336545797572,
+          "mean_ic_100": 0.025788881787521246,
+          "consistent": true
+        },
+        "model_consistency": {
+          "ridge_mean": 0.026446123622748483,
+          "lasso_mean": null,
+          "consistent": null
+        },
+        "horizon_pattern": "MONOTONIC_IMPROVEMENT"
+      },
+      "known_limitations": [
+        "SMA ratios are price-based, not true cross-sectional",
+        "Linear model"
+      ],
+      "eligibility_status": "CONFIRMATION_CANDIDATE",
+      "eligibility_criteria_met": 9
+    }
+  }
+}

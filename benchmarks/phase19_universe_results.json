@@ -1,0 +1,74 @@
+{
+  "HYP-MOM": {
+    "by_universe": {
+      "ENV-050": {
+        "mean_ic": 0.013700700595578496,
+        "std_ic": 0.0022724399272588723,
+        "n_experiments": 5,
+        "sign_positive": true
+      },
+      "ENV-100": {
+        "mean_ic": 0.01497414223104486,
+        "std_ic": 0.0004483910277136303,
+        "n_experiments": 3,
+        "sign_positive": true
+      }
+    },
+    "sign_consistent": true,
+    "magnitude_difference": 0.0012734416354663637
+  },
+  "HYP-VOL": {
+    "by_universe": {
+      "ENV-050": {
+        "mean_ic": 0.010338740936275787,
+        "std_ic": 0.003914684391473395,
+        "n_experiments": 5,
+        "sign_positive": true
+      },
+      "ENV-100": {
+        "mean_ic": 0.014284317262077082,
+        "std_ic": 0.00376492920695259,
+        "n_experiments": 3,
+        "sign_positive": true
+      }
+    },
+    "sign_consistent": true,
+    "magnitude_difference": 0.003945576325801295
+  },
+  "HYP-MAC": {
+    "by_universe": {
+      "ENV-050": {
+        "mean_ic": 0.019656786964424498,
+        "std_ic": 0.0031566772118651267,
+        "n_experiments": 5,
+        "sign_positive": true
+      },
+      "ENV-100": {
+        "mean_ic": 0.01988132749527122,
+        "std_ic": 0.003544043492170802,
+        "n_experiments": 3,
+        "sign_positive": true
+      }
+    },
+    "sign_consistent": true,
+    "magnitude_difference": 0.00022454053084672299
+  },
+  "HYP-XSEC": {
+    "by_universe": {
+      "ENV-050": {
+        "mean_ic": 0.02710336545797572,
+        "std_ic": 0.0026700875148793855,
+        "n_experiments": 3,
+        "sign_positive": true
+      },
+      "ENV-100": {
+        "mean_ic": 0.025788881787521246,
+        "std_ic": 0.002202953489389655,
+        "n_experiments": 3,
+        "sign_positive": true
+      }
+    },
+    "sign_consistent": true,
+    "magnitude_difference": 0.001314483670454475
+  }
+}

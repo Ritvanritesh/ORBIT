@@ -1,0 +1,82 @@
+{
+  "phase": "19",
+  "step": 14,
+  "timestamp": "2026-08-24T13:41:18.094271+00:00",
+  "tests": {
+    "A1_modify_registration": {
+      "attack": "Modify registration after results are observed",
+      "result": "REJECTED",
+      "detail": "Registrations are SHA-256 locked; modification detectable"
+    },
+    "A2_add_experiment": {
+      "attack": "Add undeclared experiment after registration lock",
+      "result": "REJECTED",
+      "detail": "Registration manifest is immutable; addition violates lock"
+    },
+    "A3_remove_hypothesis": {
+      "attack": "Remove a failed hypothesis from the family",
+      "result": "REJECTED",
+      "detail": "All 4 hypotheses remain in family; no exclusions applied"
+    },
+    "A4_change_family": {
+      "attack": "Change the multiple-testing family after seeing results",
+      "result": "REJECTED",
+      "detail": "Family defined in Step 6 before execution; Holm is primary"
+    },
+    "A5_select_horizon": {
+      "attack": "Select a better horizon after execution",
+      "result": "REJECTED",
+      "detail": "All horizons pre-registered; no cherry-picking applied"
+    },
+    "A6_select_universe": {
+      "attack": "Select a better universe after execution",
+      "result": "REJECTED",
+      "detail": "Both universes pre-registered; no selection applied"
+    },
+    "A7_select_model": {
+      "attack": "Select a better model after execution",
+      "result": "REJECTED",
+      "detail": "All model families pre-registered; no selection applied"
+    },
+    "A8_reuse_exploratory": {
+      "attack": "Reuse exploratory observations as hidden confirmation",
+      "result": "REJECTED",
+      "detail": "PSEUDO_CONFIRMATORY classification explicitly acknowledges that the same data is used. No pretense of genuine holdout."
+    },
+    "A9_future_data": {
+      "attack": "Access future data not available during registration",
+      "result": "REJECTED",
+      "detail": "All data ends at 2026-06-30; no future data accessed"
+    },
+    "A10_bypass_purge": {
+      "attack": "Bypass purge or embargo rules",
+      "result": "REJECTED",
+      "detail": "5-session embargo maintained between train/val/test splits"
+    },
+    "A11_reconstruct_only": {
+      "attack": "Reconstruct results from summary files only",
+      "result": "REJECTED",
+      "detail": "Primitive experiment outputs preserved in phase18_exploratory_results.json"
+    },
+    "A12_delete_outputs": {
+      "attack": "Delete failed primitive outputs",
+      "result": "REJECTED",
+      "detail": "All 30 experiments have COMPLETED status; no deletions"
+    },
+    "A13_alter_baselines": {
+      "attack": "Alter baseline definitions after Phase 19",
+      "result": "REJECTED",
+      "detail": "Baseline registry version-locked in Phase 17C-R"
+    },
+    "A14_exclude_window": {
+      "attack": "Selectively exclude a negative temporal window",
+      "result": "REJECTED",
+      "detail": "All walk-forward windows included in analysis"
+    }
+  },
+  "summary": {
+    "total": 14,
+    "rejected": 14,
+    "passed": 0
+  }
+}

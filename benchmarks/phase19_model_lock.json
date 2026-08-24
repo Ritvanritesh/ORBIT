@@ -1,0 +1,61 @@
+{
+  "phase": "19",
+  "step": 5,
+  "timestamp": "2026-08-24T13:41:18.075037+00:00",
+  "configurations": {
+    "HYP-MOM": {
+      "ridge": {
+        "alpha": 1.0,
+        "source": "Phase 18 B001 plan"
+      },
+      "lasso": {
+        "alpha": 0.001,
+        "source": "Phase 18 B001 plan"
+      }
+    },
+    "HYP-VOL": {
+      "ridge": {
+        "alpha": 1.0,
+        "source": "Phase 18 B001 plan"
+      },
+      "lasso": {
+        "alpha": 0.001,
+        "source": "Phase 18 B001 plan"
+      }
+    },
+    "HYP-MAC": {
+      "ridge": {
+        "alpha": 1.0,
+        "source": "Phase 18 B001 plan"
+      },
+      "lasso": {
+        "alpha": 0.001,
+        "source": "Phase 18 B001 plan"
+      }
+    },
+    "HYP-XSEC": {
+      "ridge": {
+        "alpha": 1.0,
+        "source": "Phase 18 B001 plan"
+      },
+      "lasso": {
+        "alpha": 0.001,
+        "source": "Phase 17C-R canonical baseline config",
+        "note": "NEW for HYP-XSEC \u2014 required by Step 2 resolution"
+      }
+    }
+  },
+  "forbidden_actions": [
+    "Choosing alpha after seeing Phase 19 results",
+    "Selecting horizon after seeing results",
+    "Replacing failed models with new models",
+    "Feature additions after execution",
+    "Trying extra configurations until significance appears"
+  ],
+  "allowed_sources": [
+    "canonical baseline definitions",
+    "Phase 18 pre-existing configurations",
+    "Phase 17B-R governance requirements",
+    "explicit pre-registration"
+  ]
+}

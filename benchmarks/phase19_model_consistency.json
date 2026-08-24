@@ -1,0 +1,68 @@
+{
+  "HYP-MOM": {
+    "by_model": {
+      "ridge": {
+        "mean_ic": 0.01481556433330001,
+        "std_ic": 0.0006845746693467986,
+        "n_experiments": 6,
+        "positive": "True"
+      },
+      "lasso": {
+        "mean_ic": 0.0122662718356135,
+        "std_ic": 0.0029071882402594883,
+        "n_experiments": 2,
+        "positive": "True"
+      }
+    },
+    "classification": "REPLICATED_ACROSS_FAMILIES",
+    "all_positive": true
+  },
+  "HYP-VOL": {
+    "by_model": {
+      "ridge": {
+        "mean_ic": 0.012943607899034662,
+        "std_ic": 0.004433408603428816,
+        "n_experiments": 6,
+        "positive": "True"
+      },
+      "lasso": {
+        "mean_ic": 0.008442504536701112,
+        "std_ic": 9.076192641326725e-05,
+        "n_experiments": 2,
+        "positive": "True"
+      }
+    },
+    "classification": "REPLICATED_ACROSS_FAMILIES",
+    "all_positive": true
+  },
+  "HYP-MAC": {
+    "by_model": {
+      "ridge": {
+        "mean_ic": 0.019361273290732478,
+        "std_ic": 0.003462667060528493,
+        "n_experiments": 6,
+        "positive": "True"
+      },
+      "lasso": {
+        "mean_ic": 0.020880138781770648,
+        "std_ic": 0.002469566248783398,
+        "n_experiments": 2,
+        "positive": "True"
+      }
+    },
+    "classification": "REPLICATED_ACROSS_FAMILIES",
+    "all_positive": true
+  },
+  "HYP-XSEC": {
+    "by_model": {
+      "ridge": {
+        "mean_ic": 0.026446123622748483,
+        "std_ic": 0.002534393919014422,
+        "n_experiments": 6,
+        "positive": "True"
+      }
+    },
+    "classification": "SINGLE_FAMILY_TESTED",
+    "all_positive": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "phase": "19",
+  "timestamp": "2026-08-24T13:41:18.096670+00:00",
+  "verification_checks": {
+    "registrations_created_before_execution": true,
+    "registrations_not_modified": true,
+    "budget_respected": true,
+    "phase18_artifacts_not_modified": true,
+    "no_retroactive_changes": true,
+    "holdout_classification_correct": true,
+    "all_tests_in_family": true,
+    "failed_results_preserved": true,
+    "primitive_outputs_exist": true,
+    "reconstruction_correct": true,
+    "baselines_unchanged": true,
+    "registry_follows_policy": true,
+    "no_promotion_based_on_exploratory_ic": true,
+    "no_direct_paper_trading": true,
+    "adversarial_all_rejected": true
+  },
+  "all_checks_pass": true,
+  "holdout_classification": "PSEUDO_CONFIRMATORY",
+  "confirmed_hypotheses": [],
+  "partially_confirmed": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "failed_hypotheses": [],
+  "overall_verdict": "B",
+  "gate": "YELLOW",
+  "gate_rationale": "Verdict B: 4 partially confirmed, Holdout: PSEUDO_CONFIRMATORY. Gate: YELLOW"
+}

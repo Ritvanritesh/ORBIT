@@ -1,0 +1,23 @@
+{
+  "phase": "19",
+  "step": 7,
+  "timestamp": "2026-08-24T13:41:18.076036+00:00",
+  "thresholds": {
+    "minimum_meaningful_ic": 0.01,
+    "consistency_requirement": "positive-window fraction >= 0.6 (3/5 windows)",
+    "maximum_acceptable_dispersion": "IC std / |mean IC| < 3.0 (signal-to-noise ratio > 0.33)",
+    "universe_consistency": "sign of mean IC must agree across ENV-050 and ENV-100",
+    "model_family_consistency": "both ridge and lasso must show positive mean IC (where required)"
+  },
+  "justification": {
+    "canonical_baseline_ic": 0.001,
+    "economic_rationale": "Mean IC >= 0.010 represents ~10x improvement over simple predictive baseline. With Sharpe scaling, IC ~0.01 roughly corresponds to daily IC that can generate meaningful alpha after transaction costs in liquid equities.",
+    "statistical_power": "With 5 walk-forward windows and IC std ~0.02-0.06, detection of IC >= 0.010 has moderate power (approximately 50-70%). Lower thresholds risk excessive false positives.",
+    "prior_evidence": "Phase 18 exploratory results showed mean ICs of 0.013-0.026. Threshold set conservatively below exploratory means to avoid circular reasoning."
+  },
+  "forbidden": [
+    "Setting thresholds after seeing Phase 19 results",
+    "Using exploratory IC to calibrate materiality",
+    "Weakening thresholds based on observed performance"
+  ]
+}

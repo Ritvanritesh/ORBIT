@@ -1,0 +1,71 @@
+{
+  "phase": "19",
+  "step": 12,
+  "timestamp": "2026-08-24T13:41:18.092863+00:00",
+  "comparisons": {
+    "HYP-MOM": {
+      "mean_val_ic": 0.014178241208878383,
+      "exceeds_null_random": "True",
+      "exceeds_predictive_baseline": "True",
+      "exceeds_null_fraction": 1.0,
+      "baseline_comparisons": {
+        "BL-NULL-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.0
+        },
+        "BL-SIMPLE-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.001
+        }
+      }
+    },
+    "HYP-VOL": {
+      "mean_val_ic": 0.011818332058451272,
+      "exceeds_null_random": "True",
+      "exceeds_predictive_baseline": "True",
+      "exceeds_null_fraction": 1.0,
+      "baseline_comparisons": {
+        "BL-NULL-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.0
+        },
+        "BL-SIMPLE-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.001
+        }
+      }
+    },
+    "HYP-MAC": {
+      "mean_val_ic": 0.01974098966349202,
+      "exceeds_null_random": "True",
+      "exceeds_predictive_baseline": "True",
+      "exceeds_null_fraction": 1.0,
+      "baseline_comparisons": {
+        "BL-NULL-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.0
+        },
+        "BL-SIMPLE-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.001
+        }
+      }
+    },
+    "HYP-XSEC": {
+      "mean_val_ic": 0.026446123622748483,
+      "exceeds_null_random": "True",
+      "exceeds_predictive_baseline": "True",
+      "exceeds_null_fraction": 1.0,
+      "baseline_comparisons": {
+        "BL-NULL-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.0
+        },
+        "BL-SIMPLE-001": {
+          "exceeds": "True",
+          "baseline_ic": 0.001
+        }
+      }
+    }
+  }
+}

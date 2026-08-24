@@ -1,0 +1,190 @@
+{
+  "phase": "19",
+  "step": 15,
+  "timestamp": "2026-08-24T13:41:18.094673+00:00",
+  "checks": [
+    {
+      "experiment_id": "EXP-18-001",
+      "ic_consistent": true,
+      "p19_ic": 0.01391049231192701,
+      "p18_ic": 0.01391049231192701
+    },
+    {
+      "experiment_id": "EXP-18-002",
+      "ic_consistent": true,
+      "p19_ic": 0.014601599271018085,
+      "p18_ic": 0.014601599271018085
+    },
+    {
+      "experiment_id": "EXP-18-003",
+      "ic_consistent": true,
+      "p19_ic": 0.014248591183574329,
+      "p18_ic": 0.014248591183574329
+    },
+    {
+      "experiment_id": "EXP-18-004",
+      "ic_consistent": true,
+      "p19_ic": 0.014716014591119882,
+      "p18_ic": 0.014716014591119882
+    },
+    {
+      "experiment_id": "EXP-18-005",
+      "ic_consistent": true,
+      "p19_ic": 0.015811875811164146,
+      "p18_ic": 0.015811875811164146
+    },
+    {
+      "experiment_id": "EXP-18-006",
+      "ic_consistent": true,
+      "p19_ic": 0.015604812830996614,
+      "p18_ic": 0.015604812830996614
+    },
+    {
+      "experiment_id": "EXP-18-025",
+      "ic_consistent": true,
+      "p19_ic": 0.015173460075872988,
+      "p18_ic": 0.015173460075872988
+    },
+    {
+      "experiment_id": "EXP-18-026",
+      "ic_consistent": true,
+      "p19_ic": 0.009359083595354012,
+      "p18_ic": 0.009359083595354012
+    },
+    {
+      "experiment_id": "EXP-18-007",
+      "ic_consistent": true,
+      "p19_ic": 0.018165300409169298,
+      "p18_ic": 0.018165300409169298
+    },
+    {
+      "experiment_id": "EXP-18-008",
+      "ic_consistent": true,
+      "p19_ic": 0.01949369060121325,
+      "p18_ic": 0.01949369060121325
+    },
+    {
+      "experiment_id": "EXP-18-009",
+      "ic_consistent": true,
+      "p19_ic": 0.008212362849366186,
+      "p18_ic": 0.008212362849366186
+    },
+    {
+      "experiment_id": "EXP-18-010",
+      "ic_consistent": true,
+      "p19_ic": 0.010726289121592122,
+      "p18_ic": 0.010726289121592122
+    },
+    {
+      "experiment_id": "EXP-18-011",
+      "ic_consistent": true,
+      "p19_ic": 0.008431032349441231,
+      "p18_ic": 0.008431032349441231
+    },
+    {
+      "experiment_id": "EXP-18-012",
+      "ic_consistent": true,
+      "p19_ic": 0.012632972063425877,
+      "p18_ic": 0.012632972063425877
+    },
+    {
+      "experiment_id": "EXP-18-027",
+      "ic_consistent": true,
+      "p19_ic": 0.008351742610287845,
+      "p18_ic": 0.008351742610287845
+    },
+    {
+      "experiment_id": "EXP-18-028",
+      "ic_consistent": true,
+      "p19_ic": 0.00853326646311438,
+      "p18_ic": 0.00853326646311438
+    },
+    {
+      "experiment_id": "EXP-18-013",
+      "ic_consistent": true,
+      "p19_ic": 0.015257931528430135,
+      "p18_ic": 0.015257931528430135
+    },
+    {
+      "experiment_id": "EXP-18-014",
+      "ic_consistent": true,
+      "p19_ic": 0.016077166982199173,
+      "p18_ic": 0.016077166982199173
+    },
+    {
+      "experiment_id": "EXP-18-015",
+      "ic_consistent": true,
+      "p19_ic": 0.018046651024097114,
+      "p18_ic": 0.018046651024097114
+    },
+    {
+      "experiment_id": "EXP-18-016",
+      "ic_consistent": true,
+      "p19_ic": 0.01895734361511734,
+      "p18_ic": 0.01895734361511734
+    },
+    {
+      "experiment_id": "EXP-18-017",
+      "ic_consistent": true,
+      "p19_ic": 0.02321907470605394,
+      "p18_ic": 0.02321907470605394
+    },
+    {
+      "experiment_id": "EXP-18-018",
+      "ic_consistent": true,
+      "p19_ic": 0.024609471888497155,
+      "p18_ic": 0.024609471888497155
+    },
+    {
+      "experiment_id": "EXP-18-029",
+      "ic_consistent": true,
+      "p19_ic": 0.018410572532987248,
+      "p18_ic": 0.018410572532987248
+    },
+    {
+      "experiment_id": "EXP-18-030",
+      "ic_consistent": true,
+      "p19_ic": 0.023349705030554044,
+      "p18_ic": 0.023349705030554044
+    },
+    {
+      "experiment_id": "EXP-18-019",
+      "ic_consistent": true,
+      "p19_ic": 0.023505917049827338,
+      "p18_ic": 0.023505917049827338
+    },
+    {
+      "experiment_id": "EXP-18-020",
+      "ic_consistent": true,
+      "p19_ic": 0.022884106368856752,
+      "p18_ic": 0.022884106368856752
+    },
+    {
+      "experiment_id": "EXP-18-021",
+      "ic_consistent": true,
+      "p19_ic": 0.029895983378050345,
+      "p18_ic": 0.029895983378050345
+    },
+    {
+      "experiment_id": "EXP-18-022",
+      "ic_consistent": true,
+      "p19_ic": 0.028216572495907102,
+      "p18_ic": 0.028216572495907102
+    },
+    {
+      "experiment_id": "EXP-18-023",
+      "ic_consistent": true,
+      "p19_ic": 0.02790819594604949,
+      "p18_ic": 0.02790819594604949
+    },
+    {
+      "experiment_id": "EXP-18-024",
+      "ic_consistent": true,
+      "p19_ic": 0.02626596649779989,
+      "p18_ic": 0.02626596649779989
+    }
+  ],
+  "all_consistent": true,
+  "n_checks": 30,
+  "n_consistent": 30
+}

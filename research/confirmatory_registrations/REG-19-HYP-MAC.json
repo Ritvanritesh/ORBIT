@@ -1,0 +1,69 @@
+{
+  "registration_id": "REG-19-HYP-MAC",
+  "phase": "19",
+  "hypothesis_id": "HYP-MAC",
+  "economic_mechanism": "Macro conditions influence corporate earnings and discount rates over weeks to months",
+  "falsifiable_prediction": "If macro IC is stronger at H-5 than H-20, mechanism is not supported",
+  "features": [
+    "vol_30",
+    "log_dv_med_20"
+  ],
+  "transformations": "StandardScaler within walk-forward window",
+  "label": "LAB-006 (excess return vs SPY, per-horizon)",
+  "horizons": [
+    "H-5",
+    "H-10",
+    "H-20"
+  ],
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "data_period": {
+    "train": "2010-01-04 to 2018-12-31",
+    "validation": "2019-01-02 to 2021-12-31",
+    "test": "2022-01-03 to 2026-06-30"
+  },
+  "walk_forward": {
+    "method": "expanding_window",
+    "train_min_length": 2000,
+    "val_length": 500,
+    "test_length": 500,
+    "embargo_sessions": 5
+  },
+  "purging": "Purge gap of 5 sessions between train/val/test to prevent leakage",
+  "models": {
+    "ridge": {
+      "alpha": 1.0
+    },
+    "lasso": {
+      "alpha": 0.001
+    }
+  },
+  "hyperparameters": {
+    "ridge_alpha": 1.0,
+    "lasso_alpha": 0.001,
+    "note": "No hyperparameter tuning allowed. These values are from Phase 18."
+  },
+  "null_baseline": "BL-NULL-001 (random score, seed=42)",
+  "predictive_baseline": "BL-SIMPLE-001 (Ridge, FS-001, LAB-006, H-5)",
+  "economic_baseline": "BL-ECON-002 (SPY buy-and-hold)",
+  "primary_metric": "spearman_ic",
+  "secondary_metrics": [
+    "mean_ic",
+    "std_ic",
+    "sign_frequency"
+  ],
+  "statistical_test": "one-sided t-test against null IC distribution",
+  "multiple_testing_correction": "Holm (primary), BH (secondary)",
+  "minimum_statistically_meaningful_threshold": "p < 0.05 after Holm correction",
+  "minimum_economically_meaningful_threshold": "mean_val_IC >= 0.010",
+  "pass_criteria": "mean_val_IC >= 0.010 AND exceeds null (p<0.05 after Holm) AND temporal stability (positive windows >= 3/5) AND universe consistency (sign agreement) AND required model-family consistency",
+  "partial_pass_criteria": "mean_val_IC >= 0.005 AND exceeds null (p<0.05) but one robustness criterion not met",
+  "fail_criteria": "mean_val_IC < 0.005 OR fails to exceed null OR sign reversal across universes",
+  "inconclusive_criteria": "No genuine holdout data available; test classified as PSEUDO_CONFIRMATORY",
+  "max_experiment_count": 12,
+  "eligibility_resolution": "ELIGIBLE_FOR_CONFIRMATION",
+  "model_family_requirement": null,
+  "registration_timestamp": "2026-08-24T13:41:18.074000+00:00"
+}

@@ -1,0 +1,264 @@
+{
+  "HYP-MOM": {
+    "configs": {
+      "H-5_ridge_ENV-050": {
+        "experiment_id": "EXP-18-001",
+        "val_ic": 0.01391049231192701,
+        "val_mean_ic": 0.024379530585443475,
+        "val_std_ic": 0.05781053805360692,
+        "sign_frequency": 0.75
+      },
+      "H-5_ridge_ENV-100": {
+        "experiment_id": "EXP-18-002",
+        "val_ic": 0.014601599271018085,
+        "val_mean_ic": 0.01994826981379832,
+        "val_std_ic": 0.05510718004622074,
+        "sign_frequency": 0.6
+      },
+      "H-10_ridge_ENV-050": {
+        "experiment_id": "EXP-18-003",
+        "val_ic": 0.014248591183574329,
+        "val_mean_ic": 0.023075551257246592,
+        "val_std_ic": 0.06554589526621793,
+        "sign_frequency": 0.65
+      },
+      "H-10_ridge_ENV-100": {
+        "experiment_id": "EXP-18-004",
+        "val_ic": 0.014716014591119882,
+        "val_mean_ic": 0.024383500074119564,
+        "val_std_ic": 0.06002149904036386,
+        "sign_frequency": 0.7
+      },
+      "H-20_ridge_ENV-050": {
+        "experiment_id": "EXP-18-005",
+        "val_ic": 0.015811875811164146,
+        "val_mean_ic": 0.019546059185621464,
+        "val_std_ic": 0.06307167294213877,
+        "sign_frequency": 0.55
+      },
+      "H-20_ridge_ENV-100": {
+        "experiment_id": "EXP-18-006",
+        "val_ic": 0.015604812830996614,
+        "val_mean_ic": 0.02048814602399996,
+        "val_std_ic": 0.06396426109182117,
+        "sign_frequency": 0.6
+      },
+      "H-10_lasso_ENV-050": {
+        "experiment_id": "EXP-18-025",
+        "val_ic": 0.015173460075872988,
+        "val_mean_ic": 0.025451068855563697,
+        "val_std_ic": 0.06568116669816526,
+        "sign_frequency": 0.65
+      },
+      "H-20_lasso_ENV-050": {
+        "experiment_id": "EXP-18-026",
+        "val_ic": 0.009359083595354012,
+        "val_mean_ic": 0.017698601565875775,
+        "val_std_ic": 0.06643646454460378,
+        "sign_frequency": 0.6
+      }
+    },
+    "aggregate": {
+      "mean_ic": 0.014178241208878383,
+      "std_ic": 0.0019191039626025633,
+      "positive_window_fraction": 1.0,
+      "n_configs": 8,
+      "best_ic": 0.015811875811164146,
+      "worst_ic": 0.009359083595354012,
+      "sign_reversals": 0
+    }
+  },
+  "HYP-VOL": {
+    "configs": {
+      "H-5_ridge_ENV-050": {
+        "experiment_id": "EXP-18-007",
+        "val_ic": 0.018165300409169298,
+        "val_mean_ic": 0.011508763248001283,
+        "val_std_ic": 0.05821532207021731,
+        "sign_frequency": 0.45
+      },
+      "H-5_ridge_ENV-100": {
+        "experiment_id": "EXP-18-008",
+        "val_ic": 0.01949369060121325,
+        "val_mean_ic": 0.013494625026409779,
+        "val_std_ic": 0.054677057920206655,
+        "sign_frequency": 0.5
+      },
+      "H-10_ridge_ENV-050": {
+        "experiment_id": "EXP-18-009",
+        "val_ic": 0.008212362849366186,
+        "val_mean_ic": 0.0026872504047632307,
+        "val_std_ic": 0.06906746629937843,
+        "sign_frequency": 0.55
+      },
+      "H-10_ridge_ENV-100": {
+        "experiment_id": "EXP-18-010",
+        "val_ic": 0.010726289121592122,
+        "val_mean_ic": 0.002058717776565451,
+        "val_std_ic": 0.06438776120087047,
+        "sign_frequency": 0.45
+      },
+      "H-20_ridge_ENV-050": {
+        "experiment_id": "EXP-18-011",
+        "val_ic": 0.008431032349441231,
+        "val_mean_ic": -0.007998827123343386,
+        "val_std_ic": 0.08592039253939683,
+        "sign_frequency": 0.35
+      },
+      "H-20_ridge_ENV-100": {
+        "experiment_id": "EXP-18-012",
+        "val_ic": 0.012632972063425877,
+        "val_mean_ic": -0.004428650933879977,
+        "val_std_ic": 0.07575193512699026,
+        "sign_frequency": 0.4
+      },
+      "H-10_lasso_ENV-050": {
+        "experiment_id": "EXP-18-027",
+        "val_ic": 0.008351742610287845,
+        "val_mean_ic": 0.00294540658148588,
+        "val_std_ic": 0.06920463176455212,
+        "sign_frequency": 0.55
+      },
+      "H-20_lasso_ENV-050": {
+        "experiment_id": "EXP-18-028",
+        "val_ic": 0.00853326646311438,
+        "val_mean_ic": -0.008182799022255983,
+        "val_std_ic": 0.08442627234851882,
+        "sign_frequency": 0.35
+      }
+    },
+    "aggregate": {
+      "mean_ic": 0.011818332058451272,
+      "std_ic": 0.0043060574157506295,
+      "positive_window_fraction": 1.0,
+      "n_configs": 8,
+      "best_ic": 0.01949369060121325,
+      "worst_ic": 0.008212362849366186,
+      "sign_reversals": 0
+    }
+  },
+  "HYP-MAC": {
+    "configs": {
+      "H-5_ridge_ENV-050": {
+        "experiment_id": "EXP-18-013",
+        "val_ic": 0.015257931528430135,
+        "val_mean_ic": 0.006803565511141784,
+        "val_std_ic": 0.05351415490111155,
+        "sign_frequency": 0.5
+      },
+      "H-5_ridge_ENV-100": {
+        "experiment_id": "EXP-18-014",
+        "val_ic": 0.016077166982199173,
+        "val_mean_ic": 0.0037147018308256842,
+        "val_std_ic": 0.05735937873204218,
+        "sign_frequency": 0.7
+      },
+      "H-10_ridge_ENV-050": {
+        "experiment_id": "EXP-18-015",
+        "val_ic": 0.018046651024097114,
+        "val_mean_ic": 0.004620448052347308,
+        "val_std_ic": 0.08218971295039025,
+        "sign_frequency": 0.4
+      },
+      "H-10_ridge_ENV-100": {
+        "experiment_id": "EXP-18-016",
+        "val_ic": 0.01895734361511734,
+        "val_mean_ic": 0.007248063397374322,
+        "val_std_ic": 0.08028580535869635,
+        "sign_frequency": 0.45
+      },
+      "H-20_ridge_ENV-050": {
+        "experiment_id": "EXP-18-017",
+        "val_ic": 0.02321907470605394,
+        "val_mean_ic": 0.005641860180563053,
+        "val_std_ic": 0.12798738760087472,
+        "sign_frequency": 0.5
+      },
+      "H-20_ridge_ENV-100": {
+        "experiment_id": "EXP-18-018",
+        "val_ic": 0.024609471888497155,
+        "val_mean_ic": 0.00034111736867401454,
+        "val_std_ic": 0.1063252663062473,
+        "sign_frequency": 0.5
+      },
+      "H-10_lasso_ENV-050": {
+        "experiment_id": "EXP-18-029",
+        "val_ic": 0.018410572532987248,
+        "val_mean_ic": 0.004445538801579866,
+        "val_std_ic": 0.08299977902646181,
+        "sign_frequency": 0.4
+      },
+      "H-20_lasso_ENV-050": {
+        "experiment_id": "EXP-18-030",
+        "val_ic": 0.023349705030554044,
+        "val_mean_ic": 0.0058188194632201855,
+        "val_std_ic": 0.1292738671036142,
+        "sign_frequency": 0.5
+      }
+    },
+    "aggregate": {
+      "mean_ic": 0.01974098966349202,
+      "std_ic": 0.003309046738043948,
+      "positive_window_fraction": 1.0,
+      "n_configs": 8,
+      "best_ic": 0.024609471888497155,
+      "worst_ic": 0.015257931528430135,
+      "sign_reversals": 0
+    }
+  },
+  "HYP-XSEC": {
+    "configs": {
+      "H-5_ridge_ENV-050": {
+        "experiment_id": "EXP-18-019",
+        "val_ic": 0.023505917049827338,
+        "val_mean_ic": 0.02164872829965612,
+        "val_std_ic": 0.04803276573150376,
+        "sign_frequency": 0.75
+      },
+      "H-5_ridge_ENV-100": {
+        "experiment_id": "EXP-18-020",
+        "val_ic": 0.022884106368856752,
+        "val_mean_ic": 0.01584604256689458,
+        "val_std_ic": 0.06153306058367568,
+        "sign_frequency": 0.75
+      },
+      "H-10_ridge_ENV-050": {
+        "experiment_id": "EXP-18-021",
+        "val_ic": 0.029895983378050345,
+        "val_mean_ic": 0.02002814594617263,
+        "val_std_ic": 0.07345250197825172,
+        "sign_frequency": 0.55
+      },
+      "H-10_ridge_ENV-100": {
+        "experiment_id": "EXP-18-022",
+        "val_ic": 0.028216572495907102,
+        "val_mean_ic": 0.02467160826437198,
+        "val_std_ic": 0.0785109371179369,
+        "sign_frequency": 0.65
+      },
+      "H-20_ridge_ENV-050": {
+        "experiment_id": "EXP-18-023",
+        "val_ic": 0.02790819594604949,
+        "val_mean_ic": 0.017124096636309254,
+        "val_std_ic": 0.13043026489375448,
+        "sign_frequency": 0.55
+      },
+      "H-20_ridge_ENV-100": {
+        "experiment_id": "EXP-18-024",
+        "val_ic": 0.02626596649779989,
+        "val_mean_ic": 0.0024022624304389137,
+        "val_std_ic": 0.11715119052944098,
+        "sign_frequency": 0.6
+      }
+    },
+    "aggregate": {
+      "mean_ic": 0.026446123622748483,
+      "std_ic": 0.002534393919014422,
+      "positive_window_fraction": 1.0,
+      "n_configs": 6,
+      "best_ic": 0.029895983378050345,
+      "worst_ic": 0.022884106368856752,
+      "sign_reversals": 0
+    }
+  }
+}

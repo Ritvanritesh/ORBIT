@@ -1,0 +1,40 @@
+{
+  "phase": "19",
+  "step": 6,
+  "timestamp": "2026-08-24T13:41:18.076036+00:00",
+  "family": {
+    "n_hypotheses": 4,
+    "hypothesis_ids": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "tests_per_hypothesis": {
+      "HYP-MOM": 12,
+      "HYP-VOL": 12,
+      "HYP-MAC": 12,
+      "HYP-XSEC": 12
+    },
+    "total_primary_tests": 48,
+    "family_definition": "All primary confirmatory tests across all hypotheses, horizons, universes, and model families. Single closed family defined before execution."
+  },
+  "correction_methods": {
+    "primary": "Holm",
+    "secondary": "Benjamini-Hochberg",
+    "ordering": "ascending raw p-value"
+  },
+  "primary_test": {
+    "type": "one_sample_t_test",
+    "alternative": "greater",
+    "test_statistic": "mean of walk-forward ICs",
+    "null_hypothesis": "true IC <= 0",
+    "alpha": 0.05
+  },
+  "rule": "Primary conclusion uses Holm-corrected p-values",
+  "forbidden": [
+    "Adding or removing tests after results observed",
+    "Changing correction method after seeing results",
+    "Splitting the family after seeing results"
+  ]
+}

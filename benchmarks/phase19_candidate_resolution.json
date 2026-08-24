@@ -1,0 +1,35 @@
+{
+  "phase": "19",
+  "step": 2,
+  "timestamp": "2026-08-24T13:41:18.072208+00:00",
+  "candidate_hypotheses": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "resolutions": {
+    "HYP-MOM": {
+      "status": "ELIGIBLE_FOR_CONFIRMATION",
+      "model_family_gap": null,
+      "rationale": "All model families tested in Phase 18; 10/10 criteria met"
+    },
+    "HYP-VOL": {
+      "status": "ELIGIBLE_FOR_CONFIRMATION",
+      "model_family_gap": null,
+      "rationale": "All model families tested in Phase 18; 10/10 criteria met"
+    },
+    "HYP-MAC": {
+      "status": "ELIGIBLE_FOR_CONFIRMATION",
+      "model_family_gap": null,
+      "rationale": "All model families tested in Phase 18; 10/10 criteria met"
+    },
+    "HYP-XSEC": {
+      "status": "ELIGIBLE_WITH_REQUIREMENT",
+      "model_family_gap": "Lasso not tested in Phase 18 (9/10 criteria)",
+      "requirement": "Confirmatory protocol MUST include Lasso as a pre-registered model family",
+      "rationale": "Governance policy A: eligible but missing evidence must be included in confirmation"
+    }
+  },
+  "governance_basis": "Phase 17B-R eligibility framework; exploratory IC not used for classification"
+}

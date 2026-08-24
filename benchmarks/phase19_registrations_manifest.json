@@ -1,0 +1,21 @@
+{
+  "phase": "19",
+  "step": 3,
+  "timestamp": "2026-08-24T13:41:18.075037+00:00",
+  "registrations": {
+    "HYP-MOM": {
+      "digest": "a3f9f96a2cb741ecbaff2197245ec8a76480462df3d71f66b95bdd26e7b1376c"
+    },
+    "HYP-VOL": {
+      "digest": "f2e4f9d5cbf3c069d2203569c67561fb3604d3b8bd5f010a1d325db381f02d0a"
+    },
+    "HYP-MAC": {
+      "digest": "f90a7f935d6368b15931d6c360ac840a8ed17f0f348f20198bdcae1da758883d"
+    },
+    "HYP-XSEC": {
+      "digest": "778f79876d487bf9c6ad1ec1532b0da36cfcea86438103471bbde2f2d29989e3"
+    }
+  },
+  "total_registrations": 4,
+  "lock_status": "IMMUTABLE"
+}

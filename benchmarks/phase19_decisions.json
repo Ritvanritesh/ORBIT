@@ -1,0 +1,55 @@
+{
+  "phase": "19",
+  "step": 16,
+  "timestamp": "2026-08-24T13:41:18.095672+00:00",
+  "decisions": {
+    "HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.014178241208878383,
+      "exceeds_ic_threshold": true,
+      "exceeds_null": true,
+      "temporal_stability": true,
+      "sign_consistency": true,
+      "positive_window_fraction": 1.0,
+      "downgrade_reason": "Downgraded from CONFIRMED to PARTIALLY_CONFIRMED because holdout classification is PSEUDO_CONFIRMATORY",
+      "holdout_classification": "PSEUDO_CONFIRMATORY"
+    },
+    "HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.011818332058451272,
+      "exceeds_ic_threshold": true,
+      "exceeds_null": true,
+      "temporal_stability": true,
+      "sign_consistency": true,
+      "positive_window_fraction": 1.0,
+      "downgrade_reason": "Downgraded from CONFIRMED to PARTIALLY_CONFIRMED because holdout classification is PSEUDO_CONFIRMATORY",
+      "holdout_classification": "PSEUDO_CONFIRMATORY"
+    },
+    "HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.01974098966349202,
+      "exceeds_ic_threshold": true,
+      "exceeds_null": true,
+      "temporal_stability": true,
+      "sign_consistency": true,
+      "positive_window_fraction": 1.0,
+      "downgrade_reason": "Downgraded from CONFIRMED to PARTIALLY_CONFIRMED because holdout classification is PSEUDO_CONFIRMATORY",
+      "holdout_classification": "PSEUDO_CONFIRMATORY"
+    },
+    "HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.026446123622748483,
+      "exceeds_ic_threshold": true,
+      "exceeds_null": true,
+      "temporal_stability": true,
+      "sign_consistency": true,
+      "positive_window_fraction": 1.0,
+      "downgrade_reason": "Downgraded from CONFIRMED to PARTIALLY_CONFIRMED because holdout classification is PSEUDO_CONFIRMATORY",
+      "holdout_classification": "PSEUDO_CONFIRMATORY"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "phase": "19",
+  "step": 17,
+  "timestamp": "2026-08-24T13:41:18.096670+00:00",
+  "updates": {
+    "HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "registration_id": "REG-19-HYP-MOM",
+      "registration_digest": "a3f9f96a2cb741ecbaff2197245ec8a76480462df3d71f66b95bdd26e7b1376c",
+      "decision": "PARTIALLY_CONFIRMED",
+      "registry_status": "PARTIALLY_CONFIRMED_RESEARCH",
+      "evidence_tier": "PHASE_19_CONFIRMATORY",
+      "promotion_eligible": false,
+      "note": "No hypothesis may be promoted directly to paper trading"
+    },
+    "HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "registration_id": "REG-19-HYP-VOL",
+      "registration_digest": "f2e4f9d5cbf3c069d2203569c67561fb3604d3b8bd5f010a1d325db381f02d0a",
+      "decision": "PARTIALLY_CONFIRMED",
+      "registry_status": "PARTIALLY_CONFIRMED_RESEARCH",
+      "evidence_tier": "PHASE_19_CONFIRMATORY",
+      "promotion_eligible": false,
+      "note": "No hypothesis may be promoted directly to paper trading"
+    },
+    "HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "registration_id": "REG-19-HYP-MAC",
+      "registration_digest": "f90a7f935d6368b15931d6c360ac840a8ed17f0f348f20198bdcae1da758883d",
+      "decision": "PARTIALLY_CONFIRMED",
+      "registry_status": "PARTIALLY_CONFIRMED_RESEARCH",
+      "evidence_tier": "PHASE_19_CONFIRMATORY",
+      "promotion_eligible": false,
+      "note": "No hypothesis may be promoted directly to paper trading"
+    },
+    "HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "registration_id": "REG-19-HYP-XSEC",
+      "registration_digest": "778f79876d487bf9c6ad1ec1532b0da36cfcea86438103471bbde2f2d29989e3",
+      "decision": "PARTIALLY_CONFIRMED",
+      "registry_status": "PARTIALLY_CONFIRMED_RESEARCH",
+      "evidence_tier": "PHASE_19_CONFIRMATORY",
+      "promotion_eligible": false,
+      "note": "No hypothesis may be promoted directly to paper trading"
+    }
+  }
+}
