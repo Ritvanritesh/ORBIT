@@ -1,0 +1,91 @@
+{
+  "migration_date": "2026-08-24T16:47:58.891062",
+  "mappings": {
+    "OHLCV_technical": {
+      "legacy_status": "EXHAUSTED",
+      "new_classification": "NOT_SUPPORTED",
+      "evidence": "Multiple phases tested; no robust signal found",
+      "action": "Retire from new research unless hypothesis justifies revisiting"
+    },
+    "market_context": {
+      "legacy_status": "EXHAUSTED",
+      "new_classification": "NOT_SUPPORTED",
+      "evidence": "Multiple phases tested; no robust signal found",
+      "action": "Retire from new research unless hypothesis justifies revisiting"
+    },
+    "sector_context": {
+      "legacy_status": "EXHAUSTED",
+      "new_classification": "NOT_SUPPORTED",
+      "evidence": "Multiple phases tested; no robust signal found",
+      "action": "Retire from new research unless hypothesis justifies revisiting"
+    },
+    "cross_sectional": {
+      "legacy_status": "EXHAUSTED",
+      "new_classification": "NOT_SUPPORTED",
+      "evidence": "Multiple phases tested; marginal IC, no robustness",
+      "action": "Retire from new research unless hypothesis justifies revisiting"
+    },
+    "fundamentals": {
+      "legacy_status": "PARTIALLY_EXPLORED",
+      "new_classification": "CONTEXT_DEPENDENT",
+      "evidence": "Inconsistent results; horizon mismatch suspected",
+      "action": "May be revisited if hypothesis justifies longer horizon (H-21 to H-63)"
+    },
+    "path_structure_H1": {
+      "legacy_status": "INCONCLUSIVE",
+      "new_classification": "FRAGILE",
+      "evidence": "FRAGILE classification per Phase 14.5",
+      "action": "Retire from new research"
+    },
+    "return_asymmetry_H2": {
+      "legacy_status": "INCONCLUSIVE",
+      "new_classification": "FRAGILE",
+      "evidence": "FRAGILE classification per Phase 14.5",
+      "action": "Retire from new research"
+    },
+    "volatility_dynamics_H4": {
+      "legacy_status": "INCONCLUSIVE",
+      "new_classification": "FRAGILE",
+      "evidence": "FRAGILE classification per Phase 14.5",
+      "action": "Retire from new research"
+    },
+    "macro_regime_H3": {
+      "legacy_status": "PROMISING_BUT_UNVALIDATED",
+      "new_classification": "EXPLORATORY_FINDING",
+      "evidence": "Positive IC in selected tests; temporal instability; regime dependence; portfolio failure; Phase 17A Verdict D",
+      "action": "Warm start only; not validated; re-evaluate under new framework with horizon awareness",
+      "limitations": [
+        "Temporal instability (val negative, test positive)",
+        "Regime dependence (fails during inflation)",
+        "Portfolio translation failure (+0.016 Sharpe vs baseline)",
+        "PIT limitation (revised macro values)",
+        "Collinearity (max r=0.818)",
+        "CLIFF sensitivity (all 4 macro features)"
+      ]
+    },
+    "phase13b_results": {
+      "legacy_status": "DEFECTIVE",
+      "new_classification": "HISTORICAL_ONLY",
+      "evidence": "Purge defect documented; absolute performance numbers invalid",
+      "action": "Do not reuse invalid absolute metrics; document limitation"
+    },
+    "phase16_portfolio": {
+      "legacy_status": "ECONOMIC_FAILURE",
+      "new_classification": "HISTORICAL_ONLY",
+      "evidence": "Sharpe +0.016 vs baseline; no economically robust portfolio",
+      "action": "Register as economic evidence against current H-3 deployment"
+    },
+    "phase17a_walkforward": {
+      "legacy_status": "TEMPORALLY_FRAGILE",
+      "new_classification": "HISTORICAL_ONLY",
+      "evidence": "Verdict D, Gate RED; no candidate positive across all windows",
+      "action": "Register as temporal and regime evidence; revised macro limitation documented"
+    }
+  },
+  "rules": [
+    "Do not reinterpret historical results as stronger evidence",
+    "Negative evidence must remain visible",
+    "Invalid metrics must remain documented",
+    "H-3 is not promoted under any classification"
+  ]
+}

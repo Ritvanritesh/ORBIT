@@ -1,0 +1,30 @@
+{
+  "H3-RIDGE-050": {
+    "mean_ic": -0.001623454988914988,
+    "t_statistic": -0.12059444792926452,
+    "p_value": 0.9074007572413985,
+    "significant": "False",
+    "n_windows": 8
+  },
+  "H3-LASSO-050": {
+    "mean_ic": 0.0013706944331131708,
+    "t_statistic": 0.08308413563246345,
+    "p_value": 0.9361106274267074,
+    "significant": "False",
+    "n_windows": 8
+  },
+  "H3-RIDGE-100": {
+    "mean_ic": 0.018683104127090254,
+    "t_statistic": 1.4311475295609994,
+    "p_value": 0.1954790362483908,
+    "significant": "False",
+    "n_windows": 8
+  },
+  "H3-LASSO-100": {
+    "mean_ic": NaN,
+    "t_statistic": NaN,
+    "p_value": NaN,
+    "significant": "False",
+    "n_windows": 8
+  }
+}

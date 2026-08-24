@@ -1,0 +1,54 @@
+{
+  "H3-RIDGE-050": {
+    "regime_breakdown": {
+      "Pre-COVID": 0.04084363605652303,
+      "COVID": 0.02946400299641935,
+      "Post-COVID": -0.020139890967988763,
+      "Inflation": -0.08126668716893248,
+      "Rate Plateau": 0.0015976551691723254,
+      "Recent": 0.023295649288309735,
+      "2025": -0.008654512686433032,
+      "2026 YTD": 0.0018725074016099385
+    },
+    "classification": "REGIME_SENSITIVE"
+  },
+  "H3-LASSO-050": {
+    "regime_breakdown": {
+      "Pre-COVID": 0.04961422221443145,
+      "COVID": 0.05807539807740969,
+      "Post-COVID": -0.02194103682767255,
+      "Inflation": -0.06895790032343786,
+      "Rate Plateau": -0.00814385575244773,
+      "Recent": -0.018004050938441856,
+      "2025": -0.03219908789851116,
+      "2026 YTD": 0.05252186691357538
+    },
+    "classification": "REGIME_SENSITIVE"
+  },
+  "H3-RIDGE-100": {
+    "regime_breakdown": {
+      "Pre-COVID": 0.03943968487186264,
+      "COVID": 0.05423501448910976,
+      "Post-COVID": 0.0047063153951525565,
+      "Inflation": -0.05932672300866587,
+      "Rate Plateau": 0.012240733172938188,
+      "Recent": 0.043390496532096305,
+      "2025": 0.007838620961392815,
+      "2026 YTD": 0.04694069060283565
+    },
+    "classification": "TEMPORALLY_DISTRIBUTED"
+  },
+  "H3-LASSO-100": {
+    "regime_breakdown": {
+      "Pre-COVID": NaN,
+      "COVID": NaN,
+      "Post-COVID": 0.005047254560274286,
+      "Inflation": 0.0021922633092353126,
+      "Rate Plateau": -0.04302884866551768,
+      "Recent": 0.045035617344668766,
+      "2025": -0.038180700741738786,
+      "2026 YTD": 0.07928234041126432
+    },
+    "classification": "TEMPORALLY_DISTRIBUTED"
+  }
+}

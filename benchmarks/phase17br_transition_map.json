@@ -1,0 +1,36 @@
+{
+  "legacy_to_new": {
+    "universe_engine": "Data Infrastructure (KEEP)",
+    "feature_computation": "Data Infrastructure (KEEP)",
+    "pit_safeguards": "Data Governance (REPAIR)",
+    "label_generation": "Data Infrastructure (KEEP, extend to new horizons)",
+    "train_test_splitting": "Experiment Infrastructure (KEEP)",
+    "walk_forward_infrastructure": "Experiment Infrastructure (KEEP, add regime-stratified)",
+    "portfolio_construction": "Economic Validation (KEEP, redesign criteria)",
+    "model_registry": "Research Registry (EXTEND to hypothesis tracking)",
+    "evidence_registry": "Research Registry (REPLACE with hypothesis-centric version)"
+  },
+  "legacy_research_status": {
+    "OHLCV_technical": "NOT_SUPPORTED",
+    "market_context": "NOT_SUPPORTED",
+    "sector_context": "NOT_SUPPORTED",
+    "cross_sectional": "NOT_SUPPORTED",
+    "fundamentals": "CONTEXT_DEPENDENT (horizon mismatch)",
+    "path_structure": "FRAGILE",
+    "return_asymmetry": "FRAGILE",
+    "volatility_dynamics": "FRAGILE",
+    "macro_regime_H3": "EXPLORATORY_FINDING (warm start, not validated)",
+    "portfolio_construction": "ECONOMIC_FAILURE (Sharpe +0.016 vs baseline)"
+  },
+  "new_framework_requirements": {
+    "hypothesis_schema": "NEW - mechanism, prediction, measurement, effect size, falsification",
+    "exploratory_protocol": "NEW - logged, budgeted, no deletion",
+    "confirmatory_protocol": "NEW - fully pre-registered, locked before execution",
+    "evidence_review_gate": "NEW - positive result alone does not pass",
+    "promotion_ladder": "NEW - cannot skip stages",
+    "baseline_framework": "NEW - random, equal-weight, existing model",
+    "pit_classification": "NEW - STRICT_PIT, PIT_WITH_KNOWN_LAG, REVISED_HISTORY, etc.",
+    "regime_governance": "NEW - hypothesis-specific, pre-registered",
+    "conflict_resolution": "NEW - pre-registered decision criteria"
+  }
+}

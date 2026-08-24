@@ -1,0 +1,28 @@
+{
+  "phase": "17B-R",
+  "timestamp": "2026-08-24T16:47:58.892368",
+  "verification": {
+    "historical_artifacts_unchanged": true,
+    "old_research_reproducible": true,
+    "exploratory_confirmatory_distinct": true,
+    "failed_experiments_cannot_be_removed": true,
+    "branch_budgets_enforced": true,
+    "hypotheses_require_mechanism_and_falsification": true,
+    "confirmatory_requires_locked_registration": true,
+    "data_pit_status_explicit": true,
+    "revised_data_cannot_masquerade_as_strict_pit": true,
+    "conflicting_evidence_preserved": true,
+    "negative_evidence_preserved": true,
+    "promotion_ladder_cannot_be_skipped": true,
+    "h3_not_promoted": true,
+    "no_model_paper_eligible": true,
+    "no_model_validated": true,
+    "all_adversarial_tests_recorded": true,
+    "deterministic_reproduction_succeeds": true
+  },
+  "adversarial_summary": "16/16 PASS",
+  "framework_status": "COMPLETE",
+  "verdict": "A",
+  "gate": "GREEN",
+  "rationale": "Framework complete and scientifically ready for new research"
+}

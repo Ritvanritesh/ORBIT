@@ -1,0 +1,166 @@
+{
+  "scoring_formula": "weighted_composite = sum(score[k] * weights[k]) / 5.0",
+  "weights": {
+    "INFORMATION_NOVELTY": 0.15,
+    "ECONOMIC_RATIONALE": 0.1,
+    "DATA_FEASIBILITY": 0.1,
+    "PIT_FEASIBILITY": 0.1,
+    "SAMPLE_ADEQUACY": 0.1,
+    "FALSIFIABILITY": 0.1,
+    "DISTINCTNESS_FROM_PRIOR_WORK": 0.1,
+    "EXPECTED_RESEARCH_VALUE": 0.1,
+    "RISK_OF_DATA_SNOOPING": 0.05,
+    "IMPLEMENTATION_COST": 0.1
+  },
+  "results": [
+    {
+      "branch_id": "B01",
+      "hypothesis": "HORIZON_EXTENSION — Macro regime information predicts medium-horizon (H-10, H-20) returns better than short-horizon (H-5)",
+      "scores": {
+        "INFORMATION_NOVELTY": 5,
+        "ECONOMIC_RATIONALE": 4,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 4,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 5,
+        "EXPECTED_RESEARCH_VALUE": 4,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 5
+      },
+      "weighted_composite": 0.91,
+      "rank": 1
+    },
+    {
+      "branch_id": "B02",
+      "hypothesis": "MACRO_MOMENTUM — Rate of change of macro variables predicts returns better than macro levels",
+      "scores": {
+        "INFORMATION_NOVELTY": 5,
+        "ECONOMIC_RATIONALE": 4,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 4,
+        "SAMPLE_ADEQUACY": 4,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 5,
+        "EXPECTED_RESEARCH_VALUE": 4,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 4
+      },
+      "weighted_composite": 0.87,
+      "rank": 2
+    },
+    {
+      "branch_id": "B03",
+      "hypothesis": "SECTOR_MACRO_INTERACTION — Sectors respond heterogeneously to macro regime changes, and this differential response is predictable",
+      "scores": {
+        "INFORMATION_NOVELTY": 4,
+        "ECONOMIC_RATIONALE": 5,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 4,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 4,
+        "EXPECTED_RESEARCH_VALUE": 5,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 3
+      },
+      "weighted_composite": 0.86,
+      "rank": 3
+    },
+    {
+      "branch_id": "B07",
+      "hypothesis": "WALK_FORWARD_VALIDATION — Temporal instability of H-3 can be resolved with walk-forward (expanding window) validation",
+      "scores": {
+        "INFORMATION_NOVELTY": 3,
+        "ECONOMIC_RATIONALE": 4,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 5,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 4,
+        "EXPECTED_RESEARCH_VALUE": 5,
+        "RISK_OF_DATA_SNOOPING": 1,
+        "IMPLEMENTATION_COST": 4
+      },
+      "weighted_composite": 0.84,
+      "rank": 4
+    },
+    {
+      "branch_id": "B04",
+      "hypothesis": "EVENT_CONDITIONED_MACRO — Macro regime effects are stronger on macro release days and high-volatility days",
+      "scores": {
+        "INFORMATION_NOVELTY": 4,
+        "ECONOMIC_RATIONALE": 4,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 3,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 4,
+        "EXPECTED_RESEARCH_VALUE": 3,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 3
+      },
+      "weighted_composite": 0.78,
+      "rank": 5
+    },
+    {
+      "branch_id": "B06",
+      "hypothesis": "FUNDAMENTAL_HORIZON_MATCH — Quarterly fundamental features (valuation, leverage, profitability) predict H-60 (quarterly) returns better than H-5",
+      "scores": {
+        "INFORMATION_NOVELTY": 4,
+        "ECONOMIC_RATIONALE": 4,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 4,
+        "SAMPLE_ADEQUACY": 3,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 4,
+        "EXPECTED_RESEARCH_VALUE": 3,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 4
+      },
+      "weighted_composite": 0.78,
+      "rank": 6
+    },
+    {
+      "branch_id": "B08",
+      "hypothesis": "HORIZON_ENSEMBLE — Combining predictions across multiple horizons (H-5, H-10, H-20) produces more stable signals than any single horizon",
+      "scores": {
+        "INFORMATION_NOVELTY": 3,
+        "ECONOMIC_RATIONALE": 3,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 5,
+        "FALSIFIABILITY": 5,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 3,
+        "EXPECTED_RESEARCH_VALUE": 3,
+        "RISK_OF_DATA_SNOOPING": 1,
+        "IMPLEMENTATION_COST": 4
+      },
+      "weighted_composite": 0.76,
+      "rank": 7
+    },
+    {
+      "branch_id": "B05",
+      "hypothesis": "PATH_STRUCTURE_REVISITED — Path structure features (drawdown, up/down ratio, vol-of-vol) predict at longer horizons (H-10, H-20) but not H-5",
+      "scores": {
+        "INFORMATION_NOVELTY": 3,
+        "ECONOMIC_RATIONALE": 3,
+        "DATA_FEASIBILITY": 5,
+        "PIT_FEASIBILITY": 5,
+        "SAMPLE_ADEQUACY": 4,
+        "FALSIFIABILITY": 4,
+        "DISTINCTNESS_FROM_PRIOR_WORK": 3,
+        "EXPECTED_RESEARCH_VALUE": 2,
+        "RISK_OF_DATA_SNOOPING": 2,
+        "IMPLEMENTATION_COST": 5
+      },
+      "weighted_composite": 0.73,
+      "rank": 8
+    }
+  ],
+  "top_3": [
+    "B01",
+    "B02",
+    "B03"
+  ]
+}

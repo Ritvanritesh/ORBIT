@@ -1,0 +1,194 @@
+{
+  "phase": "17A",
+  "title": "Walk-Forward Temporal Validation of H-3 Macro-Regime",
+  "locked_at": "2026-08-24T15:48:23.243713",
+  "source_artifacts": {
+    "phase14_5_results": "adead098227dba1be1a26547ff17c90865ebc7eb01dd43943bfd31d0cb997363",
+    "phase15_2_signal_matrix": "586d86b92d8d6eef52ae3726ea731f2d9c89a4664f8761f790c78c102f727ec7",
+    "phase16_results": "5d5688f99e5adb750bf748606796ca63dbdd83b091c947b5b9f5951aa2ca0795",
+    "phase16_temporal_stability": "7ac91c1d5d026503d6c13ca9057c4f2bf2dde126e3f55dd2b967b2e35c93d9c9"
+  },
+  "candidate_inventory": [
+    "H3-RIDGE-050",
+    "H3-LASSO-050",
+    "H3-RIDGE-050",
+    "H3-LASSO-050",
+    "H3-RIDGE-100",
+    "H3-LASSO-100",
+    "H3-RIDGE-100",
+    "H3-LASSO-100",
+    "BASELINE-RIDGE-050",
+    "BASELINE-RIDGE-100"
+  ],
+  "h3_candidates": [
+    "H3-RIDGE-050",
+    "H3-LASSO-050",
+    "H3-RIDGE-050",
+    "H3-LASSO-050",
+    "H3-RIDGE-100",
+    "H3-LASSO-100",
+    "H3-RIDGE-100",
+    "H3-LASSO-100"
+  ],
+  "baseline_candidates": [
+    "BASELINE-RIDGE-050",
+    "BASELINE-RIDGE-100"
+  ],
+  "datasets": [
+    "DS-EXP-050",
+    "DS-EXP-100",
+    "BENCH-001",
+    "DS-000003"
+  ],
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "feature_representations": [
+    "FS-H3",
+    "FS-BASELINE"
+  ],
+  "labels": [
+    "LAB-006"
+  ],
+  "forecast_horizon": 5,
+  "model_configurations": [
+    "ridge",
+    "lasso"
+  ],
+  "preprocessing_rules": {
+    "scaling": "StandardScaler fitted on training data only",
+    "imputation": "Forward-fill then zero",
+    "outlier_handling": "Winsorize at 1%/99% on training data"
+  },
+  "split_construction": {
+    "type": "expanding_window",
+    "purge_rule": "Exclude LABEL_HORIZON + 5 trading days from end of training to prevent label leakage",
+    "embargo_rule": "5 trading days between train and test to prevent feature leakage"
+  },
+  "walk_forward_windows": [
+    {
+      "window_id": "WF-01",
+      "description": "Pre-COVID validation",
+      "train_start": "2010-01-04",
+      "train_end": "2017-12-29",
+      "test_start": "2018-01-02",
+      "test_end": "2019-12-31",
+      "regime": "Pre-COVID bull market",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-02",
+      "description": "COVID crisis period",
+      "train_start": "2010-01-04",
+      "train_end": "2019-12-31",
+      "test_start": "2020-01-02",
+      "test_end": "2020-12-31",
+      "regime": "COVID crash and recovery",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-03",
+      "description": "Post-COVID recovery",
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "test_start": "2021-01-04",
+      "test_end": "2021-12-31",
+      "regime": "Post-COVID recovery, meme stocks",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-04",
+      "description": "Inflation and rate hikes",
+      "train_start": "2010-01-04",
+      "train_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-30",
+      "regime": "Inflation spike, rate hikes",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-05",
+      "description": "Rate plateau and AI rally",
+      "train_start": "2010-01-04",
+      "train_end": "2022-12-30",
+      "test_start": "2023-01-03",
+      "test_end": "2023-12-29",
+      "regime": "Rate plateau, AI rally",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-06",
+      "description": "Recent market conditions",
+      "train_start": "2010-01-04",
+      "train_end": "2023-12-29",
+      "test_start": "2024-01-02",
+      "test_end": "2024-12-31",
+      "regime": "Rate cuts expected, continued recovery",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-07",
+      "description": "Most recent data",
+      "train_start": "2010-01-04",
+      "train_end": "2024-12-31",
+      "test_start": "2025-01-02",
+      "test_end": "2025-12-31",
+      "regime": "Current conditions",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-08",
+      "description": "YTD 2026",
+      "train_start": "2010-01-04",
+      "train_end": "2025-12-31",
+      "test_start": "2026-01-02",
+      "test_end": "2026-06-30",
+      "regime": "Current year",
+      "purge_days": 10,
+      "embargo_days": 5
+    }
+  ],
+  "primary_metrics": [
+    "IC",
+    "mean_IC",
+    "positive_window_fraction"
+  ],
+  "secondary_metrics": [
+    "directional_accuracy",
+    "sign_consistency",
+    "temporal_dispersion"
+  ],
+  "statistical_procedures": [
+    "paired_t_test",
+    "holm_correction",
+    "bh_correction"
+  ],
+  "robustness_criteria": {
+    "min_positive_windows": 0.5,
+    "min_median_ic": 0.0,
+    "max_temporal_dispersion": 0.15,
+    "min_universe_consistency": 0.5
+  },
+  "success_criteria": {
+    "ROBUST_TEMPORAL_EVIDENCE": "positive_window >= 0.625 AND median_ic > 0.02 AND temporal_dispersion < 0.10 AND universe_consistent",
+    "PARTIALLY_STABLE": "positive_window >= 0.5 AND median_ic > 0 AND temporal_dispersion < 0.15",
+    "REGIME_DEPENDENT": "positive_window >= 0.5 BUT temporal_dispersion >= 0.15",
+    "TEMPORALLY_FRAGILE": "positive_window < 0.5 OR median_ic <= 0",
+    "NO_EVIDENCE": "positive_window < 0.375 AND median_ic <= 0"
+  },
+  "failure_criteria": {
+    "DATA_UNAVAILABLE": "Required data not available for window",
+    "INSUFFICIENT_SAMPLE": "Training sample < 1000 observations",
+    "PIPELINE_FAILURE": "Code execution error",
+    "MODEL_FAILURE": "Model fails to converge or produces NaN predictions"
+  },
+  "plan_digest": "3aa97f6f165d0c1c0bb69dfe6486e44f21eba5ad3dbd20202d6bcc89ae25faa8"
+}

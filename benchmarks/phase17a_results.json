@@ -1,0 +1,869 @@
+{
+  "results": [
+    {
+      "status": "SUCCESS",
+      "n_samples": 24900,
+      "n_train": 98925,
+      "ic": 0.04084363605652303,
+      "p_value": 1.137974239044983e-10,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.001594525113088536,
+        "unemployment": 0.0001775790986239903,
+        "cpi_yoy": -0.0006320874108732617,
+        "dff_change_3m": -0.0018698291489871559
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 24900,
+      "n_train": 98925,
+      "ic": 0.04961422221443145,
+      "p_value": 4.747625397098156e-15,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0,
+        "unemployment": -0.0,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -2.1668547869731817e-05
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 48306,
+      "n_train": 191359,
+      "ic": 0.03943968487186264,
+      "p_value": 4.266514479355732e-18,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0016585490073000744,
+        "unemployment": 0.0004488455547775605,
+        "cpi_yoy": -0.0007505587803269418,
+        "dff_change_3m": -0.001771226491967867
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 48306,
+      "n_train": 191359,
+      "ic": NaN,
+      "p_value": NaN,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0,
+        "unemployment": -0.0,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 24900,
+      "n_train": 98925,
+      "ic": 0.04084363605652303,
+      "p_value": 1.137974239044983e-10,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0015945251130885265,
+        "unemployment": 0.00017757909862398835,
+        "cpi_yoy": -0.0006320874108732541,
+        "dff_change_3m": -0.0018698291489871357
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 48306,
+      "n_train": 191359,
+      "ic": 0.03943968487186264,
+      "p_value": 4.266514479355732e-18,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0016585490073000716,
+        "unemployment": 0.0004488455547775635,
+        "cpi_yoy": -0.0007505587803269364,
+        "dff_change_3m": -0.0017712264919678656
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-01",
+      "regime": "Pre-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12400,
+      "n_train": 124075,
+      "ic": 0.02946400299641935,
+      "p_value": 0.0010330995605156447,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0002612421264603088,
+        "unemployment": 4.449352118288073e-05,
+        "cpi_yoy": -0.0008905761043349159,
+        "dff_change_3m": -0.0011010743873092947
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12400,
+      "n_train": 124075,
+      "ic": 0.05807539807740969,
+      "p_value": 9.683388084137019e-11,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": -0.0,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -5.1909839199141765e-05
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 24056,
+      "n_train": 240150,
+      "ic": 0.05423501448910976,
+      "p_value": 3.842516312480262e-17,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0005331837759608726,
+        "unemployment": 0.00044776982053520254,
+        "cpi_yoy": -0.0010885340857728044,
+        "dff_change_3m": -0.0009330245992677169
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 24056,
+      "n_train": 240150,
+      "ic": NaN,
+      "p_value": NaN,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12400,
+      "n_train": 124075,
+      "ic": 0.02946400299641935,
+      "p_value": 0.0010330995605156447,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.00026124212646030877,
+        "unemployment": 4.449352118288251e-05,
+        "cpi_yoy": -0.000890576104334908,
+        "dff_change_3m": -0.0011010743873092884
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 24056,
+      "n_train": 240150,
+      "ic": 0.05423501448910976,
+      "p_value": 3.842516312480262e-17,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0005331837759608686,
+        "unemployment": 0.0004477698205352179,
+        "cpi_yoy": -0.0010885340857728096,
+        "dff_change_3m": -0.0009330245992677168
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-02",
+      "regime": "COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 136725,
+      "ic": -0.020139890967988763,
+      "p_value": 0.02521077437774084,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0008540208824640011,
+        "unemployment": 0.0017817194739589296,
+        "cpi_yoy": -0.0012988252257933551,
+        "dff_change_3m": -0.0008833371252341006
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 136725,
+      "ic": -0.02194103682767255,
+      "p_value": 0.014753816292599578,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.00035924210668935436,
+        "cpi_yoy": -0.00017125068004513337,
+        "dff_change_3m": -0.0003335872729750637
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 264691,
+      "ic": 0.0047063153951525565,
+      "p_value": 0.4663429179260128,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0010157202170264367,
+        "unemployment": 0.0021734836271327792,
+        "cpi_yoy": -0.0014149935152395216,
+        "dff_change_3m": -0.00037678147894473627
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 264691,
+      "ic": 0.005047254560274286,
+      "p_value": 0.43467701980712703,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0005857257202548624,
+        "cpi_yoy": -0.00023457036774958377,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 136725,
+      "ic": -0.020139890967988763,
+      "p_value": 0.02521077437774084,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0008540208824640155,
+        "unemployment": 0.0017817194739589701,
+        "cpi_yoy": -0.0012988252257933627,
+        "dff_change_3m": -0.0008833371252341064
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 264691,
+      "ic": 0.0047063153951525565,
+      "p_value": 0.4663429179260128,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.001015720217026467,
+        "unemployment": 0.0021734836271320376,
+        "cpi_yoy": -0.00141499351523952,
+        "dff_change_3m": -0.0003767814789447312
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-03",
+      "regime": "Post-COVID"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12300,
+      "n_train": 149325,
+      "ic": -0.08126668716893248,
+      "p_value": 1.765575261768078e-19,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -8.143509929312875e-05,
+        "unemployment": 0.0008938601644389587,
+        "cpi_yoy": -0.00014093876946528672,
+        "dff_change_3m": -0.00109635333510217
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12300,
+      "n_train": 149325,
+      "ic": -0.06895790032343786,
+      "p_value": 1.9160756424381346e-14,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.00019938683457488716,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.00033544542863700694
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23862,
+      "n_train": 289135,
+      "ic": -0.05932672300866587,
+      "p_value": 4.6435135866827064e-20,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -4.7061509323537394e-07,
+        "unemployment": 0.0012112035768408987,
+        "cpi_yoy": -0.0002445906771341848,
+        "dff_change_3m": -0.000635185851058467
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23862,
+      "n_train": 289135,
+      "ic": 0.0021922633092353126,
+      "p_value": 0.7348893751731829,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0004380344918649171,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12300,
+      "n_train": 149325,
+      "ic": -0.08126668716893248,
+      "p_value": 1.765575261768078e-19,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -8.143509929312747e-05,
+        "unemployment": 0.0008938601644389716,
+        "cpi_yoy": -0.00014093876946528734,
+        "dff_change_3m": -0.001096353335102173
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23862,
+      "n_train": 289135,
+      "ic": -0.05932672300866587,
+      "p_value": 4.6435135866827064e-20,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -4.7061509323217443e-07,
+        "unemployment": 0.0012112035768408298,
+        "cpi_yoy": -0.0002445906771341847,
+        "dff_change_3m": -0.0006351858510584721
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-04",
+      "regime": "Inflation"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12250,
+      "n_train": 161875,
+      "ic": 0.0015976551691723254,
+      "p_value": 0.8596575616344755,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0007360586660195348,
+        "unemployment": 0.001727603401103973,
+        "cpi_yoy": -0.00037366429038397224,
+        "dff_change_3m": -0.0008740915587297466
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12250,
+      "n_train": 161875,
+      "ic": -0.00814385575244773,
+      "p_value": 0.36743807037377174,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0006791043051520015,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.000129436664171898
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23765,
+      "n_train": 313482,
+      "ic": 0.012240733172938188,
+      "p_value": 0.05916157322887681,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0006670795681737297,
+        "unemployment": 0.0018469886169381684,
+        "cpi_yoy": -0.00043816165457701315,
+        "dff_change_3m": -0.00039056372147328695
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23765,
+      "n_train": 313482,
+      "ic": -0.04302884866551768,
+      "p_value": 3.2229009305165725e-11,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0007216906459968014,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12250,
+      "n_train": 161875,
+      "ic": 0.0015976551691723254,
+      "p_value": 0.8596575616344755,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0007360586660195299,
+        "unemployment": 0.0017276034011039806,
+        "cpi_yoy": -0.0003736642903839747,
+        "dff_change_3m": -0.0008740915587297425
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23765,
+      "n_train": 313482,
+      "ic": 0.012240733172938188,
+      "p_value": 0.05916157322887681,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0006670795681737309,
+        "unemployment": 0.0018469886169381552,
+        "cpi_yoy": -0.00043816165457701635,
+        "dff_change_3m": -0.0003905637214732852
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-05",
+      "regime": "Rate Plateau"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 174375,
+      "ic": 0.023295649288309735,
+      "p_value": 0.009626972277697083,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.001092971055465083,
+        "unemployment": 0.0016698657401909927,
+        "cpi_yoy": -0.0005475286588535512,
+        "dff_change_3m": -0.0007378961184441557
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 174375,
+      "ic": -0.018004050938441856,
+      "p_value": 0.045418283287647854,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0,
+        "unemployment": 0.0004966450662873132,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -6.018240934331914e-05
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 337732,
+      "ic": 0.043390496532096305,
+      "p_value": 1.828547393065313e-11,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.000822776695027086,
+        "unemployment": 0.001744999746294479,
+        "cpi_yoy": -0.0005890937641181151,
+        "dff_change_3m": -0.00031705337059370625
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 337732,
+      "ic": 0.045035617344668766,
+      "p_value": 3.078339674660376e-12,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0005914551534610185,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 12350,
+      "n_train": 174375,
+      "ic": 0.023295649288309735,
+      "p_value": 0.009626972277697083,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0010929710554650831,
+        "unemployment": 0.0016698657401909899,
+        "cpi_yoy": -0.0005475286588535523,
+        "dff_change_3m": -0.0007378961184441547
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 23959,
+      "n_train": 337732,
+      "ic": 0.043390496532096305,
+      "p_value": 1.828547393065313e-11,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0008227766950270898,
+        "unemployment": 0.0017449997462945029,
+        "cpi_yoy": -0.0005890937641181113,
+        "dff_change_3m": -0.00031705337059371265
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-06",
+      "regime": "Recent"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11100,
+      "n_train": 186975,
+      "ic": -0.008654512686433032,
+      "p_value": 0.3619140915877306,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0009724723772348514,
+        "unemployment": 0.0016118680072024906,
+        "cpi_yoy": -0.0005834658250580076,
+        "dff_change_3m": -0.0005455077540186418
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11100,
+      "n_train": 186975,
+      "ic": -0.03219908789851116,
+      "p_value": 0.0006916140927846381,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0,
+        "unemployment": 0.0004214716513628688,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -3.390230768368476e-05
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 21534,
+      "n_train": 362176,
+      "ic": 0.007838620961392815,
+      "p_value": 0.25005047433234473,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0007868941375512563,
+        "unemployment": 0.0017228166247261905,
+        "cpi_yoy": -0.0006259685350148124,
+        "dff_change_3m": -0.00015027034794957557
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 21534,
+      "n_train": 362176,
+      "ic": -0.038180700741738786,
+      "p_value": 2.0881753035019656e-08,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0005240095179496362,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11100,
+      "n_train": 186975,
+      "ic": -0.008654512686433032,
+      "p_value": 0.3619140915877306,
+      "sign": -1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0009724723772348552,
+        "unemployment": 0.0016118680072024997,
+        "cpi_yoy": -0.0005834658250580108,
+        "dff_change_3m": -0.0005455077540186384
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 21534,
+      "n_train": 362176,
+      "ic": 0.007838620961392815,
+      "p_value": 0.25005047433234473,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0007868941375512496,
+        "unemployment": 0.0017228166247261723,
+        "cpi_yoy": -0.0006259685350148111,
+        "dff_change_3m": -0.00015027034794957585
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-07",
+      "regime": "2025"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 5900,
+      "n_train": 198325,
+      "ic": 0.0018725074016099385,
+      "p_value": 0.8856586608814481,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0008118664859466677,
+        "unemployment": 0.0015732383513892567,
+        "cpi_yoy": -0.0005977401878763301,
+        "dff_change_3m": -0.00041998784125199415
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-050",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 5900,
+      "n_train": 198325,
+      "ic": 0.05252186691357538,
+      "p_value": 5.432110110130585e-05,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.00042073632314558706,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-050",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11446,
+      "n_train": 384195,
+      "ic": 0.04694069060283565,
+      "p_value": 5.054912072229532e-07,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0007079121968179658,
+        "unemployment": 0.0016783113812575585,
+        "cpi_yoy": -0.0006434856380617333,
+        "dff_change_3m": -8.699572637427506e-05
+      },
+      "model_type": "ridge",
+      "candidate_id": "H3-RIDGE-100",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11446,
+      "n_train": 384195,
+      "ic": 0.07928234041126432,
+      "p_value": 1.9870855649725338e-17,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": -0.0,
+        "unemployment": 0.0004933813684196685,
+        "cpi_yoy": -0.0,
+        "dff_change_3m": -0.0
+      },
+      "model_type": "lasso",
+      "candidate_id": "H3-LASSO-100",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 5900,
+      "n_train": 198325,
+      "ic": 0.0018725074016099385,
+      "p_value": 0.8856586608814481,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.0008118664859466649,
+        "unemployment": 0.0015732383513892682,
+        "cpi_yoy": -0.0005977401878763297,
+        "dff_change_3m": -0.0004199878412519934
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-050",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    },
+    {
+      "status": "SUCCESS",
+      "n_samples": 11446,
+      "n_train": 384195,
+      "ic": 0.04694069060283565,
+      "p_value": 5.054912072229532e-07,
+      "sign": 1,
+      "feature_importance": {
+        "fed_funds_rate": 0.00070791219681797,
+        "unemployment": 0.0016783113812575763,
+        "cpi_yoy": -0.0006434856380617303,
+        "dff_change_3m": -8.69957263742749e-05
+      },
+      "model_type": "ridge",
+      "candidate_id": "BASELINE-RIDGE-100",
+      "window_id": "WF-08",
+      "regime": "2026 YTD"
+    }
+  ],
+  "total": 48
+}

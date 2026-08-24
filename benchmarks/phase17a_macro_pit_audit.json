@@ -1,0 +1,14 @@
+{
+  "DFF": {
+    "pit_status": "GENUINELY_PIT",
+    "limitation": "None"
+  },
+  "UNRATE": {
+    "pit_status": "PARTIALLY_PIT",
+    "limitation": "Revised values, no vintage data"
+  },
+  "CPIAUCSL": {
+    "pit_status": "PARTIALLY_PIT",
+    "limitation": "Revised values, no vintage data"
+  }
+}

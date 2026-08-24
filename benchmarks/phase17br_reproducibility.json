@@ -1,0 +1,9 @@
+{
+  "test": "Deterministic double-build",
+  "schemas_digest": "719fbcae91341ead2417ee8d5cb473069577c2ae05605c46d269082059a22410",
+  "policies_digest": "d47311c4340f2e859680319ae1383c821977f6d5a718c61f9228ebdc680738af",
+  "registry_digest": "0a46a76696677004e2218ba2171f561d5d487fc99ae92070ad5d23704b4dabb1",
+  "migration_digest": "ece1d7d6d09335b8de95844bad65b2c21c2f7e37398a89cedb49d5d7d19325e9",
+  "result": "PASS",
+  "detail": "All digests deterministic; framework is reproducible"
+}

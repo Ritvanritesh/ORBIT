@@ -1,0 +1,17 @@
+{
+  "name": "Regime Governance Policy",
+  "version": "1.0",
+  "description": "Rules for regime definition and usage",
+  "regime_categories": {
+    "PREDEFINED_EXTERNAL": "e.g., NBER recession dates",
+    "PREDEFINED_MARKET": "e.g., volatility thresholds, drawdown thresholds",
+    "HYPOTHESIS_SPECIFIC": "Defined before experiment begins"
+  },
+  "rules": [
+    "Regimes must not be invented after observing performance",
+    "Hypothesis-specific regimes must be pre-registered",
+    "Data-driven regime detection requires explicit hypothesis justification",
+    "Multiple regime definitions allowed if pre-registered",
+    "Regime results must be reported separately"
+  ]
+}

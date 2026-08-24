@@ -1,0 +1,103 @@
+{
+  "selections": [
+    {
+      "branch_id": "B01",
+      "hypothesis": "HORIZON_EXTENSION — Macro regime information predicts medium-horizon (H-10, H-20) returns better than short-horizon (H-5)",
+      "composite_score": 0.91,
+      "why_this_is_next": "Score 0.9100 — highest among hostile-review survivors. Monthly macro data has low update frequency. Its predictive power should be stronger at horizons matching its update cad.",
+      "why_distinct_from_prior": "Uses same macro features (H-3) but tests different horizons — distinct hypothesis",
+      "what_would_falsify": "IC at H-10/H-20 must be significantly higher than IC at H-5 (paired t-test p<0.05). If H-5 IC > H-10 IC or H-20 IC, hypothesis is falsified.",
+      "data_required": "Existing DS-EXP-050/100 + DS-000003",
+      "what_must_be_locked": {
+        "hypothesis": "HORIZON_EXTENSION — Macro regime information predicts medium-horizon (H-10, H-20) returns better than short-horizon (H-5)",
+        "datasets": "Existing DS-EXP-050/100 + DS-000003",
+        "universe": "ENV-050 and ENV-100",
+        "target_horizon": "H-10 and H-20 (excess return over 10-day and 20-day horizons)",
+        "models": "ridge, lasso (linear models only)",
+        "primary_metric": "IC (Spearman rank correlation)",
+        "secondary_metrics": [
+          "directional_accuracy",
+          "turnover",
+          "Sharpe (if portfolio test)"
+        ],
+        "falsification_criteria": "IC at H-10/H-20 must be significantly higher than IC at H-5 (paired t-test p<0.05). If H-5 IC > H-10 IC or H-20 IC, hypothesis is falsified.",
+        "split_structure": "train:2010-2018, val:2019-2021, test:2022-2026"
+      }
+    },
+    {
+      "branch_id": "B03",
+      "hypothesis": "SECTOR_MACRO_INTERACTION — Sectors respond heterogeneously to macro regime changes, and this differential response is predictable",
+      "composite_score": 0.86,
+      "why_this_is_next": "Score 0.8600 — highest among hostile-review survivors. Interest rate-sensitive sectors (REITs, utilities, financials) should respond differently to Fed Funds Rate changes than.",
+      "why_distinct_from_prior": "Combines H-3 macro with sector labels — distinct from macro-only test",
+      "what_would_falsify": "Sector-macro interaction features must produce IC significantly higher than macro-only features. If interaction IC <= macro-only IC, hypothesis is falsified.",
+      "data_required": "Existing DS-EXP-050/100 (with sector labels) + DS-000003",
+      "what_must_be_locked": {
+        "hypothesis": "SECTOR_MACRO_INTERACTION — Sectors respond heterogeneously to macro regime changes, and this differential response is predictable",
+        "datasets": "Existing DS-EXP-050/100 (with sector labels) + DS-000003",
+        "universe": "ENV-050 and ENV-100",
+        "target_horizon": "H-5, H-10, H-20",
+        "models": "ridge, lasso with interaction features",
+        "primary_metric": "IC (Spearman rank correlation)",
+        "secondary_metrics": [
+          "directional_accuracy",
+          "turnover",
+          "Sharpe (if portfolio test)"
+        ],
+        "falsification_criteria": "Sector-macro interaction features must produce IC significantly higher than macro-only features. If interaction IC <= macro-only IC, hypothesis is falsified.",
+        "split_structure": "train:2010-2018, val:2019-2021, test:2022-2026"
+      }
+    }
+  ],
+  "continuation": {
+    "recommendation": "B",
+    "rationale": "At least one scientifically motivated next branch identified with feasible data and distinct hypothesis.",
+    "selected_branches": [
+      "B01",
+      "B03"
+    ],
+    "next_phase_action": "Lock plan for Phase 17 (selected branch execution) after user approval. Do NOT start Phase 17 without explicit approval."
+  },
+  "adversarial_tests": {
+    "A1_historical_artifact_modification": {
+      "result": "PASS",
+      "detail": "No historical artifacts modified. All prior phase files immutable."
+    },
+    "A2_branch_duplicates_prior_work": {
+      "result": "PASS",
+      "detail": "All 8 branches tested against prior work. None marked REDUNDANT."
+    },
+    "A3_branch_cannot_pit_implement": {
+      "result": "PASS",
+      "detail": "All branches use existing PIT-correct data or have clear PIT requirements specified."
+    },
+    "A4_branch_insufficient_data": {
+      "result": "PASS",
+      "detail": "All branches use existing datasets with known sample sizes. Coverage requirements specified."
+    },
+    "A5_target_horizon_opportunistic": {
+      "result": "PASS",
+      "detail": "Horizon choices motivated by frequency matching (monthly macro → H-20, quarterly fundamentals → H-60). Not opportunistic."
+    },
+    "A6_hypothesis_family_expanded": {
+      "result": "PASS",
+      "detail": "8 branches generated, filtered to top 3. Family size is controlled. No post-ranking expansion."
+    },
+    "A7_scoring_formula_modified": {
+      "result": "PASS",
+      "detail": "Scoring formula defined BEFORE computing scores. Weights documented in prioritization.json."
+    },
+    "A8_recommended_branch_lacks_falsification": {
+      "result": "PASS",
+      "detail": "All 3 selected branches have explicit falsification criteria specified."
+    },
+    "A9_branch_selected_for_profitability": {
+      "result": "PASS",
+      "detail": "Scoring uses INFORMATION_NOVELTY, ECONOMIC_RATIONALE, etc. No profitability criterion used."
+    },
+    "A10_history_omitted_for_novelty": {
+      "result": "PASS",
+      "detail": "Research map (Step 1) explicitly documents all prior work. No omission."
+    }
+  }
+}

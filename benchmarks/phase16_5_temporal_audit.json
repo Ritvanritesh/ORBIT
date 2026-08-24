@@ -1,0 +1,90 @@
+{
+  "periods": [
+    {
+      "period": "2010-2013",
+      "regime": "Post-GFC recovery, low rates, low volatility",
+      "split": "train",
+      "coverage": "Full"
+    },
+    {
+      "period": "2014-2015",
+      "regime": "Bull market, low volatility, oil crash",
+      "split": "train",
+      "coverage": "Full"
+    },
+    {
+      "period": "2016-2017",
+      "regime": "Low volatility, synchronized global growth",
+      "split": "train",
+      "coverage": "Full"
+    },
+    {
+      "period": "2018",
+      "regime": "Q4 correction, rising rates, vol spike",
+      "split": "train",
+      "coverage": "Full"
+    },
+    {
+      "period": "2019",
+      "regime": "Recovery, Fed pivot, low rates",
+      "split": "val",
+      "coverage": "Full"
+    },
+    {
+      "period": "2020",
+      "regime": "COVID crash and recovery — extreme regime",
+      "split": "val",
+      "coverage": "Full but extreme"
+    },
+    {
+      "period": "2021",
+      "regime": "Bull market, meme stocks, reopening",
+      "split": "val",
+      "coverage": "Full"
+    },
+    {
+      "period": "2022",
+      "regime": "Bear market, rising rates, inflation spike",
+      "split": "test",
+      "coverage": "Full"
+    },
+    {
+      "period": "2023",
+      "regime": "Recovery, AI rally, rate plateau",
+      "split": "test",
+      "coverage": "Full"
+    },
+    {
+      "period": "2024-2025",
+      "regime": "Continued recovery, rate cuts expected",
+      "split": "test",
+      "coverage": "Partial — latest data"
+    }
+  ],
+  "regime_coverage": {
+    "bull_markets": "Covered in train (2010-2017) and test (2023-2025)",
+    "bear_markets": "Covered in train (Q4 2018) and test (2022)",
+    "high_volatility": "Partially covered (Q4 2018, COVID 2020, Q4 2022)",
+    "low_volatility": "Covered in train (2016-2017) and val (2019)",
+    "crisis_periods": "COVID 2020 (val) — single observation of extreme regime",
+    "inflationary_periods": "Covered only in test (2022-2023) — no train/validation inflation data",
+    "low_rate_periods": "Covered in train (2010-2021)",
+    "rising_rate_periods": "2022 test only — limited coverage",
+    "post_crisis_periods": "Train period (2010-2013)"
+  },
+  "h3_temporal_analysis": {
+    "observation": "H-3 macro regime showed strong IC in test but weak/negative IC in validation",
+    "possible_explanation": "COVID-2020 regime in validation period corrupted macro regime signal",
+    "implication": "Single validation period (2019-2021) dominated by COVID is not representative of typical macro conditions",
+    "recommendation": "Walk-forward or expanding-window validation needed; COVID period may need separate treatment",
+    "severity": "MATERIAL — H-3 temporal instability cannot be assessed with single validation window"
+  },
+  "test_period_specifics": {
+    "inflation_regime_2022_2023": "Unique in sample — first sustained inflation since 1980s",
+    "rate_regime_2022_2025": "First sustained high-rate period since 2007",
+    "regime_novelty": "Test period contains macro conditions unseen in training data",
+    "implication": "Model performance in test may reflect regime adaptation rather than robust signal",
+    "concern_level": "HIGH — train/val do not contain inflation or rising-rate regimes"
+  },
+  "overall_assessment": "ORBIT train+val period (2010-2021) is dominated by low-rate, low-inflation, post-GFC conditions. Test period (2022-2026) includes inflation, rate hikes, and geopolitical shocks. Regime diversity is inadequate for validating macro-dependent models."
+}

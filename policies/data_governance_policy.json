@@ -1,0 +1,26 @@
+{
+  "name": "Data Governance Policy",
+  "version": "1.0",
+  "description": "Rules for data classification and PIT handling",
+  "pit_classifications": {
+    "STRICT_PIT": "Data available at decision time with no revision",
+    "PIT_WITH_KNOWN_LAG": "Data available with known publication delay",
+    "REVISED_HISTORY": "Data subject to revision; original vintage unavailable",
+    "NON_PIT_RESEARCH_ONLY": "Data not PIT; research use only",
+    "UNKNOWN": "PIT status not determined"
+  },
+  "rules": [
+    "Every dataset must declare PIT classification",
+    "Unknown PIT status must not silently pass as valid",
+    "REVISED_HISTORY cannot receive same evidential status as STRICT_PIT",
+    "Vintage data required for confirmatory deployment claims",
+    "PIT classification determines allowed conclusion strength"
+  ],
+  "conclusion_strength_by_pit": {
+    "STRICT_PIT": "Full evidential status",
+    "PIT_WITH_KNOWN_LAG": "Full evidential status with lag documented",
+    "REVISED_HISTORY": "Exploratory or sensitivity-qualified only",
+    "NON_PIT_RESEARCH_ONLY": "Research only; no deployment claims",
+    "UNKNOWN": "No strong conclusions allowed"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Horizon-Aware Research Policy",
+  "version": "1.0",
+  "description": "Rules for horizon selection and testing",
+  "supported_horizons": [
+    "H-1",
+    "H-5",
+    "H-10",
+    "H-20",
+    "H-21",
+    "H-63"
+  ],
+  "rules": [
+    "Hypothesis must declare expected horizon(s)",
+    "Horizon selection must be justified by mechanism",
+    "Not every hypothesis should test every horizon",
+    "Exploratory research may investigate bounded horizon set",
+    "Confirmatory research must lock horizon set beforehand",
+    "Horizon selection cannot change after observing results"
+  ],
+  "mechanism_horizon_mapping": {
+    "macro_regime": "H-10 to H-20 (monthly macro operates on slower timescales)",
+    "momentum": "H-5 to H-21 (medium-term price trends)",
+    "microstructure": "H-1 to H-5 (high-frequency dynamics)",
+    "fundamentals": "H-21 to H-63 (quarterly earnings cycle)"
+  }
+}

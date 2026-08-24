@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "required": [
+    "decision_id",
+    "hypothesis_id",
+    "decision",
+    "policy_reference",
+    "timestamp",
+    "rationale"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^DEC-[0-9]{6}$"
+    },
+    "hypothesis_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "CONTINUE_EXPLORATION",
+        "ADVANCE_TO_CONFIRMATORY",
+        "REPLICATE",
+        "REPAIR",
+        "REJECT",
+        "RETIRE",
+        "RESEARCH_ONLY"
+      ]
+    },
+    "policy_reference": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 10
+    }
+  }
+}

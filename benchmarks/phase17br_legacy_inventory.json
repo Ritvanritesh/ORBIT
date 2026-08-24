@@ -1,0 +1,101 @@
+{
+  "components": {
+    "universe_engine": {
+      "status": "KEEP",
+      "location": "src/orbit/universe/",
+      "rationale": "Functional, handles survivorship-aware universe construction",
+      "limitation": "ENV-050/100 are S&P 500 subsets; survivorship bias possible"
+    },
+    "feature_computation": {
+      "status": "KEEP",
+      "location": "src/orbit/temporal/features.py",
+      "rationale": "Deterministic feature computation, extensible",
+      "limitation": "Only OHLCV and macro features implemented"
+    },
+    "pit_safeguards": {
+      "status": "KEEP_WITH_LIMITATIONS",
+      "location": "src/orbit/temporal/",
+      "rationale": "PIT logic exists but some series use revised values",
+      "limitation": "UNRATE and CPI use revised data; vintage data unavailable"
+    },
+    "label_generation": {
+      "status": "KEEP",
+      "location": "src/orbit/labels/",
+      "rationale": "LAB-006 corrected, deterministic",
+      "limitation": "Only H-5 implemented; H-10/H-20 not yet available"
+    },
+    "LAB_004": {
+      "status": "DEPRECATE_FOR_FUTURE_RESEARCH",
+      "rationale": "Original absolute return label; superseded by LAB-006",
+      "limitation": "Historical use only"
+    },
+    "LAB_006": {
+      "status": "KEEP",
+      "rationale": "Corrected excess return label",
+      "limitation": "Only H-5 horizon"
+    },
+    "train_test_splitting": {
+      "status": "KEEP",
+      "location": "src/orbit/ml/splits.py",
+      "rationale": "Deterministic split logic",
+      "limitation": "Single split used in most phases; walk-forward added later"
+    },
+    "purging_embargo": {
+      "status": "KEEP",
+      "rationale": "Purge and embargo logic implemented",
+      "limitation": "Phase 13B defect documented; must use label outcome window"
+    },
+    "walk_forward_infrastructure": {
+      "status": "KEEP",
+      "rationale": "8-window walk-forward executed in Phase 17A",
+      "limitation": "Expanding windows; regime-stratified not yet implemented"
+    },
+    "statistical_correction": {
+      "status": "KEEP",
+      "rationale": "Holm and BH corrections implemented",
+      "limitation": "May be too aggressive or lenient; needs review"
+    },
+    "portfolio_construction": {
+      "status": "KEEP_WITH_LIMITATIONS",
+      "rationale": "Functional but economic evidence weak",
+      "limitation": "Sharpe +0.016 vs baseline; not economically meaningful"
+    },
+    "model_registry": {
+      "status": "KEEP",
+      "location": "src/orbit/model_registry/",
+      "rationale": "All candidates tracked, reproducible",
+      "limitation": "Only tracks models, not hypotheses"
+    },
+    "evidence_registry": {
+      "status": "REPAIR_BEFORE_REUSE",
+      "rationale": "Evidence tracking exists but not hypothesis-centric",
+      "limitation": "Needs new schema for hypothesis-driven research"
+    },
+    "explainability_infrastructure": {
+      "status": "KEEP",
+      "rationale": "SHAP, LIME, faithfulness testing implemented",
+      "limitation": "Only applied to macro features so far"
+    },
+    "stress_testing": {
+      "status": "KEEP",
+      "rationale": "CLIFF sensitivity, synthetic validation implemented",
+      "limitation": "Only applied to macro features so far"
+    },
+    "phase13b_implementation": {
+      "status": "HISTORICAL_ONLY",
+      "rationale": "Purge defect documented; absolute performance numbers invalid",
+      "limitation": "Do not reuse invalid metrics"
+    },
+    "phase16_portfolio": {
+      "status": "HISTORICAL_ONLY",
+      "rationale": "Economic evidence against H-3 deployment",
+      "limitation": "Negative evidence; must remain visible"
+    },
+    "phase17a_walkforward": {
+      "status": "HISTORICAL_ONLY",
+      "rationale": "Temporal and regime evidence; Verdict D, Gate RED",
+      "limitation": "Revised macro limitation documented"
+    }
+  },
+  "total": 18
+}

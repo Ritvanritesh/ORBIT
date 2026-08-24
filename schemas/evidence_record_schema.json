@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "hypothesis_id",
+    "experiment_id",
+    "metric",
+    "value",
+    "statistical_status",
+    "economic_status"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^EV-[0-9]{6}$"
+    },
+    "hypothesis_id": {
+      "type": "string"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "metric": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "uncertainty": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "statistical_status": {
+      "type": "string",
+      "enum": [
+        "SIGNIFICANT",
+        "MARGINAL",
+        "NOT_SIGNIFICANT"
+      ]
+    },
+    "economic_status": {
+      "type": "string",
+      "enum": [
+        "MATERIAL",
+        "MARGINAL",
+        "NOT_MATERIAL"
+      ]
+    },
+    "robustness_status": {
+      "type": "string",
+      "enum": [
+        "ROBUST",
+        "PARTIAL",
+        "FRAGILE",
+        "NOT_TESTED"
+      ]
+    },
+    "reproducibility_status": {
+      "type": "string",
+      "enum": [
+        "REPRODUCIBLE",
+        "NOT_TESTED",
+        "FAILED"
+      ]
+    },
+    "limitation_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifact_digest": {
+      "type": "string"
+    }
+  }
+}

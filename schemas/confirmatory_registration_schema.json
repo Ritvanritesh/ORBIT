@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "required": [
+    "registration_id",
+    "hypothesis_id",
+    "registration_digest",
+    "datasets",
+    "PIT_classification",
+    "universe",
+    "horizon",
+    "features",
+    "label",
+    "model_family",
+    "parameter_policy",
+    "split_method",
+    "walk_forward_design",
+    "statistical_tests",
+    "multiple_testing_family",
+    "baselines",
+    "promotion_criteria",
+    "rejection_criteria"
+  ],
+  "properties": {
+    "registration_id": {
+      "type": "string",
+      "pattern": "^REG-[0-9]{6}$"
+    },
+    "hypothesis_id": {
+      "type": "string"
+    },
+    "registration_digest": {
+      "type": "string"
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "PIT_classification": {
+      "type": "string"
+    },
+    "universe": {
+      "type": "string"
+    },
+    "horizon": {
+      "type": "string"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "label": {
+      "type": "string"
+    },
+    "model_family": {
+      "type": "string"
+    },
+    "parameter_policy": {
+      "type": "string"
+    },
+    "split_method": {
+      "type": "string"
+    },
+    "walk_forward_design": {
+      "type": "object"
+    },
+    "statistical_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "multiple_testing_family": {
+      "type": "string"
+    },
+    "baselines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promotion_criteria": {
+      "type": "object"
+    },
+    "rejection_criteria": {
+      "type": "object"
+    },
+    "registration_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "is_locked": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Model Governance Policy",
+  "version": "1.0",
+  "description": "Rules for model selection and usage",
+  "allowed_model_classes": [
+    "LINEAR",
+    "TREE",
+    "REGIME_AWARE",
+    "TEMPORAL",
+    "OTHER"
+  ],
+  "rules": [
+    "Model choice must follow the hypothesis",
+    "Default to simpler models unless hypothesis justifies complexity",
+    "Each experiment must document why selected model class is appropriate",
+    "Model failure does not automatically invalidate hypothesis",
+    "Hypothesis supported only by one fragile model must be flagged",
+    "Degenerate models must be detected automatically",
+    "Complexity must be justified by evidence, not fashion"
+  ]
+}

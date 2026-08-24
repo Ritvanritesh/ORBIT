@@ -1,0 +1,166 @@
+[
+  {
+    "failure_id": "F01",
+    "description": "OHLCV technical features produce statistically significant but economically negligible ICs that fail to generalize across universes",
+    "primary_mode": "WEAK_INFORMATION",
+    "secondary_modes": [
+      "UNIVERSE_DEPENDENCE",
+      "MODEL_DEPENDENCE"
+    ],
+    "evidence": "Phase 9-13C: ridge ICs 0.02-0.03 on ENV-DEV20; failed on ENV-050/100; nonlinear models reversed sign",
+    "confidence": 0.9,
+    "alternative_explanations": [
+      "Target/horizon mismatch for technical features",
+      "Insufficient feature engineering"
+    ],
+    "distinguishable_with_additional_testing": false,
+    "notes": "Multiple independent tests across phases consistently show no robust signal"
+  },
+  {
+    "failure_id": "F02",
+    "description": "Market context and sector context features show in-sample significance but complete OOS failure",
+    "primary_mode": "FEATURE_FRAGILITY",
+    "secondary_modes": [
+      "INSUFFICIENT_EVALUATION_DIVERSITY"
+    ],
+    "evidence": "Phase 10-11: features significant in train/val but sign-reversed or zero on test",
+    "confidence": 0.85,
+    "alternative_explanations": [
+      "Regime change in 2019-2021",
+      "Data leakage in feature construction"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "Could test with walk-forward validation across more regimes"
+  },
+  {
+    "failure_id": "F03",
+    "description": "Point-in-time fundamental features (valuation, growth, leverage) produced small ICs that did not survive label correction from LAB-005 to LAB-006",
+    "primary_mode": "TARGET_MISMATCH",
+    "secondary_modes": [
+      "WEAK_INFORMATION",
+      "IMPLEMENTATION_LIMITATION"
+    ],
+    "evidence": "Phase 12D/12E: ICs ~0.03-0.04; Phase 13C: LAB-005 defect; Phase 13C: LAB-006 correction eliminated candidates",
+    "confidence": 0.8,
+    "alternative_explanations": [
+      "Fundamental data frequency (quarterly) mismatched to 5-day horizon",
+      "Survivorship bias in PIT data"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "Quarterly fundamentals vs daily prediction horizon is a structural mismatch"
+  },
+  {
+    "failure_id": "F04",
+    "description": "H-1 (path structure), H-2 (return asymmetry), H-4 (volatility dynamics) all classified as FRAGILE in Phase 14.5 - sign inconsistent across universes",
+    "primary_mode": "UNIVERSE_DEPENDENCE",
+    "secondary_modes": [
+      "REGIME_DEPENDENCE",
+      "FEATURE_FRAGILITY"
+    ],
+    "evidence": "Phase 14.5 robustness.json: H-1, H-2, H-4 all FRAGILE; H-3 PARTIALLY_ROBUST",
+    "confidence": 0.85,
+    "alternative_explanations": [
+      "Insufficient sample per universe",
+      "Feature construction not PIT-correct"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "All three failed the same way - sign flip between 050 and 100 universes"
+  },
+  {
+    "failure_id": "F05",
+    "description": "H-3 macro regime: high ICs (0.09-0.15) but temporal instability - validation IC negative, test IC positive",
+    "primary_mode": "TEMPORAL_INSTABILITY",
+    "secondary_modes": [
+      "REGIME_DEPENDENCE",
+      "HORIZON_MISMATCH"
+    ],
+    "evidence": "Phase 15.2 temporal.json: val IC -0.16 to -0.04, test IC +0.09 to +0.15; Phase 16: no validation period predictions",
+    "confidence": 0.95,
+    "alternative_explanations": [
+      "COVID-19 regime shift in validation period",
+      "Macro features only predictive in post-2022 inflationary regime"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "Critical failure - model appears to capture regime-specific effects, not persistent signal"
+  },
+  {
+    "failure_id": "F06",
+    "description": "H-3 macro features exhibit CLIFF sensitivity (all 4 features) and high collinearity (r=0.818)",
+    "primary_mode": "FEATURE_FRAGILITY",
+    "secondary_modes": [
+      "COLLINEARITY"
+    ],
+    "evidence": "Phase 15.2 cliff.json: all 4 macro features CLIFF; collinearity.json: max r=0.818",
+    "confidence": 0.9,
+    "alternative_explanations": [
+      "Low variance of macro features makes them fragile to perturbations",
+      "Standardization amplifies noise"
+    ],
+    "distinguishable_with_additional_testing": false,
+    "notes": "Structural property of low-frequency macro data vs high-frequency prediction"
+  },
+  {
+    "failure_id": "F07",
+    "description": "Phase 16 portfolio construction: best H-3 portfolio Sharpe 0.405 vs equal-weight baseline 0.389 (delta +0.016)",
+    "primary_mode": "PORTFOLIO_TRANSLATION_FAILURE",
+    "secondary_modes": [
+      "WEAK_INFORMATION"
+    ],
+    "evidence": "Phase 16 results: 24 configurations tested; none robustly beat equal-weight; costs reduce returns",
+    "confidence": 0.9,
+    "alternative_explanations": [
+      "Portfolio methods not optimal",
+      "Transaction cost model too conservative"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "Even with multiple portfolio methods, signal does not translate to economic alpha"
+  },
+  {
+    "failure_id": "F08",
+    "description": "No validation period predictions available in Phase 16 - models only trained on train, predicted on test",
+    "primary_mode": "IMPLEMENTATION_LIMITATION",
+    "secondary_modes": [
+      "INSUFFICIENT_EVALUATION_DIVERSITY"
+    ],
+    "evidence": "Phase 16 temporal_stability.json: all val periods show NO_DATA",
+    "confidence": 1.0,
+    "alternative_explanations": [
+      "Design choice to simplify implementation"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "This is a fixable implementation gap, not a fundamental failure"
+  },
+  {
+    "failure_id": "F09",
+    "description": "Lasso degeneracy at alpha=0.001 (5 models all-zero coefficients) - resolved only at lower alphas",
+    "primary_mode": "IMPLEMENTATION_LIMITATION",
+    "secondary_modes": [
+      "MODEL_DEPENDENCE"
+    ],
+    "evidence": "Phase 15.1 lasso_diagnostic.json: 5 DEGENERATE at alpha=0.001; functional at 1e-4, 1e-5",
+    "confidence": 0.95,
+    "alternative_explanations": [
+      "Alpha chosen without cross-validation",
+      "Feature scaling issue"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "This is a hyperparameter selection issue, not fundamental"
+  },
+  {
+    "failure_id": "F10",
+    "description": "Random Forest and XGBoost consistently degraded or reversed sign vs linear models across Phases 9-13",
+    "primary_mode": "MODEL_DEPENDENCE",
+    "secondary_modes": [
+      "FEATURE_FRAGILITY",
+      "INSUFFICIENT_DATA_COVERAGE"
+    ],
+    "evidence": "Phase 11, 13C: nonlinear models failed to generalize; overfit in-sample",
+    "confidence": 0.85,
+    "alternative_explanations": [
+      "Sample size insufficient for nonlinear models",
+      "Feature engineering inadequate for trees"
+    ],
+    "distinguishable_with_additional_testing": true,
+    "notes": "Consistent pattern: linear > nonlinear for this data/hypothesis space"
+  }
+]

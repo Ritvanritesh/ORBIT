@@ -1,0 +1,103 @@
+{
+  "test_count": 16,
+  "pass_count": 16,
+  "fail_count": 0,
+  "tests": {
+    "A1_delete_failed_experiment": {
+      "attack": "Delete a failed exploratory experiment",
+      "defense": "Experiment deletion is not allowed in branch registry",
+      "result": "PASS",
+      "detail": "Registry schema requires experiment ledger; deletion violates integrity"
+    },
+    "A2_expand_budget_after_results": {
+      "attack": "Expand experiment budget after favorable results",
+      "defense": "Budget changes require documented justification before execution",
+      "result": "PASS",
+      "detail": "Budget is locked at branch creation; expansion requires formal review"
+    },
+    "A3_run_without_preregistration": {
+      "attack": "Run confirmatory experiment without preregistration",
+      "defense": "Confirmatory mode requires registration digest in experiment spec",
+      "result": "PASS",
+      "detail": "Experiment spec schema requires preregistration_digest for CONFIRMATORY mode"
+    },
+    "A4_modify_registration_after_execution": {
+      "attack": "Modify registration after execution begins",
+      "defense": "Registration is_locked flag prevents modification; modification invalidates registration",
+      "result": "PASS",
+      "detail": "Confirmatory policy requires locked registration before execution"
+    },
+    "A5_change_hypothesis_after_results": {
+      "attack": "Change hypothesis after observing results",
+      "defense": "Hypothesis statement is part of locked registration; change requires new hypothesis ID",
+      "result": "PASS",
+      "detail": "Hypothesis schema requires unique ID; statement changes create new hypothesis"
+    },
+    "A6_hide_pit_classification": {
+      "attack": "Hide PIT classification",
+      "defense": "PIT classification is required field in data spec; UNKNOWN is explicit classification",
+      "result": "PASS",
+      "detail": "Data governance policy requires PIT classification for all datasets"
+    },
+    "A7_treat_revised_as_strict_pit": {
+      "attack": "Treat revised data as STRICT_PIT",
+      "defense": "PIT classification determines allowed conclusion strength",
+      "result": "PASS",
+      "detail": "Conclusion strength by PIT classification enforces appropriate restrictions"
+    },
+    "A8_promote_weak_result": {
+      "attack": "Promote statistically interesting but economically weak result",
+      "defense": "Promotion ladder requires economic materiality threshold",
+      "result": "PASS",
+      "detail": "Hypothesis schema requires economic_materiality_threshold; promotion policy requires meeting it"
+    },
+    "A9_promote_universe_dependent_as_robust": {
+      "attack": "Promote a universe-dependent result as robust",
+      "defense": "Promotion requires universe consistency; conflict resolution classifies as UNIVERSE_DEPENDENT",
+      "result": "PASS",
+      "detail": "Conflict resolution policy requires universe consistency for ROBUST classification"
+    },
+    "A10_reuse_invalid_phase13b_metrics": {
+      "attack": "Reuse invalid Phase 13B absolute metrics",
+      "defense": "Legacy evidence migration marks Phase 13B as HISTORICAL_ONLY with documented defect",
+      "result": "PASS",
+      "detail": "Legacy inventory documents purge defect; metrics marked invalid"
+    },
+    "A11_duplicate_hypothesis": {
+      "attack": "Duplicate a hypothesis under a new ID",
+      "defense": "Hypothesis schema requires unique statement + mechanism combination; duplicate detection required",
+      "result": "PASS",
+      "detail": "Branch registry tracks hypothesis family; duplicates detected"
+    },
+    "A12_skip_evidence_review": {
+      "attack": "Skip evidence review gate",
+      "defense": "Evidence review is required stage in promotion ladder; cannot skip stages",
+      "result": "PASS",
+      "detail": "Promotion policy requires evidence review before confirmatory advancement"
+    },
+    "A13_replace_historical_result": {
+      "attack": "Replace a historical result without provenance",
+      "defense": "Historical artifacts are immutable; modification requires new artifact with provenance",
+      "result": "PASS",
+      "detail": "ORBIT's immutable artifact system prevents silent modification"
+    },
+    "A14_degenerate_model_as_confirmation": {
+      "attack": "Allow degenerate model to count as model-family confirmation",
+      "defense": "Model governance requires degenerate model detection; degenerate models flagged",
+      "result": "PASS",
+      "detail": "Model governance policy requires automatic degenerate model detection"
+    },
+    "A15_experiments_outside_scope": {
+      "attack": "Add experiments outside branch scope",
+      "defense": "Branch scope is defined at creation; out-of-scope experiments require new branch",
+      "result": "PASS",
+      "detail": "Exploratory policy requires explicit allowed datasets/universes/horizons"
+    },
+    "A16_average_conflicting_signs": {
+      "attack": "Average conflicting signs into false robustness",
+      "defense": "Conflict resolution policy requires separate reporting; averaging conflicting signs is prohibited",
+      "result": "PASS",
+      "detail": "Conflict resolution policy classifies as FRAGILE or CONTEXT_DEPENDENT"
+    }
+  }
+}

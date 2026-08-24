@@ -1,0 +1,26 @@
+{
+  "name": "Conflict Resolution Policy",
+  "version": "1.0",
+  "description": "Rules for handling conflicting evidence",
+  "conflict_types": [
+    "universe_conflict: works in one universe but not another",
+    "horizon_conflict: works at one horizon but not another",
+    "model_conflict: one model succeeds while another fails",
+    "regime_conflict: one regime supports while another rejects"
+  ],
+  "classifications": [
+    "ROBUST",
+    "CONTEXT_DEPENDENT",
+    "MODEL_DEPENDENT",
+    "UNIVERSE_DEPENDENT",
+    "HORIZON_DEPENDENT",
+    "FRAGILE",
+    "NOT_SUPPORTED"
+  ],
+  "rules": [
+    "Do not automatically average conflicting evidence into positive conclusion",
+    "Preregistered decision criteria should determine outcomes",
+    "Conflicting evidence must be documented, not hidden",
+    "Context-dependent results are valid but must be classified correctly"
+  ]
+}

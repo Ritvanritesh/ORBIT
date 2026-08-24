@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "required": [
+    "mechanism_id",
+    "description",
+    "economic_rationale",
+    "assumptions"
+  ],
+  "properties": {
+    "mechanism_id": {
+      "type": "string",
+      "pattern": "^MECH-[0-9]{4}$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10
+    },
+    "economic_rationale": {
+      "type": "string",
+      "minLength": 10
+    },
+    "causal_or_behavioral_path": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_failure_modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "falsification_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

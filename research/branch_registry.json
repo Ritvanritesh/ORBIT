@@ -1,0 +1,27 @@
+{
+  "registry_name": "ORBIT Research Branch Registry",
+  "version": "1.0",
+  "created": "2026-08-24T16:47:58.891062",
+  "branches": [],
+  "prevention_rules": [
+    "Experiment deletion is not allowed",
+    "Hidden budget expansion is not allowed",
+    "Duplicate hypothesis IDs are not allowed",
+    "Confirmatory execution without registration is not allowed",
+    "Result replacement without provenance is not allowed"
+  ],
+  "schema": {
+    "branch_id": "string (pattern: BR-[0-9]{4})",
+    "research_question_id": "string",
+    "hypothesis_family": "string",
+    "mechanism": "string",
+    "status": "string (enum: PROPOSED, ACTIVE, COMPLETED, RETIRED)",
+    "experiment_budget": "integer",
+    "experiments_completed": "integer",
+    "experiments_remaining": "integer",
+    "exploratory_evidence": "array of evidence IDs",
+    "review_decisions": "array of decision IDs",
+    "confirmatory_registrations": "array of registration IDs",
+    "final_classification": "string (nullable)"
+  }
+}

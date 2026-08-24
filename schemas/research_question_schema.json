@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "required": [
+    "research_question_id",
+    "question",
+    "economic_domain",
+    "motivation",
+    "status"
+  ],
+  "properties": {
+    "research_question_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "question": {
+      "type": "string",
+      "minLength": 10
+    },
+    "economic_domain": {
+      "type": "string",
+      "enum": [
+        "macro",
+        "microstructure",
+        "fundamentals",
+        "sentiment",
+        "cross_asset",
+        "other"
+      ]
+    },
+    "motivation": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PROPOSED",
+        "ACTIVE",
+        "COMPLETED",
+        "RETIRED"
+      ]
+    },
+    "parent_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "creation_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "phase": "17A",
+  "timestamp": "2026-08-24T16:02:23.207962",
+  "verdict": "B",
+  "gate": "YELLOW",
+  "adversarial_summary": "11/12 PASS",
+  "scorecard_summary": {
+    "robust": 0,
+    "partial": 4,
+    "regime": 0,
+    "fragile": 0
+  }
+}

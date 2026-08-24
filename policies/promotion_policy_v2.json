@@ -1,0 +1,31 @@
+{
+  "name": "Promotion Ladder Policy v2",
+  "version": "1.0",
+  "description": "Lifecycle stages for hypotheses and models",
+  "stages": [
+    "PROPOSED",
+    "EXPLORATORY",
+    "EVIDENCE_REVIEW",
+    "CONFIRMATORY_REGISTERED",
+    "CONFIRMATORY_TESTED",
+    "RESEARCH_SUPPORTED",
+    "PAPER_ELIGIBLE",
+    "VALIDATED"
+  ],
+  "rules": [
+    "Promotion requires evidence",
+    "Hypothesis must not skip stages",
+    "Minimum requirements for PAPER_ELIGIBLE include: successful confirmatory test, predefined statistical support, predefined economic materiality, completed required universe tests, temporal validation, reproducibility, PIT/data integrity, portfolio economics where relevant",
+    "High IC alone does not justify promotion",
+    "Regression is always allowed"
+  ],
+  "promotion_requirements": {
+    "PROPOSED_to_EXPLORATORY": "Hypothesis with mechanism, prediction, falsification criteria",
+    "EXPLORATORY_to_EVIDENCE_REVIEW": "Completed exploratory budget with evidence",
+    "EVIDENCE_REVIEW_to_CONFIRMATORY_REGISTERED": "Passes evidence review gate",
+    "CONFIRMATORY_REGISTERED_to_CONFIRMATORY_TESTED": "Execution of locked experiment",
+    "CONFIRMATORY_TESTED_to_RESEARCH_SUPPORTED": "Meets predefined criteria",
+    "RESEARCH_SUPPORTED_to_PAPER_ELIGIBLE": "Complete promotion requirements",
+    "PAPER_ELIGIBLE_to_VALIDATED": "Paper trading stability"
+  }
+}

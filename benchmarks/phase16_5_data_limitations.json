@@ -1,0 +1,103 @@
+{
+  "limitations": [
+    {
+      "dimension": "number_of_instruments",
+      "status": "MODERATE",
+      "details": "ENV-050 (50 stocks), ENV-100 (97 stocks). Both are subsets of S&P 500.",
+      "concern": "Limited cross-sectional diversity. Sector representation may be skewed.",
+      "impact_on_research": "Limits ability to detect cross-sectional patterns requiring broad diversification"
+    },
+    {
+      "dimension": "survivorship_concerns",
+      "status": "MINOR",
+      "details": "DS-EXP-050/100 use current constituents — survivorship bias possible for pre-2020 delistings",
+      "concern": "Delisted stocks excluded from early periods may bias results upward",
+      "impact_on_research": "Minor for most features; more concerning for fundamental features (Phase 12D/12E)"
+    },
+    {
+      "dimension": "historical_coverage",
+      "status": "MINOR",
+      "details": "Train starts 2010. 14 years of history (2010-2024) split into train/val/test.",
+      "concern": "Pre-2010 data not available — misses GFC, dot-com bust",
+      "impact_on_research": "Limits ability to test across multiple complete market cycles"
+    },
+    {
+      "dimension": "delisted_instruments",
+      "status": "MINOR",
+      "details": "Delisted stocks not included in universe composition",
+      "concern": "Survivorship bias for early periods",
+      "impact_on_research": "Minor impact for most analyses"
+    },
+    {
+      "dimension": "missing_corporate_actions",
+      "status": "MINOR",
+      "details": "Dividends, splits, and other corporate actions handled in data construction",
+      "concern": "Minor data quality concern",
+      "impact_on_research": "Already addressed in LAB-006 label correction"
+    },
+    {
+      "dimension": "benchmark_construction",
+      "status": "MINOR",
+      "details": "Equal-weight universe median used as benchmark",
+      "concern": "Does not account for market cap weighting or sector neutrality",
+      "impact_on_research": "Minor — label may capture sector effects rather than pure stock selection"
+    },
+    {
+      "dimension": "macro_release_timing",
+      "status": "MATERIAL",
+      "details": "FRED macro data used with same-day release assumption. Macro releases have specific timing (e.g., CPI first Friday, NFP first Friday).",
+      "concern": "Look-ahead bias possible if macro data not aligned with correct release dates",
+      "impact_on_research": "Could invalidate H-3 macro regime results if macro data release dates not handled correctly",
+      "note": "Phase 15.2 did not audit macro release timing alignment"
+    },
+    {
+      "dimension": "fundamental_data_availability_timing",
+      "status": "MODERATE",
+      "details": "Fundamental data frequency is quarterly with reporting lag (45-90 days). Phase 12D/12E used COMP (Compustat) with lags.",
+      "concern": "Quarterly fundamentals are low-frequency relative to 5-day prediction horizon",
+      "impact_on_research": "Fundamental features may be better suited to longer horizons (monthly/quarterly)"
+    },
+    {
+      "dimension": "data_frequency",
+      "status": "MODERATE",
+      "details": "Daily OHLCV for all assets. Monthly macro data. Quarterly fundamentals.",
+      "concern": "Multi-frequency data requires careful temporal alignment",
+      "impact_on_research": "Feature construction must handle mixed frequencies correctly"
+    },
+    {
+      "dimension": "observation_count_versus_complexity",
+      "status": "MODERATE",
+      "details": "ENV-050 has ~49K observations. ENV-100 has ~97K. H-3 macro features tested with ridge/lasso.",
+      "concern": "Sample size adequate for linear models but may be insufficient for complex nonlinear interactions with macro features",
+      "impact_on_research": "Limits model complexity for macro-dependent hypotheses"
+    },
+    {
+      "dimension": "options_data",
+      "status": "CRITICAL",
+      "details": "No options or derivatives data available",
+      "concern": "Cannot test implied volatility, volatility risk premium, or options-based signals",
+      "impact_on_research": "Excludes entire information domain from research"
+    },
+    {
+      "dimension": "earnings_data",
+      "status": "CRITICAL",
+      "details": "No earnings surprise, analyst revisions, or earnings calendar data",
+      "concern": "Cannot test post-earnings drift, analyst expectation changes",
+      "impact_on_research": "Excludes fundamental information domain from research"
+    },
+    {
+      "dimension": "order_flow_data",
+      "status": "CRITICAL",
+      "details": "No Level 2, order book, or tick data",
+      "concern": "Cannot test liquidity dynamics, order flow imbalance, market microstructure",
+      "impact_on_research": "Excludes market microstructure information domain"
+    }
+  ],
+  "overall_summary": {
+    "critical_limitations": 3,
+    "material_limitations": 1,
+    "moderate_limitations": 4,
+    "minor_limitations": 5,
+    "verdict": "ORBIT has sufficient OHLCV, macro, and sector data for most analyses. However, critical gaps exist in options, earnings, and order flow data. These are structural limitations that cannot be resolved through feature engineering."
+  }
+}

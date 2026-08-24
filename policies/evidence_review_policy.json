@@ -1,0 +1,33 @@
+{
+  "name": "Evidence Review Gate Policy",
+  "version": "1.0",
+  "description": "Rules for reviewing exploratory evidence before confirmatory advancement",
+  "review_criteria": [
+    "Mechanism plausibility",
+    "Effect consistency across experiments",
+    "Horizon consistency",
+    "Universe consistency",
+    "Model-family dependence",
+    "Temporal stability",
+    "Statistical evidence strength",
+    "Economic materiality",
+    "Data/PIT integrity",
+    "Reproducibility",
+    "Experiment budget consumption",
+    "Evidence of data snooping"
+  ],
+  "possible_outcomes": [
+    "CONTINUE_EXPLORATION",
+    "REPLICATE",
+    "ADVANCE_TO_CONFIRMATORY",
+    "REJECT",
+    "RETIRE"
+  ],
+  "rules": [
+    "Positive IC alone does not pass the gate",
+    "Economic materiality must be demonstrated",
+    "Universe consistency is required for advancement",
+    "Temporal stability is required for advancement",
+    "Budget consumption must be documented"
+  ]
+}

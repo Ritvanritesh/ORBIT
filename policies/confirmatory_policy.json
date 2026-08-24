@@ -1,0 +1,34 @@
+{
+  "name": "Confirmatory Preregistration Policy",
+  "version": "1.0",
+  "description": "Rules for locked confirmatory experiments",
+  "required_fields": [
+    "Hypothesis",
+    "Mechanism",
+    "Expected effect size",
+    "Economic materiality threshold",
+    "Datasets",
+    "PIT classification",
+    "Universe",
+    "Horizon",
+    "Features",
+    "Label",
+    "Model family",
+    "Parameter policy",
+    "Split method",
+    "Walk-forward design",
+    "Statistical tests",
+    "Multiple-testing family",
+    "Baselines",
+    "Robustness tests",
+    "Promotion criteria",
+    "Rejection criteria"
+  ],
+  "rules": [
+    "Registration must be locked before execution",
+    "Modification after execution begins invalidates registration",
+    "No silent edits to registration",
+    "Registration digest must be deterministic",
+    "All changes require new registration with new digest"
+  ]
+}

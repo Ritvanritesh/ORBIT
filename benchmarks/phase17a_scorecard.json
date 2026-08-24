@@ -1,0 +1,54 @@
+{
+  "H3-RIDGE-050": {
+    "dimensions": {
+      "positive_oos": "PASS",
+      "median_ic": "PASS",
+      "incremental": "LIMITATION",
+      "universe": "PASS",
+      "model": "PASS",
+      "statistical": "FAIL"
+    },
+    "pass_count": 4,
+    "fail_count": 1,
+    "overall": "PARTIALLY_STABLE"
+  },
+  "H3-LASSO-050": {
+    "dimensions": {
+      "positive_oos": "PASS",
+      "median_ic": "FAIL",
+      "incremental": "PASS",
+      "universe": "PASS",
+      "model": "PASS",
+      "statistical": "FAIL"
+    },
+    "pass_count": 4,
+    "fail_count": 2,
+    "overall": "PARTIALLY_STABLE"
+  },
+  "H3-RIDGE-100": {
+    "dimensions": {
+      "positive_oos": "PASS",
+      "median_ic": "PASS",
+      "incremental": "LIMITATION",
+      "universe": "PASS",
+      "model": "PASS",
+      "statistical": "FAIL"
+    },
+    "pass_count": 4,
+    "fail_count": 1,
+    "overall": "PARTIALLY_STABLE"
+  },
+  "H3-LASSO-100": {
+    "dimensions": {
+      "positive_oos": "PASS",
+      "median_ic": "FAIL",
+      "incremental": "LIMITATION",
+      "universe": "PASS",
+      "model": "PASS",
+      "statistical": "FAIL"
+    },
+    "pass_count": 3,
+    "fail_count": 2,
+    "overall": "PARTIALLY_STABLE"
+  }
+}

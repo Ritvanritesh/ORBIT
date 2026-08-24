@@ -1,0 +1,22 @@
+{
+  "H3-RIDGE-050": {
+    "mean_incremental_ic": 0.0,
+    "positive_incremental_fraction": NaN,
+    "n_common_windows": 8
+  },
+  "H3-LASSO-050": {
+    "mean_incremental_ic": 0.002994149422028158,
+    "positive_incremental_fraction": 1.0,
+    "n_common_windows": 8
+  },
+  "H3-RIDGE-100": {
+    "mean_incremental_ic": 0.0,
+    "positive_incremental_fraction": NaN,
+    "n_common_windows": 8
+  },
+  "H3-LASSO-100": {
+    "mean_incremental_ic": NaN,
+    "positive_incremental_fraction": 1.0,
+    "n_common_windows": 8
+  }
+}

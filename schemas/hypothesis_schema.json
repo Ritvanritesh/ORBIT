@@ -1,0 +1,108 @@
+{
+  "type": "object",
+  "required": [
+    "hypothesis_id",
+    "research_question_id",
+    "mechanism_id",
+    "statement",
+    "target_variable",
+    "universe",
+    "horizon",
+    "expected_effect_size",
+    "economic_materiality_threshold",
+    "falsification_criteria",
+    "status"
+  ],
+  "properties": {
+    "hypothesis_id": {
+      "type": "string",
+      "pattern": "^H-[0-9]{4}$"
+    },
+    "research_question_id": {
+      "type": "string",
+      "pattern": "^RQ-[0-9]{4}$"
+    },
+    "mechanism_id": {
+      "type": "string",
+      "pattern": "^MECH-[0-9]{4}$"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 10
+    },
+    "directional_prediction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "target_variable": {
+      "type": "string"
+    },
+    "universe": {
+      "type": "string",
+      "enum": [
+        "ENV-050",
+        "ENV-100",
+        "ENV-050+100",
+        "CUSTOM"
+      ]
+    },
+    "horizon": {
+      "type": "string",
+      "enum": [
+        "H-1",
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-21",
+        "H-63",
+        "MULTIPLE"
+      ]
+    },
+    "expected_effect_size": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "type": "string"
+        },
+        "minimum": {
+          "type": "number"
+        },
+        "target": {
+          "type": "number"
+        }
+      }
+    },
+    "economic_materiality_threshold": {
+      "type": "number",
+      "description": "Minimum Sharpe or excess return to be economically meaningful"
+    },
+    "falsification_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prior_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PROPOSED",
+        "EXPLORATORY",
+        "EVIDENCE_REVIEW",
+        "CONFIRMATORY_REGISTERED",
+        "CONFIRMATORY_RUNNING",
+        "SUPPORTED",
+        "PARTIALLY_SUPPORTED",
+        "NOT_SUPPORTED",
+        "RETIRED"
+      ]
+    }
+  }
+}

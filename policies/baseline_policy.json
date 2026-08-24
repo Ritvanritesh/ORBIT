@@ -1,0 +1,37 @@
+{
+  "name": "Baseline Framework Policy",
+  "version": "1.0",
+  "description": "Three baselines required for all research",
+  "baselines": {
+    "baseline_a_null": {
+      "name": "Null / Random Prediction",
+      "purpose": "Evaluate whether predictive metrics exceed chance",
+      "implementation": "Random ranking or permutation test",
+      "required_for": "All hypotheses"
+    },
+    "baseline_b_naive": {
+      "name": "Naive Investment",
+      "purpose": "Evaluate economic value",
+      "examples": [
+        "equal_weight_portfolio",
+        "universe_benchmark"
+      ],
+      "required_for": "All hypotheses with economic claims"
+    },
+    "baseline_c_simple": {
+      "name": "Simple Existing Model",
+      "purpose": "Measure incremental complexity value",
+      "examples": [
+        "momentum_baseline",
+        "previous_validated_model"
+      ],
+      "required_for": "All hypotheses claiming improvement over existing methods"
+    }
+  },
+  "rules": [
+    "Baseline selection must be declared before confirmatory execution",
+    "Baselines must be reproducible",
+    "Baseline results must be frozen before hypothesis testing",
+    "No baseline substitution after seeing hypothesis results"
+  ]
+}

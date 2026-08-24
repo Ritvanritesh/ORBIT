@@ -1,0 +1,10 @@
+{
+  "ridge": {
+    "sign_agreement": 1.0,
+    "classification": "UNIVERSE_CONSISTENT"
+  },
+  "lasso": {
+    "sign_agreement": 1.0,
+    "classification": "UNIVERSE_CONSISTENT"
+  }
+}

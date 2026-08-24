@@ -1,0 +1,93 @@
+{
+  "windows": [
+    {
+      "window_id": "WF-01",
+      "description": "Pre-COVID validation",
+      "train_start": "2010-01-04",
+      "train_end": "2017-12-29",
+      "test_start": "2018-01-02",
+      "test_end": "2019-12-31",
+      "regime": "Pre-COVID bull market",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-02",
+      "description": "COVID crisis period",
+      "train_start": "2010-01-04",
+      "train_end": "2019-12-31",
+      "test_start": "2020-01-02",
+      "test_end": "2020-12-31",
+      "regime": "COVID crash and recovery",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-03",
+      "description": "Post-COVID recovery",
+      "train_start": "2010-01-04",
+      "train_end": "2020-12-31",
+      "test_start": "2021-01-04",
+      "test_end": "2021-12-31",
+      "regime": "Post-COVID recovery, meme stocks",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-04",
+      "description": "Inflation and rate hikes",
+      "train_start": "2010-01-04",
+      "train_end": "2021-12-31",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-30",
+      "regime": "Inflation spike, rate hikes",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-05",
+      "description": "Rate plateau and AI rally",
+      "train_start": "2010-01-04",
+      "train_end": "2022-12-30",
+      "test_start": "2023-01-03",
+      "test_end": "2023-12-29",
+      "regime": "Rate plateau, AI rally",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-06",
+      "description": "Recent market conditions",
+      "train_start": "2010-01-04",
+      "train_end": "2023-12-29",
+      "test_start": "2024-01-02",
+      "test_end": "2024-12-31",
+      "regime": "Rate cuts expected, continued recovery",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-07",
+      "description": "Most recent data",
+      "train_start": "2010-01-04",
+      "train_end": "2024-12-31",
+      "test_start": "2025-01-02",
+      "test_end": "2025-12-31",
+      "regime": "Current conditions",
+      "purge_days": 10,
+      "embargo_days": 5
+    },
+    {
+      "window_id": "WF-08",
+      "description": "YTD 2026",
+      "train_start": "2010-01-04",
+      "train_end": "2025-12-31",
+      "test_start": "2026-01-02",
+      "test_end": "2026-06-30",
+      "regime": "Current year",
+      "purge_days": 10,
+      "embargo_days": 5
+    }
+  ],
+  "total": 8
+}

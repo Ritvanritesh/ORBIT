@@ -1,0 +1,10 @@
+{
+  "050": {
+    "sign_agreement": 1.0,
+    "classification": "MODEL_CONSISTENT"
+  },
+  "100": {
+    "sign_agreement": 1.0,
+    "classification": "MODEL_CONSISTENT"
+  }
+}

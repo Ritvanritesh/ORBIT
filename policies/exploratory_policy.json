@@ -1,0 +1,44 @@
+{
+  "name": "Exploratory Research Policy",
+  "version": "1.0",
+  "description": "Rules for conducting bounded exploratory research",
+  "requirements": {
+    "branch_id": "Required",
+    "research_question": "Required",
+    "hypothesis_family": "Required",
+    "mechanism": "Required",
+    "allowed_datasets": "Required (explicit list)",
+    "allowed_universes": "Required (explicit list)",
+    "allowed_horizons": "Required (explicit list)",
+    "allowed_model_classes": "Required (explicit list)",
+    "maximum_experiment_budget": "Required (default: 20)",
+    "required_logging": "All experiments logged with rationale",
+    "stopping_rules": "Required"
+  },
+  "rules": [
+    "Every experiment must be recorded with unique ID",
+    "Failed experiments may not be deleted",
+    "Exploratory changes must include a rationale",
+    "Branch may change direction within approved scope",
+    "Branch may not silently expand into unrelated hypotheses",
+    "Budget cannot be expanded after favorable results",
+    "All artifacts must be reproducible"
+  ],
+  "stopping_rules": {
+    "review_at": [
+      5,
+      10,
+      "branch_completion"
+    ],
+    "early_stop_conditions": [
+      "Data integrity failure",
+      "Clear falsification",
+      "Computational impossibility",
+      "Pre-defined stopping criterion met"
+    ],
+    "no_early_stop_for": [
+      "Unfavorable results",
+      "Complexity of implementation"
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "phase": "15.2",
+  "title": "Model Stability & Signal Reconciliation Audit",
+  "parent_phase": "15.1",
+  "parent_verdict": "C",
+  "parent_gate": "YELLOW",
+  "locked_at": "2026-08-24T00:00:00+00:00",
+  "policy": "No scenario may be added after results are observed. All diagnostic scenarios predeclared.",
+  "candidate_inventory": [
+    {
+      "model_id": "H3-RIDGE-050",
+      "family": "ridge",
+      "fs": "FS-H3",
+      "universe": "ENV-050",
+      "status": "investigate"
+    },
+    {
+      "model_id": "H3-LASSO-050",
+      "family": "lasso",
+      "fs": "FS-H3",
+      "universe": "ENV-050",
+      "status": "investigate"
+    },
+    {
+      "model_id": "H3-RIDGE-100",
+      "family": "ridge",
+      "fs": "FS-H3",
+      "universe": "ENV-100",
+      "status": "investigate"
+    },
+    {
+      "model_id": "H3-LASSO-100",
+      "family": "lasso",
+      "fs": "FS-H3",
+      "universe": "ENV-100",
+      "status": "investigate"
+    }
+  ],
+  "limitations_investigated": [
+    "macro_feature_correlation_r0818",
+    "cliff_sensitivity_h3_ridge_050",
+    "directional_disagreement_100pct",
+    "lasso_degeneracy_alpha0001"
+  ],
+  "representation_diagnostics": [
+    {
+      "id": "REP-A",
+      "description": "Original FS-H3 (12 features)",
+      "features": "BASELINE+H3"
+    },
+    {
+      "id": "REP-B",
+      "description": "Drop macro_dff_level",
+      "features": "BASELINE+macro_dff_change_3m+macro_unemployment_level+macro_cpi_yoy"
+    },
+    {
+      "id": "REP-C",
+      "description": "Drop macro_dff_change_3m",
+      "features": "BASELINE+macro_dff_level+macro_unemployment_level+macro_cpi_yoy"
+    },
+    {
+      "id": "REP-D",
+      "description": "Orthogonalized macro (Gram-Schmidt on training data)",
+      "features": "BASELINE+orthogonalized_H3"
+    },
+    {
+      "id": "REP-E",
+      "description": "Demeaned macro (centered on training mean)",
+      "features": "BASELINE+demeaned_H3"
+    }
+  ],
+  "lasso_diagnostic_alphas": [
+    1e-05,
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "sensitivity_scales": [
+    0.01,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "temporal_periods": {
+    "train": {
+      "start": "2010-01-04",
+      "end": "2018-12-31"
+    },
+    "val": {
+      "start": "2019-01-02",
+      "end": "2021-12-31"
+    },
+    "test_early": {
+      "start": "2022-01-03",
+      "end": "2023-06-30"
+    },
+    "test_late": {
+      "start": "2023-07-03",
+      "end": "2026-06-30"
+    }
+  },
+  "correlation_thresholds": {
+    "LOW": 0.3,
+    "MODERATE": 0.5,
+    "HIGH": 0.7,
+    "SEVERE": 0.9
+  },
+  "disagreement_metrics": [
+    "raw_correlation",
+    "rank_correlation",
+    "sign_agreement",
+    "top_k_overlap",
+    "bottom_k_overlap"
+  ],
+  "degeneracy_thresholds": {
+    "nonzero_coeff_pct": 0.05,
+    "prediction_variance": 1e-12,
+    "zero_prediction_pct": 0.95
+  },
+  "pass_fail_criteria": {
+    "representation_preserves_effect": "IC remains > 0.05 after decorrelation",
+    "decorrelation_stabilizes_attribution": "ranking_agreement > 0.5 across representations",
+    "cliff_is_localized": "cliff affects < 20% of observations",
+    "disagreement_is_metric_artifact": "centered_correlation > 0.3",
+    "lasso_functional_under_alternative": "nonzero_count > 0 for at least one predefined alpha"
+  },
+  "adversarial_tests": [
+    "A1_diagnostic_added_after_lock",
+    "A2_test_period_for_orthogonalization",
+    "A3_combined_train_test_correlation",
+    "A4_alpha_selected_by_test_ic",
+    "A5_degenerate_model_excluded",
+    "A6_failed_diagnostic_omitted",
+    "A7_disagreement_sign_convention_error",
+    "A8_perturbation_scaling_mismatch",
+    "A9_feature_removal_changes_identity",
+    "A10_historical_artifact_modification"
+  ],
+  "plan_digest": "59c92941145c7b085abdcaf31dd1787f1afbbef21571d31369e18dd9669c8470"
+}

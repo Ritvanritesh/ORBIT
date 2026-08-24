@@ -1,0 +1,50 @@
+{
+  "A1_label_crosses_boundary": {
+    "result": "PASS",
+    "detail": "Purge uses LABEL_HORIZON + 5 days"
+  },
+  "A2_macro_before_availability": {
+    "result": "PASS",
+    "detail": "observation_date <= trade_date"
+  },
+  "A3_revised_macro": {
+    "result": "LIMITATION",
+    "detail": "UNRATE and CPIAUCSL may use revised values"
+  },
+  "A4_preprocessing_on_future": {
+    "result": "PASS",
+    "detail": "Scaler fitted on training only"
+  },
+  "A5_window_modified": {
+    "result": "PASS",
+    "detail": "Windows locked before execution"
+  },
+  "A6_failed_window_removed": {
+    "result": "PASS",
+    "detail": "All windows retained"
+  },
+  "A7_best_window_selected": {
+    "result": "PASS",
+    "detail": "All windows reported"
+  },
+  "A8_purge_feature_boundary": {
+    "result": "PASS",
+    "detail": "Purge uses label outcome window"
+  },
+  "A9_universe_excluded": {
+    "result": "PASS",
+    "detail": "Both universes included"
+  },
+  "A10_model_excluded": {
+    "result": "PASS",
+    "detail": "Both models included"
+  },
+  "A11_correction_reduced": {
+    "result": "PASS",
+    "detail": "Full correction applied"
+  },
+  "A12_portfolio_changed": {
+    "result": "PASS",
+    "detail": "No portfolio optimization"
+  }
+}

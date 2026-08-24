@@ -1,0 +1,214 @@
+{
+  "H3-RIDGE-050": {
+    "mean_ic": -0.001623454988914988,
+    "median_ic": 0.001735081285391132,
+    "std_ic": 0.035617379067862165,
+    "min_ic": -0.08126668716893248,
+    "max_ic": 0.04084363605652303,
+    "positive_window_fraction": 1.0,
+    "temporal_dispersion": 21.93911129039276,
+    "best_window_dependence": -3.1448105878751655,
+    "n_windows": 8,
+    "windows": [
+      {
+        "window_id": "WF-01",
+        "ic": 0.04084363605652303,
+        "regime": "Pre-COVID"
+      },
+      {
+        "window_id": "WF-02",
+        "ic": 0.02946400299641935,
+        "regime": "COVID"
+      },
+      {
+        "window_id": "WF-03",
+        "ic": -0.020139890967988763,
+        "regime": "Post-COVID"
+      },
+      {
+        "window_id": "WF-04",
+        "ic": -0.08126668716893248,
+        "regime": "Inflation"
+      },
+      {
+        "window_id": "WF-05",
+        "ic": 0.0015976551691723254,
+        "regime": "Rate Plateau"
+      },
+      {
+        "window_id": "WF-06",
+        "ic": 0.023295649288309735,
+        "regime": "Recent"
+      },
+      {
+        "window_id": "WF-07",
+        "ic": -0.008654512686433032,
+        "regime": "2025"
+      },
+      {
+        "window_id": "WF-08",
+        "ic": 0.0018725074016099385,
+        "regime": "2026 YTD"
+      }
+    ]
+  },
+  "H3-LASSO-050": {
+    "mean_ic": 0.0013706944331131708,
+    "median_ic": -0.013073953345444794,
+    "std_ic": 0.043648725064922254,
+    "min_ic": -0.06895790032343786,
+    "max_ic": 0.05807539807740969,
+    "positive_window_fraction": 1.0,
+    "temporal_dispersion": 31.844009554843577,
+    "best_window_dependence": 5.296160810245173,
+    "n_windows": 8,
+    "windows": [
+      {
+        "window_id": "WF-01",
+        "ic": 0.04961422221443145,
+        "regime": "Pre-COVID"
+      },
+      {
+        "window_id": "WF-02",
+        "ic": 0.05807539807740969,
+        "regime": "COVID"
+      },
+      {
+        "window_id": "WF-03",
+        "ic": -0.02194103682767255,
+        "regime": "Post-COVID"
+      },
+      {
+        "window_id": "WF-04",
+        "ic": -0.06895790032343786,
+        "regime": "Inflation"
+      },
+      {
+        "window_id": "WF-05",
+        "ic": -0.00814385575244773,
+        "regime": "Rate Plateau"
+      },
+      {
+        "window_id": "WF-06",
+        "ic": -0.018004050938441856,
+        "regime": "Recent"
+      },
+      {
+        "window_id": "WF-07",
+        "ic": -0.03219908789851116,
+        "regime": "2025"
+      },
+      {
+        "window_id": "WF-08",
+        "ic": 0.05252186691357538,
+        "regime": "2026 YTD"
+      }
+    ]
+  },
+  "H3-RIDGE-100": {
+    "mean_ic": 0.018683104127090254,
+    "median_ic": 0.025840209022400414,
+    "std_ic": 0.03453930934301936,
+    "min_ic": -0.05932672300866587,
+    "max_ic": 0.05423501448910976,
+    "positive_window_fraction": 1.0,
+    "temporal_dispersion": 1.8486912357366507,
+    "best_window_dependence": 0.36286134849144414,
+    "n_windows": 8,
+    "windows": [
+      {
+        "window_id": "WF-01",
+        "ic": 0.03943968487186264,
+        "regime": "Pre-COVID"
+      },
+      {
+        "window_id": "WF-02",
+        "ic": 0.05423501448910976,
+        "regime": "COVID"
+      },
+      {
+        "window_id": "WF-03",
+        "ic": 0.0047063153951525565,
+        "regime": "Post-COVID"
+      },
+      {
+        "window_id": "WF-04",
+        "ic": -0.05932672300866587,
+        "regime": "Inflation"
+      },
+      {
+        "window_id": "WF-05",
+        "ic": 0.012240733172938188,
+        "regime": "Rate Plateau"
+      },
+      {
+        "window_id": "WF-06",
+        "ic": 0.043390496532096305,
+        "regime": "Recent"
+      },
+      {
+        "window_id": "WF-07",
+        "ic": 0.007838620961392815,
+        "regime": "2025"
+      },
+      {
+        "window_id": "WF-08",
+        "ic": 0.04694069060283565,
+        "regime": "2026 YTD"
+      }
+    ]
+  },
+  "H3-LASSO-100": {
+    "mean_ic": NaN,
+    "median_ic": NaN,
+    "std_ic": NaN,
+    "min_ic": NaN,
+    "max_ic": NaN,
+    "positive_window_fraction": 1.0,
+    "temporal_dispersion": NaN,
+    "best_window_dependence": NaN,
+    "n_windows": 8,
+    "windows": [
+      {
+        "window_id": "WF-01",
+        "ic": NaN,
+        "regime": "Pre-COVID"
+      },
+      {
+        "window_id": "WF-02",
+        "ic": NaN,
+        "regime": "COVID"
+      },
+      {
+        "window_id": "WF-03",
+        "ic": 0.005047254560274286,
+        "regime": "Post-COVID"
+      },
+      {
+        "window_id": "WF-04",
+        "ic": 0.0021922633092353126,
+        "regime": "Inflation"
+      },
+      {
+        "window_id": "WF-05",
+        "ic": -0.04302884866551768,
+        "regime": "Rate Plateau"
+      },
+      {
+        "window_id": "WF-06",
+        "ic": 0.045035617344668766,
+        "regime": "Recent"
+      },
+      {
+        "window_id": "WF-07",
+        "ic": -0.038180700741738786,
+        "regime": "2025"
+      },
+      {
+        "window_id": "WF-08",
+        "ic": 0.07928234041126432,
+        "regime": "2026 YTD"
+      }
+    ]
+  }
+}

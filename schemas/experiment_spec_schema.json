@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "hypothesis_id",
+    "research_mode",
+    "universe",
+    "horizon",
+    "features",
+    "label",
+    "model",
+    "split_method",
+    "metrics",
+    "baseline"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^EXP-[0-9]{6}$"
+    },
+    "hypothesis_id": {
+      "type": "string",
+      "pattern": "^H-[0-9]{4}$"
+    },
+    "research_mode": {
+      "type": "string",
+      "enum": [
+        "EXPLORATORY",
+        "CONFIRMATORY"
+      ]
+    },
+    "universe": {
+      "type": "string"
+    },
+    "horizon": {
+      "type": "string"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "label": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "split_method": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "baseline": {
+      "type": "string"
+    },
+    "trial_number": {
+      "type": "integer"
+    },
+    "budget_group": {
+      "type": "string"
+    },
+    "preregistration_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parent_experiment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "result_status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "SUCCESS",
+        "FAILURE",
+        "DATA_UNAVAILABLE",
+        "PIPELINE_ERROR"
+      ]
+    }
+  }
+}

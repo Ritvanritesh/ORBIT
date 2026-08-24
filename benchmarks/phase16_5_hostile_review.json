@@ -1,0 +1,68 @@
+[
+  {
+    "branch_id": "B01",
+    "hypothesis": "HORIZON_EXTENSION — Macro regime information predicts medium-horizon (H-10, H-20) returns better than short-horizon (H-5)",
+    "are_we_proposing_because_evidence_supports_it": "PARTIAL — H-3 temporal instability (val IC negative, test IC positive) could reflect horizon mismatch OR regime dependence. Evidence is ambiguous.",
+    "is_economic_mechanism_real": "YES — Low-frequency macro data should logically predict better at matching horizons. This is grounded in information theory.",
+    "is_information_genuinely_new": "NO — Uses same macro features (fed_funds_rate, unemployment, CPI, dff_change_3m). Only the horizon changes.",
+    "is_there_enough_data": "YES — Same sample size. Longer horizons reduce effective N but not critically.",
+    "is_pit_possible": "YES — No new PIT requirements.",
+    "does_it_create_large_hypothesis_family": "NO — Only 2 new horizons tested (H-10, H-20). Small family.",
+    "are_we_designing_after_seeing_failures": "YES — Horizon extension is motivated by Phase 16 failure. This is a legitimate response to evidence, not snooping.",
+    "verdict": "SURVIVES",
+    "limitations": [
+      "Horizon extension may not help if signal is regime-specific not horizon-specific"
+    ]
+  },
+  {
+    "branch_id": "B02",
+    "hypothesis": "MACRO_MOMENTUM — Rate of change of macro variables predicts returns better than macro levels",
+    "verdict": "REJECT",
+    "reason": "Unknown branch"
+  },
+  {
+    "branch_id": "B03",
+    "hypothesis": "SECTOR_MACRO_INTERACTION — Sectors respond heterogeneously to macro regime changes, and this differential response is predictable",
+    "are_we_proposing_because_evidence_supports_it": "YES — H-3 macro effects are economically motivated (rate-sensitive sectors vs cyclicals). Not a post-hoc fishing expedition.",
+    "is_economic_mechanism_real": "YES — Sector-macro interaction is a well-documented financial phenomenon (REITs vs tech sensitivity to rates).",
+    "is_information_genuinely_new": "PARTLY — Uses existing macro data + sector labels, but the interaction is genuinely new information.",
+    "is_there_enough_data": "PARTIAL — Requires sufficient sector diversity within 50/100 stock universes. May be limited.",
+    "is_pit_possible": "YES — Sector labels from COMP, macro from FRED, both PIT-correct.",
+    "does_it_create_large_hypothesis_family": "MODERATE — Multiple sector-macro combinations possible (4 macro × N sectors). Need to limit family.",
+    "are_we_designing_after_seeing_failures": "YES — Motivated by H-3 success/failure pattern. Legitimate response.",
+    "verdict": "SURVIVES",
+    "material_concerns": [
+      "Sector diversity in ENV-050 may be insufficient for reliable interaction estimates"
+    ]
+  },
+  {
+    "branch_id": "B04",
+    "hypothesis": "EVENT_CONDITIONED_MACRO — Macro regime effects are stronger on macro release days and high-volatility days",
+    "verdict": "NOT_SELECTED",
+    "reason": "Lower priority score — not in top 3"
+  },
+  {
+    "branch_id": "B05",
+    "hypothesis": "PATH_STRUCTURE_REVISITED — Path structure features (drawdown, up/down ratio, vol-of-vol) predict at longer horizons (H-10, H-20) but not H-5",
+    "verdict": "NOT_SELECTED",
+    "reason": "Lower priority score — not in top 3"
+  },
+  {
+    "branch_id": "B06",
+    "hypothesis": "FUNDAMENTAL_HORIZON_MATCH — Quarterly fundamental features (valuation, leverage, profitability) predict H-60 (quarterly) returns better than H-5",
+    "verdict": "NOT_SELECTED",
+    "reason": "Lower priority score — not in top 3"
+  },
+  {
+    "branch_id": "B07",
+    "hypothesis": "WALK_FORWARD_VALIDATION — Temporal instability of H-3 can be resolved with walk-forward (expanding window) validation",
+    "verdict": "NOT_SELECTED",
+    "reason": "Lower priority score — not in top 3"
+  },
+  {
+    "branch_id": "B08",
+    "hypothesis": "HORIZON_ENSEMBLE — Combining predictions across multiple horizons (H-5, H-10, H-20) produces more stable signals than any single horizon",
+    "verdict": "NOT_SELECTED",
+    "reason": "Lower priority score — not in top 3"
+  }
+]

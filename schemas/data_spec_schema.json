@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "source",
+    "variables",
+    "PIT_classification"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "pattern": "^DS-[A-Z0-9-]+$"
+    },
+    "source": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "quarterly"
+      ]
+    },
+    "coverage": {
+      "type": "string"
+    },
+    "availability_timestamp_definition": {
+      "type": "string"
+    },
+    "PIT_classification": {
+      "type": "string",
+      "enum": [
+        "STRICT_PIT",
+        "PIT_WITH_KNOWN_LAG",
+        "REVISED_HISTORY",
+        "NON_PIT_RESEARCH_ONLY",
+        "UNKNOWN"
+      ]
+    },
+    "revision_risk": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "survivorship_risk": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

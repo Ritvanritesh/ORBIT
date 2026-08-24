@@ -1,0 +1,30 @@
+[
+  {
+    "candidate_id": "H3-RIDGE-050",
+    "repeated_through_time": "PARTIAL",
+    "removing_best_destroys": "PASS",
+    "concentrated_recent": "EVALUATE",
+    "verdict": "PARTIALLY_STABLE"
+  },
+  {
+    "candidate_id": "H3-LASSO-050",
+    "repeated_through_time": "PARTIAL",
+    "removing_best_destroys": "CONCERN",
+    "concentrated_recent": "EVALUATE",
+    "verdict": "PARTIALLY_STABLE"
+  },
+  {
+    "candidate_id": "H3-RIDGE-100",
+    "repeated_through_time": "PARTIAL",
+    "removing_best_destroys": "CONCERN",
+    "concentrated_recent": "EVALUATE",
+    "verdict": "PARTIALLY_STABLE"
+  },
+  {
+    "candidate_id": "H3-LASSO-100",
+    "repeated_through_time": "PARTIAL",
+    "removing_best_destroys": "PASS",
+    "concentrated_recent": "EVALUATE",
+    "verdict": "PARTIALLY_STABLE"
+  }
+]

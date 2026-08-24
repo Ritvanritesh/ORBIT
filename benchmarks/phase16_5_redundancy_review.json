@@ -1,0 +1,83 @@
+{
+  "reviews": [
+    {
+      "branch_id": "B01",
+      "hypothesis": "HORIZON_EXTENSION — Macro regime information predicts medium-horizon (H-10, H-20) returns better than short-horizon (H-5)",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Tests H-3 macro features at longer horizons (H-10, H-20). Distinct hypothesis from Phase 14.5/15/16 which only tested H-5.",
+      "what_is_new": "Horizon dimension not previously explored for macro features"
+    },
+    {
+      "branch_id": "B02",
+      "hypothesis": "MACRO_MOMENTUM — Rate of change of macro variables predicts returns better than macro levels",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Rate-of-change features are genuinely different from level features. Captures macro dynamics rather than macro state.",
+      "what_is_new": "Dynamic macro features (rate of change) vs static levels"
+    },
+    {
+      "branch_id": "B03",
+      "hypothesis": "SECTOR_MACRO_INTERACTION — Sectors respond heterogeneously to macro regime changes, and this differential response is predictable",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Sector-macro interactions are distinct from uniform macro effects. Tests differential sensitivity across sectors.",
+      "what_is_new": "Interaction of macro regime with sector identity"
+    },
+    {
+      "branch_id": "B04",
+      "hypothesis": "EVENT_CONDITIONED_MACRO — Macro regime effects are stronger on macro release days and high-volatility days",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Event-conditioned macro effects are distinct from unconditional macro effects. Tests timing of macro information.",
+      "what_is_new": "Conditioning on macro release dates"
+    },
+    {
+      "branch_id": "B05",
+      "hypothesis": "PATH_STRUCTURE_REVISITED — Path structure features (drawdown, up/down ratio, vol-of-vol) predict at longer horizons (H-10, H-20) but not H-5",
+      "is_redundant": false,
+      "verdict": "LIMITED_NOVELTY",
+      "reason": "Revisits path structure (H-1) with horizon extension. Partially overlaps with Phase 14.5 but tests new hypothesis.",
+      "what_is_new": "Horizon extension for path structure features",
+      "concern": "Path structure was classified FRAGILE — horizon extension may not resolve fragility"
+    },
+    {
+      "branch_id": "B06",
+      "hypothesis": "FUNDAMENTAL_HORIZON_MATCH — Quarterly fundamental features (valuation, leverage, profitability) predict H-60 (quarterly) returns better than H-5",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Revisits fundamental features with H-60 horizon. Distinct from Phase 12D/12E which tested H-5 only.",
+      "what_is_new": "Horizon-fundamental frequency alignment"
+    },
+    {
+      "branch_id": "B07",
+      "hypothesis": "WALK_FORWARD_VALIDATION — Temporal instability of H-3 can be resolved with walk-forward (expanding window) validation",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Walk-forward validation is a methodology improvement, not a new information domain. Addresses temporal instability directly.",
+      "what_is_new": "Expanding-window validation replacing single-split validation"
+    },
+    {
+      "branch_id": "B08",
+      "hypothesis": "HORIZON_ENSEMBLE — Combining predictions across multiple horizons (H-5, H-10, H-20) produces more stable signals than any single horizon",
+      "is_redundant": false,
+      "verdict": "SURVIVES",
+      "reason": "Multi-horizon ensemble is a methodology improvement. Uses existing information in a new way.",
+      "what_is_new": "Combining predictions across horizons"
+    }
+  ],
+  "surviving_branches": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08"
+  ],
+  "rejected_branches": [],
+  "total_branches": 8,
+  "surviving_count": 8,
+  "rejected_count": 0
+}

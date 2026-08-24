@@ -1,0 +1,75 @@
+{
+  "current_target": "LAB-006 (5-day excess return, corrected for dividends)",
+  "current_horizon": "H-5 (5 business days)",
+  "target_formulation": "Excess return vs equal-weight universe median",
+  "classification": {
+    "cross_sectional_ranking": {
+      "status": "TESTED",
+      "details": "Used throughout Phases 9-13C. Cross-sectional ranking within universe is the primary target.",
+      "coverage": "Comprehensive across all phases"
+    },
+    "directional_prediction": {
+      "status": "TESTED",
+      "details": "Implicit in IC evaluation — positive IC means model assigns higher scores to stocks that outperform.",
+      "coverage": "All models tested"
+    },
+    "absolute_return_prediction": {
+      "status": "UNTESTED",
+      "details": "ORBIT uses relative (cross-sectional) prediction, not absolute return forecasting.",
+      "coverage": "Never tested"
+    },
+    "conditional_prediction": {
+      "status": "PARTIALLY_TESTED",
+      "details": "H-3 macro regime conditions predictions on macro state, but prediction itself is unconditional within each regime.",
+      "coverage": "Partial — regime conditioning only"
+    },
+    "event_conditioned_prediction": {
+      "status": "UNTESTED",
+      "details": "No predictions conditioned on specific events (earnings, macro releases, corporate actions).",
+      "coverage": "Never tested"
+    },
+    "short_horizon_1_day": {
+      "status": "UNTESTED",
+      "details": "LAB-006 only computed for H-5. No 1-day horizon tested.",
+      "coverage": "Never tested",
+      "feasibility": "Can be computed from existing OHLCV data"
+    },
+    "short_horizon_2_day": {
+      "status": "UNTESTED",
+      "details": "No 2-day horizon tested.",
+      "coverage": "Never tested",
+      "feasibility": "Can be computed from existing data"
+    },
+    "medium_horizon_10_day": {
+      "status": "UNTESTED",
+      "details": "No 10-day horizon tested.",
+      "coverage": "Never tested",
+      "feasibility": "Can be computed from existing data"
+    },
+    "long_horizon_20_day": {
+      "status": "UNTESTED",
+      "details": "No 20-day horizon tested.",
+      "coverage": "Never tested",
+      "feasibility": "Can be computed from existing data"
+    },
+    "long_horizon_60_day": {
+      "status": "UNTESTED",
+      "details": "No 60-day horizon tested.",
+      "coverage": "Never tested",
+      "feasibility": "Can be computed from existing data"
+    }
+  },
+  "horizon_mismatch_analysis": {
+    "hypothesis": "Macro regime information (low-frequency, monthly/quarterly updates) may be better suited to longer horizons than the 5-day prediction window currently used.",
+    "evidence": "H-3 uses FRED macro data (monthly release frequency, quarterly for some). Predicting 5-day returns from monthly macro updates creates a frequency mismatch.",
+    "testable": true,
+    "test_proposal": "Recompute targets for H-10, H-20 horizons and test H-3 macro regime features against longer horizons",
+    "prior_evidence": "Phase 15.2 temporal instability (val IC negative, test IC positive) may partly reflect horizon mismatch"
+  },
+  "target_formulation_audit": {
+    "LAB_005_defect": "Excess return calculated vs individual stock historical mean — introduced bias",
+    "LAB_006_correction": "Excess return calculated vs equal-weight universe median — correct formulation",
+    "current_status": "LAB-006 is correct and should be retained",
+    "remaining_concern": "Cross-sectional median subtraction removes market beta but does not control for sector or factor exposures"
+  }
+}
