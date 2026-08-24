@@ -1,0 +1,114 @@
+{
+  "phase": "20A.2",
+  "step": 8,
+  "timestamp": "2026-08-24T18:07:17.350661+00:00",
+  "per_registration": {
+    "OOS-REG-20A-HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "status": "DATA_NOT_READY",
+      "metrics": {
+        "trading_days": 36,
+        "cross_sectional_observations": 5292,
+        "universe_coverage": 1.0,
+        "data_completeness": 1.0
+      },
+      "thresholds": {
+        "minimum_trading_days": 60,
+        "minimum_cross_sectional_observations": 500,
+        "minimum_universe_coverage": 0.8,
+        "minimum_data_completeness": 0.9
+      },
+      "blocking_conditions": [
+        {
+          "condition": "INSUFFICIENT_ELAPSED_PERIOD",
+          "observed": 36,
+          "required": 60,
+          "detail": "Need 24 more trading days"
+        }
+      ],
+      "blocking_count": 1
+    },
+    "OOS-REG-20A-HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "status": "DATA_NOT_READY",
+      "metrics": {
+        "trading_days": 36,
+        "cross_sectional_observations": 5292,
+        "universe_coverage": 1.0,
+        "data_completeness": 1.0
+      },
+      "thresholds": {
+        "minimum_trading_days": 60,
+        "minimum_cross_sectional_observations": 500,
+        "minimum_universe_coverage": 0.8,
+        "minimum_data_completeness": 0.9
+      },
+      "blocking_conditions": [
+        {
+          "condition": "INSUFFICIENT_ELAPSED_PERIOD",
+          "observed": 36,
+          "required": 60,
+          "detail": "Need 24 more trading days"
+        }
+      ],
+      "blocking_count": 1
+    },
+    "OOS-REG-20A-HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "status": "DATA_NOT_READY",
+      "metrics": {
+        "trading_days": 36,
+        "cross_sectional_observations": 5292,
+        "universe_coverage": 1.0,
+        "data_completeness": 1.0
+      },
+      "thresholds": {
+        "minimum_trading_days": 60,
+        "minimum_cross_sectional_observations": 500,
+        "minimum_universe_coverage": 0.8,
+        "minimum_data_completeness": 0.9
+      },
+      "blocking_conditions": [
+        {
+          "condition": "INSUFFICIENT_ELAPSED_PERIOD",
+          "observed": 36,
+          "required": 60,
+          "detail": "Need 24 more trading days"
+        }
+      ],
+      "blocking_count": 1
+    },
+    "OOS-REG-20A-HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "status": "DATA_NOT_READY",
+      "metrics": {
+        "trading_days": 36,
+        "cross_sectional_observations": 5292,
+        "universe_coverage": 1.0,
+        "data_completeness": 1.0
+      },
+      "thresholds": {
+        "minimum_trading_days": 60,
+        "minimum_cross_sectional_observations": 500,
+        "minimum_universe_coverage": 0.8,
+        "minimum_data_completeness": 0.9
+      },
+      "blocking_conditions": [
+        {
+          "condition": "INSUFFICIENT_ELAPSED_PERIOD",
+          "observed": 36,
+          "required": 60,
+          "detail": "Need 24 more trading days"
+        }
+      ],
+      "blocking_count": 1
+    }
+  },
+  "overall_status": "DATA_NOT_READY",
+  "thresholds": {
+    "minimum_trading_days": 60,
+    "minimum_cross_sectional_observations": 500,
+    "minimum_universe_coverage": 0.8,
+    "minimum_data_completeness": 0.9
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "phase": "20A.2",
+  "step": 6,
+  "timestamp": "2026-08-24T18:07:17.346749+00:00",
+  "per_registration": {
+    "OOS-REG-20A-HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "vol_30",
+            "log_dv_med_20"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/2"
+        },
+        "DS-EXP-100": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "vol_30",
+            "log_dv_med_20"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/2"
+        }
+      },
+      "average_completeness": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "ret_10",
+            "ret_20",
+            "ret_30"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/3"
+        },
+        "DS-EXP-100": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "ret_10",
+            "ret_20",
+            "ret_30"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/3"
+        }
+      },
+      "average_completeness": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "vol_10",
+            "vol_30"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/2"
+        },
+        "DS-EXP-100": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "vol_10",
+            "vol_30"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/2"
+        }
+      },
+      "average_completeness": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "sma_ratio_5_30",
+            "sma_ratio_15_40",
+            "log_dv_med_20"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/3"
+        },
+        "DS-EXP-100": {
+          "completeness": 1.0,
+          "base_column_completeness": 1.0,
+          "feature_null_fraction": 0.0,
+          "available_features": [],
+          "missing_features": [
+            "sma_ratio_5_30",
+            "sma_ratio_15_40",
+            "log_dv_med_20"
+          ],
+          "null_fractions": {},
+          "detail": "Base: 5/5, Features: 0/3"
+        }
+      },
+      "average_completeness": 1.0,
+      "meets_threshold": true
+    }
+  }
+}

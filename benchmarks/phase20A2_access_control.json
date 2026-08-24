@@ -1,0 +1,17 @@
+{
+  "phase": "20A.2",
+  "step": 12,
+  "timestamp": "2026-08-24T18:07:17.511623+00:00",
+  "directory_structure": {
+    "quarantine": true,
+    "pending": true,
+    "eligible": true,
+    "rejected": true,
+    "manifests": true
+  },
+  "all_dirs_exist": true,
+  "oos_data_in_eligible": true,
+  "eligible_file_count": 2,
+  "quarantine_empty": true,
+  "quarantine_file_count": 0
+}

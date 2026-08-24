@@ -1,0 +1,83 @@
+{
+  "phase": "20A.2",
+  "step": 5,
+  "timestamp": "2026-08-24T18:07:17.345751+00:00",
+  "per_registration": {
+    "OOS-REG-20A-HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "per_universe": {
+        "ENV-050": {
+          "coverage": 1.0,
+          "oos_instruments": 50,
+          "expected_instruments": 50,
+          "detail": "50/50 instruments present"
+        },
+        "ENV-100": {
+          "coverage": 1.0,
+          "oos_instruments": 97,
+          "expected_instruments": 97,
+          "detail": "97/97 instruments present"
+        }
+      },
+      "average_coverage": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "per_universe": {
+        "ENV-050": {
+          "coverage": 1.0,
+          "oos_instruments": 50,
+          "expected_instruments": 50,
+          "detail": "50/50 instruments present"
+        },
+        "ENV-100": {
+          "coverage": 1.0,
+          "oos_instruments": 97,
+          "expected_instruments": 97,
+          "detail": "97/97 instruments present"
+        }
+      },
+      "average_coverage": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "per_universe": {
+        "ENV-050": {
+          "coverage": 1.0,
+          "oos_instruments": 50,
+          "expected_instruments": 50,
+          "detail": "50/50 instruments present"
+        },
+        "ENV-100": {
+          "coverage": 1.0,
+          "oos_instruments": 97,
+          "expected_instruments": 97,
+          "detail": "97/97 instruments present"
+        }
+      },
+      "average_coverage": 1.0,
+      "meets_threshold": true
+    },
+    "OOS-REG-20A-HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "per_universe": {
+        "ENV-050": {
+          "coverage": 1.0,
+          "oos_instruments": 50,
+          "expected_instruments": 50,
+          "detail": "50/50 instruments present"
+        },
+        "ENV-100": {
+          "coverage": 1.0,
+          "oos_instruments": 97,
+          "expected_instruments": 97,
+          "detail": "97/97 instruments present"
+        }
+      },
+      "average_coverage": 1.0,
+      "meets_threshold": true
+    }
+  }
+}

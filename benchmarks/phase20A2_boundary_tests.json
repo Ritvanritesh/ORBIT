@@ -1,0 +1,42 @@
+{
+  "phase": "20A.2",
+  "step": 3,
+  "timestamp": "2026-08-24T18:07:17.092375+00:00",
+  "tests": {
+    "DS-EXP-050_all_after_cutoff": {
+      "status": "PASS",
+      "detail": "All 1800 OOS observations have timestamp > 2026-06-30",
+      "max_historical_date": "2026-06-30"
+    },
+    "DS-EXP-050_no_duplicates": {
+      "status": "PASS",
+      "detail": "1800 rows, 36 dates x 50 instruments = 1800 expected max"
+    },
+    "DS-EXP-050_valid_structure": {
+      "status": "PASS",
+      "detail": "instrument_id=True, trade_date=True, OHLC=True"
+    },
+    "DS-EXP-050_no_critical_nulls": {
+      "status": "PASS",
+      "detail": "{'instrument_id': 0, 'trade_date': 0, 'close': 0}"
+    },
+    "DS-EXP-100_all_after_cutoff": {
+      "status": "PASS",
+      "detail": "All 3492 OOS observations have timestamp > 2026-06-30",
+      "max_historical_date": "2026-06-30"
+    },
+    "DS-EXP-100_no_duplicates": {
+      "status": "PASS",
+      "detail": "3492 rows, 36 dates x 97 instruments = 3492 expected max"
+    },
+    "DS-EXP-100_valid_structure": {
+      "status": "PASS",
+      "detail": "instrument_id=True, trade_date=True, OHLC=True"
+    },
+    "DS-EXP-100_no_critical_nulls": {
+      "status": "PASS",
+      "detail": "{'instrument_id': 0, 'trade_date': 0, 'close': 0}"
+    }
+  },
+  "overall": "PASS"
+}

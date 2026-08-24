@@ -1,0 +1,21 @@
+{
+  "phase": "20A.2",
+  "step": 10,
+  "timestamp": "2026-08-24T18:07:17.435873+00:00",
+  "datasets": {
+    "DS-EXP-050": {
+      "rows": 1800,
+      "instruments": 50,
+      "dates": 0,
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible\\DS-EXP-050_oos.parquet",
+      "status": "STORED"
+    },
+    "DS-EXP-100": {
+      "rows": 3492,
+      "instruments": 97,
+      "dates": 0,
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible\\DS-EXP-100_oos.parquet",
+      "status": "STORED"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "phase": "20A.2",
+  "step": 4,
+  "timestamp": "2026-08-24T18:07:17.093372+00:00",
+  "checks": {
+    "DS-EXP-050_quality": {
+      "status": "PASS",
+      "checks": {
+        "no_negative_open": {
+          "status": "PASS",
+          "detail": "Negative values in open: False"
+        },
+        "no_negative_high": {
+          "status": "PASS",
+          "detail": "Negative values in high: False"
+        },
+        "no_negative_low": {
+          "status": "PASS",
+          "detail": "Negative values in low: False"
+        },
+        "no_negative_close": {
+          "status": "PASS",
+          "detail": "Negative values in close: False"
+        },
+        "no_negative_adjclose": {
+          "status": "PASS",
+          "detail": "Negative values in adjclose: False"
+        },
+        "high_gte_low": {
+          "status": "PASS",
+          "detail": "High < Low violations: 0"
+        },
+        "non_negative_volume": {
+          "status": "PASS",
+          "detail": "Negative volume: 0"
+        },
+        "positive_close": {
+          "status": "PASS",
+          "detail": "Zero/negative close: 0"
+        },
+        "valid_dates": {
+          "status": "PASS",
+          "detail": "Null dates: 0"
+        }
+      },
+      "passed": 9,
+      "total": 9
+    },
+    "DS-EXP-100_quality": {
+      "status": "PASS",
+      "checks": {
+        "no_negative_open": {
+          "status": "PASS",
+          "detail": "Negative values in open: False"
+        },
+        "no_negative_high": {
+          "status": "PASS",
+          "detail": "Negative values in high: False"
+        },
+        "no_negative_low": {
+          "status": "PASS",
+          "detail": "Negative values in low: False"
+        },
+        "no_negative_close": {
+          "status": "PASS",
+          "detail": "Negative values in close: False"
+        },
+        "no_negative_adjclose": {
+          "status": "PASS",
+          "detail": "Negative values in adjclose: False"
+        },
+        "high_gte_low": {
+          "status": "PASS",
+          "detail": "High < Low violations: 0"
+        },
+        "non_negative_volume": {
+          "status": "PASS",
+          "detail": "Negative volume: 0"
+        },
+        "positive_close": {
+          "status": "PASS",
+          "detail": "Zero/negative close: 0"
+        },
+        "valid_dates": {
+          "status": "PASS",
+          "detail": "Null dates: 0"
+        }
+      },
+      "passed": 9,
+      "total": 9
+    }
+  },
+  "overall": "PASS"
+}

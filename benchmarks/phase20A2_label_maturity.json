@@ -1,0 +1,215 @@
+{
+  "phase": "20A.2",
+  "step": 7,
+  "timestamp": "2026-08-24T18:07:17.349032+00:00",
+  "per_registration": {
+    "OOS-REG-20A-HYP-MAC": {
+      "hypothesis_id": "HYP-MAC",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        },
+        "DS-EXP-100": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        }
+      },
+      "all_mature": true
+    },
+    "OOS-REG-20A-HYP-MOM": {
+      "hypothesis_id": "HYP-MOM",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        },
+        "DS-EXP-100": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        }
+      },
+      "all_mature": true
+    },
+    "OOS-REG-20A-HYP-VOL": {
+      "hypothesis_id": "HYP-VOL",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        },
+        "DS-EXP-100": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        }
+      },
+      "all_mature": true
+    },
+    "OOS-REG-20A-HYP-XSEC": {
+      "hypothesis_id": "HYP-XSEC",
+      "per_dataset": {
+        "DS-EXP-050": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        },
+        "DS-EXP-100": {
+          "mature": true,
+          "total_oos_dates": 36,
+          "min_horizon": 21,
+          "horizon_maturity": {
+            "H-5": {
+              "mature": true,
+              "mature_dates": 31,
+              "detail": "31 dates with mature labels"
+            },
+            "H-10": {
+              "mature": true,
+              "mature_dates": 26,
+              "detail": "26 dates with mature labels"
+            },
+            "H-20": {
+              "mature": true,
+              "mature_dates": 16,
+              "detail": "16 dates with mature labels"
+            }
+          },
+          "detail": "36 OOS dates, need 21 for full maturity"
+        }
+      },
+      "all_mature": true
+    }
+  }
+}
