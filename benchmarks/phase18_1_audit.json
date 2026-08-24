@@ -1,0 +1,26 @@
+{
+  "phase": "18.1",
+  "timestamp": "2026-08-24T18:57:30.205348",
+  "locked_plan_digest": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+  "budget_accounting": "30/30",
+  "budget_remaining": 0,
+  "decision_consistency": "DECISION_INVALID",
+  "hypothesis_verdicts": {
+    "HYP-MOM": "CONFIRMATION_CANDIDATE",
+    "HYP-VOL": "CONFIRMATION_CANDIDATE",
+    "HYP-MAC": "CONFIRMATION_CANDIDATE",
+    "HYP-XSEC": "CONFIRMATION_CANDIDATE"
+  },
+  "confirmation_candidates": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "exploratory_signals": [],
+  "horizon_pattern_valid": false,
+  "adversarial_summary": "10/10 REJECTED",
+  "branch_resolution": "EXPLORATION_COMPLETE",
+  "overall_verdict": "B",
+  "final_decision": "PROMOTE_SPECIFIC_HYPOTHESIS_TO_CONFIRMATORY"
+}

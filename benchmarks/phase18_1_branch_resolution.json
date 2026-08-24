@@ -1,0 +1,15 @@
+{
+  "current_status": "EXPLORATION_COMPLETE",
+  "budget_exhausted": true,
+  "budget_remaining": 0,
+  "confirmation_candidates": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "exploratory_signals": [],
+  "recommended_action": "Branch budget exhausted with candidate hypotheses identified",
+  "registry_update_required": true,
+  "note": "Branch should be closed as EXPLORATION_COMPLETE; decision should be CLOSE_B001_AS_EXPLORATORY_EVIDENCE"
+}

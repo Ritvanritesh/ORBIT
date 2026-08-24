@@ -1,0 +1,190 @@
+{
+  "HYP-MOM": {
+    "status": "CONFIRMATION_CANDIDATE",
+    "criteria_met": 10,
+    "criteria_total": 10,
+    "criteria": {
+      "exceeds_null": {
+        "met": true,
+        "detail": "8/8 experiments exceed null"
+      },
+      "statistical_support": {
+        "met": true,
+        "detail": "Mean val IC = 0.0142"
+      },
+      "horizon_stability": {
+        "met": true,
+        "detail": "Pattern: BROAD_STABILITY"
+      },
+      "temporal_stability": {
+        "met": true,
+        "detail": "Temporal analysis completed in Phase 18 Step 11"
+      },
+      "universe_consistency": {
+        "met": true,
+        "detail": "050=0.0137, 100=0.0150"
+      },
+      "model_consistency": {
+        "met": true,
+        "detail": "Ridge=0.0148, Lasso=0.0123"
+      },
+      "coherent_mechanism": {
+        "met": true,
+        "detail": "Mechanism defined in B001_hypotheses.json"
+      },
+      "no_leakage": {
+        "met": true,
+        "detail": "LAB-006 verified; splits respected"
+      },
+      "exceeds_predictive_baseline": {
+        "met": true,
+        "detail": "Mean IC 0.0142 vs canonical baseline ~0.001"
+      },
+      "limitations_compatible": {
+        "met": true,
+        "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+      }
+    }
+  },
+  "HYP-VOL": {
+    "status": "CONFIRMATION_CANDIDATE",
+    "criteria_met": 10,
+    "criteria_total": 10,
+    "criteria": {
+      "exceeds_null": {
+        "met": true,
+        "detail": "8/8 experiments exceed null"
+      },
+      "statistical_support": {
+        "met": true,
+        "detail": "Mean val IC = 0.0126"
+      },
+      "horizon_stability": {
+        "met": true,
+        "detail": "Pattern: BROAD_STABILITY"
+      },
+      "temporal_stability": {
+        "met": true,
+        "detail": "Temporal analysis completed in Phase 18 Step 11"
+      },
+      "universe_consistency": {
+        "met": true,
+        "detail": "050=0.0103, 100=0.0143"
+      },
+      "model_consistency": {
+        "met": true,
+        "detail": "Ridge=0.0129, Lasso=0.0084"
+      },
+      "coherent_mechanism": {
+        "met": true,
+        "detail": "Mechanism defined in B001_hypotheses.json"
+      },
+      "no_leakage": {
+        "met": true,
+        "detail": "LAB-006 verified; splits respected"
+      },
+      "exceeds_predictive_baseline": {
+        "met": true,
+        "detail": "Mean IC 0.0126 vs canonical baseline ~0.001"
+      },
+      "limitations_compatible": {
+        "met": true,
+        "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+      }
+    }
+  },
+  "HYP-MAC": {
+    "status": "CONFIRMATION_CANDIDATE",
+    "criteria_met": 10,
+    "criteria_total": 10,
+    "criteria": {
+      "exceeds_null": {
+        "met": true,
+        "detail": "8/8 experiments exceed null"
+      },
+      "statistical_support": {
+        "met": true,
+        "detail": "Mean val IC = 0.0193"
+      },
+      "horizon_stability": {
+        "met": true,
+        "detail": "Pattern: MONOTONIC_IMPROVEMENT"
+      },
+      "temporal_stability": {
+        "met": true,
+        "detail": "Temporal analysis completed in Phase 18 Step 11"
+      },
+      "universe_consistency": {
+        "met": true,
+        "detail": "050=0.0197, 100=0.0199"
+      },
+      "model_consistency": {
+        "met": true,
+        "detail": "Ridge=0.0194, Lasso=0.0209"
+      },
+      "coherent_mechanism": {
+        "met": true,
+        "detail": "Mechanism defined in B001_hypotheses.json"
+      },
+      "no_leakage": {
+        "met": true,
+        "detail": "LAB-006 verified; splits respected"
+      },
+      "exceeds_predictive_baseline": {
+        "met": true,
+        "detail": "Mean IC 0.0193 vs canonical baseline ~0.001"
+      },
+      "limitations_compatible": {
+        "met": true,
+        "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+      }
+    }
+  },
+  "HYP-XSEC": {
+    "status": "CONFIRMATION_CANDIDATE",
+    "criteria_met": 9,
+    "criteria_total": 10,
+    "criteria": {
+      "exceeds_null": {
+        "met": true,
+        "detail": "6/6 experiments exceed null"
+      },
+      "statistical_support": {
+        "met": true,
+        "detail": "Mean val IC = 0.0264"
+      },
+      "horizon_stability": {
+        "met": true,
+        "detail": "Pattern: MONOTONIC_IMPROVEMENT"
+      },
+      "temporal_stability": {
+        "met": true,
+        "detail": "Temporal analysis completed in Phase 18 Step 11"
+      },
+      "universe_consistency": {
+        "met": true,
+        "detail": "050=0.0271, 100=0.0258"
+      },
+      "model_consistency": {
+        "met": false,
+        "detail": "Lasso not tested for this hypothesis"
+      },
+      "coherent_mechanism": {
+        "met": true,
+        "detail": "Mechanism defined in B001_hypotheses.json"
+      },
+      "no_leakage": {
+        "met": true,
+        "detail": "LAB-006 verified; splits respected"
+      },
+      "exceeds_predictive_baseline": {
+        "met": true,
+        "detail": "Mean IC 0.0264 vs canonical baseline ~0.001"
+      },
+      "limitations_compatible": {
+        "met": true,
+        "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+      }
+    }
+  }
+}

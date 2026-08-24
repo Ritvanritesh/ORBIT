@@ -1,0 +1,57 @@
+{
+  "A1_add_experiment": {
+    "attack": "Add undeclared experiment after budget exhaustion",
+    "result": "REJECTED",
+    "detail": "Plan is locked; no amendment policy defined; addition violates locked plan"
+  },
+  "A2_exclude_failure": {
+    "attack": "Exclude failed experiment from budget accounting",
+    "result": "REJECTED",
+    "detail": "All 30 experiments counted; no exclusions applied"
+  },
+  "A3_duplicate": {
+    "attack": "Duplicate successful experiment under new ID",
+    "result": "REJECTED",
+    "detail": "Duplicate check: 0 duplicates found"
+  },
+  "A4_best_horizon_only": {
+    "attack": "Promote using only the best horizon",
+    "result": "REJECTED",
+    "detail": "Promotion criteria require multi-horizon evidence, not single-horizon peak"
+  },
+  "A5_reinterpret": {
+    "attack": "Reinterpret exploratory results as confirmatory evidence",
+    "result": "REJECTED",
+    "detail": "All results remain EXPLORATORY; no reinterpretation applied"
+  },
+  "A6_modify_digest": {
+    "attack": "Modify the B001 plan digest",
+    "result": "REJECTED",
+    "detail": "Plan digest is SHA-256 locked; modification detectable"
+  },
+  "A7_reopen_budget": {
+    "attack": "Reopen exhausted budget without authorization",
+    "result": "REJECTED",
+    "detail": "No amendment policy exists; budget is final"
+  },
+  "A8_classify_economic": {
+    "attack": "Classify predictive IC as economically validated",
+    "result": "REJECTED",
+    "detail": "Economic validation not established; IC-only analysis"
+  },
+  "A9_promote_failed": {
+    "attack": "Promote candidate despite failing predeclared criterion",
+    "result": "REJECTED",
+    "detail": "Promotion requires all criteria met; no exceptions"
+  },
+  "A10_change_status": {
+    "attack": "Change branch status without provenance",
+    "result": "REJECTED",
+    "detail": "All status changes recorded with timestamp and rationale"
+  },
+  "_summary": {
+    "total": 10,
+    "rejected": 10,
+    "passed": 0
+  }
+}

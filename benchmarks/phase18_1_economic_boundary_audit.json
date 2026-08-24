@@ -1,0 +1,30 @@
+{
+  "HYP-MOM": {
+    "classification": "PREDICTIVE_EVIDENCE_ONLY",
+    "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED",
+    "no_profitability_claim": true,
+    "no_tradeability_claim": true,
+    "no_portfolio_validation": true
+  },
+  "HYP-VOL": {
+    "classification": "PREDICTIVE_EVIDENCE_ONLY",
+    "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED",
+    "no_profitability_claim": true,
+    "no_tradeability_claim": true,
+    "no_portfolio_validation": true
+  },
+  "HYP-MAC": {
+    "classification": "PREDICTIVE_EVIDENCE_ONLY",
+    "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED",
+    "no_profitability_claim": true,
+    "no_tradeability_claim": true,
+    "no_portfolio_validation": true
+  },
+  "HYP-XSEC": {
+    "classification": "PREDICTIVE_EVIDENCE_ONLY",
+    "note": "ECONOMIC VALIDATION NOT YET ESTABLISHED",
+    "no_profitability_claim": true,
+    "no_tradeability_claim": true,
+    "no_portfolio_validation": true
+  }
+}

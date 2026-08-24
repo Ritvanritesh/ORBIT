@@ -1,0 +1,10 @@
+{
+  "phase18_decision": "CONTINUE_WITHIN_REMAINING_BUDGET",
+  "budget_remaining": 0,
+  "budget_exhausted": true,
+  "classification": "DECISION_INVALID",
+  "correct_decision": "EXPLORATION_COMPLETE",
+  "rationale": "Decision says CONTINUE but budget is exhausted (0 remaining). No legal basis for continuation.",
+  "governance_rule": "CONTINUE_WITHIN_REMAINING_BUDGET requires remaining budget > 0",
+  "finding": "Phase 18 decision is INCONSISTENT with budget state"
+}

@@ -1,0 +1,49 @@
+{
+  "A1_horizon_cherry_picking": {
+    "target": "HYP-MOM",
+    "attack": "Select only the horizon with best results for promotion",
+    "result": "PASS",
+    "detail": "All 3 horizons pre-specified; pattern analysis covers all horizons"
+  },
+  "A2_budget_loopholes": {
+    "attack": "Exploit budget exhaustion to claim remaining budget",
+    "result": "MATERIAL_CONCERN",
+    "detail": "Phase 18 decision CONTINUE_WITHIN_REMAINING_BUDGET is inconsistent with exhausted budget"
+  },
+  "A3_multiple_testing": {
+    "attack": "Inflate significance through multiple hypotheses",
+    "result": "LIMITATION",
+    "detail": "4 hypotheses tested; correction applied but raw ICs are small (0.01-0.03)"
+  },
+  "A4_posthoc_horizon": {
+    "attack": "Prefer longer horizons after seeing H-20 results",
+    "result": "LIMITATION",
+    "detail": "Horizon preference was pre-specified in hypothesis mechanism"
+  },
+  "A5_mean_only_pattern": {
+    "attack": "Interpret mean IC differences as meaningful without uncertainty",
+    "result": "LIMITATION",
+    "detail": "Horizon differences are small (0.001-0.01); uncertainty not fully characterized"
+  },
+  "A6_regime_concentration": {
+    "attack": "Results concentrated in specific market regime",
+    "result": "LIMITATION",
+    "detail": "Walk-forward covers 5 windows; regime concentration not fully tested"
+  },
+  "A7_predictive_to_economic": {
+    "attack": "Infer economic value from predictive IC alone",
+    "result": "PASS",
+    "detail": "Phase 18 explicitly states ECONOMIC VALIDATION NOT ESTABLISHED"
+  },
+  "A8_reuse_exploratory": {
+    "attack": "Treat exploratory results as confirmatory evidence",
+    "result": "PASS",
+    "detail": "All results classified as EXPLORATORY_SIGNAL, not CONFIRMATORY"
+  },
+  "_summary": {
+    "total": 8,
+    "pass": 3,
+    "limitation": 4,
+    "material_concern": 1
+  }
+}

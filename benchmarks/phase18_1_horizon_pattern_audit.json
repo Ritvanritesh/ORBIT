@@ -1,0 +1,54 @@
+{
+  "HYP-MOM": {
+    "claimed_pattern": "BROAD_STABILITY",
+    "h5_ic": 0.014256045791472547,
+    "h10_ic": 0.014712688616855733,
+    "h20_ic": 0.013591924079171591,
+    "is_monotonic": false,
+    "max_horizon_difference": 0.0011207645376841418,
+    "universe_survives": true,
+    "model_consistent": true,
+    "pattern_valid": true,
+    "concern_level": "LOW",
+    "note": ""
+  },
+  "HYP-VOL": {
+    "claimed_pattern": "BROAD_STABILITY",
+    "h5_ic": 0.018829495505191272,
+    "h10_ic": 0.009096798193748716,
+    "h20_ic": 0.009865756958660495,
+    "is_monotonic": false,
+    "max_horizon_difference": 0.009732697311442556,
+    "universe_survives": true,
+    "model_consistent": true,
+    "pattern_valid": true,
+    "concern_level": "LOW",
+    "note": ""
+  },
+  "HYP-MAC": {
+    "claimed_pattern": "MONOTONIC_IMPROVEMENT",
+    "h5_ic": 0.015667549255314654,
+    "h10_ic": 0.018471522390733904,
+    "h20_ic": 0.023726083875035043,
+    "is_monotonic": true,
+    "max_horizon_difference": 0.005254561484301139,
+    "universe_survives": true,
+    "model_consistent": true,
+    "pattern_valid": true,
+    "concern_level": "LOW",
+    "note": "Three mean values increasing does not alone prove monotonic relationship"
+  },
+  "HYP-XSEC": {
+    "claimed_pattern": "MONOTONIC_IMPROVEMENT",
+    "h5_ic": 0.023195011709342045,
+    "h10_ic": 0.029056277936978722,
+    "h20_ic": 0.02708708122192469,
+    "is_monotonic": false,
+    "max_horizon_difference": 0.005861266227636677,
+    "universe_survives": true,
+    "model_consistent": null,
+    "pattern_valid": false,
+    "concern_level": "MEDIUM",
+    "note": "Three mean values increasing does not alone prove monotonic relationship"
+  }
+}

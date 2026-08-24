@@ -1,0 +1,50 @@
+{
+  "plan_digest_stored": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+  "plan_digest_recomputed": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+  "digest_match": true,
+  "experiment_budget": 30,
+  "experiments_planned": 30,
+  "hypotheses": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "horizons": [
+    "H-5",
+    "H-10",
+    "H-20"
+  ],
+  "models": {
+    "ridge": {
+      "alpha": 1.0
+    },
+    "lasso": {
+      "alpha": 0.001
+    }
+  },
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "stopping_rules": {
+    "early_stop": [
+      "Data integrity failure"
+    ],
+    "no_early_stop_for": [
+      "Unfavorable results"
+    ]
+  },
+  "exclusions": [
+    "No new experiments after results observed",
+    "No horizon cherry-picking"
+  ],
+  "baseline_comparisons": [
+    "BL-NULL-001",
+    "BL-NULL-002",
+    "BL-SIMPLE-001"
+  ],
+  "amendment_policy": "No amendment policy defined in locked plan",
+  "plan_intact": true,
+  "conclusion": "Plan is intact and unmodified"
+}

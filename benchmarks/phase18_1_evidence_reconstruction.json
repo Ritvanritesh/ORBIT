@@ -1,0 +1,502 @@
+{
+  "HYP-MOM": {
+    "total_experiments": 8,
+    "by_config": {
+      "H-5_ridge_ENV-050": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.01391049231192701,
+        "val_null_ic": 0.008086321892542577,
+        "val_exceeds_null": true,
+        "test_ic": 0.024084018542674317,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-5_ridge_ENV-100": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.014601599271018085,
+        "val_null_ic": -0.010186277651617353,
+        "val_exceeds_null": true,
+        "test_ic": 0.023730637761218944,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_ridge_ENV-050": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.014248591183574329,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.02506810231090186,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-10_ridge_ENV-100": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.014716014591119882,
+        "val_null_ic": -0.0041596448061885895,
+        "val_exceeds_null": true,
+        "test_ic": 0.0255059915367455,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-20_ridge_ENV-050": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.015811875811164146,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.017890595563479016,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_ridge_ENV-100": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.015604812830996614,
+        "val_null_ic": -0.0023185979020654297,
+        "val_exceeds_null": true,
+        "test_ic": 0.0191614329256588,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_lasso_ENV-050": {
+        "horizon": "H-10",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.015173460075872988,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.009831814303792093,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_lasso_ENV-050": {
+        "horizon": "H-20",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.009359083595354012,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.012027533435170028,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      }
+    },
+    "horizon_aggregate": {
+      "H-5": {
+        "mean_val_ic": 0.014256045791472547,
+        "mean_test_ic": 0.02390732815194663,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.014712688616855733,
+        "mean_test_ic": 0.020135302717146485,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.013591924079171591,
+        "mean_test_ic": 0.016359853974769283,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      }
+    },
+    "universe_consistency": {
+      "mean_ic_050": 0.013700700595578496,
+      "mean_ic_100": 0.01497414223104486,
+      "consistent": true
+    },
+    "model_consistency": {
+      "ridge_mean": 0.01481556433330001,
+      "lasso_mean": 0.0122662718356135,
+      "consistent": true
+    }
+  },
+  "HYP-VOL": {
+    "total_experiments": 8,
+    "by_config": {
+      "H-5_ridge_ENV-050": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.018165300409169298,
+        "val_null_ic": 0.008086321892542577,
+        "val_exceeds_null": true,
+        "test_ic": 0.026314181211245787,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-5_ridge_ENV-100": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.01949369060121325,
+        "val_null_ic": -0.010186277651617353,
+        "val_exceeds_null": true,
+        "test_ic": 0.026114742009338554,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_ridge_ENV-050": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.008212362849366186,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.037436299221419576,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-10_ridge_ENV-100": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.010726289121592122,
+        "val_null_ic": -0.0041596448061885895,
+        "val_exceeds_null": true,
+        "test_ic": 0.037621618346630116,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-20_ridge_ENV-050": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.008431032349441231,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.053301221654580046,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_ridge_ENV-100": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.012632972063425877,
+        "val_null_ic": -0.0023185979020654297,
+        "val_exceeds_null": true,
+        "test_ic": 0.0533764494460745,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_lasso_ENV-050": {
+        "horizon": "H-10",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.008351742610287845,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.03729206465747381,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_lasso_ENV-050": {
+        "horizon": "H-20",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.00853326646311438,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.053124410757770274,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      }
+    },
+    "horizon_aggregate": {
+      "H-5": {
+        "mean_val_ic": 0.018829495505191272,
+        "mean_test_ic": 0.026214461610292172,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.009096798193748716,
+        "mean_test_ic": 0.0374499940751745,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.009865756958660495,
+        "mean_test_ic": 0.053267360619474936,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      }
+    },
+    "universe_consistency": {
+      "mean_ic_050": 0.010338740936275787,
+      "mean_ic_100": 0.014284317262077082,
+      "consistent": true
+    },
+    "model_consistency": {
+      "ridge_mean": 0.012943607899034662,
+      "lasso_mean": 0.008442504536701112,
+      "consistent": true
+    }
+  },
+  "HYP-MAC": {
+    "total_experiments": 8,
+    "by_config": {
+      "H-5_ridge_ENV-050": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.015257931528430135,
+        "val_null_ic": 0.008086321892542577,
+        "val_exceeds_null": true,
+        "test_ic": 0.029417289695756407,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-5_ridge_ENV-100": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.016077166982199173,
+        "val_null_ic": -0.010186277651617353,
+        "val_exceeds_null": true,
+        "test_ic": 0.029928161658003386,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_ridge_ENV-050": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.018046651024097114,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.04210423585971349,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-10_ridge_ENV-100": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.01895734361511734,
+        "val_null_ic": -0.0041596448061885895,
+        "val_exceeds_null": true,
+        "test_ic": 0.04324946645895913,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-20_ridge_ENV-050": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.02321907470605394,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.05992569046939703,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_ridge_ENV-100": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.024609471888497155,
+        "val_null_ic": -0.0023185979020654297,
+        "val_exceeds_null": true,
+        "test_ic": 0.06112189723712157,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_lasso_ENV-050": {
+        "horizon": "H-10",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.018410572532987248,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.041696430823196295,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_lasso_ENV-050": {
+        "horizon": "H-20",
+        "model": "lasso",
+        "universe": "ENV-050",
+        "val_ic": 0.023349705030554044,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.059927124108337705,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      }
+    },
+    "horizon_aggregate": {
+      "H-5": {
+        "mean_val_ic": 0.015667549255314654,
+        "mean_test_ic": 0.029672725676879896,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.018471522390733904,
+        "mean_test_ic": 0.042350044380622974,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.023726083875035043,
+        "mean_test_ic": 0.060324903938285435,
+        "exceeds_null_count": 3,
+        "total_experiments": 3
+      }
+    },
+    "universe_consistency": {
+      "mean_ic_050": 0.019656786964424498,
+      "mean_ic_100": 0.01988132749527122,
+      "consistent": true
+    },
+    "model_consistency": {
+      "ridge_mean": 0.019361273290732478,
+      "lasso_mean": 0.020880138781770648,
+      "consistent": true
+    }
+  },
+  "HYP-XSEC": {
+    "total_experiments": 6,
+    "by_config": {
+      "H-5_ridge_ENV-050": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.023505917049827338,
+        "val_null_ic": 0.008086321892542577,
+        "val_exceeds_null": true,
+        "test_ic": 0.023178926685548273,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-5_ridge_ENV-100": {
+        "horizon": "H-5",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.022884106368856752,
+        "val_null_ic": -0.010186277651617353,
+        "val_exceeds_null": true,
+        "test_ic": 0.024591088563960518,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-10_ridge_ENV-050": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.029895983378050345,
+        "val_null_ic": 0.0029567671824676533,
+        "val_exceeds_null": true,
+        "test_ic": 0.03155943397700465,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-10_ridge_ENV-100": {
+        "horizon": "H-10",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.028216572495907102,
+        "val_null_ic": -0.0041596448061885895,
+        "val_exceeds_null": true,
+        "test_ic": 0.03373930562844553,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      },
+      "H-20_ridge_ENV-050": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-050",
+        "val_ic": 0.02790819594604949,
+        "val_null_ic": -0.00912574204577537,
+        "val_exceeds_null": true,
+        "test_ic": 0.04494337273549652,
+        "test_exceeds_null": true,
+        "val_n": 37850,
+        "test_n": 56300
+      },
+      "H-20_ridge_ENV-100": {
+        "horizon": "H-20",
+        "model": "ridge",
+        "universe": "ENV-100",
+        "val_ic": 0.02626596649779989,
+        "val_null_ic": -0.0023185979020654297,
+        "val_exceeds_null": true,
+        "test_ic": 0.047796254937955016,
+        "test_exceeds_null": true,
+        "val_n": 37093,
+        "test_n": 55174
+      }
+    },
+    "horizon_aggregate": {
+      "H-5": {
+        "mean_val_ic": 0.023195011709342045,
+        "mean_test_ic": 0.023885007624754394,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.029056277936978722,
+        "mean_test_ic": 0.03264936980272509,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      },
+      "H-20": {
+        "mean_val_ic": 0.02708708122192469,
+        "mean_test_ic": 0.04636981383672577,
+        "exceeds_null_count": 2,
+        "total_experiments": 2
+      }
+    },
+    "universe_consistency": {
+      "mean_ic_050": 0.02710336545797572,
+      "mean_ic_100": 0.025788881787521246,
+      "consistent": true
+    },
+    "model_consistency": {
+      "ridge_mean": 0.026446123622748483,
+      "lasso_mean": null,
+      "consistent": null
+    }
+  }
+}

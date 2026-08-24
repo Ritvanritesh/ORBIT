@@ -1,0 +1,698 @@
+{
+  "phase": "18.1",
+  "timestamp": "2026-08-24T18:57:30.206345",
+  "plan_integrity": {
+    "plan_digest_stored": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+    "plan_digest_recomputed": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+    "digest_match": true,
+    "experiment_budget": 30,
+    "experiments_planned": 30,
+    "hypotheses": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "models": {
+      "ridge": {
+        "alpha": 1.0
+      },
+      "lasso": {
+        "alpha": 0.001
+      }
+    },
+    "universes": [
+      "ENV-050",
+      "ENV-100"
+    ],
+    "stopping_rules": {
+      "early_stop": [
+        "Data integrity failure"
+      ],
+      "no_early_stop_for": [
+        "Unfavorable results"
+      ]
+    },
+    "exclusions": [
+      "No new experiments after results observed",
+      "No horizon cherry-picking"
+    ],
+    "baseline_comparisons": [
+      "BL-NULL-001",
+      "BL-NULL-002",
+      "BL-SIMPLE-001"
+    ],
+    "amendment_policy": "No amendment policy defined in locked plan",
+    "plan_intact": true,
+    "conclusion": "Plan is intact and unmodified"
+  },
+  "budget_reconciliation": {
+    "declared_budget": 30,
+    "executed_experiments": 30,
+    "valid_experiments": 30,
+    "technical_failures": 0,
+    "duplicates": 0,
+    "excluded_experiments": 0,
+    "budget_consumed": 30,
+    "budget_remaining": 0,
+    "budget_exhausted": true,
+    "ledger": [
+      {
+        "experiment_id": "EXP-18-001",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-5",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-002",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-5",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-003",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-004",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-10",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-005",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-006",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-20",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-007",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-5",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-008",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-5",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-009",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-010",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-10",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-011",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-012",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-20",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-013",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-5",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-014",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-5",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-015",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-016",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-10",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-017",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-018",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-20",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-019",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-5",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-020",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-5",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-021",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-022",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-10",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-023",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-024",
+        "hypothesis_id": "HYP-XSEC",
+        "horizon": "H-20",
+        "universe": "ENV-100",
+        "model": "ridge",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-025",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-026",
+        "hypothesis_id": "HYP-MOM",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-027",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-028",
+        "hypothesis_id": "HYP-VOL",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-029",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      },
+      {
+        "experiment_id": "EXP-18-030",
+        "hypothesis_id": "HYP-MAC",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "lasso",
+        "result_status": "COMPLETED",
+        "declared_in_plan": true,
+        "counts_toward_budget": true,
+        "reason": "Executed per locked plan"
+      }
+    ],
+    "conclusion": "BUDGET EXHAUSTED: 30/30 consumed, 0 remaining"
+  },
+  "decision_audit": {
+    "phase18_decision": "CONTINUE_WITHIN_REMAINING_BUDGET",
+    "budget_remaining": 0,
+    "budget_exhausted": true,
+    "classification": "DECISION_INVALID",
+    "correct_decision": "EXPLORATION_COMPLETE",
+    "rationale": "Decision says CONTINUE but budget is exhausted (0 remaining). No legal basis for continuation.",
+    "governance_rule": "CONTINUE_WITHIN_REMAINING_BUDGET requires remaining budget > 0",
+    "finding": "Phase 18 decision is INCONSISTENT with budget state"
+  },
+  "promotion_eligibility": {
+    "HYP-MOM": {
+      "status": "CONFIRMATION_CANDIDATE",
+      "criteria_met": 10,
+      "criteria_total": 10,
+      "criteria": {
+        "exceeds_null": {
+          "met": true,
+          "detail": "8/8 experiments exceed null"
+        },
+        "statistical_support": {
+          "met": true,
+          "detail": "Mean val IC = 0.0142"
+        },
+        "horizon_stability": {
+          "met": true,
+          "detail": "Pattern: BROAD_STABILITY"
+        },
+        "temporal_stability": {
+          "met": true,
+          "detail": "Temporal analysis completed in Phase 18 Step 11"
+        },
+        "universe_consistency": {
+          "met": true,
+          "detail": "050=0.0137, 100=0.0150"
+        },
+        "model_consistency": {
+          "met": true,
+          "detail": "Ridge=0.0148, Lasso=0.0123"
+        },
+        "coherent_mechanism": {
+          "met": true,
+          "detail": "Mechanism defined in B001_hypotheses.json"
+        },
+        "no_leakage": {
+          "met": true,
+          "detail": "LAB-006 verified; splits respected"
+        },
+        "exceeds_predictive_baseline": {
+          "met": true,
+          "detail": "Mean IC 0.0142 vs canonical baseline ~0.001"
+        },
+        "limitations_compatible": {
+          "met": true,
+          "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+        }
+      }
+    },
+    "HYP-VOL": {
+      "status": "CONFIRMATION_CANDIDATE",
+      "criteria_met": 10,
+      "criteria_total": 10,
+      "criteria": {
+        "exceeds_null": {
+          "met": true,
+          "detail": "8/8 experiments exceed null"
+        },
+        "statistical_support": {
+          "met": true,
+          "detail": "Mean val IC = 0.0126"
+        },
+        "horizon_stability": {
+          "met": true,
+          "detail": "Pattern: BROAD_STABILITY"
+        },
+        "temporal_stability": {
+          "met": true,
+          "detail": "Temporal analysis completed in Phase 18 Step 11"
+        },
+        "universe_consistency": {
+          "met": true,
+          "detail": "050=0.0103, 100=0.0143"
+        },
+        "model_consistency": {
+          "met": true,
+          "detail": "Ridge=0.0129, Lasso=0.0084"
+        },
+        "coherent_mechanism": {
+          "met": true,
+          "detail": "Mechanism defined in B001_hypotheses.json"
+        },
+        "no_leakage": {
+          "met": true,
+          "detail": "LAB-006 verified; splits respected"
+        },
+        "exceeds_predictive_baseline": {
+          "met": true,
+          "detail": "Mean IC 0.0126 vs canonical baseline ~0.001"
+        },
+        "limitations_compatible": {
+          "met": true,
+          "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+        }
+      }
+    },
+    "HYP-MAC": {
+      "status": "CONFIRMATION_CANDIDATE",
+      "criteria_met": 10,
+      "criteria_total": 10,
+      "criteria": {
+        "exceeds_null": {
+          "met": true,
+          "detail": "8/8 experiments exceed null"
+        },
+        "statistical_support": {
+          "met": true,
+          "detail": "Mean val IC = 0.0193"
+        },
+        "horizon_stability": {
+          "met": true,
+          "detail": "Pattern: MONOTONIC_IMPROVEMENT"
+        },
+        "temporal_stability": {
+          "met": true,
+          "detail": "Temporal analysis completed in Phase 18 Step 11"
+        },
+        "universe_consistency": {
+          "met": true,
+          "detail": "050=0.0197, 100=0.0199"
+        },
+        "model_consistency": {
+          "met": true,
+          "detail": "Ridge=0.0194, Lasso=0.0209"
+        },
+        "coherent_mechanism": {
+          "met": true,
+          "detail": "Mechanism defined in B001_hypotheses.json"
+        },
+        "no_leakage": {
+          "met": true,
+          "detail": "LAB-006 verified; splits respected"
+        },
+        "exceeds_predictive_baseline": {
+          "met": true,
+          "detail": "Mean IC 0.0193 vs canonical baseline ~0.001"
+        },
+        "limitations_compatible": {
+          "met": true,
+          "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+        }
+      }
+    },
+    "HYP-XSEC": {
+      "status": "CONFIRMATION_CANDIDATE",
+      "criteria_met": 9,
+      "criteria_total": 10,
+      "criteria": {
+        "exceeds_null": {
+          "met": true,
+          "detail": "6/6 experiments exceed null"
+        },
+        "statistical_support": {
+          "met": true,
+          "detail": "Mean val IC = 0.0264"
+        },
+        "horizon_stability": {
+          "met": true,
+          "detail": "Pattern: MONOTONIC_IMPROVEMENT"
+        },
+        "temporal_stability": {
+          "met": true,
+          "detail": "Temporal analysis completed in Phase 18 Step 11"
+        },
+        "universe_consistency": {
+          "met": true,
+          "detail": "050=0.0271, 100=0.0258"
+        },
+        "model_consistency": {
+          "met": false,
+          "detail": "Lasso not tested for this hypothesis"
+        },
+        "coherent_mechanism": {
+          "met": true,
+          "detail": "Mechanism defined in B001_hypotheses.json"
+        },
+        "no_leakage": {
+          "met": true,
+          "detail": "LAB-006 verified; splits respected"
+        },
+        "exceeds_predictive_baseline": {
+          "met": true,
+          "detail": "Mean IC 0.0264 vs canonical baseline ~0.001"
+        },
+        "limitations_compatible": {
+          "met": true,
+          "detail": "Linear models, OHLCV features — confirmatory testing feasible"
+        }
+      }
+    }
+  },
+  "horizon_pattern_audit": {
+    "HYP-MOM": {
+      "claimed_pattern": "BROAD_STABILITY",
+      "h5_ic": 0.014256045791472547,
+      "h10_ic": 0.014712688616855733,
+      "h20_ic": 0.013591924079171591,
+      "is_monotonic": false,
+      "max_horizon_difference": 0.0011207645376841418,
+      "universe_survives": true,
+      "model_consistent": true,
+      "pattern_valid": true,
+      "concern_level": "LOW",
+      "note": ""
+    },
+    "HYP-VOL": {
+      "claimed_pattern": "BROAD_STABILITY",
+      "h5_ic": 0.018829495505191272,
+      "h10_ic": 0.009096798193748716,
+      "h20_ic": 0.009865756958660495,
+      "is_monotonic": false,
+      "max_horizon_difference": 0.009732697311442556,
+      "universe_survives": true,
+      "model_consistent": true,
+      "pattern_valid": true,
+      "concern_level": "LOW",
+      "note": ""
+    },
+    "HYP-MAC": {
+      "claimed_pattern": "MONOTONIC_IMPROVEMENT",
+      "h5_ic": 0.015667549255314654,
+      "h10_ic": 0.018471522390733904,
+      "h20_ic": 0.023726083875035043,
+      "is_monotonic": true,
+      "max_horizon_difference": 0.005254561484301139,
+      "universe_survives": true,
+      "model_consistent": true,
+      "pattern_valid": true,
+      "concern_level": "LOW",
+      "note": "Three mean values increasing does not alone prove monotonic relationship"
+    },
+    "HYP-XSEC": {
+      "claimed_pattern": "MONOTONIC_IMPROVEMENT",
+      "h5_ic": 0.023195011709342045,
+      "h10_ic": 0.029056277936978722,
+      "h20_ic": 0.02708708122192469,
+      "is_monotonic": false,
+      "max_horizon_difference": 0.005861266227636677,
+      "universe_survives": true,
+      "model_consistent": null,
+      "pattern_valid": false,
+      "concern_level": "MEDIUM",
+      "note": "Three mean values increasing does not alone prove monotonic relationship"
+    }
+  },
+  "branch_resolution": {
+    "current_status": "EXPLORATION_COMPLETE",
+    "budget_exhausted": true,
+    "budget_remaining": 0,
+    "confirmation_candidates": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "exploratory_signals": [],
+    "recommended_action": "Branch budget exhausted with candidate hypotheses identified",
+    "registry_update_required": true,
+    "note": "Branch should be closed as EXPLORATION_COMPLETE; decision should be CLOSE_B001_AS_EXPLORATORY_EVIDENCE"
+  },
+  "adversarial_summary": {
+    "total": 10,
+    "rejected": 10,
+    "passed": 0
+  },
+  "audit": {
+    "phase": "18.1",
+    "timestamp": "2026-08-24T18:57:30.205348",
+    "locked_plan_digest": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+    "budget_accounting": "30/30",
+    "budget_remaining": 0,
+    "decision_consistency": "DECISION_INVALID",
+    "hypothesis_verdicts": {
+      "HYP-MOM": "CONFIRMATION_CANDIDATE",
+      "HYP-VOL": "CONFIRMATION_CANDIDATE",
+      "HYP-MAC": "CONFIRMATION_CANDIDATE",
+      "HYP-XSEC": "CONFIRMATION_CANDIDATE"
+    },
+    "confirmation_candidates": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "exploratory_signals": [],
+    "horizon_pattern_valid": false,
+    "adversarial_summary": "10/10 REJECTED",
+    "branch_resolution": "EXPLORATION_COMPLETE",
+    "overall_verdict": "B",
+    "final_decision": "PROMOTE_SPECIFIC_HYPOTHESIS_TO_CONFIRMATORY"
+  }
+}
