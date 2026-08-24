@@ -1,0 +1,43 @@
+{
+  "description": "Formal baseline hierarchy for ORBIT research evaluation",
+  "levels": {
+    "LEVEL_1_NULL": {
+      "name": "Null / Random Prediction",
+      "question": "Does predictive performance exceed no-information behavior?",
+      "baselines": [
+        "random_score",
+        "permutation",
+        "feature_destruction"
+      ],
+      "required_for": "ALL hypotheses",
+      "pass_criterion": "IC significantly different from null distribution"
+    },
+    "LEVEL_2_SIMPLE_PREDICTIVE": {
+      "name": "Simple Existing Model",
+      "question": "Does the proposed hypothesis improve over a simple existing model?",
+      "baselines": [
+        "ridge_alpha1_FS001"
+      ],
+      "required_for": "All hypotheses claiming improvement over existing methods",
+      "pass_criterion": "IC or Sharpe materially better than Ridge baseline"
+    },
+    "LEVEL_3_ECONOMIC": {
+      "name": "Economic Value",
+      "question": "Does the resulting strategy add value over naive investment?",
+      "baselines": [
+        "equal_weight",
+        "spy_benchmark",
+        "cash_reference"
+      ],
+      "required_for": "All hypotheses with economic or deployment claims",
+      "pass_criterion": "Sharpe > benchmark, material excess return after costs"
+    }
+  },
+  "rules": [
+    "Every exploratory experiment must at least reference Level 1",
+    "Economic claims require Level 3 comparison",
+    "No baseline substitution after seeing hypothesis results",
+    "Baseline versions are frozen and versioned",
+    "Regression to a lower baseline level is always allowed"
+  ]
+}

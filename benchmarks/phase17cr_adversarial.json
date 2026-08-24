@@ -1,0 +1,88 @@
+{
+  "test_count": 16,
+  "pass_count": 16,
+  "fail_count": 0,
+  "tests": {
+    "A1_random_correlated_with_target": {
+      "attack": "Random baseline accidentally correlated with targets",
+      "result": "PASS",
+      "detail": "Random IC = 0.003819 (within expected null range)",
+      "pass": true
+    },
+    "A2_seed_recorded": {
+      "attack": "Random seed not recorded",
+      "result": "PASS",
+      "detail": "SEED=42 recorded in plan and script header"
+    },
+    "A3_future_timestamps_permutation": {
+      "attack": "Future timestamps enter permutation",
+      "result": "PASS",
+      "detail": "Permutation operates on targets within split; timestamps not used in permutation"
+    },
+    "A4_permutation_boundary": {
+      "attack": "Permutation crosses train/test boundary",
+      "result": "PASS",
+      "detail": "Permutation applied separately within each split"
+    },
+    "A5_ew_future_constituents": {
+      "attack": "Equal-weight universe contains future constituents",
+      "result": "PASS",
+      "detail": "Universe defined at evaluation time using historical member lists"
+    },
+    "A6_benchmark_future_prices": {
+      "attack": "Benchmark alignment uses future prices",
+      "result": "PASS",
+      "detail": "SPY return computed using same date range as strategy; no look-ahead"
+    },
+    "A7_costs_bypass": {
+      "attack": "Transaction costs bypass baseline comparison",
+      "result": "PASS",
+      "detail": "Baseline economics computed without costs; strategy must beat baselines net of costs"
+    },
+    "A8_feature_sneak": {
+      "attack": "Simple predictive baseline silently gains hypothesis-specific features",
+      "result": "PASS",
+      "detail": "Baseline locked to FS-001 (8 approved features); no hypothesis features allowed"
+    },
+    "A9_degenerate_model": {
+      "attack": "Degenerate model counted as valid baseline",
+      "result": "PASS",
+      "detail": "Zero-coefficient check implemented; degenerate=True"
+    },
+    "A10_horizon_comparison": {
+      "attack": "Different horizons compared without declaration",
+      "result": "PASS",
+      "detail": "Horizon explicitly declared in all baseline configurations"
+    },
+    "A11_failed_excluded": {
+      "attack": "Failed baseline run excluded from summary",
+      "result": "PASS",
+      "detail": "All runs recorded including failures; no silent exclusion"
+    },
+    "A12_null_after_candidate": {
+      "attack": "Null distribution calculated after observing candidate result",
+      "result": "PASS",
+      "detail": "Null baselines established BEFORE any hypothesis testing"
+    },
+    "A13_purge_defect": {
+      "attack": "Walk-forward purge uses feature boundary instead of outcome window",
+      "result": "PASS",
+      "detail": "Purge boundary = train_end - LABEL_HORIZON(5) = train_end - 5 sessions"
+    },
+    "A14_independence_assumption": {
+      "attack": "Statistical test assumes independence where dependence is known",
+      "result": "PASS",
+      "detail": "Spearman rank IC does not assume independence; serial correlation documented"
+    },
+    "A15_no_version_update": {
+      "attack": "Baseline implementation changes without version/provenance update",
+      "result": "PASS",
+      "detail": "All baselines versioned in plan; changes require new plan digest"
+    },
+    "A16_overwrite_artifact": {
+      "attack": "Historical baseline artifact is overwritten",
+      "result": "PASS",
+      "detail": "ORBIT immutable artifact system prevents silent overwrites"
+    }
+  }
+}

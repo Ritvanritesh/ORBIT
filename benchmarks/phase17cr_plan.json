@@ -1,0 +1,144 @@
+{
+  "phase": "17C-R",
+  "purpose": "Canonical baseline establishment and null calibration",
+  "datasets": {
+    "DS-EXP-050": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\market\\yahoo_chart_api\\DS-EXP-050\\bars.parquet",
+      "instruments": 50,
+      "range": "1996-08-21 to 2026-08-20"
+    },
+    "DS-EXP-100": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\market\\yahoo_chart_api\\DS-EXP-100\\bars.parquet",
+      "instruments": 100,
+      "range": "1996-08-21 to 2026-08-20"
+    },
+    "BENCH-001": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\benchmark\\BENCH-001\\bars.parquet",
+      "instrument": "SPY",
+      "range": "1993-01-29 to 2026-08-20"
+    },
+    "DS-000003": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_csv\\DS-000003\\series.parquet",
+      "series": [
+        "DFF",
+        "UNRATE",
+        "CPIAUCSL"
+      ]
+    }
+  },
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "splits": {
+    "train": {
+      "start": "2010-01-04",
+      "end": "2018-12-31"
+    },
+    "val": {
+      "start": "2019-01-02",
+      "end": "2021-12-31"
+    },
+    "test": {
+      "start": "2022-01-03",
+      "end": "2026-06-30"
+    }
+  },
+  "horizons": [
+    "H-1",
+    "H-5",
+    "H-10",
+    "H-20",
+    "H-21",
+    "H-63"
+  ],
+  "horizon_sessions": {
+    "H-1": 1,
+    "H-5": 5,
+    "H-10": 10,
+    "H-20": 20,
+    "H-21": 21,
+    "H-63": 63
+  },
+  "label": "LAB-006 (excess return vs SPY)",
+  "feature_set": "FS-001 (8 OHLCV momentum/volatility/volume features)",
+  "baselines": {
+    "null_random": {
+      "A_random_score": "Deterministic random predictions, fixed seed",
+      "B_permutation": "Target permutation within train split",
+      "C_feature_destruction": "Replace features with noise"
+    },
+    "naive_investment": {
+      "A_equal_weight": "Equal-weight universe portfolio",
+      "B_spy_benchmark": "SPY buy-and-hold",
+      "C_cash_reference": "Zero-exposure reference (0% return)"
+    },
+    "simple_predictive": {
+      "ridge_baseline": "Ridge regression, alpha=1.0, FS-001, LAB-006 H-5"
+    }
+  },
+  "randomization": {
+    "seed": 42,
+    "procedures": [
+      "random_score",
+      "permutation",
+      "feature_destruction"
+    ]
+  },
+  "predictive_models": {
+    "ridge": {
+      "alpha": 1.0,
+      "features": "FS-001"
+    }
+  },
+  "split_method": "fixed_chronological_v1",
+  "metrics": [
+    "spearman_ic",
+    "mean_ic",
+    "median_ic",
+    "std_ic",
+    "sign_frequency",
+    "ic_distribution",
+    "sharpe",
+    "max_drawdown",
+    "turnover",
+    "annualized_return",
+    "annualized_vol"
+  ],
+  "statistical_procedures": [
+    "spearman_rank_ic",
+    "permutation_test",
+    "confidence_intervals"
+  ],
+  "portfolio_assumptions": {
+    "initial_cash": 1000000,
+    "costs_bps": 5.0,
+    "execution_delay": 1,
+    "long_only": true,
+    "top_k": 3
+  },
+  "robustness_thresholds": {
+    "ic_significance": 0.02,
+    "sharpe_materiality": 0.5,
+    "null_ic_2std_bound": 0.04
+  },
+  "experiment_inventory": [
+    "EXP-17CR-001: Random score null",
+    "EXP-17CR-002: Permutation null",
+    "EXP-17CR-003: Feature destruction null",
+    "EXP-17CR-004: Equal-weight portfolio",
+    "EXP-17CR-005: SPY benchmark",
+    "EXP-17CR-006: Cash reference",
+    "EXP-17CR-007: Ridge predictive baseline",
+    "EXP-17CR-008: Null calibration across horizons",
+    "EXP-17CR-009: Walk-forward baseline validation",
+    "EXP-17CR-010: Statistical calibration"
+  ],
+  "decision_rules": {
+    "null_centered": "Mean null IC must be within 2 std of zero",
+    "null_variance_reasonable": "Null IC std must be < 0.15",
+    "predictive_exceeds_null": "Ridge IC must exceed 95th percentile of null",
+    "walk_forward_stable": "Baselines must not show regime-dependent behavior"
+  },
+  "plan_digest": "1079cc15a2d69cba7b95bf3858564c12cc8d4e2cd6e0cf8263e14825bdd8a363"
+}

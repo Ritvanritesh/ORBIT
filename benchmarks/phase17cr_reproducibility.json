@@ -1,0 +1,10 @@
+{
+  "test": "Deterministic double-build",
+  "null_ic_build1": 0.003819282084904396,
+  "null_ic_build2": 0.003819282084904396,
+  "null_identical": true,
+  "ridge_predictions_identical": true,
+  "plan_digest_match": true,
+  "result": "PASS",
+  "detail": "All digests deterministic; framework is reproducible"
+}

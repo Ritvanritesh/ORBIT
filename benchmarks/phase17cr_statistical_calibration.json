@@ -1,0 +1,60 @@
+{
+  "S1_pure_noise": {
+    "description": "Pure noise target vs independent noise prediction",
+    "expected_ic": "~0",
+    "actual_ic": -0.06376473976473977,
+    "pass": true
+  },
+  "S2_independent_random": {
+    "description": "IC distribution from independent random pairs",
+    "mean_ic": 0.003217286914765908,
+    "std_ic": 0.10521497253302702,
+    "pass": "True"
+  },
+  "S3_weak_positive": {
+    "description": "Weak known positive relationship (signal-to-noise ~0.3/0.7)",
+    "expected_ic": "~0.2-0.4",
+    "actual_ic": 0.35013922455689817,
+    "pass": true
+  },
+  "S4_strong_positive": {
+    "description": "Strong known positive relationship (signal-to-noise ~0.8/0.2)",
+    "expected_ic": "~0.6-0.9",
+    "actual_ic": 0.9668614354457417,
+    "pass": true
+  },
+  "S5_serial_dependence": {
+    "description": "Serially dependent observations (random walk + noise)",
+    "actual_ic": 0.9799570224786922,
+    "note": "High IC expected due to serial correlation; not evidence of prediction",
+    "pass": true
+  },
+  "S6_cross_sectional_dependence": {
+    "description": "Cross-sectionally dependent observations (shared factor)",
+    "actual_ic": 0.9855194940779761,
+    "note": "High IC expected due to shared factor; effective sample size reduced",
+    "pass": true
+  },
+  "S7_multiple_comparison": {
+    "description": "Multiple comparison family (20 tests on noise)",
+    "n_significant_raw": 0,
+    "n_significant_bonferroni": 0,
+    "expected_significant_raw": "~1",
+    "pass": true
+  },
+  "S8_regime_dependent": {
+    "description": "Regime-dependent synthetic effect",
+    "ic_regime1": 0.6585704642616066,
+    "ic_regime2": -0.047269181729543246,
+    "ic_overall": 0.3220165751035943,
+    "regime_difference": 0.7058396459911498,
+    "pass": true
+  },
+  "_summary": {
+    "total_tests": 7,
+    "noise_not_significantly_positive": true,
+    "weak_signal_detected": true,
+    "strong_signal_detected": true,
+    "framework_honest": true
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "windows": [
+    {
+      "window": "WF-01",
+      "train_end": "2017-12-29",
+      "purge_boundary": "2017-12-24",
+      "test_start": "2018-01-02",
+      "test_end": "2019-12-31",
+      "train_n": 98975,
+      "test_n": 25150,
+      "ridge_ic": 0.011923969023551903,
+      "null_ic": -0.009067491485262955,
+      "ridge_exceeds_null": true
+    },
+    {
+      "window": "WF-02",
+      "train_end": "2019-12-31",
+      "purge_boundary": "2019-12-26",
+      "test_start": "2020-01-02",
+      "test_end": "2020-12-31",
+      "train_n": 124175,
+      "test_n": 12650,
+      "ridge_ic": 0.026006945337079698,
+      "null_ic": -0.010474079916764932,
+      "ridge_exceeds_null": true
+    },
+    {
+      "window": "WF-03",
+      "train_end": "2020-12-31",
+      "purge_boundary": "2020-12-26",
+      "test_start": "2021-01-04",
+      "test_end": "2021-12-31",
+      "train_n": 136775,
+      "test_n": 12600,
+      "ridge_ic": -0.02863667134619795,
+      "null_ic": -0.021640664427423833,
+      "ridge_exceeds_null": false
+    },
+    {
+      "window": "WF-04",
+      "train_end": "2021-12-31",
+      "purge_boundary": "2021-12-26",
+      "test_start": "2022-01-03",
+      "test_end": "2022-12-30",
+      "train_n": 149325,
+      "test_n": 12550,
+      "ridge_ic": -0.024406934207928284,
+      "null_ic": -0.00272412912850764,
+      "ridge_exceeds_null": false
+    },
+    {
+      "window": "WF-05",
+      "train_end": "2022-12-30",
+      "purge_boundary": "2022-12-25",
+      "test_start": "2023-01-03",
+      "test_end": "2023-12-29",
+      "train_n": 161925,
+      "test_n": 12500,
+      "ridge_ic": -0.03870318908200442,
+      "null_ic": 0.006790929641925951,
+      "ridge_exceeds_null": false
+    },
+    {
+      "window": "WF-06",
+      "train_end": "2023-12-29",
+      "purge_boundary": "2023-12-24",
+      "test_start": "2024-01-02",
+      "test_end": "2024-12-31",
+      "train_n": 174425,
+      "test_n": 12600,
+      "ridge_ic": 0.0027554740272464975,
+      "null_ic": -0.011749082255572797,
+      "ridge_exceeds_null": true
+    },
+    {
+      "window": "WF-07",
+      "train_end": "2024-12-31",
+      "purge_boundary": "2024-12-26",
+      "test_start": "2025-01-02",
+      "test_end": "2025-12-31",
+      "train_n": 187075,
+      "test_n": 12500,
+      "ridge_ic": 0.01714209175668539,
+      "null_ic": -0.006523664147223451,
+      "ridge_exceeds_null": true
+    },
+    {
+      "window": "WF-08",
+      "train_end": "2025-12-31",
+      "purge_boundary": "2025-12-26",
+      "test_start": "2026-01-02",
+      "test_end": "2026-06-30",
+      "train_n": 199575,
+      "test_n": 6150,
+      "ridge_ic": 0.011694301436566733,
+      "null_ic": 0.016078713283148496,
+      "ridge_exceeds_null": false
+    }
+  ],
+  "purge_check": [
+    {
+      "window": "WF-01",
+      "purge_end": "2018-01-08",
+      "max_train_date": "2017-12-22",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-02",
+      "purge_end": "2020-01-10",
+      "max_train_date": "2019-12-26",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-03",
+      "purge_end": "2021-01-10",
+      "max_train_date": "2020-12-24",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-04",
+      "purge_end": "2022-01-10",
+      "max_train_date": "2021-12-23",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-05",
+      "purge_end": "2023-01-09",
+      "max_train_date": "2022-12-23",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-06",
+      "purge_end": "2024-01-08",
+      "max_train_date": "2023-12-22",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-07",
+      "purge_end": "2025-01-10",
+      "max_train_date": "2024-12-26",
+      "purge_intact": true
+    },
+    {
+      "window": "WF-08",
+      "purge_end": "2026-01-10",
+      "max_train_date": "2025-12-26",
+      "purge_intact": true
+    }
+  ],
+  "stability": {
+    "mean_ridge_ic": -0.0027780016318750544,
+    "std_ridge_ic": 0.022662465553871483,
+    "positive_windows": 5,
+    "total_windows": 8,
+    "stable": true
+  }
+}

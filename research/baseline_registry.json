@@ -1,0 +1,207 @@
+{
+  "baselines": [
+    {
+      "id": "BL-NULL-001",
+      "name": "Random Score Null",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Deterministic random predictions using fixed seed (SEED=42)",
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [
+        "H-1",
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-21",
+        "H-63"
+      ],
+      "metrics": [
+        "spearman_ic",
+        "mean_ic",
+        "std_ic",
+        "sign_frequency"
+      ],
+      "provenance": "Phase 17C-R, Step 3",
+      "limitations": [
+        "Not a portfolio baseline",
+        "No economic interpretation"
+      ],
+      "evidence_links": [
+        "phase17cr_null_calibration.json"
+      ]
+    },
+    {
+      "id": "BL-NULL-002",
+      "name": "Permutation Null",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Targets randomly permuted within split; preserves marginal distribution",
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "spearman_ic",
+        "mean_ic"
+      ],
+      "provenance": "Phase 17C-R, Step 3",
+      "limitations": [
+        "Breaks target-prediction alignment",
+        "Single permutation per seed"
+      ],
+      "evidence_links": [
+        "phase17cr_null_calibration.json"
+      ]
+    },
+    {
+      "id": "BL-NULL-003",
+      "name": "Feature Destruction Null",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Predictive features replaced with independent Gaussian noise",
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "spearman_ic",
+        "mean_ic"
+      ],
+      "provenance": "Phase 17C-R, Step 3",
+      "limitations": [
+        "Only tests feature information loss",
+        "Not a full model baseline"
+      ],
+      "evidence_links": [
+        "phase17cr_null_calibration.json"
+      ]
+    },
+    {
+      "id": "BL-SIMPLE-001",
+      "name": "Ridge Predictive Baseline",
+      "version": "1.0",
+      "level": "LEVEL_2_SIMPLE_PREDICTIVE",
+      "definition": "Ridge regression (alpha=1.0), FS-001 features (8 OHLCV), LAB-006 H-5",
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "spearman_ic",
+        "mean_ic",
+        "std_ic",
+        "exceeds_null"
+      ],
+      "provenance": "Phase 17C-R, Step 6",
+      "limitations": [
+        "Linear model only",
+        "Single alpha value",
+        "8-feature representation"
+      ],
+      "evidence_links": [
+        "phase17cr_predictive_baseline.json"
+      ]
+    },
+    {
+      "id": "BL-ECON-001",
+      "name": "Equal-Weight Universe",
+      "version": "1.0",
+      "level": "LEVEL_3_ECONOMIC",
+      "definition": "Equal-weight portfolio across all universe members",
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [],
+      "metrics": [
+        "cumulative_return",
+        "annualized_return",
+        "annualized_volatility",
+        "sharpe_ratio",
+        "max_drawdown"
+      ],
+      "provenance": "Phase 17C-R, Step 5",
+      "limitations": [
+        "No transaction costs",
+        "Static weights"
+      ],
+      "evidence_links": [
+        "phase17cr_investment_baselines.json"
+      ]
+    },
+    {
+      "id": "BL-ECON-002",
+      "name": "SPY Benchmark",
+      "version": "1.0",
+      "level": "LEVEL_3_ECONOMIC",
+      "definition": "SPY buy-and-hold benchmark",
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [],
+      "metrics": [
+        "cumulative_return",
+        "annualized_return",
+        "annualized_volatility",
+        "sharpe_ratio",
+        "max_drawdown"
+      ],
+      "provenance": "Phase 17C-R, Step 5",
+      "limitations": [
+        "Single instrument benchmark"
+      ],
+      "evidence_links": [
+        "phase17cr_investment_baselines.json"
+      ]
+    },
+    {
+      "id": "BL-ECON-003",
+      "name": "Cash Reference",
+      "version": "1.0",
+      "level": "LEVEL_3_ECONOMIC",
+      "definition": "Zero-exposure reference (0% return, 0% volatility)",
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [],
+      "metrics": [
+        "cumulative_return"
+      ],
+      "provenance": "Phase 17C-R, Step 5",
+      "limitations": [
+        "No risk, no return",
+        "Not investable"
+      ],
+      "evidence_links": [
+        "phase17cr_investment_baselines.json"
+      ]
+    }
+  ],
+  "version_lock": {
+    "BL-NULL-001": "1.0",
+    "BL-NULL-002": "1.0",
+    "BL-NULL-003": "1.0",
+    "BL-SIMPLE-001": "1.0",
+    "BL-ECON-001": "1.0",
+    "BL-ECON-002": "1.0",
+    "BL-ECON-003": "1.0"
+  },
+  "prevention_rules": [
+    "Baseline versions cannot silently change",
+    "Old evidence remains linked to historical baseline versions",
+    "New baseline versions require new phase and plan digest",
+    "Exploratory experiments can reference baselines",
+    "Confirmatory registrations require appropriate baseline level"
+  ]
+}

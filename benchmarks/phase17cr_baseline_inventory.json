@@ -1,0 +1,39 @@
+{
+  "random_prediction": {
+    "status": "NOT_FOUND",
+    "rationale": "No standalone random baseline script exists; must build from scratch",
+    "existing_artifacts": "Phase 16.5 research reset used random baseline conceptually"
+  },
+  "permutation_null": {
+    "status": "NOT_FOUND",
+    "rationale": "No permutation null implementation found",
+    "existing_artifacts": "Permutation concepts referenced in statistical inference modules"
+  },
+  "equal_weight_portfolio": {
+    "status": "REUSABLE_WITH_LIMITATIONS",
+    "rationale": "src/orbit/ml/baselines.py has equal_weight strategy",
+    "location": "src/orbit/ml/baselines.py, src/orbit/backtest/",
+    "limitation": "Full backtester needed; we compute economic metrics directly for baseline"
+  },
+  "spy_benchmark": {
+    "status": "REUSABLE",
+    "rationale": "SPY bars available at BENCH-001",
+    "location": "data/normalized/benchmark/BENCH-001/bars.parquet"
+  },
+  "simple_linear_model": {
+    "status": "REUSABLE",
+    "rationale": "Ridge regression available in src/orbit/ml/models.py",
+    "location": "src/orbit/ml/models.py",
+    "limitation": "Full pipeline requires feature computation, splits, etc."
+  },
+  "feature_sets": {
+    "status": "REUSABLE",
+    "rationale": "FS-001 (8 features) and FS-002 (15 features) implemented",
+    "location": "src/orbit/ml/features.py"
+  },
+  "split_protocol": {
+    "status": "REUSABLE",
+    "rationale": "Fixed chronological splits implemented",
+    "location": "src/orbit/ml/splits.py"
+  }
+}

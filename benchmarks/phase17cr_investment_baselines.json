@@ -1,0 +1,29 @@
+{
+  "spy_benchmark": {
+    "cumulative_return": 5.589340928843257,
+    "annualized_return": 0.12142549196948038,
+    "annualized_volatility": 0.17180709946514142,
+    "sharpe_ratio": 0.7067547985356499,
+    "max_drawdown": -0.3410474689324394,
+    "period_start": "2010-01-04",
+    "period_end": "2026-06-30",
+    "n_sessions": 4147
+  },
+  "equal_weight": {
+    "cumulative_return": 26.310134180202375,
+    "annualized_return": 0.27852145593210564,
+    "annualized_volatility": 0.16293228601435056,
+    "sharpe_ratio": 1.7094307257652688,
+    "max_drawdown": -0.8932769693229158,
+    "n_instruments": 50,
+    "n_sessions": 3392
+  },
+  "cash_reference": {
+    "cumulative_return": 0.0,
+    "annualized_return": 0.0,
+    "annualized_volatility": 0.0,
+    "sharpe_ratio": 0.0,
+    "max_drawdown": 0.0,
+    "note": "Zero-exposure reference; no risk, no return"
+  }
+}
