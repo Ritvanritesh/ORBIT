@@ -1,0 +1,82 @@
+{
+  "HYP-MOM": {
+    "horizon_data": {
+      "H-5": {
+        "mean_val_ic": 0.014256045791472547,
+        "std_val_ic": 0.00034555347954553714,
+        "n_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.014712688616855733,
+        "std_val_ic": 0.00037758346853293377,
+        "n_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.013591924079171591,
+        "std_val_ic": 0.0029942637036532303,
+        "n_experiments": 3
+      }
+    },
+    "pattern": "BROAD_STABILITY"
+  },
+  "HYP-VOL": {
+    "horizon_data": {
+      "H-5": {
+        "mean_val_ic": 0.018829495505191272,
+        "std_val_ic": 0.0006641950960219762,
+        "n_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.009096798193748716,
+        "std_val_ic": 0.0011536282452568544,
+        "n_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.009865756958660495,
+        "std_val_ic": 0.0019571616404938544,
+        "n_experiments": 3
+      }
+    },
+    "pattern": "BROAD_STABILITY"
+  },
+  "HYP-MAC": {
+    "horizon_data": {
+      "H-5": {
+        "mean_val_ic": 0.015667549255314654,
+        "std_val_ic": 0.00040961772688451886,
+        "n_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.018471522390733904,
+        "std_val_ic": 0.0003742783391223582,
+        "n_experiments": 3
+      },
+      "H-20": {
+        "mean_val_ic": 0.023726083875035043,
+        "std_val_ic": 0.0006269220351134309,
+        "n_experiments": 3
+      }
+    },
+    "pattern": "MONOTONIC_IMPROVEMENT"
+  },
+  "HYP-XSEC": {
+    "horizon_data": {
+      "H-5": {
+        "mean_val_ic": 0.023195011709342045,
+        "std_val_ic": 0.00031090534048529295,
+        "n_experiments": 2
+      },
+      "H-10": {
+        "mean_val_ic": 0.029056277936978722,
+        "std_val_ic": 0.0008397054410716216,
+        "n_experiments": 2
+      },
+      "H-20": {
+        "mean_val_ic": 0.02708708122192469,
+        "std_val_ic": 0.0008211147241247996,
+        "n_experiments": 2
+      }
+    },
+    "pattern": "MONOTONIC_IMPROVEMENT"
+  }
+}

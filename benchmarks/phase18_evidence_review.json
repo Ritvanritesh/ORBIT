@@ -1,0 +1,38 @@
+{
+  "HYP-MOM": {
+    "status": "EXPLORATORY_SIGNAL",
+    "mean_val_ic": 0.014178241208878383,
+    "exceeds_null_count": 8,
+    "total_experiments": 8,
+    "horizon_pattern": "BROAD_STABILITY",
+    "universe_classification": "UNIVERSE_CONSISTENT",
+    "model_consistent": true
+  },
+  "HYP-VOL": {
+    "status": "EXPLORATORY_SIGNAL",
+    "mean_val_ic": 0.011818332058451272,
+    "exceeds_null_count": 8,
+    "total_experiments": 8,
+    "horizon_pattern": "BROAD_STABILITY",
+    "universe_classification": "UNIVERSE_CONSISTENT",
+    "model_consistent": true
+  },
+  "HYP-MAC": {
+    "status": "EXPLORATORY_SIGNAL",
+    "mean_val_ic": 0.01974098966349202,
+    "exceeds_null_count": 8,
+    "total_experiments": 8,
+    "horizon_pattern": "MONOTONIC_IMPROVEMENT",
+    "universe_classification": "UNIVERSE_CONSISTENT",
+    "model_consistent": true
+  },
+  "HYP-XSEC": {
+    "status": "EXPLORATORY_SIGNAL",
+    "mean_val_ic": 0.026446123622748483,
+    "exceeds_null_count": 6,
+    "total_experiments": 6,
+    "horizon_pattern": "MONOTONIC_IMPROVEMENT",
+    "universe_classification": "UNIVERSE_CONSISTENT",
+    "model_consistent": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "phase": "18",
+  "branch_id": "B001",
+  "plan_digest": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+  "evidence_review": {
+    "HYP-MOM": {
+      "status": "EXPLORATORY_SIGNAL",
+      "mean_val_ic": 0.014178241208878383,
+      "exceeds_null_count": 8,
+      "total_experiments": 8,
+      "horizon_pattern": "BROAD_STABILITY",
+      "universe_classification": "UNIVERSE_CONSISTENT",
+      "model_consistent": true
+    },
+    "HYP-VOL": {
+      "status": "EXPLORATORY_SIGNAL",
+      "mean_val_ic": 0.011818332058451272,
+      "exceeds_null_count": 8,
+      "total_experiments": 8,
+      "horizon_pattern": "BROAD_STABILITY",
+      "universe_classification": "UNIVERSE_CONSISTENT",
+      "model_consistent": true
+    },
+    "HYP-MAC": {
+      "status": "EXPLORATORY_SIGNAL",
+      "mean_val_ic": 0.01974098966349202,
+      "exceeds_null_count": 8,
+      "total_experiments": 8,
+      "horizon_pattern": "MONOTONIC_IMPROVEMENT",
+      "universe_classification": "UNIVERSE_CONSISTENT",
+      "model_consistent": true
+    },
+    "HYP-XSEC": {
+      "status": "EXPLORATORY_SIGNAL",
+      "mean_val_ic": 0.026446123622748483,
+      "exceeds_null_count": 6,
+      "total_experiments": 6,
+      "horizon_pattern": "MONOTONIC_IMPROVEMENT",
+      "universe_classification": "UNIVERSE_CONSISTENT",
+      "model_consistent": null
+    }
+  },
+  "audit": {
+    "phase": "18",
+    "branch_id": "B001",
+    "timestamp": "2026-08-24T17:40:53.720536",
+    "plan_digest_match": true,
+    "experiment_count": 30,
+    "budget": 30,
+    "within_budget": true,
+    "no_undeclared_experiments": true,
+    "no_deleted_failures": true,
+    "historical_artifacts_unchanged": true,
+    "baseline_integrity": true,
+    "registry_integrity": true,
+    "hypothesis_identity_integrity": true,
+    "hypothesis_verdicts": {
+      "HYP-MOM": "EXPLORATORY_SIGNAL",
+      "HYP-VOL": "EXPLORATORY_SIGNAL",
+      "HYP-MAC": "EXPLORATORY_SIGNAL",
+      "HYP-XSEC": "EXPLORATORY_SIGNAL"
+    },
+    "overall_verdict": "B",
+    "decision": "CONTINUE_WITHIN_REMAINING_BUDGET"
+  }
+}

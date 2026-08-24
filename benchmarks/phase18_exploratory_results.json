@@ -1,0 +1,1792 @@
+{
+  "branch_id": "B001",
+  "total_experiments": 30,
+  "completed": 30,
+  "skipped": 0,
+  "results": [
+    {
+      "experiment_id": "EXP-18-001",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-001_train",
+          "n": 111635,
+          "mean_ic": 0.00721917157349002,
+          "median_ic": 0.002123119871463035,
+          "std_ic": 0.02403410044074635,
+          "overall_ic": 0.009282123179018572,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.003314237369769011,
+          "ic_95ci_upper": 0.01775258051674905,
+          "null_ic": 0.0025863201280415214,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-001_val",
+          "n": 37850,
+          "mean_ic": 0.024379530585443475,
+          "median_ic": 0.03159094312301414,
+          "std_ic": 0.05781053805360692,
+          "overall_ic": 0.01391049231192701,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": -0.0009570548236823989,
+          "ic_95ci_upper": 0.04971611599456935,
+          "null_ic": 0.008086321892542577,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-001_test",
+          "n": 56300,
+          "mean_ic": 0.020156169145334666,
+          "median_ic": 0.026036188579288744,
+          "std_ic": 0.03965938684451911,
+          "overall_ic": 0.024084018542674317,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.002774676498994766,
+          "ic_95ci_upper": 0.037537661791674566,
+          "null_ic": 0.0022266587773532324,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:39.328095"
+    },
+    {
+      "experiment_id": "EXP-18-002",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-002_train",
+          "n": 109371,
+          "mean_ic": 0.007921015427779506,
+          "median_ic": 0.005221173105296888,
+          "std_ic": 0.022002983585097995,
+          "overall_ic": 0.010109307254921976,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.001722217305022358,
+          "ic_95ci_upper": 0.017564248160581372,
+          "null_ic": -0.0007254424650093826,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-002_val",
+          "n": 37093,
+          "mean_ic": 0.01994826981379832,
+          "median_ic": 0.009056685119533848,
+          "std_ic": 0.05510718004622074,
+          "overall_ic": 0.014601599271018085,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.004203516710008914,
+          "ic_95ci_upper": 0.04410005633760555,
+          "null_ic": -0.010186277651617353,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-002_test",
+          "n": 55174,
+          "mean_ic": 0.01992583428949663,
+          "median_ic": 0.023956573792560304,
+          "std_ic": 0.03972720057796868,
+          "overall_ic": 0.023730637761218944,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": 0.002514620964067682,
+          "ic_95ci_upper": 0.03733704761492558,
+          "null_ic": 0.0010415412389024514,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:39.777955"
+    },
+    {
+      "experiment_id": "EXP-18-003",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-003_train",
+          "n": 111635,
+          "mean_ic": -0.0033439990864194947,
+          "median_ic": -0.004435359796080509,
+          "std_ic": 0.03747978021123915,
+          "overall_ic": 0.0018735667137800612,
+          "sign_frequency": 0.45,
+          "ic_95ci_lower": -0.019770237007899594,
+          "ic_95ci_upper": 0.013082238835060605,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": false
+        },
+        "val": {
+          "label": "EXP-18-003_val",
+          "n": 37850,
+          "mean_ic": 0.023075551257246592,
+          "median_ic": 0.026671902883054474,
+          "std_ic": 0.06554589526621793,
+          "overall_ic": 0.014248591183574329,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": -0.005651203925177015,
+          "ic_95ci_upper": 0.051802306439670195,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-003_test",
+          "n": 56300,
+          "mean_ic": 0.02109910448320667,
+          "median_ic": 0.015000323203479271,
+          "std_ic": 0.05354188001438868,
+          "overall_ic": 0.02506810231090186,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": -0.0023666590544341864,
+          "ic_95ci_upper": 0.044564868020847526,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:40.383827"
+    },
+    {
+      "experiment_id": "EXP-18-004",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-004_train",
+          "n": 109371,
+          "mean_ic": -0.001564487906919787,
+          "median_ic": -0.00331016182731563,
+          "std_ic": 0.04081214301601111,
+          "overall_ic": 0.0021737768705408843,
+          "sign_frequency": 0.45,
+          "ic_95ci_lower": -0.019451198220803635,
+          "ic_95ci_upper": 0.016322222406964064,
+          "null_ic": 0.002523293545104612,
+          "exceeds_null": false
+        },
+        "val": {
+          "label": "EXP-18-004_val",
+          "n": 37093,
+          "mean_ic": 0.024383500074119564,
+          "median_ic": 0.015063479003261875,
+          "std_ic": 0.06002149904036386,
+          "overall_ic": 0.014716014591119882,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": -0.0019220817111560637,
+          "ic_95ci_upper": 0.05068908185939519,
+          "null_ic": -0.0041596448061885895,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-004_test",
+          "n": 55174,
+          "mean_ic": 0.020649388548987842,
+          "median_ic": 0.01701002641580064,
+          "std_ic": 0.052814444647431194,
+          "overall_ic": 0.0255059915367455,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.0024975623824211417,
+          "ic_95ci_upper": 0.04379633948039682,
+          "null_ic": 0.0016356379369531443,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:40.828688"
+    },
+    {
+      "experiment_id": "EXP-18-005",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-005_train",
+          "n": 111635,
+          "mean_ic": -0.003990630971775924,
+          "median_ic": -5.026179713191756e-05,
+          "std_ic": 0.030570759436955596,
+          "overall_ic": 0.0020886269607248396,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.0173888570318418,
+          "ic_95ci_upper": 0.009407595088289955,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": false
+        },
+        "val": {
+          "label": "EXP-18-005_val",
+          "n": 37850,
+          "mean_ic": 0.019546059185621464,
+          "median_ic": 0.02350561128771828,
+          "std_ic": 0.06307167294213877,
+          "overall_ic": 0.015811875811164146,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.008096320252416796,
+          "ic_95ci_upper": 0.04718843862365972,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-005_test",
+          "n": 56300,
+          "mean_ic": 0.005245326180738484,
+          "median_ic": 0.014048395083846987,
+          "std_ic": 0.06145560210275544,
+          "overall_ic": 0.017890595563479016,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.02168877898364979,
+          "ic_95ci_upper": 0.032179431345126755,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:41.260564"
+    },
+    {
+      "experiment_id": "EXP-18-006",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-006_train",
+          "n": 109371,
+          "mean_ic": -0.003824074785434413,
+          "median_ic": 0.023363946596657297,
+          "std_ic": 0.055024335458873606,
+          "overall_ic": 0.0020015914827094332,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.02793955306798193,
+          "ic_95ci_upper": 0.020291403497113107,
+          "null_ic": 0.0012138303650009862,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-006_val",
+          "n": 37093,
+          "mean_ic": 0.02048814602399996,
+          "median_ic": 0.02987213617244065,
+          "std_ic": 0.06396426109182117,
+          "overall_ic": 0.015604812830996614,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.007545427418644019,
+          "ic_95ci_upper": 0.04852171946664394,
+          "null_ic": -0.0023185979020654297,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-006_test",
+          "n": 55174,
+          "mean_ic": 0.012166201012764461,
+          "median_ic": 0.017567428738120623,
+          "std_ic": 0.05578742818684538,
+          "overall_ic": 0.0191614329256588,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.01228371740350766,
+          "ic_95ci_upper": 0.03661611942903659,
+          "null_ic": 0.006527209314556197,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:41.715861"
+    },
+    {
+      "experiment_id": "EXP-18-007",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-007_train",
+          "n": 111635,
+          "mean_ic": 0.017648503664660375,
+          "median_ic": 0.023889444850921794,
+          "std_ic": 0.028339923318582254,
+          "overall_ic": 0.027978506306067432,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.005227984641234031,
+          "ic_95ci_upper": 0.03006902268808672,
+          "null_ic": 0.0025863201280415214,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-007_val",
+          "n": 37850,
+          "mean_ic": 0.011508763248001283,
+          "median_ic": -0.009665329563583075,
+          "std_ic": 0.05821532207021731,
+          "overall_ic": 0.018165300409169298,
+          "sign_frequency": 0.45,
+          "ic_95ci_lower": -0.014005226578284456,
+          "ic_95ci_upper": 0.03702275307428702,
+          "null_ic": 0.008086321892542577,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-007_test",
+          "n": 56300,
+          "mean_ic": 0.027622269334066564,
+          "median_ic": 0.027266212366376233,
+          "std_ic": 0.033222296426695275,
+          "overall_ic": 0.026314181211245787,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.013061955951033724,
+          "ic_95ci_upper": 0.042182582717099404,
+          "null_ic": 0.0022266587773532324,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:42.101843"
+    },
+    {
+      "experiment_id": "EXP-18-008",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-008_train",
+          "n": 109371,
+          "mean_ic": 0.016886389873012105,
+          "median_ic": 0.00843711516479199,
+          "std_ic": 0.030016078404373266,
+          "overall_ic": 0.026582938137210486,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": 0.0037312634939042667,
+          "ic_95ci_upper": 0.030041516252119944,
+          "null_ic": -0.0007254424650093826,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-008_val",
+          "n": 37093,
+          "mean_ic": 0.013494625026409779,
+          "median_ic": 0.0025244142942212455,
+          "std_ic": 0.054677057920206655,
+          "overall_ic": 0.01949369060121325,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.01046865216416819,
+          "ic_95ci_upper": 0.03745790221698775,
+          "null_ic": -0.010186277651617353,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-008_test",
+          "n": 55174,
+          "mean_ic": 0.02511598814344627,
+          "median_ic": 0.025695425433442616,
+          "std_ic": 0.0403162065668843,
+          "overall_ic": 0.026114742009338554,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.007446631561664838,
+          "ic_95ci_upper": 0.0427853447252277,
+          "null_ic": 0.0010415412389024514,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:42.550293"
+    },
+    {
+      "experiment_id": "EXP-18-009",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-009_train",
+          "n": 111635,
+          "mean_ic": 0.030123171942359868,
+          "median_ic": 0.03001921893857707,
+          "std_ic": 0.03424065964226713,
+          "overall_ic": 0.039913708263567285,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.015116541201669454,
+          "ic_95ci_upper": 0.04512980268305028,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-009_val",
+          "n": 37850,
+          "mean_ic": 0.0026872504047632307,
+          "median_ic": 0.004708800410723345,
+          "std_ic": 0.06906746629937843,
+          "overall_ic": 0.008212362849366186,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.027582901332337623,
+          "ic_95ci_upper": 0.03295740214186409,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-009_test",
+          "n": 56300,
+          "mean_ic": 0.03726299778822951,
+          "median_ic": 0.03962847916064874,
+          "std_ic": 0.04638180310645968,
+          "overall_ic": 0.037436299221419576,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.016935276313878776,
+          "ic_95ci_upper": 0.05759071926258024,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:42.898361"
+    },
+    {
+      "experiment_id": "EXP-18-010",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-010_train",
+          "n": 109371,
+          "mean_ic": 0.0248545994789759,
+          "median_ic": 0.027356413260097353,
+          "std_ic": 0.04338903341080901,
+          "overall_ic": 0.03785306421840622,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": 0.005838517154798512,
+          "ic_95ci_upper": 0.04387068180315329,
+          "null_ic": 0.002523293545104612,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-010_val",
+          "n": 37093,
+          "mean_ic": 0.002058717776565451,
+          "median_ic": -0.0070072633788394725,
+          "std_ic": 0.06438776120087047,
+          "overall_ic": 0.010726289121592122,
+          "sign_frequency": 0.45,
+          "ic_95ci_lower": -0.026160462772411838,
+          "ic_95ci_upper": 0.030277898325542743,
+          "null_ic": -0.0041596448061885895,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-010_test",
+          "n": 55174,
+          "mean_ic": 0.038045178036690955,
+          "median_ic": 0.036697791510987954,
+          "std_ic": 0.04485083635586996,
+          "overall_ic": 0.037621618346630116,
+          "sign_frequency": 0.9,
+          "ic_95ci_lower": 0.0183884323245599,
+          "ic_95ci_upper": 0.05770192374882201,
+          "null_ic": 0.0016356379369531443,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:43.269363"
+    },
+    {
+      "experiment_id": "EXP-18-011",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-011_train",
+          "n": 111635,
+          "mean_ic": 0.049456232272629,
+          "median_ic": 0.06810778211478258,
+          "std_ic": 0.05931243265183812,
+          "overall_ic": 0.06224893071559422,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.02346141253383292,
+          "ic_95ci_upper": 0.07545105201142507,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-011_val",
+          "n": 37850,
+          "mean_ic": -0.007998827123343386,
+          "median_ic": -0.017913000254026652,
+          "std_ic": 0.08592039253939683,
+          "overall_ic": 0.008431032349441231,
+          "sign_frequency": 0.35,
+          "ic_95ci_lower": -0.045655099444168575,
+          "ic_95ci_upper": 0.029657445197481806,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-011_test",
+          "n": 56300,
+          "mean_ic": 0.04756497336734473,
+          "median_ic": 0.04545874473277313,
+          "std_ic": 0.06265333316017085,
+          "overall_ic": 0.053301221654580046,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.020105939422580314,
+          "ic_95ci_upper": 0.07502400731210915,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:43.648887"
+    },
+    {
+      "experiment_id": "EXP-18-012",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-012_train",
+          "n": 109371,
+          "mean_ic": 0.037460184036667746,
+          "median_ic": 0.044435453038272524,
+          "std_ic": 0.05890391981297282,
+          "overall_ic": 0.059272227377829126,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.011644402943438978,
+          "ic_95ci_upper": 0.06327596512989651,
+          "null_ic": 0.0012138303650009862,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-012_val",
+          "n": 37093,
+          "mean_ic": -0.004428650933879977,
+          "median_ic": -0.004299411145243301,
+          "std_ic": 0.07575193512699026,
+          "overall_ic": 0.012632972063425877,
+          "sign_frequency": 0.4,
+          "ic_95ci_lower": -0.03762840030261644,
+          "ic_95ci_upper": 0.028771098434856483,
+          "null_ic": -0.0023185979020654297,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-012_test",
+          "n": 55174,
+          "mean_ic": 0.06424242431973136,
+          "median_ic": 0.06762901548735742,
+          "std_ic": 0.06440232975313599,
+          "overall_ic": 0.0533764494460745,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.036016858821206976,
+          "ic_95ci_upper": 0.09246798981825574,
+          "null_ic": 0.006527209314556197,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:44.025986"
+    },
+    {
+      "experiment_id": "EXP-18-013",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-013_train",
+          "n": 111635,
+          "mean_ic": 0.017243574590332718,
+          "median_ic": 0.01658774157730878,
+          "std_ic": 0.029186369096515893,
+          "overall_ic": 0.030053224065202052,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": 0.004452084348355822,
+          "ic_95ci_upper": 0.030035064832309614,
+          "null_ic": 0.0025863201280415214,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-013_val",
+          "n": 37850,
+          "mean_ic": 0.006803565511141784,
+          "median_ic": -0.0006167257058205873,
+          "std_ic": 0.05351415490111155,
+          "overall_ic": 0.015257931528430135,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.016650046959856647,
+          "ic_95ci_upper": 0.03025717798214022,
+          "null_ic": 0.008086321892542577,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-013_test",
+          "n": 56300,
+          "mean_ic": 0.026082433601481762,
+          "median_ic": 0.03285265889302766,
+          "std_ic": 0.0348346448387489,
+          "overall_ic": 0.029417289695756407,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.010815477370506834,
+          "ic_95ci_upper": 0.04134938983245669,
+          "null_ic": 0.0022266587773532324,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:44.374055"
+    },
+    {
+      "experiment_id": "EXP-18-014",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-014_train",
+          "n": 109371,
+          "mean_ic": 0.024249068781169735,
+          "median_ic": 0.017844717851837985,
+          "std_ic": 0.02856768036447884,
+          "overall_ic": 0.030006858852842516,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.011728730831295447,
+          "ic_95ci_upper": 0.03676940673104402,
+          "null_ic": -0.0007254424650093826,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-014_val",
+          "n": 37093,
+          "mean_ic": 0.0037147018308256842,
+          "median_ic": 0.03172367636030281,
+          "std_ic": 0.05735937873204218,
+          "overall_ic": 0.016077166982199173,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": -0.02142415428760671,
+          "ic_95ci_upper": 0.028853557949258077,
+          "null_ic": -0.010186277651617353,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-014_test",
+          "n": 55174,
+          "mean_ic": 0.02460835834315898,
+          "median_ic": 0.030222806782624623,
+          "std_ic": 0.04182025498190454,
+          "overall_ic": 0.029928161658003386,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.006279823479880077,
+          "ic_95ci_upper": 0.042936893206437884,
+          "null_ic": 0.0010415412389024514,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:44.739535"
+    },
+    {
+      "experiment_id": "EXP-18-015",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-015_train",
+          "n": 111635,
+          "mean_ic": 0.03658835180605421,
+          "median_ic": 0.038813360846090064,
+          "std_ic": 0.035269142321723304,
+          "overall_ic": 0.045457941943020753,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.02113096865711455,
+          "ic_95ci_upper": 0.052045734954993865,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-015_val",
+          "n": 37850,
+          "mean_ic": 0.004620448052347308,
+          "median_ic": -0.010525219820334122,
+          "std_ic": 0.08218971295039025,
+          "overall_ic": 0.018046651024097114,
+          "sign_frequency": 0.4,
+          "ic_95ci_lower": -0.0314007818484731,
+          "ic_95ci_upper": 0.04064167795316771,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-015_test",
+          "n": 56300,
+          "mean_ic": 0.03789627667655242,
+          "median_ic": 0.049788259760572925,
+          "std_ic": 0.0489402485281176,
+          "overall_ic": 0.04210423585971349,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.016447267057809845,
+          "ic_95ci_upper": 0.059345286295294994,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:45.118439"
+    },
+    {
+      "experiment_id": "EXP-18-016",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-016_train",
+          "n": 109371,
+          "mean_ic": 0.03882696040950004,
+          "median_ic": 0.03954008218354331,
+          "std_ic": 0.03827000523458948,
+          "overall_ic": 0.04553215749416594,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.022054391101552325,
+          "ic_95ci_upper": 0.05559952971744775,
+          "null_ic": 0.002523293545104612,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-016_val",
+          "n": 37093,
+          "mean_ic": 0.007248063397374322,
+          "median_ic": -0.011321929714021397,
+          "std_ic": 0.08028580535869635,
+          "overall_ic": 0.01895734361511734,
+          "sign_frequency": 0.45,
+          "ic_95ci_lower": -0.027938742211056612,
+          "ic_95ci_upper": 0.04243486900580525,
+          "null_ic": -0.0041596448061885895,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-016_test",
+          "n": 55174,
+          "mean_ic": 0.03838015393854606,
+          "median_ic": 0.03359513819453193,
+          "std_ic": 0.04827199977939749,
+          "overall_ic": 0.04324946645895913,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.017224017246894888,
+          "ic_95ci_upper": 0.05953629063019723,
+          "null_ic": 0.0016356379369531443,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:45.492389"
+    },
+    {
+      "experiment_id": "EXP-18-017",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-017_train",
+          "n": 111635,
+          "mean_ic": 0.06341978328918282,
+          "median_ic": 0.0825919625236883,
+          "std_ic": 0.05996925766277715,
+          "overall_ic": 0.0721927361122014,
+          "sign_frequency": 0.9,
+          "ic_95ci_lower": 0.037137097297125526,
+          "ic_95ci_upper": 0.08970246928124012,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-017_val",
+          "n": 37850,
+          "mean_ic": 0.005641860180563053,
+          "median_ic": 0.014226638029178125,
+          "std_ic": 0.12798738760087472,
+          "overall_ic": 0.02321907470605394,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.05045108561131818,
+          "ic_95ci_upper": 0.06173480597244428,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-017_test",
+          "n": 56300,
+          "mean_ic": 0.046747903190530474,
+          "median_ic": 0.043557720558616106,
+          "std_ic": 0.05885087154287451,
+          "overall_ic": 0.05992569046939703,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.02095537152675531,
+          "ic_95ci_upper": 0.07254043485430564,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:45.853266"
+    },
+    {
+      "experiment_id": "EXP-18-018",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-018_train",
+          "n": 109371,
+          "mean_ic": 0.047353306685413536,
+          "median_ic": 0.046185365820254044,
+          "std_ic": 0.06703244558431093,
+          "overall_ic": 0.07220259421879262,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.01797504210059687,
+          "ic_95ci_upper": 0.0767315712702302,
+          "null_ic": 0.0012138303650009862,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-018_val",
+          "n": 37093,
+          "mean_ic": 0.00034111736867401454,
+          "median_ic": -0.005385875736239095,
+          "std_ic": 0.1063252663062473,
+          "overall_ic": 0.024609471888497155,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.04625798517588722,
+          "ic_95ci_upper": 0.04694021991323526,
+          "null_ic": -0.0023185979020654297,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-018_test",
+          "n": 55174,
+          "mean_ic": 0.062176126799746434,
+          "median_ic": 0.07696856546175929,
+          "std_ic": 0.06471306005320213,
+          "overall_ic": 0.06112189723712157,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.03381437774279316,
+          "ic_95ci_upper": 0.0905378758566997,
+          "null_ic": 0.006527209314556197,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:46.215475"
+    },
+    {
+      "experiment_id": "EXP-18-019",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-019_train",
+          "n": 111605,
+          "mean_ic": -0.00453957099070008,
+          "median_ic": 0.011170353683074006,
+          "std_ic": 0.0276073267855292,
+          "overall_ic": 0.0073646525742715775,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.01663901542712091,
+          "ic_95ci_upper": 0.007559873445720753,
+          "null_ic": 0.0025863201280415214,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-019_val",
+          "n": 37850,
+          "mean_ic": 0.02164872829965612,
+          "median_ic": 0.017143077364070364,
+          "std_ic": 0.04803276573150376,
+          "overall_ic": 0.023505917049827338,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.0005974405523550171,
+          "ic_95ci_upper": 0.04270001604695722,
+          "null_ic": 0.008086321892542577,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-019_test",
+          "n": 56300,
+          "mean_ic": 0.0030180663966676725,
+          "median_ic": 0.010078989682277637,
+          "std_ic": 0.03940452608404678,
+          "overall_ic": 0.023178926685548273,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.014251728596570394,
+          "ic_95ci_upper": 0.020287861389905737,
+          "null_ic": 0.0022266587773532324,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:46.608052"
+    },
+    {
+      "experiment_id": "EXP-18-020",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-020_train",
+          "n": 109341,
+          "mean_ic": 0.007581924033760898,
+          "median_ic": 0.013480687074653556,
+          "std_ic": 0.03215386145701743,
+          "overall_ic": 0.009710806798731765,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.0065101270778113755,
+          "ic_95ci_upper": 0.02167397514533317,
+          "null_ic": -0.0007254424650093826,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-020_val",
+          "n": 37093,
+          "mean_ic": 0.01584604256689458,
+          "median_ic": 0.028519003743547162,
+          "std_ic": 0.06153306058367568,
+          "overall_ic": 0.022884106368856752,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": -0.01112201027353291,
+          "ic_95ci_upper": 0.042814095407322075,
+          "null_ic": -0.010186277651617353,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-020_test",
+          "n": 55174,
+          "mean_ic": 0.0024423689973475165,
+          "median_ic": 0.014663453038231578,
+          "std_ic": 0.05043848011779417,
+          "overall_ic": 0.024591088563960518,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.019663269566783714,
+          "ic_95ci_upper": 0.02454800756147875,
+          "null_ic": 0.0010415412389024514,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:47.019049"
+    },
+    {
+      "experiment_id": "EXP-18-021",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-021_train",
+          "n": 111605,
+          "mean_ic": 0.009435180833010374,
+          "median_ic": 0.009580383423921791,
+          "std_ic": 0.041552659117305525,
+          "overall_ic": 0.013370005609202243,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.008776074971695254,
+          "ic_95ci_upper": 0.027646436637716,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-021_val",
+          "n": 37850,
+          "mean_ic": 0.02002814594617263,
+          "median_ic": 0.005865005189561588,
+          "std_ic": 0.07345250197825172,
+          "overall_ic": 0.029895983378050345,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.012163832411825858,
+          "ic_95ci_upper": 0.05222012430417112,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-021_test",
+          "n": 56300,
+          "mean_ic": 0.007384796492196466,
+          "median_ic": 0.002645224124183126,
+          "std_ic": 0.050021220220845146,
+          "overall_ic": 0.03155943397700465,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.014537969859137703,
+          "ic_95ci_upper": 0.029307562843530637,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:47.370088"
+    },
+    {
+      "experiment_id": "EXP-18-022",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-022_train",
+          "n": 109341,
+          "mean_ic": 0.0121818661197826,
+          "median_ic": 0.020264176068834835,
+          "std_ic": 0.04572701165160654,
+          "overall_ic": 0.016350507714855373,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.00785888034655716,
+          "ic_95ci_upper": 0.03222261258612236,
+          "null_ic": 0.002523293545104612,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-022_val",
+          "n": 37093,
+          "mean_ic": 0.02467160826437198,
+          "median_ic": 0.03233179806342859,
+          "std_ic": 0.0785109371179369,
+          "overall_ic": 0.028216572495907102,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": -0.009737327040720008,
+          "ic_95ci_upper": 0.05908054356946397,
+          "null_ic": -0.0041596448061885895,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-022_test",
+          "n": 55174,
+          "mean_ic": 0.008555282800781583,
+          "median_ic": 0.016515984610582422,
+          "std_ic": 0.045539191059120965,
+          "overall_ic": 0.03373930562844553,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.01140314766153326,
+          "ic_95ci_upper": 0.028513713263096423,
+          "null_ic": 0.0016356379369531443,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:47.727078"
+    },
+    {
+      "experiment_id": "EXP-18-023",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-023_train",
+          "n": 111605,
+          "mean_ic": 0.019677461262019743,
+          "median_ic": 0.026297528490206785,
+          "std_ic": 0.037686747124374816,
+          "overall_ic": 0.020411981041158943,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.00316051609151417,
+          "ic_95ci_upper": 0.03619440643252532,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-023_val",
+          "n": 37850,
+          "mean_ic": 0.017124096636309254,
+          "median_ic": 0.014445020226693488,
+          "std_ic": 0.13043026489375448,
+          "overall_ic": 0.02790819594604949,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.04003948733433566,
+          "ic_95ci_upper": 0.07428768060695418,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-023_test",
+          "n": 56300,
+          "mean_ic": -0.0026249912259508185,
+          "median_ic": -0.013125904948223747,
+          "std_ic": 0.06772604740363432,
+          "overall_ic": 0.04494337273549652,
+          "sign_frequency": 0.4,
+          "ic_95ci_lower": -0.032307240210963116,
+          "ic_95ci_upper": 0.027057257759061478,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:48.101852"
+    },
+    {
+      "experiment_id": "EXP-18-024",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-024_train",
+          "n": 109341,
+          "mean_ic": 0.015509979613242816,
+          "median_ic": 0.015896520574240763,
+          "std_ic": 0.059902492181407224,
+          "overall_ic": 0.025060925178197146,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.01074344511645532,
+          "ic_95ci_upper": 0.04176340434294095,
+          "null_ic": 0.0012138303650009862,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-024_val",
+          "n": 37093,
+          "mean_ic": 0.0024022624304389137,
+          "median_ic": 0.00374133462631966,
+          "std_ic": 0.11715119052944098,
+          "overall_ic": 0.02626596649779989,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.048941510600657566,
+          "ic_95ci_upper": 0.0537460354615354,
+          "null_ic": -0.0023185979020654297,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-024_test",
+          "n": 55174,
+          "mean_ic": 0.010831099973466226,
+          "median_ic": 0.02608361803206803,
+          "std_ic": 0.0813747402716007,
+          "overall_ic": 0.047796254937955016,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.024832952402676786,
+          "ic_95ci_upper": 0.04649515234960924,
+          "null_ic": 0.006527209314556197,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:48.476226"
+    },
+    {
+      "experiment_id": "EXP-18-025",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-025_train",
+          "n": 111635,
+          "mean_ic": NaN,
+          "median_ic": NaN,
+          "std_ic": NaN,
+          "overall_ic": NaN,
+          "sign_frequency": 0.0,
+          "ic_95ci_lower": NaN,
+          "ic_95ci_upper": NaN,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": false
+        },
+        "val": {
+          "label": "EXP-18-025_val",
+          "n": 37850,
+          "mean_ic": 0.025451068855563697,
+          "median_ic": 0.0182366051636467,
+          "std_ic": 0.06568116669816526,
+          "overall_ic": 0.015173460075872988,
+          "sign_frequency": 0.65,
+          "ic_95ci_lower": -0.003334971645840519,
+          "ic_95ci_upper": 0.05423710935696791,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-025_test",
+          "n": 56300,
+          "mean_ic": 0.004375499530683067,
+          "median_ic": 0.00256354289272973,
+          "std_ic": 0.05231208134262144,
+          "overall_ic": 0.009831814303792093,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.018551280974930535,
+          "ic_95ci_upper": 0.027302280036296665,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:48.809206"
+    },
+    {
+      "experiment_id": "EXP-18-026",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-026_train",
+          "n": 111635,
+          "mean_ic": -0.007000888360210011,
+          "median_ic": 0.0032240224926126733,
+          "std_ic": 0.034585426010168126,
+          "overall_ic": -0.0007091804035760326,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.02215861962375696,
+          "ic_95ci_upper": 0.008156842903336937,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": false
+        },
+        "val": {
+          "label": "EXP-18-026_val",
+          "n": 37850,
+          "mean_ic": 0.017698601565875775,
+          "median_ic": 0.025239214172602765,
+          "std_ic": 0.06643646454460378,
+          "overall_ic": 0.009359083595354012,
+          "sign_frequency": 0.6,
+          "ic_95ci_lower": -0.011418462811796003,
+          "ic_95ci_upper": 0.04681566594354755,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-026_test",
+          "n": 56300,
+          "mean_ic": 3.9179518703110966e-05,
+          "median_ic": -0.0028135949539975142,
+          "std_ic": 0.05953795474738132,
+          "overall_ic": 0.012027533435170028,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.026054479636361275,
+          "ic_95ci_upper": 0.0261328386737675,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:49.178218"
+    },
+    {
+      "experiment_id": "EXP-18-027",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-027_train",
+          "n": 111635,
+          "mean_ic": 0.030134011336676435,
+          "median_ic": 0.0300788256402132,
+          "std_ic": 0.03425409992854369,
+          "overall_ic": 0.03992027683314966,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.015121490130810739,
+          "ic_95ci_upper": 0.04514653254254213,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-027_val",
+          "n": 37850,
+          "mean_ic": 0.00294540658148588,
+          "median_ic": 0.0038485349732156242,
+          "std_ic": 0.06920463176455212,
+          "overall_ic": 0.008351742610287845,
+          "sign_frequency": 0.55,
+          "ic_95ci_lower": -0.02738486057125655,
+          "ic_95ci_upper": 0.03327567373422831,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-027_test",
+          "n": 56300,
+          "mean_ic": 0.03704274031943176,
+          "median_ic": 0.03830211620598192,
+          "std_ic": 0.04634116699202575,
+          "overall_ic": 0.03729206465747381,
+          "sign_frequency": 0.7,
+          "ic_95ci_lower": 0.016732828407467315,
+          "ic_95ci_upper": 0.05735265223139621,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:49.513378"
+    },
+    {
+      "experiment_id": "EXP-18-028",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-028_train",
+          "n": 111635,
+          "mean_ic": 0.049460093360340546,
+          "median_ic": 0.06840149496062536,
+          "std_ic": 0.059159052598634035,
+          "overall_ic": 0.06229029687349213,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.023532495393714416,
+          "ic_95ci_upper": 0.07538769132696668,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-028_val",
+          "n": 37850,
+          "mean_ic": -0.008182799022255983,
+          "median_ic": -0.01803845261281546,
+          "std_ic": 0.08442627234851882,
+          "overall_ic": 0.00853326646311438,
+          "sign_frequency": 0.35,
+          "ic_95ci_lower": -0.04518424429766296,
+          "ic_95ci_upper": 0.028818646253151,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-028_test",
+          "n": 56300,
+          "mean_ic": 0.04758937210988953,
+          "median_ic": 0.0453591469016191,
+          "std_ic": 0.06221250170761789,
+          "overall_ic": 0.053124410757770274,
+          "sign_frequency": 0.8,
+          "ic_95ci_lower": 0.020323541067652686,
+          "ic_95ci_upper": 0.07485520315212638,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:49.847047"
+    },
+    {
+      "experiment_id": "EXP-18-029",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-029_train",
+          "n": 111635,
+          "mean_ic": 0.03388767742892008,
+          "median_ic": 0.03430657854360969,
+          "std_ic": 0.03349890647564582,
+          "overall_ic": 0.042881600818391596,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.019206134346835494,
+          "ic_95ci_upper": 0.048569220511004665,
+          "null_ic": 0.004375292640076282,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-029_val",
+          "n": 37850,
+          "mean_ic": 0.004445538801579866,
+          "median_ic": -0.01043046412794386,
+          "std_ic": 0.08299977902646181,
+          "overall_ic": 0.018410572532987248,
+          "sign_frequency": 0.4,
+          "ic_95ci_lower": -0.0319307182104636,
+          "ic_95ci_upper": 0.04082179581362333,
+          "null_ic": 0.0029567671824676533,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-029_test",
+          "n": 56300,
+          "mean_ic": 0.038822360568039366,
+          "median_ic": 0.04597983664323535,
+          "std_ic": 0.04838260410193418,
+          "overall_ic": 0.041696430823196295,
+          "sign_frequency": 0.75,
+          "ic_95ci_lower": 0.01761774939476391,
+          "ic_95ci_upper": 0.06002697174131482,
+          "null_ic": 0.00058689425212177,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:50.174442"
+    },
+    {
+      "experiment_id": "EXP-18-030",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY",
+      "result_status": "COMPLETED",
+      "splits": {
+        "train": {
+          "label": "EXP-18-030_train",
+          "n": 111635,
+          "mean_ic": 0.06116098869947142,
+          "median_ic": 0.0900257866808116,
+          "std_ic": 0.06010421004513517,
+          "overall_ic": 0.07142225259006532,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.03481915721808122,
+          "ic_95ci_upper": 0.08750282018086161,
+          "null_ic": 0.003526603161441185,
+          "exceeds_null": true
+        },
+        "val": {
+          "label": "EXP-18-030_val",
+          "n": 37850,
+          "mean_ic": 0.0058188194632201855,
+          "median_ic": 0.015558705028606342,
+          "std_ic": 0.1292738671036142,
+          "overall_ic": 0.023349705030554044,
+          "sign_frequency": 0.5,
+          "ic_95ci_lower": -0.05083795083013902,
+          "ic_95ci_upper": 0.062475589756579394,
+          "null_ic": -0.00912574204577537,
+          "exceeds_null": true
+        },
+        "test": {
+          "label": "EXP-18-030_test",
+          "n": 56300,
+          "mean_ic": 0.04757999872483101,
+          "median_ic": 0.04444039447866891,
+          "std_ic": 0.059162186997632135,
+          "overall_ic": 0.059927124108337705,
+          "sign_frequency": 0.85,
+          "ic_95ci_lower": 0.021651027047276124,
+          "ic_95ci_upper": 0.07350897040238591,
+          "null_ic": -0.005392250142887885,
+          "exceeds_null": true
+        }
+      },
+      "timestamp": "2026-08-24T17:40:50.495888"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "A1_horizon_cherry_picking": {
+    "result": "PASS",
+    "detail": "All 3 horizons pre-specified"
+  },
+  "A2_multiple_testing": {
+    "result": "LIMITATION",
+    "detail": "Correction applied in Step 14"
+  },
+  "A3_posthoc_model": {
+    "result": "PASS",
+    "detail": "Ridge/Lasso pre-specified"
+  },
+  "A4_universe_dependence": {
+    "result": "PASS",
+    "detail": "Both universes tested"
+  },
+  "A5_label_bugs": {
+    "result": "PASS",
+    "detail": "LAB-006 verified in Phase 17C-R"
+  },
+  "A6_baseline_weakness": {
+    "result": "PASS",
+    "detail": "Compared against null and Ridge baselines"
+  },
+  "A7_economic_overreach": {
+    "result": "LIMITATION",
+    "detail": "Economic validation not established"
+  },
+  "A8_regime_concentration": {
+    "result": "LIMITATION",
+    "detail": "5 walk-forward windows tested"
+  },
+  "A9_hidden_experiments": {
+    "result": "PASS",
+    "detail": "All experiments in locked plan"
+  },
+  "A10_leakage": {
+    "result": "PASS",
+    "detail": "Split boundaries respected"
+  },
+  "_summary": {
+    "pass": 7,
+    "limitation": 3,
+    "critical": 0
+  }
+}

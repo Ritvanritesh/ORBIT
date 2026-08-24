@@ -1,0 +1,23 @@
+{
+  "phase": "18",
+  "branch_id": "B001",
+  "timestamp": "2026-08-24T17:40:53.720536",
+  "plan_digest_match": true,
+  "experiment_count": 30,
+  "budget": 30,
+  "within_budget": true,
+  "no_undeclared_experiments": true,
+  "no_deleted_failures": true,
+  "historical_artifacts_unchanged": true,
+  "baseline_integrity": true,
+  "registry_integrity": true,
+  "hypothesis_identity_integrity": true,
+  "hypothesis_verdicts": {
+    "HYP-MOM": "EXPLORATORY_SIGNAL",
+    "HYP-VOL": "EXPLORATORY_SIGNAL",
+    "HYP-MAC": "EXPLORATORY_SIGNAL",
+    "HYP-XSEC": "EXPLORATORY_SIGNAL"
+  },
+  "overall_verdict": "B",
+  "decision": "CONTINUE_WITHIN_REMAINING_BUDGET"
+}

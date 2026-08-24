@@ -1,0 +1,99 @@
+{
+  "HYP-MOM": {
+    "hypothesis_id": "HYP-MOM",
+    "research_question": "Does momentum return information show horizon-dependent predictive association?",
+    "mechanism": "Price trends propagate through investor underreaction over multiple sessions",
+    "predicted_direction": "Positive IC at H-10/H-20 exceeding H-5",
+    "information_domain": "momentum_returns",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "features": [
+      "ret_10",
+      "ret_20",
+      "ret_30"
+    ],
+    "primary_metric": "spearman_ic",
+    "falsification": "If IC at H-10/H-20 does not exceed H-5 IC, horizon-mismatch is not supported for momentum",
+    "limitations": [
+      "Linear model only",
+      "Single alpha",
+      "OHLCV-only features"
+    ],
+    "relationship_to_prior": "Extends Phase 9-13 OHLCV research to multiple horizons"
+  },
+  "HYP-VOL": {
+    "hypothesis_id": "HYP-VOL",
+    "research_question": "Does volatility information show horizon-dependent predictive association?",
+    "mechanism": "Volatility regimes persist over multi-session periods",
+    "predicted_direction": "Positive IC at H-10/H-20, potentially negative at H-5",
+    "information_domain": "volatility_dynamics",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "features": [
+      "vol_10",
+      "vol_30"
+    ],
+    "primary_metric": "spearman_ic",
+    "falsification": "If volatility IC does not vary systematically across horizons, mechanism is not supported",
+    "limitations": [
+      "Only 2 volatility features",
+      "Linear model",
+      "Mean-reversion may confound"
+    ],
+    "relationship_to_prior": "Extends Phase 14.5 volatility dynamics (H-4 FRAGILE) to explicit horizon test"
+  },
+  "HYP-MAC": {
+    "hypothesis_id": "HYP-MAC",
+    "research_question": "Does macro regime information show stronger predictive association at longer horizons?",
+    "mechanism": "Macro conditions influence corporate earnings and discount rates over weeks to months",
+    "predicted_direction": "Positive IC at H-20 exceeding H-10 and H-5",
+    "information_domain": "macro_regime",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "features": [
+      "vol_30",
+      "log_dv_med_20"
+    ],
+    "primary_metric": "spearman_ic",
+    "falsification": "If macro IC is stronger at H-5 than H-20, mechanism is not supported",
+    "limitations": [
+      "PIT limitation (revised macro data)",
+      "Only 2 proxy features",
+      "Regime dependence documented"
+    ],
+    "relationship_to_prior": "Extends H-3 macro regime (Phase 14.5/15/17A) to explicit horizon comparison"
+  },
+  "HYP-XSEC": {
+    "hypothesis_id": "HYP-XSEC",
+    "research_question": "Does cross-sectional relative strength show horizon-dependent predictive association?",
+    "mechanism": "Relative ranking captures mean-reversion and momentum across instruments",
+    "predicted_direction": "Consistent positive IC across horizons (horizon-robust)",
+    "information_domain": "cross_sectional",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "features": [
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "log_dv_med_20"
+    ],
+    "primary_metric": "spearman_ic",
+    "falsification": "If cross-sectional IC varies dramatically across horizons, it is not horizon-robust",
+    "limitations": [
+      "SMA ratios are price-based, not true cross-sectional",
+      "Linear model"
+    ],
+    "relationship_to_prior": "Extends Phase 12/14.5 cross-sectional research"
+  }
+}

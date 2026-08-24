@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "schema_hypothesis_schema.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "schema_experiment_spec_schema.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "schema_data_spec_schema.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "schema_evidence_record_schema.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "policy_exploratory_policy.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "policy_baseline_policy.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "policy_horizon_policy.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "policy_promotion_policy_v2.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "policy_data_governance_policy.json": {
+      "present": true,
+      "status": "OK"
+    },
+    "branch_registry": {
+      "present": true
+    },
+    "baseline_registry": {
+      "present": true
+    },
+    "phase17cr_plan": {
+      "present": true
+    },
+    "phase17cr_baselines": {
+      "present": true
+    },
+    "b001_not_active": {
+      "value": false,
+      "status": "CONFLICT"
+    }
+  },
+  "all_passed": false,
+  "timestamp": "2026-08-24T17:38:49.808301"
+}

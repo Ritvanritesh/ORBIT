@@ -1,0 +1,501 @@
+{
+  "total_experiments": 30,
+  "budget": 30,
+  "within_budget": true,
+  "experiments": [
+    {
+      "experiment_id": "EXP-18-001",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-002",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-003",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-004",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-005",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-006",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-007",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-008",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-009",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-010",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-011",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-012",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-013",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-014",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-015",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-016",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-017",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-018",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-019",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-020",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-021",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-022",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-023",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-024",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-025",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-026",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-027",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-028",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-029",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    },
+    {
+      "experiment_id": "EXP-18-030",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "READY"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "HYP-MOM": {
+    "mean_ic_050": 0.013700700595578496,
+    "mean_ic_100": 0.01497414223104486,
+    "classification": "UNIVERSE_CONSISTENT"
+  },
+  "HYP-VOL": {
+    "mean_ic_050": 0.010338740936275787,
+    "mean_ic_100": 0.014284317262077082,
+    "classification": "UNIVERSE_CONSISTENT"
+  },
+  "HYP-MAC": {
+    "mean_ic_050": 0.019656786964424498,
+    "mean_ic_100": 0.01988132749527122,
+    "classification": "UNIVERSE_CONSISTENT"
+  },
+  "HYP-XSEC": {
+    "mean_ic_050": 0.02710336545797572,
+    "mean_ic_100": 0.025788881787521246,
+    "classification": "UNIVERSE_CONSISTENT"
+  }
+}

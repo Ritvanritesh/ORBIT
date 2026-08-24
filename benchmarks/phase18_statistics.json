@@ -1,0 +1,8 @@
+{
+  "total_tests": 30,
+  "n_positive": 30,
+  "mean_ic": 0.01748590817276881,
+  "std_ic": 0.006247214060087225,
+  "holm_rejected_count": 0,
+  "bh_rejected_count": 0
+}

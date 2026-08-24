@@ -1,0 +1,87 @@
+{
+  "observed_facts": [
+    {
+      "id": "F1",
+      "fact": "H-5 OHLCV technical features showed IC ~0.02-0.04 in Phases 9-13 but failed to generalize",
+      "source": "Phase 16.5 research_map"
+    },
+    {
+      "id": "F2",
+      "fact": "H-3 macro regime features showed highest IC (~0.13-0.15) but temporal instability",
+      "source": "Phase 15.2"
+    },
+    {
+      "id": "F3",
+      "fact": "Phase 17A walk-forward: no candidate positive across all 8 windows",
+      "source": "Phase 17A results"
+    },
+    {
+      "id": "F4",
+      "fact": "Phase 16 portfolio: Sharpe +0.016 vs equal-weight baseline (not economically meaningful)",
+      "source": "Phase 16"
+    },
+    {
+      "id": "F5",
+      "fact": "Path structure (H-1), return asymmetry (H-2), volatility dynamics (H-4) all classified FRAGILE",
+      "source": "Phase 14.5"
+    },
+    {
+      "id": "F6",
+      "fact": "All 4 macro features CLIFF-sensitive; inflation 2022 regime destructive",
+      "source": "Phase 15.2, 17A"
+    },
+    {
+      "id": "F7",
+      "fact": "Phase 17C-R null calibration: Ridge train IC +0.032, val/test IC ~+0.001",
+      "source": "Phase 17C-R"
+    }
+  ],
+  "inferences": [
+    {
+      "id": "I1",
+      "inference": "H-5 label may be too short for OHLCV technical information to produce robust signal",
+      "confidence": "medium",
+      "basis": "F1, F7"
+    },
+    {
+      "id": "I2",
+      "inference": "Macro information may operate at longer horizons than H-5",
+      "confidence": "medium",
+      "basis": "F2, F6"
+    },
+    {
+      "id": "I3",
+      "inference": "Walk-forward instability suggests regime dependence, not pure horizon mismatch",
+      "confidence": "medium",
+      "basis": "F3, F6"
+    },
+    {
+      "id": "I4",
+      "inference": "Economic translation is the binding constraint, not statistical signal",
+      "confidence": "low",
+      "basis": "F4"
+    }
+  ],
+  "speculations": [
+    {
+      "id": "S1",
+      "speculation": "Longer horizons (H-10, H-20) may show stronger signal for macro features",
+      "basis": "I2",
+      "falsifiable": true
+    },
+    {
+      "id": "S2",
+      "speculation": "Shorter horizons (H-1) may be too noisy for OHLCV features",
+      "basis": "I1",
+      "falsifiable": true
+    },
+    {
+      "id": "S3",
+      "speculation": "Cross-sectional features may be more horizon-robust than time-series features",
+      "basis": "F5",
+      "falsifiable": true
+    }
+  ],
+  "key_question": "Could weak/null predictive results be partly explained by horizon mismatch?",
+  "diagnosis_principle": "The purpose is to test and attempt to falsify the horizon-mismatch explanation, not to confirm it."
+}

@@ -1,0 +1,22 @@
+{
+  "HYP-MOM": {
+    "ridge_mean_ic": 0.01481556433330001,
+    "lasso_mean_ic": 0.0122662718356135,
+    "consistent": true
+  },
+  "HYP-VOL": {
+    "ridge_mean_ic": 0.012943607899034662,
+    "lasso_mean_ic": 0.008442504536701112,
+    "consistent": true
+  },
+  "HYP-MAC": {
+    "ridge_mean_ic": 0.019361273290732478,
+    "lasso_mean_ic": 0.020880138781770648,
+    "consistent": true
+  },
+  "HYP-XSEC": {
+    "ridge_mean_ic": 0.026446123622748483,
+    "lasso_mean_ic": null,
+    "consistent": null
+  }
+}

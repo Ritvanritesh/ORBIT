@@ -1,0 +1,58 @@
+{
+  "momentum_returns": {
+    "domain": "Price/Technical Information",
+    "mechanism": "Price trends propagate through investor behavior over multiple sessions",
+    "expected_reaction_speed": "Medium (H-5 to H-20)",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "reason_effect_may_disappear": "Short horizons dominated by noise; long horizons by regime shifts",
+    "falsification": "If IC does not vary systematically across horizons, horizon-mismatch explanation fails",
+    "prior_evidence": "Phases 9-13: IC ~0.02-0.04 at H-5; Phase 14.5: H-1 FRAGILE",
+    "available_data": true
+  },
+  "volatility_dynamics": {
+    "domain": "Volatility Information",
+    "mechanism": "Volatility regimes persist and mean-revert over multi-session periods",
+    "expected_reaction_speed": "Slow (H-10 to H-20)",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "reason_effect_may_disappear": "Volatility is mean-reverting; signal may reverse at long horizons",
+    "falsification": "If volatility features show no horizon-dependent IC pattern, mechanism is not supported",
+    "prior_evidence": "Phase 14.5: H-4 FRAGILE, tested only at H-5 equivalent",
+    "available_data": true
+  },
+  "macro_regime": {
+    "domain": "Macro Information",
+    "mechanism": "Macro conditions influence corporate earnings and discount rates over weeks to months",
+    "expected_reaction_speed": "Slow (H-20+)",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "reason_effect_may_disappear": "Macro data is revised (PIT limitation); effects are regime-dependent",
+    "falsification": "If macro features show stronger IC at H-5 than H-20, mechanism is not supported",
+    "prior_evidence": "Phase 15.2: H-3 IC ~0.13-0.15 but temporal instability; Phase 17A: regime-dependent",
+    "available_data": true
+  },
+  "cross_sectional": {
+    "domain": "Cross-Sectional Information",
+    "mechanism": "Relative strength/ranking captures mean-reversion and momentum across instruments",
+    "expected_reaction_speed": "Medium (H-5 to H-20)",
+    "candidate_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "reason_effect_may_disappear": "Cross-sectional signals are sensitive to universe composition",
+    "falsification": "If cross-sectional features show no horizon variation, mechanism is not horizon-dependent",
+    "prior_evidence": "Phase 12: cross-sectional IC ~0.02-0.03; Phase 14.5: FRAGILE",
+    "available_data": true
+  }
+}

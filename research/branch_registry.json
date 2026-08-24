@@ -2,7 +2,58 @@
   "registry_name": "ORBIT Research Branch Registry",
   "version": "1.0",
   "created": "2026-08-24T16:47:58.891062",
-  "branches": [],
+  "branches": [
+    {
+      "branch_id": "B001",
+      "branch_name": "Horizon-Aware Signal Investigation",
+      "research_question_id": "RQ-0001",
+      "hypothesis_family": "horizon_mismatch",
+      "mechanism": "Different information types operate over different horizons",
+      "status": "ACTIVE",
+      "locked_plan_digest": "9fe68e8ddf1a17cf75721666041ffc491007ad3b2089602be12a30f3b1c7a430",
+      "experiment_budget": 30,
+      "experiments_completed": 0,
+      "experiments_remaining": 30,
+      "exploratory_evidence": [],
+      "review_decisions": [],
+      "confirmatory_registrations": [],
+      "final_classification": null,
+      "start_timestamp": "2026-08-24T17:37:03.296221",
+      "parent_evidence_references": [
+        "phase16_5_research_map",
+        "phase17a_results",
+        "phase14_5_hypotheses",
+        "phase15_2_stability",
+        "phase16_portfolio",
+        "phase17cr_baselines"
+      ]
+    },
+    {
+      "branch_id": "B001",
+      "branch_name": "Horizon-Aware Signal Investigation",
+      "research_question_id": "RQ-0001",
+      "hypothesis_family": "horizon_mismatch",
+      "mechanism": "Different information types operate over different horizons",
+      "status": "ACTIVE",
+      "locked_plan_digest": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36",
+      "experiment_budget": 30,
+      "experiments_completed": 0,
+      "experiments_remaining": 30,
+      "exploratory_evidence": [],
+      "review_decisions": [],
+      "confirmatory_registrations": [],
+      "final_classification": null,
+      "start_timestamp": "2026-08-24T17:40:32.957047",
+      "parent_evidence_references": [
+        "phase16_5_research_map",
+        "phase17a_results",
+        "phase14_5_hypotheses",
+        "phase15_2_stability",
+        "phase16_portfolio",
+        "phase17cr_baselines"
+      ]
+    }
+  ],
   "prevention_rules": [
     "Experiment deletion is not allowed",
     "Hidden budget expansion is not allowed",

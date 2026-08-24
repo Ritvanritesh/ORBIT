@@ -1,0 +1,561 @@
+{
+  "branch_id": "B001",
+  "branch_name": "Horizon-Aware Signal Investigation",
+  "purpose": "Test whether weak/null predictive results may be explained by horizon mismatch",
+  "hypotheses": [
+    "HYP-MOM",
+    "HYP-VOL",
+    "HYP-MAC",
+    "HYP-XSEC"
+  ],
+  "datasets": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "horizons": [
+    "H-5",
+    "H-10",
+    "H-20"
+  ],
+  "horizon_sessions": {
+    "H-5": 5,
+    "H-10": 10,
+    "H-20": 20
+  },
+  "models": {
+    "ridge": {
+      "alpha": 1.0
+    },
+    "lasso": {
+      "alpha": 0.001
+    }
+  },
+  "feature_set": "FS-001 (8 features, hypothesis subsets)",
+  "label": "LAB-006 (excess return vs SPY)",
+  "experiment_budget": 30,
+  "experiments_planned": 30,
+  "experiments": [
+    {
+      "experiment_id": "EXP-18-001",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-002",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-003",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-004",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-005",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-006",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-007",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-008",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-009",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-010",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-011",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-012",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-013",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-014",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-015",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-016",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-017",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-018",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-019",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-020",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-5",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-021",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-022",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-023",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-024",
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-100",
+      "model": "ridge",
+      "model_alpha": 1.0,
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-025",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-026",
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-027",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-028",
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-029",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-10",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    },
+    {
+      "experiment_id": "EXP-18-030",
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "universe": "ENV-050",
+      "model": "lasso",
+      "model_alpha": 0.001,
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "label": "LAB-006_H-20",
+      "research_mode": "EXPLORATORY",
+      "status": "PLANNED"
+    }
+  ],
+  "baseline_comparisons": [
+    "BL-NULL-001",
+    "BL-NULL-002",
+    "BL-SIMPLE-001"
+  ],
+  "stopping_rules": {
+    "early_stop": [
+      "Data integrity failure"
+    ],
+    "no_early_stop_for": [
+      "Unfavorable results"
+    ]
+  },
+  "exclusions": [
+    "No new experiments after results observed",
+    "No horizon cherry-picking"
+  ],
+  "metrics": [
+    "spearman_ic",
+    "mean_ic",
+    "std_ic",
+    "sign_frequency"
+  ],
+  "plan_digest": "35ff82fc41c2340714cf937b1b99bea0b4c52d2c257742699f4dbb77f4e46d36"
+}

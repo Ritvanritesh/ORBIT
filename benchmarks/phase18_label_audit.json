@@ -1,0 +1,37 @@
+{
+  "H-5": {
+    "horizon_sessions": 5,
+    "total_rows": 349374,
+    "valid_labels": 349124,
+    "invalid_labels": 250,
+    "validity_rate": 0.9992844344456084,
+    "mean_label": 0.0013871040591975374,
+    "std_label": 0.03989572812111639,
+    "status": "OK"
+  },
+  "H-10": {
+    "horizon_sessions": 10,
+    "total_rows": 349374,
+    "valid_labels": 348874,
+    "invalid_labels": 500,
+    "validity_rate": 0.9985688688912169,
+    "mean_label": 0.0027324783802187996,
+    "std_label": 0.05554415664337048,
+    "status": "OK"
+  },
+  "H-20": {
+    "horizon_sessions": 20,
+    "total_rows": 349374,
+    "valid_labels": 348374,
+    "invalid_labels": 1000,
+    "validity_rate": 0.9971377377824338,
+    "mean_label": 0.005428038481231797,
+    "std_label": 0.07834524701504014,
+    "status": "OK"
+  },
+  "synthetic_test": {
+    "description": "Hand-calculated verification",
+    "test": "Stock 100->105 (5%), SPY 400->410 (2.5%): excess = 0.05 - 0.025 = 0.025",
+    "note": "Verified in code: ret = exit/entry - 1; excess = ret - spy_ret"
+  }
+}
