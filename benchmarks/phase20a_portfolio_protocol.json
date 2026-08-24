@@ -1,0 +1,55 @@
+{
+  "phase": "20A",
+  "step": 6,
+  "timestamp": "2026-08-24T13:56:23.103452+00:00",
+  "methods": {
+    "PC-001": {
+      "name": "Equal-Weight Top-N",
+      "ranking_direction": "descending",
+      "N_values": [
+        10,
+        20,
+        50
+      ],
+      "rebalance_frequency": "monthly",
+      "weight_calculation": "1/N for each position",
+      "max_position_weight": "1/N",
+      "tie_handling": "lexicographic by instrument ID",
+      "missing_prediction_handling": "exclude from portfolio",
+      "turnover_definition": "sum(|w_new - w_old|) / 2",
+      "cost_application": "applied to turnover at each rebalance"
+    },
+    "PC-002": {
+      "name": "Score-Proportional Top-N",
+      "ranking_direction": "descending",
+      "N_values": [
+        10,
+        20,
+        50
+      ],
+      "rebalance_frequency": "monthly",
+      "weight_calculation": "proportional to positive scores, normalized to sum to 1",
+      "max_position_weight": "0.20 (20% cap)",
+      "tie_handling": "lexicographic by instrument ID",
+      "missing_prediction_handling": "exclude from portfolio",
+      "turnover_definition": "sum(|w_new - w_old|) / 2",
+      "cost_application": "applied to turnover at each rebalance"
+    },
+    "PC-003": {
+      "name": "Canonical Benchmark Construction",
+      "ranking_direction": "none",
+      "N_values": [
+        "all"
+      ],
+      "rebalance_frequency": "monthly",
+      "weight_calculation": "equal weight across all universe members",
+      "max_position_weight": "1/N_universe",
+      "tie_handling": "N/A",
+      "missing_prediction_handling": "exclude from weight denominator",
+      "turnover_definition": "rebalance to equal weight at each period",
+      "cost_application": "applied to turnover at each rebalance"
+    }
+  },
+  "note": "Multiple N values are pre-registered as a finite family. All values included in statistical family. No selective reporting of favorable N.",
+  "lock_status": "IMMUTABLE"
+}

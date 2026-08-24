@@ -1,0 +1,47 @@
+{
+  "phase": "20A",
+  "step": 9,
+  "timestamp": "2026-08-24T13:56:23.104450+00:00",
+  "tests": {
+    "L1_same_bar_close": {
+      "attack": "Use same-bar closing price to trade at that close",
+      "result": "REJECTED",
+      "detail": "Trading uses next-bar open price; same-bar close is future information"
+    },
+    "L2_future_returns_position": {
+      "attack": "Use future returns in position construction",
+      "result": "REJECTED",
+      "detail": "Position construction uses only current-bar features and past returns"
+    },
+    "L3_delayed_execution_future": {
+      "attack": "Delayed execution with future feature access",
+      "result": "REJECTED",
+      "detail": "Execution simulation uses only point-in-time data available at decision time"
+    },
+    "L4_future_benchmark": {
+      "attack": "Use future benchmark values",
+      "result": "REJECTED",
+      "detail": "Benchmark returns calculated using only historical prices"
+    },
+    "L5_future_constituents": {
+      "attack": "Use future constituent membership",
+      "result": "REJECTED",
+      "detail": "Universe membership determined at start of each period using only past data"
+    },
+    "L6_survivorship_bias": {
+      "attack": "Survivorship bias in universe construction",
+      "result": "REJECTED",
+      "detail": "Universe includes delisted instruments; no backfill of delistings"
+    },
+    "L7_future_liquidity_costs": {
+      "attack": "Cost calculation using future liquidity information",
+      "result": "REJECTED",
+      "detail": "Cost model uses fixed pre-registered assumptions, not actual liquidity"
+    }
+  },
+  "summary": {
+    "total": 7,
+    "rejected": 7,
+    "passed": 0
+  }
+}

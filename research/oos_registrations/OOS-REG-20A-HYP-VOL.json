@@ -1,0 +1,63 @@
+{
+  "registration_id": "OOS-REG-20A-HYP-VOL",
+  "phase": "20A",
+  "hypothesis_id": "HYP-VOL",
+  "mechanism": "Volatility regimes persist over multi-session periods",
+  "features": [
+    "vol_10",
+    "vol_30"
+  ],
+  "transformations": "StandardScaler within walk-forward window",
+  "label": "LAB-006 (excess return vs SPY, per-horizon)",
+  "horizons": [
+    "H-5",
+    "H-10",
+    "H-20"
+  ],
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "model_family": {
+    "ridge": {
+      "alpha": 1.0
+    },
+    "lasso": {
+      "alpha": 0.001
+    }
+  },
+  "hyperparameters": {
+    "ridge_alpha": 1.0,
+    "lasso_alpha": 0.001
+  },
+  "preprocessing": "StandardScaler fitted on training window only",
+  "missing_data_treatment": "Drop observations with missing features or labels",
+  "training_procedure": "Expanding window walk-forward. Train on all available data up to point. Minimum 2000 training observations. 5-session embargo between train and prediction.",
+  "prediction_procedure": "Predict on next 500 sessions after embargo. One prediction per instrument per session.",
+  "oos_start_date": "2026-07-01",
+  "oos_minimum_observations": 1000,
+  "primary_metric": "spearman_ic",
+  "secondary_metrics": [
+    "mean_ic",
+    "std_ic",
+    "sign_frequency"
+  ],
+  "statistical_test": "one-sided t-test against null IC distribution",
+  "multiple_testing_family": "All 4 hypotheses x 3 horizons x 2 universes x 2 models = 48 tests",
+  "correction_method": "Holm (primary), BH (secondary)",
+  "economic_materiality": {
+    "minimum_meaningful_ic": 0.01,
+    "consistency_requirement": "positive-window fraction >= 0.6",
+    "universe_consistency": "sign of mean IC agrees across universes",
+    "model_consistency": "both ridge and lasso positive mean IC (where required)"
+  },
+  "decision_criteria": {
+    "confirmed": "mean_val_IC >= 0.010 AND exceeds null (p<0.05 after Holm) AND temporal stability AND universe consistency AND model consistency",
+    "partially_confirmed": "mean_val_IC >= 0.005 AND exceeds null but one robustness criterion not met",
+    "not_confirmed": "fails primary criterion or materiality",
+    "inconclusive": "insufficient OOS data or infrastructure limitation"
+  },
+  "registration_timestamp": "2026-08-24T13:56:23.100461+00:00",
+  "p19_status": "PARTIALLY_CONFIRMED",
+  "p19_mean_val_ic": 0.011818332058451272
+}

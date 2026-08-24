@@ -1,0 +1,74 @@
+{
+  "phase": "20A",
+  "step": 8,
+  "timestamp": "2026-08-24T13:56:23.103452+00:00",
+  "tests": {
+    "T1_zero_turnover": {
+      "description": "Zero turnover portfolio",
+      "expected_turnover": 0.0,
+      "actual_turnover": 0.0,
+      "pass": "True"
+    },
+    "T2_full_turnover": {
+      "description": "Full turnover portfolio",
+      "expected_turnover": 1.0,
+      "actual_turnover": 1.0,
+      "pass": "True"
+    },
+    "T3_positive_with_costs": {
+      "description": "Known positive gross return with known costs",
+      "expected_net_return": 0.09965,
+      "actual_net_return": 0.09965,
+      "pass": true
+    },
+    "T4_negative_gross": {
+      "description": "Known negative gross return",
+      "expected_net_return": -0.050210000000000005,
+      "actual_net_return": -0.050210000000000005,
+      "pass": true
+    },
+    "T5_missing_security": {
+      "description": "Missing security handling",
+      "expected_n_valid": 2,
+      "actual_n_valid": 2,
+      "expected_weights": {
+        "A": 0.625,
+        "B": 0.375
+      },
+      "actual_weights": {
+        "A": 0.625,
+        "B": 0.375
+      },
+      "pass": true
+    },
+    "T6_tied_ranking": {
+      "description": "Tied ranking handling",
+      "expected_first": "A",
+      "actual_first": "A",
+      "pass": true
+    },
+    "T7_empty_portfolio": {
+      "description": "Empty portfolio handling",
+      "expected_n_positions": 0,
+      "actual_n_positions": 0,
+      "pass": true
+    },
+    "T8_delayed_execution": {
+      "description": "Delayed execution (signal t-1, execute t)",
+      "signal_time": "2026-07-01",
+      "execution_time": "2026-07-02",
+      "pass": true
+    },
+    "T9_benchmark_alignment": {
+      "description": "Benchmark date alignment",
+      "pass": true
+    },
+    "T10_cost_scaling": {
+      "description": "Transaction cost scaling with turnover",
+      "pass": true
+    }
+  },
+  "all_passed": true,
+  "n_tests": 10,
+  "n_passed": 10
+}

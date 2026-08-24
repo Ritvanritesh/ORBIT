@@ -1,0 +1,22 @@
+{
+  "phase": "20A",
+  "step": 3,
+  "timestamp": "2026-08-24T13:56:23.102455+00:00",
+  "registrations": {
+    "HYP-MOM": {
+      "digest": "abb2303537d25383063999c2bc49299b8d1540c4dc18a4df148c2e3834fbb1ec"
+    },
+    "HYP-VOL": {
+      "digest": "4810feec25016f4d8919c67f4a0250d120b11d1e74ee6cb5e6338c6e706ff74b"
+    },
+    "HYP-MAC": {
+      "digest": "3aba0999f77eb094c2369e28402278563fc0b8f8948fdd980cf0609bd89a491a"
+    },
+    "HYP-XSEC": {
+      "digest": "43abbffec0f1e2acacc823c4f9d405c434ae7412e92fcc019b6bb845381ee91f"
+    }
+  },
+  "total_registrations": 4,
+  "lock_status": "IMMUTABLE",
+  "oos_boundary": "2026-06-30"
+}

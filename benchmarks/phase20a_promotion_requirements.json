@@ -1,0 +1,71 @@
+{
+  "phase": "20A",
+  "step": 11,
+  "timestamp": "2026-08-24T13:56:23.105447+00:00",
+  "requirements": [
+    {
+      "id": "PROM-001",
+      "criterion": "Genuine untouched OOS evidence exists",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-002",
+      "criterion": "OOS protocol was locked before data evaluation",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-003",
+      "criterion": "Primary predictive criterion is met (mean IC >= 0.010)",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-004",
+      "criterion": "Multiple-testing correction is passed (Holm p < 0.05)",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-005",
+      "criterion": "Materiality threshold is met",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-006",
+      "criterion": "Required universe consistency is demonstrated",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-007",
+      "criterion": "Required model consistency is demonstrated",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-008",
+      "criterion": "Economic evaluation is completed",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-009",
+      "criterion": "Net-of-cost performance is evaluated across all stress scenarios",
+      "required_for": "ALL hypotheses"
+    },
+    {
+      "id": "PROM-010",
+      "criterion": "No material leakage or integrity failure exists",
+      "required_for": "ALL hypotheses"
+    }
+  ],
+  "current_status": {
+    "hypotheses": {
+      "HYP-MOM": "PARTIALLY_CONFIRMED (PSEUDO_CONFIRMATORY)",
+      "HYP-VOL": "PARTIALLY_CONFIRMED (PSEUDO_CONFIRMATORY)",
+      "HYP-MAC": "PARTIALLY_CONFIRMED (PSEUDO_CONFIRMATORY)",
+      "HYP-XSEC": "PARTIALLY_CONFIRMED (PSEUDO_CONFIRMATORY)"
+    },
+    "note": "No hypothesis meets all promotion requirements. OOS evidence not yet available."
+  },
+  "forbidden": [
+    "Promoting based on exploratory or pseudo-confirmatory IC",
+    "Waiving any requirement",
+    "Creating exceptions for specific hypotheses"
+  ]
+}

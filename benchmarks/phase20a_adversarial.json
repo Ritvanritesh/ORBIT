@@ -1,0 +1,125 @@
+{
+  "phase": "20A",
+  "step": 13,
+  "timestamp": "2026-08-24T13:56:23.106444+00:00",
+  "data_firewall_tests": {
+    "A1_train_with_oos": {
+      "attack": "Include RESERVED_OOS observations in training data",
+      "detection": "Timestamp filter rejects observations with date > 2026-06-30",
+      "result": "REJECTED"
+    },
+    "A2_tune_with_oos": {
+      "attack": "Use RESERVED_OOS data for hyperparameter tuning",
+      "detection": "Tuning pipeline only accepts HISTORICAL_RESEARCH data",
+      "result": "REJECTED"
+    },
+    "A3_ic_on_oos": {
+      "attack": "Calculate IC on RESERVED_OOS data during readiness check",
+      "detection": "Readiness trigger only inspects timestamps and counts, not returns",
+      "result": "REJECTED"
+    },
+    "A4_optimize_n_with_oos": {
+      "attack": "Optimize portfolio N using RESERVED_OOS returns",
+      "detection": "Portfolio protocol is locked before OOS evaluation",
+      "result": "REJECTED"
+    },
+    "A5_select_costs_after": {
+      "attack": "Select favorable cost assumptions after seeing OOS results",
+      "detection": "Cost model is locked in Step 7 before OOS evaluation",
+      "result": "REJECTED"
+    },
+    "A6_modify_registration": {
+      "attack": "Modify OOS registration after seeing results",
+      "detection": "Registrations are SHA-256 locked; modification detectable",
+      "result": "REJECTED"
+    },
+    "A7_change_oos_start": {
+      "attack": "Change the OOS start date after seeing results",
+      "detection": "OOS boundary is 2026-06-30, locked in this phase",
+      "result": "REJECTED"
+    },
+    "A8_delete_observations": {
+      "attack": "Delete unfavorable OOS observations",
+      "detection": "All observations counted; deletion detectable via hash chain",
+      "result": "REJECTED"
+    },
+    "A9_bypass_coverage": {
+      "attack": "Bypass universe coverage requirements",
+      "detection": "Sufficiency requirements checked before evaluation",
+      "result": "REJECTED"
+    },
+    "A10_future_info_execution": {
+      "attack": "Use future information during portfolio execution",
+      "detection": "Execution simulation uses only point-in-time data",
+      "result": "REJECTED"
+    },
+    "A11_relabel_exploratory": {
+      "attack": "Reuse exploratory data and label it OOS",
+      "detection": "All historical data classified as HISTORICAL_RESEARCH or PSEUDO_CONFIRMATORY",
+      "result": "REJECTED"
+    },
+    "A12_alter_baselines": {
+      "attack": "Alter canonical economic baselines",
+      "detection": "Baseline registry version-locked in Phase 17C-R",
+      "result": "REJECTED"
+    },
+    "A13_early_phase20b": {
+      "attack": "Start Phase 20B before sufficiency requirements",
+      "detection": "Phase 20B trigger requires minimum observation counts",
+      "result": "REJECTED"
+    },
+    "A14_modify_promotion": {
+      "attack": "Modify promotion criteria after OOS results",
+      "detection": "Promotion requirements locked in Step 11",
+      "result": "REJECTED"
+    },
+    "A15_exclude_failed": {
+      "attack": "Selectively exclude a failed hypothesis",
+      "detection": "All 4 hypotheses remain in evaluation family",
+      "result": "REJECTED"
+    }
+  },
+  "leakage_tests": {
+    "L1_same_bar_close": {
+      "attack": "Use same-bar closing price to trade at that close",
+      "result": "REJECTED",
+      "detail": "Trading uses next-bar open price; same-bar close is future information"
+    },
+    "L2_future_returns_position": {
+      "attack": "Use future returns in position construction",
+      "result": "REJECTED",
+      "detail": "Position construction uses only current-bar features and past returns"
+    },
+    "L3_delayed_execution_future": {
+      "attack": "Delayed execution with future feature access",
+      "result": "REJECTED",
+      "detail": "Execution simulation uses only point-in-time data available at decision time"
+    },
+    "L4_future_benchmark": {
+      "attack": "Use future benchmark values",
+      "result": "REJECTED",
+      "detail": "Benchmark returns calculated using only historical prices"
+    },
+    "L5_future_constituents": {
+      "attack": "Use future constituent membership",
+      "result": "REJECTED",
+      "detail": "Universe membership determined at start of each period using only past data"
+    },
+    "L6_survivorship_bias": {
+      "attack": "Survivorship bias in universe construction",
+      "result": "REJECTED",
+      "detail": "Universe includes delisted instruments; no backfill of delistings"
+    },
+    "L7_future_liquidity_costs": {
+      "attack": "Cost calculation using future liquidity information",
+      "result": "REJECTED",
+      "detail": "Cost model uses fixed pre-registered assumptions, not actual liquidity"
+    }
+  },
+  "combined_summary": {
+    "total_data_firewall": 15,
+    "total_leakage": 7,
+    "total": 22,
+    "all_rejected": true
+  }
+}

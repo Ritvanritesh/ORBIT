@@ -1,0 +1,76 @@
+{
+  "phase": "20A",
+  "step": 12,
+  "timestamp": "2026-08-24T13:56:23.105447+00:00",
+  "states": {
+    "DATA_NOT_READY": {
+      "description": "Insufficient RESERVED_OOS observations",
+      "condition": "oos_observation_count < minimum_required",
+      "allowed_actions": [
+        "schema_validation",
+        "integrity_checks"
+      ],
+      "blocked_actions": [
+        "predictive_evaluation",
+        "economic_evaluation"
+      ]
+    },
+    "DATA_READY": {
+      "description": "Minimum sufficiency requirements met",
+      "condition": "oos_observation_count >= 1000 AND oos_trading_days >= 60 AND universe_coverage >= 0.8 AND data_completeness >= 0.9",
+      "allowed_actions": [
+        "schema_validation",
+        "integrity_checks",
+        "predictive_evaluation",
+        "temporal_validation",
+        "universe_validation",
+        "model_validation"
+      ],
+      "blocked_actions": [
+        "economic_evaluation",
+        "promotion"
+      ]
+    },
+    "CONFIRMATION_READY": {
+      "description": "Data + integrity + universe coverage sufficient",
+      "condition": "state == DATA_READY AND integrity_checks_pass AND min_independent_periods >= 3 AND min_valid_prediction_windows >= 5",
+      "allowed_actions": [
+        "all_predictive_actions",
+        "economic_evaluation"
+      ],
+      "blocked_actions": [
+        "promotion"
+      ]
+    },
+    "ECONOMIC_READY": {
+      "description": "Confirmation data sufficient for locked economic evaluation",
+      "condition": "state == CONFIRMATION_READY AND sufficient_for_portfolio_construction",
+      "allowed_actions": [
+        "all_actions_except_promotion"
+      ],
+      "blocked_actions": [
+        "promotion"
+      ]
+    }
+  },
+  "inspection_rules": {
+    "allowed": [
+      "observation_counts",
+      "timestamps",
+      "coverage",
+      "missingness",
+      "universe_completeness"
+    ],
+    "forbidden": [
+      "IC",
+      "Sharpe",
+      "returns",
+      "hypothesis_performance",
+      "portfolio_returns",
+      "alpha",
+      "beta"
+    ]
+  },
+  "current_state": "DATA_NOT_READY",
+  "note": "Phase 20B cannot execute before state reaches DATA_READY. Trigger is deterministic and does not inspect performance."
+}

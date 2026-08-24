@@ -1,0 +1,26 @@
+{
+  "phase": "20A",
+  "step": 4,
+  "timestamp": "2026-08-24T13:56:23.102455+00:00",
+  "requirements": {
+    "minimum_trading_days": 60,
+    "minimum_cross_sectional_observations": 500,
+    "minimum_independent_evaluation_periods": 3,
+    "minimum_valid_prediction_windows": 5,
+    "minimum_universe_coverage": 0.8,
+    "minimum_data_completeness": 0.9
+  },
+  "justification": {
+    "minimum_trading_days": "With H-20 as the longest horizon, need at least 3 independent evaluation periods of 20 sessions each = 60 days minimum. Additional buffer for weekends and holidays.",
+    "minimum_cross_sectional_observations": "With 50 instruments in ENV-050, need at least 10 sessions of complete data = 500 observations for stable cross-sectional IC.",
+    "minimum_independent_evaluation_periods": "3 independent periods required for basic statistical power. Each period must be chronologically separated.",
+    "minimum_valid_prediction_windows": "5 prediction windows needed for temporal stability assessment (positive-window fraction >= 0.6 requires at least 5 windows).",
+    "minimum_universe_coverage": "80% of universe members must have valid predictions. Below this, cross-sectional rankings are unreliable.",
+    "minimum_data_completeness": "90% of expected observations must be present. Excessive missingness biases IC calculations."
+  },
+  "forbidden": [
+    "Choosing sample size after seeing OOS results",
+    "Weakening requirements based on observed performance",
+    "Making exceptions for specific hypotheses"
+  ]
+}

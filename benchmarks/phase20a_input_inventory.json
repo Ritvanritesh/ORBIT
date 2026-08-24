@@ -1,0 +1,52 @@
+{
+  "phase": "20A",
+  "step": 1,
+  "timestamp": "2026-08-24T13:56:23.099463+00:00",
+  "phase19_state": {
+    "verdict": "B",
+    "gate": "YELLOW",
+    "holdout_classification": "PSEUDO_CONFIRMATORY",
+    "partially_confirmed": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "confirmed": [],
+    "failed": []
+  },
+  "artifact_digests": {
+    "phase19_audit.json": "9f74042d185b59026d69e615cb6ab55f5d79b020313ec8b450f57cd93db1e5a8",
+    "phase19_decisions.json": "8daf5059297337b99977f1b068ec5c66c4efbae7b5c39bf7e64df0476bbaf8ef",
+    "phase19_holdout_audit.json": "551a275412dda453738c83fd9c3dd90ef02c8f8a42a0896ca707299903345843",
+    "phase19_materiality_plan.json": "3210b3c152713112aa588ec843ac3fb781e385ef90070851d997a6c032e4a387",
+    "phase19_statistical_plan.json": "9f884c47d87fc102f0566d61a8b2fc30c2735136858e3cb075e8a0ad0a655a8a",
+    "B001_hypotheses.json": "fdee2e2d3dcb4cd5fc6a3004ef0c41219b508b5cc5d4590f50cefca93fefc060",
+    "baseline_registry.json": "ed787a4b4972affee2fbcf1bafcfbd7c0a8bd9dc141c15cbf412d6f36774890a"
+  },
+  "verification": {
+    "phase18_closed": true,
+    "phase19_immutable": true,
+    "no_status_modified": true,
+    "no_upgrades": true,
+    "no_downgrades_without_evidence": true
+  },
+  "hypotheses": {
+    "HYP-MOM": {
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.014178241208878383
+    },
+    "HYP-VOL": {
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.011818332058451272
+    },
+    "HYP-MAC": {
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.01974098966349202
+    },
+    "HYP-XSEC": {
+      "status": "PARTIALLY_CONFIRMED",
+      "mean_val_ic": 0.026446123622748483
+    }
+  }
+}

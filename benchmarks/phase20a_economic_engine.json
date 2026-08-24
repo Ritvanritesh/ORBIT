@@ -1,0 +1,21 @@
+{
+  "phase": "20A",
+  "step": 5,
+  "timestamp": "2026-08-24T13:56:23.102455+00:00",
+  "engine_specification": {
+    "supported_methods": [
+      "long_only_portfolio",
+      "equal_weight_construction",
+      "score_proportional_construction",
+      "deterministic_ranking",
+      "deterministic_position_selection"
+    ],
+    "turnover_calculation": "Turnover = sum(|w_new - w_old|) / 2. Measures fraction of portfolio traded.",
+    "transaction_cost_application": "Applied to gross turnover. One-way cost applied to each trade direction.",
+    "benchmark_comparison": "Portfolio returns compared against BL-ECON-001 (equal-weight), BL-ECON-002 (SPY), BL-ECON-003 (cash).",
+    "missing_security_handling": "Missing securities receive zero weight. Portfolio renormalized to sum to 1.",
+    "delisting_handling": "Delisted securities treated as zero return from last available date. Position removed at next rebalance.",
+    "reproducibility": "All portfolio construction is deterministic given inputs. Same scores always produce same portfolio."
+  },
+  "validation_status": "SYNTHETIC_TESTS_PENDING"
+}

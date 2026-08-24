@@ -1,0 +1,115 @@
+{
+  "phase": "20A",
+  "step": 2,
+  "timestamp": "2026-08-24T13:56:23.099463+00:00",
+  "oos_boundary": "2026-06-30",
+  "classification_rules": {
+    "pre_2026_06_30_exploratory": "HISTORICAL_RESEARCH",
+    "pre_2026_06_30_pseudo_confirmatory": "HISTORICAL_PSEUDO_CONFIRMATORY",
+    "post_2026_06_30": "RESERVED_OOS",
+    "invalid_data": "INVALID"
+  },
+  "allowed_uses_reserved_oos": [
+    "schema_validation",
+    "raw_data_integrity_checks",
+    "timestamp_verification",
+    "missing_data_checks",
+    "duplicate_detection",
+    "deterministic_ingestion_testing"
+  ],
+  "forbidden_uses_reserved_oos": [
+    "feature_discovery",
+    "hypothesis_generation",
+    "model_tuning",
+    "hyperparameter_selection",
+    "threshold_selection",
+    "portfolio_optimization",
+    "exploratory_ic_analysis",
+    "diagnostic_analysis",
+    "debugging_based_on_performance",
+    "model_comparison",
+    "economic_optimization"
+  ],
+  "adversarial_tests": {
+    "A1_train_with_oos": {
+      "attack": "Include RESERVED_OOS observations in training data",
+      "detection": "Timestamp filter rejects observations with date > 2026-06-30",
+      "result": "REJECTED"
+    },
+    "A2_tune_with_oos": {
+      "attack": "Use RESERVED_OOS data for hyperparameter tuning",
+      "detection": "Tuning pipeline only accepts HISTORICAL_RESEARCH data",
+      "result": "REJECTED"
+    },
+    "A3_ic_on_oos": {
+      "attack": "Calculate IC on RESERVED_OOS data during readiness check",
+      "detection": "Readiness trigger only inspects timestamps and counts, not returns",
+      "result": "REJECTED"
+    },
+    "A4_optimize_n_with_oos": {
+      "attack": "Optimize portfolio N using RESERVED_OOS returns",
+      "detection": "Portfolio protocol is locked before OOS evaluation",
+      "result": "REJECTED"
+    },
+    "A5_select_costs_after": {
+      "attack": "Select favorable cost assumptions after seeing OOS results",
+      "detection": "Cost model is locked in Step 7 before OOS evaluation",
+      "result": "REJECTED"
+    },
+    "A6_modify_registration": {
+      "attack": "Modify OOS registration after seeing results",
+      "detection": "Registrations are SHA-256 locked; modification detectable",
+      "result": "REJECTED"
+    },
+    "A7_change_oos_start": {
+      "attack": "Change the OOS start date after seeing results",
+      "detection": "OOS boundary is 2026-06-30, locked in this phase",
+      "result": "REJECTED"
+    },
+    "A8_delete_observations": {
+      "attack": "Delete unfavorable OOS observations",
+      "detection": "All observations counted; deletion detectable via hash chain",
+      "result": "REJECTED"
+    },
+    "A9_bypass_coverage": {
+      "attack": "Bypass universe coverage requirements",
+      "detection": "Sufficiency requirements checked before evaluation",
+      "result": "REJECTED"
+    },
+    "A10_future_info_execution": {
+      "attack": "Use future information during portfolio execution",
+      "detection": "Execution simulation uses only point-in-time data",
+      "result": "REJECTED"
+    },
+    "A11_relabel_exploratory": {
+      "attack": "Reuse exploratory data and label it OOS",
+      "detection": "All historical data classified as HISTORICAL_RESEARCH or PSEUDO_CONFIRMATORY",
+      "result": "REJECTED"
+    },
+    "A12_alter_baselines": {
+      "attack": "Alter canonical economic baselines",
+      "detection": "Baseline registry version-locked in Phase 17C-R",
+      "result": "REJECTED"
+    },
+    "A13_early_phase20b": {
+      "attack": "Start Phase 20B before sufficiency requirements",
+      "detection": "Phase 20B trigger requires minimum observation counts",
+      "result": "REJECTED"
+    },
+    "A14_modify_promotion": {
+      "attack": "Modify promotion criteria after OOS results",
+      "detection": "Promotion requirements locked in Step 11",
+      "result": "REJECTED"
+    },
+    "A15_exclude_failed": {
+      "attack": "Selectively exclude a failed hypothesis",
+      "detection": "All 4 hypotheses remain in evaluation family",
+      "result": "REJECTED"
+    }
+  },
+  "adversarial_summary": {
+    "total": 15,
+    "rejected": 15,
+    "passed": 0
+  }
+}

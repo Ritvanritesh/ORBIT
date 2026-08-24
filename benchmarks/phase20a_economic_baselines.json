@@ -1,0 +1,40 @@
+{
+  "phase": "20A",
+  "step": 10,
+  "timestamp": "2026-08-24T13:56:23.104450+00:00",
+  "baselines": {
+    "BL-ECON-001": {
+      "name": "Equal-Weight Universe",
+      "version": "1.0",
+      "definition": "Equal-weight portfolio across all universe members",
+      "source": "Phase 17C-R baseline_registry.json"
+    },
+    "BL-ECON-002": {
+      "name": "SPY Benchmark",
+      "version": "1.0",
+      "definition": "SPY buy-and-hold benchmark",
+      "source": "Phase 17C-R baseline_registry.json"
+    },
+    "BL-ECON-003": {
+      "name": "Cash Reference",
+      "version": "1.0",
+      "definition": "Zero-exposure reference (0% return, 0% volatility)",
+      "source": "Phase 17C-R baseline_registry.json"
+    }
+  },
+  "comparison_metrics": [
+    "annualized_return",
+    "annualized_volatility",
+    "sharpe_ratio",
+    "max_drawdown",
+    "turnover",
+    "gross_return",
+    "net_return",
+    "cost_impact",
+    "excess_return_vs_spy"
+  ],
+  "forbidden": [
+    "Redefining baselines after seeing hypothesis performance",
+    "Selectively comparing against only favorable baselines"
+  ]
+}

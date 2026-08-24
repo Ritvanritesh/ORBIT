@@ -1,0 +1,34 @@
+{
+  "phase": "20A",
+  "step": 7,
+  "timestamp": "2026-08-24T13:56:23.103452+00:00",
+  "baseline_cost": {
+    "commission_per_share": 0.005,
+    "bid_ask_spread_bps": 5.0,
+    "slippage_bps": 2.0,
+    "one_way_cost_bps": 7.0,
+    "round_trip_cost_bps": 14.0,
+    "cost_application_timing": "applied at trade execution",
+    "turnover_interaction": "cost = turnover * one_way_cost"
+  },
+  "stress_scenarios": {
+    "1x": {
+      "multiplier": 1.0,
+      "one_way_bps": 7.0
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "one_way_bps": 10.5
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "one_way_bps": 14.0
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "one_way_bps": 21.0
+    }
+  },
+  "note": "All cost scenarios pre-registered. All scenarios must be reported. No selective reporting of favorable cost scenario.",
+  "lock_status": "IMMUTABLE"
+}
