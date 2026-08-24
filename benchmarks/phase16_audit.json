@@ -1,0 +1,17 @@
+{
+  "phase": "16",
+  "status": "COMPLETE",
+  "elapsed_seconds": 441.6,
+  "plan_digest": "6fa100b99acdd8454153c9f327e6e5791175813b5ebb6c2dfaddd37098ff0430",
+  "n_candidates": 4,
+  "n_portfolio_methods": 6,
+  "prediction_integrity": "PASS",
+  "adversarial": "PASS",
+  "robustness_summary": {
+    "ROBUST": 0,
+    "PARTIAL": 0,
+    "FRAGILE": 0,
+    "UNVALIDATED": 0
+  },
+  "promotion_recommendation": "D"
+}

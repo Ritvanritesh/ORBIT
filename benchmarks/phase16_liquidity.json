@@ -1,0 +1,9 @@
+{
+  "ENV-050": {
+    "n_eligible": 94150
+  },
+  "ENV-100": {
+    "n_eligible": 182651
+  },
+  "note": "Liquidity computed using trailing 20-day dollar volume"
+}

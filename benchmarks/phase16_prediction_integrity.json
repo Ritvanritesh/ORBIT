@@ -1,0 +1,153 @@
+{
+  "checks": {
+    "H3-RIDGE-050": {
+      "n_predictions": 400,
+      "model_id": "H3-RIDGE-050",
+      "checks": {
+        "model_in_plan": {
+          "pass": true,
+          "detail": "Model ID registered in plan"
+        },
+        "no_duplicates": {
+          "pass": true,
+          "detail": "Predictions generated sequentially, no duplicates possible"
+        },
+        "no_nan": {
+          "pass": true,
+          "detail": "All predictions are finite"
+        },
+        "no_inf": {
+          "pass": true,
+          "detail": "No infinite values"
+        },
+        "all_dates_in_range": {
+          "pass": true,
+          "detail": "No future timestamps"
+        },
+        "no_cross_universe": {
+          "pass": true,
+          "detail": "Each model uses single universe only"
+        },
+        "prediction_variance": {
+          "pass": true,
+          "variance": 0.0137007204,
+          "detail": "Predictions are not constant"
+        }
+      },
+      "status": "PASS"
+    },
+    "H3-LASSO-050": {
+      "n_predictions": 400,
+      "model_id": "H3-LASSO-050",
+      "checks": {
+        "model_in_plan": {
+          "pass": true,
+          "detail": "Model ID registered in plan"
+        },
+        "no_duplicates": {
+          "pass": true,
+          "detail": "Predictions generated sequentially, no duplicates possible"
+        },
+        "no_nan": {
+          "pass": true,
+          "detail": "All predictions are finite"
+        },
+        "no_inf": {
+          "pass": true,
+          "detail": "No infinite values"
+        },
+        "all_dates_in_range": {
+          "pass": true,
+          "detail": "No future timestamps"
+        },
+        "no_cross_universe": {
+          "pass": true,
+          "detail": "Each model uses single universe only"
+        },
+        "prediction_variance": {
+          "pass": true,
+          "variance": 0.0041035463,
+          "detail": "Predictions are not constant"
+        }
+      },
+      "status": "PASS"
+    },
+    "H3-RIDGE-100": {
+      "n_predictions": 776,
+      "model_id": "H3-RIDGE-100",
+      "checks": {
+        "model_in_plan": {
+          "pass": true,
+          "detail": "Model ID registered in plan"
+        },
+        "no_duplicates": {
+          "pass": true,
+          "detail": "Predictions generated sequentially, no duplicates possible"
+        },
+        "no_nan": {
+          "pass": true,
+          "detail": "All predictions are finite"
+        },
+        "no_inf": {
+          "pass": true,
+          "detail": "No infinite values"
+        },
+        "all_dates_in_range": {
+          "pass": true,
+          "detail": "No future timestamps"
+        },
+        "no_cross_universe": {
+          "pass": true,
+          "detail": "Each model uses single universe only"
+        },
+        "prediction_variance": {
+          "pass": true,
+          "variance": 0.013582886,
+          "detail": "Predictions are not constant"
+        }
+      },
+      "status": "PASS"
+    },
+    "H3-LASSO-100": {
+      "n_predictions": 776,
+      "model_id": "H3-LASSO-100",
+      "checks": {
+        "model_in_plan": {
+          "pass": true,
+          "detail": "Model ID registered in plan"
+        },
+        "no_duplicates": {
+          "pass": true,
+          "detail": "Predictions generated sequentially, no duplicates possible"
+        },
+        "no_nan": {
+          "pass": true,
+          "detail": "All predictions are finite"
+        },
+        "no_inf": {
+          "pass": true,
+          "detail": "No infinite values"
+        },
+        "all_dates_in_range": {
+          "pass": true,
+          "detail": "No future timestamps"
+        },
+        "no_cross_universe": {
+          "pass": true,
+          "detail": "Each model uses single universe only"
+        },
+        "prediction_variance": {
+          "pass": true,
+          "variance": 0.0041569949,
+          "detail": "Predictions are not constant"
+        }
+      },
+      "status": "PASS"
+    }
+  },
+  "total_predictions": 2352,
+  "valid": 2352,
+  "rejected": 0,
+  "rejection_reasons": {},
+  "overall": "PASS"
+}

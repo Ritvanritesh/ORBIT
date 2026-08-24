@@ -1,0 +1,146 @@
+{
+  "H3-RIDGE-050/EW_TOP10": {
+    "total_return": 0.077017,
+    "concentration_effect": 0.04621018,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-050/EW_TOP20": {
+    "total_return": 0.025553,
+    "concentration_effect": 0.00766594,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-050/EW_TOP30": {
+    "total_return": 0.040431,
+    "concentration_effect": 0.00808616,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-050/RP_TOP20": {
+    "total_return": 0.008029,
+    "concentration_effect": 0.00328439,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-050/SP_TOP20": {
+    "total_return": 0.093405,
+    "concentration_effect": 0.10550923,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-050/CS_TOP20": {
+    "total_return": 0.078517,
+    "concentration_effect": 0.05757174,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/EW_TOP10": {
+    "total_return": 0.098238,
+    "concentration_effect": 0.05894293,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/EW_TOP20": {
+    "total_return": 0.009713,
+    "concentration_effect": 0.00291394,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/EW_TOP30": {
+    "total_return": 0.032669,
+    "concentration_effect": 0.00653371,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/RP_TOP20": {
+    "total_return": -0.035352,
+    "concentration_effect": -0.01446237,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/SP_TOP20": {
+    "total_return": 0.009713,
+    "concentration_effect": 0.00291394,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-050/CS_TOP20": {
+    "total_return": 0.009713,
+    "concentration_effect": 0.00291394,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/EW_TOP10": {
+    "total_return": 0.035742,
+    "concentration_effect": 0.01072267,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/EW_TOP20": {
+    "total_return": 0.02501,
+    "concentration_effect": 0.00375156,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/EW_TOP30": {
+    "total_return": 0.017312,
+    "concentration_effect": 0.00173119,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/RP_TOP20": {
+    "total_return": 0.017502,
+    "concentration_effect": 0.00368092,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/SP_TOP20": {
+    "total_return": 0.054344,
+    "concentration_effect": 0.03202229,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-RIDGE-100/CS_TOP20": {
+    "total_return": 0.038411,
+    "concentration_effect": 0.0175948,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/EW_TOP10": {
+    "total_return": 0.044907,
+    "concentration_effect": 0.01347209,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/EW_TOP20": {
+    "total_return": 0.010165,
+    "concentration_effect": 0.0015247,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/EW_TOP30": {
+    "total_return": 0.016302,
+    "concentration_effect": 0.00163016,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/RP_TOP20": {
+    "total_return": -0.016575,
+    "concentration_effect": -0.00348602,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/SP_TOP20": {
+    "total_return": 0.091962,
+    "concentration_effect": 0.05015102,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  },
+  "H3-LASSO-100/CS_TOP20": {
+    "total_return": 0.06824,
+    "concentration_effect": 0.02509993,
+    "n_rebalance_dates": 8,
+    "note": "Full attribution requires factor decomposition not available in current infrastructure"
+  }
+}

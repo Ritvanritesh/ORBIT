@@ -1,0 +1,55 @@
+{
+  "tests": {
+    "A01_future_prediction_enters_portfolio": {
+      "status": "PASS",
+      "detail": "All predictions generated using only past data; train/test split enforced"
+    },
+    "A02_future_liquidity_enters_sizing": {
+      "status": "PASS",
+      "detail": "Liquidity computed using trailing 20-day data only"
+    },
+    "A03_future_volatility_enters_scaling": {
+      "status": "PASS",
+      "detail": "Ex-ante volatility computed using trailing 63-day window only"
+    },
+    "A04_transaction_cost_model_bypass": {
+      "status": "PASS",
+      "detail": "Cost model CM-001 applied consistently across all candidates"
+    },
+    "A05_turnover_penalty_bypass": {
+      "status": "PASS",
+      "detail": "Three turnover levels (none/moderate/strong) predeclared and applied uniformly"
+    },
+    "A06_candidate_excluded_after_poor_performance": {
+      "status": "PASS",
+      "detail": "All 4 candidates evaluated; none excluded based on results"
+    },
+    "A07_portfolio_configuration_added_after_lock": {
+      "status": "PASS",
+      "detail": "All 6 portfolio methods predeclared in locked plan"
+    },
+    "A08_top_k_selected_after_observing_results": {
+      "status": "PASS",
+      "detail": "Top-k values (10%, 20%, 30%) predeclared in locked plan"
+    },
+    "A09_leverage_limit_bypass": {
+      "status": "PASS",
+      "detail": "Leverage cap of 2.0x enforced in volatility scaling"
+    },
+    "A10_prediction_model_identity_mismatch": {
+      "status": "PASS",
+      "detail": "Each model uses its own trained predictions; no cross-model contamination"
+    },
+    "A11_cross_universe_contamination": {
+      "status": "PASS",
+      "detail": "ENV-050 and ENV-100 evaluated independently"
+    },
+    "A12_historical_artifact_modification": {
+      "status": "PASS",
+      "detail": "No historical Phase 9-15.2 artifacts modified"
+    }
+  },
+  "n_total": 12,
+  "n_pass": 12,
+  "overall": "PASS"
+}

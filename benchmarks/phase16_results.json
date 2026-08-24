@@ -1,0 +1,2140 @@
+{
+  "H3-RIDGE-050": {
+    "EW_TOP10": {
+      "status": "OK",
+      "cumulative_return": -0.197612,
+      "annualized_return": -0.007325,
+      "volatility": 0.14,
+      "sharpe_ratio": -0.0523,
+      "sortino_ratio": -0.0281,
+      "max_drawdown": -0.625538,
+      "calmar_ratio": -0.0117,
+      "total_turnover": 3.4,
+      "annual_turnover": 3.4,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.4,
+          "total_cost": 0.0017,
+          "annual_cost": 0.0017
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.4,
+          "total_cost": 0.00255,
+          "annual_cost": 0.00255
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.4,
+          "total_cost": 0.0034,
+          "annual_cost": 0.0034
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.4,
+          "total_cost": 0.0051,
+          "annual_cost": 0.0051
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.4,
+        "annual_turnover": 3.4,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.4
+          }
+        ]
+      }
+    },
+    "EW_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.519966,
+      "annualized_return": 0.01408,
+      "volatility": 0.117942,
+      "sharpe_ratio": 0.1194,
+      "sortino_ratio": 0.0659,
+      "max_drawdown": -0.349285,
+      "calmar_ratio": 0.0403,
+      "total_turnover": 2.2,
+      "annual_turnover": 2.2,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 2.2,
+          "total_cost": 0.0011,
+          "annual_cost": 0.0011
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 2.2,
+          "total_cost": 0.00165,
+          "annual_cost": 0.00165
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 2.2,
+          "total_cost": 0.0022,
+          "annual_cost": 0.0022
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 2.2,
+          "total_cost": 0.0033,
+          "annual_cost": 0.0033
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 2.2,
+        "annual_turnover": 2.2,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.2
+          }
+        ]
+      }
+    },
+    "EW_TOP30": {
+      "status": "OK",
+      "cumulative_return": 1.642727,
+      "annualized_return": 0.032986,
+      "volatility": 0.118207,
+      "sharpe_ratio": 0.2791,
+      "sortino_ratio": 0.1518,
+      "max_drawdown": -0.32575,
+      "calmar_ratio": 0.1013,
+      "total_turnover": 2.466667,
+      "annual_turnover": 2.466667,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 2.466667,
+          "total_cost": 0.00123333,
+          "annual_cost": 0.00123333
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 2.466667,
+          "total_cost": 0.00185,
+          "annual_cost": 0.00185
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 2.466667,
+          "total_cost": 0.00246667,
+          "annual_cost": 0.00246667
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 2.466667,
+          "total_cost": 0.0037,
+          "annual_cost": 0.0037
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 2.466667,
+        "annual_turnover": 2.466667,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.266667
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.266667
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.533333
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.133333
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.266667
+          }
+        ]
+      }
+    },
+    "RP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 1.392869,
+      "annualized_return": 0.029566,
+      "volatility": 0.119834,
+      "sharpe_ratio": 0.2467,
+      "sortino_ratio": 0.1327,
+      "max_drawdown": -0.368677,
+      "calmar_ratio": 0.0802,
+      "total_turnover": 4.381819,
+      "annual_turnover": 4.381819,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 4.381819,
+          "total_cost": 0.00219091,
+          "annual_cost": 0.00219091
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 4.381819,
+          "total_cost": 0.00328636,
+          "annual_cost": 0.00328636
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 4.381819,
+          "total_cost": 0.00438182,
+          "annual_cost": 0.00438182
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 4.381819,
+          "total_cost": 0.00657273,
+          "annual_cost": 0.00657273
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 4.381819,
+        "annual_turnover": 4.381819,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.545455
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.109091
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.545455
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.981818
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.218182
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.509091
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.472727
+          }
+        ]
+      }
+    },
+    "SP_TOP20": {
+      "status": "OK",
+      "cumulative_return": -0.631295,
+      "annualized_return": -0.032771,
+      "volatility": 0.169926,
+      "sharpe_ratio": -0.1929,
+      "sortino_ratio": -0.0926,
+      "max_drawdown": -0.804885,
+      "calmar_ratio": -0.0407,
+      "total_turnover": 4.907563,
+      "annual_turnover": 4.907563,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 4.907563,
+          "total_cost": 0.00245378,
+          "annual_cost": 0.00245378
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 4.907563,
+          "total_cost": 0.00368067,
+          "annual_cost": 0.00368067
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 4.907563,
+          "total_cost": 0.00490756,
+          "annual_cost": 0.00490756
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 4.907563,
+          "total_cost": 0.00736134,
+          "annual_cost": 0.00736134
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 4.907563,
+        "annual_turnover": 4.907563,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.343361
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.531271
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.356454
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.388539
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.342852
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.265327
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.679759
+          }
+        ]
+      }
+    },
+    "CS_TOP20": {
+      "status": "OK",
+      "cumulative_return": -0.225181,
+      "annualized_return": -0.008484,
+      "volatility": 0.140765,
+      "sharpe_ratio": -0.0603,
+      "sortino_ratio": -0.0309,
+      "max_drawdown": -0.591391,
+      "calmar_ratio": -0.0143,
+      "total_turnover": 3.823795,
+      "annual_turnover": 3.823795,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.049208,
+        "rank_ic_mean": 0.045571,
+        "ic_std": 0.142066,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.823795,
+          "total_cost": 0.0019119,
+          "annual_cost": 0.0019119
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.823795,
+          "total_cost": 0.00286785,
+          "annual_cost": 0.00286785
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.823795,
+          "total_cost": 0.00382379,
+          "annual_cost": 0.00382379
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.823795,
+          "total_cost": 0.00573569,
+          "annual_cost": 0.00573569
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.823795,
+        "annual_turnover": 3.823795,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.134549
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.170924
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.717372
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.175939
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.358517
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.866494
+          }
+        ]
+      }
+    }
+  },
+  "H3-LASSO-050": {
+    "EW_TOP10": {
+      "status": "OK",
+      "cumulative_return": 0.368435,
+      "annualized_return": 0.01053,
+      "volatility": 0.114254,
+      "sharpe_ratio": 0.0922,
+      "sortino_ratio": 0.0545,
+      "max_drawdown": -0.392855,
+      "calmar_ratio": 0.0268,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "EW_TOP20": {
+      "status": "OK",
+      "cumulative_return": 2.157481,
+      "annualized_return": 0.039144,
+      "volatility": 0.113224,
+      "sharpe_ratio": 0.3457,
+      "sortino_ratio": 0.1903,
+      "max_drawdown": -0.344801,
+      "calmar_ratio": 0.1135,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "EW_TOP30": {
+      "status": "OK",
+      "cumulative_return": 1.525928,
+      "annualized_return": 0.031428,
+      "volatility": 0.109134,
+      "sharpe_ratio": 0.288,
+      "sortino_ratio": 0.1592,
+      "max_drawdown": -0.338954,
+      "calmar_ratio": 0.0927,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "RP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 3.773312,
+      "annualized_return": 0.053584,
+      "volatility": 0.132308,
+      "sharpe_ratio": 0.405,
+      "sortino_ratio": 0.2233,
+      "max_drawdown": -0.370929,
+      "calmar_ratio": 0.1445,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "SP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 2.157481,
+      "annualized_return": 0.039144,
+      "volatility": 0.113224,
+      "sharpe_ratio": 0.3457,
+      "sortino_ratio": 0.1903,
+      "max_drawdown": -0.344801,
+      "calmar_ratio": 0.1135,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "CS_TOP20": {
+      "status": "OK",
+      "cumulative_return": 2.157481,
+      "annualized_return": 0.039144,
+      "volatility": 0.113224,
+      "sharpe_ratio": 0.3457,
+      "sortino_ratio": 0.1903,
+      "max_drawdown": -0.344801,
+      "calmar_ratio": 0.1135,
+      "total_turnover": 1.0,
+      "annual_turnover": 1.0,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": null,
+        "rank_ic_mean": null,
+        "n_obs": 0
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0005,
+          "annual_cost": 0.0005
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.0,
+          "total_cost": 0.00075,
+          "annual_cost": 0.00075
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.001,
+          "annual_cost": 0.001
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.0,
+          "total_cost": 0.0015,
+          "annual_cost": 0.0015
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.0,
+        "annual_turnover": 1.0,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "H3-RIDGE-100": {
+    "EW_TOP10": {
+      "status": "OK",
+      "cumulative_return": 0.833925,
+      "annualized_return": 0.020459,
+      "volatility": 0.123726,
+      "sharpe_ratio": 0.1654,
+      "sortino_ratio": 0.0923,
+      "max_drawdown": -0.349285,
+      "calmar_ratio": 0.0586,
+      "total_turnover": 2.6,
+      "annual_turnover": 2.6,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 2.6,
+          "total_cost": 0.0013,
+          "annual_cost": 0.0013
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 2.6,
+          "total_cost": 0.00195,
+          "annual_cost": 0.00195
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 2.6,
+          "total_cost": 0.0026,
+          "annual_cost": 0.0026
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 2.6,
+          "total_cost": 0.0039,
+          "annual_cost": 0.0039
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 2.6,
+        "annual_turnover": 2.6,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.2
+          }
+        ]
+      }
+    },
+    "EW_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.803636,
+      "annualized_return": 0.019892,
+      "volatility": 0.112187,
+      "sharpe_ratio": 0.1773,
+      "sortino_ratio": 0.1025,
+      "max_drawdown": -0.313087,
+      "calmar_ratio": 0.0635,
+      "total_turnover": 1.8,
+      "annual_turnover": 1.8,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 1.8,
+          "total_cost": 0.0009,
+          "annual_cost": 0.0009
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 1.8,
+          "total_cost": 0.00135,
+          "annual_cost": 0.00135
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 1.8,
+          "total_cost": 0.0018,
+          "annual_cost": 0.0018
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 1.8,
+          "total_cost": 0.0027,
+          "annual_cost": 0.0027
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 1.8,
+        "annual_turnover": 1.8,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.1
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.1
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.1
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.1
+          }
+        ]
+      }
+    },
+    "EW_TOP30": {
+      "status": "OK",
+      "cumulative_return": 1.257924,
+      "annualized_return": 0.027572,
+      "volatility": 0.109029,
+      "sharpe_ratio": 0.2529,
+      "sortino_ratio": 0.1421,
+      "max_drawdown": -0.304709,
+      "calmar_ratio": 0.0905,
+      "total_turnover": 2.133333,
+      "annual_turnover": 2.133333,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 2.133333,
+          "total_cost": 0.00106667,
+          "annual_cost": 0.00106667
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 2.133333,
+          "total_cost": 0.0016,
+          "annual_cost": 0.0016
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 2.133333,
+          "total_cost": 0.00213333,
+          "annual_cost": 0.00213333
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 2.133333,
+          "total_cost": 0.0032,
+          "annual_cost": 0.0032
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 2.133333,
+        "annual_turnover": 2.133333,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.066667
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.133333
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.333333
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.0
+          }
+        ]
+      }
+    },
+    "RP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 1.010111,
+      "annualized_return": 0.02359,
+      "volatility": 0.114126,
+      "sharpe_ratio": 0.2067,
+      "sortino_ratio": 0.1218,
+      "max_drawdown": -0.313642,
+      "calmar_ratio": 0.0752,
+      "total_turnover": 3.390476,
+      "annual_turnover": 3.390476,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.390476,
+          "total_cost": 0.00169524,
+          "annual_cost": 0.00169524
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.390476,
+          "total_cost": 0.00254286,
+          "annual_cost": 0.00254286
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.390476,
+          "total_cost": 0.00339048,
+          "annual_cost": 0.00339048
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.390476,
+          "total_cost": 0.00508571,
+          "annual_cost": 0.00508571
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.390476,
+        "annual_turnover": 3.390476,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.266667
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.095238
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.190476
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.885714
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.371429
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.27619
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.304762
+          }
+        ]
+      }
+    },
+    "SP_TOP20": {
+      "status": "OK",
+      "cumulative_return": -0.245847,
+      "annualized_return": -0.009379,
+      "volatility": 0.134668,
+      "sharpe_ratio": -0.0696,
+      "sortino_ratio": -0.0362,
+      "max_drawdown": -0.583386,
+      "calmar_ratio": -0.0161,
+      "total_turnover": 3.836809,
+      "annual_turnover": 3.836809,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.836809,
+          "total_cost": 0.0019184,
+          "annual_cost": 0.0019184
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.836809,
+          "total_cost": 0.00287761,
+          "annual_cost": 0.00287761
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.836809,
+          "total_cost": 0.00383681,
+          "annual_cost": 0.00383681
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.836809,
+          "total_cost": 0.00575521,
+          "annual_cost": 0.00575521
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.836809,
+        "annual_turnover": 3.836809,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.147168
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.206186
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.328066
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.067944
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.661846
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.188679
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.23692
+          }
+        ]
+      }
+    },
+    "CS_TOP20": {
+      "status": "OK",
+      "cumulative_return": -0.04322,
+      "annualized_return": -0.001474,
+      "volatility": 0.126359,
+      "sharpe_ratio": -0.0117,
+      "sortino_ratio": -0.0064,
+      "max_drawdown": -0.469629,
+      "calmar_ratio": -0.0031,
+      "total_turnover": 3.319239,
+      "annual_turnover": 3.319239,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.039807,
+        "rank_ic_mean": 0.046597,
+        "ic_std": 0.105682,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.319239,
+          "total_cost": 0.00165962,
+          "annual_cost": 0.00165962
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.319239,
+          "total_cost": 0.00248943,
+          "annual_cost": 0.00248943
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.319239,
+          "total_cost": 0.00331924,
+          "annual_cost": 0.00331924
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.319239,
+          "total_cost": 0.00497886,
+          "annual_cost": 0.00497886
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.319239,
+        "annual_turnover": 3.319239,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.108073
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.135466
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.168301
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.878438
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.646872
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.128675
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.253414
+          }
+        ]
+      }
+    }
+  },
+  "H3-LASSO-100": {
+    "EW_TOP10": {
+      "status": "OK",
+      "cumulative_return": 0.546027,
+      "annualized_return": 0.014656,
+      "volatility": 0.11066,
+      "sharpe_ratio": 0.1324,
+      "sortino_ratio": 0.0749,
+      "max_drawdown": -0.306929,
+      "calmar_ratio": 0.0478,
+      "total_turnover": 3.8,
+      "annual_turnover": 3.8,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.8,
+          "total_cost": 0.0019,
+          "annual_cost": 0.0019
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.8,
+          "total_cost": 0.00285,
+          "annual_cost": 0.00285
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.8,
+          "total_cost": 0.0038,
+          "annual_cost": 0.0038
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.8,
+          "total_cost": 0.0057,
+          "annual_cost": 0.0057
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.8,
+        "annual_turnover": 3.8,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.0
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.4
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.4
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.4
+          }
+        ]
+      }
+    },
+    "EW_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.627517,
+      "annualized_return": 0.016398,
+      "volatility": 0.110399,
+      "sharpe_ratio": 0.1485,
+      "sortino_ratio": 0.0812,
+      "max_drawdown": -0.334781,
+      "calmar_ratio": 0.049,
+      "total_turnover": 3.1,
+      "annual_turnover": 3.1,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 3.1,
+          "total_cost": 0.00155,
+          "annual_cost": 0.00155
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 3.1,
+          "total_cost": 0.002325,
+          "annual_cost": 0.002325
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 3.1,
+          "total_cost": 0.0031,
+          "annual_cost": 0.0031
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 3.1,
+          "total_cost": 0.00465,
+          "annual_cost": 0.00465
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 3.1,
+        "annual_turnover": 3.1,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.1
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.8
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.3
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.3
+          }
+        ]
+      }
+    },
+    "EW_TOP30": {
+      "status": "OK",
+      "cumulative_return": 1.219797,
+      "annualized_return": 0.026988,
+      "volatility": 0.105603,
+      "sharpe_ratio": 0.2556,
+      "sortino_ratio": 0.139,
+      "max_drawdown": -0.317873,
+      "calmar_ratio": 0.0849,
+      "total_turnover": 2.8,
+      "annual_turnover": 2.8,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 2.8,
+          "total_cost": 0.0014,
+          "annual_cost": 0.0014
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 2.8,
+          "total_cost": 0.0021,
+          "annual_cost": 0.0021
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 2.8,
+          "total_cost": 0.0028,
+          "annual_cost": 0.0028
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 2.8,
+          "total_cost": 0.0042,
+          "annual_cost": 0.0042
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 2.8,
+        "annual_turnover": 2.8,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.133333
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.133333
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 0.466667
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.2
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.266667
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.4
+          }
+        ]
+      }
+    },
+    "RP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.74249,
+      "annualized_return": 0.018718,
+      "volatility": 0.118391,
+      "sharpe_ratio": 0.1581,
+      "sortino_ratio": 0.0851,
+      "max_drawdown": -0.381153,
+      "calmar_ratio": 0.0491,
+      "total_turnover": 5.495236,
+      "annual_turnover": 5.495236,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 5.495236,
+          "total_cost": 0.00274762,
+          "annual_cost": 0.00274762
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 5.495236,
+          "total_cost": 0.00412143,
+          "annual_cost": 0.00412143
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 5.495236,
+          "total_cost": 0.00549524,
+          "annual_cost": 0.00549524
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 5.495236,
+          "total_cost": 0.00824285,
+          "annual_cost": 0.00824285
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 5.495236,
+        "annual_turnover": 5.495236,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.47619
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.380952
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.47619
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.228571
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.438095
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.685714
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.809524
+          }
+        ]
+      }
+    },
+    "SP_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.617885,
+      "annualized_return": 0.016197,
+      "volatility": 0.112471,
+      "sharpe_ratio": 0.144,
+      "sortino_ratio": 0.0797,
+      "max_drawdown": -0.322342,
+      "calmar_ratio": 0.0502,
+      "total_turnover": 4.973913,
+      "annual_turnover": 4.973913,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 4.973913,
+          "total_cost": 0.00248696,
+          "annual_cost": 0.00248696
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 4.973913,
+          "total_cost": 0.00373043,
+          "annual_cost": 0.00373043
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 4.973913,
+          "total_cost": 0.00497391,
+          "annual_cost": 0.00497391
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 4.973913,
+          "total_cost": 0.00746087,
+          "annual_cost": 0.00746087
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 4.973913,
+        "annual_turnover": 4.973913,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.235521
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.578567
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.351095
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.636514
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.228231
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.321131
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.622854
+          }
+        ]
+      }
+    },
+    "CS_TOP20": {
+      "status": "OK",
+      "cumulative_return": 0.585616,
+      "annualized_return": 0.015513,
+      "volatility": 0.107852,
+      "sharpe_ratio": 0.1438,
+      "sortino_ratio": 0.0805,
+      "max_drawdown": -0.300685,
+      "calmar_ratio": 0.0516,
+      "total_turnover": 4.641082,
+      "annual_turnover": 4.641082,
+      "n_rebalance_dates": 8,
+      "n_daily_observations": 7546,
+      "prediction_metrics": {
+        "ic_mean": 0.029981,
+        "rank_ic_mean": -0.001155,
+        "ic_std": 0.07556,
+        "n_obs": 8
+      },
+      "cost_scenarios": {
+        "baseline": {
+          "multiplier": 1.0,
+          "effective_bps": 5.0,
+          "total_turnover": 4.641082,
+          "total_cost": 0.00232054,
+          "annual_cost": 0.00232054
+        },
+        "1.5x": {
+          "multiplier": 1.5,
+          "effective_bps": 7.5,
+          "total_turnover": 4.641082,
+          "total_cost": 0.00348081,
+          "annual_cost": 0.00348081
+        },
+        "2x": {
+          "multiplier": 2.0,
+          "effective_bps": 10.0,
+          "total_turnover": 4.641082,
+          "total_cost": 0.00464108,
+          "annual_cost": 0.00464108
+        },
+        "3x": {
+          "multiplier": 3.0,
+          "effective_bps": 15.0,
+          "total_turnover": 4.641082,
+          "total_cost": 0.00696162,
+          "annual_cost": 0.00696162
+        }
+      },
+      "turnover_detail": {
+        "total_turnover": 4.641082,
+        "annual_turnover": 4.641082,
+        "penalty_cost": 0.0,
+        "turnover_by_date": [
+          {
+            "date": "2022-07-01",
+            "turnover": 1.0
+          },
+          {
+            "date": "2022-09-01",
+            "turnover": 0.186903
+          },
+          {
+            "date": "2022-11-01",
+            "turnover": 0.497283
+          },
+          {
+            "date": "2022-12-01",
+            "turnover": 0.342447
+          },
+          {
+            "date": "2024-03-01",
+            "turnover": 1.510217
+          },
+          {
+            "date": "2024-05-01",
+            "turnover": 0.212929
+          },
+          {
+            "date": "2024-08-01",
+            "turnover": 0.339835
+          },
+          {
+            "date": "2024-11-01",
+            "turnover": 0.551468
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "phase": "16",
+  "verdict": "D",
+  "gate": "RED",
+  "promotion_criteria": {
+    "criteria": {
+      "prediction_integrity": true,
+      "portfolio_deterministic": true,
+      "no_leakage": true,
+      "not_universe_dependent": false,
+      "not_test_period_only": false,
+      "net_survives_costs": false,
+      "concentration_within_limits": true,
+      "turnover_plausible": false,
+      "exceeds_no_skill": false,
+      "limitations_not_hidden": true
+    },
+    "n_pass": 5,
+    "n_total": 10,
+    "recommendation": "D"
+  },
+  "robustness_matrix": [],
+  "n_total_entries": 0
+}

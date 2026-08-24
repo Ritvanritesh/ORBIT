@@ -1,0 +1,40 @@
+{
+  "equal_weight": {
+    "status": "OK",
+    "cumulative_return": 0.832561,
+    "annualized_return": 0.020434,
+    "volatility": 0.052497,
+    "sharpe_ratio": 0.3892,
+    "sortino_ratio": 0.2078,
+    "max_drawdown": -0.16442,
+    "calmar_ratio": 0.1243,
+    "total_turnover": 0.5,
+    "annual_turnover": 0.5,
+    "cost_detail": null,
+    "n_rebalance_dates": 8,
+    "n_daily_observations": 7546
+  },
+  "random_ranking": {
+    "status": "OK",
+    "cumulative_return": 0.538724,
+    "annualized_return": 0.014496,
+    "volatility": 0.055549,
+    "sharpe_ratio": 0.261,
+    "sortino_ratio": 0.1542,
+    "max_drawdown": -0.192066,
+    "calmar_ratio": 0.0755,
+    "total_turnover": 6.0,
+    "annual_turnover": 6.0,
+    "cost_detail": null,
+    "n_rebalance_dates": 8,
+    "n_daily_observations": 7546
+  },
+  "permutation_sharpes": [
+    0.198,
+    0.2143,
+    0.4366,
+    0.157,
+    0.2633
+  ],
+  "permutation_mean_sharpe": 0.2538
+}

@@ -1,0 +1,722 @@
+{
+  "H3-RIDGE-050/EW_TOP10": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.4,
+      "total_cost": 0.0017,
+      "annual_cost": 0.0017
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.4,
+      "total_cost": 0.00255,
+      "annual_cost": 0.00255
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.4,
+      "total_cost": 0.0034,
+      "annual_cost": 0.0034
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.4,
+      "total_cost": 0.0051,
+      "annual_cost": 0.0051
+    }
+  },
+  "H3-RIDGE-050/EW_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 2.2,
+      "total_cost": 0.0011,
+      "annual_cost": 0.0011
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 2.2,
+      "total_cost": 0.00165,
+      "annual_cost": 0.00165
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 2.2,
+      "total_cost": 0.0022,
+      "annual_cost": 0.0022
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 2.2,
+      "total_cost": 0.0033,
+      "annual_cost": 0.0033
+    }
+  },
+  "H3-RIDGE-050/EW_TOP30": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 2.466667,
+      "total_cost": 0.00123333,
+      "annual_cost": 0.00123333
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 2.466667,
+      "total_cost": 0.00185,
+      "annual_cost": 0.00185
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 2.466667,
+      "total_cost": 0.00246667,
+      "annual_cost": 0.00246667
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 2.466667,
+      "total_cost": 0.0037,
+      "annual_cost": 0.0037
+    }
+  },
+  "H3-RIDGE-050/RP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 4.381819,
+      "total_cost": 0.00219091,
+      "annual_cost": 0.00219091
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 4.381819,
+      "total_cost": 0.00328636,
+      "annual_cost": 0.00328636
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 4.381819,
+      "total_cost": 0.00438182,
+      "annual_cost": 0.00438182
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 4.381819,
+      "total_cost": 0.00657273,
+      "annual_cost": 0.00657273
+    }
+  },
+  "H3-RIDGE-050/SP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 4.907563,
+      "total_cost": 0.00245378,
+      "annual_cost": 0.00245378
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 4.907563,
+      "total_cost": 0.00368067,
+      "annual_cost": 0.00368067
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 4.907563,
+      "total_cost": 0.00490756,
+      "annual_cost": 0.00490756
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 4.907563,
+      "total_cost": 0.00736134,
+      "annual_cost": 0.00736134
+    }
+  },
+  "H3-RIDGE-050/CS_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.823795,
+      "total_cost": 0.0019119,
+      "annual_cost": 0.0019119
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.823795,
+      "total_cost": 0.00286785,
+      "annual_cost": 0.00286785
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.823795,
+      "total_cost": 0.00382379,
+      "annual_cost": 0.00382379
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.823795,
+      "total_cost": 0.00573569,
+      "annual_cost": 0.00573569
+    }
+  },
+  "H3-LASSO-050/EW_TOP10": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-LASSO-050/EW_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-LASSO-050/EW_TOP30": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-LASSO-050/RP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-LASSO-050/SP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-LASSO-050/CS_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0005,
+      "annual_cost": 0.0005
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.0,
+      "total_cost": 0.00075,
+      "annual_cost": 0.00075
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.001,
+      "annual_cost": 0.001
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.0,
+      "total_cost": 0.0015,
+      "annual_cost": 0.0015
+    }
+  },
+  "H3-RIDGE-100/EW_TOP10": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 2.6,
+      "total_cost": 0.0013,
+      "annual_cost": 0.0013
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 2.6,
+      "total_cost": 0.00195,
+      "annual_cost": 0.00195
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 2.6,
+      "total_cost": 0.0026,
+      "annual_cost": 0.0026
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 2.6,
+      "total_cost": 0.0039,
+      "annual_cost": 0.0039
+    }
+  },
+  "H3-RIDGE-100/EW_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 1.8,
+      "total_cost": 0.0009,
+      "annual_cost": 0.0009
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 1.8,
+      "total_cost": 0.00135,
+      "annual_cost": 0.00135
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 1.8,
+      "total_cost": 0.0018,
+      "annual_cost": 0.0018
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 1.8,
+      "total_cost": 0.0027,
+      "annual_cost": 0.0027
+    }
+  },
+  "H3-RIDGE-100/EW_TOP30": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 2.133333,
+      "total_cost": 0.00106667,
+      "annual_cost": 0.00106667
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 2.133333,
+      "total_cost": 0.0016,
+      "annual_cost": 0.0016
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 2.133333,
+      "total_cost": 0.00213333,
+      "annual_cost": 0.00213333
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 2.133333,
+      "total_cost": 0.0032,
+      "annual_cost": 0.0032
+    }
+  },
+  "H3-RIDGE-100/RP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.390476,
+      "total_cost": 0.00169524,
+      "annual_cost": 0.00169524
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.390476,
+      "total_cost": 0.00254286,
+      "annual_cost": 0.00254286
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.390476,
+      "total_cost": 0.00339048,
+      "annual_cost": 0.00339048
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.390476,
+      "total_cost": 0.00508571,
+      "annual_cost": 0.00508571
+    }
+  },
+  "H3-RIDGE-100/SP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.836809,
+      "total_cost": 0.0019184,
+      "annual_cost": 0.0019184
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.836809,
+      "total_cost": 0.00287761,
+      "annual_cost": 0.00287761
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.836809,
+      "total_cost": 0.00383681,
+      "annual_cost": 0.00383681
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.836809,
+      "total_cost": 0.00575521,
+      "annual_cost": 0.00575521
+    }
+  },
+  "H3-RIDGE-100/CS_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.319239,
+      "total_cost": 0.00165962,
+      "annual_cost": 0.00165962
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.319239,
+      "total_cost": 0.00248943,
+      "annual_cost": 0.00248943
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.319239,
+      "total_cost": 0.00331924,
+      "annual_cost": 0.00331924
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.319239,
+      "total_cost": 0.00497886,
+      "annual_cost": 0.00497886
+    }
+  },
+  "H3-LASSO-100/EW_TOP10": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.8,
+      "total_cost": 0.0019,
+      "annual_cost": 0.0019
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.8,
+      "total_cost": 0.00285,
+      "annual_cost": 0.00285
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.8,
+      "total_cost": 0.0038,
+      "annual_cost": 0.0038
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.8,
+      "total_cost": 0.0057,
+      "annual_cost": 0.0057
+    }
+  },
+  "H3-LASSO-100/EW_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 3.1,
+      "total_cost": 0.00155,
+      "annual_cost": 0.00155
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 3.1,
+      "total_cost": 0.002325,
+      "annual_cost": 0.002325
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 3.1,
+      "total_cost": 0.0031,
+      "annual_cost": 0.0031
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 3.1,
+      "total_cost": 0.00465,
+      "annual_cost": 0.00465
+    }
+  },
+  "H3-LASSO-100/EW_TOP30": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 2.8,
+      "total_cost": 0.0014,
+      "annual_cost": 0.0014
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 2.8,
+      "total_cost": 0.0021,
+      "annual_cost": 0.0021
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 2.8,
+      "total_cost": 0.0028,
+      "annual_cost": 0.0028
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 2.8,
+      "total_cost": 0.0042,
+      "annual_cost": 0.0042
+    }
+  },
+  "H3-LASSO-100/RP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 5.495236,
+      "total_cost": 0.00274762,
+      "annual_cost": 0.00274762
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 5.495236,
+      "total_cost": 0.00412143,
+      "annual_cost": 0.00412143
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 5.495236,
+      "total_cost": 0.00549524,
+      "annual_cost": 0.00549524
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 5.495236,
+      "total_cost": 0.00824285,
+      "annual_cost": 0.00824285
+    }
+  },
+  "H3-LASSO-100/SP_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 4.973913,
+      "total_cost": 0.00248696,
+      "annual_cost": 0.00248696
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 4.973913,
+      "total_cost": 0.00373043,
+      "annual_cost": 0.00373043
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 4.973913,
+      "total_cost": 0.00497391,
+      "annual_cost": 0.00497391
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 4.973913,
+      "total_cost": 0.00746087,
+      "annual_cost": 0.00746087
+    }
+  },
+  "H3-LASSO-100/CS_TOP20": {
+    "baseline": {
+      "multiplier": 1.0,
+      "effective_bps": 5.0,
+      "total_turnover": 4.641082,
+      "total_cost": 0.00232054,
+      "annual_cost": 0.00232054
+    },
+    "1.5x": {
+      "multiplier": 1.5,
+      "effective_bps": 7.5,
+      "total_turnover": 4.641082,
+      "total_cost": 0.00348081,
+      "annual_cost": 0.00348081
+    },
+    "2x": {
+      "multiplier": 2.0,
+      "effective_bps": 10.0,
+      "total_turnover": 4.641082,
+      "total_cost": 0.00464108,
+      "annual_cost": 0.00464108
+    },
+    "3x": {
+      "multiplier": 3.0,
+      "effective_bps": 15.0,
+      "total_turnover": 4.641082,
+      "total_cost": 0.00696162,
+      "annual_cost": 0.00696162
+    }
+  }
+}

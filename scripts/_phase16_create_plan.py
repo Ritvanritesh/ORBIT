@@ -1,0 +1,125 @@
+"""Create and lock the Phase 16 plan."""
+import hashlib, json
+from pathlib import Path
+
+BENCH = Path("benchmarks")
+
+plan = {
+    "phase": "16",
+    "title": "Portfolio Construction & Economic Evaluation",
+    "parent_phase": "15.2",
+    "parent_verdict": "C",
+    "parent_gate": "YELLOW",
+    "locked_at": "2026-08-24T08:00:00+00:00",
+    "policy": "No portfolio method, parameter, candidate, or scenario may be added after observing Phase 16 results.",
+    "candidate_inventory": [
+        {"model_id": "H3-RIDGE-050", "model_type": "ridge", "alpha": 1.0, "feature_set": "FS-H3", "dataset_key": "050", "oos_ic": 0.0909, "status": "investigate"},
+        {"model_id": "H3-LASSO-050", "model_type": "lasso", "alpha": 0.001, "feature_set": "FS-H3", "dataset_key": "050", "oos_ic": 0.1081, "status": "investigate"},
+        {"model_id": "H3-RIDGE-100", "model_type": "ridge", "alpha": 1.0, "feature_set": "FS-H3", "dataset_key": "100", "oos_ic": 0.1316, "status": "investigate"},
+        {"model_id": "H3-LASSO-100", "model_type": "lasso", "alpha": 0.001, "feature_set": "FS-H3", "dataset_key": "100", "oos_ic": 0.1464, "status": "investigate"},
+    ],
+    "allowed_prediction_sources": ["H3-RIDGE-050", "H3-LASSO-050", "H3-RIDGE-100", "H3-LASSO-100"],
+    "datasets": {
+        "DS-EXP-050": {"path": "data/normalized/market/yahoo_chart_api/DS-EXP-050/bars.parquet", "n_instruments": 50},
+        "DS-EXP-100": {"path": "data/normalized/market/yahoo_chart_api/DS-EXP-100/bars.parquet", "n_instruments": 97},
+    },
+    "universes": {"ENV-050": "DS-EXP-050", "ENV-100": "DS-EXP-100"},
+    "evaluation_periods": {
+        "train": {"start": "2010-01-04", "end": "2018-12-31"},
+        "val": {"start": "2019-01-02", "end": "2021-12-31"},
+        "test": {"start": "2022-01-03", "end": "2026-06-30"},
+    },
+    "portfolio_construction_methods": {
+        "EW_TOP10": {"type": "equal_weight", "top_k_pct": 0.10, "description": "Equal-weight long-only top 10%"},
+        "EW_TOP20": {"type": "equal_weight", "top_k_pct": 0.20, "description": "Equal-weight long-only top 20%"},
+        "EW_TOP30": {"type": "equal_weight", "top_k_pct": 0.30, "description": "Equal-weight long-only top 30%"},
+        "RP_TOP20": {"type": "rank_proportional", "top_k_pct": 0.20, "description": "Rank-proportional weight top 20%"},
+        "SP_TOP20": {"type": "score_proportional", "top_k_pct": 0.20, "description": "Score-proportional weight top 20%"},
+        "CS_TOP20": {"type": "capped_score", "top_k_pct": 0.20, "max_weight": 0.10, "description": "Capped score weight top 20%, max 10% per name"},
+    },
+    "rebalance_frequency": "monthly",
+    "ranking_rules": {"direction": "descending", "score_field": "prediction"},
+    "position_limits": {
+        "max_single_name_weight": 0.10,
+        "min_weight": 0.0,
+        "max_gross_exposure": 1.0,
+    },
+    "volatility_scaling": {
+        "enabled": True,
+        "method": "ex_ante",
+        "rolling_window": 63,
+        "target_volatility": 0.15,
+        "leverage_cap": 2.0,
+    },
+    "turnover_control": {
+        "levels": {
+            "none": {"penalty_bps": 0},
+            "moderate": {"penalty_bps": 10},
+            "strong": {"penalty_bps": 25},
+        },
+    },
+    "liquidity": {
+        "method": "dollar_volume_participation",
+        "max_participation": 0.05,
+        "min_dollar_volume_20d": 5_000_000,
+        "note": "Uses trailing 20-day dollar volume where available",
+    },
+    "concentration": {
+        "max_single_name_weight": 0.10,
+        "top_n_concentration": {"top_5": 0.50, "top_10": 0.75},
+        "herfindahl_threshold": 0.15,
+    },
+    "cost_model": {
+        "CM-001": {"spread_bps": 2.0, "fees_bps": 1.0, "slippage_bps": 2.0, "total_bps": 5.0},
+        "scenarios": {"baseline": 1.0, "1.5x": 1.5, "2x": 2.0, "3x": 3.0},
+    },
+    "slippage": {
+        "baseline_bps": 2.0,
+        "scenarios": {"baseline": 2.0, "elevated": 5.0, "high": 10.0},
+    },
+    "evaluation_metrics": {
+        "return": ["cumulative_return", "annualized_return", "monthly_returns"],
+        "risk": ["volatility", "max_drawdown", "sortino_ratio", "calmar_ratio"],
+        "ratio": ["sharpe_ratio"],
+        "prediction": ["ic", "rank_ic", "top_bucket_return", "bottom_bucket_return", "long_short_spread"],
+        "economic": ["gross_return", "estimated_costs", "net_return", "turnover"],
+    },
+    "temporal_periods": {
+        "val": {"start": "2019-01-02", "end": "2021-12-31"},
+        "test": {"start": "2022-01-03", "end": "2026-06-30"},
+    },
+    "no_skill_baselines": ["equal_weight_universe", "random_ranking", "prediction_permutation"],
+    "random_seeds": {"random_ranking": 42, "permutation": [42, 43, 44, 45, 46]},
+    "adversarial_tests": [
+        "A01_future_prediction_enters_portfolio",
+        "A02_future_liquidity_enters_sizing",
+        "A03_future_volatility_enters_scaling",
+        "A04_transaction_cost_model_bypass",
+        "A05_turnover_penalty_bypass",
+        "A06_candidate_excluded_after_poor_performance",
+        "A07_portfolio_configuration_added_after_lock",
+        "A08_top_k_selected_after_observing_results",
+        "A09_leverage_limit_bypass",
+        "A10_prediction_model_identity_mismatch",
+        "A11_cross_universe_contamination",
+        "A12_historical_artifact_modification",
+    ],
+    "robustness_thresholds": {
+        "sharpe_minimum": 0.5,
+        "ic_minimum": 0.03,
+        "turnover_maximum_annual": 25.0,
+        "max_drawdown_maximum": 0.30,
+    },
+}
+
+plan_copy = dict(plan)
+plan_copy.pop("locked_at", None)
+digest = hashlib.sha256(json.dumps(plan_copy, sort_keys=True, default=str).encode()).hexdigest()
+plan["plan_digest"] = digest
+
+with open(BENCH / "phase16_plan.json", "w") as f:
+    json.dump(plan, f, indent=2, default=str)
+print("Plan locked. Digest:", digest)
+print("Total candidates:", len(plan["candidate_inventory"]))
+print("Portfolio methods:", len(plan["portfolio_construction_methods"]))
+print("Adversarial tests:", len(plan["adversarial_tests"]))

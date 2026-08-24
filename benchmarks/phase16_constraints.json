@@ -1,0 +1,1778 @@
+{
+  "H3-RIDGE-050/EW_TOP10": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-050/EW_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-050/EW_TOP30": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-050/RP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-050/SP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 5,
+      "max_weight": 0.771693,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 1.070597,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 5,
+      "max_weight": 0.785002,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 1.289659,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 5,
+      "max_weight": 0.55996,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.944139,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 5,
+      "max_weight": 0.512018,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.828842,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 5,
+      "max_weight": 1.113051,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 1.588212,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 5,
+      "max_weight": 1.425226,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 2.149308,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 5,
+      "max_weight": 1.623036,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 2.670853,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 5,
+      "max_weight": 1.139215,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 1.561123,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-050/CS_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 5,
+      "max_weight": 0.466363,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.88808,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 5,
+      "max_weight": 0.475937,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.911294,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 5,
+      "max_weight": 0.457269,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.865595,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 5,
+      "max_weight": 0.542287,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.937832,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 5,
+      "max_weight": 0.585363,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.968864,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 5,
+      "max_weight": 0.693284,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.92053,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 5,
+      "max_weight": 0.511703,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.987202,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/EW_TOP10": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 5,
+      "max_weight": 0.4,
+      "top_5_weight": 2.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.8,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/EW_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/EW_TOP30": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 15,
+      "max_weight": 0.133333,
+      "top_5_weight": 0.666667,
+      "top_10_weight": 1.333333,
+      "herfindahl": 0.266667,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/RP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.363636,
+      "top_5_weight": 1.454545,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509091,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/SP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-050/CS_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/EW_TOP10": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/EW_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/EW_TOP30": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/RP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/SP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.415833,
+      "top_5_weight": 1.524507,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.542448,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.365753,
+      "top_5_weight": 1.441951,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.509859,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.331238,
+      "top_5_weight": 1.570433,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.553849,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.402082,
+      "top_5_weight": 1.452172,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.530759,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.584136,
+      "top_5_weight": 1.787361,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.801921,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.446644,
+      "top_5_weight": 1.599062,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.593647,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.482205,
+      "top_5_weight": 1.567066,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.602028,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.474917,
+      "top_5_weight": 1.604153,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.637008,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-RIDGE-100/CS_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.271096,
+      "top_5_weight": 1.355479,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.477071,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.25767,
+      "top_5_weight": 1.288348,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.469884,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.279805,
+      "top_5_weight": 1.399025,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.505009,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.26467,
+      "top_5_weight": 1.323349,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.485358,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.363104,
+      "top_5_weight": 1.61395,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.58873,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.286088,
+      "top_5_weight": 1.426483,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.498343,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.284921,
+      "top_5_weight": 1.38324,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.486227,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.289967,
+      "top_5_weight": 1.426087,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.512639,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/EW_TOP10": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.2,
+      "top_5_weight": 1.0,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.4,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/EW_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 20,
+      "max_weight": 0.1,
+      "top_5_weight": 0.5,
+      "top_10_weight": 1.0,
+      "herfindahl": 0.2,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/EW_TOP30": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 30,
+      "max_weight": 0.066667,
+      "top_5_weight": 0.333333,
+      "top_10_weight": 0.666667,
+      "herfindahl": 0.133333,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/RP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 20,
+      "max_weight": 0.190476,
+      "top_5_weight": 0.857143,
+      "top_10_weight": 1.47619,
+      "herfindahl": 0.260317,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/SP_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.697336,
+      "top_5_weight": 1.536579,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.73359,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.833998,
+      "top_5_weight": 1.617697,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.889681,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.550178,
+      "top_5_weight": 1.581704,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.629654,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.588817,
+      "top_5_weight": 1.484674,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.620481,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.394087,
+      "top_5_weight": 1.501796,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.536461,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.36953,
+      "top_5_weight": 1.562876,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.566716,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.408635,
+      "top_5_weight": 1.685845,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.631041,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.299479,
+      "top_5_weight": 1.33984,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.480219,
+      "gross_exposure": 2.0
+    }
+  ],
+  "H3-LASSO-100/CS_TOP20": [
+    {
+      "date": "2022-07-01",
+      "n_positions": 10,
+      "max_weight": 0.292309,
+      "top_5_weight": 1.322688,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.460523,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-09-01",
+      "n_positions": 10,
+      "max_weight": 0.307855,
+      "top_5_weight": 1.41153,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.484596,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-11-01",
+      "n_positions": 10,
+      "max_weight": 0.282029,
+      "top_5_weight": 1.410143,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.504318,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2022-12-01",
+      "n_positions": 10,
+      "max_weight": 0.272827,
+      "top_5_weight": 1.297026,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.454753,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-03-01",
+      "n_positions": 10,
+      "max_weight": 0.267332,
+      "top_5_weight": 1.334071,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.473017,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-05-01",
+      "n_positions": 10,
+      "max_weight": 0.284575,
+      "top_5_weight": 1.422873,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.515959,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-08-01",
+      "n_positions": 10,
+      "max_weight": 0.304378,
+      "top_5_weight": 1.521891,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.556728,
+      "gross_exposure": 2.0
+    },
+    {
+      "date": "2024-11-01",
+      "n_positions": 10,
+      "max_weight": 0.243172,
+      "top_5_weight": 1.215859,
+      "top_10_weight": 2.0,
+      "herfindahl": 0.461523,
+      "gross_exposure": 2.0
+    }
+  ]
+}
