@@ -1,0 +1,53 @@
+{
+  "tests": [
+    {
+      "id": "B1",
+      "desc": "incorrect_scaler_state",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B2",
+      "desc": "reordered_feature_matrix",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B3",
+      "desc": "grouped_attribution_wrong_members",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B4",
+      "desc": "degeneracy_altered_after_audit",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B5",
+      "desc": "failed_explanation_excluded",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B6",
+      "desc": "diagnostic_model_confused_with_historical",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B7",
+      "desc": "repair_overwrites_phase15_result",
+      "passed": true,
+      "status": "REJECT"
+    },
+    {
+      "id": "B8",
+      "desc": "perturbation_uses_future_distribution",
+      "passed": true,
+      "status": "REJECT"
+    }
+  ],
+  "all_pass": true
+}

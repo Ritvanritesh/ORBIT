@@ -1,0 +1,52 @@
+{
+  "plan_digest_match": true,
+  "n_models": 11,
+  "synthetic_all_pass": true,
+  "provenance_all_pass": true,
+  "reproducibility_all_pass": true,
+  "redteam_overall": "LIMITATION",
+  "finding_matrix": {
+    "H3_faithfulness": {
+      "phase15": "MISLEADING",
+      "phase15_1": "FAITHFUL"
+    },
+    "macro_dominance": {
+      "phase15": "88-100%",
+      "phase15_1": {
+        "H3-RIDGE-050": 0.5207,
+        "H3-LASSO-050": 1.0,
+        "H3-RIDGE-100": 0.6475,
+        "H3-LASSO-100": 0.992
+      }
+    },
+    "lasso_degeneracy": {
+      "phase15": "PRESENT",
+      "phase15_1": {
+        "MODEL-00002": "DEGENERATE",
+        "MODEL-00005": "DEGENERATE",
+        "MODEL-00006": "DEGENERATE",
+        "MODEL-00007": "DEGENERATE",
+        "MODEL-00008": "FUNCTIONAL",
+        "MODEL-00009": "FUNCTIONAL",
+        "MODEL-00010": "DEGENERATE",
+        "H3-RIDGE-050": "FUNCTIONAL",
+        "H3-LASSO-050": "FUNCTIONAL",
+        "H3-RIDGE-100": "FUNCTIONAL",
+        "H3-LASSO-100": "FUNCTIONAL"
+      }
+    },
+    "sign_conflict": {
+      "phase15": "100%",
+      "phase15_1": 1.0
+    },
+    "cliff_sensitivity": {
+      "phase15": "PRESENT",
+      "phase15_1": {
+        "H3-RIDGE-050": "CLIFF",
+        "H3-LASSO-050": "STABLE",
+        "H3-RIDGE-100": "STABLE",
+        "H3-LASSO-100": "STABLE"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "synthetic_models": [
+    {
+      "id": "S1",
+      "type": "single_dominant",
+      "passed": true,
+      "top_rank": [
+        0,
+        3,
+        8
+      ]
+    },
+    {
+      "id": "S2",
+      "type": "known_linear",
+      "passed": true,
+      "top_rank": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "S3",
+      "type": "interaction",
+      "passed": true,
+      "X1_rank": 3,
+      "X2_rank": 4
+    },
+    {
+      "id": "S4",
+      "type": "redundant",
+      "passed": true,
+      "ranks": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "S5",
+      "type": "noise_only",
+      "passed": true,
+      "X1_rank": 1
+    },
+    {
+      "id": "S6",
+      "type": "scaled_linear",
+      "passed": true,
+      "top_rank": [
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "id": "S7",
+      "type": "correlated_linear",
+      "passed": true,
+      "top_rank": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "S8",
+      "type": "sparse_lasso",
+      "passed": true,
+      "n_nonzero": 5
+    },
+    {
+      "id": "S9",
+      "type": "degenerate_zero",
+      "passed": true,
+      "n_nonzero": 0
+    }
+  ],
+  "all_pass": true
+}

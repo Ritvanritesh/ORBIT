@@ -1,0 +1,332 @@
+{
+  "MODEL-00002": {
+    "coef_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "perm_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00005": {
+    "coef_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "perm_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00006": {
+    "coef_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "perm_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00007": {
+    "coef_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "perm_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00008": {
+    "coef_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10"
+    ],
+    "perm_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "vol_30",
+      "log_dv_med_20",
+      "ret_10"
+    ],
+    "deletion_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 0.9762,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 0.9762
+    },
+    "avg_agreement": 0.9841,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00009": {
+    "coef_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10"
+    ],
+    "perm_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "vol_30",
+      "log_dv_med_20",
+      "ret_10"
+    ],
+    "deletion_ranking_top5": [
+      "vol_10",
+      "sma_ratio_5_30",
+      "log_dv_med_20",
+      "vol_30",
+      "ret_10"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 0.9762,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 0.9762
+    },
+    "avg_agreement": 0.9841,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "MODEL-00010": {
+    "coef_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "perm_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "deletion_ranking_top5": [
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "H3-RIDGE-050": {
+    "coef_ranking_top5": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30"
+    ],
+    "perm_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30"
+    ],
+    "deletion_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 0.993,
+      "coef_vs_deletion": 0.993,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 0.9953,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "H3-LASSO-050": {
+    "coef_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20"
+    ],
+    "perm_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20"
+    ],
+    "deletion_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "H3-RIDGE-100": {
+    "coef_ranking_top5": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20"
+    ],
+    "perm_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20"
+    ],
+    "deletion_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 0.986,
+      "coef_vs_deletion": 0.993,
+      "deletion_vs_perm": 0.993
+    },
+    "avg_agreement": 0.9907,
+    "classification": "HIGH_CONVERGENCE"
+  },
+  "H3-LASSO-100": {
+    "coef_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10"
+    ],
+    "perm_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10"
+    ],
+    "deletion_ranking_top5": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10"
+    ],
+    "pairwise_agreements": {
+      "coef_vs_perm": 1.0,
+      "coef_vs_deletion": 1.0,
+      "deletion_vs_perm": 1.0
+    },
+    "avg_agreement": 1.0,
+    "classification": "HIGH_CONVERGENCE"
+  }
+}

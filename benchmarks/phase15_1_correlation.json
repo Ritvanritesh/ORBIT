@@ -1,0 +1,161 @@
+{
+  "MODEL-00002": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00005": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00006": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00007": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00008": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00009": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "MODEL-00010": {
+    "n_high_corr_pairs": 0,
+    "high_corr_pairs": [],
+    "group_analysis": []
+  },
+  "H3-RIDGE-050": {
+    "n_high_corr_pairs": 1,
+    "high_corr_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182
+      }
+    ],
+    "group_analysis": [
+      {
+        "pair": [
+          "macro_dff_level",
+          "macro_dff_change_3m"
+        ],
+        "correlation": 0.8182,
+        "individual_coefficients": {
+          "macro_dff_level": 0.0167485,
+          "macro_dff_change_3m": 0.01275446
+        },
+        "individual_deletion_ic_drop": {
+          "macro_dff_level": 0.12994,
+          "macro_dff_change_3m": 0.196695
+        },
+        "grouped_deletion_ic_drop": 0.15023,
+        "coefficient_ratio_cv": 0.103,
+        "instability_detected": false,
+        "classification": "STABLE"
+      }
+    ]
+  },
+  "H3-LASSO-050": {
+    "n_high_corr_pairs": 1,
+    "high_corr_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.8182
+      }
+    ],
+    "group_analysis": [
+      {
+        "pair": [
+          "macro_dff_level",
+          "macro_dff_change_3m"
+        ],
+        "correlation": 0.8182,
+        "individual_coefficients": {
+          "macro_dff_level": 0.00769228,
+          "macro_dff_change_3m": 0.00828831
+        },
+        "individual_deletion_ic_drop": {
+          "macro_dff_level": 0.110941,
+          "macro_dff_change_3m": 0.204983
+        },
+        "grouped_deletion_ic_drop": 0.142862,
+        "coefficient_ratio_cv": 0.103,
+        "instability_detected": false,
+        "classification": "STABLE"
+      }
+    ]
+  },
+  "H3-RIDGE-100": {
+    "n_high_corr_pairs": 1,
+    "high_corr_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818
+      }
+    ],
+    "group_analysis": [
+      {
+        "pair": [
+          "macro_dff_level",
+          "macro_dff_change_3m"
+        ],
+        "correlation": 0.818,
+        "individual_coefficients": {
+          "macro_dff_level": 0.0159859,
+          "macro_dff_change_3m": 0.01310232
+        },
+        "individual_deletion_ic_drop": {
+          "macro_dff_level": 0.113872,
+          "macro_dff_change_3m": 0.219319
+        },
+        "grouped_deletion_ic_drop": 0.135066,
+        "coefficient_ratio_cv": 0.0876,
+        "instability_detected": false,
+        "classification": "STABLE"
+      }
+    ]
+  },
+  "H3-LASSO-100": {
+    "n_high_corr_pairs": 1,
+    "high_corr_pairs": [
+      {
+        "feature_a": "macro_dff_level",
+        "feature_b": "macro_dff_change_3m",
+        "correlation": 0.818
+      }
+    ],
+    "group_analysis": [
+      {
+        "pair": [
+          "macro_dff_level",
+          "macro_dff_change_3m"
+        ],
+        "correlation": 0.818,
+        "individual_coefficients": {
+          "macro_dff_level": 0.00727757,
+          "macro_dff_change_3m": 0.00848902
+        },
+        "individual_deletion_ic_drop": {
+          "macro_dff_level": 0.0958,
+          "macro_dff_change_3m": 0.216145
+        },
+        "grouped_deletion_ic_drop": 0.127667,
+        "coefficient_ratio_cv": 0.0876,
+        "instability_detected": false,
+        "classification": "STABLE"
+      }
+    ]
+  }
+}

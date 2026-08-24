@@ -1,0 +1,66 @@
+{
+  "H3-RIDGE-050": {
+    "definitions": {
+      "abs_coef_macro_share": 0.5207,
+      "std_coef_macro_share": 0.5207,
+      "deletion_impact": 0.269776,
+      "macro_only_ic": 0.269582,
+      "perm_importance_macro_share": 0.9686
+    },
+    "top_macro_features": {
+      "macro_dff_level": 0.16464,
+      "macro_dff_change_3m": 0.21621,
+      "macro_unemployment_level": 0.144051,
+      "macro_cpi_yoy": 0.028171
+    },
+    "overall_classification": "ROBUST"
+  },
+  "H3-LASSO-050": {
+    "definitions": {
+      "abs_coef_macro_share": 1.0,
+      "std_coef_macro_share": 1.0,
+      "deletion_impact": 0.257138,
+      "macro_only_ic": 0.257138,
+      "perm_importance_macro_share": 1.0
+    },
+    "top_macro_features": {
+      "macro_dff_level": 0.138631,
+      "macro_dff_change_3m": 0.219323,
+      "macro_unemployment_level": 0.081942,
+      "macro_cpi_yoy": 0.0
+    },
+    "overall_classification": "ROBUST"
+  },
+  "H3-RIDGE-100": {
+    "definitions": {
+      "abs_coef_macro_share": 0.6475,
+      "std_coef_macro_share": 0.6475,
+      "deletion_impact": 0.266255,
+      "macro_only_ic": 0.281938,
+      "perm_importance_macro_share": 0.9708
+    },
+    "top_macro_features": {
+      "macro_dff_level": 0.15259,
+      "macro_dff_change_3m": 0.246904,
+      "macro_unemployment_level": 0.148043,
+      "macro_cpi_yoy": 0.020536
+    },
+    "overall_classification": "ROBUST"
+  },
+  "H3-LASSO-100": {
+    "definitions": {
+      "abs_coef_macro_share": 0.992,
+      "std_coef_macro_share": 0.992,
+      "deletion_impact": 0.229801,
+      "macro_only_ic": 0.268337,
+      "perm_importance_macro_share": 0.9931
+    },
+    "top_macro_features": {
+      "macro_dff_level": 0.124166,
+      "macro_dff_change_3m": 0.244013,
+      "macro_unemployment_level": 0.087842,
+      "macro_cpi_yoy": 0.0
+    },
+    "overall_classification": "ROBUST"
+  }
+}

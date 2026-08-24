@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "check": "plan_digest_verified",
+      "passed": true
+    },
+    {
+      "check": "all_models_trained",
+      "passed": true
+    },
+    {
+      "check": "synthetic_all_pass",
+      "passed": true
+    },
+    {
+      "check": "provenance_all_pass",
+      "passed": true
+    },
+    {
+      "check": "reproducibility_all_pass",
+      "passed": true
+    },
+    {
+      "check": "historical_artifacts_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_model_promoted",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_models_separated",
+      "passed": true
+    }
+  ],
+  "all_checks_pass": true
+}

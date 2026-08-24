@@ -1,0 +1,244 @@
+{
+  "phase": "15.1",
+  "title": "Explainability Failure Investigation, Repair & Full Integrity Audit",
+  "parent_phase": "15",
+  "parent_verdict": "D",
+  "parent_gate": "RED",
+  "locked_at": "2026-08-24T00:00:00+00:00",
+  "policy": "No repair method or test may be added after inspecting results. Historical artifacts must remain unchanged.",
+  "model_inventory": {
+    "source": "benchmarks/phase15_model_inventory.json",
+    "models": [
+      {
+        "model_id": "MODEL-00002",
+        "family": "lasso",
+        "fs": "FS-12B-B",
+        "universe": "ENV-12D-050",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00005",
+        "family": "lasso",
+        "fs": "FS-12B-E",
+        "universe": "ENV-12D-050",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00006",
+        "family": "lasso",
+        "fs": "FS-12B-D",
+        "universe": "ENV-12E-050",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00007",
+        "family": "lasso",
+        "fs": "FS-12B-E",
+        "universe": "ENV-12E-050",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00008",
+        "family": "ridge",
+        "fs": "FS-12B-A",
+        "universe": "ENV-12E-050",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00009",
+        "family": "ridge",
+        "fs": "FS-001",
+        "universe": "ENV-050-seq",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-00010",
+        "family": "lasso",
+        "fs": "FS-001",
+        "universe": "ENV-050-seq",
+        "status": "functional_check"
+      },
+      {
+        "model_id": "MODEL-14-5-H3-RIDGE-050",
+        "family": "ridge",
+        "fs": "FS-H3",
+        "universe": "ENV-050",
+        "status": "investigate"
+      },
+      {
+        "model_id": "MODEL-14-5-H3-LASSO-050",
+        "family": "lasso",
+        "fs": "FS-H3",
+        "universe": "ENV-050",
+        "status": "investigate"
+      },
+      {
+        "model_id": "MODEL-14-5-H3-RIDGE-100",
+        "family": "ridge",
+        "fs": "FS-H3",
+        "universe": "ENV-100",
+        "status": "investigate"
+      },
+      {
+        "model_id": "MODEL-14-5-H3-LASSO-100",
+        "family": "lasso",
+        "fs": "FS-H3",
+        "universe": "ENV-100",
+        "status": "investigate"
+      }
+    ]
+  },
+  "phase15_findings": [
+    {
+      "id": "F-H3-FAITH",
+      "description": "H-3 ridge faithfulness MISLEADING (Spearman=-0.301)",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-MACRO-DOM",
+      "description": "Macro features 88-100% of total coefficient effect",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-MACRO-CORR",
+      "description": "macro_dff_level/macro_dff_change_3m correlation r=0.818",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-LASSO-DEGEN",
+      "description": "All non-H-3 lasso models produce zero predictions",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-SIGN-CONFLICT",
+      "description": "100% sign conflict across all test observations",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-CLIFF-SENS",
+      "description": "H-3 ridge classified as CLIFF sensitivity",
+      "severity": "MATERIAL"
+    },
+    {
+      "id": "F-CF-UNSTABLE",
+      "description": "All H-3 counterfactuals UNSTABLE with domain_valid=false",
+      "severity": "MATERIAL"
+    }
+  ],
+  "faithfulness_tests": {
+    "test_a_analytical": "For linear models, derive expected sensitivity analytically from prediction = intercept + sum(coeff_i * feature_i). Compare analytical, coefficient, perturbation, and attribution.",
+    "test_b_scale_normalized": "Normalize perturbations: 0.1x, 0.5x, 1.0x feature std. Do not compare raw-unit perturbations across differently scaled features.",
+    "test_c_signed_vs_magnitude": "Evaluate signed attribution and absolute attribution separately. Do not let sign alone create negative faithfulness when magnitude is the relevant quantity.",
+    "test_d_local_vs_global": "Separate global-vs-global, local-vs-local, grouped-vs-grouped comparisons.",
+    "test_e_multi_metric": "Use Spearman, Kendall tau, top-k overlap, deletion ordering. Single Spearman must not determine verdict."
+  },
+  "correlation_thresholds": {
+    "high_correlation": 0.7,
+    "instability_cv_threshold": 0.5,
+    "multicollinearity_vif_threshold": 5.0
+  },
+  "degeneracy_thresholds": {
+    "zero_prediction_pct_threshold": 0.95,
+    "prediction_variance_threshold": 1e-12,
+    "nonzero_coefficient_pct_threshold": 0.05
+  },
+  "disagreement_categories": [
+    "ALL_REGISTERED_MODELS",
+    "FUNCTIONAL_MODELS_ONLY",
+    "COMPARABLE_RIDGE_MODELS",
+    "COMPARABLE_LASSO_MODELS",
+    "DEGENERATE_MODELS",
+    "BASELINE_VS_MACRO_MODELS"
+  ],
+  "sensitivity_perturbation_scales": [
+    0.1,
+    0.5,
+    1.0
+  ],
+  "sensitivity_n_perturbations": 100,
+  "counterfactual_validity_checks": [
+    "joint_distribution_check",
+    "correlated_feature_consistency",
+    "domain_boundary_check"
+  ],
+  "synthetic_models": [
+    {
+      "id": "S1",
+      "type": "single_dominant",
+      "formula": "y = 2*X1 + noise"
+    },
+    {
+      "id": "S2",
+      "type": "known_linear",
+      "formula": "y = 1.5*X1 - 0.8*X2 + 0.5*X3 + noise"
+    },
+    {
+      "id": "S3",
+      "type": "interaction",
+      "formula": "y = X1*X2 + noise"
+    },
+    {
+      "id": "S4",
+      "type": "redundant",
+      "formula": "y = X1 + noise, X2=X1+0.01*noise"
+    },
+    {
+      "id": "S5",
+      "type": "noise_only",
+      "formula": "y = X1 + noise, 9 noise features"
+    },
+    {
+      "id": "S6",
+      "type": "scaled_linear",
+      "formula": "y = 100*X1 + 0.1*X2 + noise"
+    },
+    {
+      "id": "S7",
+      "type": "correlated_linear",
+      "formula": "y = X1+X2+X3, corr(X1,X2)=0.9"
+    },
+    {
+      "id": "S8",
+      "type": "sparse_lasso",
+      "formula": "y = X1+X2+0*X3..X10, lasso alpha tuned"
+    },
+    {
+      "id": "S9",
+      "type": "degenerate_zero",
+      "formula": "y = 0*X_all (zero output model)"
+    }
+  ],
+  "provenance_tests": [
+    "B1_incorrect_scaler",
+    "B2_reordered_features",
+    "B3_grouped_attribution_members",
+    "B4_degeneracy_altered",
+    "B5_failed_excluded",
+    "B6_diagnostic_confused",
+    "B7_repair_overwrites",
+    "B8_future_distribution_stats"
+  ],
+  "redteam_attacks": [
+    "faithfulness_metric_manipulation",
+    "correlated_feature_attribution",
+    "scaling_inconsistencies",
+    "perturbation_domain_errors",
+    "lasso_degeneracy_handling",
+    "disagreement_metric_artifacts",
+    "counterfactual_invalidity",
+    "synthetic_test_overfitting",
+    "selective_reporting",
+    "historical_artifact_mutation",
+    "diagnostic_model_leakage",
+    "conclusion_overreach"
+  ],
+  "acceptance_criteria": {
+    "synthetic_all_pass": "all 9 synthetic models PASS",
+    "provenance_all_pass": "all 8 provenance tests REJECT",
+    "reproducibility": "EXACT_REPRODUCTION or NUMERICALLY_EQUIVALENT for all",
+    "lasso_classification": "every lasso model classified (FUNCTIONAL/SPARSE_BUT_FUNCTIONAL/DEGENERATE/PIPELINE_ERROR)",
+    "faithfulness_repaired": "no model classified as MISLEADING after methodology repair",
+    "historical_unchanged": "no Phase 9-15 artifacts modified"
+  },
+  "plan_digest": "4e5e2891533bd6782ca9d083d66d41f181eb2682a3902b9ed01fc054a140010d"
+}

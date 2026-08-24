@@ -1,0 +1,744 @@
+{
+  "MODEL-00002": {
+    "test_a_analytical_sensitivity": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0
+    },
+    "test_c_abs_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00005": {
+    "test_a_analytical_sensitivity": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0
+    },
+    "test_c_abs_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00006": {
+    "test_a_analytical_sensitivity": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0
+    },
+    "test_c_abs_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00007": {
+    "test_a_analytical_sensitivity": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0
+    },
+    "test_c_abs_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00008": {
+    "test_a_analytical_sensitivity": {
+      "ret_20": 0.00454805,
+      "ret_10": 0.00377606,
+      "vol_10": 0.00269242,
+      "ret_30": 0.00143816,
+      "vol_30": 0.0013938,
+      "log_dv_med_20": 0.00021753,
+      "sma_ratio_5_30": 0.00013118,
+      "sma_ratio_15_40": 1.59e-06
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": -0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": -0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "vol_10": -0.00031039625919241807,
+      "sma_ratio_5_30": -0.00022524017497064516,
+      "log_dv_med_20": 0.00021753223788436118,
+      "vol_30": -0.00019442175364768198,
+      "ret_10": 9.91121838097038e-05
+    },
+    "test_c_abs_attr_top5": {
+      "vol_10": 0.00031039625919241807,
+      "sma_ratio_5_30": 0.00022524017497064516,
+      "log_dv_med_20": 0.00021753223788436118,
+      "vol_30": 0.00019442175364768198,
+      "ret_10": 9.91121838097038e-05
+    },
+    "test_d_global_deletion_top5": {
+      "vol_10": 0.00609,
+      "sma_ratio_5_30": 0.003027,
+      "log_dv_med_20": 0.002706,
+      "vol_30": 0.00159,
+      "ret_10": 0.000563
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00009": {
+    "test_a_analytical_sensitivity": {
+      "ret_20": 0.00454805,
+      "ret_10": 0.00377606,
+      "vol_10": 0.00269242,
+      "ret_30": 0.00143816,
+      "vol_30": 0.0013938,
+      "log_dv_med_20": 0.00021753,
+      "sma_ratio_5_30": 0.00013118,
+      "sma_ratio_15_40": 1.59e-06
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": -0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": -0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "vol_10": -0.00031039625919241807,
+      "sma_ratio_5_30": -0.00022524017497064516,
+      "log_dv_med_20": 0.00021753223788436118,
+      "vol_30": -0.00019442175364768198,
+      "ret_10": 9.91121838097038e-05
+    },
+    "test_c_abs_attr_top5": {
+      "vol_10": 0.00031039625919241807,
+      "sma_ratio_5_30": 0.00022524017497064516,
+      "log_dv_med_20": 0.00021753223788436118,
+      "vol_30": 0.00019442175364768198,
+      "ret_10": 9.91121838097038e-05
+    },
+    "test_d_global_deletion_top5": {
+      "vol_10": 0.00609,
+      "sma_ratio_5_30": 0.003027,
+      "log_dv_med_20": 0.002706,
+      "vol_30": 0.00159,
+      "ret_10": 0.000563
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "MODEL-00010": {
+    "test_a_analytical_sensitivity": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": -0.0,
+      "ret_30": -0.0,
+      "sma_ratio_5_30": -0.0,
+      "sma_ratio_15_40": -0.0
+    },
+    "test_c_abs_attr_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "FAITHFUL",
+    "repaired_vs_original": "FAITHFUL -> FAITHFUL"
+  },
+  "H3-RIDGE-050": {
+    "test_a_analytical_sensitivity": {
+      "macro_unemployment_level": 0.01678198,
+      "ret_30": 0.01380655,
+      "macro_dff_level": 0.01108356,
+      "vol_30": 0.00837495,
+      "vol_10": 0.00224942,
+      "macro_dff_change_3m": 0.00156673,
+      "ret_10": 0.00151228,
+      "ret_20": 0.00089509,
+      "sma_ratio_5_30": 0.00023421,
+      "sma_ratio_15_40": 4.052e-05,
+      "macro_cpi_yoy": 2.649e-05,
+      "log_dv_med_20": 5.32e-06
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": -0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": -0.0,
+        "sma_ratio_5_30": -0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_1.0": {
+        "ret_10": -0.0,
+        "ret_20": 0.0,
+        "ret_30": -0.0,
+        "sma_ratio_5_30": -0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "macro_dff_level": 0.00013985999717576274,
+      "macro_dff_change_3m": -0.00010650734960805873,
+      "macro_unemployment_level": 6.88525617125696e-05,
+      "macro_cpi_yoy": -2.6491852251393573e-05,
+      "vol_30": -1.790453320326225e-05
+    },
+    "test_c_abs_attr_top5": {
+      "macro_dff_level": 0.00013985999717576274,
+      "macro_dff_change_3m": 0.00010650734960805873,
+      "macro_unemployment_level": 6.88525617125696e-05,
+      "macro_cpi_yoy": 2.6491852251393573e-05,
+      "vol_30": 1.790453320326225e-05
+    },
+    "test_d_global_deletion_top5": {
+      "macro_dff_change_3m": 0.196695,
+      "macro_dff_level": 0.12994,
+      "macro_unemployment_level": 0.097772,
+      "macro_cpi_yoy": 0.014567,
+      "vol_30": 0.006299
+    },
+    "test_e_spearman": 0.993,
+    "test_e_kendall": 0.9697,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 0.9907,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "MISSING",
+    "repaired_vs_original": "MISSING -> FAITHFUL"
+  },
+  "H3-LASSO-050": {
+    "test_a_analytical_sensitivity": {
+      "macro_unemployment_level": 0.00710766,
+      "macro_dff_level": 0.00509047,
+      "macro_dff_change_3m": 0.00101812,
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_5_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0,
+      "macro_cpi_yoy": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "macro_dff_change_3m": -6.921239215478637e-05,
+      "macro_dff_level": 6.423513643661667e-05,
+      "macro_unemployment_level": 2.9161089653744986e-05,
+      "ret_10": 0.0,
+      "ret_20": 0.0
+    },
+    "test_c_abs_attr_top5": {
+      "macro_dff_change_3m": 6.921239215478637e-05,
+      "macro_dff_level": 6.423513643661667e-05,
+      "macro_unemployment_level": 2.9161089653744986e-05,
+      "ret_10": 0.0,
+      "ret_20": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "macro_dff_change_3m": 0.204983,
+      "macro_dff_level": 0.110941,
+      "macro_unemployment_level": 0.036423,
+      "ret_10": 0.0,
+      "ret_20": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "MISSING",
+    "repaired_vs_original": "MISSING -> FAITHFUL"
+  },
+  "H3-RIDGE-100": {
+    "test_a_analytical_sensitivity": {
+      "macro_unemployment_level": 0.01680455,
+      "macro_dff_level": 0.01058834,
+      "ret_30": 0.00751976,
+      "vol_30": 0.00396281,
+      "ret_20": 0.00181795,
+      "macro_dff_change_3m": 0.00161099,
+      "log_dv_med_20": 0.00091157,
+      "ret_10": 0.00077373,
+      "vol_10": 0.00048176,
+      "sma_ratio_5_30": 0.00028153,
+      "sma_ratio_15_40": 5.304e-05,
+      "macro_cpi_yoy": 2.322e-05
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": -0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": -0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": -0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "macro_dff_level": 0.00013364859653910942,
+      "macro_dff_change_3m": -0.00010954065195310992,
+      "macro_unemployment_level": 6.928444156737058e-05,
+      "macro_cpi_yoy": -2.3222838120339778e-05,
+      "log_dv_med_20": 1.34234214158937e-05
+    },
+    "test_c_abs_attr_top5": {
+      "macro_dff_level": 0.00013364859653910942,
+      "macro_dff_change_3m": 0.00010954065195310992,
+      "macro_unemployment_level": 6.928444156737058e-05,
+      "macro_cpi_yoy": 2.3222838120339778e-05,
+      "log_dv_med_20": 1.34234214158937e-05
+    },
+    "test_d_global_deletion_top5": {
+      "macro_dff_change_3m": 0.219319,
+      "macro_dff_level": 0.113872,
+      "macro_unemployment_level": 0.102715,
+      "macro_cpi_yoy": 0.01102,
+      "log_dv_med_20": 0.003556
+    },
+    "test_e_spearman": 0.993,
+    "test_e_kendall": 0.9697,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 0.9907,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "MISSING",
+    "repaired_vs_original": "MISSING -> FAITHFUL"
+  },
+  "H3-LASSO-100": {
+    "test_a_analytical_sensitivity": {
+      "macro_unemployment_level": 0.00796163,
+      "macro_dff_level": 0.00482033,
+      "macro_dff_change_3m": 0.00104376,
+      "sma_ratio_5_30": 0.0001113,
+      "ret_10": 0.0,
+      "ret_20": 0.0,
+      "ret_30": 0.0,
+      "sma_ratio_15_40": 0.0,
+      "vol_10": 0.0,
+      "vol_30": 0.0,
+      "log_dv_med_20": 0.0,
+      "macro_cpi_yoy": 0.0
+    },
+    "test_b_scale_normalized": {
+      "scale_0.1": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_0.5": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": -0.0,
+        "sma_ratio_15_40": 0.0
+      },
+      "scale_1.0": {
+        "ret_10": 0.0,
+        "ret_20": 0.0,
+        "ret_30": 0.0,
+        "sma_ratio_5_30": 0.0,
+        "sma_ratio_15_40": 0.0
+      }
+    },
+    "test_c_signed_attr_top5": {
+      "macro_dff_change_3m": -7.097160144066438e-05,
+      "macro_dff_level": 6.0843438980371374e-05,
+      "macro_unemployment_level": 3.2825466840296474e-05,
+      "sma_ratio_5_30": 3.896212892330107e-06,
+      "ret_10": 0.0
+    },
+    "test_c_abs_attr_top5": {
+      "macro_dff_change_3m": 7.097160144066438e-05,
+      "macro_dff_level": 6.0843438980371374e-05,
+      "macro_unemployment_level": 3.2825466840296474e-05,
+      "sma_ratio_5_30": 3.896212892330107e-06,
+      "ret_10": 0.0
+    },
+    "test_d_global_deletion_top5": {
+      "macro_dff_change_3m": 0.216145,
+      "macro_dff_level": 0.0958,
+      "macro_unemployment_level": 0.037292,
+      "sma_ratio_5_30": 0.002409,
+      "ret_10": 0.0
+    },
+    "test_e_spearman": 1.0,
+    "test_e_kendall": 1.0,
+    "test_e_top_k_overlap": {
+      "top_3": 1.0,
+      "top_5": 1.0
+    },
+    "test_e_avg_metric": 1.0,
+    "repaired_classification": "FAITHFUL",
+    "phase15_original": "MISSING",
+    "repaired_vs_original": "MISSING -> FAITHFUL"
+  }
+}

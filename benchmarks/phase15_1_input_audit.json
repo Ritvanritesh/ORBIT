@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "model": "MODEL-00002",
+      "test": "A1-A5_degenerate_skip",
+      "passed": true,
+      "detail": "model is degenerate; checks not applicable"
+    },
+    {
+      "model": "MODEL-00005",
+      "test": "A1-A5_degenerate_skip",
+      "passed": true,
+      "detail": "model is degenerate; checks not applicable"
+    },
+    {
+      "model": "MODEL-00006",
+      "test": "A1-A5_degenerate_skip",
+      "passed": true,
+      "detail": "model is degenerate; checks not applicable"
+    },
+    {
+      "model": "MODEL-00007",
+      "test": "A1-A5_degenerate_skip",
+      "passed": true,
+      "detail": "model is degenerate; checks not applicable"
+    },
+    {
+      "model": "MODEL-00008",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=0.05545458"
+    },
+    {
+      "model": "MODEL-00008",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.05327396"
+    },
+    {
+      "model": "MODEL-00008",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.02813046"
+    },
+    {
+      "model": "MODEL-00008",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "MODEL-00008",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "MODEL-00009",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=0.05545458"
+    },
+    {
+      "model": "MODEL-00009",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.05327396"
+    },
+    {
+      "model": "MODEL-00009",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.02813046"
+    },
+    {
+      "model": "MODEL-00009",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "MODEL-00009",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "MODEL-00010",
+      "test": "A1-A5_degenerate_skip",
+      "passed": true,
+      "detail": "model is degenerate; checks not applicable"
+    },
+    {
+      "model": "H3-RIDGE-050",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=10.62477325"
+    },
+    {
+      "model": "H3-RIDGE-050",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.21290905"
+    },
+    {
+      "model": "H3-RIDGE-050",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.14905329"
+    },
+    {
+      "model": "H3-RIDGE-050",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-RIDGE-050",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-LASSO-050",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=1.44310963"
+    },
+    {
+      "model": "H3-LASSO-050",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.03275445"
+    },
+    {
+      "model": "H3-LASSO-050",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.05566691"
+    },
+    {
+      "model": "H3-LASSO-050",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-LASSO-050",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-RIDGE-100",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=9.65331676"
+    },
+    {
+      "model": "H3-RIDGE-100",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.20327404"
+    },
+    {
+      "model": "H3-RIDGE-100",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.15012112"
+    },
+    {
+      "model": "H3-RIDGE-100",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-RIDGE-100",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-LASSO-100",
+      "test": "A1_shuffled_features",
+      "passed": true,
+      "detail": "max_diff=1.46607891"
+    },
+    {
+      "model": "H3-LASSO-100",
+      "test": "A2_incorrect_scaler",
+      "passed": true,
+      "detail": "max_diff=0.03593229"
+    },
+    {
+      "model": "H3-LASSO-100",
+      "test": "A3_future_scaler",
+      "passed": true,
+      "detail": "max_diff=0.06513861"
+    },
+    {
+      "model": "H3-LASSO-100",
+      "test": "A4_duplicate_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    },
+    {
+      "model": "H3-LASSO-100",
+      "test": "A5_missing_feature",
+      "passed": true,
+      "detail": "exception raised as expected"
+    }
+  ],
+  "all_pass": true
+}

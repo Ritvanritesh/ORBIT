@@ -1,0 +1,368 @@
+{
+  "MODEL-00002": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      }
+    ],
+    "n_valid": 0,
+    "n_total": 3
+  },
+  "MODEL-00005": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      }
+    ],
+    "n_valid": 0,
+    "n_total": 3
+  },
+  "MODEL-00006": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      }
+    ],
+    "n_valid": 0,
+    "n_total": 3
+  },
+  "MODEL-00007": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      }
+    ],
+    "n_valid": 0,
+    "n_total": 3
+  },
+  "MODEL-00008": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.0040373,
+        "cf_pred": 0.00445723,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.25,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.00458488,
+        "cf_pred": 0.00508879,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.3,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.00527291,
+        "cf_pred": 0.00586081,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.35,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      }
+    ],
+    "n_valid": 3,
+    "n_total": 3
+  },
+  "MODEL-00009": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.0040373,
+        "cf_pred": 0.00445723,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.25,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.00458488,
+        "cf_pred": 0.00508879,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.3,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.00527291,
+        "cf_pred": 0.00586081,
+        "changed_feature": "sma_ratio_5_30",
+        "distance": 0.35,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      }
+    ],
+    "n_valid": 3,
+    "n_total": 3
+  },
+  "MODEL-00010": {
+    "counterfactuals": [
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      },
+      {
+        "original_pred": 0.00326661,
+        "cf_pred": null,
+        "changed_feature": null,
+        "distance": null,
+        "domain_valid": false,
+        "classification": "NO_VALID_COUNTERFACTUAL"
+      }
+    ],
+    "n_valid": 0,
+    "n_total": 3
+  },
+  "H3-RIDGE-050": {
+    "counterfactuals": [
+      {
+        "original_pred": -0.12530015,
+        "cf_pred": -0.10630481,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.12108624,
+        "cf_pred": 0.14008157,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": false,
+        "joint_valid": false,
+        "correlated_issues": [],
+        "classification": "OUT_OF_DISTRIBUTION"
+      },
+      {
+        "original_pred": 0.16214462,
+        "cf_pred": 0.18113995,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": false,
+        "joint_valid": false,
+        "correlated_issues": [],
+        "classification": "OUT_OF_DISTRIBUTION"
+      }
+    ],
+    "n_valid": 1,
+    "n_total": 3
+  },
+  "H3-LASSO-050": {
+    "counterfactuals": [
+      {
+        "original_pred": -0.06427288,
+        "cf_pred": -0.05752553,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.1,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.0643449,
+        "cf_pred": 0.07109225,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.1,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.09278442,
+        "cf_pred": 0.10290545,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.15,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      }
+    ],
+    "n_valid": 3,
+    "n_total": 3
+  },
+  "H3-RIDGE-100": {
+    "counterfactuals": [
+      {
+        "original_pred": -0.12105802,
+        "cf_pred": -0.10444569,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.11999247,
+        "cf_pred": 0.13660481,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": false,
+        "joint_valid": false,
+        "correlated_issues": [],
+        "classification": "OUT_OF_DISTRIBUTION"
+      },
+      {
+        "original_pred": 0.15802151,
+        "cf_pred": 0.17463385,
+        "changed_feature": "macro_cpi_yoy",
+        "distance": 0.05,
+        "domain_valid": false,
+        "joint_valid": false,
+        "correlated_issues": [],
+        "classification": "OUT_OF_DISTRIBUTION"
+      }
+    ],
+    "n_valid": 1,
+    "n_total": 3
+  },
+  "H3-LASSO-100": {
+    "counterfactuals": [
+      {
+        "original_pred": -0.06742486,
+        "cf_pred": -0.06052065,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.1,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.06032224,
+        "cf_pred": 0.06722645,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.1,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      },
+      {
+        "original_pred": 0.08982713,
+        "cf_pred": 0.10018344,
+        "changed_feature": "macro_dff_change_3m",
+        "distance": 0.15,
+        "domain_valid": true,
+        "joint_valid": true,
+        "correlated_issues": [],
+        "classification": "VALID"
+      }
+    ],
+    "n_valid": 3,
+    "n_total": 3
+  }
+}

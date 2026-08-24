@@ -1,0 +1,1278 @@
+{
+  "H3-RIDGE-050": {
+    "base_prediction": -0.12530015,
+    "feature_sensitivities": {
+      "ret_10": {
+        "scale_0.1": {
+          "mean_delta": 6e-08,
+          "max_delta": 5.1e-07,
+          "std_delta": 5.1e-07,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": 3.1e-07,
+          "max_delta": 2.57e-06,
+          "std_delta": 2.55e-06,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": 6.2e-07,
+          "max_delta": 5.13e-06,
+          "std_delta": 5.1e-06,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": 8.811e-05,
+          "coefficient": 8.811e-05,
+          "scaler_scale": 17.16446438
+        },
+        "classification": "STABLE"
+      },
+      "ret_20": {
+        "scale_0.1": {
+          "mean_delta": -0.0,
+          "max_delta": 2.2e-07,
+          "std_delta": 2.2e-07,
+          "sign_changes": 49
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 1.1e-06,
+          "std_delta": 1.1e-06,
+          "sign_changes": 49
+        },
+        "scale_1.0": {
+          "mean_delta": -0.0,
+          "max_delta": 2.19e-06,
+          "std_delta": 2.19e-06,
+          "sign_changes": 49
+        },
+        "analytical": {
+          "expected_delta_per_std": 4.429e-05,
+          "coefficient": 4.429e-05,
+          "scaler_scale": 20.20767345
+        },
+        "classification": "STABLE"
+      },
+      "ret_30": {
+        "scale_0.1": {
+          "mean_delta": 1.9e-07,
+          "max_delta": 1.91e-06,
+          "std_delta": 1.9e-06,
+          "sign_changes": 45
+        },
+        "scale_0.5": {
+          "mean_delta": 9.5e-07,
+          "max_delta": 9.53e-06,
+          "std_delta": 9.48e-06,
+          "sign_changes": 45
+        },
+        "scale_1.0": {
+          "mean_delta": 1.91e-06,
+          "max_delta": 1.906e-05,
+          "std_delta": 1.897e-05,
+          "sign_changes": 45
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.000513,
+          "coefficient": 0.000513,
+          "scaler_scale": 26.91333472
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_5_30": {
+        "scale_0.1": {
+          "mean_delta": -3.091e-05,
+          "max_delta": 0.00030913,
+          "std_delta": 0.00030758,
+          "sign_changes": 44
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00015456,
+          "max_delta": 0.00154563,
+          "std_delta": 0.00153788,
+          "sign_changes": 44
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00030913,
+          "max_delta": 0.00309127,
+          "std_delta": 0.00307577,
+          "sign_changes": 44
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00085088,
+          "coefficient": 0.00085088,
+          "scaler_scale": 0.27525198
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_15_40": {
+        "scale_0.1": {
+          "mean_delta": -3.288e-05,
+          "max_delta": 0.00018268,
+          "std_delta": 0.00017969,
+          "sign_changes": 45
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00016441,
+          "max_delta": 0.00091339,
+          "std_delta": 0.00089847,
+          "sign_changes": 45
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00032882,
+          "max_delta": 0.00182678,
+          "std_delta": 0.00179694,
+          "sign_changes": 45
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00027206,
+          "coefficient": 0.00027206,
+          "scaler_scale": 0.14892744
+        },
+        "classification": "STABLE"
+      },
+      "vol_10": {
+        "scale_0.1": {
+          "mean_delta": 6.6e-07,
+          "max_delta": 1.103e-05,
+          "std_delta": 1.101e-05,
+          "sign_changes": 50
+        },
+        "scale_0.5": {
+          "mean_delta": 3.31e-06,
+          "max_delta": 5.513e-05,
+          "std_delta": 5.503e-05,
+          "sign_changes": 50
+        },
+        "scale_1.0": {
+          "mean_delta": 6.62e-06,
+          "max_delta": 0.00011025,
+          "std_delta": 0.00011006,
+          "sign_changes": 50
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00049801,
+          "coefficient": 0.00049801,
+          "scaler_scale": 4.51685954
+        },
+        "classification": "STABLE"
+      },
+      "vol_30": {
+        "scale_0.1": {
+          "mean_delta": 1.098e-05,
+          "max_delta": 5.489e-05,
+          "std_delta": 5.378e-05,
+          "sign_changes": 56
+        },
+        "scale_0.5": {
+          "mean_delta": 5.489e-05,
+          "max_delta": 0.00027446,
+          "std_delta": 0.00026891,
+          "sign_changes": 56
+        },
+        "scale_1.0": {
+          "mean_delta": 0.00010978,
+          "max_delta": 0.00054892,
+          "std_delta": 0.00053783,
+          "sign_changes": 56
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0021441,
+          "coefficient": -0.0021441,
+          "scaler_scale": 3.90604263
+        },
+        "classification": "STABLE"
+      },
+      "log_dv_med_20": {
+        "scale_0.1": {
+          "mean_delta": 2.1e-07,
+          "max_delta": 2.6e-06,
+          "std_delta": 2.59e-06,
+          "sign_changes": 54
+        },
+        "scale_0.5": {
+          "mean_delta": 1.04e-06,
+          "max_delta": 1.301e-05,
+          "std_delta": 1.297e-05,
+          "sign_changes": 54
+        },
+        "scale_1.0": {
+          "mean_delta": 2.08e-06,
+          "max_delta": 2.602e-05,
+          "std_delta": 2.594e-05,
+          "sign_changes": 54
+        },
+        "analytical": {
+          "expected_delta_per_std": -1.177e-05,
+          "coefficient": -1.177e-05,
+          "scaler_scale": 0.45231328
+        },
+        "classification": "STABLE"
+      },
+      "macro_dff_level": {
+        "scale_0.1": {
+          "mean_delta": -0.0,
+          "max_delta": 0.00253089,
+          "std_delta": 0.00253089,
+          "sign_changes": 53
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.01265443,
+          "std_delta": 0.01265443,
+          "sign_changes": 53
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.02530886,
+          "std_delta": 0.02530886,
+          "sign_changes": 53
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0167485,
+          "coefficient": 0.0167485,
+          "scaler_scale": 0.66176414
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_dff_change_3m": {
+        "scale_0.1": {
+          "mean_delta": -0.00103831,
+          "max_delta": 0.01038315,
+          "std_delta": 0.0103311,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00519157,
+          "max_delta": 0.05191573,
+          "std_delta": 0.0516555,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": -0.01038315,
+          "max_delta": 0.10383147,
+          "std_delta": 0.10331101,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.01275446,
+          "coefficient": -0.01275446,
+          "scaler_scale": 0.12283805
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_unemployment_level": {
+        "scale_0.1": {
+          "mean_delta": 4.051e-05,
+          "max_delta": 0.0004051,
+          "std_delta": 0.00040307,
+          "sign_changes": 47
+        },
+        "scale_0.5": {
+          "mean_delta": 0.00020255,
+          "max_delta": 0.0020255,
+          "std_delta": 0.00201534,
+          "sign_changes": 47
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0004051,
+          "max_delta": 0.00405099,
+          "std_delta": 0.00403069,
+          "sign_changes": 47
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00824522,
+          "coefficient": 0.00824522,
+          "scaler_scale": 2.03535791
+        },
+        "classification": "STABLE"
+      },
+      "macro_cpi_yoy": {
+        "scale_0.1": {
+          "mean_delta": -0.00075981,
+          "max_delta": 0.03799067,
+          "std_delta": 0.03798308,
+          "sign_changes": 43
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00379907,
+          "max_delta": 0.18995337,
+          "std_delta": 0.18991538,
+          "sign_changes": 43
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00759813,
+          "max_delta": 0.37990674,
+          "std_delta": 0.37983075,
+          "sign_changes": 43
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00317245,
+          "coefficient": -0.00317245,
+          "scaler_scale": 0.0083506
+        },
+        "classification": "CLIFF"
+      }
+    },
+    "overall": "CLIFF",
+    "analytical_note": "For linear models, sensitivity = coef * feature_std. Discontinuities indicate preprocessing issues."
+  },
+  "H3-LASSO-050": {
+    "base_prediction": -0.06427288,
+    "feature_sensitivities": {
+      "ret_10": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 17.16446438
+        },
+        "classification": "STABLE"
+      },
+      "ret_20": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 20.20767345
+        },
+        "classification": "STABLE"
+      },
+      "ret_30": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 26.91333472
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_5_30": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 0.27525198
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_15_40": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 0.14892744
+        },
+        "classification": "STABLE"
+      },
+      "vol_10": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 4.51685954
+        },
+        "classification": "STABLE"
+      },
+      "vol_30": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 3.90604263
+        },
+        "classification": "STABLE"
+      },
+      "log_dv_med_20": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 0.45231328
+        },
+        "classification": "STABLE"
+      },
+      "macro_dff_level": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.00116239,
+          "std_delta": 0.00116239,
+          "sign_changes": 53
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.00581195,
+          "std_delta": 0.00581195,
+          "sign_changes": 53
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0116239,
+          "std_delta": 0.0116239,
+          "sign_changes": 53
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00769228,
+          "coefficient": 0.00769228,
+          "scaler_scale": 0.66176414
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_dff_change_3m": {
+        "scale_0.1": {
+          "mean_delta": -0.00067474,
+          "max_delta": 0.00674735,
+          "std_delta": 0.00671353,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00337368,
+          "max_delta": 0.03373675,
+          "std_delta": 0.03356765,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00674735,
+          "max_delta": 0.06747351,
+          "std_delta": 0.06713529,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00828831,
+          "coefficient": -0.00828831,
+          "scaler_scale": 0.12283805
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_unemployment_level": {
+        "scale_0.1": {
+          "mean_delta": 1.716e-05,
+          "max_delta": 0.00017157,
+          "std_delta": 0.00017071,
+          "sign_changes": 47
+        },
+        "scale_0.5": {
+          "mean_delta": 8.579e-05,
+          "max_delta": 0.00085786,
+          "std_delta": 0.00085356,
+          "sign_changes": 47
+        },
+        "scale_1.0": {
+          "mean_delta": 0.00017157,
+          "max_delta": 0.00171572,
+          "std_delta": 0.00170712,
+          "sign_changes": 47
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0034921,
+          "coefficient": 0.0034921,
+          "scaler_scale": 2.03535791
+        },
+        "classification": "STABLE"
+      },
+      "macro_cpi_yoy": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 0.0083506
+        },
+        "classification": "STABLE"
+      }
+    },
+    "overall": "STABLE",
+    "analytical_note": "For linear models, sensitivity = coef * feature_std. Discontinuities indicate preprocessing issues."
+  },
+  "H3-RIDGE-100": {
+    "base_prediction": -0.12105802,
+    "feature_sensitivities": {
+      "ret_10": {
+        "scale_0.1": {
+          "mean_delta": -6e-08,
+          "max_delta": 5e-07,
+          "std_delta": 5e-07,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": -3e-07,
+          "max_delta": 2.52e-06,
+          "std_delta": 2.5e-06,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": -6.1e-07,
+          "max_delta": 5.05e-06,
+          "std_delta": 5.01e-06,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": -6.248e-05,
+          "coefficient": -6.248e-05,
+          "scaler_scale": 12.38367947
+        },
+        "classification": "STABLE"
+      },
+      "ret_20": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 8.5e-07,
+          "std_delta": 8.5e-07,
+          "sign_changes": 49
+        },
+        "scale_0.5": {
+          "mean_delta": -0.0,
+          "max_delta": 4.23e-06,
+          "std_delta": 4.23e-06,
+          "sign_changes": 49
+        },
+        "scale_1.0": {
+          "mean_delta": -0.0,
+          "max_delta": 8.45e-06,
+          "std_delta": 8.45e-06,
+          "sign_changes": 49
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00012395,
+          "coefficient": -0.00012395,
+          "scaler_scale": 14.66652518
+        },
+        "classification": "STABLE"
+      },
+      "ret_30": {
+        "scale_0.1": {
+          "mean_delta": 2e-07,
+          "max_delta": 1.98e-06,
+          "std_delta": 1.97e-06,
+          "sign_changes": 45
+        },
+        "scale_0.5": {
+          "mean_delta": 9.9e-07,
+          "max_delta": 9.88e-06,
+          "std_delta": 9.84e-06,
+          "sign_changes": 45
+        },
+        "scale_1.0": {
+          "mean_delta": 1.98e-06,
+          "max_delta": 1.977e-05,
+          "std_delta": 1.967e-05,
+          "sign_changes": 45
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00038556,
+          "coefficient": 0.00038556,
+          "scaler_scale": 19.50325737
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_5_30": {
+        "scale_0.1": {
+          "mean_delta": -4.936e-05,
+          "max_delta": 0.00049361,
+          "std_delta": 0.00049114,
+          "sign_changes": 44
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00024681,
+          "max_delta": 0.00246807,
+          "std_delta": 0.0024557,
+          "sign_changes": 44
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00049361,
+          "max_delta": 0.00493615,
+          "std_delta": 0.0049114,
+          "sign_changes": 44
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00117883,
+          "coefficient": 0.00117883,
+          "scaler_scale": 0.23881664
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_15_40": {
+        "scale_0.1": {
+          "mean_delta": -6.867e-05,
+          "max_delta": 0.0003815,
+          "std_delta": 0.00037527,
+          "sign_changes": 45
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00034335,
+          "max_delta": 0.00190751,
+          "std_delta": 0.00187635,
+          "sign_changes": 45
+        },
+        "scale_1.0": {
+          "mean_delta": -0.0006867,
+          "max_delta": 0.00381502,
+          "std_delta": 0.00375271,
+          "sign_changes": 45
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00044981,
+          "coefficient": 0.00044981,
+          "scaler_scale": 0.11790528
+        },
+        "classification": "STABLE"
+      },
+      "vol_10": {
+        "scale_0.1": {
+          "mean_delta": 2.3e-07,
+          "max_delta": 3.8e-06,
+          "std_delta": 3.79e-06,
+          "sign_changes": 50
+        },
+        "scale_0.5": {
+          "mean_delta": 1.14e-06,
+          "max_delta": 1.899e-05,
+          "std_delta": 1.896e-05,
+          "sign_changes": 50
+        },
+        "scale_1.0": {
+          "mean_delta": 2.28e-06,
+          "max_delta": 3.798e-05,
+          "std_delta": 3.791e-05,
+          "sign_changes": 50
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00013527,
+          "coefficient": 0.00013527,
+          "scaler_scale": 3.56152486
+        },
+        "classification": "STABLE"
+      },
+      "vol_30": {
+        "scale_0.1": {
+          "mean_delta": 8.64e-06,
+          "max_delta": 4.318e-05,
+          "std_delta": 4.231e-05,
+          "sign_changes": 56
+        },
+        "scale_0.5": {
+          "mean_delta": 4.318e-05,
+          "max_delta": 0.00021591,
+          "std_delta": 0.00021155,
+          "sign_changes": 56
+        },
+        "scale_1.0": {
+          "mean_delta": 8.636e-05,
+          "max_delta": 0.00043182,
+          "std_delta": 0.0004231,
+          "sign_changes": 56
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00130814,
+          "coefficient": -0.00130814,
+          "scaler_scale": 3.02934171
+        },
+        "classification": "STABLE"
+      },
+      "log_dv_med_20": {
+        "scale_0.1": {
+          "mean_delta": -2.262e-05,
+          "max_delta": 0.0002828,
+          "std_delta": 0.00028189,
+          "sign_changes": 54
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00011312,
+          "max_delta": 0.001414,
+          "std_delta": 0.00140947,
+          "sign_changes": 54
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00022624,
+          "max_delta": 0.00282801,
+          "std_delta": 0.00281894,
+          "sign_changes": 54
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00160559,
+          "coefficient": 0.00160559,
+          "scaler_scale": 0.56774742
+        },
+        "classification": "STABLE"
+      },
+      "macro_dff_level": {
+        "scale_0.1": {
+          "mean_delta": -0.0,
+          "max_delta": 0.0024135,
+          "std_delta": 0.0024135,
+          "sign_changes": 53
+        },
+        "scale_0.5": {
+          "mean_delta": -0.0,
+          "max_delta": 0.01206748,
+          "std_delta": 0.01206748,
+          "sign_changes": 53
+        },
+        "scale_1.0": {
+          "mean_delta": -0.0,
+          "max_delta": 0.02413496,
+          "std_delta": 0.02413496,
+          "sign_changes": 53
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0159859,
+          "coefficient": 0.0159859,
+          "scaler_scale": 0.6623546
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_dff_change_3m": {
+        "scale_0.1": {
+          "mean_delta": -0.00106563,
+          "max_delta": 0.01065625,
+          "std_delta": 0.01060284,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00532813,
+          "max_delta": 0.05328126,
+          "std_delta": 0.05301419,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": -0.01065625,
+          "max_delta": 0.10656252,
+          "std_delta": 0.10602837,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.01310232,
+          "coefficient": -0.01310232,
+          "scaler_scale": 0.12295425
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_unemployment_level": {
+        "scale_0.1": {
+          "mean_delta": 4.087e-05,
+          "max_delta": 0.00040869,
+          "std_delta": 0.00040664,
+          "sign_changes": 47
+        },
+        "scale_0.5": {
+          "mean_delta": 0.00020434,
+          "max_delta": 0.00204343,
+          "std_delta": 0.00203319,
+          "sign_changes": 47
+        },
+        "scale_1.0": {
+          "mean_delta": 0.00040869,
+          "max_delta": 0.00408686,
+          "std_delta": 0.00406638,
+          "sign_changes": 47
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00828721,
+          "coefficient": 0.00828721,
+          "scaler_scale": 2.02776859
+        },
+        "classification": "STABLE"
+      },
+      "macro_cpi_yoy": {
+        "scale_0.1": {
+          "mean_delta": -0.00066449,
+          "max_delta": 0.03322468,
+          "std_delta": 0.03321803,
+          "sign_changes": 43
+        },
+        "scale_0.5": {
+          "mean_delta": -0.00332247,
+          "max_delta": 0.16612338,
+          "std_delta": 0.16609015,
+          "sign_changes": 43
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00664494,
+          "max_delta": 0.33224675,
+          "std_delta": 0.33218029,
+          "sign_changes": 43
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00277772,
+          "coefficient": -0.00277772,
+          "scaler_scale": 0.0083604
+        },
+        "classification": "SENSITIVE"
+      }
+    },
+    "overall": "STABLE",
+    "analytical_note": "For linear models, sensitivity = coef * feature_std. Discontinuities indicate preprocessing issues."
+  },
+  "H3-LASSO-100": {
+    "base_prediction": -0.06742486,
+    "feature_sensitivities": {
+      "ret_10": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 12.38367947
+        },
+        "classification": "STABLE"
+      },
+      "ret_20": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 14.66652518
+        },
+        "classification": "STABLE"
+      },
+      "ret_30": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 19.50325737
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_5_30": {
+        "scale_0.1": {
+          "mean_delta": -1.951e-05,
+          "max_delta": 0.00019514,
+          "std_delta": 0.00019416,
+          "sign_changes": 44
+        },
+        "scale_0.5": {
+          "mean_delta": -9.757e-05,
+          "max_delta": 0.00097571,
+          "std_delta": 0.00097082,
+          "sign_changes": 44
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00019514,
+          "max_delta": 0.00195142,
+          "std_delta": 0.00194164,
+          "sign_changes": 44
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00046603,
+          "coefficient": 0.00046603,
+          "scaler_scale": 0.23881664
+        },
+        "classification": "STABLE"
+      },
+      "sma_ratio_15_40": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 0.11790528
+        },
+        "classification": "STABLE"
+      },
+      "vol_10": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 3.56152486
+        },
+        "classification": "STABLE"
+      },
+      "vol_30": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 3.02934171
+        },
+        "classification": "STABLE"
+      },
+      "log_dv_med_20": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0,
+          "coefficient": 0.0,
+          "scaler_scale": 0.56774742
+        },
+        "classification": "STABLE"
+      },
+      "macro_dff_level": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.00109874,
+          "std_delta": 0.00109874,
+          "sign_changes": 53
+        },
+        "scale_0.5": {
+          "mean_delta": -0.0,
+          "max_delta": 0.00549371,
+          "std_delta": 0.00549371,
+          "sign_changes": 53
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.01098742,
+          "std_delta": 0.01098742,
+          "sign_changes": 53
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.00727757,
+          "coefficient": 0.00727757,
+          "scaler_scale": 0.6623546
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_dff_change_3m": {
+        "scale_0.1": {
+          "mean_delta": -0.00069042,
+          "max_delta": 0.00690421,
+          "std_delta": 0.0068696,
+          "sign_changes": 46
+        },
+        "scale_0.5": {
+          "mean_delta": -0.0034521,
+          "max_delta": 0.03452103,
+          "std_delta": 0.03434799,
+          "sign_changes": 46
+        },
+        "scale_1.0": {
+          "mean_delta": -0.00690421,
+          "max_delta": 0.06904207,
+          "std_delta": 0.06869599,
+          "sign_changes": 46
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.00848902,
+          "coefficient": -0.00848902,
+          "scaler_scale": 0.12295425
+        },
+        "classification": "SENSITIVE"
+      },
+      "macro_unemployment_level": {
+        "scale_0.1": {
+          "mean_delta": 1.936e-05,
+          "max_delta": 0.00019363,
+          "std_delta": 0.00019266,
+          "sign_changes": 47
+        },
+        "scale_0.5": {
+          "mean_delta": 9.681e-05,
+          "max_delta": 0.00096813,
+          "std_delta": 0.00096328,
+          "sign_changes": 47
+        },
+        "scale_1.0": {
+          "mean_delta": 0.00019363,
+          "max_delta": 0.00193627,
+          "std_delta": 0.00192656,
+          "sign_changes": 47
+        },
+        "analytical": {
+          "expected_delta_per_std": 0.0039263,
+          "coefficient": 0.0039263,
+          "scaler_scale": 2.02776859
+        },
+        "classification": "STABLE"
+      },
+      "macro_cpi_yoy": {
+        "scale_0.1": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_0.5": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "scale_1.0": {
+          "mean_delta": 0.0,
+          "max_delta": 0.0,
+          "std_delta": 0.0,
+          "sign_changes": 0
+        },
+        "analytical": {
+          "expected_delta_per_std": -0.0,
+          "coefficient": -0.0,
+          "scaler_scale": 0.0083604
+        },
+        "classification": "STABLE"
+      }
+    },
+    "overall": "STABLE",
+    "analytical_note": "For linear models, sensitivity = coef * feature_std. Discontinuities indicate preprocessing issues."
+  }
+}

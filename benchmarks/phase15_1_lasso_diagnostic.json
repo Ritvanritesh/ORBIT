@@ -1,0 +1,431 @@
+{
+  "MODEL-00002": {
+    "alpha": 0.001,
+    "n_features": 8,
+    "n_nonzero_coefs": 0,
+    "nonzero_pct": 0.0,
+    "test_pred_variance": 0.0,
+    "test_pred_mean": 0.00326661,
+    "test_pred_std": 0.0,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "DEGENERATE",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 6,
+        "prediction_variance": 1.475e-07,
+        "prediction_mean": 0.00393329,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "excessively_aggressive_regularization"
+  },
+  "MODEL-00005": {
+    "alpha": 0.001,
+    "n_features": 8,
+    "n_nonzero_coefs": 0,
+    "nonzero_pct": 0.0,
+    "test_pred_variance": 0.0,
+    "test_pred_mean": 0.00326661,
+    "test_pred_std": 0.0,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "DEGENERATE",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 6,
+        "prediction_variance": 1.475e-07,
+        "prediction_mean": 0.00393329,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "excessively_aggressive_regularization"
+  },
+  "MODEL-00006": {
+    "alpha": 0.001,
+    "n_features": 8,
+    "n_nonzero_coefs": 0,
+    "nonzero_pct": 0.0,
+    "test_pred_variance": 0.0,
+    "test_pred_mean": 0.00326661,
+    "test_pred_std": 0.0,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "DEGENERATE",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 6,
+        "prediction_variance": 1.475e-07,
+        "prediction_mean": 0.00393329,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "excessively_aggressive_regularization"
+  },
+  "MODEL-00007": {
+    "alpha": 0.001,
+    "n_features": 8,
+    "n_nonzero_coefs": 0,
+    "nonzero_pct": 0.0,
+    "test_pred_variance": 0.0,
+    "test_pred_mean": 0.00326661,
+    "test_pred_std": 0.0,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "DEGENERATE",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 6,
+        "prediction_variance": 1.475e-07,
+        "prediction_mean": 0.00393329,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "excessively_aggressive_regularization"
+  },
+  "MODEL-00008": {
+    "alpha": 1.0,
+    "n_features": 8,
+    "n_nonzero_coefs": 8,
+    "nonzero_pct": 1.0,
+    "test_pred_variance": 3.665e-07,
+    "test_pred_mean": 0.00427954,
+    "test_pred_std": 0.00060542,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.665e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  },
+  "MODEL-00009": {
+    "alpha": 1.0,
+    "n_features": 8,
+    "n_nonzero_coefs": 8,
+    "nonzero_pct": 1.0,
+    "test_pred_variance": 3.665e-07,
+    "test_pred_mean": 0.00427954,
+    "test_pred_std": 0.00060542,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.666e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 8,
+        "prediction_variance": 3.665e-07,
+        "prediction_mean": 0.00427955,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  },
+  "MODEL-00010": {
+    "alpha": 0.001,
+    "n_features": 8,
+    "n_nonzero_coefs": 0,
+    "nonzero_pct": 0.0,
+    "test_pred_variance": 0.0,
+    "test_pred_mean": 0.00326661,
+    "test_pred_std": 0.0,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "DEGENERATE",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 6,
+        "prediction_variance": 1.475e-07,
+        "prediction_mean": 0.00393329,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00326661,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "excessively_aggressive_regularization"
+  },
+  "H3-RIDGE-050": {
+    "alpha": 1.0,
+    "n_features": 12,
+    "n_nonzero_coefs": 12,
+    "nonzero_pct": 1.0,
+    "test_pred_variance": 0.0137007204,
+    "test_pred_mean": 0.02029412,
+    "test_pred_std": 0.11705008,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0138171693,
+        "prediction_mean": 0.02040376,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0138170638,
+        "prediction_mean": 0.02040366,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0138160088,
+        "prediction_mean": 0.02040267,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0138054661,
+        "prediction_mean": 0.02039276,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  },
+  "H3-LASSO-050": {
+    "alpha": 0.001,
+    "n_features": 12,
+    "n_nonzero_coefs": 3,
+    "nonzero_pct": 0.25,
+    "test_pred_variance": 0.0041035463,
+    "test_pred_mean": 0.01021518,
+    "test_pred_std": 0.06405893,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 10,
+        "prediction_variance": 0.0125912398,
+        "prediction_mean": 0.01938647,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 3,
+        "prediction_variance": 0.0041035463,
+        "prediction_mean": 0.01021518,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00658641,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00658641,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  },
+  "H3-RIDGE-100": {
+    "alpha": 1.0,
+    "n_features": 12,
+    "n_nonzero_coefs": 12,
+    "nonzero_pct": 1.0,
+    "test_pred_variance": 0.013582886,
+    "test_pred_mean": 0.01686133,
+    "test_pred_std": 0.11654564,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0136416907,
+        "prediction_mean": 0.01691711,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0136416375,
+        "prediction_mean": 0.01691706,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0136411065,
+        "prediction_mean": 0.01691655,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0136357976,
+        "prediction_mean": 0.01691152,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  },
+  "H3-LASSO-100": {
+    "alpha": 0.001,
+    "n_features": 12,
+    "n_nonzero_coefs": 4,
+    "nonzero_pct": 0.3333,
+    "test_pred_variance": 0.0041569949,
+    "test_pred_mean": 0.00581583,
+    "test_pred_std": 0.06447476,
+    "pct_zero_test_preds": 0.0,
+    "pct_zero_train_preds": 0.0,
+    "classification": "FUNCTIONAL",
+    "diagnostic_alphas": {
+      "alpha_0.0001": {
+        "n_nonzero": 9,
+        "prediction_variance": 0.0124324056,
+        "prediction_mean": 0.01586691,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.001": {
+        "n_nonzero": 4,
+        "prediction_variance": 0.0041569949,
+        "prediction_mean": 0.00581583,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00544808,
+        "pct_zero_preds": 0.0
+      },
+      "alpha_0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "prediction_mean": 0.00544808,
+        "pct_zero_preds": 0.0
+      }
+    },
+    "cause": "functional"
+  }
+}

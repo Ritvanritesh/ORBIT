@@ -1,0 +1,81 @@
+{
+  "findings": [
+    {
+      "id": "R1",
+      "desc": "faithfulness_metric_manipulation",
+      "detail": "repaired_misleading_count=0",
+      "classification": "PASS"
+    },
+    {
+      "id": "R2",
+      "desc": "correlated_feature_attribution",
+      "detail": "models_with_correlation=4",
+      "classification": "LIMITATION"
+    },
+    {
+      "id": "R3",
+      "desc": "scaling_inconsistencies",
+      "detail": "input_audit_all_pass",
+      "classification": "PASS"
+    },
+    {
+      "id": "R4",
+      "desc": "perturbation_domain_errors",
+      "detail": "cliff_models=1",
+      "classification": "LIMITATION"
+    },
+    {
+      "id": "R5",
+      "desc": "lasso_degeneracy_handling",
+      "detail": "degenerate_models=5",
+      "classification": "PASS",
+      "note": "degeneracy correctly identified and documented"
+    },
+    {
+      "id": "R6",
+      "desc": "disagreement_metric_artifacts",
+      "detail": "functional_conflict_rate=1.0",
+      "classification": "PASS"
+    },
+    {
+      "id": "R7",
+      "desc": "counterfactual_invalidity",
+      "detail": "models_with_ood=7",
+      "classification": "LIMITATION"
+    },
+    {
+      "id": "R8",
+      "desc": "synthetic_test_overfitting",
+      "detail": "all_pass=True",
+      "classification": "PASS"
+    },
+    {
+      "id": "R9",
+      "desc": "selective_reporting",
+      "detail": "all models visible in audit",
+      "classification": "PASS"
+    },
+    {
+      "id": "R10",
+      "desc": "historical_artifact_mutation",
+      "detail": "no artifacts modified",
+      "classification": "PASS"
+    },
+    {
+      "id": "R11",
+      "desc": "diagnostic_model_leakage",
+      "detail": "diagnostic copies separated with new IDs",
+      "classification": "PASS"
+    },
+    {
+      "id": "R12",
+      "desc": "conclusion_overreach",
+      "detail": "no model promoted",
+      "classification": "PASS"
+    }
+  ],
+  "n_critical": 0,
+  "n_material": 0,
+  "n_limitation": 3,
+  "overall": "LIMITATION"
+}
