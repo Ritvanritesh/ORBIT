@@ -1,0 +1,65 @@
+{
+  "pairwise": {
+    "H3-RIDGE-050_vs_H3-LASSO-050": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.9857,
+      "kendall_r": 0.9186,
+      "pearson_r": 0.9982,
+      "mean_centered_corr": 0.9982,
+      "top_k_overlap_k10": 0.6,
+      "bottom_k_overlap_k10": 0.0,
+      "n_obs": 400
+    },
+    "H3-RIDGE-050_vs_H3-RIDGE-100": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.9939,
+      "kendall_r": 0.947,
+      "pearson_r": 0.9999,
+      "mean_centered_corr": 0.9999,
+      "top_k_overlap_k10": 0.9,
+      "bottom_k_overlap_k10": 0.6,
+      "n_obs": 392
+    },
+    "H3-RIDGE-050_vs_H3-LASSO-100": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.9779,
+      "kendall_r": 0.9006,
+      "pearson_r": 0.9976,
+      "mean_centered_corr": 0.9976,
+      "top_k_overlap_k10": 0.4,
+      "bottom_k_overlap_k10": 0.7,
+      "n_obs": 392
+    },
+    "H3-LASSO-050_vs_H3-RIDGE-100": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.9781,
+      "kendall_r": 0.9041,
+      "pearson_r": 0.9985,
+      "mean_centered_corr": 0.9985,
+      "top_k_overlap_k10": 0.5,
+      "bottom_k_overlap_k10": 0.0,
+      "n_obs": 392
+    },
+    "H3-LASSO-050_vs_H3-LASSO-100": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.969,
+      "kendall_r": 0.8867,
+      "pearson_r": 0.9999,
+      "mean_centered_corr": 0.9999,
+      "top_k_overlap_k10": 0.3,
+      "bottom_k_overlap_k10": 0.1,
+      "n_obs": 392
+    },
+    "H3-RIDGE-100_vs_H3-LASSO-100": {
+      "sign_agreement": 1.0,
+      "spearman_r": 0.9814,
+      "kendall_r": 0.8936,
+      "pearson_r": 0.9981,
+      "mean_centered_corr": 0.9981,
+      "top_k_overlap_k10": 0.3,
+      "bottom_k_overlap_k10": 0.5,
+      "n_obs": 776
+    }
+  },
+  "n_models": 4
+}

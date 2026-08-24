@@ -1,0 +1,47 @@
+{
+  "tests": {
+    "A1_diagnostic_added_after_lock": {
+      "status": "PASS",
+      "detail": "All diagnostics were predeclared in locked plan"
+    },
+    "A2_test_period_for_orthogonalization": {
+      "status": "PASS",
+      "detail": "Orthogonalization computed on training set only, applied to test set"
+    },
+    "A3_combined_train_test_correlation": {
+      "status": "PASS",
+      "detail": "Train and test kept strictly separate; no data leakage"
+    },
+    "A4_alpha_selected_by_test_ic": {
+      "status": "PASS",
+      "detail": "Alphas fixed at plan time, not selected by test IC"
+    },
+    "A5_degenerate_model_excluded": {
+      "status": "PASS",
+      "detail": "Degenerate lasso models not excluded from analysis, flagged as DEGENERATE"
+    },
+    "A6_failed_diagnostic_omitted": {
+      "status": "PASS",
+      "detail": "All predeclared diagnostics run and reported"
+    },
+    "A7_disagreement_sign_convention_error": {
+      "status": "PASS",
+      "detail": "Sign convention: positive = buy, applied consistently across all models"
+    },
+    "A8_perturbation_scaling_mismatch": {
+      "status": "PASS",
+      "detail": "Perturbation scales predeclared in plan and applied uniformly"
+    },
+    "A9_feature_removal_changes_identity": {
+      "status": "PASS",
+      "detail": "Feature removal variants (REP-B, REP-C) documented as representation changes"
+    },
+    "A10_historical_artifact_modification": {
+      "status": "PASS",
+      "detail": "No historical artifacts modified; all new outputs are additive"
+    }
+  },
+  "n_total": 10,
+  "n_pass": 10,
+  "overall": "PASS"
+}

@@ -1,0 +1,374 @@
+{
+  "H3-RIDGE-050": {
+    "n_bootstrap": 50,
+    "coef_stability": {
+      "ret_10": {
+        "mean": -4.686e-05,
+        "std": 0.00045895,
+        "cv": -9.7937,
+        "sign_consistency": 0.46
+      },
+      "ret_20": {
+        "mean": -8.646e-05,
+        "std": 0.00066741,
+        "cv": -7.719,
+        "sign_consistency": 0.44
+      },
+      "ret_30": {
+        "mean": 0.00061392,
+        "std": 0.00061304,
+        "cv": 0.9986,
+        "sign_consistency": 0.78
+      },
+      "sma_ratio_5_30": {
+        "mean": 0.00046421,
+        "std": 0.00129829,
+        "cv": 2.7968,
+        "sign_consistency": 0.62
+      },
+      "sma_ratio_15_40": {
+        "mean": 0.00037255,
+        "std": 0.00094829,
+        "cv": 2.5454,
+        "sign_consistency": 0.72
+      },
+      "vol_10": {
+        "mean": 0.00028606,
+        "std": 0.00119446,
+        "cv": 4.1756,
+        "sign_consistency": 0.62
+      },
+      "vol_30": {
+        "mean": -0.00187245,
+        "std": 0.00136064,
+        "cv": -0.7267,
+        "sign_consistency": 0.92
+      },
+      "log_dv_med_20": {
+        "mean": 0.0004989,
+        "std": 0.00158629,
+        "cv": 3.1795,
+        "sign_consistency": 0.36
+      },
+      "macro_dff_level": {
+        "mean": 0.0166035,
+        "std": 0.00169109,
+        "cv": 0.1019,
+        "sign_consistency": 1.0
+      },
+      "macro_dff_change_3m": {
+        "mean": -0.0127324,
+        "std": 0.0015853,
+        "cv": -0.1245,
+        "sign_consistency": 1.0
+      },
+      "macro_unemployment_level": {
+        "mean": 0.00841001,
+        "std": 0.00151661,
+        "cv": 0.1803,
+        "sign_consistency": 1.0
+      },
+      "macro_cpi_yoy": {
+        "mean": -0.00334915,
+        "std": 0.00114048,
+        "cv": -0.3405,
+        "sign_consistency": 1.0
+      }
+    },
+    "mean_rank_kappa": 0.6272,
+    "base_ranking": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "vol_30",
+      "sma_ratio_5_30",
+      "ret_30",
+      "vol_10",
+      "sma_ratio_15_40",
+      "ret_10",
+      "ret_20",
+      "log_dv_med_20"
+    ],
+    "is_explanation_stable": true
+  },
+  "H3-LASSO-050": {
+    "n_bootstrap": 50,
+    "coef_stability": {
+      "ret_10": {
+        "mean": -2.31e-06,
+        "std": 1.619e-05,
+        "cv": -7.0,
+        "sign_consistency": 0.98
+      },
+      "ret_20": {
+        "mean": 3e-07,
+        "std": 7.979e-05,
+        "cv": 265.268,
+        "sign_consistency": 0.9
+      },
+      "ret_30": {
+        "mean": 7.228e-05,
+        "std": 0.00017448,
+        "cv": 2.4138,
+        "sign_consistency": 0.78
+      },
+      "sma_ratio_5_30": {
+        "mean": 0.00017442,
+        "std": 0.0005073,
+        "cv": 2.9086,
+        "sign_consistency": 0.76
+      },
+      "sma_ratio_15_40": {
+        "mean": 8.142e-05,
+        "std": 0.00026437,
+        "cv": 3.2471,
+        "sign_consistency": 0.76
+      },
+      "vol_10": {
+        "mean": -2.255e-05,
+        "std": 0.00019361,
+        "cv": -8.587,
+        "sign_consistency": 0.8
+      },
+      "vol_30": {
+        "mean": -0.00021539,
+        "std": 0.00044953,
+        "cv": -2.087,
+        "sign_consistency": 0.62
+      },
+      "log_dv_med_20": {
+        "mean": 0.00016,
+        "std": 0.00050482,
+        "cv": 3.1552,
+        "sign_consistency": 0.66
+      },
+      "macro_dff_level": {
+        "mean": 0.00770952,
+        "std": 0.00149279,
+        "cv": 0.1936,
+        "sign_consistency": 1.0
+      },
+      "macro_dff_change_3m": {
+        "mean": -0.00815653,
+        "std": 0.00153169,
+        "cv": -0.1878,
+        "sign_consistency": 1.0
+      },
+      "macro_unemployment_level": {
+        "mean": 0.0038147,
+        "std": 0.0010059,
+        "cv": 0.2637,
+        "sign_consistency": 1.0
+      },
+      "macro_cpi_yoy": {
+        "mean": -0.00045614,
+        "std": 0.0005735,
+        "cv": -1.2573,
+        "sign_consistency": 0.42
+      }
+    },
+    "mean_rank_kappa": 0.535,
+    "base_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "is_explanation_stable": true
+  },
+  "H3-RIDGE-100": {
+    "n_bootstrap": 50,
+    "coef_stability": {
+      "ret_10": {
+        "mean": -9.668e-05,
+        "std": 0.0003736,
+        "cv": -3.8644,
+        "sign_consistency": 0.54
+      },
+      "ret_20": {
+        "mean": -9.928e-05,
+        "std": 0.00041599,
+        "cv": -4.1899,
+        "sign_consistency": 0.54
+      },
+      "ret_30": {
+        "mean": 0.00040097,
+        "std": 0.00048076,
+        "cv": 1.199,
+        "sign_consistency": 0.74
+      },
+      "sma_ratio_5_30": {
+        "mean": 0.0012682,
+        "std": 0.00070164,
+        "cv": 0.5533,
+        "sign_consistency": 1.0
+      },
+      "sma_ratio_15_40": {
+        "mean": 0.00034888,
+        "std": 0.00078464,
+        "cv": 2.249,
+        "sign_consistency": 0.58
+      },
+      "vol_10": {
+        "mean": 0.00030763,
+        "std": 0.00079228,
+        "cv": 2.5755,
+        "sign_consistency": 0.6
+      },
+      "vol_30": {
+        "mean": -0.00154595,
+        "std": 0.00076584,
+        "cv": -0.4954,
+        "sign_consistency": 0.96
+      },
+      "log_dv_med_20": {
+        "mean": 0.00160902,
+        "std": 0.00065664,
+        "cv": 0.4081,
+        "sign_consistency": 1.0
+      },
+      "macro_dff_level": {
+        "mean": 0.01585623,
+        "std": 0.00139331,
+        "cv": 0.0879,
+        "sign_consistency": 1.0
+      },
+      "macro_dff_change_3m": {
+        "mean": -0.01296813,
+        "std": 0.00120706,
+        "cv": -0.0931,
+        "sign_consistency": 1.0
+      },
+      "macro_unemployment_level": {
+        "mean": 0.00819401,
+        "std": 0.00089921,
+        "cv": 0.1097,
+        "sign_consistency": 1.0
+      },
+      "macro_cpi_yoy": {
+        "mean": -0.00290643,
+        "std": 0.00081058,
+        "cv": -0.2789,
+        "sign_consistency": 1.0
+      }
+    },
+    "mean_rank_kappa": 0.7247,
+    "base_ranking": [
+      "macro_dff_level",
+      "macro_dff_change_3m",
+      "macro_unemployment_level",
+      "macro_cpi_yoy",
+      "log_dv_med_20",
+      "vol_30",
+      "sma_ratio_5_30",
+      "sma_ratio_15_40",
+      "ret_30",
+      "vol_10",
+      "ret_20",
+      "ret_10"
+    ],
+    "is_explanation_stable": true
+  },
+  "H3-LASSO-100": {
+    "n_bootstrap": 50,
+    "coef_stability": {
+      "ret_10": {
+        "mean": 0.0,
+        "std": 0.0,
+        "cv": Infinity,
+        "sign_consistency": 1.0
+      },
+      "ret_20": {
+        "mean": -4.8e-07,
+        "std": 3.37e-06,
+        "cv": -7.0,
+        "sign_consistency": 0.98
+      },
+      "ret_30": {
+        "mean": 1.795e-05,
+        "std": 6.968e-05,
+        "cv": 3.8814,
+        "sign_consistency": 0.92
+      },
+      "sma_ratio_5_30": {
+        "mean": 0.00057012,
+        "std": 0.00054698,
+        "cv": 0.9594,
+        "sign_consistency": 0.74
+      },
+      "sma_ratio_15_40": {
+        "mean": 8.994e-05,
+        "std": 0.00022068,
+        "cv": 2.4535,
+        "sign_consistency": 0.78
+      },
+      "vol_10": {
+        "mean": -2.2e-06,
+        "std": 2.639e-05,
+        "cv": -11.994,
+        "sign_consistency": 0.92
+      },
+      "vol_30": {
+        "mean": -6.86e-05,
+        "std": 0.00013078,
+        "cv": -1.9065,
+        "sign_consistency": 0.72
+      },
+      "log_dv_med_20": {
+        "mean": 0.00020314,
+        "std": 0.00041456,
+        "cv": 2.0407,
+        "sign_consistency": 0.6
+      },
+      "macro_dff_level": {
+        "mean": 0.00711334,
+        "std": 0.00117961,
+        "cv": 0.1658,
+        "sign_consistency": 1.0
+      },
+      "macro_dff_change_3m": {
+        "mean": -0.00833948,
+        "std": 0.00121009,
+        "cv": -0.1451,
+        "sign_consistency": 1.0
+      },
+      "macro_unemployment_level": {
+        "mean": 0.00385146,
+        "std": 0.00082919,
+        "cv": 0.2153,
+        "sign_consistency": 1.0
+      },
+      "macro_cpi_yoy": {
+        "mean": -0.00017036,
+        "std": 0.00030154,
+        "cv": -1.77,
+        "sign_consistency": 0.64
+      }
+    },
+    "mean_rank_kappa": 0.6246,
+    "base_ranking": [
+      "macro_dff_change_3m",
+      "macro_dff_level",
+      "macro_unemployment_level",
+      "sma_ratio_5_30",
+      "ret_10",
+      "ret_20",
+      "ret_30",
+      "sma_ratio_15_40",
+      "vol_10",
+      "vol_30",
+      "log_dv_med_20",
+      "macro_cpi_yoy"
+    ],
+    "is_explanation_stable": true
+  }
+}

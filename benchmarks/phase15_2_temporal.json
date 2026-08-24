@@ -1,0 +1,42 @@
+{
+  "H3-RIDGE-050": {
+    "split_ics": {
+      "train": 0.275836,
+      "val": -0.157802,
+      "test": 0.090892
+    },
+    "train_test_gap": 0.184944,
+    "val_test_gap": -0.248694,
+    "is_stable": false
+  },
+  "H3-LASSO-050": {
+    "split_ics": {
+      "train": 0.257138,
+      "val": 0.001676,
+      "test": 0.108106
+    },
+    "train_test_gap": 0.149032,
+    "val_test_gap": -0.10643,
+    "is_stable": false
+  },
+  "H3-RIDGE-100": {
+    "split_ics": {
+      "train": 0.289323,
+      "val": -0.179283,
+      "test": 0.131648
+    },
+    "train_test_gap": 0.157675,
+    "val_test_gap": -0.310931,
+    "is_stable": false
+  },
+  "H3-LASSO-100": {
+    "split_ics": {
+      "train": 0.270746,
+      "val": -0.04242,
+      "test": 0.146357
+    },
+    "train_test_gap": 0.124389,
+    "val_test_gap": -0.188777,
+    "is_stable": false
+  }
+}

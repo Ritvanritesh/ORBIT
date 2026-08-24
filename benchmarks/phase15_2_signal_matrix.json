@@ -1,0 +1,82 @@
+{
+  "H3-RIDGE-050": {
+    "ic": 0.090892,
+    "collinearity_severity": "HIGH",
+    "cliff_overall": "CLIFF",
+    "temporal_stable": false,
+    "explanation_kappa": 0.6272,
+    "lasso_verdict": "N/A",
+    "best_representation_ic": 0.174537,
+    "criteria": {
+      "ic_positive": true,
+      "representation_preserves": true,
+      "cliff_localized": false,
+      "temporal_stable": false,
+      "explanation_stable": true,
+      "lasso_functional": true
+    },
+    "n_pass": 4,
+    "n_total": 6,
+    "model_verdict": "RESEARCH"
+  },
+  "H3-LASSO-050": {
+    "ic": 0.108106,
+    "collinearity_severity": "HIGH",
+    "cliff_overall": "CLIFF",
+    "temporal_stable": false,
+    "explanation_kappa": 0.535,
+    "lasso_verdict": "FUNCTIONAL",
+    "best_representation_ic": 0.184779,
+    "criteria": {
+      "ic_positive": true,
+      "representation_preserves": true,
+      "cliff_localized": false,
+      "temporal_stable": false,
+      "explanation_stable": true,
+      "lasso_functional": true
+    },
+    "n_pass": 4,
+    "n_total": 6,
+    "model_verdict": "RESEARCH"
+  },
+  "H3-RIDGE-100": {
+    "ic": 0.131648,
+    "collinearity_severity": "HIGH",
+    "cliff_overall": "CLIFF",
+    "temporal_stable": false,
+    "explanation_kappa": 0.7247,
+    "lasso_verdict": "N/A",
+    "best_representation_ic": 0.17672,
+    "criteria": {
+      "ic_positive": true,
+      "representation_preserves": true,
+      "cliff_localized": false,
+      "temporal_stable": false,
+      "explanation_stable": true,
+      "lasso_functional": true
+    },
+    "n_pass": 4,
+    "n_total": 6,
+    "model_verdict": "RESEARCH"
+  },
+  "H3-LASSO-100": {
+    "ic": 0.146357,
+    "collinearity_severity": "HIGH",
+    "cliff_overall": "CLIFF",
+    "temporal_stable": false,
+    "explanation_kappa": 0.6246,
+    "lasso_verdict": "FUNCTIONAL",
+    "best_representation_ic": 0.174253,
+    "criteria": {
+      "ic_positive": true,
+      "representation_preserves": true,
+      "cliff_localized": false,
+      "temporal_stable": false,
+      "explanation_stable": true,
+      "lasso_functional": true
+    },
+    "n_pass": 4,
+    "n_total": 6,
+    "model_verdict": "RESEARCH"
+  }
+}

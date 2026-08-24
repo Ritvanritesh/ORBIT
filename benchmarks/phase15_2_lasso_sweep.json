@@ -1,0 +1,290 @@
+{
+  "H3-RIDGE-050": {
+    "status": "SKIPPED",
+    "reason": "not_lasso"
+  },
+  "H3-LASSO-050": {
+    "alphas": {
+      "1e-05": {
+        "n_nonzero": 11,
+        "prediction_variance": 0.0136905801,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": 8.139e-05,
+          "ret_20": 3.469e-05,
+          "ret_30": 0.00050314,
+          "sma_ratio_5_30": 0.00084159,
+          "sma_ratio_15_40": 0.0002624,
+          "vol_10": 0.00046662,
+          "vol_30": -0.00210801,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": 0.01673358,
+          "macro_dff_change_3m": -0.01275939,
+          "macro_unemployment_level": 0.00822868,
+          "macro_cpi_yoy": -0.00315673
+        }
+      },
+      "0.0001": {
+        "n_nonzero": 10,
+        "prediction_variance": 0.0125912398,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": 1.77e-05,
+          "ret_20": 0.0,
+          "ret_30": 0.00040425,
+          "sma_ratio_5_30": 0.00080049,
+          "sma_ratio_15_40": 0.00014972,
+          "vol_10": 0.0002012,
+          "vol_30": -0.00174222,
+          "log_dv_med_20": 0.0,
+          "macro_dff_level": 0.01590631,
+          "macro_dff_change_3m": -0.01236696,
+          "macro_unemployment_level": 0.00777789,
+          "macro_cpi_yoy": -0.00285447
+        }
+      },
+      "0.001": {
+        "n_nonzero": 3,
+        "prediction_variance": 0.0041035463,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": -0.0,
+          "vol_30": -0.0,
+          "log_dv_med_20": 0.0,
+          "macro_dff_level": 0.00769228,
+          "macro_dff_change_3m": -0.00828831,
+          "macro_unemployment_level": 0.0034921,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": 0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": 0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "1.0": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": 0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      }
+    },
+    "functional_alphas": [
+      1e-05,
+      0.0001,
+      0.001
+    ],
+    "degenerate_alphas": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "summary": {
+      "n_functional": 3,
+      "n_degenerate": 3,
+      "first_functional_alpha": 1e-05,
+      "verdict": "FUNCTIONAL"
+    }
+  },
+  "H3-RIDGE-100": {
+    "status": "SKIPPED",
+    "reason": "not_lasso"
+  },
+  "H3-LASSO-100": {
+    "alphas": {
+      "1e-05": {
+        "n_nonzero": 12,
+        "prediction_variance": 0.0135182581,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": -4.72e-05,
+          "ret_20": -0.00011154,
+          "ret_30": 0.00037515,
+          "sma_ratio_5_30": 0.00117332,
+          "sma_ratio_15_40": 0.00043926,
+          "vol_10": 0.00010681,
+          "vol_30": -0.00127489,
+          "log_dv_med_20": 0.00158152,
+          "macro_dff_level": 0.01593877,
+          "macro_dff_change_3m": -0.01308265,
+          "macro_unemployment_level": 0.0082527,
+          "macro_cpi_yoy": -0.00275418
+        }
+      },
+      "0.0001": {
+        "n_nonzero": 9,
+        "prediction_variance": 0.0124324056,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": -0.0,
+          "ret_20": -0.0,
+          "ret_30": 0.00028531,
+          "sma_ratio_5_30": 0.00113356,
+          "sma_ratio_15_40": 0.00033635,
+          "vol_10": 0.0,
+          "vol_30": -0.00105713,
+          "log_dv_med_20": 0.00137734,
+          "macro_dff_level": 0.01514211,
+          "macro_dff_change_3m": -0.01268103,
+          "macro_unemployment_level": 0.0078193,
+          "macro_cpi_yoy": -0.00246198
+        }
+      },
+      "0.001": {
+        "n_nonzero": 4,
+        "prediction_variance": 0.0041569949,
+        "pct_zero_preds": 0.0,
+        "classification": "FUNCTIONAL",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.00046603,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": -0.0,
+          "vol_30": -0.0,
+          "log_dv_med_20": 0.0,
+          "macro_dff_level": 0.00727757,
+          "macro_dff_change_3m": -0.00848902,
+          "macro_unemployment_level": 0.0039263,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "0.01": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": -0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "0.1": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": -0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      },
+      "1.0": {
+        "n_nonzero": 0,
+        "prediction_variance": 0.0,
+        "pct_zero_preds": 0.0,
+        "classification": "DEGENERATE",
+        "coefs": {
+          "ret_10": 0.0,
+          "ret_20": 0.0,
+          "ret_30": 0.0,
+          "sma_ratio_5_30": 0.0,
+          "sma_ratio_15_40": 0.0,
+          "vol_10": 0.0,
+          "vol_30": -0.0,
+          "log_dv_med_20": -0.0,
+          "macro_dff_level": -0.0,
+          "macro_dff_change_3m": -0.0,
+          "macro_unemployment_level": 0.0,
+          "macro_cpi_yoy": -0.0
+        }
+      }
+    },
+    "functional_alphas": [
+      1e-05,
+      0.0001,
+      0.001
+    ],
+    "degenerate_alphas": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "summary": {
+      "n_functional": 3,
+      "n_degenerate": 3,
+      "first_functional_alpha": 1e-05,
+      "verdict": "FUNCTIONAL"
+    }
+  }
+}
