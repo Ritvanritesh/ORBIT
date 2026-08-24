@@ -1,0 +1,46 @@
+{
+  "phase": "20A.1",
+  "step": 13,
+  "timestamp": "2026-08-24T17:23:41.832055+00:00",
+  "checks": [
+    {
+      "check": "sufficiency_HYP-MOM",
+      "original_status": "DATA_NOT_READY",
+      "repro_status": "DATA_NOT_READY",
+      "consistent": true
+    },
+    {
+      "check": "sufficiency_HYP-VOL",
+      "original_status": "DATA_NOT_READY",
+      "repro_status": "DATA_NOT_READY",
+      "consistent": true
+    },
+    {
+      "check": "sufficiency_HYP-MAC",
+      "original_status": "DATA_NOT_READY",
+      "repro_status": "DATA_NOT_READY",
+      "consistent": true
+    },
+    {
+      "check": "sufficiency_HYP-XSEC",
+      "original_status": "DATA_NOT_READY",
+      "repro_status": "DATA_NOT_READY",
+      "consistent": true
+    },
+    {
+      "check": "overall_status",
+      "original_status": "DATA_NOT_READY",
+      "repro_status": "DATA_NOT_READY",
+      "consistent": true
+    },
+    {
+      "check": "boundary_tests",
+      "original_all_pass": false,
+      "repro_all_pass": false,
+      "consistent": true
+    }
+  ],
+  "all_consistent": true,
+  "n_checks": 6,
+  "n_consistent": 6
+}

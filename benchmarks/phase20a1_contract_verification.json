@@ -1,0 +1,81 @@
+{
+  "phase": "20A.1",
+  "step": 1,
+  "timestamp": "2026-08-24T17:23:41.813413+00:00",
+  "source_artifacts": {
+    "oos_protocol": {
+      "digest": "07d98579c24f34ea8bea09d0557f75bcbdfa526eae57ba3f59b38f7a3ecd086e"
+    },
+    "oos_sufficiency": {
+      "digest": "5dac53006307f090faabbfe993b8c08468cbe916fbbaa5c47943863c06da60d4"
+    },
+    "oos_firewall": {
+      "digest": "03ef09cea3d7f82452d4e1e2b2f054d4307d5c276fa2e76202e353c3d16352f5"
+    },
+    "phase20a_trigger": {
+      "digest": "573ddc9cf7dc20bed775064fa69d4a67944ea6bb4abd60f94ba1c018bdba8269"
+    },
+    "phase20a_audit": {
+      "digest": "75a6be87922ef8945feb652e040e65b46afec05d617e7e3609e1dbd9678e6983"
+    }
+  },
+  "resolved_contract": {
+    "cutoff_date": "2026-06-30",
+    "oos_start_date": "2026-07-01",
+    "registered_hypotheses": [
+      "HYP-MOM",
+      "HYP-VOL",
+      "HYP-MAC",
+      "HYP-XSEC"
+    ],
+    "oos_registration_ids": [
+      "OOS-REG-20A-HYP-MOM",
+      "OOS-REG-20A-HYP-VOL",
+      "OOS-REG-20A-HYP-MAC",
+      "OOS-REG-20A-HYP-XSEC"
+    ],
+    "required_universes": [
+      "ENV-050",
+      "ENV-100"
+    ],
+    "required_horizons": [
+      "H-5",
+      "H-10",
+      "H-20"
+    ],
+    "sufficiency_requirements": {
+      "minimum_trading_days": 60,
+      "minimum_cross_sectional_observations": 500,
+      "minimum_independent_evaluation_periods": 3,
+      "minimum_valid_prediction_windows": 5,
+      "minimum_universe_coverage": 0.8,
+      "minimum_data_completeness": 0.9
+    },
+    "required_feature_families": {
+      "HYP-MOM": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "HYP-VOL": [
+        "vol_10",
+        "vol_30"
+      ],
+      "HYP-MAC": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "HYP-XSEC": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ]
+    },
+    "label_maturity_requirements": {
+      "H-5": "5 trading days after feature date",
+      "H-10": "10 trading days after feature date",
+      "H-20": "20 trading days after feature date"
+    }
+  },
+  "verification_status": "VERIFIED"
+}

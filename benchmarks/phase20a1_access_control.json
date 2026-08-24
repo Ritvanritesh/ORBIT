@@ -1,0 +1,42 @@
+{
+  "phase": "20A.1",
+  "step": 11,
+  "timestamp": "2026-08-24T17:23:41.831058+00:00",
+  "protected_datasets": {
+    "RESERVED_OOS": {
+      "location": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible",
+      "access_level": "BLOCKED",
+      "allowed_callers": [
+        "Phase 20B execution path (after explicit user instruction)"
+      ],
+      "blocked_callers": [
+        "feature_exploration",
+        "correlation_screening",
+        "model_fitting",
+        "hyperparameter_tuning",
+        "hypothesis_ranking",
+        "ic_calculation",
+        "portfolio_backtesting",
+        "standard_research_entry_points"
+      ]
+    }
+  },
+  "audit_logging": {
+    "enabled": true,
+    "log_fields": [
+      "caller",
+      "purpose",
+      "timestamp",
+      "registration_context",
+      "decision"
+    ],
+    "log_location": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\access_log.json"
+  },
+  "runtime_guards": [
+    "Timestamp filter rejects pre-cutoff data",
+    "Readiness trigger only inspects counts, not returns",
+    "OOS registrations are immutable",
+    "No prediction pipeline accepts OOS data in Phase 20A.1"
+  ],
+  "status": "IMPLEMENTED"
+}

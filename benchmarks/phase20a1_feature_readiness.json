@@ -1,0 +1,90 @@
+{
+  "phase": "20A.1",
+  "step": 7,
+  "timestamp": "2026-08-24T17:23:41.828066+00:00",
+  "required_raw_columns": {
+    "open": "OHLCV price data",
+    "high": "OHLCV price data",
+    "low": "OHLCV price data",
+    "close": "OHLCV price data",
+    "volume": "OHLCV volume data"
+  },
+  "required_derived_features": {
+    "log_dv_med_20": {
+      "registered_hypotheses": [
+        "HYP-MAC",
+        "HYP-XSEC"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "ret_10": {
+      "registered_hypotheses": [
+        "HYP-MOM"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "ret_20": {
+      "registered_hypotheses": [
+        "HYP-MOM"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "ret_30": {
+      "registered_hypotheses": [
+        "HYP-MOM"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "sma_ratio_15_40": {
+      "registered_hypotheses": [
+        "HYP-XSEC"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "sma_ratio_5_30": {
+      "registered_hypotheses": [
+        "HYP-XSEC"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "vol_10": {
+      "registered_hypotheses": [
+        "HYP-VOL"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    },
+    "vol_30": {
+      "registered_hypotheses": [
+        "HYP-VOL",
+        "HYP-MAC"
+      ],
+      "lookback_requirement": "varies by feature (10-40 sessions)",
+      "computation_feasible": "YES (feature pipelines exist from Phase 18)"
+    }
+  },
+  "lookback_satisfaction": {
+    "status": "STRUCTURALLY_READY",
+    "detail": "Feature pipelines exist and can compute on any OHLCV data"
+  },
+  "macro_availability": {
+    "status": "STRUCTURALLY_READY",
+    "detail": "DFF, UNRATE, CPIAUCSL available from FRED"
+  },
+  "pit_availability": {
+    "status": "STRUCTURALLY_READY",
+    "detail": "PIT logic can be applied to new data"
+  },
+  "preprocessing_reproducibility": {
+    "status": "STRUCTURALLY_READY",
+    "detail": "StandardScaler can be fitted within walk-forward windows"
+  },
+  "overall_status": "STRUCTURALLY_READY",
+  "critical_note": "Structural readiness means feature pipelines CAN compute on new data. This does NOT mean predictions have been computed or evaluated. No IC calculation, no model fitting, no hypothesis evaluation."
+}

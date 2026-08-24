@@ -1,0 +1,71 @@
+{
+  "phase": "20A.1",
+  "step": 2,
+  "timestamp": "2026-08-24T17:23:41.818589+00:00",
+  "cutoff": "2026-06-30",
+  "tests": {
+    "T1_exact_cutoff": {
+      "input": "2026-06-30",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "pass": true
+    },
+    "T2_one_second_before": {
+      "input": "2026-06-30T23:59:59",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "pass": true
+    },
+    "T3_one_second_after": {
+      "input": "2026-07-01T00:00:00",
+      "expected": "RESERVED_OOS_ELIGIBLE",
+      "actual": "RESERVED_OOS_ELIGIBLE",
+      "pass": true
+    },
+    "T4_first_trading_day": {
+      "input": "2026-07-01",
+      "expected": "RESERVED_OOS_ELIGIBLE",
+      "actual": "RESERVED_OOS_ELIGIBLE",
+      "pass": true
+    },
+    "T5_timezone_utc_cutoff": {
+      "input": "2026-06-30T23:59:59Z",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "pass": true
+    },
+    "T6_timezone_utc_after": {
+      "input": "2026-07-01T00:00:00Z",
+      "expected": "RESERVED_OOS_ELIGIBLE",
+      "actual": "REJECT",
+      "pass": false
+    },
+    "T7_date_only_before": {
+      "input": "2026-06-29",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "pass": true
+    },
+    "T8_date_only_after": {
+      "input": "2026-07-02",
+      "expected": "RESERVED_OOS_ELIGIBLE",
+      "actual": "RESERVED_OOS_ELIGIBLE",
+      "pass": true
+    },
+    "T9_far_future": {
+      "input": "2027-01-01",
+      "expected": "RESERVED_OOS_ELIGIBLE",
+      "actual": "RESERVED_OOS_ELIGIBLE",
+      "pass": true
+    },
+    "T10_far_past": {
+      "input": "2020-01-01",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "pass": true
+    }
+  },
+  "all_pass": false,
+  "n_tests": 10,
+  "n_passed": 9
+}

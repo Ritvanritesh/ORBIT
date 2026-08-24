@@ -1,0 +1,116 @@
+{
+  "phase": "20A.1",
+  "step": 10,
+  "timestamp": "2026-08-24T17:23:41.830061+00:00",
+  "trigger_state": "DATA_NOT_READY",
+  "phase20b_eligible": false,
+  "eligibility_details": {
+    "HYP-MOM": {
+      "registration_id": "OOS-REG-20A-HYP-MOM",
+      "readiness_timestamp": "2026-08-24T17:23:41.830061+00:00",
+      "sufficiency_evidence": {
+        "registration_id": "OOS-REG-20A-HYP-MOM",
+        "requirements": {
+          "minimum_trading_days": 60,
+          "observed_trading_days": 38,
+          "minimum_observations": 1000,
+          "observed_observations": 1900,
+          "minimum_universe_coverage": 0.8,
+          "observed_universe_coverage": 0.0,
+          "minimum_data_completeness": 0.9,
+          "observed_data_completeness": 0.0
+        },
+        "blocking_conditions": [
+          "INSUFFICIENT_ELAPSED_PERIOD",
+          "INSUFFICIENT_UNIVERSE_COVERAGE",
+          "INSUFFICIENT_DATA_COMPLETENESS"
+        ],
+        "status": "DATA_NOT_READY"
+      },
+      "manifest_references": [],
+      "dataset_digests": [],
+      "coverage_summary": "NOT_AVAILABLE"
+    },
+    "HYP-VOL": {
+      "registration_id": "OOS-REG-20A-HYP-VOL",
+      "readiness_timestamp": "2026-08-24T17:23:41.830061+00:00",
+      "sufficiency_evidence": {
+        "registration_id": "OOS-REG-20A-HYP-VOL",
+        "requirements": {
+          "minimum_trading_days": 60,
+          "observed_trading_days": 38,
+          "minimum_observations": 1000,
+          "observed_observations": 1900,
+          "minimum_universe_coverage": 0.8,
+          "observed_universe_coverage": 0.0,
+          "minimum_data_completeness": 0.9,
+          "observed_data_completeness": 0.0
+        },
+        "blocking_conditions": [
+          "INSUFFICIENT_ELAPSED_PERIOD",
+          "INSUFFICIENT_UNIVERSE_COVERAGE",
+          "INSUFFICIENT_DATA_COMPLETENESS"
+        ],
+        "status": "DATA_NOT_READY"
+      },
+      "manifest_references": [],
+      "dataset_digests": [],
+      "coverage_summary": "NOT_AVAILABLE"
+    },
+    "HYP-MAC": {
+      "registration_id": "OOS-REG-20A-HYP-MAC",
+      "readiness_timestamp": "2026-08-24T17:23:41.830061+00:00",
+      "sufficiency_evidence": {
+        "registration_id": "OOS-REG-20A-HYP-MAC",
+        "requirements": {
+          "minimum_trading_days": 60,
+          "observed_trading_days": 38,
+          "minimum_observations": 1000,
+          "observed_observations": 1900,
+          "minimum_universe_coverage": 0.8,
+          "observed_universe_coverage": 0.0,
+          "minimum_data_completeness": 0.9,
+          "observed_data_completeness": 0.0
+        },
+        "blocking_conditions": [
+          "INSUFFICIENT_ELAPSED_PERIOD",
+          "INSUFFICIENT_UNIVERSE_COVERAGE",
+          "INSUFFICIENT_DATA_COMPLETENESS"
+        ],
+        "status": "DATA_NOT_READY"
+      },
+      "manifest_references": [],
+      "dataset_digests": [],
+      "coverage_summary": "NOT_AVAILABLE"
+    },
+    "HYP-XSEC": {
+      "registration_id": "OOS-REG-20A-HYP-XSEC",
+      "readiness_timestamp": "2026-08-24T17:23:41.830061+00:00",
+      "sufficiency_evidence": {
+        "registration_id": "OOS-REG-20A-HYP-XSEC",
+        "requirements": {
+          "minimum_trading_days": 60,
+          "observed_trading_days": 38,
+          "minimum_observations": 1000,
+          "observed_observations": 1900,
+          "minimum_universe_coverage": 0.8,
+          "observed_universe_coverage": 0.0,
+          "minimum_data_completeness": 0.9,
+          "observed_data_completeness": 0.0
+        },
+        "blocking_conditions": [
+          "INSUFFICIENT_ELAPSED_PERIOD",
+          "INSUFFICIENT_UNIVERSE_COVERAGE",
+          "INSUFFICIENT_DATA_COMPLETENESS"
+        ],
+        "status": "DATA_NOT_READY"
+      },
+      "manifest_references": [],
+      "dataset_digests": [],
+      "coverage_summary": "NOT_AVAILABLE"
+    }
+  },
+  "critical_constraint": "Even if PHASE20B_ELIGIBLE is reported, Phase 20B execution requires explicit user instruction. Automatic execution is forbidden by the governance framework.",
+  "current_state": "DATA_NOT_READY",
+  "note": "Trigger does not inspect IC, Sharpe, returns, or any performance metric"
+}

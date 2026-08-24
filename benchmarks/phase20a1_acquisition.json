@@ -1,0 +1,24 @@
+{
+  "phase": "20A.1",
+  "step": 4,
+  "timestamp": "2026-08-24T17:23:41.825120+00:00",
+  "acquisition_attempts": [],
+  "successful_batches": 0,
+  "rejected_batches": 0,
+  "quarantine_counts": {
+    "QUARANTINED_PRE_CUTOFF": 0,
+    "PENDING_VALIDATION": 0,
+    "RESERVED_OOS_ELIGIBLE": 0,
+    "REJECTED": 0
+  },
+  "accepted_post_cutoff_observations": 0,
+  "failures": [],
+  "status": "NO_NEW_DATA_AVAILABLE",
+  "note": "No post-cutoff data has been acquired yet. The market data provider has not delivered data after 2026-06-30. This is expected \u2014 we are building infrastructure before data arrives.",
+  "data_locations": {
+    "QUARANTINED_PRE_CUTOFF": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\quarantine",
+    "PENDING_VALIDATION": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\pending",
+    "RESERVED_OOS_ELIGIBLE": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible",
+    "REJECTED": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\rejected"
+  }
+}

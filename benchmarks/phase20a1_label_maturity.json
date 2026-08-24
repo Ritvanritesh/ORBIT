@@ -1,0 +1,106 @@
+{
+  "phase": "20A.1",
+  "step": 8,
+  "timestamp": "2026-08-24T17:23:41.829064+00:00",
+  "current_date": "2026-08-24",
+  "oos_boundary": "2026-06-30",
+  "horizon_maturity": {
+    "HYP-MOM_H-5": {
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "latest_feature_with_mature_label": "2026-08-17",
+      "estimated_mature_trading_days": 33,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-MOM_H-10": {
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "latest_feature_with_mature_label": "2026-08-09",
+      "estimated_mature_trading_days": 28,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-MOM_H-20": {
+      "hypothesis_id": "HYP-MOM",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "latest_feature_with_mature_label": "2026-07-25",
+      "estimated_mature_trading_days": 18,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-VOL_H-5": {
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "latest_feature_with_mature_label": "2026-08-17",
+      "estimated_mature_trading_days": 33,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-VOL_H-10": {
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "latest_feature_with_mature_label": "2026-08-09",
+      "estimated_mature_trading_days": 28,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-VOL_H-20": {
+      "hypothesis_id": "HYP-VOL",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "latest_feature_with_mature_label": "2026-07-25",
+      "estimated_mature_trading_days": 18,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-MAC_H-5": {
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "latest_feature_with_mature_label": "2026-08-17",
+      "estimated_mature_trading_days": 33,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-MAC_H-10": {
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "latest_feature_with_mature_label": "2026-08-09",
+      "estimated_mature_trading_days": 28,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-MAC_H-20": {
+      "hypothesis_id": "HYP-MAC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "latest_feature_with_mature_label": "2026-07-25",
+      "estimated_mature_trading_days": 18,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-XSEC_H-5": {
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-5",
+      "horizon_sessions": 5,
+      "latest_feature_with_mature_label": "2026-08-17",
+      "estimated_mature_trading_days": 33,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-XSEC_H-10": {
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-10",
+      "horizon_sessions": 10,
+      "latest_feature_with_mature_label": "2026-08-09",
+      "estimated_mature_trading_days": 28,
+      "status": "PARTIALLY_MATURE"
+    },
+    "HYP-XSEC_H-20": {
+      "hypothesis_id": "HYP-XSEC",
+      "horizon": "H-20",
+      "horizon_sessions": 20,
+      "latest_feature_with_mature_label": "2026-07-25",
+      "estimated_mature_trading_days": 18,
+      "status": "PARTIALLY_MATURE"
+    }
+  },
+  "overall_status": "DATA_COLLECTING"
+}

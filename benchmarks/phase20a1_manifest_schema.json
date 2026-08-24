@@ -1,0 +1,32 @@
+{
+  "phase": "20A.1",
+  "step": 3,
+  "timestamp": "2026-08-24T17:23:41.825120+00:00",
+  "schema": {
+    "batch_id": "string (unique, monotonic)",
+    "acquisition_timestamp": "ISO 8601 UTC",
+    "data_source": "string (provider name)",
+    "retrieval_method": "string (API/bulk/stream)",
+    "requested_date_range": {
+      "start": "ISO date",
+      "end": "ISO date"
+    },
+    "received_date_range": {
+      "start": "ISO date",
+      "end": "ISO date"
+    },
+    "symbols": "list of strings",
+    "row_count": "integer",
+    "schema_version": "string",
+    "checksum_sha256": "hex string",
+    "earliest_timestamp": "ISO datetime",
+    "latest_timestamp": "ISO datetime",
+    "cutoff_validation": "PASS/REJECT",
+    "duplicate_validation": "PASS/WARNING/REJECT",
+    "pre_cutoff_count": "integer",
+    "post_cutoff_count": "integer",
+    "classification": "QUARANTINED_PRE_CUTOFF / PENDING_VALIDATION / RESERVED_OOS_ELIGIBLE / REJECTED"
+  },
+  "immutability_rule": "Manifests are append-only. Prior manifests cannot be modified.",
+  "storage_location": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\manifests"
+}

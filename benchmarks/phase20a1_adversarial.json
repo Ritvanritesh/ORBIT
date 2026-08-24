@@ -1,0 +1,92 @@
+{
+  "phase": "20A.1",
+  "step": 12,
+  "timestamp": "2026-08-24T17:23:41.831058+00:00",
+  "tests": {
+    "A1_inject_pre_cutoff": {
+      "attack": "Inject pre-cutoff data disguised as new data",
+      "result": "REJECTED",
+      "detail": "Boundary guard rejects all observations with timestamp <= 2026-06-30"
+    },
+    "A2_modify_timestamps": {
+      "attack": "Modify timestamps to cross the cutoff",
+      "result": "REJECTED",
+      "detail": "Timestamp validation uses canonical Phase 20A boundary; modification detectable"
+    },
+    "A3_duplicate_consumed": {
+      "attack": "Duplicate previously consumed observations",
+      "result": "REJECTED",
+      "detail": "All historical observations classified as HISTORICAL_RESEARCH; duplication detectable"
+    },
+    "A4_mix_old_new": {
+      "attack": "Mix old and new data in one batch",
+      "result": "REJECTED",
+      "detail": "Boundary guard classifies each observation independently by timestamp"
+    },
+    "A5_feature_exploration": {
+      "attack": "Attempt feature exploration on RESERVED_OOS data",
+      "result": "REJECTED",
+      "detail": "No feature exploration pipeline accepts OOS data in Phase 20A.1"
+    },
+    "A6_ic_calculation": {
+      "attack": "Attempt IC calculation before Phase 20B",
+      "result": "REJECTED",
+      "detail": "No IC calculation pipeline accepts OOS data in Phase 20A.1"
+    },
+    "A7_model_fitting": {
+      "attack": "Attempt model fitting using RESERVED_OOS data",
+      "result": "REJECTED",
+      "detail": "No model training pipeline accepts OOS data in Phase 20A.1"
+    },
+    "A8_hyperparameter_tuning": {
+      "attack": "Attempt hyperparameter tuning using RESERVED_OOS data",
+      "result": "REJECTED",
+      "detail": "No tuning pipeline accepts OOS data in Phase 20A.1"
+    },
+    "A9_portfolio_optimization": {
+      "attack": "Attempt portfolio optimization using RESERVED_OOS data",
+      "result": "REJECTED",
+      "detail": "No portfolio optimization pipeline accepts OOS data in Phase 20A.1"
+    },
+    "A10_automatic_phase20b": {
+      "attack": "Attempt automatic Phase 20B execution",
+      "result": "REJECTED",
+      "detail": "Phase 20B requires explicit user instruction; trigger only reports eligibility"
+    },
+    "A11_change_sufficiency": {
+      "attack": "Change sufficiency thresholds after data arrives",
+      "result": "REJECTED",
+      "detail": "Sufficiency thresholds locked in Phase 20A Step 4"
+    },
+    "A12_replace_symbol": {
+      "attack": "Replace a missing universe symbol",
+      "result": "REJECTED",
+      "detail": "Universe definitions locked in Phase 17B-R; no substitutions allowed"
+    },
+    "A13_delete_batch": {
+      "attack": "Delete a rejected batch from provenance",
+      "result": "REJECTED",
+      "detail": "Manifests are append-only; deletion detectable"
+    },
+    "A14_bypass_label_maturity": {
+      "attack": "Bypass the label maturity requirement",
+      "result": "REJECTED",
+      "detail": "Label maturity checked before sufficiency evaluation"
+    },
+    "A15_immature_as_mature": {
+      "attack": "Use immature labels as mature evidence",
+      "result": "REJECTED",
+      "detail": "Label maturity tracker classifies each observation independently"
+    },
+    "A16_modify_registration": {
+      "attack": "Modify an immutable Phase 20A registration",
+      "result": "REJECTED",
+      "detail": "OOS registrations are SHA-256 locked; modification detectable"
+    }
+  },
+  "summary": {
+    "total": 16,
+    "rejected": 16,
+    "passed": 0
+  }
+}

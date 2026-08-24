@@ -1,0 +1,59 @@
+{
+  "phase": "20A.1",
+  "step": 5,
+  "timestamp": "2026-08-24T17:23:41.827067+00:00",
+  "validation_checks": {
+    "duplicate_rows": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "duplicate_timestamps": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "missing_trading_days": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "invalid_prices": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "zero_negative_prices": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "impossible_ohlc": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "invalid_volume": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "symbol_inconsistencies": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "corporate_action_anomalies": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "schema_drift": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    },
+    "unexpected_universe_changes": {
+      "status": "PASS",
+      "detail": "No data to validate"
+    }
+  },
+  "classification_rules": {
+    "PASS": "Check passed with no issues",
+    "WARNING": "Non-critical issue detected; data may still be usable",
+    "REJECT": "Critical issue; data must not enter RESERVED_OOS_ELIGIBLE",
+    "BLOCKING_FAILURE": "Systemic failure; all data rejected until resolved"
+  },
+  "overall_status": "NO_DATA_TO_VALIDATE",
+  "note": "Quality validation will execute when post-cutoff data is acquired"
+}

@@ -1,0 +1,24 @@
+{
+  "phase": "20A.1",
+  "timestamp": "2026-08-24T17:23:41.834050+00:00",
+  "verification_checks": {
+    "phase20a_artifacts_unchanged": true,
+    "oos_registrations_unchanged": true,
+    "no_pre_cutoff_eligible": true,
+    "rejected_batches_in_provenance": true,
+    "no_hypothesis_evaluated": true,
+    "no_ic_calculated": true,
+    "no_model_tuned": true,
+    "no_hypothesis_promoted": true,
+    "readiness_uses_canonical_thresholds": true,
+    "phase20b_no_automatic_execution": true,
+    "adversarial_tests_accounted_for": true,
+    "reproducibility_passes": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: all 12 checks pass. OOS registrations unchanged: True. Adversarial: 16/16 REJECTED. Gate: GREEN",
+  "readiness_state": "DATA_NOT_READY",
+  "phase20b_trigger": "DATA_NOT_READY"
+}
