@@ -1,0 +1,22 @@
+{
+  "phase": "26R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:54:43.840563+00:00",
+  "verification_checks": {
+    "authorization_verified": true,
+    "artifacts_verified": true,
+    "oos_evaluation_blocked": true,
+    "oos_outcomes_not_accessed": true,
+    "oos_predictions_not_accessed": true,
+    "oos_ic_not_calculated": true,
+    "oos_sharpe_not_calculated": true,
+    "no_model_promotion": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "oos_blocked": true,
+  "overall_verdict": "BLOCKED_AWAITING_DATA",
+  "gate": "BLOCKED",
+  "gate_rationale": "OOS data insufficient: 36/60 trading days. Waiting for DATA_READY."
+}

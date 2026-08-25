@@ -1,0 +1,58 @@
+{
+  "phase": "26R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:54:43.840563+00:00",
+  "verdict": "BLOCKED_AWAITING_DATA",
+  "gate": "BLOCKED",
+  "gate_rationale": "OOS data insufficient: 36/60 trading days. Waiting for DATA_READY.",
+  "summary": {
+    "oos_status": "DATA_NOT_READY",
+    "trading_days": "36/60",
+    "remaining_days": 24,
+    "estimated_completion": "~24 more trading days (~5 weeks)",
+    "real_oos_permitted": false,
+    "blocked": true
+  },
+  "registered_configuration": {
+    "primary_endpoint": "Incremental Spearman IC > 0.005 at H-10 (Ridge)",
+    "secondary": "H-20 replication + Lasso consistency",
+    "models": [
+      "Ridge (alpha=1.0)",
+      "Lasso (alpha=0.001)"
+    ],
+    "features": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D",
+      "VOL_ZSCORE",
+      "realized_vol"
+    ],
+    "correction": "Holm-Bonferroni (family size 2)",
+    "experiments": 7
+  },
+  "integrity_status": {
+    "registration_verified": true,
+    "artifacts_locked": true,
+    "firewall_intact": true
+  },
+  "next_steps": [
+    "Accumulate OOS trading days to 60 minimum",
+    "DATA_READY gate will trigger automatically",
+    "Phase 26-R will re-execute with real OOS evaluation",
+    "All 7 registered experiments will execute",
+    "Primary confirmatory result will be determined",
+    "Independent replication will verify agreement",
+    "Robustness plan will execute 6 dimensions"
+  ],
+  "what_was_not_done": [
+    "No OOS targets inspected",
+    "No OOS predictions generated",
+    "No OOS IC calculated",
+    "No OOS Sharpe calculated",
+    "No model rankings computed",
+    "No model promoted",
+    "No hypothesis modified",
+    "No experiments added or removed"
+  ]
+}

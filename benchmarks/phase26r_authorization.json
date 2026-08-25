@@ -1,0 +1,22 @@
+{
+  "authorization_id": "AUTH-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "26R",
+  "timestamp": "2026-08-25T16:54:43.833584+00:00",
+  "readiness_state": {
+    "authoritative_source": "phase20r_sufficiency.json",
+    "status": "DATA_NOT_READY",
+    "trading_days": 36,
+    "minimum_required": 60,
+    "remaining_days": 24,
+    "estimated_completion": "~24 more trading days (~5 weeks)"
+  },
+  "gate_verdict": "DATA_NOT_READY",
+  "real_oos_evaluation_permitted": false,
+  "consequences": {
+    "real_oos_must_not_execute": true,
+    "oos_outcomes_must_not_be_inspected": true,
+    "synthetic_validation_may_execute": true,
+    "execution_readiness_may_be_verified": true
+  }
+}

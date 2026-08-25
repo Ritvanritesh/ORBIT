@@ -1,0 +1,49 @@
+{
+  "blocked_id": "BLOCKED-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "26R",
+  "timestamp": "2026-08-25T16:54:43.839566+00:00",
+  "reason": "DATA_NOT_READY \u2014 OOS data insufficient for confirmatory evaluation",
+  "authoritative_readiness": {
+    "source": "phase20r_sufficiency.json",
+    "status": "DATA_NOT_READY",
+    "trading_days": 36,
+    "minimum_required": 60,
+    "remaining_days": 24,
+    "estimated_completion": "~24 more trading days (~5 weeks)"
+  },
+  "blocking_factors": {
+    "in_sample_insufficient": false,
+    "oos_insufficient": true,
+    "pit_integrity_failure": false,
+    "data_integrity_failure": false
+  },
+  "confirmation_no_oos_outcomes_accessed": true,
+  "confirmation_no_oos_predictions_accessed": true,
+  "confirmation_no_oos_ic_calculated": true,
+  "confirmation_no_oos_sharpe_calculated": true,
+  "confirmation_no_model_promotion": true,
+  "steps_not_executed": [
+    "Step 3: Freeze OOS snapshot",
+    "Step 4: Execute 7 experiments",
+    "Step 5: Primary confirmatory evaluation",
+    "Step 6: Secondary evaluation",
+    "Step 7: Independent replication execution",
+    "Step 8: Robustness plan execution",
+    "Step 9: Temporal analysis",
+    "Step 10: Result integrity audit",
+    "Step 11: Adversarial OOS audit",
+    "Step 12: Reproducibility",
+    "Step 13: Scientific interpretation"
+  ],
+  "what_will_happen_when_data_ready": [
+    "Phase 26-R will re-execute",
+    "All 14 steps will complete",
+    "Exact 7 experiments will run",
+    "Primary confirmatory evaluation will determine PASS/FAIL",
+    "Independent replication will verify agreement",
+    "Robustness plan will execute 6 dimensions",
+    "Final verdict and gate will be assigned"
+  ]
+}
