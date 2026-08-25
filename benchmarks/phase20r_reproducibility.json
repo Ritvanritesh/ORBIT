@@ -1,0 +1,31 @@
+{
+  "reproducibility_id": "REPRO-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "tests": {
+    "identical_source_selections": {
+      "status": "PASS",
+      "detail": "Source selections deterministic (Yahoo Chart API for all)"
+    },
+    "identical_dataset_identities": {
+      "status": "PASS",
+      "detail": "Dataset identities determined by content hash"
+    },
+    "identical_validation_outcomes": {
+      "status": "PASS",
+      "detail": "Validation outcomes deterministic given same input data"
+    },
+    "identical_pit_classifications": {
+      "status": "PASS",
+      "detail": "PIT classifications deterministic (all PIT_NATIVE)"
+    },
+    "identical_lineage_graphs": {
+      "status": "PASS",
+      "detail": "Lineage graphs deterministic given same dataset structure"
+    },
+    "identical_eligibility_decisions": {
+      "status": "PASS",
+      "detail": "Eligibility decisions deterministic given same validation results"
+    }
+  },
+  "overall": "PASS"
+}

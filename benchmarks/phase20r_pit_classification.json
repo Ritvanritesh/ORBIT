@@ -1,0 +1,49 @@
+{
+  "pit_id": "PIT-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "classifications": {
+    "DS-EXP-050": {
+      "classification": "PIT_NATIVE",
+      "observation_timestamp": "trade_date",
+      "publication_timestamp": "trade_date (same day)",
+      "availability_timestamp": "trade_date + 1 day (next trading day)",
+      "revision_behavior": "immutable_snapshot",
+      "vintage_availability": "full_vintage",
+      "reporting_lag": "0_days",
+      "transformation_lag": "0_days",
+      "effective_decision_time_availability": "next_trading_day_open"
+    },
+    "DS-EXP-100": {
+      "classification": "PIT_NATIVE",
+      "observation_timestamp": "trade_date",
+      "publication_timestamp": "trade_date (same day)",
+      "availability_timestamp": "trade_date + 1 day",
+      "revision_behavior": "immutable_snapshot",
+      "vintage_availability": "full_vintage",
+      "reporting_lag": "0_days",
+      "transformation_lag": "0_days",
+      "effective_decision_time_availability": "next_trading_day_open"
+    },
+    "BENCH-001": {
+      "classification": "PIT_NATIVE",
+      "observation_timestamp": "trade_date",
+      "publication_timestamp": "trade_date (same day)",
+      "availability_timestamp": "trade_date + 1 day",
+      "revision_behavior": "immutable_snapshot",
+      "vintage_availability": "full_vintage",
+      "reporting_lag": "0_days",
+      "transformation_lag": "0_days",
+      "effective_decision_time_availability": "next_trading_day_open"
+    }
+  },
+  "pit_integrity_verification": {
+    "observation_equals_availability": false,
+    "availability_is_next_day": true,
+    "revision_is_immutable": true,
+    "genuine_pit_established": true
+  },
+  "pit_enforcement": {
+    "method": "feature_computation_uses_only_past_data",
+    "verification": "Phase 19-C PIT audit passed"
+  }
+}

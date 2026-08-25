@@ -1,0 +1,36 @@
+{
+  "sufficiency_id": "SUFF-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "in_sample_data": {
+    "DS-EXP-050": "READY",
+    "DS-EXP-100": "READY",
+    "BENCH-001": "READY"
+  },
+  "oos_data": {
+    "DS-EXP-050": {
+      "exists": true,
+      "trading_days": 36,
+      "minimum_required": 60,
+      "sufficient": false
+    },
+    "DS-EXP-100": {
+      "exists": true,
+      "trading_days": 36,
+      "minimum_required": 60,
+      "sufficient": false
+    }
+  },
+  "readiness": "DATA_NOT_READY",
+  "blocking_factors": {
+    "in_sample_insufficient": false,
+    "oos_insufficient": true,
+    "pit_integrity_failure": false,
+    "data_integrity_failure": false
+  },
+  "oos_accumulation_status": {
+    "current_trading_days": 36,
+    "minimum_required": 60,
+    "remaining_days": 24,
+    "estimated_completion": "~24 more trading days (~5 weeks)"
+  }
+}

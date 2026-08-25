@@ -1,0 +1,38 @@
+{
+  "firewall_id": "ACQ-FW-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "prohibited_access": [
+    "candidate IC",
+    "model performance",
+    "portfolio performance",
+    "Sharpe ratios",
+    "hypothesis pass/fail outcomes",
+    "feature rankings",
+    "confirmatory model rankings",
+    "OOS target values",
+    "OOS predictions",
+    "OOS IC",
+    "OOS Sharpe",
+    "OOS portfolio returns"
+  ],
+  "permitted_validation": [
+    "schema validity",
+    "timestamp ordering",
+    "completeness",
+    "coverage",
+    "duplicates",
+    "missingness",
+    "source consistency",
+    "PIT availability"
+  ],
+  "firewall_enforcement": {
+    "method": "code_level_prohibition",
+    "verification": "Phase 20-R does not import or call any experiment execution code"
+  },
+  "acquisition_blindness": {
+    "blind_to_predictive_outcomes": true,
+    "blind_to_hypothesis_results": true,
+    "blind_to_model_rankings": true,
+    "verification": "Acquisition script contains no IC/Sharpe computation code"
+  }
+}

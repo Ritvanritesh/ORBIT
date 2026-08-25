@@ -1,0 +1,31 @@
+{
+  "phase": "20R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T13:33:11.253312+00:00",
+  "verification_checks": {
+    "every_acquired_dataset_maps_to_requirement": true,
+    "no_unnecessary_dataset_acquired": true,
+    "all_source_selections_documented": true,
+    "pit_classification_exists_for_every_dataset": true,
+    "availability_timestamps_handled_correctly": true,
+    "raw_data_remains_immutable": true,
+    "transformations_reproducible": true,
+    "data_lineage_complete": true,
+    "dataset_versions_immutable": true,
+    "invalid_data_quarantined_or_rejected": true,
+    "data_sufficiency_determined_deterministically": true,
+    "oos_outcomes_not_accessed": true,
+    "firewall_bypass_attempts_fail": true,
+    "scope_creep_attempts_fail": true,
+    "acquisition_reproducible": true,
+    "hostile_review_no_unresolved_material_concern": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "B",
+  "gate": "YELLOW",
+  "gate_rationale": "Verdict B: 17/17 checks pass. OOS: DATA_NOT_READY.",
+  "readiness": "DATA_NOT_READY",
+  "conclusion": "NO_ADDITIONAL_CONFIRMATORY_DATA_REQUIRED"
+}

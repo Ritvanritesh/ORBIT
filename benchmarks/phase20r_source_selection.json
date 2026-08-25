@@ -1,0 +1,63 @@
+{
+  "source_id": "SRC-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "source_selections": {
+    "DS-EXP-050": {
+      "source": "Yahoo Chart API",
+      "authority": "YAHOO_FINANCE",
+      "historical_depth": "1996-08-21 to 2026-08-20",
+      "coverage": "50 US equities",
+      "update_frequency": "daily",
+      "pit_availability": "PIT_NATIVE",
+      "revision_history": "immutable_snapshot",
+      "licensing": "research_use",
+      "reproducibility": "HIGH",
+      "accessibility": "AVAILABLE",
+      "cost": "FREE",
+      "survivorship_risk": "LOW",
+      "symbol_mapping_risk": "LOW",
+      "timestamp_quality": "HIGH"
+    },
+    "DS-EXP-100": {
+      "source": "Yahoo Chart API",
+      "authority": "YAHOO_FINANCE",
+      "historical_depth": "1996-08-21 to 2026-08-20",
+      "coverage": "97 US equities",
+      "update_frequency": "daily",
+      "pit_availability": "PIT_NATIVE",
+      "revision_history": "immutable_snapshot",
+      "licensing": "research_use",
+      "reproducibility": "HIGH",
+      "accessibility": "AVAILABLE",
+      "cost": "FREE",
+      "survivorship_risk": "LOW",
+      "symbol_mapping_risk": "LOW",
+      "timestamp_quality": "HIGH"
+    },
+    "BENCH-001": {
+      "source": "Yahoo Chart API",
+      "authority": "YAHOO_FINANCE",
+      "historical_depth": "1993-01-29 to 2026-08-20",
+      "coverage": "SPY ETF",
+      "update_frequency": "daily",
+      "pit_availability": "PIT_NATIVE",
+      "revision_history": "immutable_snapshot",
+      "licensing": "research_use",
+      "reproducibility": "HIGH",
+      "accessibility": "AVAILABLE",
+      "cost": "FREE",
+      "survivorship_risk": "NONE",
+      "symbol_mapping_risk": "NONE",
+      "timestamp_quality": "HIGH"
+    }
+  },
+  "selection_policy": {
+    "method": "authoritative_reproducible_source",
+    "rationale": "Yahoo Chart API selected for authority, reproducibility, and historical depth"
+  },
+  "source_verification": {
+    "all_sources_authoritative": true,
+    "all_sources_reproducible": true,
+    "all_sources_pit_native": true
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "source_registration": "PHASE_19C_LOCKED",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "market_data_requirements": {
+    "DS-EXP-050": {
+      "fields": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "adjclose",
+        "volume"
+      ],
+      "frequency": "daily",
+      "start_date": "2010-01-04",
+      "end_date": "2026-08-20",
+      "universe": "ENV-050 (50 instruments)",
+      "pit_requirement": "PIT_NATIVE",
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    },
+    "DS-EXP-100": {
+      "fields": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "adjclose",
+        "volume"
+      ],
+      "frequency": "daily",
+      "start_date": "2010-01-04",
+      "end_date": "2026-08-20",
+      "universe": "ENV-100 (97 instruments)",
+      "pit_requirement": "PIT_NATIVE",
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    },
+    "BENCH-001": {
+      "fields": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "frequency": "daily",
+      "start_date": "2010-01-04",
+      "end_date": "2026-08-20",
+      "universe": "SPY benchmark",
+      "pit_requirement": "PIT_NATIVE",
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    }
+  },
+  "oos_data_requirements": {
+    "DS-EXP-050_oos": {
+      "fields": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "adjclose",
+        "volume"
+      ],
+      "frequency": "daily",
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-20",
+      "universe": "ENV-050",
+      "pit_requirement": "PIT_NATIVE",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "minimum_trading_days": 60,
+      "current_trading_days": 36,
+      "status": "ACCUMULATING"
+    },
+    "DS-EXP-100_oos": {
+      "fields": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "adjclose",
+        "volume"
+      ],
+      "frequency": "daily",
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-20",
+      "universe": "ENV-100",
+      "pit_requirement": "PIT_NATIVE",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "minimum_trading_days": 60,
+      "current_trading_days": 36,
+      "status": "ACCUMULATING"
+    }
+  },
+  "derived_data_requirements": {
+    "VOL_ZSCORE": {
+      "formula": "(realized_vol - rolling_mean_vol) / (rolling_std_vol + epsilon)",
+      "source_fields": [
+        "adjclose"
+      ],
+      "rolling_windows": [
+        20,
+        252
+      ],
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    },
+    "MOM_5D": {
+      "formula": "adjclose_t / adjclose_{t-5} - 1",
+      "source_fields": [
+        "adjclose"
+      ],
+      "window": 5,
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    },
+    "MOM_10D": {
+      "formula": "adjclose_t / adjclose_{t-10} - 1",
+      "source_fields": [
+        "adjclose"
+      ],
+      "window": 10,
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    },
+    "MOM_20D": {
+      "formula": "adjclose_t / adjclose_{t-20} - 1",
+      "source_fields": [
+        "adjclose"
+      ],
+      "window": 20,
+      "purpose": "REQUIRED_FOR_CONFIRMATION"
+    }
+  },
+  "NOT_REQUIRED_DATA": {
+    "macro_data": {
+      "datasets": [
+        "DS-000003 (UNRATE, CPIAUCSL, DFF)"
+      ],
+      "reason": "Not used in registered feature set. VOL_ZSCORE derived from price data only."
+    },
+    "fundamental_data": {
+      "datasets": [
+        "earnings",
+        "balance_sheet",
+        "cash_flow"
+      ],
+      "reason": "Not used in registered feature set."
+    },
+    "alternative_data": {
+      "datasets": [
+        "news",
+        "sentiment",
+        "social_media"
+      ],
+      "reason": "Not used in registered feature set."
+    },
+    "options_data": {
+      "datasets": [
+        "options_chains",
+        "implied_volatility"
+      ],
+      "reason": "Not used in registered feature set."
+    }
+  },
+  "conclusion": "NO_ADDITIONAL_CONFIRMATORY_DATA_REQUIRED",
+  "rationale": "All required data (DS-EXP-050, DS-EXP-100, BENCH-001) already exists and satisfies Phase 19-C registration requirements."
+}

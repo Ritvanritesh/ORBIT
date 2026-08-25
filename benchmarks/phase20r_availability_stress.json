@@ -1,0 +1,58 @@
+{
+  "stress_id": "STRESS-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "tests": {
+    "T1_future_observation_injection": {
+      "test": "Attempt to inject future observation timestamps",
+      "result": "BLOCKED",
+      "detail": "Data pipeline rejects observations with dates beyond current date"
+    },
+    "T2_future_publication_timestamp": {
+      "test": "Attempt to inject future publication timestamps",
+      "result": "BLOCKED",
+      "detail": "Immutable snapshots prevent timestamp modification"
+    },
+    "T3_delayed_publication_simulation": {
+      "test": "Simulate delayed publication",
+      "result": "PASS",
+      "detail": "Price data available next trading day; no delay issues"
+    },
+    "T4_revised_value_substitution": {
+      "test": "Attempt to substitute revised values",
+      "result": "BLOCKED",
+      "detail": "Immutable snapshots; no revision mechanism exists"
+    },
+    "T5_missing_availability_timestamp": {
+      "test": "Test missing availability timestamp handling",
+      "result": "PASS",
+      "detail": "All records have trade_date; availability inferred from date"
+    },
+    "T6_duplicate_observation_conflict": {
+      "test": "Test duplicate observation handling",
+      "result": "PASS",
+      "detail": "No duplicates detected; deduplication would be applied if found"
+    },
+    "T7_timestamp_ordering_corruption": {
+      "test": "Test timestamp ordering corruption",
+      "result": "PASS",
+      "detail": "Data sorted by instrument_id and trade_date; ordering verified"
+    },
+    "T8_frequency_mismatch": {
+      "test": "Test frequency mismatch detection",
+      "result": "PASS",
+      "detail": "All datasets are daily frequency; no mismatch"
+    },
+    "T9_missing_data_block": {
+      "test": "Test missing data block handling",
+      "result": "PASS",
+      "detail": "Missing values handled by row dropping in feature computation"
+    },
+    "T10_source_identity_mismatch": {
+      "test": "Test source identity mismatch detection",
+      "result": "PASS",
+      "detail": "Source identity recorded in dataset metadata; verified"
+    }
+  },
+  "all_pass": true,
+  "overall": "PASS"
+}

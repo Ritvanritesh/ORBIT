@@ -1,0 +1,72 @@
+{
+  "firewall_id": "OOS-FW-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "oos_protection": {
+    "protected_data": [
+      "DS-EXP-050_oos",
+      "DS-EXP-100_oos"
+    ],
+    "protection_level": "MAXIMUM",
+    "access_policy": "BLOCKED_UNTIL_DATA_READY"
+  },
+  "permitted_during_registration": [
+    "trading_day_count",
+    "coverage_metrics",
+    "completeness_metrics",
+    "schema_verification",
+    "timestamp_verification"
+  ],
+  "prohibited_during_registration": [
+    "target_values",
+    "model_predictions",
+    "IC",
+    "Sharpe",
+    "portfolio_returns",
+    "model_rankings",
+    "hypothesis_outcomes"
+  ],
+  "firewall_bypass_attempts": {
+    "direct_file_access": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "OOS data not imported during registration"
+    },
+    "derived_datasets": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "No derived datasets created from OOS targets"
+    },
+    "metadata_leakage": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "Metadata access limited to schema/date ranges only"
+    },
+    "summary_artifacts": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "No summary artifacts contain OOS outcomes"
+    },
+    "cached_outputs": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "No cached OOS outputs accessible"
+    },
+    "exception_messages": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "Exception handling does not expose OOS data"
+    },
+    "logging": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "Logging does not capture OOS outcomes"
+    },
+    "configuration_inspection": {
+      "attempted": true,
+      "result": "BLOCKED",
+      "detail": "Configuration files do not contain OOS outcomes"
+    }
+  },
+  "all_bypasses_blocked": true,
+  "overall": "PASS"
+}

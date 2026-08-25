@@ -1,0 +1,27 @@
+{
+  "phase": "20R",
+  "plan_id": "20R-PLAN-001",
+  "branch_id": "BR-E2AFD3AC901A",
+  "created": "2026-08-25T13:33:11.253312+00:00",
+  "locked": true,
+  "locked_digest": "c10da7127b506f74e8c2073954469fe9bcd4069c36e470eedba2678915fb1e68",
+  "steps_completed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "conclusion": "NO_ADDITIONAL_CONFIRMATORY_DATA_REQUIRED"
+}

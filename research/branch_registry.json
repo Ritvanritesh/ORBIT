@@ -89,6 +89,31 @@
         "expected_experiment_count": 7,
         "data_eligibility": "DATA_NOT_READY",
         "confirmatory_execution_eligible": false
+      },
+      "data_acquisition": {
+        "phase": "20R",
+        "timestamp": "2026-08-25T13:33:11.251297+00:00",
+        "conclusion": "NO_ADDITIONAL_CONFIRMATORY_DATA_REQUIRED",
+        "readiness": "DATA_NOT_READY",
+        "oos_trading_days": 36,
+        "oos_remaining_days": 24,
+        "datasets": {
+          "DS-EXP-050": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "1b62a6afe39e0bb1"
+          },
+          "DS-EXP-100": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "138fa4a1cb3b1575"
+          },
+          "BENCH-001": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "568f89b5173aa7c7"
+          }
+        }
       }
     },
     {
@@ -127,6 +152,31 @@
         "expected_experiment_count": 7,
         "data_eligibility": "DATA_NOT_READY",
         "confirmatory_execution_eligible": false
+      },
+      "data_acquisition": {
+        "phase": "20R",
+        "timestamp": "2026-08-25T13:33:11.251297+00:00",
+        "conclusion": "NO_ADDITIONAL_CONFIRMATORY_DATA_REQUIRED",
+        "readiness": "DATA_NOT_READY",
+        "oos_trading_days": 36,
+        "oos_remaining_days": 24,
+        "datasets": {
+          "DS-EXP-050": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "1b62a6afe39e0bb1"
+          },
+          "DS-EXP-100": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "138fa4a1cb3b1575"
+          },
+          "BENCH-001": {
+            "classification": "READY",
+            "pit": "PIT_NATIVE",
+            "version": "568f89b5173aa7c7"
+          }
+        }
       }
     }
   ],

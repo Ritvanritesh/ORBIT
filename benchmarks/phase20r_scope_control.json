@@ -1,0 +1,38 @@
+{
+  "scope_id": "SCOPE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "scope_creep_attempts": {
+    "A1_unrelated_macro_variables": {
+      "attempt": "Add macroeconomic variables (UNRATE, CPI, DFF)",
+      "result": "REJECTED",
+      "reason": "Not required by registered feature set"
+    },
+    "A2_alternative_data": {
+      "attempt": "Add news sentiment or social media data",
+      "result": "REJECTED",
+      "reason": "Not required by registered feature set"
+    },
+    "A3_additional_fundamental_fields": {
+      "attempt": "Add earnings, balance sheet data",
+      "result": "REJECTED",
+      "reason": "Not required by registered feature set"
+    },
+    "A4_options_data": {
+      "attempt": "Add options chains or implied volatility",
+      "result": "REJECTED",
+      "reason": "Not required by registered feature set"
+    },
+    "A5_new_feature_families": {
+      "attempt": "Add technical indicators beyond registered set",
+      "result": "REJECTED",
+      "reason": "Not required by registered feature set"
+    },
+    "A6_additional_universes": {
+      "attempt": "Add small-cap or international universes",
+      "result": "REJECTED",
+      "reason": "Not required by registered universe specification"
+    }
+  },
+  "all_rejected": true,
+  "scope_controlled": true
+}

@@ -1,0 +1,126 @@
+{
+  "registry_id": "DREQ-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "created": "2026-08-25T13:33:10.924824+00:00",
+  "requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "parent_branch_id": "BR-E2AFD3AC901A",
+      "parent_hypothesis_id": "HYP-CAND-001",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "dataset_category": "market_equity",
+      "variable_name": "DS-EXP-050",
+      "required_frequency": "daily",
+      "required_start_date": "2010-01-04",
+      "required_end_date": "2026-08-20",
+      "universe_requirement": "ENV-050 (50 instruments)",
+      "pit_requirement": "PIT_NATIVE",
+      "revision_policy": "immutable_snapshot",
+      "minimum_coverage": 0.9,
+      "minimum_completeness": 0.9,
+      "blocking_status": "NOT_BLOCKED",
+      "scientific_justification": "Primary universe for hypothesis testing",
+      "registration_reference": "PHASE_19C_UNIVERSE_REGISTRATION"
+    },
+    {
+      "requirement_id": "REQ-002",
+      "parent_branch_id": "BR-E2AFD3AC901A",
+      "parent_hypothesis_id": "HYP-CAND-001",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "dataset_category": "market_equity",
+      "variable_name": "DS-EXP-100",
+      "required_frequency": "daily",
+      "required_start_date": "2010-01-04",
+      "required_end_date": "2026-08-20",
+      "universe_requirement": "ENV-100 (97 instruments)",
+      "pit_requirement": "PIT_NATIVE",
+      "revision_policy": "immutable_snapshot",
+      "minimum_coverage": 0.9,
+      "minimum_completeness": 0.9,
+      "blocking_status": "NOT_BLOCKED",
+      "scientific_justification": "Replication universe for hypothesis testing",
+      "registration_reference": "PHASE_19C_UNIVERSE_REGISTRATION"
+    },
+    {
+      "requirement_id": "REQ-003",
+      "parent_branch_id": "BR-E2AFD3AC901A",
+      "parent_hypothesis_id": "HYP-CAND-001",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "dataset_category": "benchmark",
+      "variable_name": "BENCH-001",
+      "required_frequency": "daily",
+      "required_start_date": "2010-01-04",
+      "required_end_date": "2026-08-20",
+      "universe_requirement": "SPY",
+      "pit_requirement": "PIT_NATIVE",
+      "revision_policy": "immutable_snapshot",
+      "minimum_coverage": 0.95,
+      "minimum_completeness": 0.95,
+      "blocking_status": "NOT_BLOCKED",
+      "scientific_justification": "Benchmark for excess return computation",
+      "registration_reference": "PHASE_19C_RESEARCH_IDENTITY"
+    },
+    {
+      "requirement_id": "REQ-004",
+      "parent_branch_id": "BR-E2AFD3AC901A",
+      "parent_hypothesis_id": "HYP-CAND-001",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "dataset_category": "oos_equity",
+      "variable_name": "DS-EXP-050_oos",
+      "required_frequency": "daily",
+      "required_start_date": "2026-07-01",
+      "required_end_date": "2026-08-20",
+      "universe_requirement": "ENV-050",
+      "pit_requirement": "PIT_NATIVE",
+      "revision_policy": "immutable_snapshot",
+      "minimum_coverage": 0.8,
+      "minimum_completeness": 0.9,
+      "blocking_status": "ACCUMULATING",
+      "scientific_justification": "OOS confirmatory data for ENV-050",
+      "registration_reference": "PHASE_19C_TEMPORAL_REGISTRATION"
+    },
+    {
+      "requirement_id": "REQ-005",
+      "parent_branch_id": "BR-E2AFD3AC901A",
+      "parent_hypothesis_id": "HYP-CAND-001",
+      "purpose": "REQUIRED_FOR_CONFIRMATION",
+      "dataset_category": "oos_equity",
+      "variable_name": "DS-EXP-100_oos",
+      "required_frequency": "daily",
+      "required_start_date": "2026-07-01",
+      "required_end_date": "2026-08-20",
+      "universe_requirement": "ENV-100",
+      "pit_requirement": "PIT_NATIVE",
+      "revision_policy": "immutable_snapshot",
+      "minimum_coverage": 0.8,
+      "minimum_completeness": 0.9,
+      "blocking_status": "ACCUMULATING",
+      "scientific_justification": "OOS confirmatory data for ENV-100",
+      "registration_reference": "PHASE_19C_TEMPORAL_REGISTRATION"
+    }
+  ],
+  "rejected_requirements": [
+    {
+      "requirement_id": "REQ-REJECTED-001",
+      "category": "macro_data",
+      "reason": "Not required by registered feature set",
+      "datasets": [
+        "DS-000003"
+      ]
+    },
+    {
+      "requirement_id": "REQ-REJECTED-002",
+      "category": "fundamental_data",
+      "reason": "Not required by registered feature set"
+    },
+    {
+      "requirement_id": "REQ-REJECTED-003",
+      "category": "alternative_data",
+      "reason": "Not required by registered feature set"
+    }
+  ],
+  "total_requirements": 5,
+  "approved": 5,
+  "rejected": 3
+}

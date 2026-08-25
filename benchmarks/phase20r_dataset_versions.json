@@ -1,0 +1,36 @@
+{
+  "version_id": "VER-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "dataset_versions": {
+    "DS-EXP-050": {
+      "dataset_id": "DS-EXP-050",
+      "source_id": "Yahoo Chart API",
+      "schema_version": "v1",
+      "acquisition_version": "v1",
+      "pit_classification": "PIT_NATIVE",
+      "coverage_range": "data/normalized/market/yahoo_chart_api/DS-EXP-050/bars.parquet",
+      "sha256": "1b62a6afe39e0bb19393aa93d12ca52830f098ad694ab19dad8436a85db983bc",
+      "immutable": true
+    },
+    "DS-EXP-100": {
+      "dataset_id": "DS-EXP-100",
+      "source_id": "Yahoo Chart API",
+      "schema_version": "v1",
+      "acquisition_version": "v1",
+      "pit_classification": "PIT_NATIVE",
+      "coverage_range": "data/normalized/market/yahoo_chart_api/DS-EXP-100/bars.parquet",
+      "sha256": "138fa4a1cb3b1575b2e7d99a27d66edc27ff6d39a594867c0b6c8b9e10138dbf",
+      "immutable": true
+    },
+    "BENCH-001": {
+      "dataset_id": "BENCH-001",
+      "source_id": "Yahoo Chart API",
+      "schema_version": "v1",
+      "acquisition_version": "v1",
+      "pit_classification": "PIT_NATIVE",
+      "coverage_range": "data/normalized/benchmark/BENCH-001/bars.parquet",
+      "sha256": "568f89b5173aa7c7ae0ad58caa0d7b1d39be32ef0218415d47e9593c8b0ac633",
+      "immutable": true
+    }
+  }
+}

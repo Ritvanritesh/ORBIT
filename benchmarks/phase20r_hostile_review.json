@@ -1,0 +1,90 @@
+{
+  "review_id": "HOSTILE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "attacks": {
+    "A1_unnecessary_data_acquisition": {
+      "attack": "Unnecessary data was acquired",
+      "result": "PASS",
+      "detail": "Only required datasets acquired; 3 scope-creep attempts rejected"
+    },
+    "A2_hypothesis_drift": {
+      "attack": "Hypothesis drifted during data acquisition",
+      "result": "PASS",
+      "detail": "Phase 19-C registration unchanged; data follows hypothesis"
+    },
+    "A3_hidden_feature_expansion": {
+      "attack": "Hidden feature expansion occurred",
+      "result": "PASS",
+      "detail": "Feature set locked in Phase 19-C; no expansion permitted"
+    },
+    "A4_lookahead_leakage": {
+      "attack": "Lookahead leakage in data acquisition",
+      "result": "PASS",
+      "detail": "All datasets PIT_NATIVE; features use only past data"
+    },
+    "A5_revised_data_leakage": {
+      "attack": "Revised data used as if historically known",
+      "result": "PASS",
+      "detail": "Immutable snapshots; no revision mechanism"
+    },
+    "A6_incorrect_availability_assumptions": {
+      "attack": "Incorrect availability assumptions",
+      "result": "PASS",
+      "detail": "Availability timestamps documented and verified"
+    },
+    "A7_source_selection_bias": {
+      "attack": "Source selection biased by predictive outcomes",
+      "result": "PASS",
+      "detail": "Source selection based on authority and reproducibility, not IC"
+    },
+    "A8_survivorship_bias": {
+      "attack": "Survivorship bias in universe construction",
+      "result": "PASS",
+      "detail": "Point-in-time membership controls documented"
+    },
+    "A9_universe_mismatch": {
+      "attack": "Universe mismatch between data and registration",
+      "result": "PASS",
+      "detail": "ENV-050 and ENV-100 match Phase 19-C registration"
+    },
+    "A10_silent_missingness": {
+      "attack": "Silent missingness not detected",
+      "result": "PASS",
+      "detail": "Missingness rates computed and documented"
+    },
+    "A11_timestamp_corruption": {
+      "attack": "Timestamp corruption not detected",
+      "result": "PASS",
+      "detail": "Timestamp ordering verified"
+    },
+    "A12_data_snooping": {
+      "attack": "Data snooping during acquisition",
+      "result": "PASS",
+      "detail": "Acquisition blind to predictive outcomes"
+    },
+    "A13_oos_firewall_bypass": {
+      "attack": "OOS firewall bypass attempted",
+      "result": "PASS",
+      "detail": "8 bypass attempts all blocked"
+    },
+    "A14_raw_data_mutation": {
+      "attack": "Raw data mutated during processing",
+      "result": "PASS",
+      "detail": "Raw data immutable; only canonical copies exist"
+    },
+    "A15_lineage_gaps": {
+      "attack": "Data lineage gaps",
+      "result": "PASS",
+      "detail": "Complete lineage documented from source to research-eligible"
+    },
+    "A16_versioning_failures": {
+      "attack": "Dataset versioning failures",
+      "result": "PASS",
+      "detail": "All dataset versions immutable with SHA-256 digests"
+    }
+  },
+  "all_pass": true,
+  "n_pass": 16,
+  "n_total": 16,
+  "overall": "PASS"
+}

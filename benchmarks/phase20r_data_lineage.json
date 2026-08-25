@@ -1,0 +1,55 @@
+{
+  "lineage_id": "LINEAGE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "datasets": {
+    "DS-EXP-050": {
+      "source": "Yahoo Chart API",
+      "raw": "data/raw/market/yahoo_chart_api/DS-EXP-050/",
+      "canonical": "data/normalized/market/yahoo_chart_api/DS-EXP-050/bars.parquet",
+      "pit_classification": "PIT_NATIVE",
+      "derivation": "FEATURES: VOL_ZSCORE, MOM_5D/10D/20D computed at runtime",
+      "research_eligible": true,
+      "sha256": "1b62a6afe39e0bb19393aa93d12ca52830f098ad694ab19dad8436a85db983bc"
+    },
+    "DS-EXP-100": {
+      "source": "Yahoo Chart API",
+      "raw": "data/raw/market/yahoo_chart_api/DS-EXP-100/",
+      "canonical": "data/normalized/market/yahoo_chart_api/DS-EXP-100/bars.parquet",
+      "pit_classification": "PIT_NATIVE",
+      "derivation": "FEATURES: VOL_ZSCORE, MOM_5D/10D/20D computed at runtime",
+      "research_eligible": true,
+      "sha256": "138fa4a1cb3b1575b2e7d99a27d66edc27ff6d39a594867c0b6c8b9e10138dbf"
+    },
+    "BENCH-001": {
+      "source": "Yahoo Chart API",
+      "raw": "data/raw/benchmark/yahoo_chart_api/BENCH-001/",
+      "canonical": "data/normalized/benchmark/BENCH-001/bars.parquet",
+      "pit_classification": "PIT_NATIVE",
+      "derivation": "None (used directly for excess return computation)",
+      "research_eligible": true,
+      "sha256": "568f89b5173aa7c7ae0ad58caa0d7b1d39be32ef0218415d47e9593c8b0ac633"
+    }
+  },
+  "transitions": {
+    "SOURCE_to_RAW": {
+      "method": "api_download",
+      "transformation_version": "v1",
+      "reproducible": true
+    },
+    "RAW_to_CANONICAL": {
+      "method": "polars_normalization",
+      "transformation_version": "v1",
+      "reproducible": true
+    },
+    "CANONICAL_to_FEATURES": {
+      "method": "runtime_computation",
+      "transformation_version": "v1",
+      "reproducible": true
+    }
+  },
+  "lineage_completeness": {
+    "all_transitions_documented": true,
+    "all_transitions_reproducible": true,
+    "upstream_change_invalidates_dependents": true
+  }
+}
