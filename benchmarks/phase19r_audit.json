@@ -1,0 +1,31 @@
+{
+  "phase": "19R",
+  "timestamp": "2026-08-25T12:38:25.504540+00:00",
+  "verification_checks": {
+    "plan_locked": true,
+    "plan_digest_recorded": true,
+    "evidence_map_complete": true,
+    "candidates_generated": true,
+    "mechanisms_reviewed": true,
+    "prior_evidence_reviewed": true,
+    "data_feasibility_checked": true,
+    "horizons_justified": true,
+    "baselines_defined": true,
+    "scoring_completed": true,
+    "redundancy_reviewed": true,
+    "exactly_one_branch_selected": true,
+    "branch_id_deterministic": true,
+    "hypothesis_formally_defined": true,
+    "exploratory_budget_assigned": true,
+    "success_criteria_defined": true,
+    "redteam_completed": true,
+    "reproducibility_verified": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: 19/19 checks pass.",
+  "selected_branch": "BR-E2AFD3AC901A",
+  "n_candidates_evaluated": 6
+}

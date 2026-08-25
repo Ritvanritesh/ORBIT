@@ -1,0 +1,128 @@
+{
+  "phase": "19R",
+  "scores": {
+    "CAND-001": {
+      "component_scores": {
+        "mechanism_strength": 1.0,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 1.0,
+        "scientific_value_if_negative": 0.8,
+        "relationship_to_known_failures": 0.9,
+        "potential_economic_relevance": 0.8,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.9,
+      "question": "Does volatility regime information improve equity return prediction at intermedi"
+    },
+    "CAND-002": {
+      "component_scores": {
+        "mechanism_strength": 1.0,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 1.0,
+        "scientific_value_if_negative": 0.8,
+        "relationship_to_known_failures": 0.9,
+        "potential_economic_relevance": 0.8,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.9,
+      "question": "Does the interaction between momentum and volatility regimes produce horizon-dep"
+    },
+    "CAND-003": {
+      "component_scores": {
+        "mechanism_strength": 1.0,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 0.7,
+        "scientific_value_if_negative": 0.5,
+        "relationship_to_known_failures": 0.9,
+        "potential_economic_relevance": 0.8,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.84,
+      "question": "Does cross-sectional relative strength show improved predictive power when condi"
+    },
+    "CAND-004": {
+      "component_scores": {
+        "mechanism_strength": 1.0,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 1.0,
+        "scientific_value_if_negative": 0.8,
+        "relationship_to_known_failures": 0.6,
+        "potential_economic_relevance": 0.8,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.87,
+      "question": "Do non-linear models reveal predictive patterns that linear models miss in equit"
+    },
+    "CAND-005": {
+      "component_scores": {
+        "mechanism_strength": 0.7,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 1.0,
+        "scientific_value_if_negative": 0.8,
+        "relationship_to_known_failures": 0.6,
+        "potential_economic_relevance": 0.6,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.82,
+      "question": "Does the combination of momentum, volatility, and macro signals produce stronger"
+    },
+    "CAND-006": {
+      "component_scores": {
+        "mechanism_strength": 0.4,
+        "testability": 0.9,
+        "falsifiability": 1.0,
+        "data_feasibility": 1.0,
+        "pit_integrity": 0.9,
+        "novelty": 1.0,
+        "scientific_value_if_negative": 0.8,
+        "relationship_to_known_failures": 0.6,
+        "potential_economic_relevance": 0.6,
+        "implementation_cost": 0.7
+      },
+      "composite_score": 0.79,
+      "question": "Does the predictive power of OHLCV-based signals vary across market cap segments"
+    }
+  },
+  "ranking": [
+    {
+      "cid": "CAND-001",
+      "score": 0.9
+    },
+    {
+      "cid": "CAND-002",
+      "score": 0.9
+    },
+    {
+      "cid": "CAND-004",
+      "score": 0.87
+    },
+    {
+      "cid": "CAND-003",
+      "score": 0.84
+    },
+    {
+      "cid": "CAND-005",
+      "score": 0.82
+    },
+    {
+      "cid": "CAND-006",
+      "score": 0.79
+    }
+  ],
+  "scoring_methodology": "equal_weight_composite"
+}

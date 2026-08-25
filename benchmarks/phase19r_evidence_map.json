@@ -1,0 +1,107 @@
+{
+  "phase": "19R",
+  "evidence_map": {
+    "failed_or_fragile": {
+      "baseline_ohlcv_signal": {
+        "description": "OHLCV-based predictive effects not robust across original research chain",
+        "phases": [
+          "9-16"
+        ],
+        "status": "FRAGILE",
+        "lesson": "Simple OHLCV features alone insufficient"
+      },
+      "isolated_cross_sectional_context": {
+        "description": "Cross-sectional context did not produce convincing robust improvements",
+        "phases": [
+          "12-13"
+        ],
+        "status": "FRAGILE",
+        "lesson": "Cross-sectional features need interaction with other signals"
+      },
+      "unstable_macro_effects": {
+        "description": "Macro-regime hypothesis showed temporal instability and regime dependence",
+        "phases": [
+          "13",
+          "17A"
+        ],
+        "status": "FRAGILE",
+        "lesson": "Macro effects are regime-dependent, not consistently positive"
+      },
+      "weak_portfolio_translation": {
+        "description": "No candidate produced economically robust portfolio performance",
+        "phases": [
+          "16"
+        ],
+        "status": "FAILED",
+        "lesson": "IC does not automatically translate to portfolio economics"
+      },
+      "model_family_disagreement": {
+        "description": "Results sensitive to model family choice (Ridge vs Lasso)",
+        "phases": [
+          "18"
+        ],
+        "status": "FRAGILE",
+        "lesson": "Linear model dependence is a limitation"
+      }
+    },
+    "partially_informative": {
+      "macro_equity_interaction": {
+        "description": "Macro variables may interact with equity prediction at longer horizons",
+        "evidence": "HYP-MAC showed monotonic improvement from H-5 to H-20",
+        "confidence": "MODERATE"
+      },
+      "horizon_mismatch": {
+        "description": "Different signals may have different optimal horizons",
+        "evidence": "HYP-MOM stable across horizons, HYP-VOL drops at longer horizons",
+        "confidence": "MODERATE"
+      },
+      "regime_dependence": {
+        "description": "Some effects may only exist in specific market regimes",
+        "evidence": "Phase 17A confirmed regime sensitivity",
+        "confidence": "HIGH"
+      },
+      "linear_representation_limitation": {
+        "description": "Linear models may miss non-linear interactions",
+        "evidence": "All experiments use Ridge/Lasso only",
+        "confidence": "HIGH"
+      }
+    },
+    "information_gaps": {
+      "genuine_oos_confirmation": {
+        "description": "No genuinely untouched holdout data exists for any hypothesis",
+        "importance": "CRITICAL",
+        "current_status": "Phase 20A waiting for data accumulation"
+      },
+      "non_linear_model_performance": {
+        "description": "Unknown whether non-linear models reveal different patterns",
+        "importance": "HIGH",
+        "current_status": "Not tested"
+      },
+      "feature_space_expansion": {
+        "description": "Unknown whether alternative data provides additional predictive power",
+        "importance": "HIGH",
+        "current_status": "Not tested (limited to OHLCV)"
+      },
+      "portfolio_economics": {
+        "description": "Unknown whether IC levels translate to meaningful portfolio returns",
+        "importance": "HIGH",
+        "current_status": "Not evaluated at portfolio level"
+      },
+      "data_snooping_quantification": {
+        "description": "Unknown how much observed IC reflects selection bias",
+        "importance": "MODERATE",
+        "current_status": "PSEUDO_CONFIRMATORY classification acknowledges this"
+      }
+    },
+    "research_dead_ends": {
+      "simple_ohlcv_only": {
+        "description": "Repeating OHLCV-only experiments adds little value",
+        "reason": "Already tested extensively in Phases 9-16"
+      },
+      "single_horizon_testing": {
+        "description": "Testing only H-5 adds little value given existing evidence",
+        "reason": "Multiple horizons already tested"
+      }
+    }
+  }
+}

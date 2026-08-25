@@ -1,0 +1,47 @@
+{
+  "phase": "19R",
+  "reviews": {
+    "CAND-001": {
+      "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over mul...",
+      "strength": "STRONG",
+      "plausibility": "HIGH",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_STRONG"
+    },
+    "CAND-002": {
+      "mechanism": "Momentum effects may be stronger in low-volatility regimes (risk-on) and weaker in high-volatility r...",
+      "strength": "STRONG",
+      "plausibility": "HIGH",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_STRONG"
+    },
+    "CAND-003": {
+      "mechanism": "Cross-sectional momentum may be stronger in expansion regimes and weaker in contraction regimes, as ...",
+      "strength": "STRONG",
+      "plausibility": "HIGH",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_STRONG"
+    },
+    "CAND-004": {
+      "mechanism": "Financial markets may exhibit non-linear dynamics (threshold effects, regime switches, interactions)...",
+      "strength": "STRONG",
+      "plausibility": "HIGH",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_STRONG"
+    },
+    "CAND-005": {
+      "mechanism": "Multiple independent signals may capture different aspects of return predictability, and their combi...",
+      "strength": "MODERATE",
+      "plausibility": "HIGH",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_MODERATE"
+    },
+    "CAND-006": {
+      "mechanism": "Different investor clienteles (institutional vs retail) dominate different cap segments, leading to ...",
+      "strength": "WEAK",
+      "plausibility": "LOW",
+      "falsifiability": "HIGH",
+      "classification": "MECHANISM_WEAK"
+    }
+  }
+}

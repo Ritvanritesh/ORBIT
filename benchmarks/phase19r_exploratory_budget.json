@@ -1,0 +1,31 @@
+{
+  "phase": "19R",
+  "budget": {
+    "max_experiments": 20,
+    "max_feature_variants": 3,
+    "max_horizons": 2,
+    "max_model_classes": 2,
+    "max_universe_variants": 2,
+    "review_checkpoints": [
+      5,
+      10,
+      15
+    ],
+    "early_review": {
+      "after_experiments": 5,
+      "purpose": "Assess initial signal strength and mechanism consistency",
+      "continue_criteria": "IC > 0.005 AND mechanism consistent AND no data integrity issues"
+    },
+    "midpoint_review": {
+      "after_experiments": 10,
+      "purpose": "Assess replication across slices and stability",
+      "continue_criteria": "IC stable across time windows AND universe consistency"
+    },
+    "stop_continue_review": {
+      "after_experiments": 15,
+      "purpose": "Final assessment before budget exhaustion",
+      "continue_criteria": "Sufficient evidence for evidence review gate"
+    },
+    "justification": "20 experiments allows testing 4 horizons x 2 universes x 2 model classes x 1-2 feature variants with replication"
+  }
+}

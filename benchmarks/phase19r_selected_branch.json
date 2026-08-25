@@ -1,0 +1,96 @@
+{
+  "phase": "19R",
+  "branch": {
+    "branch_id": "BR-E2AFD3AC901A",
+    "branch_name": "ORBIT-BRANCH-CAND-001",
+    "research_question_id": "CAND-001",
+    "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
+    "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods",
+    "hypothesis": "Higher volatility regimes should be associated with higher expected returns (risk compensation) at intermediate horizons",
+    "expected_direction": "positive",
+    "falsification_criteria": "If volatility regime shows no predictive IC at H-10 or H-20, or if IC is negative, hypothesis is falsified",
+    "proposed_horizons": [
+      "H-10",
+      "H-20 (intermediate to longer horizon)"
+    ],
+    "required_datasets": [
+      "DS-EXP-050",
+      "DS-EXP-100",
+      "DS-000003"
+    ],
+    "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data",
+    "baseline_requirements": {
+      "predictive": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic": [
+        "BL-ECON-001",
+        "BL-ECON-002"
+      ]
+    },
+    "prior_evidence": "HYP-VOL showed IC drop from H-5 to H-10/H-20, but macro regime effects may interact",
+    "research_status": "INTAKE_APPROVED",
+    "evidence_budget": {
+      "max_experiments": 20,
+      "review_checkpoints": [
+        5,
+        10,
+        15
+      ]
+    },
+    "exploratory_rules": {
+      "budget_limited": true,
+      "baseline_locked": true,
+      "horizon_locked": true,
+      "model_class_limited": [
+        "LINEAR",
+        "TREE"
+      ]
+    },
+    "promotion_conditions": [
+      "Pass evidence review gate",
+      "Complete exploratory budget",
+      "No data snooping evidence"
+    ],
+    "stop_conditions": [
+      "Budget exhausted without signal",
+      "Falsification criterion met",
+      "Data integrity failure"
+    ],
+    "composite_score": 0.9,
+    "selection_rationale": "Selected as highest-scoring candidate (0.9000) with strong mechanism, novelty, and data feasibility"
+  },
+  "selection_process": {
+    "n_candidates": 6,
+    "selected_cid": "CAND-001",
+    "composite_score": 0.9,
+    "ranking": [
+      {
+        "cid": "CAND-001",
+        "score": 0.9
+      },
+      {
+        "cid": "CAND-002",
+        "score": 0.9
+      },
+      {
+        "cid": "CAND-004",
+        "score": 0.87
+      },
+      {
+        "cid": "CAND-003",
+        "score": 0.84
+      },
+      {
+        "cid": "CAND-005",
+        "score": 0.82
+      },
+      {
+        "cid": "CAND-006",
+        "score": 0.79
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "phase": "19R",
+  "baselines_available": true,
+  "requirements": {
+    "CAND-001": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    },
+    "CAND-002": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    },
+    "CAND-003": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    },
+    "CAND-004": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    },
+    "CAND-005": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    },
+    "CAND-006": {
+      "predictive_baselines": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic_baselines": [
+        "BL-ECON-001",
+        "BL-ECON-002",
+        "BL-ECON-003"
+      ],
+      "comparator_baselines": [
+        "BL-MODEL-COMP-001"
+      ],
+      "baselines_locked_before_execution": true,
+      "baseline_selection_cannot_change_after_results": true
+    }
+  }
+}

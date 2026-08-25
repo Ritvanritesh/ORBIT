@@ -1,0 +1,41 @@
+{
+  "phase": "19R",
+  "reviews": {
+    "CAND-001": {
+      "horizons": "H-10, H-20 (intermediate to longer horizon)",
+      "justification": "Macro/regime effects typically manifest over weeks to months",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    },
+    "CAND-002": {
+      "horizons": "H-5, H-10, H-20",
+      "justification": "Macro/regime effects typically manifest over weeks to months",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    },
+    "CAND-003": {
+      "horizons": "H-5, H-10, H-20",
+      "justification": "Macro/regime effects typically manifest over weeks to months",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    },
+    "CAND-004": {
+      "horizons": "H-5, H-10, H-20",
+      "justification": "Macro/regime effects typically manifest over weeks to months",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    },
+    "CAND-005": {
+      "horizons": "H-5, H-10, H-20",
+      "justification": "Horizon selection based on mechanism",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    },
+    "CAND-006": {
+      "horizons": "H-5, H-10, H-20",
+      "justification": "Horizon selection based on mechanism",
+      "horizon_follows_mechanism": true,
+      "horizon_not_selected_by_performance": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "phase": "19R",
+  "tests": {
+    "identical_candidates": {
+      "status": "PASS"
+    },
+    "identical_scores": {
+      "status": "PASS"
+    },
+    "identical_branch_id": {
+      "status": "PASS"
+    },
+    "identical_ranking": {
+      "status": "PASS"
+    }
+  },
+  "overall": "PASS"
+}

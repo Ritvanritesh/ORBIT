@@ -1,0 +1,50 @@
+{
+  "phase": "19R",
+  "hypothesis": {
+    "hypothesis_id": "HYP-CAND-001",
+    "research_question_id": "CAND-001",
+    "branch_id": "BR-E2AFD3AC901A",
+    "statement": "Higher volatility regimes should be associated with higher expected returns (risk compensation) at intermediate horizons",
+    "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods",
+    "population": "US equities in DS-EXP-050 and DS-EXP-100 universes",
+    "target": "5-day forward excess return vs SPY",
+    "horizon": [
+      "H-10",
+      "H-20 (intermediate to longer horizon)"
+    ],
+    "expected_effect_direction": "positive",
+    "minimum_effect_framework": "EFFECT_SIZE_PENDING_EXPLORATORY_CALIBRATION",
+    "primary_metric": "Spearman IC",
+    "secondary_metrics": [
+      "mean IC",
+      "IC std",
+      "positive-period ratio",
+      "sign consistency"
+    ],
+    "baselines": {
+      "predictive": [
+        "BL-NULL-001",
+        "BL-NULL-002",
+        "BL-SIMPLE-001"
+      ],
+      "economic": [
+        "BL-ECON-001",
+        "BL-ECON-002"
+      ]
+    },
+    "falsification_criteria": "If volatility regime shows no predictive IC at H-10 or H-20, or if IC is negative, hypothesis is falsified",
+    "known_limitations": [
+      "Linear models only (initially)",
+      "OHLCV features only",
+      "PSEUDO_CONFIRMATORY status of prior evidence",
+      "No genuine holdout data"
+    ],
+    "data_requirements": [
+      "DS-EXP-050",
+      "DS-EXP-100",
+      "DS-000003"
+    ],
+    "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data",
+    "status": "PROPOSED"
+  }
+}

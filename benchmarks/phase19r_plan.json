@@ -1,0 +1,86 @@
+{
+  "phase": "19R",
+  "plan_id": "19R-PLAN-001",
+  "created": "2026-08-25T12:38:25.429833+00:00",
+  "purpose": "Select the first research branch under the new hypothesis-driven framework",
+  "branch_selection_criteria": {
+    "primary": "Scientific value and research gap significance",
+    "secondary": "Data feasibility and PIT integrity",
+    "tertiary": "Mechanism strength and falsifiability",
+    "prohibitions": [
+      "Do not select based on historical IC alone",
+      "Do not ignore prior negative evidence",
+      "Do not allow horizon shopping",
+      "Do not allow feature repackaging"
+    ]
+  },
+  "evidence_sources": [
+    "Phase 18.1 B001 closeout report",
+    "Phase 19 confirmatory results",
+    "Phase 17A regime analysis",
+    "Phase 16.5 research reset",
+    "Phase 16 portfolio evaluation",
+    "Existing hypothesis registrations",
+    "Baseline infrastructure (Phase 18-R)"
+  ],
+  "candidate_generation_rules": [
+    "Maximum 10 candidates",
+    "Each must be a genuine research question",
+    "Each must have a plausible mechanism",
+    "Each must be falsifiable",
+    "Each must specify data requirements"
+  ],
+  "exclusion_rules": [
+    "REDUNDANT candidates excluded",
+    "MECHANISM_WEAK candidates excluded from first branch",
+    "DATA_UNSAFE candidates excluded from confirmatory research",
+    "Pure feature repackaging excluded"
+  ],
+  "scoring_methodology": {
+    "dimensions": [
+      "mechanism_strength",
+      "testability",
+      "falsifiability",
+      "data_feasibility",
+      "pit_integrity",
+      "novelty",
+      "scientific_value_if_negative",
+      "relationship_to_known_failures",
+      "potential_economic_relevance",
+      "implementation_cost"
+    ],
+    "weighting": "equal_weight_initial",
+    "note": "Historical performance must not dominate scoring"
+  },
+  "tie_breaking": "Favor candidate with stronger mechanism and higher scientific value if negative",
+  "budget_framework": {
+    "max_experiments": 20,
+    "review_checkpoints": [
+      5,
+      10,
+      15
+    ],
+    "early_review": "After 5 experiments",
+    "midpoint_review": "After 10 experiments",
+    "stop_continue_review": "After 15 experiments"
+  },
+  "acceptance_criteria": [
+    "Scientifically justified research question",
+    "Plausible mechanism",
+    "Data available and PIT-compliant",
+    "Falsifiable prediction",
+    "No redundant overlap with existing branches"
+  ],
+  "rejection_criteria": [
+    "Pure feature repackaging",
+    "No plausible mechanism",
+    "DATA_UNSAFE for confirmatory research",
+    "Redundant with existing branches"
+  ],
+  "deferral_criteria": [
+    "Data not yet available",
+    "Mechanism requires additional theoretical development",
+    "Better suited for future infrastructure"
+  ],
+  "plan_digest": "f92b88255dc752d4fb041d790edd80c8187bfeec1025230f58e93d59133f4dfc"
+}

@@ -1,0 +1,59 @@
+{
+  "phase": "19R",
+  "reviews": {
+    "CAND-001": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "NOVEL \u2014 tests volatility-macro interaction, not just volatility alone",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    },
+    "CAND-002": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "NOVEL \u2014 tests interaction, not individual effects",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    },
+    "CAND-003": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "PARTIAL_EXTENSION \u2014 extends HYP-XSEC with regime conditioning",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    },
+    "CAND-004": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "NOVEL \u2014 first test of non-linear models in ORBIT",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    },
+    "CAND-005": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "NOVEL \u2014 tests signal combination",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    },
+    "CAND-006": {
+      "is_disguised_repetition": false,
+      "is_feature_repackaging": false,
+      "is_horizon_shopping": false,
+      "is_universe_shopping": false,
+      "what_is_new": "NOVEL \u2014 tests cap-segment heterogeneity",
+      "why_not_already_tested": "Interaction effects and non-linear models not previously tested",
+      "what_result_would_change_understanding": "Negative result would confirm linear models are sufficient or interactions are not predictive"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "phase": "19R",
+  "available_datasets": {
+    "DS-EXP-050": {
+      "rows": 349374,
+      "status": "DATA_READY"
+    },
+    "DS-EXP-100": {
+      "rows": 680878,
+      "status": "DATA_READY"
+    },
+    "DS-000003": {
+      "rows": 28240,
+      "status": "DATA_READY"
+    },
+    "BENCH-001": {
+      "rows": 8447,
+      "status": "DATA_READY"
+    }
+  },
+  "reviews": {
+    "CAND-001": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data"
+    },
+    "CAND-002": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG"
+    },
+    "CAND-003": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data"
+    },
+    "CAND-004": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG"
+    },
+    "CAND-005": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data"
+    },
+    "CAND-006": {
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "all_available": true,
+      "classification": "DATA_READY",
+      "pit_requirements": "PIT_WITH_KNOWN_LAG"
+    }
+  }
+}

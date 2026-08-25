@@ -1,0 +1,42 @@
+{
+  "phase": "19R",
+  "criteria": {
+    "advance_to_evidence_review": {
+      "requirements": [
+        "IC > 0.005 across multiple time windows",
+        "Mechanism consistent with predictions",
+        "No data integrity failures",
+        "Replication across at least 2 universe variants",
+        "Comparison with baselines shows incremental value",
+        "No obvious evidence of data snooping"
+      ]
+    },
+    "continue_exploration": {
+      "requirements": [
+        "IC > 0.003 in some configurations",
+        "Mechanism partially consistent",
+        "No falsification criterion met"
+      ]
+    },
+    "stop_as_unsupported": {
+      "requirements": [
+        "IC < 0.003 across all configurations",
+        "OR falsification criterion met",
+        "OR mechanism inconsistent with predictions"
+      ]
+    },
+    "stop_as_data_limited": {
+      "requirements": [
+        "Data quality insufficient for reliable IC estimation",
+        "OR PIT integrity compromised",
+        "OR insufficient data for temporal stability assessment"
+      ]
+    },
+    "stop_as_method_limited": {
+      "requirements": [
+        "Linear models cannot capture signal",
+        "AND non-linear models not yet implemented"
+      ]
+    }
+  }
+}

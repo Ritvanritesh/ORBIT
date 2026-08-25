@@ -1,0 +1,92 @@
+{
+  "phase": "19R",
+  "attacks": {
+    "A1_selected_by_ic": {
+      "attack": "Branch selected because of prior positive IC rather than research value",
+      "result": "PASS",
+      "detail": "Selection based on composite score including mechanism, novelty, feasibility \u2014 not IC alone"
+    },
+    "A2_prior_negative_ignored": {
+      "attack": "Prior negative evidence was ignored",
+      "result": "PASS",
+      "detail": "Prior evidence explicitly reviewed and incorporated into scoring"
+    },
+    "A3_renamed_old_hypothesis": {
+      "attack": "Candidate is merely a renamed old hypothesis",
+      "result": "PASS",
+      "detail": "Selected candidate tests interaction effects, not individual signals previously tested"
+    },
+    "A4_horizon_selected_by_performance": {
+      "attack": "Horizon was selected after observing historical performance",
+      "result": "PASS",
+      "detail": "Horizons justified by mechanism (regime/macro effects at intermediate horizons)"
+    },
+    "A5_data_availability_bias": {
+      "attack": "Data availability biased candidate selection",
+      "result": "PASS",
+      "detail": "All candidates have data available; selection based on scientific value"
+    },
+    "A6_mechanism_reverse_engineered": {
+      "attack": "Mechanism is reverse-engineered from results",
+      "result": "PASS",
+      "detail": "Mechanism is forward-looking economic rationale, not post-hoc explanation"
+    },
+    "A7_cannot_be_falsified": {
+      "attack": "Candidate cannot be falsified",
+      "result": "PASS",
+      "detail": "Clear falsification criteria defined for each candidate"
+    },
+    "A8_budget_unlimited": {
+      "attack": "Exploratory budget is effectively unlimited",
+      "result": "PASS",
+      "detail": "Budget locked at 20 experiments with mandatory review checkpoints"
+    },
+    "A9_baseline_selected_after_results": {
+      "attack": "Baseline can be selected after results",
+      "result": "PASS",
+      "detail": "Baselines locked before execution; cannot change after results"
+    },
+    "A10_universe_changed_after_poor_results": {
+      "attack": "Universe can be changed after poor results",
+      "result": "PASS",
+      "detail": "Universe variants locked; cannot add new universes after poor results"
+    },
+    "A11_model_class_added_indefinitely": {
+      "attack": "Model class can be added indefinitely after failure",
+      "result": "PASS",
+      "detail": "Model classes limited to LINEAR and TREE; no indefinite expansion"
+    },
+    "A12_pit_requirements_weaker": {
+      "attack": "PIT requirements are weaker than the data requires",
+      "result": "PASS",
+      "detail": "PIT requirements match data classification (PIT_WITH_KNOWN_LAG)"
+    },
+    "A13_candidate_relies_on_unavailable_data": {
+      "attack": "Candidate relies on data not yet available",
+      "result": "PASS",
+      "detail": "All required datasets are DATA_READY"
+    },
+    "A14_branch_identity_nondeterministic": {
+      "attack": "Branch identity is nondeterministic",
+      "result": "PASS",
+      "detail": "Branch ID computed deterministically from question and mechanism hashes"
+    },
+    "A15_stop_conditions_bypassable": {
+      "attack": "Stop conditions can be bypassed",
+      "result": "PASS",
+      "detail": "Stop conditions are mandatory; budget enforcement prevents bypass"
+    },
+    "A16_historical_artifacts_modified": {
+      "attack": "Historical artifacts were modified",
+      "result": "PASS",
+      "detail": "Branch registry appended, not modified; historical records unchanged"
+    }
+  },
+  "overall": "PASS",
+  "summary": {
+    "pass": 16,
+    "limitation": 0,
+    "material_concern": 0,
+    "critical_failure": 0
+  }
+}

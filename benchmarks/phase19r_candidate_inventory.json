@@ -1,0 +1,93 @@
+{
+  "phase": "19R",
+  "candidates": {
+    "CAND-001": {
+      "question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
+      "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods",
+      "prediction": "Higher volatility regimes should be associated with higher expected returns (risk compensation) at intermediate horizons",
+      "falsification": "If volatility regime shows no predictive IC at H-10 or H-20, or if IC is negative, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data",
+      "horizon_relevance": "H-10, H-20 (intermediate to longer horizon)",
+      "prior_evidence": "HYP-VOL showed IC drop from H-5 to H-10/H-20, but macro regime effects may interact",
+      "novelty": "NOVEL \u2014 tests volatility-macro interaction, not just volatility alone"
+    },
+    "CAND-002": {
+      "question": "Does the interaction between momentum and volatility regimes produce horizon-dependent predictive signals?",
+      "mechanism": "Momentum effects may be stronger in low-volatility regimes (risk-on) and weaker in high-volatility regimes (risk-off), creating horizon-dependent patterns",
+      "prediction": "Momentum IC should be higher in low-vol regimes and lower in high-vol regimes, with stronger effects at H-10 to H-20",
+      "falsification": "If momentum-volatility interaction shows no predictive IC or inconsistent sign across regimes, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG",
+      "horizon_relevance": "H-5, H-10, H-20",
+      "prior_evidence": "HYP-MOM and HYP-VOL both partially confirmed; interaction not tested",
+      "novelty": "NOVEL \u2014 tests interaction, not individual effects"
+    },
+    "CAND-003": {
+      "question": "Does cross-sectional relative strength show improved predictive power when conditioned on macro regime?",
+      "mechanism": "Cross-sectional momentum may be stronger in expansion regimes and weaker in contraction regimes, as investor behavior differs across economic states",
+      "prediction": "Cross-sectional IC should be higher in expansion regimes, with regime-dependent horizon patterns",
+      "falsification": "If cross-sectional signal shows no regime dependence or inconsistent sign, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data",
+      "horizon_relevance": "H-5, H-10, H-20",
+      "prior_evidence": "HYP-XSEC partially confirmed but horizon pattern questionable; regime interaction not tested",
+      "novelty": "PARTIAL_EXTENSION \u2014 extends HYP-XSEC with regime conditioning"
+    },
+    "CAND-004": {
+      "question": "Do non-linear models reveal predictive patterns that linear models miss in equity return prediction?",
+      "mechanism": "Financial markets may exhibit non-linear dynamics (threshold effects, regime switches, interactions) that linear models cannot capture",
+      "prediction": "Tree-based models should show higher IC than linear models, especially at longer horizons where non-linear interactions accumulate",
+      "falsification": "If non-linear models show lower or equivalent IC compared to linear models, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG",
+      "horizon_relevance": "H-5, H-10, H-20",
+      "prior_evidence": "All existing experiments use Ridge/Lasso only",
+      "novelty": "NOVEL \u2014 first test of non-linear models in ORBIT"
+    },
+    "CAND-005": {
+      "question": "Does the combination of momentum, volatility, and macro signals produce stronger predictive effects than individual signals?",
+      "mechanism": "Multiple independent signals may capture different aspects of return predictability, and their combination may reduce noise and improve IC",
+      "prediction": "Combined signal should show higher IC than any individual signal, with improved temporal stability",
+      "falsification": "If combined signal shows lower IC than best individual signal, or if combination introduces noise, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100",
+        "DS-000003"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG for macro data",
+      "horizon_relevance": "H-5, H-10, H-20",
+      "prior_evidence": "Individual signals partially confirmed; combination not tested",
+      "novelty": "NOVEL \u2014 tests signal combination"
+    },
+    "CAND-006": {
+      "question": "Does the predictive power of OHLCV-based signals vary across market cap segments?",
+      "mechanism": "Different investor clienteles (institutional vs retail) dominate different cap segments, leading to different predictive dynamics",
+      "prediction": "Signals may show stronger IC in mid-cap stocks where information diffusion is slower",
+      "falsification": "If signals show no differential across cap segments, hypothesis is falsified",
+      "required_data": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "pit_requirements": "PIT_WITH_KNOWN_LAG",
+      "horizon_relevance": "H-5, H-10, H-20",
+      "prior_evidence": "Universe tested as whole; cap-segment analysis not performed",
+      "novelty": "NOVEL \u2014 tests cap-segment heterogeneity"
+    }
+  },
+  "n_candidates": 6
+}

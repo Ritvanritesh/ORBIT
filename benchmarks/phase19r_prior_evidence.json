@@ -1,0 +1,41 @@
+{
+  "phase": "19R",
+  "reviews": {
+    "CAND-001": {
+      "prior_evidence": "HYP-VOL showed IC drop from H-5 to H-10/H-20, but macro regime effects may interact",
+      "novelty_classification": "NOVEL",
+      "addresses_known_failure": true,
+      "would_repeat_old_exploration": false
+    },
+    "CAND-002": {
+      "prior_evidence": "HYP-MOM and HYP-VOL both partially confirmed; interaction not tested",
+      "novelty_classification": "NOVEL",
+      "addresses_known_failure": true,
+      "would_repeat_old_exploration": false
+    },
+    "CAND-003": {
+      "prior_evidence": "HYP-XSEC partially confirmed but horizon pattern questionable; regime interaction not tested",
+      "novelty_classification": "PARTIAL_EXTENSION",
+      "addresses_known_failure": true,
+      "would_repeat_old_exploration": false
+    },
+    "CAND-004": {
+      "prior_evidence": "All existing experiments use Ridge/Lasso only",
+      "novelty_classification": "NOVEL",
+      "addresses_known_failure": false,
+      "would_repeat_old_exploration": false
+    },
+    "CAND-005": {
+      "prior_evidence": "Individual signals partially confirmed; combination not tested",
+      "novelty_classification": "NOVEL",
+      "addresses_known_failure": false,
+      "would_repeat_old_exploration": false
+    },
+    "CAND-006": {
+      "prior_evidence": "Universe tested as whole; cap-segment analysis not performed",
+      "novelty_classification": "NOVEL",
+      "addresses_known_failure": false,
+      "would_repeat_old_exploration": false
+    }
+  }
+}
