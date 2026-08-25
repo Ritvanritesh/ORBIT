@@ -56,18 +56,30 @@
     {
       "branch_id": "BR-E2AFD3AC901A",
       "branch_name": "ORBIT-BRANCH-CAND-001",
-      "status": "INTAKE_APPROVED",
+      "status": "EXPLORATORY_COMPLETE",
       "created": "2026-08-25T12:37:01.030534+00:00",
       "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
-      "composite_score": 0.9
+      "composite_score": 0.9,
+      "exploratory_outcome": "C",
+      "exploratory_outcome_label": "EXPLORATORY_SUPPORT",
+      "mean_ic": 0.143282,
+      "incremental_ic": 0.007583,
+      "experiments_completed": 20,
+      "gate": "GREEN"
     },
     {
       "branch_id": "BR-E2AFD3AC901A",
       "branch_name": "ORBIT-BRANCH-CAND-001",
-      "status": "INTAKE_APPROVED",
+      "status": "EXPLORATORY_COMPLETE",
       "created": "2026-08-25T12:38:25.501959+00:00",
       "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
-      "composite_score": 0.9
+      "composite_score": 0.9,
+      "exploratory_outcome": "C",
+      "exploratory_outcome_label": "EXPLORATORY_SUPPORT",
+      "mean_ic": 0.143282,
+      "incremental_ic": 0.007583,
+      "experiments_completed": 20,
+      "gate": "GREEN"
     }
   ],
   "prevention_rules": [

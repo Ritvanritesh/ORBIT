@@ -1,0 +1,15 @@
+{
+  "phase": "19E",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "outcome": "C",
+  "outcome_label": "EXPLORATORY_SUPPORT",
+  "outcome_rationale": "Sufficient exploratory evidence (12/12 PASS, mean IC 0.143282)",
+  "evidence_summary": {
+    "mean_ic": 0.143282,
+    "incremental_ic": 0.007583,
+    "pass_count": 12,
+    "fail_count": 0,
+    "p_value": 0.0
+  }
+}

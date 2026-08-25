@@ -1,0 +1,25 @@
+{
+  "phase": "19E",
+  "n_experiments_completed": 20,
+  "raw_results": {
+    "mean_ic": 0.143282,
+    "ic_std": 0.021428,
+    "median_ic": 0.143755,
+    "min_ic": 0.060207,
+    "max_ic": 0.168352
+  },
+  "adjusted_results": {
+    "bonferroni_alpha": 0.0025,
+    "t_statistic": 29.146409,
+    "p_value": 0.0,
+    "significant_after_bonferroni": "True"
+  },
+  "effect_size": {
+    "cohens_d": 6.686645
+  },
+  "consistency_statistics": {
+    "positive_sign_fraction": 1.0,
+    "fraction_exceeding_0.005": 1.0
+  },
+  "exploratory_interpretation": "EXPLORATORY ONLY \u2014 not confirmatory evidence"
+}

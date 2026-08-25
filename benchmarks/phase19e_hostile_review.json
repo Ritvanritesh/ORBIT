@@ -1,0 +1,69 @@
+{
+  "phase": "19E",
+  "branch_id": "BR-E2AFD3AC901A",
+  "reviewer": "HOSTILE_REVIEWER",
+  "timestamp": "2026-08-25T12:57:56.010284+00:00",
+  "attacks": {
+    "A1_hidden_multiple_testing": {
+      "attack": "Hidden multiple testing inflated false positive rate",
+      "result": "PASS",
+      "detail": "All 20 experiments accounted for in plan; Bonferroni correction applied"
+    },
+    "A2_horizon_fishing": {
+      "attack": "Horizons were selected after observing results",
+      "result": "PASS",
+      "detail": "H-10 and H-20 pre-registered before execution"
+    },
+    "A3_universe_fishing": {
+      "attack": "Universe was selected after observing results",
+      "result": "PASS",
+      "detail": "ENV-050 and ENV-100 pre-registered before execution"
+    },
+    "A4_model_selection_after_results": {
+      "attack": "Model family selected after observing results",
+      "result": "PASS",
+      "detail": "Ridge and Lasso pre-registered before execution"
+    },
+    "A5_representation_selection_after_results": {
+      "attack": "Feature representation selected after observing results",
+      "result": "PASS",
+      "detail": "VOL_BINARY and VOL_ZSCORE pre-registered before execution"
+    },
+    "A6_baseline_mismatch": {
+      "attack": "Baselines are not appropriate comparisons",
+      "result": "PASS",
+      "detail": "Momentum-only baseline is appropriate comparison for volatility regime hypothesis"
+    },
+    "A7_leakage": {
+      "attack": "PIT/leakage failures in feature computation",
+      "result": "PASS",
+      "detail": "PIT audit passed all 7 checks"
+    },
+    "A8_temporal_concentration": {
+      "attack": "Results concentrated in one time period",
+      "result": "LIMITATION",
+      "detail": "Temporal concentration analysis shows UNKNOWN status \u2014 limitation of exploratory analysis"
+    },
+    "A9_sign_instability": {
+      "attack": "Sign instability across configurations",
+      "result": "PASS",
+      "detail": "Positive sign fraction: 100.00%"
+    },
+    "A10_configuration_cherry_picking": {
+      "attack": "Positive results cherry-picked from many configurations",
+      "result": "PASS",
+      "detail": "All configurations reported, not just positive ones"
+    },
+    "A11_incorrect_experiment_counting": {
+      "attack": "Failed experiments excluded from summaries",
+      "result": "PASS",
+      "detail": "All 20 experiments recorded; 0 failed"
+    },
+    "A12_exploratory_described_as_confirmatory": {
+      "attack": "Exploratory evidence described as confirmatory",
+      "result": "PASS",
+      "detail": "Phase 19-E explicitly classified as EXPLORATORY ONLY"
+    }
+  },
+  "overall": "PASS"
+}

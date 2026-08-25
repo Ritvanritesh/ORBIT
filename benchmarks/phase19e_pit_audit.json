@@ -1,0 +1,43 @@
+{
+  "audit_id": "PIT-AUDIT-19E",
+  "branch_id": "BR-E2AFD3AC901A",
+  "timestamp": "2026-08-25T12:57:55.992807+00:00",
+  "tests": {
+    "T1_volatility_uses_only_past_data": {
+      "description": "Rolling volatility computed using only past observations",
+      "result": "PASS",
+      "detail": "Rolling window excludes future observations by construction (shift-based computation)"
+    },
+    "T2_forward_returns_start_after_prediction": {
+      "description": "Forward returns begin strictly after prediction timestamp",
+      "result": "PASS",
+      "detail": "Forward returns shifted by H-10/H-20 days from prediction date"
+    },
+    "T3_no_future_lookahead_in_features": {
+      "description": "No features use future information",
+      "result": "PASS",
+      "detail": "All features (momentum, volatility) computed using past data only"
+    },
+    "T4_train_test_temporal_separation": {
+      "description": "Train/test split is temporal",
+      "result": "PASS",
+      "detail": "Train < 2024-01-02, Test >= 2024-01-02"
+    },
+    "T5_benchmark_alignment": {
+      "description": "Benchmark returns aligned correctly",
+      "result": "PASS",
+      "detail": "SPY benchmark merged on trade_date for excess return computation"
+    },
+    "T6_no_cross_sectional_leakage": {
+      "description": "No cross-sectional information leakage",
+      "result": "PASS",
+      "detail": "Features computed per-instrument, not cross-sectionally"
+    },
+    "T7_scaling_fit_on_train_only": {
+      "description": "Feature scaling fit on training data only",
+      "result": "PASS",
+      "detail": "No explicit scaling applied; model handles normalization internally"
+    }
+  },
+  "overall": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "19E",
+  "branch_id": "BR-E2AFD3AC901A",
+  "vol_model_mean_ic": 0.144799,
+  "baseline_model_mean_ic": 0.137216,
+  "incremental_ic": 0.007583,
+  "incremental_ic_positive": true,
+  "ic_magnitude_assessment": "HIGH",
+  "practical_limitation": "Exploratory \u2014 does not assess transaction costs, capacity, or implementation",
+  "claim": "EXPLORATORY ONLY \u2014 not 'tradable' or 'economically valuable'"
+}

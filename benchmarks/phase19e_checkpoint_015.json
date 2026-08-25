@@ -1,0 +1,26 @@
+{
+  "checkpoint_id": "CP-015",
+  "phase": "19E",
+  "n_experiments_completed": 15,
+  "n_experiments_failed": 0,
+  "classification": "CONSISTENT_SUPPORT",
+  "decision": "CONTINUE",
+  "evidence": {
+    "mean_ic": 0.14503,
+    "positive_sign_count": 15,
+    "negative_sign_count": 0,
+    "total_signs": 15,
+    "h10_mean_ic": 0.138411,
+    "h20_mean_ic": 0.152594,
+    "env050_mean_ic": 0.150851,
+    "env100_mean_ic": 0.138378,
+    "ridge_mean_ic": 0.154883,
+    "lasso_mean_ic": 0.133769,
+    "with_vol_mean_ic": 0.14503,
+    "without_vol_mean_ic": 0.0,
+    "incremental_ic": 0.14503
+  },
+  "horizon_consistency": true,
+  "universe_consistency": true,
+  "model_consistency": false
+}

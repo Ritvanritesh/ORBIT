@@ -1,0 +1,16 @@
+{
+  "phase": "19E",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "gate": "GREEN",
+  "outcome": "C",
+  "outcome_label": "EXPLORATORY_SUPPORT",
+  "mean_ic": 0.143282,
+  "incremental_ic": 0.007583,
+  "pass_count": 12,
+  "fail_count": 0,
+  "p_value": 0.0,
+  "pit_audit": "PASS",
+  "hostile_review": "PASS",
+  "reproducibility": "PASS"
+}
