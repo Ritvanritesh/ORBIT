@@ -1,0 +1,29 @@
+{
+  "policy_id": "DISC-POLICY-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "locked": true,
+  "locked_timestamp": "2026-08-25T16:50:00.537288+00:00",
+  "resolution_rules": {
+    "EXACT_REPLICATION": {
+      "action": "Proceed normally",
+      "documentation": "Results are identical; no investigation needed"
+    },
+    "NUMERICALLY_EQUIVALENT": {
+      "action": "Proceed with documented numerical tolerance",
+      "documentation": "Difference < 1e-10; attributable to floating-point arithmetic",
+      "tolerance": 1e-10
+    },
+    "MATERIAL_DIFFERENCE": {
+      "action": "No promotion. Investigation required.",
+      "documentation": "Results differ meaningfully; root cause must be identified before any promotion",
+      "investigation_required": true
+    },
+    "CRITICAL_DISAGREEMENT": {
+      "action": "Confirmatory result invalid. Do not use for promotion.",
+      "documentation": "Results are fundamentally different; one implementation is wrong",
+      "result_invalid": true
+    }
+  },
+  "prohibition": "No post-result discretionary interpretation is allowed"
+}

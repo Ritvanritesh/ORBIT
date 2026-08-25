@@ -1,0 +1,59 @@
+{
+  "plan_id": "ROBUST-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "25R",
+  "locked": true,
+  "locked_timestamp": "2026-08-25T16:50:00.536292+00:00",
+  "robustness_dimensions": {
+    "universe_consistency": {
+      "purpose": "Verify signal is not specific to one universe",
+      "procedure": "Compare incremental IC in ENV-050 vs ENV-100",
+      "allowed_data": "In-sample and OOS data",
+      "metric": "Difference in incremental IC between universes",
+      "interpretation": "Difference < 0.02 suggests universe consistency",
+      "classification_rule": "CONSISTENT if difference < 0.02; INCONSISTENT otherwise"
+    },
+    "horizon_consistency": {
+      "purpose": "Verify signal is not specific to one horizon",
+      "procedure": "Compare incremental IC at H-10 vs H-20",
+      "allowed_data": "In-sample and OOS data",
+      "metric": "Difference in incremental IC between horizons",
+      "interpretation": "Both must be positive for confirmation",
+      "classification_rule": "CONSISTENT if both positive; INCONSISTENT otherwise"
+    },
+    "model_consistency": {
+      "purpose": "Verify signal is not model-specific",
+      "procedure": "Compare Ridge vs Lasso incremental IC at H-10",
+      "allowed_data": "In-sample and OOS data",
+      "metric": "Difference in incremental IC between models",
+      "interpretation": "Both must be positive for confirmation",
+      "classification_rule": "CONSISTENT if both positive; INCONSISTENT otherwise"
+    },
+    "temporal_segmentation": {
+      "purpose": "Verify signal stability across time periods",
+      "procedure": "Split OOS period into halves; compare incremental IC",
+      "allowed_data": "OOS data only (after DATA_READY)",
+      "metric": "Incremental IC in each half",
+      "interpretation": "Both halves should show positive IC",
+      "classification_rule": "STABLE if both positive; UNSTABLE otherwise"
+    },
+    "feature_perturbation": {
+      "purpose": "Verify sensitivity to feature definition",
+      "procedure": "Test VOL_ZSCORE with different rolling windows (200, 252, 300)",
+      "allowed_data": "In-sample data",
+      "metric": "Incremental IC with each window",
+      "interpretation": "IC should be positive across windows",
+      "classification_rule": "ROBUST if all positive; SENSITIVE otherwise"
+    },
+    "missing_data_sensitivity": {
+      "purpose": "Verify sensitivity to missing data handling",
+      "procedure": "Compare results with drop vs forward-fill for missing values",
+      "allowed_data": "In-sample data",
+      "metric": "Difference in incremental IC",
+      "interpretation": "Difference should be small",
+      "classification_rule": "ROBUST if difference < 0.01; SENSITIVE otherwise"
+    }
+  },
+  "prohibition": "No robustness scenarios may be added after OOS results are observed"
+}

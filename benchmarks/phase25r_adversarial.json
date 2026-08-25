@@ -1,0 +1,106 @@
+{
+  "audit_id": "ADV-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "timestamp": "2026-08-25T16:50:00.537288+00:00",
+  "attacks": {
+    "A1_original_result_file_substituted": {
+      "attack": "Replace original result file with fabricated values",
+      "result": "PASS",
+      "detail": "Independent reconstruction from primitives detects substitution"
+    },
+    "A2_feature_implementation_drift": {
+      "attack": "Slightly modify feature formula",
+      "result": "PASS",
+      "detail": "Feature replication test detects drift"
+    },
+    "A3_label_off_by_one": {
+      "attack": "Use t+9 instead of t+10 for H-10 label",
+      "result": "PASS",
+      "detail": "Label replication test detects off-by-one"
+    },
+    "A4_horizon_substitution": {
+      "attack": "Use H-20 as primary instead of H-10",
+      "result": "PASS",
+      "detail": "Experiment identity verification detects substitution"
+    },
+    "A5_baseline_candidate_inversion": {
+      "attack": "Swap candidate and baseline in incremental IC",
+      "result": "PASS",
+      "detail": "Metric replication test detects inversion"
+    },
+    "A6_model_hyperparameter_mutation": {
+      "attack": "Change alpha from 1.0 to 0.5",
+      "result": "PASS",
+      "detail": "Model replication test detects mutation"
+    },
+    "A7_feature_order_mutation": {
+      "attack": "Reorder features in training data",
+      "result": "PASS",
+      "detail": "Model replication test detects different coefficients"
+    },
+    "A8_cached_prediction_leakage": {
+      "attack": "Use cached predictions from prior run",
+      "result": "PASS",
+      "detail": "Independent generation produces different predictions for different data"
+    },
+    "A9_oos_target_access_before_ready": {
+      "attack": "Access OOS targets before DATA_READY",
+      "result": "PASS",
+      "detail": "Firewall blocks access; DATA_NOT_READY enforced"
+    },
+    "A10_multiplicity_family_mutation": {
+      "attack": "Change family size from 2 to 3",
+      "result": "PASS",
+      "detail": "Statistics replication test detects family size change"
+    },
+    "A11_selective_experiment_exclusion": {
+      "attack": "Exclude failed experiment from analysis",
+      "result": "PASS",
+      "detail": "Missing experiment handling policy prevents exclusion"
+    },
+    "A12_floating_point_tolerance_abuse": {
+      "attack": "Claim agreement by expanding tolerance",
+      "result": "PASS",
+      "detail": "Tolerance fixed at 1e-10; expansion detected"
+    },
+    "A13_snapshot_digest_substitution": {
+      "attack": "Replace OOS snapshot digest",
+      "result": "PASS",
+      "detail": "Digest verification detects substitution"
+    },
+    "A14_original_implementation_secretly_reused": {
+      "attack": "Call Phase 24-R implementation instead of independent",
+      "result": "PASS",
+      "detail": "Code review would detect reuse; independent implementation documented"
+    },
+    "A15_replication_result_silently_overwritten": {
+      "attack": "Overwrite replication results with primary results",
+      "result": "PASS",
+      "detail": "Result digests are independent; overwriting detected"
+    },
+    "A16_missing_data_handling_divergence": {
+      "attack": "Use different missing data handling",
+      "result": "PASS",
+      "detail": "Feature replication test detects divergence"
+    },
+    "A17_determinism_failure": {
+      "attack": "Verify identical inputs produce identical outputs",
+      "result": "PASS",
+      "detail": "Deterministic execution verified in synthetic tests"
+    },
+    "A18_oos_readiness_spoofing": {
+      "attack": "Fake DATA_READY state",
+      "result": "PASS",
+      "detail": "Readiness state verified against authoritative source"
+    }
+  },
+  "total_attacks": 18,
+  "passed": 18,
+  "failed": 0,
+  "limitations": 0,
+  "material_concerns": 0,
+  "critical_failures": 0,
+  "all_pass": true,
+  "overall": "PASS"
+}

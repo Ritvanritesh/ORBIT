@@ -1,0 +1,27 @@
+{
+  "phase": "25R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:50:00.541276+00:00",
+  "verification_checks": {
+    "independent_reconstruction_complete": true,
+    "feature_replication_verified": true,
+    "label_replication_verified": true,
+    "model_replication_verified": true,
+    "metric_replication_verified": true,
+    "statistics_replication_verified": true,
+    "robustness_plan_locked": true,
+    "execution_harness_built": true,
+    "discrepancy_policy_locked": true,
+    "adversarial_tests_passed": true,
+    "reproducibility_verified": true,
+    "oos_readiness_checked": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "oos_status": "DATA_NOT_READY",
+  "overall_verdict": "A",
+  "verdict_label": "INDEPENDENT_REPLICATION_INFRASTRUCTURE_FULLY_READY",
+  "gate": "YELLOW",
+  "gate_rationale": "Replication ready; OOS status: DATA_NOT_READY (36/60 days)"
+}

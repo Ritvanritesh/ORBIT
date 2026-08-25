@@ -1,0 +1,55 @@
+{
+  "reproducibility_id": "REPRO-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "tests": {
+    "feature_calculations": {
+      "status": "PASS",
+      "detail": "Feature formulas are deterministic"
+    },
+    "labels": {
+      "status": "PASS",
+      "detail": "Label construction is deterministic"
+    },
+    "experiment_identities": {
+      "status": "PASS",
+      "detail": "7 experiments with fixed IDs"
+    },
+    "synthetic_tests": {
+      "status": "PASS",
+      "detail": "Synthetic tests use fixed seed"
+    },
+    "model_fitting": {
+      "status": "PASS",
+      "detail": "Ridge/Lasso with fixed seed are deterministic"
+    },
+    "metric_calculations": {
+      "status": "PASS",
+      "detail": "Spearman IC is deterministic"
+    },
+    "statistical_corrections": {
+      "status": "PASS",
+      "detail": "Holm-Bonferroni is deterministic"
+    },
+    "robustness_plan": {
+      "status": "PASS",
+      "detail": "Robustness plan is locked"
+    },
+    "audit_results": {
+      "status": "PASS",
+      "detail": "Adversarial audit is deterministic"
+    }
+  },
+  "total_tests": 9,
+  "passed": 9,
+  "overall": "PASS",
+  "digests": {
+    "reconstruction": "8908eb26c53f6c0e79f8ebe526ce0d72f1cbca632747ebe8102c385d39526bef",
+    "features": "31faea08bd8ce9453adb551aad8e6c511964a3835be417028db93384c322f042",
+    "labels": "183c4a63114ac789db3b99a6706a720d57a3a52b54c8cf68b934567d647e892b",
+    "models": "ddcf43470fc35045dbc54dff8f0ee372ca3e2ccccb501160d618d0322a7bd563",
+    "metrics": "7a305e0c402a6b07c54d73d13356254e7473af10b56c8dc7cbc065dcce8074f7",
+    "statistics": "91e6f6753577a8f21fd7afdbe00c6a894895123ea9448d53e2c60a5c8ffc1632",
+    "robustness": "f946cbf72febb63641b08ab7b9ac584988942807cd9949e1d6baa9672be8e9e2"
+  }
+}

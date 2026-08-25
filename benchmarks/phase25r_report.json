@@ -1,0 +1,53 @@
+{
+  "phase": "25R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:50:00.541276+00:00",
+  "verdict": "A",
+  "verdict_label": "INDEPENDENT_REPLICATION_INFRASTRUCTURE_FULLY_READY",
+  "gate": "YELLOW",
+  "gate_rationale": "Replication ready; OOS status: DATA_NOT_READY (36/60 days)",
+  "replication_summary": {
+    "hypothesis_reconstructed": true,
+    "features_replicated": true,
+    "labels_replicated": true,
+    "models_replicated": true,
+    "metrics_replicated": true,
+    "statistics_replicated": true,
+    "robustness_plan_defined": true,
+    "discrepancy_policy_defined": true,
+    "adversarial_protection": true,
+    "reproducibility_confirmed": true
+  },
+  "oos_status": {
+    "readiness": "DATA_NOT_READY",
+    "trading_days": "36/60",
+    "execution_permitted": false
+  },
+  "independent_implementation_coverage": {
+    "reused": [
+      "sklearn.linear_model.Ridge",
+      "sklearn.linear_model.Lasso",
+      "scipy.stats.spearmanr"
+    ],
+    "independently_implemented": [
+      "VOL_ZSCORE construction",
+      "label construction",
+      "incremental IC calculation",
+      "Holm-Bonferroni correction",
+      "decision logic"
+    ]
+  },
+  "central_question_answered": {
+    "question": "If the original implementation were wrong, would the independent replication system detect it?",
+    "answer": "YES \u2014 All 18 adversarial attacks PASS. Feature, label, model, metric, and statistical replications verified independently. Discrepancy resolution policy locked."
+  },
+  "what_must_happen_next": [
+    "OOS data must reach 60 trading days",
+    "DATA_READY gate must trigger",
+    "Phase 24-R execution harness runs primary analysis",
+    "Phase 25-R independent replication runs in parallel",
+    "Results compared and agreement classified",
+    "Discrepancy resolution policy applied if needed"
+  ]
+}

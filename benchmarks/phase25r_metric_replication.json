@@ -1,0 +1,65 @@
+{
+  "replication_id": "METRIC-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "spearman_ic_implementation": {
+    "formula": "scipy.stats.spearmanr(predictions, forward_returns)",
+    "properties": "Rank-based, robust to outliers, bounded [-1, 1]"
+  },
+  "incremental_ic_implementation": {
+    "formula": "IC_candidate - IC_baseline",
+    "verification": "incremental_IC = candidate_IC - baseline_IC"
+  },
+  "test_cases": {
+    "positive_incremental": {
+      "candidate_ic": 0.05,
+      "baseline_ic": 0.02,
+      "incremental": 0.030000000000000002,
+      "expected_sign": "POSITIVE",
+      "classification": "CORRECT"
+    },
+    "negative_incremental": {
+      "candidate_ic": 0.01,
+      "baseline_ic": 0.03,
+      "incremental": -0.019999999999999997,
+      "expected_sign": "NEGATIVE",
+      "classification": "CORRECT"
+    },
+    "zero_incremental": {
+      "candidate_ic": 0.03,
+      "baseline_ic": 0.03,
+      "incremental": 0.0,
+      "expected_sign": "ZERO",
+      "classification": "CORRECT"
+    },
+    "sign_reversal": {
+      "candidate_ic": -0.02,
+      "baseline_ic": 0.01,
+      "incremental": -0.03,
+      "expected_sign": "NEGATIVE",
+      "classification": "CORRECT"
+    },
+    "baseline_candidate_inversion": {
+      "correct_incremental": 0.03,
+      "inverted_incremental": -0.03,
+      "inversion_detected": true,
+      "classification": "CORRECT"
+    },
+    "tied_predictions": {
+      "ic": 0.984732,
+      "p_value": 0.0,
+      "classification": "CORRECT"
+    },
+    "perfect_correlation": {
+      "ic": 1.0,
+      "expected": 1.0,
+      "classification": "CORRECT"
+    },
+    "inverse_correlation": {
+      "ic": -1.0,
+      "expected": -1.0,
+      "classification": "CORRECT"
+    }
+  },
+  "overall_classification": "EXACT_MATCH"
+}

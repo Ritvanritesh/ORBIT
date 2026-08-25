@@ -1,0 +1,97 @@
+{
+  "replication_id": "STAT-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "implementation": {
+    "method": "Holm-Bonferroni",
+    "family_size": 2,
+    "alpha": 0.05,
+    "procedure": [
+      "1. Order p-values ascending",
+      "2. Compare p(i) to alpha / (n - i)",
+      "3. If p(i) <= threshold, reject; continue",
+      "4. If p(i) > threshold, stop; all remaining fail"
+    ]
+  },
+  "test_cases": {
+    "both_significant": {
+      "p_values": [
+        0.01,
+        0.02
+      ],
+      "significant": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "match": true
+    },
+    "primary_passes_secondary_fails": {
+      "p_values": [
+        0.01,
+        0.06
+      ],
+      "significant": [
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        false
+      ],
+      "match": true
+    },
+    "holm_failure": {
+      "p_values": [
+        0.03,
+        0.04
+      ],
+      "significant": [
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false
+      ],
+      "match": true,
+      "detail": "p=0.03 > 0.05/2=0.025, so primary fails Holm"
+    },
+    "neither_significant": {
+      "p_values": [
+        0.1,
+        0.2
+      ],
+      "significant": [
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false
+      ],
+      "match": true
+    },
+    "equal_p_values": {
+      "p_values": [
+        0.02,
+        0.02
+      ],
+      "significant": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "match": true,
+      "detail": "Both p=0.02 <= 0.025, so both pass first step"
+    }
+  },
+  "missing_experiment_handling": "Missing experiment remains in family; p-value set to 1.0 (never significant)",
+  "overall_classification": "EXACT_MATCH"
+}

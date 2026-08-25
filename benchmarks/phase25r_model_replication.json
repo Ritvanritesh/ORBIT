@@ -1,0 +1,39 @@
+{
+  "replication_id": "MOD-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "ridge": {
+    "configuration": {
+      "alpha": 1.0,
+      "fit_intercept": true,
+      "random_state": 42,
+      "solver": "auto"
+    },
+    "exact_match": true,
+    "coefficient_difference": 0.0,
+    "classification": "EXACT_MATCH"
+  },
+  "lasso": {
+    "configuration": {
+      "alpha": 0.001,
+      "fit_intercept": true,
+      "random_state": 42,
+      "max_iter": 50000,
+      "tol": 0.0001,
+      "selection": "cyclic"
+    },
+    "exact_match": true,
+    "coefficient_difference": 0.0,
+    "classification": "EXACT_MATCH"
+  },
+  "degenerate_detection": {
+    "ridge_zero_variance": true,
+    "detection_works": true
+  },
+  "mutation_tests": {
+    "alpha_mutation_detected": true,
+    "feature_order_mutation": "DETECTED \u2014 different feature order produces different coefficients",
+    "preprocessing_mismatch": "DETECTED \u2014 preprocessing affects model output"
+  },
+  "overall_classification": "EXACT_MATCH"
+}

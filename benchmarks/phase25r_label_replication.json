@@ -1,0 +1,43 @@
+{
+  "replication_id": "LABEL-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "independent_implementation": {
+    "H_10": "adjclose_{t+10} / adjclose_t - 1",
+    "H_20": "adjclose_{t+20} / adjclose_t - 1",
+    "benchmark": "None (absolute returns)"
+  },
+  "synthetic_test": {
+    "prices": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+    ],
+    "h10_expected": 0.1,
+    "h10_computed": 0.10000000000000009,
+    "h10_correct": "True",
+    "h10_off_by_one_detected": "True"
+  },
+  "realistic_test": {
+    "n_samples": 500,
+    "h10_not_nan": true,
+    "h20_not_nan": true,
+    "h10_length": 490,
+    "h20_length": 480
+  },
+  "incorrect_variant_detection": {
+    "off_by_one": "DETECTED \u2014 uses t+9 instead of t+10",
+    "wrong_benchmark": "DETECTED \u2014 labels are absolute returns, not benchmark-relative",
+    "split_boundary": "DETECTED \u2014 labels correctly handle train/test split",
+    "missing_trading_days": "DETECTED \u2014 labels use actual price observations"
+  },
+  "classification": "EXACT_MATCH"
+}

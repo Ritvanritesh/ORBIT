@@ -1,0 +1,62 @@
+{
+  "replication_id": "FEAT-REPL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "25R",
+  "independent_implementation": {
+    "MOM_5D": "adjclose_t / adjclose_{t-5} - 1",
+    "MOM_10D": "adjclose_t / adjclose_{t-10} - 1",
+    "MOM_20D": "adjclose_t / adjclose_{t-20} - 1",
+    "realized_vol": "rolling_std(log(adjclose_t / adjclose_{t-1}), window=20)",
+    "VOL_ZSCORE": "(realized_vol - rolling_mean_vol) / (rolling_std_vol + epsilon)"
+  },
+  "verification": {
+    "has_nan": false,
+    "has_inf": false,
+    "feature_statistics": {
+      "MOM_5D_ind": {
+        "mean": 0.00735,
+        "std": 0.094694,
+        "min": -0.587617,
+        "max": 0.442852,
+        "n_valid": 1000
+      },
+      "MOM_10D_ind": {
+        "mean": 0.015104,
+        "std": 0.134378,
+        "min": -0.627737,
+        "max": 0.497622,
+        "n_valid": 1000
+      },
+      "MOM_20D_ind": {
+        "mean": 0.030305,
+        "std": 0.187773,
+        "min": -0.670335,
+        "max": 0.50725,
+        "n_valid": 1000
+      },
+      "VOL_ZSCORE_ind": {
+        "mean": -0.049956,
+        "std": 1.150468,
+        "min": -1.918457,
+        "max": 12.18183,
+        "n_valid": 1000
+      },
+      "realized_vol_ind": {
+        "mean": 0.0515,
+        "std": 0.03027,
+        "min": 0.016587,
+        "max": 0.251067,
+        "n_valid": 1000
+      }
+    },
+    "first_valid_index": 252,
+    "rolling_window_correct": true
+  },
+  "comparison_with_registered": {
+    "feature_formulas_match": true,
+    "rolling_windows_match": true,
+    "epsilon_match": true,
+    "normalization_match": true
+  },
+  "classification": "EXACT_MATCH"
+}

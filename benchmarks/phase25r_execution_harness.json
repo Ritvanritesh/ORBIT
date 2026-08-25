@@ -1,0 +1,50 @@
+{
+  "harness_id": "REPL-HARNESS-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "25R",
+  "execution_sequence": [
+    {
+      "step": 1,
+      "name": "verify_original_registration_digest",
+      "description": "Verify Phase 24-R registration digest matches"
+    },
+    {
+      "step": 2,
+      "name": "independently_reconstruct_inputs",
+      "description": "Rebuild features and labels from primitive definitions"
+    },
+    {
+      "step": 3,
+      "name": "verify_frozen_oos_snapshot",
+      "description": "Verify OOS snapshot integrity digests"
+    },
+    {
+      "step": 4,
+      "name": "independently_generate_predictions",
+      "description": "Generate predictions using independent implementation"
+    },
+    {
+      "step": 5,
+      "name": "independently_calculate_metrics",
+      "description": "Calculate Spearman IC independently"
+    },
+    {
+      "step": 6,
+      "name": "compare_with_primary",
+      "description": "Compare results with Phase 24-R execution"
+    },
+    {
+      "step": 7,
+      "name": "classify_agreement",
+      "description": "Classify agreement level"
+    }
+  ],
+  "agreement_categories": {
+    "EXACT_REPLICATION": "Results identical to 10+ decimal places",
+    "NUMERICALLY_EQUIVALENT": "Results differ by < 1e-10 (floating-point tolerance)",
+    "MATERIAL_DIFFERENCE": "Results differ by >= 1e-10 but < 0.001",
+    "CRITICAL_DISAGREEMENT": "Results differ by >= 0.001 or sign differs"
+  },
+  "silently_adopt_prohibition": "Independent replication must NOT silently adopt primary result when discrepancy exists"
+}
