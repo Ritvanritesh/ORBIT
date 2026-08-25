@@ -1,0 +1,52 @@
+{
+  "reconstruction_id": "HYP-RECON-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
+  "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods. Higher volatility regimes should be associated with higher expected returns (risk compensation) at intermediate horizons.",
+  "prediction": "Adding VOL_ZSCORE to a momentum-only feature set produces positive incremental Spearman IC against forward excess returns at H-10 and H-20.",
+  "directional_expectation": "POSITIVE \u2014 volatility regime features should have positive coefficients and positive IC contribution",
+  "target_universe": "US equities in DS-EXP-050 (50 instruments) and DS-EXP-100 (100 instruments)",
+  "horizon": [
+    "H-10",
+    "H-20"
+  ],
+  "feature_domain": {
+    "primary": "VOL_ZSCORE \u2014 z-scored realized volatility relative to 252-day rolling mean",
+    "components": [
+      "realized_vol",
+      "rolling_mean_vol",
+      "rolling_std_vol"
+    ],
+    "baseline_features": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D"
+    ]
+  },
+  "falsification_conditions": [
+    "IC(vol_features) <= 0 at H-10",
+    "IC(vol_features) <= 0 at H-20",
+    "Incremental IC <= 0 at H-10",
+    "Incremental IC <= 0 at H-20",
+    "H-10 and H-20 show opposite signs",
+    "Sign consistency < 50% at either horizon"
+  ],
+  "pre_existing_knowledge": [
+    "HYP-VOL showed IC drop from H-5 to H-10/H-20 in prior research",
+    "Macro regime effects may interact with volatility",
+    "Linear models are appropriate first-order approximation",
+    "OHLCV features are sufficient for volatility regime construction"
+  ],
+  "exploratory_knowledge_gained": [
+    "Mean IC approximately 0.143 across 20 experiments",
+    "Incremental IC approximately +0.008 over baseline",
+    "Consistent positive sign across all experiments",
+    "VOL_ZSCORE slightly outperforms VOL_BINARY in most configurations",
+    "Ridge slightly outperforms Lasso in most configurations",
+    "ENV-050 slightly outperforms ENV-100 (difference 0.011)",
+    "H-10 slightly outperforms H-20 (difference 0.010)",
+    "Temporal stability is PARTIAL \u2014 limited by available windows"
+  ],
+  "separation_note": "The pre-existing knowledge informed hypothesis selection. The exploratory knowledge calibrated thresholds and identified the primary configuration. Neither replaces the need for OOS confirmation."
+}

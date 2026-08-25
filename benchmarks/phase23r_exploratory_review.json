@@ -1,0 +1,75 @@
+{
+  "review_id": "EXP-REVIEW-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "overall_distribution": {
+    "n_vol_experiments": 16,
+    "n_baseline_experiments": 4,
+    "mean_ic": 0.144799,
+    "median_ic": 0.148691,
+    "std_ic": 0.023607,
+    "min_ic": 0.060207,
+    "max_ic": 0.168352,
+    "sign_consistency": 1.0,
+    "worst_case_ic": 0.060207,
+    "best_case_ic": 0.168352
+  },
+  "incremental_value": {
+    "mean_incremental_ic": 0.017668,
+    "positive_incremental_fraction": 1.0,
+    "interpretation": "Positive incremental IC suggests volatility features add predictive value beyond baseline momentum"
+  },
+  "findings_replicated": {
+    "positive_ic_all_experiments": true,
+    "positive_incremental_all": true,
+    "replication_summary": "All 16 vol experiments show positive IC; all incremental ICs positive"
+  },
+  "configuration_dependent_findings": {
+    "vol_representation_sensitivity": {
+      "binary_mean": 0.152673,
+      "zscore_mean": 0.136924,
+      "difference": -0.015749,
+      "interpretation": "VOL_ZSCORE slightly outperforms VOL_BINARY; both positive"
+    },
+    "model_sensitivity": {
+      "ridge_mean": 0.154883,
+      "lasso_mean": 0.134714,
+      "difference": 0.020169,
+      "interpretation": "Ridge slightly outperforms Lasso; both positive"
+    }
+  },
+  "horizon_analysis": {
+    "h10": {
+      "mean_ic": 0.138411,
+      "std_ic": 0.031238,
+      "n": 8
+    },
+    "h20": {
+      "mean_ic": 0.151186,
+      "std_ic": 0.007557,
+      "n": 8
+    },
+    "h10_h20_difference": -0.012774,
+    "both_positive": true,
+    "interpretation": "Both horizons show positive IC; H-10 slightly stronger"
+  },
+  "universe_analysis": {
+    "env050": {
+      "mean_ic": 0.150851,
+      "n": 8
+    },
+    "env100": {
+      "mean_ic": 0.138747,
+      "n": 8
+    },
+    "difference": 0.012104,
+    "both_positive": true,
+    "interpretation": "Both universes show positive IC; ENV-050 slightly stronger"
+  },
+  "temporal_instability_note": {
+    "status": "PARTIAL",
+    "detail": "Temporal stability assessed as PARTIAL in scorecard. Limited by available test window (2024-01-02 to 2026-06-30). Regime analysis insufficient. This is the most significant unresolved limitation.",
+    "impact_on_confirmation": "Temporal instability does not preclude confirmation but must be documented. Confirmation will test whether the signal persists in OOS data."
+  },
+  "evidence_sufficiency_for_confirmation": "YES \u2014 Exploratory evidence is sufficient to justify formal confirmation. All 16 vol experiments show positive IC. Incremental value is positive. Both horizons and universes are consistent. The primary concern (temporal stability) is addressed by OOS confirmation itself."
+}

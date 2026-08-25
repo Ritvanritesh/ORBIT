@@ -1,0 +1,46 @@
+{
+  "review_id": "ECON-REV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "current_status": {
+    "economic_relevance": "INSUFFICIENT_DATA",
+    "detail": "Portfolio evaluation not performed in exploratory phase",
+    "source": "Phase 21-R scorecard"
+  },
+  "required_sequence": [
+    {
+      "step": 1,
+      "name": "Predictive confirmation",
+      "phase": "Phase 20-B (OOS validation)",
+      "status": "WAITING_FOR_DATA",
+      "prerequisite_for": "Step 2"
+    },
+    {
+      "step": 2,
+      "name": "Portfolio evaluation",
+      "phase": "Phase 24 (future)",
+      "status": "NOT_STARTED",
+      "prerequisite_for": "Step 3"
+    },
+    {
+      "step": 3,
+      "name": "Economic materiality assessment",
+      "phase": "Phase 24 (future)",
+      "status": "NOT_STARTED",
+      "prerequisite_for": "None"
+    }
+  ],
+  "current_phase": "Phase 23-R (evidence review and registration)",
+  "next_phase": "Phase 20-B (OOS validation, awaiting data)",
+  "economic_significance_claim": {
+    "status": "NOT_CLAIMED",
+    "rationale": "No economic significance can be claimed before portfolio evaluation. Predictive confirmation is necessary but not sufficient for economic significance."
+  },
+  "portfolio_evaluation_requirements": [
+    "Predictive confirmation must pass first",
+    "Sufficient OOS trading days for portfolio construction",
+    "Transaction cost model",
+    "Position sizing methodology",
+    "Risk management framework"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "inventory_id": "EVID-INV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T15:39:36.948250+00:00",
+  "artifacts": {
+    "phase19r_branch_selection": {
+      "path": "benchmarks/phase19r_selected_branch.json",
+      "phase": "19R",
+      "artifact_type": "branch_selection",
+      "admissibility": "ADMISSIBLE",
+      "role": "Primary branch selection and hypothesis origin",
+      "sha256_digest": "c6307eac45749e96cebea8323fa11dd0b0dee8787fb43261947d772a349ba980"
+    },
+    "phase19r_hypothesis": {
+      "path": "benchmarks/phase19r_hypothesis.json",
+      "phase": "19R",
+      "artifact_type": "hypothesis_definition",
+      "admissibility": "ADMISSIBLE",
+      "role": "Original hypothesis specification",
+      "sha256_digest": "cf7df2e7cb55a191b5ecd81729491305f2289826d6ebf2607e0fb4e9077aba61"
+    },
+    "phase19e_experiment_inventory": {
+      "path": "benchmarks/phase19e_experiment_inventory.json",
+      "phase": "19E",
+      "artifact_type": "exploratory_evidence",
+      "admissibility": "ADMISSIBLE",
+      "role": "Complete exploratory experiment results (20 experiments)",
+      "sha256_digest": "6bd80528ba98a446d4e77aadb65eefb816d4d3b105c896b218871dbcd88de7a1"
+    },
+    "phase19e_statistics": {
+      "path": "benchmarks/phase19e_statistics.json",
+      "phase": "19E",
+      "artifact_type": "exploratory_statistics",
+      "admissibility": "ADMISSIBLE",
+      "role": "Aggregate exploratory statistics",
+      "sha256_digest": "99bbf09ff692121e8a451bda88b77e6c6356646fc0838081ec0c78dc4de3445f"
+    },
+    "phase19c_hypothesis_registration": {
+      "path": "benchmarks/phase19c_hypothesis_registration.json",
+      "phase": "19C",
+      "artifact_type": "confirmatory_registration",
+      "admissibility": "ADMISSIBLE",
+      "role": "Prior confirmatory registration (hypothesis lock)",
+      "sha256_digest": "fda7cc8f441d9ebcae151d2aa64358ea3618752239fe101ea19d8e8e85972a9b"
+    },
+    "phase19c_experiment_inventory": {
+      "path": "benchmarks/phase19c_experiment_inventory.json",
+      "phase": "19C",
+      "artifact_type": "experiment_matrix",
+      "admissibility": "ADMISSIBLE",
+      "role": "Prior confirmatory experiment matrix (7 experiments locked)",
+      "sha256_digest": "42498c0e946550b14c3af40d7f73eca16fc127fec68b469c82c8d5619935bc3c"
+    },
+    "phase19c_feature_registration": {
+      "path": "benchmarks/phase19c_feature_registration.json",
+      "phase": "19C",
+      "artifact_type": "feature_lock",
+      "admissibility": "ADMISSIBLE",
+      "role": "Feature definition lock (VOL_ZSCORE)",
+      "sha256_digest": "0ec4e346c39a60caea2578318685686e8487d4493d2484f5da9feafaf0befc8c"
+    },
+    "phase19c_model_registration": {
+      "path": "benchmarks/phase19c_model_registration.json",
+      "phase": "19C",
+      "artifact_type": "model_lock",
+      "admissibility": "ADMISSIBLE",
+      "role": "Model parameter lock (Ridge, Lasso)",
+      "sha256_digest": "82a74494e6b5c6d12b7caf12ebf2b9f450dc31f967e4a7ffe13f272721f81a3f"
+    },
+    "phase20r_sufficiency": {
+      "path": "benchmarks/phase20r_sufficiency.json",
+      "phase": "20R",
+      "artifact_type": "data_sufficiency",
+      "admissibility": "ADMISSIBLE",
+      "role": "OOS data readiness status (DATA_NOT_READY)",
+      "sha256_digest": "f5535422d9e13f0263ff8f0d663ee7e1d2060f256436f1289aa5dc887f8e840c"
+    },
+    "phase21r_branch_decision": {
+      "path": "benchmarks/phase21r_branch_decision.json",
+      "phase": "21R",
+      "artifact_type": "branch_decision",
+      "admissibility": "ADMISSIBLE",
+      "role": "Exploratory research outcome (Outcome A)",
+      "sha256_digest": "2b630e578d3b83a3a723888823cb0a6e8ba0c5eeeb37002d026dfa7cb4576bf4"
+    },
+    "phase21r_statistics": {
+      "path": "benchmarks/phase21r_statistics.json",
+      "phase": "21R",
+      "artifact_type": "exploratory_statistics",
+      "admissibility": "ADMISSIBLE",
+      "role": "Exploratory statistics with corrections",
+      "sha256_digest": "feadfd338d8a71c9ac39e9782738f75c3b7f7f0dac43e57c4d2f7222fda07b47"
+    },
+    "phase21r_scorecard": {
+      "path": "benchmarks/phase21r_scorecard.json",
+      "phase": "21R",
+      "artifact_type": "evidence_scorecard",
+      "admissibility": "ADMISSIBLE",
+      "role": "Multi-dimensional evidence scorecard",
+      "sha256_digest": "26e298cd75ea713d64887b636a9a0ee41ff72c8d18f61e37a07a74e80af13e0e"
+    },
+    "phase21r_temporal_analysis": {
+      "path": "benchmarks/phase21r_temporal_analysis.json",
+      "phase": "21R",
+      "artifact_type": "temporal_analysis",
+      "admissibility": "ADMISSIBLE",
+      "role": "Temporal stability assessment (PARTIAL)",
+      "sha256_digest": "5acdc480b70f92339a17b38d97c82292fbaa58420e210469a15f3e439151465c"
+    },
+    "phase21r_universe_analysis": {
+      "path": "benchmarks/phase21r_universe_analysis.json",
+      "phase": "21R",
+      "artifact_type": "universe_analysis",
+      "admissibility": "ADMISSIBLE",
+      "role": "Universe consistency assessment",
+      "sha256_digest": "389af64240de6712a09e80fbf1859b5b207318d5c1e8fc1bbe62b6779f9af79f"
+    },
+    "phase22r_report": {
+      "path": "benchmarks/phase22r_report.json",
+      "phase": "22R",
+      "artifact_type": "model_capability",
+      "admissibility": "ADMISSIBLE",
+      "role": "Model toolbox expansion (3 new models approved)",
+      "sha256_digest": "e6f439a08cbbad77df0110430507d28d0dc3c57f27a565adabb858377e087b64"
+    },
+    "branch_registry": {
+      "path": "research/branch_registry.json",
+      "phase": "GLOBAL",
+      "artifact_type": "registry",
+      "admissibility": "ADMISSIBLE",
+      "role": "Branch status and history",
+      "sha256_digest": "UNAVAILABLE"
+    }
+  },
+  "total_artifacts": 16,
+  "admissible_artifacts": 16,
+  "excluded_artifacts": 0,
+  "exclusion_log": "NONE"
+}

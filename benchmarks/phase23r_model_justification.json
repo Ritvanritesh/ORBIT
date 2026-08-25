@@ -1,0 +1,97 @@
+{
+  "review_id": "MOD-JUST-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "models": {
+    "Ridge": {
+      "classification": "CONFIRMATORY_JUSTIFIED",
+      "rationale": [
+        "Primary model in Phase 19-C registration",
+        "Strongest exploratory IC (0.148996 mean)",
+        "Stable across horizons and universes",
+        "Mechanism compatible (linear risk compensation)",
+        "Low complexity, high interpretability",
+        "No degeneracy risk",
+        "Computational determinism guaranteed"
+      ],
+      "exploratory_evidence": "Ridge experiments consistently outperform Lasso across all configurations",
+      "complexity_cost": "LOW",
+      "overfitting_risk": "LOW"
+    },
+    "Lasso": {
+      "classification": "CONFIRMATORY_JUSTIFIED",
+      "rationale": [
+        "Secondary model in Phase 19-C registration",
+        "Positive exploratory IC (0.134716 mean)",
+        "Provides feature selection perspective",
+        "Consistent direction with Ridge",
+        "Mechanism compatible",
+        "Low complexity, high interpretability",
+        "Degeneracy policy documented in Phase 19-C"
+      ],
+      "exploratory_evidence": "Lasso confirms Ridge findings with slightly lower IC; feature selection behavior documented",
+      "complexity_cost": "LOW",
+      "overfitting_risk": "LOW"
+    },
+    "ElasticNet": {
+      "classification": "EXPLORATORY_ONLY",
+      "rationale": [
+        "Approved in Phase 22-R for general toolbox",
+        "NO exploratory evidence specific to this hypothesis",
+        "No prior experiments with VOL_ZSCORE feature",
+        "Would add additional hyperparameter (l1_ratio) to confirmation",
+        "No mechanism-specific justification for this hypothesis",
+        "Model availability does not justify automatic inclusion"
+      ],
+      "exploratory_evidence": "NONE for this specific hypothesis",
+      "complexity_cost": "LOW",
+      "overfitting_risk": "LOW",
+      "note": "Approved for toolbox but NOT justified for this confirmation"
+    },
+    "HistGradientBoosting": {
+      "classification": "EXPLORATORY_ONLY",
+      "rationale": [
+        "Approved in Phase 22-R for general toolbox",
+        "NO exploratory evidence specific to this hypothesis",
+        "No prior experiments with VOL_ZSCORE feature",
+        "Higher complexity than linear models",
+        "No mechanism-specific justification for linear risk compensation hypothesis",
+        "Would require additional hyperparameters in confirmation",
+        "Overfitting risk higher with limited OOS data"
+      ],
+      "exploratory_evidence": "NONE for this specific hypothesis",
+      "complexity_cost": "MEDIUM",
+      "overfitting_risk": "MEDIUM",
+      "note": "Approved for toolbox but NOT justified for this confirmation"
+    },
+    "LightGBM": {
+      "classification": "EXPLORATORY_ONLY",
+      "rationale": [
+        "Approved in Phase 22-R for general toolbox",
+        "NO exploratory evidence specific to this hypothesis",
+        "No prior experiments with VOL_ZSCORE feature",
+        "Higher complexity than linear models",
+        "Same capability as HistGradientBoosting (Phase 22-R noted low unique value)",
+        "Would require additional hyperparameters in confirmation",
+        "Overfitting risk higher with limited OOS data"
+      ],
+      "exploratory_evidence": "NONE for this specific hypothesis",
+      "complexity_cost": "MEDIUM",
+      "overfitting_risk": "MEDIUM",
+      "note": "Approved for toolbox but NOT justified for this confirmation"
+    }
+  },
+  "summary": {
+    "confirmatory_justified": [
+      "Ridge",
+      "Lasso"
+    ],
+    "exploratory_only": [
+      "ElasticNet",
+      "HistGradientBoosting",
+      "LightGBM"
+    ],
+    "not_justified": [],
+    "rationale_summary": "Only models with direct exploratory evidence for this hypothesis are justified for confirmation. Phase 22-R toolbox expansion does not automatically justify adding models to every hypothesis."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "phase": "23R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "timestamp": "2026-08-25T15:39:36.968167+00:00",
+  "verification_checks": {
+    "evidence_inventory_frozen": true,
+    "hypothesis_reconstructed": true,
+    "exploratory_review_complete": true,
+    "model_justification_complete": true,
+    "horizon_decision_complete": true,
+    "confirmatory_claim_defined": true,
+    "baselines_locked": true,
+    "experiment_matrix_locked": true,
+    "statistics_plan_complete": true,
+    "firewall_verified": true,
+    "temporal_review_complete": true,
+    "economic_review_complete": true,
+    "adversarial_tests_passed": true,
+    "reproducibility_verified": true,
+    "registration_complete": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "B",
+  "verdict_label": "ELIGIBLE_WITH_DOCUMENTED_LIMITATIONS",
+  "gate": "YELLOW",
+  "gate_rationale": "Registration complete but OOS data insufficient (36/60 days). Waiting for DATA_READY."
+}

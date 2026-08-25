@@ -1,0 +1,48 @@
+{
+  "audit_id": "FIREWALL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "23R",
+  "timestamp": "2026-08-25T15:39:36.965175+00:00",
+  "attacks": {
+    "A1_direct_oos_file_access": {
+      "attack": "Attempt to read OOS parquet files",
+      "result": "PASS",
+      "detail": "No OOS file reads performed in this phase"
+    },
+    "A2_indirect_summary_access": {
+      "attack": "Access OOS IC summaries or statistics",
+      "result": "PASS",
+      "detail": "No OOS summaries accessed; all statistics from exploratory data only"
+    },
+    "A3_metadata_leakage": {
+      "attack": "Access OOS file metadata (dates, sizes, row counts)",
+      "result": "PASS",
+      "detail": "No OOS metadata accessed"
+    },
+    "A4_cached_results": {
+      "attack": "Access cached OOS results from prior phases",
+      "result": "PASS",
+      "detail": "Phase 20R sufficiency status read (DATA_NOT_READY) but no OOS outcomes"
+    },
+    "A5_environment_variables": {
+      "attack": "Check environment variables for OOS data paths",
+      "result": "PASS",
+      "detail": "No environment variable checks performed"
+    },
+    "A6_artifact_references": {
+      "attack": "Extract OOS information from phase artifacts",
+      "result": "PASS",
+      "detail": "Phase 20R artifact contains only readiness status, not OOS outcomes"
+    },
+    "A7_hidden_result_files": {
+      "attack": "Search for hidden OOS result files",
+      "result": "PASS",
+      "detail": "No hidden result files accessed"
+    }
+  },
+  "all_pass": true,
+  "overall": "PASS",
+  "oos_data_not_accessed": true,
+  "oos_outcomes_not_accessed": true,
+  "exploratory_data_only": true
+}

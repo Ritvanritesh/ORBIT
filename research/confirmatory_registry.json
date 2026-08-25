@@ -1,0 +1,84 @@
+{
+  "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T15:39:36.967170+00:00",
+  "evidence_digest": "3cfa5c1b9cfd0f2902c00892d73ba0488a502aae2059b1815831ac29b6c82dbc",
+  "locked_experiment_matrix_digest": "edd57330f7bbe072a59eef9116205faf1f2ba824557e2c1418e503ec27b596f4",
+  "locked_statistics_plan_digest": "81ae7da0bbd15206decca19a76cddcd289ff8a86b3161b708d8ba42205ac00d0",
+  "primary_endpoint": {
+    "metric": "Incremental Spearman IC",
+    "definition": "Spearman IC(vol_features) - Spearman IC(baseline)",
+    "horizon": "H-10",
+    "universe": "Pooled across ENV-050 and ENV-100",
+    "model": "Ridge (alpha=1.0)"
+  },
+  "secondary_endpoints": [
+    {
+      "metric": "Incremental Spearman IC",
+      "horizon": "H-20",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Ridge (alpha=1.0)",
+      "role": "Replication of primary at longer horizon"
+    },
+    {
+      "metric": "Lasso incremental IC",
+      "horizon": "H-10",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Lasso (alpha=0.001)",
+      "role": "Cross-model consistency check"
+    }
+  ],
+  "success_criteria": [
+    "Primary incremental IC > 0.005 in OOS data",
+    "Secondary incremental IC > 0 in OOS data",
+    "Both pass Holm-Bonferroni correction",
+    "Sign consistency > 50% at both horizons",
+    "Lasso incremental IC > 0 (cross-model check passes)"
+  ],
+  "failure_criteria": [
+    "Primary incremental IC <= 0 in OOS data",
+    "Secondary incremental IC <= 0 in OOS data",
+    "Primary incremental IC not significant after Holm-Bonferroni correction",
+    "Sign consistency < 50% at either horizon",
+    "H-10 and H-20 show opposite signs",
+    "Lasso shows negative incremental IC (cross-model check fails)"
+  ],
+  "permitted_models": [
+    "Ridge",
+    "Lasso"
+  ],
+  "prohibited_models": [
+    "ElasticNet",
+    "HistGradientBoosting",
+    "LightGBM"
+  ],
+  "prohibited_modifications": [
+    "No model addition after registration",
+    "No horizon change after registration",
+    "No feature change after registration",
+    "No threshold change after registration",
+    "No experiment addition after matrix lock",
+    "No experiment removal after matrix lock",
+    "No access to OOS outcomes before execution"
+  ],
+  "oos_eligibility_requirements": {
+    "minimum_trading_days": 60,
+    "current_trading_days": 36,
+    "remaining_days": 24,
+    "estimated_completion": "~24 more trading days (~5 weeks)"
+  },
+  "confirmation_execution_status": "REGISTERED_WAITING_FOR_DATA",
+  "data_gate_status": "DATA_NOT_READY",
+  "data_gate_source": "Phase 20R sufficiency check",
+  "governance_conditions": {
+    "all_prerequisites_met": true,
+    "evidence_review_complete": true,
+    "adversarial_tests_passed": true,
+    "reproducibility_verified": true,
+    "firewall_verified": true,
+    "matrix_locked": true,
+    "statistics_plan_locked": true
+  },
+  "registration_digest": "a17a701e9261c037ed7e85277405860d1e5c660df6f5c39b5949c241ffa5e24b"
+}

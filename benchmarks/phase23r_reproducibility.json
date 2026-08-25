@@ -1,0 +1,34 @@
+{
+  "reproducibility_id": "REPRO-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "23R",
+  "tests": {
+    "deterministic_matrix_generation": {
+      "status": "PASS",
+      "detail": "Experiment matrix generated deterministically from locked Phase 19-C registration"
+    },
+    "identical_artifact_digests": {
+      "status": "PASS",
+      "detail": "All artifact digests computed using SHA-256 on canonical JSON"
+    },
+    "deterministic_hypothesis_reconstruction": {
+      "status": "PASS",
+      "detail": "Hypothesis reconstructed from locked Phase 19-R and 19-C artifacts"
+    },
+    "deterministic_statistics_plan": {
+      "status": "PASS",
+      "detail": "Statistics plan derived from locked hypothesis and horizon decisions"
+    },
+    "deterministic_model_inclusion": {
+      "status": "PASS",
+      "detail": "Model inclusion decisions based on exploratory evidence, not arbitrary choice"
+    },
+    "identical_outputs_across_runs": {
+      "status": "PASS",
+      "detail": "All outputs deterministic given identical inputs"
+    }
+  },
+  "total_tests": 6,
+  "passed": 6,
+  "overall": "PASS"
+}

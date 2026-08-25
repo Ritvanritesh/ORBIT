@@ -1,0 +1,48 @@
+{
+  "lock_id": "BASE-LOCK-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "predictive_baselines": {
+    "BL_NULL_001": {
+      "name": "Random predictions",
+      "description": "Zero IC baseline",
+      "expected_ic": 0.0,
+      "role": "Null hypothesis reference"
+    },
+    "BL_MOMENTUM_001": {
+      "name": "Momentum-only Ridge",
+      "description": "Ridge regression with MOM_5D, MOM_10D, MOM_20D only",
+      "features": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "model": "Ridge(alpha=1.0)",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "role": "Primary baseline for incremental IC calculation",
+      "registered_in": "Phase 19-C (BASE-001, BASE-002)"
+    },
+    "BL_VOL_BINARY_001": {
+      "name": "Volatility binary Ridge",
+      "description": "Ridge regression with VOL_BINARY feature",
+      "features": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_BINARY"
+      ],
+      "model": "Ridge(alpha=1.0)",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "role": "Alternative vol representation baseline",
+      "registered_in": "Phase 19-C (BASE-003)"
+    }
+  },
+  "portfolio_baselines": {
+    "status": "NOT_APPLICABLE",
+    "rationale": "Portfolio evaluation deferred to Phase 24 after predictive confirmation. No portfolio baselines locked in this phase."
+  },
+  "baseline_selection_rationale": "BL_MOMENTUM_001 is the primary baseline. Incremental IC = IC(vol_features) - IC(BL_MOMENTUM_001). This isolates the contribution of volatility regime information.",
+  "locked": true
+}

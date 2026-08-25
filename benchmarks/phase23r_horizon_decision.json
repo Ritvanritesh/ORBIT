@@ -1,0 +1,57 @@
+{
+  "decision_id": "HORIZ-DEC-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "options_evaluated": {
+    "OPTION_A": {
+      "horizons": [
+        "H-10"
+      ],
+      "description": "H-10 only"
+    },
+    "OPTION_B": {
+      "horizons": [
+        "H-20"
+      ],
+      "description": "H-20 only"
+    },
+    "OPTION_C": {
+      "horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "description": "Both as hypothesis family"
+    }
+  },
+  "evidence_basis": {
+    "h10_mean_ic": 0.148996,
+    "h20_mean_ic": 0.138731,
+    "h10_h20_difference": 0.010265,
+    "both_positive": true,
+    "mechanism_supports_both": true
+  },
+  "decision": "OPTION_C",
+  "rationale": [
+    "Mechanism: volatility regime persistence should affect returns at both intermediate horizons",
+    "Both horizons show positive IC in exploratory evidence",
+    "H-10 and H-20 difference is small (0.010) \u2014 not large enough to justify excluding one",
+    "Testing both provides replication evidence within the confirmation",
+    "Pre-registered hypothesis family reduces multiple testing penalty vs. ad-hoc addition",
+    "Phase 19-C already registered H-10 as primary, H-20 as secondary"
+  ],
+  "multiple_comparison_correction": {
+    "method": "HOLM-BONFERRONI",
+    "family_definition": "H-10 primary + H-20 secondary = 2 tests in family",
+    "alpha_per_test": 0.05,
+    "correction_applied": "Sequential Holm-Bonferroni on the two horizon tests",
+    "note": "Both horizons pre-registered in Phase 19-C; not ad-hoc additions"
+  },
+  "primary_horizon": "H-10",
+  "secondary_horizon": "H-20",
+  "confirmation_requirements": [
+    "H-10 must show positive incremental IC (primary endpoint)",
+    "H-20 must show positive incremental IC (secondary endpoint)",
+    "Both must pass Holm-Bonferroni correction",
+    "Sign consistency must be > 50% at both horizons"
+  ]
+}

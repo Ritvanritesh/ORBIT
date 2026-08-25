@@ -1,0 +1,73 @@
+{
+  "audit_id": "ADV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "23R",
+  "timestamp": "2026-08-25T15:39:36.966172+00:00",
+  "attacks": {
+    "A1_cherry_pick_highest_ic": {
+      "attack": "Select the single best exploratory experiment as the confirmation target",
+      "result": "PASS",
+      "detail": "Confirmation uses all experiments at the registered configuration; no cherry-picking of best IC"
+    },
+    "A2_add_model_because_available": {
+      "attack": "Add ElasticNet, HistGradientBoosting, or LightGBM because Phase 22-R approved them",
+      "result": "PASS",
+      "detail": "Only Ridge and Lasso justified; new models have no exploratory evidence for this hypothesis"
+    },
+    "A3_drop_failed_configurations": {
+      "attack": "Remove experiments that showed lower IC",
+      "result": "PASS",
+      "detail": "All 16 vol experiments showed positive IC; no failures to drop"
+    },
+    "A4_change_horizon_after_review": {
+      "attack": "Switch primary horizon from H-10 to H-20 after seeing H-20 performs well",
+      "result": "PASS",
+      "detail": "H-10 remains primary per Phase 19-C registration; H-20 is secondary"
+    },
+    "A5_move_exploratory_to_oos": {
+      "attack": "Treat exploratory IC as if it were OOS evidence",
+      "result": "PASS",
+      "detail": "All exploratory results explicitly labeled EXPLORATORY ONLY; no OOS data accessed"
+    },
+    "A6_access_oos_results": {
+      "attack": "Access protected OOS IC, Sharpe, or rankings",
+      "result": "PASS",
+      "detail": "Firewall audit confirms no OOS data accessed"
+    },
+    "A7_reduce_hypothesis_family": {
+      "attack": "Drop H-20 secondary after seeing H-20 results",
+      "result": "PASS",
+      "detail": "Both horizons retained per Phase 19-C registration; no reduction"
+    },
+    "A8_modify_effect_thresholds": {
+      "attack": "Change minimum effect size after seeing OOS data",
+      "result": "PASS",
+      "detail": "Threshold (0.005) set from exploratory evidence; OOS data not yet available"
+    },
+    "A9_hide_temporal_instability": {
+      "attack": "Omit temporal instability from the report",
+      "result": "PASS",
+      "detail": "Temporal instability explicitly documented in Step 11 and final report"
+    },
+    "A10_treat_significance_as_economic": {
+      "attack": "Claim economic significance from statistical significance alone",
+      "result": "PASS",
+      "detail": "Economic significance explicitly deferred to Phase 24"
+    },
+    "A11_unregistered_feature": {
+      "attack": "Use a feature transformation not in Phase 19-C registration",
+      "result": "PASS",
+      "detail": "Only VOL_ZSCORE used, per Phase 19-C feature lock"
+    },
+    "A12_add_experiments_after_lock": {
+      "attack": "Add experiments after matrix lock",
+      "result": "PASS",
+      "detail": "Matrix locked with 7 experiments; no additions"
+    }
+  },
+  "total_attacks": 12,
+  "passed": 12,
+  "failed": 0,
+  "all_pass": true,
+  "overall": "PASS"
+}

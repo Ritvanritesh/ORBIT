@@ -1,0 +1,68 @@
+{
+  "phase": "23R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T15:39:36.968167+00:00",
+  "verdict": "B",
+  "verdict_label": "ELIGIBLE_WITH_DOCUMENTED_LIMITATIONS",
+  "gate": "YELLOW",
+  "gate_rationale": "Registration complete but OOS data insufficient (36/60 days). Waiting for DATA_READY.",
+  "answers": {
+    "Q1_eligible_for_confirmation": true,
+    "Q2_exact_claim": "Under US equity universes (ENV-050, ENV-100) at horizon H-10, adding a VOL_ZSCORE volatility regime feature to a momentum-only baseline produces incremental Spearman IC > 0 against 5-day forward excess returns, and this incremental IC is replicated at horizon H-20.",
+    "Q3_models_justified": [
+      "Ridge",
+      "Lasso"
+    ],
+    "Q4_models_excluded": [
+      "ElasticNet",
+      "HistGradientBoosting",
+      "LightGBM"
+    ],
+    "Q5_exclusion_rationale": "Models approved in Phase 22-R but no exploratory evidence for this specific hypothesis",
+    "Q6_horizons_included": [
+      "H-10",
+      "H-20"
+    ],
+    "Q7_horizon_rationale": "Both horizons pre-registered; H-10 primary by mechanism, H-20 secondary for replication",
+    "Q8_locked_baseline": "BL_MOMENTUM_001 (Ridge with momentum-only features)",
+    "Q9_primary_endpoint": {
+      "metric": "Incremental Spearman IC",
+      "definition": "Spearman IC(vol_features) - Spearman IC(baseline)",
+      "horizon": "H-10",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Ridge (alpha=1.0)"
+    },
+    "Q10_failure_conditions": [
+      "Primary incremental IC <= 0 in OOS data",
+      "Secondary incremental IC <= 0 in OOS data",
+      "Primary incremental IC not significant after Holm-Bonferroni correction",
+      "Sign consistency < 50% at either horizon",
+      "H-10 and H-20 show opposite signs",
+      "Lasso shows negative incremental IC (cross-model check fails)"
+    ],
+    "Q11_limitations": [
+      "Temporal stability PARTIAL \u2014 limited test window",
+      "Economic relevance INSUFFICIENT_DATA \u2014 portfolio evaluation deferred",
+      "OOS data not yet sufficient (36/60 trading days)",
+      "Regime-specific analysis not possible"
+    ],
+    "Q12_before_execution": [
+      "OOS data must reach 60 trading days minimum",
+      "DATA_READY gate must be triggered",
+      "Phase 20-B must execute before confirmatory evaluation"
+    ]
+  },
+  "summary": {
+    "evidence_quality": "STRONG \u2014 16/16 positive IC, 100% sign consistency, incremental value positive",
+    "model_quality": "ADEQUATE \u2014 Ridge and Lasso with direct evidence; new models excluded",
+    "governance_quality": "COMPLETE \u2014 all adversarial and reproducibility tests pass",
+    "temporal_quality": "PARTIAL \u2014 limitation documented, not hidden",
+    "economic_quality": "DEFERRED \u2014 portfolio evaluation requires predictive confirmation first"
+  },
+  "registration": {
+    "id": "CONF-REG-BR-E2AFD3AC901A",
+    "status": "REGISTERED_WAITING_FOR_DATA",
+    "data_gate": "DATA_NOT_READY"
+  }
+}

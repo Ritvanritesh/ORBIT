@@ -1,0 +1,61 @@
+{
+  "claim_id": "CLAIM-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "claim": "Under US equity universes (ENV-050, ENV-100) at horizon H-10, adding a VOL_ZSCORE volatility regime feature to a momentum-only baseline produces incremental Spearman IC > 0 against 5-day forward excess returns, and this incremental IC is replicated at horizon H-20.",
+  "primary_endpoint": {
+    "metric": "Incremental Spearman IC",
+    "definition": "Spearman IC(vol_features) - Spearman IC(baseline)",
+    "horizon": "H-10",
+    "universe": "Pooled across ENV-050 and ENV-100",
+    "model": "Ridge (alpha=1.0)"
+  },
+  "secondary_endpoints": [
+    {
+      "metric": "Incremental Spearman IC",
+      "horizon": "H-20",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Ridge (alpha=1.0)",
+      "role": "Replication of primary at longer horizon"
+    },
+    {
+      "metric": "Lasso incremental IC",
+      "horizon": "H-10",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Lasso (alpha=0.001)",
+      "role": "Cross-model consistency check"
+    }
+  ],
+  "null_hypothesis": {
+    "primary": "H0: Incremental IC(H-10, Ridge) <= 0",
+    "secondary": "H0: Incremental IC(H-20, Ridge) <= 0"
+  },
+  "alternative_hypothesis": {
+    "primary": "H1: Incremental IC(H-10, Ridge) > 0",
+    "secondary": "H1: Incremental IC(H-20, Ridge) > 0"
+  },
+  "minimum_effect_size": {
+    "incremental_ic_threshold": 0.005,
+    "rationale": "Exploratory incremental IC was 0.007583; threshold set at 0.005 (66% of exploratory) to allow for OOS decay while still detecting economically meaningful effects",
+    "source": "Calibrated from exploratory evidence, NOT from OOS data"
+  },
+  "economic_materiality_threshold": {
+    "status": "DEFERRED",
+    "rationale": "Portfolio evaluation requires predictive confirmation first. Economic materiality will be assessed in Phase 24 (portfolio evaluation) after predictive confirmation."
+  },
+  "failure_conditions": [
+    "Primary incremental IC <= 0 in OOS data",
+    "Secondary incremental IC <= 0 in OOS data",
+    "Primary incremental IC not significant after Holm-Bonferroni correction",
+    "Sign consistency < 50% at either horizon",
+    "H-10 and H-20 show opposite signs",
+    "Lasso shows negative incremental IC (cross-model check fails)"
+  ],
+  "success_conditions": [
+    "Primary incremental IC > 0.005 in OOS data",
+    "Secondary incremental IC > 0 in OOS data",
+    "Both pass Holm-Bonferroni correction",
+    "Sign consistency > 50% at both horizons",
+    "Lasso incremental IC > 0 (cross-model check passes)"
+  ]
+}

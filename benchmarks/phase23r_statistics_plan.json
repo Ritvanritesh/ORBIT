@@ -1,0 +1,51 @@
+{
+  "plan_id": "STAT-PLAN-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "hypothesis_families": {
+    "FAMILY_1": {
+      "name": "Horizon family",
+      "tests": [
+        "H-10 primary",
+        "H-20 secondary"
+      ],
+      "n_tests": 2,
+      "description": "Primary and secondary horizon tests for the same hypothesis"
+    },
+    "FAMILY_2": {
+      "name": "Model consistency family",
+      "tests": [
+        "Ridge H-10",
+        "Lasso H-10"
+      ],
+      "n_tests": 2,
+      "description": "Cross-model consistency check at primary horizon"
+    }
+  },
+  "total_tests": 4,
+  "primary_endpoint": "Incremental Spearman IC at H-10 (Ridge)",
+  "secondary_endpoints": [
+    "Incremental Spearman IC at H-20 (Ridge)",
+    "Incremental Spearman IC at H-10 (Lasso)"
+  ],
+  "correction_method": {
+    "name": "HOLM-BONFERRONI",
+    "family_wise_alpha": 0.05,
+    "applied_to": "FAMILY_1 (horizon family)",
+    "rationale": "Holm-Bonferroni is uniformly more powerful than standard Bonferroni while controlling family-wise error rate"
+  },
+  "handling_of_model_comparisons": {
+    "approach": "Consistency check, not formal hypothesis test",
+    "rationale": "Lasso is a replication check, not a separate hypothesis. If Ridge passes, Lasso positive IC provides supporting evidence.",
+    "correction": "No additional correction for model comparison"
+  },
+  "handling_of_horizon_comparisons": {
+    "approach": "Formal family-wise correction",
+    "rationale": "H-10 and H-20 are pre-registered hypotheses; multiple testing correction applied"
+  },
+  "exploratory_evidence_use": {
+    "permitted": "Threshold calibration only",
+    "prohibited": "Post-hoc hypothesis modification, model addition, horizon selection",
+    "threshold_source": "Exploratory incremental IC (0.007583) calibrated to 0.005 minimum effect"
+  }
+}

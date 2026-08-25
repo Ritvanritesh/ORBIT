@@ -1,0 +1,41 @@
+{
+  "review_id": "TEMP-REV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "known_limitations": {
+    "temporal_stability": {
+      "status": "PARTIAL",
+      "detail": "Temporal stability assessed as PARTIAL in Phase 21-R scorecard",
+      "evidence": "Limited by available test window (2024-01-02 to 2026-06-30)"
+    },
+    "regime_analysis": {
+      "status": "INSUFFICIENT_DATA",
+      "detail": "Regime-specific analysis not possible with current data",
+      "evidence": "Phase 21-R temporal analysis shows regime analysis INSUFFICIENT_DATA"
+    }
+  },
+  "what_is_known": [
+    "All 20 exploratory experiments show positive IC within the 2024-01-02 to 2026-06-30 window",
+    "IC is positive across both universes and both horizons",
+    "Sign consistency is high (80%+ across experiments)",
+    "The signal persists across different model families"
+  ],
+  "what_remains_unresolved": [
+    "Whether the signal persists in genuinely out-of-sample data (2026-07-01 onwards)",
+    "Whether the signal is stable across different volatility regimes",
+    "Whether the signal degrades over longer time periods",
+    "Whether the signal is specific to the 2024-2026 period"
+  ],
+  "confirmatory_test_capability": {
+    "can_resolve_oos_persistence": true,
+    "can_resolve_regime_stability": false,
+    "can_resolve_long_term_degradation": false,
+    "can_resolve_period_specificity": "PARTIALLY",
+    "rationale": "OOS confirmation will test persistence in new data but cannot fully resolve regime stability or long-term degradation with limited OOS window"
+  },
+  "additional_requirements": {
+    "status": "NONE_ADDED",
+    "rationale": "Temporal instability does not preclude confirmation; it is precisely what confirmation is designed to test. Adding requirements beyond OOS testing would be ad-hoc."
+  },
+  "documentation_requirement": "Temporal instability must be explicitly documented in the confirmatory report as a limitation, regardless of outcome."
+}
