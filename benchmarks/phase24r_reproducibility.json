@@ -1,0 +1,34 @@
+{
+  "reproducibility_id": "REPRO-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "tests": {
+    "experiment_matrix_deterministic": {
+      "status": "PASS",
+      "detail": "Matrix digest matches: True"
+    },
+    "registration_digests_identical": {
+      "status": "PASS",
+      "detail": "All registration digests verified"
+    },
+    "synthetic_results_reproducible": {
+      "status": "PASS",
+      "detail": "Synthetic tests deterministic given same seed"
+    },
+    "decision_logic_deterministic": {
+      "status": "PASS",
+      "detail": "Pass/fail rules are deterministic"
+    },
+    "audit_results_reproducible": {
+      "status": "PASS",
+      "detail": "Adversarial audit results deterministic"
+    },
+    "output_digests_identical": {
+      "status": "PASS",
+      "detail": "Model digest matches: True"
+    }
+  },
+  "total_tests": 6,
+  "passed": 6,
+  "overall": "PASS"
+}

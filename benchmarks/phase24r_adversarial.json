@@ -1,0 +1,106 @@
+{
+  "audit_id": "ADV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "timestamp": "2026-08-25T16:20:29.307585+00:00",
+  "attacks": {
+    "A1_primary_endpoint_mutation": {
+      "attack": "Change primary endpoint from incremental IC to absolute IC",
+      "result": "PASS",
+      "detail": "Endpoint frozen at registration; digest verification detects mutation"
+    },
+    "A2_horizon_substitution": {
+      "attack": "Use H-20 result as primary evidence",
+      "result": "PASS",
+      "detail": "Primary horizon locked at H-10; substitution detected"
+    },
+    "A3_feature_substitution": {
+      "attack": "Replace VOL_ZSCORE with VOL_BINARY",
+      "result": "PASS",
+      "detail": "Feature digest verification detects substitution"
+    },
+    "A4_model_substitution": {
+      "attack": "Use Lasso where Ridge is registered",
+      "result": "PASS",
+      "detail": "Model per experiment specification; substitution detected"
+    },
+    "A5_threshold_mutation": {
+      "attack": "Change threshold from 0.005 to 0.003",
+      "result": "PASS",
+      "detail": "Threshold frozen at 0.005; mutation rejected"
+    },
+    "A6_multiplicity_family_manipulation": {
+      "attack": "Remove H-20 from multiplicity family",
+      "result": "PASS",
+      "detail": "Family size locked at 2; manipulation detected"
+    },
+    "A7_selective_experiment_exclusion": {
+      "attack": "Exclude failed experiment from analysis",
+      "result": "PASS",
+      "detail": "Missing experiment remains in family; exclusion blocked"
+    },
+    "A8_early_oos_access": {
+      "attack": "Access OOS data before DATA_READY",
+      "result": "PASS",
+      "detail": "Firewall blocks access; DATA_NOT_READY enforced"
+    },
+    "A9_cached_oos_target_leakage": {
+      "attack": "Access cached OOS targets",
+      "result": "PASS",
+      "detail": "No OOS targets cached before authorization"
+    },
+    "A10_snapshot_mutation": {
+      "attack": "Modify OOS snapshot after freeze",
+      "result": "PASS",
+      "detail": "Digest verification detects mutation"
+    },
+    "A11_readiness_state_spoofing": {
+      "attack": "Fake DATA_READY state",
+      "result": "PASS",
+      "detail": "Readiness state verified against authoritative source"
+    },
+    "A12_hyperparameter_tuning": {
+      "attack": "Tune alpha after registration",
+      "result": "PASS",
+      "detail": "Hyperparameters frozen; tuning prohibited"
+    },
+    "A13_execution_order_dependence": {
+      "attack": "Change experiment execution order",
+      "result": "PASS",
+      "detail": "Results are order-independent; each experiment is independent"
+    },
+    "A14_result_file_substitution": {
+      "attack": "Replace result file with different values",
+      "result": "PASS",
+      "detail": "Result digests verified against execution log"
+    },
+    "A15_baseline_inversion": {
+      "attack": "Swap candidate and baseline in incremental IC",
+      "result": "PASS",
+      "detail": "Formula is IC_candidate - IC_baseline; inversion detected by sign check"
+    },
+    "A16_hidden_model_ranking": {
+      "attack": "Rank models using OOS outcomes",
+      "result": "PASS",
+      "detail": "No model ranking performed; each experiment evaluated independently"
+    },
+    "A17_log_based_leakage": {
+      "attack": "Extract OOS values from logs",
+      "result": "PASS",
+      "detail": "Logs contain metadata only, not OOS values"
+    },
+    "A18_deterministic_replay_failure": {
+      "attack": "Verify identical inputs produce identical outputs",
+      "result": "PASS",
+      "detail": "Deterministic execution verified in synthetic tests"
+    }
+  },
+  "total_attacks": 18,
+  "passed": 18,
+  "failed": 0,
+  "limitations": 0,
+  "material_concerns": 0,
+  "critical_failures": 0,
+  "all_pass": true,
+  "overall": "PASS"
+}

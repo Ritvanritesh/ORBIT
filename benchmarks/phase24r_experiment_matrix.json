@@ -1,0 +1,209 @@
+{
+  "matrix_id": "MATRIX-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "24R",
+  "locked": true,
+  "verified": true,
+  "experiments": [
+    {
+      "experiment_id": "CONF-001",
+      "type": "primary",
+      "hypothesis": "H1_PRIMARY_H10_RIDGE",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "vol_representation": "VOL_ZSCORE",
+      "baseline": "BL_MOMENTUM_001",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "PRIMARY"
+    },
+    {
+      "experiment_id": "CONF-002",
+      "type": "secondary",
+      "hypothesis": "H2_REPLICATION_H20_RIDGE",
+      "horizon": "H-20",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "vol_representation": "VOL_ZSCORE",
+      "baseline": "BL_MOMENTUM_002",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "SECONDARY"
+    },
+    {
+      "experiment_id": "CONF-003",
+      "type": "secondary",
+      "hypothesis": "H3_REPLICATION_ENV100",
+      "horizon": "H-10",
+      "universe": "ENV-100",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "vol_representation": "VOL_ZSCORE",
+      "baseline": "BL_MOMENTUM_003",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "SECONDARY"
+    },
+    {
+      "experiment_id": "CONF-004",
+      "type": "secondary",
+      "hypothesis": "H4_REPLICATION_LASSO",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "vol_representation": "VOL_ZSCORE",
+      "baseline": "BL_MOMENTUM_004",
+      "model": "Lasso",
+      "model_params": {
+        "alpha": 0.001,
+        "fit_intercept": true,
+        "random_state": 42,
+        "max_iter": 50000
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "SECONDARY"
+    },
+    {
+      "experiment_id": "BASE-001",
+      "type": "baseline",
+      "hypothesis": "BL_NULL_MOMENTUM",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "vol_representation": "NONE",
+      "baseline": "N/A",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "BASELINE"
+    },
+    {
+      "experiment_id": "BASE-002",
+      "type": "baseline",
+      "hypothesis": "BL_MOMENTUM_H20",
+      "horizon": "H-20",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "vol_representation": "NONE",
+      "baseline": "N/A",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "BASELINE"
+    },
+    {
+      "experiment_id": "BASE-003",
+      "type": "baseline",
+      "hypothesis": "BL_VOL_BINARY_H10",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_BINARY"
+      ],
+      "vol_representation": "VOL_BINARY",
+      "baseline": "N/A",
+      "model": "Ridge",
+      "model_params": {
+        "alpha": 1.0,
+        "fit_intercept": true,
+        "random_state": 42
+      },
+      "preprocessing": "none_explicit",
+      "training": "expanding_window",
+      "evaluation_metric": "Spearman IC",
+      "primary_secondary": "BASELINE"
+    }
+  ],
+  "matrix_properties": {
+    "total_experiments": 7,
+    "primary_tests": 1,
+    "secondary_tests": 3,
+    "baselines": 3,
+    "finite": true,
+    "locked": true,
+    "fully_enumerated": true,
+    "no_additions_allowed": true,
+    "no_removals_allowed": true,
+    "no_modifications_allowed": true
+  },
+  "matrix_digest": "edd57330f7bbe072a59eef9116205faf1f2ba824557e2c1418e503ec27b596f4",
+  "verification": {
+    "total_experiments": 7,
+    "primary_count": 1,
+    "secondary_count": 3,
+    "baseline_count": 3,
+    "all_models_permitted": true,
+    "matrix_is_frozen": true
+  }
+}

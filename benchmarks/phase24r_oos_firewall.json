@@ -1,0 +1,61 @@
+{
+  "firewall_id": "FIREWALL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "current_oos_status": {
+    "readiness": "DATA_NOT_READY",
+    "trading_days": 36,
+    "minimum_required": 60
+  },
+  "permitted_access": [
+    "OOS metadata (row counts, dates, instrument counts)",
+    "OOS completeness metrics",
+    "OOS universe coverage",
+    "OOS integrity digests",
+    "OOS readiness state"
+  ],
+  "prohibited_access": [
+    "OOS labels (forward returns)",
+    "OOS targets",
+    "OOS predictions",
+    "OOS IC values",
+    "OOS Sharpe ratios",
+    "OOS portfolio outcomes",
+    "OOS model rankings"
+  ],
+  "firewall_tests": {
+    "direct_target_access": {
+      "test": "Attempt to read OOS forward return column",
+      "result": "BLOCKED \u2014 OOS data not accessible until DATA_READY"
+    },
+    "indirect_target_access": {
+      "test": "Attempt to compute IC on OOS data",
+      "result": "BLOCKED \u2014 no OOS data loaded"
+    },
+    "helper_function_leakage": {
+      "test": "Attempt to access OOS through helper functions",
+      "result": "BLOCKED \u2014 no helper functions access OOS"
+    },
+    "prediction_generation_before_authorization": {
+      "test": "Attempt to generate predictions on OOS before DATA_READY",
+      "result": "BLOCKED \u2014 execution harness checks DATA_READY first"
+    },
+    "metric_calculation_before_authorization": {
+      "test": "Attempt to calculate IC before DATA_READY",
+      "result": "BLOCKED \u2014 metrics computed only after authorization"
+    },
+    "log_leakage": {
+      "test": "Check if logs contain OOS values",
+      "result": "PASS \u2014 logs contain only metadata"
+    },
+    "exception_leakage": {
+      "test": "Check if exceptions expose OOS data",
+      "result": "PASS \u2014 exceptions contain only error messages"
+    },
+    "cached_object_leakage": {
+      "test": "Check if cached objects contain OOS data",
+      "result": "PASS \u2014 no OOS data cached before authorization"
+    }
+  },
+  "all_tests_pass": true
+}

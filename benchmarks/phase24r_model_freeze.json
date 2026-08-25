@@ -1,0 +1,63 @@
+{
+  "freeze_id": "MOD-FREEZE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "ridge": {
+    "family": "Ridge",
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "random_state": 42,
+    "solver": "auto",
+    "normalization": "internal",
+    "max_iter": null,
+    "tol": 0.001
+  },
+  "lasso": {
+    "family": "Lasso",
+    "alpha": 0.001,
+    "fit_intercept": true,
+    "random_state": 42,
+    "max_iter": 50000,
+    "tol": 0.0001,
+    "selection": "cyclic",
+    "normalization": "internal"
+  },
+  "tuning_policy": {
+    "alpha_sweep": false,
+    "hyperparameter_optimization": false,
+    "fixed_parameters": true,
+    "rationale": "Confirmatory testing prohibits tuning"
+  },
+  "degeneracy_policy": {
+    "definition": "All coefficients zero OR predictions zero variance OR convergence failure",
+    "if_degenerate": "counts_as_fail = True, no fallback"
+  },
+  "convergence_handling": {
+    "max_iter": 50000,
+    "tolerance": 0.0001,
+    "if_not_converged": "record_as_failed_experiment"
+  },
+  "seed_policy": {
+    "seed": 42,
+    "deterministic": true
+  },
+  "adversarial_mutations": {
+    "alpha_modification": {
+      "test": "Attempt to change alpha from 1.0 to 0.5",
+      "expected": "BLOCKED \u2014 alpha frozen at 1.0"
+    },
+    "model_substitution": {
+      "test": "Attempt to use Lasso where Ridge is registered",
+      "expected": "BLOCKED \u2014 model per experiment specification"
+    },
+    "seed_modification": {
+      "test": "Attempt to change random_state from 42",
+      "expected": "BLOCKED \u2014 seed frozen at 42"
+    },
+    "preprocessing_mismatch": {
+      "test": "Attempt to add scaling",
+      "expected": "BLOCKED \u2014 preprocessing frozen at none_explicit"
+    }
+  },
+  "model_digest": "e07971bbe9852c1e3ad09d0e9249dfe3c90ee16a7c3c84fc44475143f124bc82"
+}

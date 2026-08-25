@@ -1,0 +1,93 @@
+{
+  "harness_id": "HARNESS-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "24R",
+  "execution_sequence": [
+    {
+      "step": 1,
+      "name": "verify_registration_digests",
+      "description": "Verify all registration digests match",
+      "blocking": true
+    },
+    {
+      "step": 2,
+      "name": "verify_experiment_matrix",
+      "description": "Verify 7-experiment matrix is intact",
+      "blocking": true
+    },
+    {
+      "step": 3,
+      "name": "verify_feature_definitions",
+      "description": "Verify VOL_ZSCORE and baseline features",
+      "blocking": true
+    },
+    {
+      "step": 4,
+      "name": "verify_model_configurations",
+      "description": "Verify Ridge and Lasso parameters",
+      "blocking": true
+    },
+    {
+      "step": 5,
+      "name": "verify_oos_snapshot_integrity",
+      "description": "Verify OOS data integrity digests",
+      "blocking": true
+    },
+    {
+      "step": 6,
+      "name": "freeze_oos_snapshot",
+      "description": "Create immutable OOS snapshot",
+      "blocking": true
+    },
+    {
+      "step": 7,
+      "name": "execute_all_experiments",
+      "description": "Run all 7 registered experiments",
+      "blocking": true
+    },
+    {
+      "step": 8,
+      "name": "generate_predictions",
+      "description": "Generate predictions for all experiments",
+      "blocking": true
+    },
+    {
+      "step": 9,
+      "name": "calculate_registered_metrics",
+      "description": "Calculate Spearman IC for all experiments",
+      "blocking": true
+    },
+    {
+      "step": 10,
+      "name": "calculate_incremental_ic",
+      "description": "Calculate incremental IC for candidate vs baseline",
+      "blocking": true
+    },
+    {
+      "step": 11,
+      "name": "apply_multiplicity_correction",
+      "description": "Apply Holm-Bonferroni correction",
+      "blocking": true
+    },
+    {
+      "step": 12,
+      "name": "apply_decision_rules",
+      "description": "Apply pre-registered pass/fail criteria",
+      "blocking": true
+    },
+    {
+      "step": 13,
+      "name": "produce_verdict",
+      "description": "Deterministic final verdict",
+      "blocking": true
+    }
+  ],
+  "no_manual_intervention": "Between DATA_READY and FINAL_CONFIRMATORY_VERDICT, no manual intervention is permitted",
+  "execution_order_independence": "Results must not depend on execution order of experiments",
+  "failure_handling": {
+    "experiment_failure": "Record as failed; do not exclude from multiplicity family",
+    "convergence_failure": "Record as failed per degeneracy policy",
+    "data_integrity_failure": "Abort entire confirmatory run"
+  }
+}

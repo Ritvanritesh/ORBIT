@@ -1,0 +1,28 @@
+{
+  "phase": "24R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:20:29.309344+00:00",
+  "verification_checks": {
+    "registration_verified": true,
+    "experiment_matrix_locked": true,
+    "primary_endpoint_locked": true,
+    "secondary_endpoints_locked": true,
+    "features_frozen": true,
+    "models_frozen": true,
+    "oos_firewall_verified": true,
+    "readiness_trigger_verified": true,
+    "execution_harness_built": true,
+    "snapshot_protocol_defined": true,
+    "synthetic_tests_passed": true,
+    "adversarial_audit_passed": true,
+    "reproducibility_verified": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "oos_blocked": true,
+  "overall_verdict": "B",
+  "verdict_label": "EXECUTION_READY_WITH_DOCUMENTED_NON_BLOCKING_LIMITATIONS",
+  "gate": "YELLOW",
+  "gate_rationale": "Infrastructure usable but OOS data not yet sufficient (36/60 days)"
+}

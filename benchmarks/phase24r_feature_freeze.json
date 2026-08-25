@@ -1,0 +1,81 @@
+{
+  "freeze_id": "FEAT-FREEZE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "vol_zscore_definition": {
+    "formula": "(realized_vol - rolling_mean_vol) / (rolling_std_vol + epsilon)",
+    "components": {
+      "realized_vol": {
+        "formula": "rolling_std(log(adjclose_t / adjclose_{t-1}), window=20)",
+        "window": 20
+      },
+      "rolling_mean_vol": {
+        "formula": "rolling_mean(realized_vol, window=252)",
+        "window": 252
+      },
+      "rolling_std_vol": {
+        "formula": "rolling_std(realized_vol, window=252)",
+        "window": 252
+      },
+      "epsilon": 1e-08
+    }
+  },
+  "feature_order": [
+    "MOM_5D",
+    "MOM_10D",
+    "MOM_20D",
+    "VOL_ZSCORE",
+    "realized_vol"
+  ],
+  "baseline_feature_order": [
+    "MOM_5D",
+    "MOM_10D",
+    "MOM_20D"
+  ],
+  "preprocessing": {
+    "scaling": "none_explicit \u2014 Ridge/Lasso handle internally",
+    "missing_value": "drop_rows_with_null_features",
+    "clipping": "none",
+    "winsorization": "none"
+  },
+  "availability_timing": {
+    "VOL_ZSCORE": "available_at_close_of_trade_date_t",
+    "MOM_*D": "available_at_close_of_trade_date_t",
+    "realized_vol": "available_at_close_of_trade_date_t"
+  },
+  "pit_requirements": {
+    "VOL_ZSCORE": "PIT_WITH_KNOWN_LAG \u2014 uses only past 252 days",
+    "MOM_*D": "PIT \u2014 uses only past price observations"
+  },
+  "leakage_tests": {
+    "scaler_leakage": {
+      "test": "Verify no scaler is fitted on OOS data",
+      "result": "PASS \u2014 no explicit scaler used"
+    },
+    "rolling_window_leakage": {
+      "test": "Verify rolling windows use only historical data",
+      "result": "PASS \u2014 windows are backward-looking only"
+    },
+    "future_timestamp_injection": {
+      "test": "Verify no future timestamps in feature computation",
+      "result": "PASS \u2014 all features use t-1 or earlier"
+    },
+    "feature_order_mutation": {
+      "test": "Verify feature order is deterministic",
+      "result": "PASS \u2014 order frozen in registration"
+    },
+    "missing_value_manipulation": {
+      "test": "Verify missing values are dropped, not imputed",
+      "result": "PASS \u2014 drop_rows policy"
+    },
+    "duplicate_row_injection": {
+      "test": "Verify no duplicate rows in training data",
+      "result": "PASS \u2014 instrument-date uniqueness enforced"
+    },
+    "universe_contamination": {
+      "test": "Verify ENV-050 and ENV-100 do not contaminate each other",
+      "result": "PASS \u2014 separate universe processing"
+    }
+  },
+  "feature_digest": "74360cecdca21d0cf8c00500da5fd198f96dd92ca222726155f04f57d1d64786"
+}

@@ -1,0 +1,67 @@
+{
+  "endpoint_id": "PRIMARY-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "definition": {
+    "metric": "Incremental Spearman IC",
+    "numerator": "Spearman IC of VOL_ZSCORE model (CONF-001)",
+    "denominator": "Spearman IC of baseline model (BASE-001)",
+    "formula": "IC_candidate - IC_baseline",
+    "aggregation": "Spearman rank correlation between predictions and forward returns, pooled across instruments and time periods",
+    "horizon": "H-10",
+    "universe": "Pooled across ENV-050 and ENV-100",
+    "model": "Ridge (alpha=1.0)",
+    "feature_set": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D",
+      "VOL_ZSCORE",
+      "realized_vol"
+    ],
+    "baseline_feature_set": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D"
+    ]
+  },
+  "thresholds": {
+    "minimum_effect_size": 0.005,
+    "sign_consistency_minimum": 0.5,
+    "source": "Calibrated from exploratory evidence (0.007583) with OOS decay allowance"
+  },
+  "decision_rules": {
+    "pass": "Incremental IC > 0.005 AND p-value < 0.025 (after Holm-Bonferroni) AND sign consistency > 50%",
+    "fail": "Incremental IC <= 0 OR p-value >= 0.025 OR sign consistency <= 50%"
+  },
+  "adversarial_tests": {
+    "baseline_candidate_inversion": {
+      "test": "Swap candidate and baseline in incremental IC calculation",
+      "expected": "BLOCKED \u2014 formula is IC_candidate - IC_baseline, not reversed"
+    },
+    "sign_inversion": {
+      "test": "Negate the IC sign",
+      "expected": "BLOCKED \u2014 sign must match directional expectation (positive)"
+    },
+    "wrong_horizon": {
+      "test": "Use H-20 result as primary",
+      "expected": "BLOCKED \u2014 primary is H-10 per registration"
+    },
+    "arithmetic_mismatch": {
+      "test": "Use absolute IC instead of incremental",
+      "expected": "BLOCKED \u2014 must be incremental (candidate - baseline)"
+    },
+    "threshold_mutation": {
+      "test": "Change threshold from 0.005 to something else",
+      "expected": "BLOCKED \u2014 threshold frozen at 0.005"
+    },
+    "secondary_as_primary": {
+      "test": "Use H-20 or Lasso result as primary evidence",
+      "expected": "BLOCKED \u2014 primary is Ridge H-10 only"
+    }
+  },
+  "implementation": {
+    "ic_calculation": "scipy.stats.spearmanr(predictions, forward_returns)",
+    "incremental_ic": "ic_with_vol - ic_without_vol",
+    "pooling": "Concatenate predictions across all instruments and time periods, then compute single Spearman IC"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "phase": "24R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T16:20:29.310342+00:00",
+  "verdict": "B",
+  "verdict_label": "EXECUTION_READY_WITH_DOCUMENTED_NON_BLOCKING_LIMITATIONS",
+  "gate": "YELLOW",
+  "gate_rationale": "Infrastructure usable but OOS data not yet sufficient (36/60 days)",
+  "summary": {
+    "registration_status": "REGISTRATION_VERIFIED",
+    "oos_status": "DATA_NOT_READY",
+    "oos_trading_days": "36/60",
+    "execution_permitted": false,
+    "infrastructure_ready": true
+  },
+  "locked_configuration": {
+    "primary_endpoint": "Incremental Spearman IC at H-10 (Ridge)",
+    "secondary_endpoints": [
+      "H-20 Ridge replication",
+      "H-10 Lasso consistency"
+    ],
+    "models": [
+      "Ridge (alpha=1.0)",
+      "Lasso (alpha=0.001)"
+    ],
+    "features": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D",
+      "VOL_ZSCORE",
+      "realized_vol"
+    ],
+    "threshold": "Incremental IC > 0.005",
+    "correction": "Holm-Bonferroni (family size 2)",
+    "experiments": 7
+  },
+  "blocking_status": {
+    "infrastructure_blocker": "NONE",
+    "data_blocker": "OOS_INSUFFICIENT",
+    "estimated_ready": "~24 more trading days (~5 weeks)"
+  },
+  "what_must_happen_before_execution": [
+    "OOS data must reach 60 trading days minimum",
+    "DATA_READY gate must be triggered by authoritative system",
+    "Phase 24-R execution harness must be invoked",
+    "All 13 execution steps must complete without error",
+    "Deterministic verdict must be produced"
+  ],
+  "prohibited_after_registration": [
+    "No model addition (ElasticNet, HistGB, LightGBM blocked)",
+    "No horizon change (H-10 primary, H-20 secondary locked)",
+    "No feature change (VOL_ZSCORE frozen)",
+    "No threshold change (0.005 frozen)",
+    "No experiment addition (7 experiments locked)",
+    "No hyperparameter tuning (alpha values frozen)",
+    "No access to OOS outcomes before authorization"
+  ]
+}

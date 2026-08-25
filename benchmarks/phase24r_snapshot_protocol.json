@@ -1,0 +1,55 @@
+{
+  "protocol_id": "SNAP-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "snapshot_requirements": {
+    "immutable_after_freeze": true,
+    "record_timestamp": true,
+    "record_row_counts": true,
+    "record_instrument_counts": true,
+    "record_feature_digests": true,
+    "record_target_digest": true,
+    "record_full_snapshot_sha256": true
+  },
+  "invalidation_tests": {
+    "row_mutation": {
+      "test": "Modify any row after freeze",
+      "expected": "INVALID_RUN \u2014 digest mismatch"
+    },
+    "timestamp_mutation": {
+      "test": "Change snapshot timestamp",
+      "expected": "INVALID_RUN \u2014 timestamp mismatch"
+    },
+    "feature_mutation": {
+      "test": "Modify any feature value",
+      "expected": "INVALID_RUN \u2014 feature digest mismatch"
+    },
+    "target_mutation": {
+      "test": "Modify any target value",
+      "expected": "INVALID_RUN \u2014 target digest mismatch"
+    },
+    "row_deletion": {
+      "test": "Delete any row after freeze",
+      "expected": "INVALID_RUN \u2014 row count mismatch"
+    },
+    "row_insertion": {
+      "test": "Insert any row after freeze",
+      "expected": "INVALID_RUN \u2014 row count mismatch"
+    },
+    "digest_replacement": {
+      "test": "Replace stored digest with different value",
+      "expected": "INVALID_RUN \u2014 digest verification failure"
+    }
+  },
+  "snapshot_fields": {
+    "timestamp": "ISO-8601 UTC timestamp at freeze time",
+    "oos_start_date": "First OOS trading day",
+    "oos_end_date": "Last OOS trading day",
+    "row_count": "Total rows in OOS dataset",
+    "instrument_count": "Number of unique instruments",
+    "feature_digest": "SHA-256 of feature matrix",
+    "target_digest": "SHA-256 of target vector",
+    "full_snapshot_digest": "SHA-256 of entire OOS dataset"
+  },
+  "status": "PROTOCOL_DEFINED \u2014 snapshot will be created at authorized execution time"
+}

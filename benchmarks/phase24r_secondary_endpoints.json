@@ -1,0 +1,73 @@
+{
+  "endpoint_id": "SECONDARY-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "secondary_endpoints": [
+    {
+      "endpoint_id": "SEC-H20-RIDGE",
+      "metric": "Incremental Spearman IC",
+      "horizon": "H-20",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Ridge (alpha=1.0)",
+      "role": "Replication of primary at longer horizon",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "baseline_feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "threshold": 0,
+      "threshold_rationale": "Replication requires positive IC, not necessarily exceeding 0.005"
+    },
+    {
+      "endpoint_id": "SEC-LASSO-H10",
+      "metric": "Incremental Spearman IC",
+      "horizon": "H-10",
+      "universe": "Pooled across ENV-050 and ENV-100",
+      "model": "Lasso (alpha=0.001)",
+      "role": "Cross-model consistency check",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "baseline_feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "threshold": 0,
+      "threshold_rationale": "Consistency check requires positive IC"
+    }
+  ],
+  "holm_bonferroni_implementation": {
+    "family": "Horizon family (H-10 primary + H-20 secondary)",
+    "n_tests": 2,
+    "family_wise_alpha": 0.05,
+    "steps": [
+      "1. Compute raw p-values for H-10 and H-20 incremental IC tests",
+      "2. Order p-values from smallest to largest: p(1) <= p(2)",
+      "3. Compare p(1) to alpha/2 = 0.025",
+      "4. If p(1) < 0.025, compare p(2) to alpha/1 = 0.05",
+      "5. If both pass, family-wise null is rejected",
+      "6. If p(1) >= 0.025, family-wise null is not rejected"
+    ],
+    "deterministic_ordering": "p-values sorted ascending; ties broken by experiment ID lexicographic order",
+    "missing_experiment_handling": "Missing experiment remains missing; not excluded from family"
+  },
+  "model_consistency_check": {
+    "approach": "Not formal hypothesis test",
+    "rationale": "Lasso provides supporting evidence, not formal replication",
+    "correction": "No additional correction applied",
+    "interpretation": "If Lasso incremental IC > 0, it supports Ridge findings"
+  },
+  "promotion_prohibition": "H-20 must NOT be promoted to primary status regardless of outcome"
+}

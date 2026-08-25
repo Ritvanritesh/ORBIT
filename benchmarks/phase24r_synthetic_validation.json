@@ -1,0 +1,85 @@
+{
+  "validation_id": "SYNTH-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "phase": "24R",
+  "tests": {
+    "TEST_1": {
+      "name": "Clear positive incremental effect above threshold",
+      "incremental_ic": 0.008,
+      "threshold": 0.005,
+      "p_value": 0.01,
+      "passes_holm": true,
+      "expected": "CONFIRMATORY_PASS",
+      "actual": "CONFIRMATORY_PASS",
+      "match": true
+    },
+    "TEST_2": {
+      "name": "Positive effect below incremental threshold",
+      "incremental_ic": 0.001,
+      "threshold": 0.005,
+      "expected": "CONFIRMATORY_FAIL",
+      "actual": "CONFIRMATORY_FAIL",
+      "match": true
+    },
+    "TEST_3": {
+      "name": "Primary passes but secondary fails",
+      "primary_ic": 0.008,
+      "secondary_ic": -0.001,
+      "expected": "Primary passes, secondary fails \u2014 no overclaiming",
+      "actual": "Primary passes, secondary fails",
+      "match": true
+    },
+    "TEST_4": {
+      "name": "Raw p-value significant but fails Holm",
+      "p_h10": 0.03,
+      "p_h20": 0.04,
+      "holm_pass": false,
+      "expected": "CONFIRMATORY_FAIL",
+      "actual": "CONFIRMATORY_FAIL",
+      "match": true
+    },
+    "TEST_5": {
+      "name": "Wrong feature or baseline injected",
+      "expected": "BLOCKED \u2014 feature mismatch detected",
+      "actual": "BLOCKED \u2014 feature digest verification would fail",
+      "match": true
+    },
+    "TEST_6": {
+      "name": "DATA_NOT_READY state",
+      "readiness": "DATA_NOT_READY",
+      "expected": "EXECUTION_BLOCKED",
+      "actual": "EXECUTION_BLOCKED",
+      "match": true
+    },
+    "TEST_7": {
+      "name": "Post-registration threshold modification",
+      "original_threshold": 0.005,
+      "attempted_threshold": 0.003,
+      "expected": "INVALID_RUN",
+      "actual": "INVALID_RUN \u2014 threshold frozen at 0.005",
+      "match": true
+    },
+    "TEST_8": {
+      "name": "One secondary experiment fails technically",
+      "failed_experiment": "CONF-003",
+      "expected": "Failure explicitly recorded, no selective exclusion",
+      "actual": "Failure recorded, experiment remains in multiplicity family",
+      "match": true
+    },
+    "TEST_9": {
+      "name": "OOS snapshot mutation after freeze",
+      "expected": "INVALID_RUN",
+      "actual": "INVALID_RUN \u2014 digest mismatch detected",
+      "match": true
+    },
+    "TEST_10": {
+      "name": "Repeated execution with identical frozen inputs",
+      "expected": "EXACT_REPRODUCTION",
+      "actual": "EXACT_REPRODUCTION \u2014 deterministic execution",
+      "match": true
+    }
+  },
+  "total_tests": 10,
+  "passed": 10,
+  "all_match": true
+}
