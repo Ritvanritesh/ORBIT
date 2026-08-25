@@ -1,0 +1,13 @@
+{
+  "assessment_id": "REGIME-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "regime_evidence": {
+    "phase_17a_regime_sensitivity": "FOUND",
+    "phase_19e_volatility_regime": "PARTIALLY_CONFIRMED",
+    "phase_21r_temporal_instability": "PARTIAL"
+  },
+  "regime_model_justified": "REGIME_MODEL_RESEARCH_JUSTIFIED",
+  "justification": "Volatility regime hypothesis shows temporal instability; regime-aware modeling may address this",
+  "future_modeling_problem": "Model should explicitly capture volatility regime transitions and their impact on return predictability",
+  "note": "Regime model NOT implemented in Phase 22-R; deferred to future research branch"
+}

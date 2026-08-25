@@ -1,0 +1,66 @@
+{
+  "scorecard_id": "SCORE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "models": {
+    "ElasticNet": {
+      "distinct_capability": "PASS",
+      "synthetic_success": "PASS",
+      "linear_baseline_comparison": "PASS",
+      "real_data_behavior": "PASS",
+      "temporal_generalization": "PASS",
+      "universe_generalization": "PASS",
+      "parameter_stability": "PASS",
+      "noise_resistance": "PASS",
+      "leakage_resistance": "PASS",
+      "reproducibility": "PASS",
+      "diagnostic_capability": "PASS",
+      "complexity_justification": "PASS",
+      "computational_practicality": "PASS",
+      "governance_compatibility": "PASS",
+      "_summary": {
+        "pass": 14,
+        "fail": 0
+      }
+    },
+    "HistGradientBoosting": {
+      "distinct_capability": "PASS",
+      "synthetic_success": "PASS",
+      "linear_baseline_comparison": "PASS",
+      "real_data_behavior": "PASS",
+      "temporal_generalization": "PASS",
+      "universe_generalization": "PASS",
+      "parameter_stability": "PASS",
+      "noise_resistance": "PASS",
+      "leakage_resistance": "PASS",
+      "reproducibility": "PASS",
+      "diagnostic_capability": "PASS",
+      "complexity_justification": "PASS",
+      "computational_practicality": "PASS",
+      "governance_compatibility": "PASS",
+      "_summary": {
+        "pass": 14,
+        "fail": 0
+      }
+    },
+    "LightGBM": {
+      "distinct_capability": "PASS",
+      "synthetic_success": "PASS",
+      "linear_baseline_comparison": "PASS",
+      "real_data_behavior": "PASS",
+      "temporal_generalization": "PASS",
+      "universe_generalization": "PASS",
+      "parameter_stability": "PASS",
+      "noise_resistance": "PASS",
+      "leakage_resistance": "PASS",
+      "reproducibility": "PASS",
+      "diagnostic_capability": "PASS",
+      "complexity_justification": "PASS",
+      "computational_practicality": "PASS",
+      "governance_compatibility": "PASS",
+      "_summary": {
+        "pass": 14,
+        "fail": 0
+      }
+    }
+  }
+}

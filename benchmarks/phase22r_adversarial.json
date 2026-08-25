@@ -1,0 +1,88 @@
+{
+  "audit_id": "ADV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "attacks": {
+    "A1_hidden_hyperparameter_expansion": {
+      "attack": "Hidden hyperparameter expansion",
+      "result": "PASS"
+    },
+    "A2_config_added_after_poor_performance": {
+      "attack": "Configuration added after poor performance",
+      "result": "PASS"
+    },
+    "A3_best_of_many_selection": {
+      "attack": "Best-of-many configuration selection",
+      "result": "PASS"
+    },
+    "A4_seed_cherry_picking": {
+      "attack": "Seed cherry-picking",
+      "result": "PASS"
+    },
+    "A5_random_split_replacing_temporal": {
+      "attack": "Random split replacing temporal split",
+      "result": "PASS"
+    },
+    "A6_future_information_injection": {
+      "attack": "Future information injection",
+      "result": "PASS"
+    },
+    "A7_target_leakage_through_preprocessing": {
+      "attack": "Target leakage through preprocessing",
+      "result": "PASS"
+    },
+    "A8_scaling_fit_on_future_data": {
+      "attack": "Scaling fit on future data",
+      "result": "PASS"
+    },
+    "A9_model_specific_feature_leakage": {
+      "attack": "Model-specific feature leakage",
+      "result": "PASS"
+    },
+    "A10_failed_model_silently_excluded": {
+      "attack": "Failed model silently excluded",
+      "result": "PASS"
+    },
+    "A11_synthetic_ground_truth_altered": {
+      "attack": "Synthetic ground truth altered after results",
+      "result": "PASS"
+    },
+    "A12_pure_noise_false_discovery": {
+      "attack": "Pure noise false discovery",
+      "result": "PASS"
+    },
+    "A13_reproducibility_failure": {
+      "attack": "Reproducibility failure",
+      "result": "PASS"
+    },
+    "A14_parameter_sensitivity_cliff": {
+      "attack": "Parameter sensitivity cliff",
+      "result": "PASS"
+    },
+    "A15_train_evaluation_divergence": {
+      "attack": "Train/evaluation performance divergence",
+      "result": "PASS"
+    },
+    "A16_universe_specific_overfitting": {
+      "attack": "Universe-specific overfitting",
+      "result": "PASS"
+    },
+    "A17_complexity_unjustified": {
+      "attack": "Complexity unjustified by capability gain",
+      "result": "PASS"
+    },
+    "A18_model_registry_identity_collision": {
+      "attack": "Model registry identity collision",
+      "result": "PASS"
+    },
+    "A19_result_reconstruction_failure": {
+      "attack": "Result reconstruction failure",
+      "result": "PASS"
+    },
+    "A20_configuration_digest_mismatch": {
+      "attack": "Configuration digest mismatch",
+      "result": "PASS"
+    }
+  },
+  "all_pass": true,
+  "overall": "PASS"
+}

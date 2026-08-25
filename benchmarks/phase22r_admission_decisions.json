@@ -1,0 +1,26 @@
+{
+  "decision_id": "ADM-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "models": {
+    "ElasticNet": {
+      "classification": "APPROVED",
+      "pass_count": 14,
+      "total_dimensions": 14,
+      "rationale": "Scorecard: 14/14 PASS"
+    },
+    "HistGradientBoosting": {
+      "classification": "APPROVED",
+      "pass_count": 14,
+      "total_dimensions": 14,
+      "rationale": "Scorecard: 14/14 PASS"
+    },
+    "LightGBM": {
+      "classification": "APPROVED",
+      "pass_count": 14,
+      "total_dimensions": 14,
+      "rationale": "Scorecard: 14/14 PASS"
+    }
+  },
+  "overall_verdict": "A",
+  "verdict_label": "MODEL_TOOLBOX_EXPANDED_SUCCESSFULLY"
+}

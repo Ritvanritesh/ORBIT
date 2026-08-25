@@ -1,0 +1,42 @@
+{
+  "test_id": "NULL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "results": {
+    "Ridge": {
+      "r2_in_sample": 0.017788,
+      "r2_out_of_sample": 0.01913,
+      "appropriately_fails": true,
+      "note": "Tree models overfit IS noise (expected); key is OOS R2 ~0",
+      "status": "COMPLETE"
+    },
+    "Lasso": {
+      "r2_in_sample": 0.016855,
+      "r2_out_of_sample": 0.02139,
+      "appropriately_fails": true,
+      "note": "Tree models overfit IS noise (expected); key is OOS R2 ~0",
+      "status": "COMPLETE"
+    },
+    "ElasticNet": {
+      "r2_in_sample": 0.017517,
+      "r2_out_of_sample": 0.020827,
+      "appropriately_fails": true,
+      "note": "Tree models overfit IS noise (expected); key is OOS R2 ~0",
+      "status": "COMPLETE"
+    },
+    "HistGradientBoosting": {
+      "r2_in_sample": 0.543481,
+      "r2_out_of_sample": -0.244369,
+      "appropriately_fails": true,
+      "note": "Tree models overfit IS noise (expected); key is OOS R2 ~0",
+      "status": "COMPLETE"
+    },
+    "LightGBM": {
+      "r2_in_sample": 0.906266,
+      "r2_out_of_sample": -0.21081,
+      "appropriately_fails": true,
+      "note": "Tree models overfit IS noise (expected); key is OOS R2 ~0",
+      "status": "COMPLETE"
+    }
+  },
+  "all_appropriately_fail": true
+}

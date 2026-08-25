@@ -1,0 +1,28 @@
+{
+  "hypothesis_id": "CAP-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypotheses": {
+    "MC-H1": {
+      "model": "ElasticNet",
+      "capability": "Stable feature selection with correlated predictors",
+      "test": "Correlated predictors dataset (SYN-03)",
+      "expected": "Elastic Net outperforms Lasso in coefficient stability",
+      "type": "capability_hypothesis"
+    },
+    "MC-H2": {
+      "model": "HistGradientBoosting",
+      "capability": "Nonlinear threshold effect recovery",
+      "test": "Threshold effect dataset (SYN-04)",
+      "expected": "HistGB outperforms linear models on threshold structure",
+      "type": "capability_hypothesis"
+    },
+    "MC-H3": {
+      "model": "LightGBM",
+      "capability": "Efficient nonlinear/interaction recovery",
+      "test": "Interaction effect dataset (SYN-05)",
+      "expected": "LightGBM captures interactions comparably to HistGB",
+      "type": "capability_hypothesis"
+    }
+  },
+  "note": "These are capability hypotheses, NOT trading hypotheses. Evaluated independently from predictive performance."
+}

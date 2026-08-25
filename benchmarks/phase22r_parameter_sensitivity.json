@@ -1,0 +1,200 @@
+{
+  "analysis_id": "PARAM-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "ElasticNet": {
+    "a0.001_l0.1": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.4578111328237044,
+      "status": "COMPLETE"
+    },
+    "a0.001_l0.3": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.465747290261081,
+      "status": "COMPLETE"
+    },
+    "a0.001_l0.5": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.667263072323795,
+      "status": "COMPLETE"
+    },
+    "a0.001_l0.7": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.0752063879095926,
+      "status": "COMPLETE"
+    },
+    "a0.001_l0.9": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.114330332519097,
+      "status": "COMPLETE"
+    },
+    "a0.01_l0.1": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.6000953532810183,
+      "status": "COMPLETE"
+    },
+    "a0.01_l0.3": {
+      "n_nonzero": 10,
+      "coefficient_norm": 5.43896216542009,
+      "status": "COMPLETE"
+    },
+    "a0.01_l0.5": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.4388700940944923,
+      "status": "COMPLETE"
+    },
+    "a0.01_l0.7": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.6315232429988935,
+      "status": "COMPLETE"
+    },
+    "a0.01_l0.9": {
+      "n_nonzero": 10,
+      "coefficient_norm": 3.1808097254237793,
+      "status": "COMPLETE"
+    },
+    "a0.1_l0.1": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.170220400981557,
+      "status": "COMPLETE"
+    },
+    "a0.1_l0.3": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.616860477305944,
+      "status": "COMPLETE"
+    },
+    "a0.1_l0.5": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.7228850683726247,
+      "status": "COMPLETE"
+    },
+    "a0.1_l0.7": {
+      "n_nonzero": 9,
+      "coefficient_norm": 2.6014269651473403,
+      "status": "COMPLETE"
+    },
+    "a0.1_l0.9": {
+      "n_nonzero": 10,
+      "coefficient_norm": 2.6368470554469625,
+      "status": "COMPLETE"
+    },
+    "a1.0_l0.1": {
+      "n_nonzero": 10,
+      "coefficient_norm": 1.4031613579307949,
+      "status": "COMPLETE"
+    },
+    "a1.0_l0.3": {
+      "n_nonzero": 8,
+      "coefficient_norm": 1.2491117530668978,
+      "status": "COMPLETE"
+    },
+    "a1.0_l0.5": {
+      "n_nonzero": 6,
+      "coefficient_norm": 1.270908979217873,
+      "status": "COMPLETE"
+    },
+    "a1.0_l0.7": {
+      "n_nonzero": 3,
+      "coefficient_norm": 1.128907331849853,
+      "status": "COMPLETE"
+    },
+    "a1.0_l0.9": {
+      "n_nonzero": 3,
+      "coefficient_norm": 1.7488017285508954,
+      "status": "COMPLETE"
+    }
+  },
+  "HistGradientBoosting": {
+    "config_0": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_1": {
+      "config": {
+        "max_depth": 5,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_2": {
+      "config": {
+        "max_depth": 7,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_3": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.01,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_4": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "max_iter": 200
+      },
+      "status": "COMPLETE"
+    }
+  },
+  "LightGBM": {
+    "config_0": {
+      "config": {
+        "num_leaves": 15,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_1": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_2": {
+      "config": {
+        "num_leaves": 63,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_3": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.01,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_4": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.1,
+        "n_estimators": 200
+      },
+      "status": "COMPLETE"
+    }
+  },
+  "cliff_failures": {
+    "ElasticNet": false,
+    "HistGradientBoosting": false,
+    "LightGBM": false
+  },
+  "graceful_degradation": {
+    "ElasticNet": true,
+    "HistGradientBoosting": true,
+    "LightGBM": true
+  }
+}

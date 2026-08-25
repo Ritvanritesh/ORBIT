@@ -1,0 +1,70 @@
+{
+  "model_id": "HISTGB-BR-E2AFD3AC901A",
+  "model_family": "HistGradientBoosting",
+  "branch_id": "BR-E2AFD3AC901A",
+  "synthetic_performance": {
+    "tests_passed": 7,
+    "tests_total": 9,
+    "qualified": true
+  },
+  "parameter_sensitivity": {
+    "config_0": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_1": {
+      "config": {
+        "max_depth": 5,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_2": {
+      "config": {
+        "max_depth": 7,
+        "learning_rate": 0.1,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_3": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.01,
+        "max_iter": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_4": {
+      "config": {
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "max_iter": 200
+      },
+      "status": "COMPLETE"
+    }
+  },
+  "capability_assessment": {
+    "nonlinear_recovery": "PASS",
+    "interaction_recovery": "PASS",
+    "threshold_behavior": "PASS",
+    "distinct_from_linear": true,
+    "train_evaluation_divergence": "LOW"
+  },
+  "complexity": {
+    "additional_hyperparameters": [
+      "max_depth",
+      "learning_rate",
+      "max_iter"
+    ],
+    "computational_cost": "HIGHER_THAN_LINEAR",
+    "interpretability": "LOWER_THAN_LINEAR",
+    "overfitting_risk": "MODERATE"
+  },
+  "classification": "APPROVED"
+}

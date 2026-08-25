@@ -1,0 +1,111 @@
+{
+  "phase": "22R",
+  "plan_id": "22R-PLAN-001",
+  "branch_id": "BR-E2AFD3AC901A",
+  "created": "2026-08-25T15:21:58.155348+00:00",
+  "locked": true,
+  "candidate_models": [
+    "ElasticNet",
+    "HistGradientBoosting",
+    "LightGBM"
+  ],
+  "baseline_models": [
+    "Ridge",
+    "Lasso"
+  ],
+  "capability_hypotheses": {
+    "MC-H1": "Elastic Net provides more stable behavior than Lasso with correlated features",
+    "MC-H2": "HistGradientBoosting captures nonlinear threshold effects",
+    "MC-H3": "LightGBM captures nonlinear/interaction structure efficiently"
+  },
+  "synthetic_datasets": [
+    "SYN-01: Pure Linear",
+    "SYN-02: Sparse Linear",
+    "SYN-03: Correlated Predictors",
+    "SYN-04: Threshold Effect",
+    "SYN-05: Interaction Effect",
+    "SYN-06: Nonlinear Smooth",
+    "SYN-07: Pure Noise",
+    "SYN-08: Redundant Features",
+    "SYN-09: Distribution Shift"
+  ],
+  "real_data_datasets": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "evaluation_periods": {
+    "train": "2022-01-03 to 2024-12-31",
+    "test": "2025-01-02 to 2026-06-30"
+  },
+  "metrics": [
+    "RMSE",
+    "R2",
+    "Spearman IC"
+  ],
+  "parameter_ranges": {
+    "ElasticNet": {
+      "alpha": [
+        0.01,
+        0.1,
+        1.0
+      ],
+      "l1_ratio": [
+        0.1,
+        0.5,
+        0.9
+      ]
+    },
+    "HistGradientBoosting": {
+      "max_depth": [
+        3,
+        5,
+        7
+      ],
+      "learning_rate": [
+        0.01,
+        0.1
+      ],
+      "max_iter": [
+        100
+      ]
+    },
+    "LightGBM": {
+      "num_leaves": [
+        15,
+        31,
+        63
+      ],
+      "learning_rate": [
+        0.01,
+        0.1
+      ],
+      "n_estimators": [
+        100
+      ]
+    }
+  },
+  "complexity_limits": {
+    "max_parameters": 1000,
+    "max_training_time_seconds": 60
+  },
+  "admission_criteria": {
+    "synthetic_ground_truth_success": "Must pass at least 6/9 synthetic tests",
+    "real_data_behavior": "Must not degenerate on real data",
+    "temporal_generalization": "Generalization gap < 0.1",
+    "parameter_stability": "No cliff failures",
+    "noise_resistance": "Must fail appropriately on pure noise",
+    "reproducibility": "Results reproducible within tolerance"
+  },
+  "rejection_criteria": {
+    "synthetic_failure": "Fails > 3 synthetic tests",
+    "degeneracy": "Produces degenerate predictions",
+    "overfitting": "Generalization gap > 0.2",
+    "noise_discovery": "Finds strong signal in pure noise",
+    "irreproducible": "Results not reproducible"
+  },
+  "plan_digest": "75fa6adede92af88eabf8bfc02cd98d7887ce2e9b779a2b35e4932ebe2a11909"
+}

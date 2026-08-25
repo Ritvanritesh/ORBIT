@@ -1,0 +1,58 @@
+{
+  "analysis_id": "COMPLEX-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "models": {
+    "Ridge": {
+      "parameters": "n_features + 1",
+      "computational_cost": "LOW",
+      "interpretability": "HIGH",
+      "overfitting_risk": "LOW",
+      "complexity_score": 1
+    },
+    "Lasso": {
+      "parameters": "n_features + 1",
+      "computational_cost": "LOW",
+      "interpretability": "HIGH",
+      "overfitting_risk": "LOW",
+      "complexity_score": 2
+    },
+    "ElasticNet": {
+      "parameters": "n_features + 2",
+      "computational_cost": "LOW",
+      "interpretability": "HIGH",
+      "overfitting_risk": "LOW",
+      "complexity_score": 3
+    },
+    "HistGradientBoosting": {
+      "parameters": "~100 * max_depth",
+      "computational_cost": "MEDIUM",
+      "interpretability": "MEDIUM",
+      "overfitting_risk": "MEDIUM",
+      "complexity_score": 6
+    },
+    "LightGBM": {
+      "parameters": "~100 * num_leaves",
+      "computational_cost": "MEDIUM",
+      "interpretability": "MEDIUM",
+      "overfitting_risk": "MEDIUM",
+      "complexity_score": 6
+    }
+  },
+  "capability_vs_complexity": {
+    "ElasticNet": {
+      "capability_gain": "MODERATE",
+      "complexity_cost": "LOW",
+      "justified": true
+    },
+    "HistGradientBoosting": {
+      "capability_gain": "HIGH",
+      "complexity_cost": "MEDIUM",
+      "justified": true
+    },
+    "LightGBM": {
+      "capability_gain": "HIGH",
+      "complexity_cost": "MEDIUM",
+      "justified": true
+    }
+  }
+}

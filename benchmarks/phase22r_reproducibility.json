@@ -1,0 +1,28 @@
+{
+  "reproducibility_id": "REPRO-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "tests": {
+    "deterministic_configuration": {
+      "status": "PASS"
+    },
+    "seed_handling": {
+      "status": "PASS"
+    },
+    "dataset_digests": {
+      "status": "PASS"
+    },
+    "model_identity": {
+      "status": "PASS"
+    },
+    "predictions": {
+      "status": "PASS"
+    },
+    "metrics": {
+      "status": "PASS"
+    },
+    "admission_decision": {
+      "status": "PASS"
+    }
+  },
+  "overall": "PASS"
+}

@@ -1,0 +1,321 @@
+{
+  "lab_id": "SYN-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "synthetic_datasets": {
+    "SYN-01": {
+      "type": "pure_linear",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-02": {
+      "type": "sparse_linear",
+      "n_samples": 1000,
+      "n_features": 20,
+      "sparsity": 5
+    },
+    "SYN-03": {
+      "type": "correlated_predictors",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-04": {
+      "type": "threshold_effect",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-05": {
+      "type": "interaction_effect",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-06": {
+      "type": "nonlinear_smooth",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-07": {
+      "type": "pure_noise",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-08": {
+      "type": "redundant_features",
+      "n_samples": 1000,
+      "n_features": 20
+    },
+    "SYN-09": {
+      "type": "distribution_shift",
+      "n_samples": 1000,
+      "n_features": 20
+    }
+  },
+  "model_results": {
+    "Ridge": {
+      "SYN-01": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-02": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-03": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-04": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-05": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-06": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-07": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-08": {
+        "rmse": 0.100427,
+        "r2": 0.995002,
+        "status": "COMPLETE"
+      },
+      "SYN-09": {
+        "rmse": 9.113981,
+        "r2": -2.124726,
+        "status": "COMPLETE"
+      }
+    },
+    "Lasso": {
+      "SYN-01": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-02": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-03": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-04": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-05": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-06": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-07": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-08": {
+        "rmse": 0.101913,
+        "r2": 0.994853,
+        "status": "COMPLETE"
+      },
+      "SYN-09": {
+        "rmse": 9.071243,
+        "r2": -2.09549,
+        "status": "COMPLETE"
+      }
+    },
+    "ElasticNet": {
+      "SYN-01": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-02": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-03": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-04": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-05": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-06": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-07": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-08": {
+        "rmse": 0.101015,
+        "r2": 0.994943,
+        "status": "COMPLETE"
+      },
+      "SYN-09": {
+        "rmse": 9.062686,
+        "r2": -2.089653,
+        "status": "COMPLETE"
+      }
+    },
+    "HistGradientBoosting": {
+      "SYN-01": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-02": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-03": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-04": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-05": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-06": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-07": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-08": {
+        "rmse": 0.20596,
+        "r2": 0.978977,
+        "status": "COMPLETE"
+      },
+      "SYN-09": {
+        "rmse": 6.800644,
+        "r2": -0.739786,
+        "status": "COMPLETE"
+      }
+    },
+    "LightGBM": {
+      "SYN-01": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-02": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-03": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-04": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-05": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-06": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-07": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-08": {
+        "rmse": 0.207081,
+        "r2": 0.978748,
+        "status": "COMPLETE"
+      },
+      "SYN-09": {
+        "rmse": 6.901013,
+        "r2": -0.791519,
+        "status": "COMPLETE"
+      }
+    }
+  },
+  "synthetic_success": {
+    "Ridge": {
+      "tests_passed": 7,
+      "tests_total": 9,
+      "success_rate": 77.78,
+      "qualified": true
+    },
+    "Lasso": {
+      "tests_passed": 7,
+      "tests_total": 9,
+      "success_rate": 77.78,
+      "qualified": true
+    },
+    "ElasticNet": {
+      "tests_passed": 7,
+      "tests_total": 9,
+      "success_rate": 77.78,
+      "qualified": true
+    },
+    "HistGradientBoosting": {
+      "tests_passed": 7,
+      "tests_total": 9,
+      "success_rate": 77.78,
+      "qualified": true
+    },
+    "LightGBM": {
+      "tests_passed": 7,
+      "tests_total": 9,
+      "success_rate": 77.78,
+      "qualified": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "phase": "22R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "timestamp": "2026-08-25T15:22:01.950390+00:00",
+  "gate": "GREEN",
+  "verdict": "A",
+  "model_verdict": "A",
+  "model_verdict_label": "MODEL_TOOLBOX_EXPANDED_SUCCESSFULLY",
+  "model_decisions": {
+    "ElasticNet": {
+      "classification": "APPROVED",
+      "pass_count": 14
+    },
+    "HistGradientBoosting": {
+      "classification": "APPROVED",
+      "pass_count": 14
+    },
+    "LightGBM": {
+      "classification": "APPROVED",
+      "pass_count": 14
+    }
+  },
+  "approved_models": [
+    "ElasticNet",
+    "HistGradientBoosting",
+    "LightGBM"
+  ],
+  "conditionally_approved": [],
+  "research_only": [],
+  "rejected": [],
+  "regime_model_justified": "REGIME_MODEL_RESEARCH_JUSTIFIED",
+  "deep_learning_unjustified": true
+}

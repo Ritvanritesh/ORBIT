@@ -1,0 +1,59 @@
+{
+  "assessment_id": "GAP-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "current_capabilities": {
+    "Ridge": {
+      "capabilities": [
+        "linear relationships",
+        "coefficient stability",
+        "multicollinearity tolerance",
+        "continuous feature effects"
+      ],
+      "limitations": [
+        "no sparsity",
+        "no nonlinearity",
+        "no interactions"
+      ]
+    },
+    "Lasso": {
+      "capabilities": [
+        "sparse feature selection",
+        "linear relationships",
+        "coefficient shrinkage"
+      ],
+      "limitations": [
+        "degeneracy risk",
+        "no nonlinearity",
+        "no interactions",
+        "unstable with correlated features"
+      ]
+    }
+  },
+  "identified_gaps": {
+    "correlated_sparse_features": {
+      "description": "Lasso unstable with correlated features; Ridge cannot select features",
+      "candidate_solution": "Elastic Net",
+      "justification": "Elastic Net combines L1 and L2 penalties, providing stable feature selection with correlated predictors"
+    },
+    "nonlinear_threshold_effects": {
+      "description": "Linear models cannot capture threshold or piecewise effects",
+      "candidate_solution": "HistGradientBoosting",
+      "justification": "Tree-based models naturally capture threshold effects and nonlinear structure"
+    },
+    "interaction_effects": {
+      "description": "Linear models cannot capture feature interactions without manual engineering",
+      "candidate_solution": "HistGradientBoosting / LightGBM",
+      "justification": "Tree-based models automatically capture interactions through splits"
+    },
+    "nonlinear_smooth": {
+      "description": "Smooth nonlinear relationships not captured by linear models",
+      "candidate_solution": "HistGradientBoosting / LightGBM",
+      "justification": "Ensemble of trees can approximate smooth nonlinear functions"
+    }
+  },
+  "candidate_justification": {
+    "Elastic Net": "Addresses correlated sparse feature gap; lower complexity than tree models",
+    "HistGradientBoosting": "Addresses nonlinear/interaction gaps; well-established in sklearn",
+    "LightGBM": "Addresses same gaps as HistGradientBoosting with potential efficiency gains"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "qualification_id": "REAL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "dataset": "DS-EXP-050",
+  "features": [
+    "mom_5d",
+    "mom_10d",
+    "mom_20d",
+    "realized_vol"
+  ],
+  "results": {
+    "Ridge": {
+      "rmse": 0.055992,
+      "r2": -0.002146,
+      "spearman_ic": -0.023094,
+      "train_size": 39410,
+      "test_size": 16890,
+      "status": "COMPLETE"
+    },
+    "Lasso": {
+      "rmse": 0.055936,
+      "r2": -0.000145,
+      "spearman_ic": -0.019744,
+      "train_size": 39410,
+      "test_size": 16890,
+      "status": "COMPLETE"
+    },
+    "ElasticNet": {
+      "rmse": 0.055959,
+      "r2": -0.000969,
+      "spearman_ic": -0.019744,
+      "train_size": 39410,
+      "test_size": 16890,
+      "status": "COMPLETE"
+    },
+    "HistGradientBoosting": {
+      "rmse": 0.05612,
+      "r2": -0.006741,
+      "spearman_ic": 0.003953,
+      "train_size": 39410,
+      "test_size": 16890,
+      "status": "COMPLETE"
+    },
+    "LightGBM": {
+      "rmse": 0.056803,
+      "r2": -0.031373,
+      "spearman_ic": 0.001346,
+      "train_size": 39410,
+      "test_size": 16890,
+      "status": "COMPLETE"
+    }
+  }
+}

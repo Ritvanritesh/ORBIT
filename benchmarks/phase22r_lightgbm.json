@@ -1,0 +1,72 @@
+{
+  "model_id": "LGBM-BR-E2AFD3AC901A",
+  "model_family": "LightGBM",
+  "branch_id": "BR-E2AFD3AC901A",
+  "synthetic_performance": {
+    "tests_passed": 7,
+    "tests_total": 9,
+    "qualified": true
+  },
+  "parameter_sensitivity": {
+    "config_0": {
+      "config": {
+        "num_leaves": 15,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_1": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_2": {
+      "config": {
+        "num_leaves": 63,
+        "learning_rate": 0.1,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_3": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.01,
+        "n_estimators": 100
+      },
+      "status": "COMPLETE"
+    },
+    "config_4": {
+      "config": {
+        "num_leaves": 31,
+        "learning_rate": 0.1,
+        "n_estimators": 200
+      },
+      "status": "COMPLETE"
+    }
+  },
+  "capability_assessment": {
+    "nonlinear_recovery": "PASS",
+    "interaction_recovery": "PASS",
+    "efficiency_vs_histgb": "COMPARABLE",
+    "distinct_from_histgb": false,
+    "train_evaluation_divergence": "LOW"
+  },
+  "complexity": {
+    "additional_hyperparameters": [
+      "num_leaves",
+      "learning_rate",
+      "n_estimators"
+    ],
+    "computational_cost": "SIMILAR_TO_HISTGB",
+    "interpretability": "SIMILAR_TO_HISTGB",
+    "overfitting_risk": "MODERATE",
+    "unique_value_vs_histgb": "LOW"
+  },
+  "classification": "CONDITIONALLY_APPROVED",
+  "classification_rationale": "Provides same capability as HistGradientBoosting; conditionally approved as alternative implementation"
+}

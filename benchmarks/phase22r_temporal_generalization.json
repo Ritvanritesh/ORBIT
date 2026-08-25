@@ -1,0 +1,18 @@
+{
+  "analysis_id": "TEMP-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "generalization_gaps": {
+    "Ridge": 0.000215,
+    "Lasso": 1.5e-05,
+    "ElasticNet": 9.7e-05,
+    "HistGradientBoosting": 0.000674,
+    "LightGBM": 0.003137
+  },
+  "classifications": {
+    "Ridge": "STABLE",
+    "Lasso": "STABLE",
+    "ElasticNet": "STABLE",
+    "HistGradientBoosting": "STABLE",
+    "LightGBM": "STABLE"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "diagnostics_id": "DIAG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "models": {
+    "Ridge": {
+      "feature_domination": false,
+      "unstable_importance": false,
+      "degenerate_predictions": false
+    },
+    "Lasso": {
+      "feature_domination": false,
+      "unstable_importance": false,
+      "degenerate_predictions": false
+    },
+    "ElasticNet": {
+      "feature_domination": false,
+      "unstable_importance": false,
+      "degenerate_predictions": false
+    },
+    "HistGradientBoosting": {
+      "feature_domination": false,
+      "unstable_importance": false,
+      "degenerate_predictions": false
+    },
+    "LightGBM": {
+      "feature_domination": false,
+      "unstable_importance": false,
+      "degenerate_predictions": false
+    }
+  },
+  "all_models_diagnosable": true
+}
