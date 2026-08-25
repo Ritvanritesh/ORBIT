@@ -1,0 +1,85 @@
+{
+  "review_id": "HOSTILE-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "reviewer": "HOSTILE_SCIENTIFIC_REVIEWER",
+  "timestamp": "2026-08-25T13:21:23.403348+00:00",
+  "attacks": {
+    "A1_exploratory_leakage": {
+      "attack": "Exploratory results leaked into decision thresholds",
+      "result": "PASS",
+      "detail": "Thresholds set conservatively below exploratory results with documented rationale"
+    },
+    "A2_horizon_cherry_picking": {
+      "attack": "Primary horizon selected based on exploratory performance",
+      "result": "PASS",
+      "detail": "H-10 selected per mechanism (intermediate horizon), not exploratory IC"
+    },
+    "A3_representation_cherry_picking": {
+      "attack": "Feature representation selected based on exploratory performance",
+      "result": "PASS",
+      "detail": "VOL_ZSCORE selected for information preservation, not IC magnitude"
+    },
+    "A4_model_cherry_picking": {
+      "attack": "Model selected based on exploratory performance",
+      "result": "PASS",
+      "detail": "Ridge selected for stability; Lasso included for replication"
+    },
+    "A5_universe_cherry_picking": {
+      "attack": "Universe selected based on exploratory performance",
+      "result": "PASS",
+      "detail": "ENV-050 primary for cleaner signal; ENV-100 for replication"
+    },
+    "A6_temporal_window_bias": {
+      "attack": "Temporal windows selected to favor results",
+      "result": "PASS",
+      "detail": "Standard expanding window with fixed test period"
+    },
+    "A7_undercounted_hypotheses": {
+      "attack": "Hypothesis family undercounted for multiple testing",
+      "result": "PASS",
+      "detail": "4 hypotheses explicitly listed with Holm correction"
+    },
+    "A8_unjustified_thresholds": {
+      "attack": "Effect-size thresholds unjustified",
+      "result": "PASS",
+      "detail": "Thresholds documented with economic and statistical rationale"
+    },
+    "A9_baseline_weakening": {
+      "attack": "Baselines weakened after seeing results",
+      "result": "PASS",
+      "detail": "Baselines locked before execution; cannot change"
+    },
+    "A10_hidden_tuning": {
+      "attack": "Hidden hyperparameter tuning",
+      "result": "PASS",
+      "detail": "Alpha values fixed; no tuning permitted during confirmatory execution"
+    },
+    "A11_degenerate_model_loophole": {
+      "attack": "Degenerate models excluded from analysis",
+      "result": "PASS",
+      "detail": "Degenerate models count as FAIL; no exclusion loophole"
+    },
+    "A12_economic_overreach": {
+      "attack": "Predictive success claimed as economic value",
+      "result": "PASS",
+      "detail": "Explicit separation: CONFIRMED_PREDICTIVE_EFFECT_PENDING_ECONOMIC_VALIDATION"
+    },
+    "A13_oos_firewall_bypass": {
+      "attack": "OOS outcomes accessed during registration",
+      "result": "PASS",
+      "detail": "Outcome blindness tests confirm no access to OOS IC/Sharpe"
+    },
+    "A14_registry_policy_violation": {
+      "attack": "Registry policy violated",
+      "result": "PASS",
+      "detail": "Registration follows all governance policies"
+    }
+  },
+  "summary": {
+    "pass": 14,
+    "limitation": 0,
+    "material_concern": 0,
+    "critical_failure": 0
+  },
+  "overall": "PASS"
+}

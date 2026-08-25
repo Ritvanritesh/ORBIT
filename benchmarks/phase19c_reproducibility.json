@@ -1,0 +1,23 @@
+{
+  "reproducibility_id": "REPRO-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "tests": {
+    "identical_canonical_objects": {
+      "status": "PASS"
+    },
+    "identical_experiment_inventory": {
+      "status": "PASS"
+    },
+    "identical_decision_policy": {
+      "status": "PASS"
+    },
+    "identical_combined_digest": {
+      "status": "PASS"
+    },
+    "identical_pass_fail_logic": {
+      "status": "PASS"
+    }
+  },
+  "combined_digest": "2981ab3bacbd39e90d8ed5f805f488aac39cc46c09a302b10590633ba687f854",
+  "overall": "PASS"
+}

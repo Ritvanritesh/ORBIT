@@ -1,0 +1,38 @@
+{
+  "blindness_id": "BLIND-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "tests": {
+    "T1_direct_oos_access": {
+      "test": "Attempt to read OOS data files",
+      "result": "BLOCKED",
+      "detail": "OOS data exists but registration code does not read it"
+    },
+    "T2_result_json_discovery": {
+      "test": "Search for result files that could leak outcomes",
+      "result": "PASS",
+      "detail": "Found 0 result files; none contain OOS IC/Sharpe"
+    },
+    "T3_cached_result_access": {
+      "test": "Check for cached results in memory or temp files",
+      "result": "PASS",
+      "detail": "No cached OOS results accessible"
+    },
+    "T4_accidental_logging": {
+      "test": "Check if logging could capture OOS outcomes",
+      "result": "PASS",
+      "detail": "Registration script does not log OOS outcomes"
+    },
+    "T5_exception_leakage": {
+      "test": "Check if exceptions could reveal OOS data",
+      "result": "PASS",
+      "detail": "Exception handling does not expose OOS data"
+    },
+    "T6_metadata_side_channels": {
+      "test": "Check if metadata could leak outcomes",
+      "result": "PASS",
+      "detail": "Metadata access limited to schema/date ranges only"
+    }
+  },
+  "overall": "PASS",
+  "conclusion": "Phase 19-C registration cannot access confirmatory outcomes"
+}

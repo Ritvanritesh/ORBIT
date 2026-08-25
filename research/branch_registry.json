@@ -56,7 +56,7 @@
     {
       "branch_id": "BR-E2AFD3AC901A",
       "branch_name": "ORBIT-BRANCH-CAND-001",
-      "status": "EXPLORATORY_COMPLETE",
+      "status": "CONFIRMATORY_REGISTERED",
       "created": "2026-08-25T12:37:01.030534+00:00",
       "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
       "composite_score": 0.9,
@@ -65,12 +65,36 @@
       "mean_ic": 0.143282,
       "incremental_ic": 0.007583,
       "experiments_completed": 20,
-      "gate": "GREEN"
+      "gate": "GREEN",
+      "confirmatory_registration": {
+        "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+        "registration_digest": "42a9be598f69f0e1ec214f182ee251b7ecc0861e26da818c8fac1fb9e1dcc72f",
+        "timestamp": "2026-08-25T13:20:30.617937+00:00",
+        "policy_versions": {
+          "identity": "6fe942a1d39d0424",
+          "hypothesis": "42a9be598f69f0e1",
+          "features": "8e2a55ff709dd7ff",
+          "model": "8085855a1eeebc71",
+          "universe": "fd381e3383ecfa20",
+          "temporal": "edf0ff5d7706920a",
+          "metric": "7b25734cf1b3034f",
+          "stats": "40e3fa42c3a4c72f",
+          "baseline": "f2df9a8613f7798b",
+          "economic": "c07aebb3243e2c3f",
+          "thresholds": "49810daaf9c406f3",
+          "decision": "358e25f7d159f816",
+          "inventory": "336df946949e9b29",
+          "firewall": "5235d35979a63f28"
+        },
+        "expected_experiment_count": 7,
+        "data_eligibility": "DATA_NOT_READY",
+        "confirmatory_execution_eligible": false
+      }
     },
     {
       "branch_id": "BR-E2AFD3AC901A",
       "branch_name": "ORBIT-BRANCH-CAND-001",
-      "status": "EXPLORATORY_COMPLETE",
+      "status": "CONFIRMATORY_REGISTERED",
       "created": "2026-08-25T12:38:25.501959+00:00",
       "research_question": "Does volatility regime information improve equity return prediction at intermediate horizons (H-10 to H-20)?",
       "composite_score": 0.9,
@@ -79,7 +103,31 @@
       "mean_ic": 0.143282,
       "incremental_ic": 0.007583,
       "experiments_completed": 20,
-      "gate": "GREEN"
+      "gate": "GREEN",
+      "confirmatory_registration": {
+        "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+        "registration_digest": "42a9be598f69f0e1ec214f182ee251b7ecc0861e26da818c8fac1fb9e1dcc72f",
+        "timestamp": "2026-08-25T13:20:30.617937+00:00",
+        "policy_versions": {
+          "identity": "6fe942a1d39d0424",
+          "hypothesis": "42a9be598f69f0e1",
+          "features": "8e2a55ff709dd7ff",
+          "model": "8085855a1eeebc71",
+          "universe": "fd381e3383ecfa20",
+          "temporal": "edf0ff5d7706920a",
+          "metric": "7b25734cf1b3034f",
+          "stats": "40e3fa42c3a4c72f",
+          "baseline": "f2df9a8613f7798b",
+          "economic": "c07aebb3243e2c3f",
+          "thresholds": "49810daaf9c406f3",
+          "decision": "358e25f7d159f816",
+          "inventory": "336df946949e9b29",
+          "firewall": "5235d35979a63f28"
+        },
+        "expected_experiment_count": 7,
+        "data_eligibility": "DATA_NOT_READY",
+        "confirmatory_execution_eligible": false
+      }
     }
   ],
   "prevention_rules": [

@@ -1,0 +1,62 @@
+{
+  "temporal_id": "TEMP-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "training_windows": {
+    "approach": "expanding_window",
+    "start_date": "2010-01-04",
+    "minimum_training_observations": 500,
+    "rationale": "Expanding window maximizes training data while maintaining temporal ordering"
+  },
+  "validation_windows": {
+    "start_date": "2019-01-02",
+    "end_date": "2021-12-31",
+    "purpose": "Model selection and early stopping"
+  },
+  "test_windows": {
+    "in_sample_test": {
+      "start_date": "2022-01-03",
+      "end_date": "2026-06-30",
+      "purpose": "In-sample evaluation for exploratory evidence"
+    },
+    "out_of_sample_test": {
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-20",
+      "purpose": "Confirmatory evaluation on untouched data",
+      "note": "Currently accumulating; not yet DATA_READY"
+    }
+  },
+  "purge_rules": {
+    "purge_window": "label_horizon",
+    "label_horizon_days": 10,
+    "rationale": "Purge must reference LABEL OUTCOME WINDOW, not feature boundary. A 10-day label requires 10-day purge.",
+    "implementation": "For each prediction date t, exclude training observations where label period overlaps with t"
+  },
+  "embargo_rules": {
+    "embargo_days": 5,
+    "rationale": "Additional buffer to prevent information leakage from label autocorrelation"
+  },
+  "label_outcome_boundaries": {
+    "h10_label": "adjclose_{t+10} / adjclose_t - 1 - benchmark_return_{t+10}",
+    "h20_label": "adjclose_{t+20} / adjclose_t - 1 - benchmark_return_{t+20}",
+    "boundary_definition": "Label computed using only data available after prediction date t"
+  },
+  "retraining_schedule": {
+    "method": "single_fit_per_universe",
+    "rationale": "Confirmatory test fits one model per universe on full training data"
+  },
+  "prediction_timestamps": {
+    "method": "end_of_day",
+    "rationale": "Predictions made using close-of-day data"
+  },
+  "evaluation_timestamps": {
+    "method": "monthly_aggregation",
+    "rationale": "IC computed monthly to assess temporal stability"
+  },
+  "purge_defect_prevention": {
+    "phase_13b_issue": "Phase 13B used feature boundary instead of label outcome window for purge",
+    "current_fix": "Purge window explicitly set to label_horizon_days (10 days), not feature window",
+    "verification": "Purge logic will be audited during execution"
+  },
+  "locked": true,
+  "locked_digest": "edf0ff5d7706920a45370a8d8971e797c9c6a6532bc04e3cbe76622806282abc"
+}

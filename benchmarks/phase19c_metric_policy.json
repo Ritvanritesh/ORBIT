@@ -1,0 +1,41 @@
+{
+  "metric_id": "MET-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "primary_metric": {
+    "name": "Spearman Rank Correlation Coefficient",
+    "formula": "spearmanr(y_actual, y_predicted)",
+    "range": [
+      -1,
+      1
+    ],
+    "interpretation": "Non-parametric measure of monotonic association between predicted and actual returns",
+    "sign_convention": "Positive IC indicates predictions are positively correlated with actual returns"
+  },
+  "aggregation_method": {
+    "method": "monthly_period_wise",
+    "description": "Compute IC per calendar month, then average across months",
+    "minimum_observations_per_month": 10,
+    "rationale": "Monthly aggregation captures temporal stability while smoothing daily noise"
+  },
+  "missing_value_treatment": {
+    "in_features": "drop_rows",
+    "in_targets": "drop_rows",
+    "in_ic_computation": "skip_periods_with_insufficient_data"
+  },
+  "minimum_observations": {
+    "per_period": 10,
+    "overall": 50
+  },
+  "confidence_interval_method": {
+    "method": "t_distribution",
+    "confidence_level": 0.95,
+    "df": "n_months - 1"
+  },
+  "dependence_adjustment": {
+    "method": "newey_west_hac",
+    "lag": 5,
+    "rationale": "Account for autocorrelation in monthly IC series"
+  },
+  "locked": true,
+  "locked_digest": "7b25734cf1b3034f6b754ac8aaef3b304f289e58e7eb6f7bb450cb3fc84885f9"
+}

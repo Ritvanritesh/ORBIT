@@ -1,0 +1,44 @@
+{
+  "economic_id": "ECO-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "separation_principle": {
+    "confirmatory_success": "CONFIRMED_PREDICTIVE_EFFECT_PENDING_ECONOMIC_VALIDATION",
+    "not_equivalent_to": "PRODUCTION_READY",
+    "explanation": "Statistical confirmation of predictive effect does NOT imply economic value. Transaction costs, capacity, and implementation must be assessed separately."
+  },
+  "required_future_economic_validation": [
+    {
+      "step": "portfolio_simulation",
+      "description": "Simulate portfolio returns using confirmed predictive signal",
+      "required_before": "paper_trading"
+    },
+    {
+      "step": "transaction_cost_analysis",
+      "description": "Assess impact of transaction costs on signal profitability",
+      "required_before": "paper_trading"
+    },
+    {
+      "step": "capacity_assessment",
+      "description": "Determine maximum investable capital before signal degradation",
+      "required_before": "production"
+    },
+    {
+      "step": "regime_stability_analysis",
+      "description": "Verify signal stability across different market regimes",
+      "required_before": "production"
+    }
+  ],
+  "economic_thresholds": {
+    "minimum_sharpe_ratio": 1.0,
+    "maximum_drawdown": -0.2,
+    "minimum_annual_return": 0.05,
+    "note": "These are future requirements, NOT part of confirmatory test"
+  },
+  "promotion_policy": {
+    "after_confirmatory_success": "CONFIRMED_PREDICTIVE_EFFECT_PENDING_ECONOMIC_VALIDATION",
+    "after_economic_validation": "PAPER_TRADING_ELIGIBLE",
+    "after_paper_trading_success": "PRODUCTION_ELIGIBLE"
+  },
+  "locked": true,
+  "locked_digest": "c07aebb3243e2c3f5e54cdd80e37d8edb23a891e138a9d7eb1985dace4958e06"
+}

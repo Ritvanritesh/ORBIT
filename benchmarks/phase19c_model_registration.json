@@ -1,0 +1,56 @@
+{
+  "model_id": "MODEL-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "primary_model": {
+    "family": "Ridge",
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "random_state": 42,
+    "solver": "auto",
+    "normalization": "internal"
+  },
+  "secondary_model": {
+    "family": "Lasso",
+    "alpha": 0.001,
+    "fit_intercept": true,
+    "random_state": 42,
+    "max_iter": 50000,
+    "tol": 0.0001,
+    "selection": "cyclic",
+    "normalization": "internal"
+  },
+  "preprocessing": {
+    "feature_scaling": "none_explicit",
+    "target_scaling": "none",
+    "handling_of_nan": "drop_rows",
+    "handling_of_inf": "drop_rows"
+  },
+  "degeneracy_policy": {
+    "definition": "Model is degenerate if: (a) all coefficients are zero, (b) predictions have zero variance, or (c) model fails to converge",
+    "if_degenerate": {
+      "counts_as_fail": true,
+      "excluded_from_hypothesis_test": false,
+      "entire_test_invalid": false,
+      "fallback": "no_fallback_pre_registered"
+    },
+    "rationale": "Degenerate models indicate feature representation failure, not model selection issue"
+  },
+  "tuning_policy": {
+    "alpha_sweep": false,
+    "hyperparameter_optimization": false,
+    "fixed_parameters": true,
+    "rationale": "Confirmatory testing prohibits tuning. Alpha values fixed before execution."
+  },
+  "convergence_handling": {
+    "max_iter": 50000,
+    "tolerance": 0.0001,
+    "if_not_converged": "record_as_failed_experiment"
+  },
+  "random_seed_policy": {
+    "seed": 42,
+    "deterministic": true,
+    "rationale": "Fixed seed ensures reproducibility"
+  },
+  "locked": true,
+  "locked_digest": "8085855a1eeebc716ca16b772ed86b85f21f2762ab44b43182490a581324e189"
+}

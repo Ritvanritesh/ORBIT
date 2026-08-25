@@ -1,0 +1,73 @@
+{
+  "feature_id": "FEAT-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "selected_representation": "VOL_ZSCORE",
+  "selection_rationale": "VOL_ZSCORE selected over VOL_BINARY because it preserves continuous volatility information. Both showed similar exploratory IC; VOL_ZSCORE is more standard in academic literature.",
+  "feature_definitions": {
+    "VOL_ZSCORE": {
+      "formula": "(realized_vol - rolling_mean_vol) / (rolling_std_vol + epsilon)",
+      "components": {
+        "realized_vol": {
+          "formula": "rolling_std(log(adjclose_t / adjclose_{t-1}), window=20)",
+          "window": 20,
+          "annualization": "not_annualized"
+        },
+        "rolling_mean_vol": {
+          "formula": "rolling_mean(realized_vol, window=252)",
+          "window": 252
+        },
+        "rolling_std_vol": {
+          "formula": "rolling_std(realized_vol, window=252)",
+          "window": 252
+        },
+        "epsilon": 1e-08
+      }
+    }
+  },
+  "baseline_features": {
+    "MOM_5D": {
+      "formula": "adjclose_t / adjclose_{t-5} - 1",
+      "window": 5
+    },
+    "MOM_10D": {
+      "formula": "adjclose_t / adjclose_{t-10} - 1",
+      "window": 10
+    },
+    "MOM_20D": {
+      "formula": "adjclose_t / adjclose_{t-20} - 1",
+      "window": 20
+    }
+  },
+  "feature_set_with_vol": [
+    "MOM_5D",
+    "MOM_10D",
+    "MOM_20D",
+    "VOL_ZSCORE",
+    "realized_vol"
+  ],
+  "feature_set_without_vol": [
+    "MOM_5D",
+    "MOM_10D",
+    "MOM_20D"
+  ],
+  "normalization": {
+    "method": "none_explicit",
+    "rationale": "Ridge/Lasso handle normalization internally"
+  },
+  "missing_value_handling": {
+    "method": "drop_rows_with_null_features",
+    "rationale": "Rows with null features cannot be used for training/evaluation"
+  },
+  "clipping_winsorization": "none",
+  "availability_timing": {
+    "VOL_ZSCORE": "available_at_close_of_trade_date_t",
+    "MOM_*D": "available_at_close_of_trade_date_t",
+    "realized_vol": "available_at_close_of_trade_date_t"
+  },
+  "pit_requirements": {
+    "VOL_ZSCORE": "PIT_WITH_KNOWN_LAG \u2014 uses only past 252 days of volatility",
+    "MOM_*D": "PIT \u2014 uses only past price observations"
+  },
+  "locked": true,
+  "locked_digest": "8e2a55ff709dd7ffbb74ef2b71499fee599eb7eb64e4939e819f2ac320c8abfc"
+}

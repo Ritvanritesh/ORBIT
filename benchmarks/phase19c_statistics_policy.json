@@ -1,0 +1,61 @@
+{
+  "statistics_id": "STAT-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_family": {
+    "primary_hypotheses": [
+      {
+        "id": "H1_PRIMARY",
+        "statement": "H-10 vol features IC > 0 AND > baseline",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "Ridge",
+        "metric": "Spearman IC"
+      }
+    ],
+    "secondary_hypotheses": [
+      {
+        "id": "H2_REPLICATION_H20",
+        "statement": "H-20 vol features IC > 0 AND > baseline",
+        "horizon": "H-20",
+        "universe": "ENV-050",
+        "model": "Ridge",
+        "metric": "Spearman IC"
+      },
+      {
+        "id": "H3_REPLICATION_ENV100",
+        "statement": "H-10 vol features IC > 0 AND > baseline in ENV-100",
+        "horizon": "H-10",
+        "universe": "ENV-100",
+        "model": "Ridge",
+        "metric": "Spearman IC"
+      },
+      {
+        "id": "H4_REPLICATION_LASSO",
+        "statement": "H-10 vol features IC > 0 AND > baseline with Lasso",
+        "horizon": "H-10",
+        "universe": "ENV-050",
+        "model": "Lasso",
+        "metric": "Spearman IC"
+      }
+    ]
+  },
+  "multiple_testing_correction": {
+    "procedure": "holm_bonferroni",
+    "significance_level": 0.05,
+    "n_hypotheses": 4,
+    "dependence_assumption": "unknown_dependence",
+    "rationale": "Holm procedure controls family-wise error rate under any dependence structure"
+  },
+  "primary_decision_criterion": {
+    "method": "holm_bonferroni_on_primary_hypothesis",
+    "description": "Primary hypothesis H1 must be significant after Holm correction",
+    "note": "Secondary hypotheses provide supporting evidence but are not required for confirmation"
+  },
+  "confidence_intervals": {
+    "method": "t_distribution",
+    "level": 0.95,
+    "adjustment": "newey_west_hac"
+  },
+  "locked": true,
+  "locked_digest": "40e3fa42c3a4c72fdcecb3af18c0ffaff56aa3d7f0607d690b11a0ee9b1a4dbf"
+}

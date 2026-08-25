@@ -1,0 +1,36 @@
+{
+  "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "primary_hypothesis": {
+    "statement": "At horizon H-10, volatility regime features (VOL_ZSCORE) produce Spearman IC > 0 against forward excess returns, and this IC is greater than the baseline IC without volatility features",
+    "null": "H0: IC(vol_features) <= 0 OR IC(vol_features) <= IC(baseline)",
+    "alternative": "H1: IC(vol_features) > 0 AND IC(vol_features) > IC(baseline)",
+    "horizon": "H-10",
+    "is_primary": true
+  },
+  "secondary_hypothesis": {
+    "statement": "At horizon H-20, volatility regime features (VOL_ZSCORE) produce Spearman IC > 0 against forward excess returns, and this IC is greater than the baseline IC without volatility features",
+    "null": "H0: IC(vol_features) <= 0 OR IC(vol_features) <= IC(baseline)",
+    "alternative": "H1: IC(vol_features) > 0 AND IC(vol_features) > IC(baseline)",
+    "horizon": "H-20",
+    "is_primary": false,
+    "role": "replication_of_primary_at_longer_horizon"
+  },
+  "hypothesis_classification": {
+    "h10_and_h20_are": "primary_plus_secondary",
+    "rationale": "H-10 is primary per mechanism (intermediate horizon); H-20 is secondary for replication. Both must show positive incremental IC for full confirmation."
+  },
+  "falsification_criteria": [
+    "Primary IC <= 0 in OOS data",
+    "Incremental IC <= 0 in OOS data",
+    "Primary IC significant but negative sign in >50% of OOS periods",
+    "H-10 and H-20 show opposite signs"
+  ],
+  "exploratory_evidence_summary": {
+    "mean_ic_exploratory": 0.143282,
+    "incremental_ic_exploratory": 0.007583,
+    "interpretation": "EXPLORATORY ONLY \u2014 not confirmatory evidence. Used solely to calibrate thresholds."
+  },
+  "registration_digest": "42a9be598f69f0e1ec214f182ee251b7ecc0861e26da818c8fac1fb9e1dcc72f"
+}

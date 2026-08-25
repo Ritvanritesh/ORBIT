@@ -1,0 +1,33 @@
+{
+  "phase": "19C",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T13:21:23.405342+00:00",
+  "verification_checks": {
+    "confirmatory_hypothesis_falsifiable": true,
+    "primary_outcomes_explicitly_defined": true,
+    "all_feature_definitions_frozen": true,
+    "all_model_specifications_frozen": true,
+    "all_universes_frozen": true,
+    "all_temporal_windows_frozen": true,
+    "purge_references_label_outcome_windows": true,
+    "all_baselines_defined": true,
+    "multiple_testing_family_defined": true,
+    "effect_size_thresholds_pre_specified": true,
+    "economic_claims_separated": true,
+    "pass_fail_rules_deterministic": true,
+    "expected_experiment_inventory_exact": true,
+    "oos_outcomes_not_accessed": true,
+    "mutation_attacks_fail": true,
+    "outcome_blindness_attacks_fail": true,
+    "registration_is_deterministic": true,
+    "registry_transition_valid": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: 19/19 checks pass.",
+  "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+  "identity_digest": "40aba413278e590c"
+}

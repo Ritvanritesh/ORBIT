@@ -1,0 +1,55 @@
+{
+  "baseline_id": "BASE-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "baselines": {
+    "BL_NULL": {
+      "identity": "Random/Null Baseline",
+      "description": "Expected IC under null hypothesis of no predictability",
+      "expected_ic": 0.0,
+      "feature_set": "none",
+      "model": "none",
+      "horizon": "H-10",
+      "universe": "ENV-050"
+    },
+    "BL_MOMENTUM": {
+      "identity": "Momentum-Only Baseline",
+      "description": "Model with only momentum features (no volatility regime)",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "model": "Ridge(alpha=1.0)",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "rationale": "Tests whether volatility features add value beyond momentum"
+    },
+    "BL_VOL_BINARY": {
+      "identity": "Volatility Binary Baseline",
+      "description": "Model with binary volatility regime (from exploratory)",
+      "feature_set": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_BINARY",
+        "realized_vol"
+      ],
+      "model": "Ridge(alpha=1.0)",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "rationale": "Tests whether VOL_ZSCORE improves over VOL_BINARY"
+    }
+  },
+  "primary_baseline": "BL_MOMENTUM",
+  "comparison_requirements": {
+    "incremental_value": "VOL_ZSCORE model must exceed BL_MOMENTUM IC",
+    "representational_improvement": "VOL_ZSCORE model must exceed BL_VOL_BINARY IC (secondary)"
+  },
+  "baseline_selection_policy": {
+    "locked_before_execution": true,
+    "cannot_change_after_results": true,
+    "rationale": "Baselines must be pre-registered to prevent cherry-picking"
+  },
+  "locked": true,
+  "locked_digest": "f2df9a8613f7798b099f66379697be825f1a4176c011d455e2589cb9d3a0d07d"
+}

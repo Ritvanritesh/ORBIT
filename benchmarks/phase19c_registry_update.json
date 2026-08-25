@@ -1,0 +1,9 @@
+{
+  "update_id": "REG-UPD-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "old_status": "EXPLORATORY_COMPLETE",
+  "new_status": "CONFIRMATORY_REGISTERED",
+  "registration_id": "CONF-REG-BR-E2AFD3AC901A",
+  "timestamp": "2026-08-25T13:21:23.404345+00:00",
+  "historical_artifacts_unchanged": true
+}

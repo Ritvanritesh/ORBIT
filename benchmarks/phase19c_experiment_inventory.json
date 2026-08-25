@@ -1,0 +1,92 @@
+{
+  "inventory_id": "INV-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "expected_inventory": [
+    {
+      "exp_id": "CONF-001",
+      "type": "primary",
+      "hypothesis": "H1_PRIMARY",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "model": "Ridge",
+      "features": "VOL_ZSCORE",
+      "include_vol": true
+    },
+    {
+      "exp_id": "CONF-002",
+      "type": "secondary",
+      "hypothesis": "H2_REPLICATION_H20",
+      "horizon": "H-20",
+      "universe": "ENV-050",
+      "model": "Ridge",
+      "features": "VOL_ZSCORE",
+      "include_vol": true
+    },
+    {
+      "exp_id": "CONF-003",
+      "type": "secondary",
+      "hypothesis": "H3_REPLICATION_ENV100",
+      "horizon": "H-10",
+      "universe": "ENV-100",
+      "model": "Ridge",
+      "features": "VOL_ZSCORE",
+      "include_vol": true
+    },
+    {
+      "exp_id": "CONF-004",
+      "type": "secondary",
+      "hypothesis": "H4_REPLICATION_LASSO",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "model": "Lasso",
+      "features": "VOL_ZSCORE",
+      "include_vol": true
+    },
+    {
+      "exp_id": "BASE-001",
+      "type": "baseline",
+      "hypothesis": "BL_NULL",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "model": "Ridge",
+      "features": "MOMENTUM_ONLY",
+      "include_vol": false
+    },
+    {
+      "exp_id": "BASE-002",
+      "type": "baseline",
+      "hypothesis": "BL_MOMENTUM",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "model": "Ridge",
+      "features": "MOMENTUM_ONLY",
+      "include_vol": false
+    },
+    {
+      "exp_id": "BASE-003",
+      "type": "baseline",
+      "hypothesis": "BL_VOL_BINARY",
+      "horizon": "H-10",
+      "universe": "ENV-050",
+      "model": "Ridge",
+      "features": "VOL_BINARY",
+      "include_vol": true
+    }
+  ],
+  "total_experiments": 7,
+  "breakdown": {
+    "primary_hypothesis_tests": 1,
+    "secondary_hypothesis_tests": 3,
+    "baseline_comparisons": 3,
+    "total": 7
+  },
+  "verification_rules": {
+    "actual_must_match_expected": true,
+    "any_mismatch_triggers": "INVALID_EXECUTION",
+    "additions_prohibited": true,
+    "removals_prohibited": true,
+    "modifications_prohibited": true
+  },
+  "locked": true,
+  "locked_digest": "336df946949e9b29ab2c174dc5b784b2d81c9b65c195fa97e98910e7216aba84"
+}

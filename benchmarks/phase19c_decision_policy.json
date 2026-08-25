@@ -1,0 +1,68 @@
+{
+  "decision_id": "DEC-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "outcomes": {
+    "CONFIRMED": {
+      "definition": "Primary hypothesis significant after multiple-testing correction AND all primary thresholds met",
+      "conditions": [
+        "H1_PRIMARY p < 0.05 after Holm correction",
+        "Primary IC > 0.01",
+        "Incremental IC > 0.005",
+        "Positive period ratio > 0.55",
+        "No PIT/leakage failures",
+        "No data integrity failures"
+      ],
+      "all_must_be_true": true
+    },
+    "PARTIALLY_CONFIRMED": {
+      "definition": "Primary hypothesis significant but some secondary conditions fail",
+      "conditions": [
+        "H1_PRIMARY p < 0.05 after Holm correction",
+        "Primary IC > 0.01",
+        "At least 1 of 3 secondary hypotheses positive"
+      ],
+      "all_must_be_true": true
+    },
+    "INCONCLUSIVE": {
+      "definition": "Results are ambiguous \u2014 neither clearly positive nor clearly negative",
+      "conditions": [
+        "H1_PRIMARY p >= 0.05 but < 0.10",
+        "OR Primary IC > 0 but < 0.01"
+      ],
+      "any_must_be_true": true
+    },
+    "NOT_CONFIRMED": {
+      "definition": "Primary hypothesis fails to show evidence",
+      "conditions": [
+        "H1_PRIMARY p >= 0.10",
+        "OR Primary IC <= 0",
+        "OR Incremental IC <= 0"
+      ],
+      "any_must_be_true": true
+    },
+    "INVALID_EXECUTION": {
+      "definition": "Execution differs from registration or data integrity fails",
+      "conditions": [
+        "Experiment inventory mismatch",
+        "Registration mutation detected",
+        "PIT/leakage failure",
+        "Data integrity failure",
+        "Protected outcomes accessed"
+      ],
+      "any_must_be_true": true
+    }
+  },
+  "edge_case_handling": {
+    "positive_primary_but_fails_correction": "NOT_CONFIRMED",
+    "significant_ENV050_but_not_ENV100": "PARTIALLY_CONFIRMED",
+    "positive_H20_but_negative_H10": "PARTIALLY_CONFIRMED",
+    "ridge_succeeds_but_lasso_degenerates": "PARTIALLY_CONFIRMED",
+    "significant_but_below_economic_threshold": "CONFIRMED_PREDICTIVE_EFFECT_PENDING_ECONOMIC_VALIDATION",
+    "one_temporal_window_fails": "evaluate_across_all_windows",
+    "insufficient_oos_data": "INCONCLUSIVE",
+    "execution_differs_from_registration": "INVALID_EXECUTION"
+  },
+  "machine_readable_rules": true,
+  "locked": true,
+  "locked_digest": "358e25f7d159f8169b5d4b883f9a79828c0f70072885774c7f7a910db1fd259a"
+}

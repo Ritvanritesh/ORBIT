@@ -1,0 +1,97 @@
+{
+  "mutation_id": "MUT-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "original_digests": {
+    "identity": "40aba413278e590c7033e69455dc2754aed9c0ac4996990471f603d9d8d61882",
+    "hypothesis": "42a9be598f69f0e1ec214f182ee251b7ecc0861e26da818c8fac1fb9e1dcc72f",
+    "features": "8e2a55ff709dd7ffbb74ef2b71499fee599eb7eb64e4939e819f2ac320c8abfc",
+    "model": "8085855a1eeebc716ca16b772ed86b85f21f2762ab44b43182490a581324e189",
+    "universe": "fd381e3383ecfa200e7d4a0f76c52e0cd2fbf700b5bc98a90ce47ed76bc17863",
+    "temporal": "edf0ff5d7706920a45370a8d8971e797c9c6a6532bc04e3cbe76622806282abc",
+    "metric": "7b25734cf1b3034f6b754ac8aaef3b304f289e58e7eb6f7bb450cb3fc84885f9",
+    "stats": "40e3fa42c3a4c72fdcecb3af18c0ffaff56aa3d7f0607d690b11a0ee9b1a4dbf",
+    "baseline": "f2df9a8613f7798b099f66379697be825f1a4176c011d455e2589cb9d3a0d07d",
+    "economic": "c07aebb3243e2c3f5e54cdd80e37d8edb23a891e138a9d7eb1985dace4958e06",
+    "thresholds": "49810daaf9c406f30ed5937c02198dcab4ea51d4524205aee7ebd4d501b8f132",
+    "decision": "358e25f7d159f8169b5d4b883f9a79828c0f70072885774c7f7a910db1fd259a",
+    "inventory": "336df946949e9b29ab2c174dc5b784b2d81c9b65c195fa97e98910e7216aba84",
+    "firewall": "5235d35979a63f2872f2ac1f3543ad74c35208600ac2e2f116002c18482859d4"
+  },
+  "mutations": {
+    "M1_hypothesis_wording": {
+      "mutation": "Change hypothesis wording from 'higher expected returns' to 'lower expected returns'",
+      "target": "hypothesis",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M2_primary_horizon": {
+      "mutation": "Change primary horizon from H-10 to H-5",
+      "target": "hypothesis",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M3_feature_representation": {
+      "mutation": "Change VOL_ZSCORE to VOL_BINARY",
+      "target": "features",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M4_model_alpha": {
+      "mutation": "Change Ridge alpha from 1.0 to 0.1",
+      "target": "model",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M5_universe": {
+      "mutation": "Change primary universe from ENV-050 to ENV-100",
+      "target": "universe",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M6_temporal_window": {
+      "mutation": "Change test start date from 2022-01-03 to 2023-01-03",
+      "target": "temporal",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M7_primary_metric": {
+      "mutation": "Change Spearman IC to Pearson IC",
+      "target": "metric",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M8_pvalue_correction": {
+      "mutation": "Change Holm correction to no correction",
+      "target": "stats",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M9_effect_threshold": {
+      "mutation": "Lower minimum IC from 0.01 to 0.001",
+      "target": "thresholds",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M10_experiment_count": {
+      "mutation": "Add 5 new experiments after seeing results",
+      "target": "inventory",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M11_pass_fail_rules": {
+      "mutation": "Change CONFIRMED definition to require only p < 0.10",
+      "target": "decision",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    },
+    "M12_baseline_weakening": {
+      "mutation": "Replace momentum baseline with null baseline",
+      "target": "baseline",
+      "detectable": true,
+      "expected_result": "REGISTRATION_INVALIDATED"
+    }
+  },
+  "all_detectable": true,
+  "defense_mechanism": "Any mutation changes the locked_digest, invalidating the registration",
+  "overall": "PASS"
+}

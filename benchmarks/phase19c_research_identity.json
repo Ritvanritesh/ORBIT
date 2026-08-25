@@ -1,0 +1,70 @@
+{
+  "identity_id": "REG-19C-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "phase": "19C",
+  "created": "2026-08-25T13:21:23.394372+00:00",
+  "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods",
+  "prediction_target": "5-day forward excess return vs SPY benchmark",
+  "horizons": {
+    "primary": "H-10",
+    "secondary": "H-20",
+    "rationale": "H-10 selected as primary because mechanism emphasizes 'intermediate horizons'; H-20 as secondary for replication"
+  },
+  "feature_specification": {
+    "representation": "VOL_ZSCORE",
+    "description": "Z-score of 20-day rolling realized volatility",
+    "rationale": "VOL_ZSCORE preserves continuous information; selected over VOL_BINARY for information preservation"
+  },
+  "model_specification": {
+    "primary": "Ridge",
+    "secondary": "Lasso",
+    "rationale": "Ridge selected as primary due to stability; Lasso as secondary for replication"
+  },
+  "universe_specification": {
+    "primary": "ENV-050",
+    "secondary": "ENV-100",
+    "rationale": "ENV-050 primary for cleaner signal; ENV-100 for replication across broader universe"
+  },
+  "data_specification": {
+    "primary_datasets": [
+      "DS-EXP-050",
+      "DS-EXP-100"
+    ],
+    "benchmark": "BENCH-001",
+    "oos_datasets": [
+      "DS-EXP-050_oos",
+      "DS-EXP-100_oos"
+    ],
+    "data_boundary": "2026-06-30"
+  },
+  "training_methodology": {
+    "approach": "time_series_expanding_window",
+    "train_start": "2010-01-04",
+    "train_end_dynamically": true,
+    "validation_start": "2019-01-02",
+    "validation_end": "2021-12-31",
+    "test_start": "2022-01-03",
+    "test_end": "2026-06-30"
+  },
+  "evaluation_methodology": {
+    "primary_metric": "Spearman IC",
+    "aggregation": "monthly_period_wise",
+    "minimum_observations_per_period": 10
+  },
+  "statistical_methodology": {
+    "primary_test": "one_sample_t_test_against_zero",
+    "correction": "holm_bonferroni",
+    "significance_level": 0.05
+  },
+  "economic_methodology": {
+    "separation_principle": "predictive_confirmation_is_not_economic_validation",
+    "required_future_steps": [
+      "portfolio_simulation",
+      "transaction_cost_analysis",
+      "capacity_assessment"
+    ]
+  },
+  "policy_version": "v1",
+  "identity_digest": "40aba413278e590c7033e69455dc2754aed9c0ac4996990471f603d9d8d61882"
+}

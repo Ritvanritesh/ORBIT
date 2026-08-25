@@ -1,0 +1,46 @@
+{
+  "universe_id": "UNIV-REG-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "universe_classification": {
+    "type": "primary_plus_replication",
+    "primary": "ENV-050",
+    "replication": "ENV-100",
+    "rationale": "ENV-050 provides cleaner signal test; ENV-100 tests broader applicability"
+  },
+  "universe_definitions": {
+    "ENV-050": {
+      "dataset": "DS-EXP-050",
+      "n_instruments": 50,
+      "construction_date": "2026-07-01",
+      "membership_rules": "Top 50 US equities by market cap as of construction date",
+      "survivorship_controls": "point_in_time_membership"
+    },
+    "ENV-100": {
+      "dataset": "DS-EXP-100",
+      "n_instruments": 97,
+      "construction_date": "2026-07-01",
+      "membership_rules": "Top 100 US equities by market cap as of construction date",
+      "survivorship_controls": "point_in_time_membership"
+    }
+  },
+  "universe_failure_policy": {
+    "if_universe_fails": {
+      "insufficient_data": "record_failure_and_continue_with_other_universes",
+      "preprocessing_failure": "record_failure_and_continue_with_other_universes",
+      "model_degeneracy": "record_failure_and_continue_with_other_universes",
+      "missing_observations": "record_failure_and_continue_with_other_universes"
+    },
+    "minimum_universes_required": 1,
+    "rationale": "At least one universe must succeed for the hypothesis to be testable"
+  },
+  "minimum_coverage_requirements": {
+    "per_period": 0.8,
+    "overall": 0.9
+  },
+  "missing_instrument_handling": {
+    "method": "drop_instruments_with_missing_data",
+    "rationale": "Missing instruments cannot contribute to cross-sectional IC"
+  },
+  "locked": true,
+  "locked_digest": "fd381e3383ecfa200e7d4a0f76c52e0cd2fbf700b5bc98a90ce47ed76bc17863"
+}
