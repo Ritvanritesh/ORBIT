@@ -1,0 +1,92 @@
+{
+  "phase": "20A.3",
+  "step": 1,
+  "timestamp": "2026-08-25T09:47:19.950853+00:00",
+  "checks": {
+    "allowed_metadata_only": {
+      "status": "PASS",
+      "detail": "Monitor accesses only 8 metadata types",
+      "items": {
+        "timestamps": "Available trade dates for OOS data",
+        "trading_days": "Count of unique valid trading sessions",
+        "observations": "Total row count in OOS dataset",
+        "instruments": "List of unique instrument IDs",
+        "universe_coverage": "Fraction of expected instruments present",
+        "completeness": "Fraction of non-null values in critical columns",
+        "schema": "Column names and data types",
+        "file_integrity": "SHA-256 hash of parquet files"
+      }
+    },
+    "forbidden_data_excluded": {
+      "status": "PASS",
+      "detail": "Monitor excludes 9 forbidden data types",
+      "items": {
+        "targets": "OOS forward returns or labels",
+        "predictions": "Model output values on OOS data",
+        "ic": "Information coefficient on OOS data",
+        "sharpe": "Sharpe ratio or risk-adjusted returns on OOS data",
+        "strategy_returns": "Portfolio returns on OOS data",
+        "model_rankings": "Model performance comparisons",
+        "hypothesis_results": "Hypothesis pass/fail conclusions",
+        "feature_importances": "Model-internal importance scores",
+        "residuals": "Prediction residuals"
+      }
+    },
+    "module_imports": {
+      "status": "PASS",
+      "tests": [
+        {
+          "module": "sklearn",
+          "status": "PASS",
+          "detail": "No forbidden import: sklearn"
+        },
+        {
+          "module": "scipy",
+          "status": "PASS",
+          "detail": "No forbidden import: scipy"
+        },
+        {
+          "module": "statsmodels",
+          "status": "PASS",
+          "detail": "No forbidden import: statsmodels"
+        },
+        {
+          "module": "ic_calc",
+          "status": "PASS",
+          "detail": "No forbidden import: ic_calc"
+        },
+        {
+          "module": "information_coefficient",
+          "status": "PASS",
+          "detail": "No forbidden import: information_coefficient"
+        }
+      ]
+    },
+    "path_references": {
+      "status": "PASS",
+      "tests": [
+        {
+          "path_pattern": "labels",
+          "status": "PASS",
+          "detail": "No file access to forbidden path: labels"
+        },
+        {
+          "path_pattern": "targets",
+          "status": "PASS",
+          "detail": "No file access to forbidden path: targets"
+        },
+        {
+          "path_pattern": "fwd_returns",
+          "status": "PASS",
+          "detail": "No file access to forbidden path: fwd_returns"
+        },
+        {
+          "path_pattern": "forward_return",
+          "status": "PASS",
+          "detail": "No file access to forbidden path: forward_return"
+        }
+      ]
+    }
+  },
+  "overall_status": "PASS"
+}

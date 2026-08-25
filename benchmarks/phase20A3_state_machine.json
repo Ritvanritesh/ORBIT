@@ -1,0 +1,36 @@
+{
+  "phase": "20A.3",
+  "step": 6,
+  "timestamp": "2026-08-25T09:47:20.071532+00:00",
+  "tests": {
+    "initial_collecting": {
+      "from": "COLLECTING",
+      "to": "DATA_NOT_READY",
+      "expected": "DATA_NOT_READY",
+      "pass": true,
+      "has_certificate": false
+    },
+    "still_collecting": {
+      "from": "DATA_NOT_READY",
+      "to": "DATA_NOT_READY",
+      "expected": "DATA_NOT_READY",
+      "pass": true,
+      "has_certificate": false
+    },
+    "ready": {
+      "from": "DATA_NOT_READY",
+      "to": "DATA_READY",
+      "expected": "DATA_READY",
+      "pass": true,
+      "has_certificate": true
+    },
+    "ready_to_ready": {
+      "from": "DATA_READY",
+      "to": "DATA_READY",
+      "expected": "DATA_READY",
+      "pass": true,
+      "has_certificate": true
+    }
+  },
+  "overall": true
+}

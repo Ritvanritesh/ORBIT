@@ -1,0 +1,20 @@
+{
+  "phase": "20A.3",
+  "step": 8,
+  "timestamp": "2026-08-25T09:47:20.117407+00:00",
+  "tests": {
+    "identical_results": {
+      "status": "PASS",
+      "detail": "Two runs produce identical results"
+    },
+    "identical_digests": {
+      "status": "PASS",
+      "detail": "Two runs produce identical digests"
+    },
+    "digest_changes_on_modification": {
+      "status": "PASS",
+      "detail": "Modifying metadata changes the digest"
+    }
+  },
+  "overall": true
+}

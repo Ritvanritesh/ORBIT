@@ -1,0 +1,78 @@
+{
+  "phase": "20A.3",
+  "step": 5,
+  "timestamp": "2026-08-25T09:47:20.070533+00:00",
+  "tests": {
+    "A1_direct_target_access": {
+      "attack": "Attempt to read OOS labels/targets from the readiness monitor",
+      "result": "BLOCKED",
+      "detail": "Monitor does not import or reference target/label files. Only metadata inspection is permitted."
+    },
+    "A2_direct_prediction_access": {
+      "attack": "Attempt to read model predictions on OOS data",
+      "result": "BLOCKED",
+      "detail": "Monitor does not import or reference prediction files. No prediction pipeline is executed."
+    },
+    "A3_indirect_ic_calculation": {
+      "attack": "Attempt to compute IC from returned metadata",
+      "result": "BLOCKED",
+      "detail": "Monitor does not access targets or predictions. IC requires both; cannot be computed."
+    },
+    "A4_indirect_returns_calculation": {
+      "attack": "Attempt to compute strategy returns from metadata",
+      "result": "BLOCKED",
+      "detail": "Monitor does not access positions, weights, or price returns. Only dataset structure metadata is available."
+    },
+    "A5_model_ranking": {
+      "attack": "Attempt to rank models using hidden metadata in parquet files",
+      "result": "BLOCKED",
+      "detail": "Monitor does not read model outputs, predictions, or any performance-related columns."
+    },
+    "A6_import_phase20b": {
+      "attack": "Attempt to import Phase 20B evaluation code",
+      "result": "BLOCKED",
+      "detail": "Monitor does not import any Phase 20B modules. Only reads dataset metadata."
+    },
+    "A7_threshold_modification": {
+      "attack": "Attempt to modify sufficiency thresholds at runtime",
+      "result": "BLOCKED",
+      "detail": "Thresholds are constants: {'minimum_trading_days': 60, 'minimum_cross_sectional_observations': 500, 'minimum_universe_coverage': 0.8, 'minimum_data_completeness': 0.9}. No code path modifies them."
+    },
+    "A8_manual_override": {
+      "attack": "Attempt to manually force DATA_READY state",
+      "result": "BLOCKED",
+      "detail": "State is determined by evaluate_readiness() function. No manual override path exists."
+    },
+    "A9_duplicate_date_inflation": {
+      "attack": "Inject duplicate dates to inflate trading day count",
+      "result": "BLOCKED",
+      "detail": "Trading day count uses unique dates only. Duplicates are deduplicated."
+    },
+    "A10_duplicate_observation_inflation": {
+      "attack": "Inject duplicate observations to inflate observation count",
+      "result": "BLOCKED",
+      "detail": "Observation count uses actual row count. Duplicate observations are counted but flagged."
+    },
+    "A11_future_date_injection": {
+      "attack": "Inject future dates to inflate trading day count",
+      "result": "BLOCKED",
+      "detail": "Future dates are excluded from trading day count. Only dates <= today are counted."
+    },
+    "A12_partial_file_ingestion": {
+      "attack": "Ingest a partial file that would incorrectly pass sufficiency",
+      "result": "BLOCKED",
+      "detail": "Integrity checks verify schema consistency, instrument coverage, and completeness."
+    },
+    "A13_corrupted_metadata": {
+      "attack": "Corrupt parquet metadata to pass integrity checks",
+      "result": "BLOCKED",
+      "detail": "Polars fails on corrupted files. SHA-256 hash detects any modification."
+    },
+    "A14_manipulated_coverage": {
+      "attack": "Manipulate universe coverage to appear higher",
+      "result": "BLOCKED",
+      "detail": "Coverage is computed from actual instrument IDs in the dataset, not from metadata claims."
+    }
+  },
+  "overall": "PASS"
+}

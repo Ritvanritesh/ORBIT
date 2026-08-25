@@ -1,0 +1,70 @@
+{
+  "phase": "20A.3",
+  "step": 4,
+  "timestamp": "2026-08-25T09:47:20.069536+00:00",
+  "checks": {
+    "DS-EXP-050": {
+      "status": "PASS",
+      "checks": {
+        "no_future_timestamps": {
+          "status": "PASS",
+          "detail": "Future rows: 0"
+        },
+        "no_duplicates": {
+          "status": "PASS",
+          "detail": "Total rows: 1800, Unique keys: 1800"
+        },
+        "consistent_instruments_per_date": {
+          "status": "PASS",
+          "detail": "Min: 50, Max: 50 instruments per date"
+        },
+        "no_critical_nulls": {
+          "status": "PASS",
+          "detail": "{'instrument_id': 0, 'trade_date': 0, 'close': 0}"
+        },
+        "schema_consistency": {
+          "status": "PASS",
+          "detail": "All expected columns present"
+        },
+        "partial_ingestion": {
+          "status": "PASS",
+          "detail": "All instruments present"
+        }
+      },
+      "passed": 6,
+      "total": 6
+    },
+    "DS-EXP-100": {
+      "status": "PASS",
+      "checks": {
+        "no_future_timestamps": {
+          "status": "PASS",
+          "detail": "Future rows: 0"
+        },
+        "no_duplicates": {
+          "status": "PASS",
+          "detail": "Total rows: 3492, Unique keys: 3492"
+        },
+        "consistent_instruments_per_date": {
+          "status": "PASS",
+          "detail": "Min: 97, Max: 97 instruments per date"
+        },
+        "no_critical_nulls": {
+          "status": "PASS",
+          "detail": "{'instrument_id': 0, 'trade_date': 0, 'close': 0}"
+        },
+        "schema_consistency": {
+          "status": "PASS",
+          "detail": "All expected columns present"
+        },
+        "partial_ingestion": {
+          "status": "PASS",
+          "detail": "All instruments present"
+        }
+      },
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "overall": "PASS"
+}

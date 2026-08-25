@@ -1,0 +1,325 @@
+{
+  "phase": "20A.3",
+  "step": 2,
+  "timestamp": "2026-08-25T09:47:19.951850+00:00",
+  "tests": {
+    "all_pass": {
+      "input": {
+        "trading_days": 60,
+        "observations": 500,
+        "universe_coverage": 0.8,
+        "data_completeness": 0.9
+      },
+      "expected": "DATA_READY",
+      "actual": "DATA_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 60,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 500,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 0.8,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 0.9,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": true,
+        "blocking": []
+      }
+    },
+    "trading_days_short": {
+      "input": {
+        "trading_days": 59,
+        "observations": 500,
+        "universe_coverage": 0.8,
+        "data_completeness": 0.9
+      },
+      "expected": "DATA_NOT_READY",
+      "actual": "DATA_NOT_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_NOT_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 59,
+            "required": 60,
+            "pass": false
+          },
+          "observations": {
+            "observed": 500,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 0.8,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 0.9,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": false,
+        "blocking": [
+          "trading_days"
+        ]
+      }
+    },
+    "observations_short": {
+      "input": {
+        "trading_days": 60,
+        "observations": 499,
+        "universe_coverage": 0.8,
+        "data_completeness": 0.9
+      },
+      "expected": "DATA_NOT_READY",
+      "actual": "DATA_NOT_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_NOT_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 60,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 499,
+            "required": 500,
+            "pass": false
+          },
+          "universe_coverage": {
+            "observed": 0.8,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 0.9,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": false,
+        "blocking": [
+          "observations"
+        ]
+      }
+    },
+    "coverage_short": {
+      "input": {
+        "trading_days": 60,
+        "observations": 500,
+        "universe_coverage": 0.79,
+        "data_completeness": 0.9
+      },
+      "expected": "DATA_NOT_READY",
+      "actual": "DATA_NOT_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_NOT_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 60,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 500,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 0.79,
+            "required": 0.8,
+            "pass": false
+          },
+          "data_completeness": {
+            "observed": 0.9,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": false,
+        "blocking": [
+          "universe_coverage"
+        ]
+      }
+    },
+    "completeness_short": {
+      "input": {
+        "trading_days": 60,
+        "observations": 500,
+        "universe_coverage": 0.8,
+        "data_completeness": 0.89
+      },
+      "expected": "DATA_NOT_READY",
+      "actual": "DATA_NOT_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_NOT_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 60,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 500,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 0.8,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 0.89,
+            "required": 0.9,
+            "pass": false
+          }
+        },
+        "all_pass": false,
+        "blocking": [
+          "data_completeness"
+        ]
+      }
+    },
+    "all_zero": {
+      "input": {
+        "trading_days": 0,
+        "observations": 0,
+        "universe_coverage": 0.0,
+        "data_completeness": 0.0
+      },
+      "expected": "DATA_NOT_READY",
+      "actual": "DATA_NOT_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_NOT_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 0,
+            "required": 60,
+            "pass": false
+          },
+          "observations": {
+            "observed": 0,
+            "required": 500,
+            "pass": false
+          },
+          "universe_coverage": {
+            "observed": 0.0,
+            "required": 0.8,
+            "pass": false
+          },
+          "data_completeness": {
+            "observed": 0.0,
+            "required": 0.9,
+            "pass": false
+          }
+        },
+        "all_pass": false,
+        "blocking": [
+          "trading_days",
+          "observations",
+          "universe_coverage",
+          "data_completeness"
+        ]
+      }
+    },
+    "exactly_threshold": {
+      "input": {
+        "trading_days": 60,
+        "observations": 500,
+        "universe_coverage": 0.8,
+        "data_completeness": 0.9
+      },
+      "expected": "DATA_READY",
+      "actual": "DATA_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 60,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 500,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 0.8,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 0.9,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": true,
+        "blocking": []
+      }
+    },
+    "well_above": {
+      "input": {
+        "trading_days": 200,
+        "observations": 10000,
+        "universe_coverage": 1.0,
+        "data_completeness": 1.0
+      },
+      "expected": "DATA_READY",
+      "actual": "DATA_READY",
+      "pass": true,
+      "detail": {
+        "state": "DATA_READY",
+        "conditions": {
+          "trading_days": {
+            "observed": 200,
+            "required": 60,
+            "pass": true
+          },
+          "observations": {
+            "observed": 10000,
+            "required": 500,
+            "pass": true
+          },
+          "universe_coverage": {
+            "observed": 1.0,
+            "required": 0.8,
+            "pass": true
+          },
+          "data_completeness": {
+            "observed": 1.0,
+            "required": 0.9,
+            "pass": true
+          }
+        },
+        "all_pass": true,
+        "blocking": []
+      }
+    }
+  },
+  "overall": true
+}
