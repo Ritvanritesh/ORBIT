@@ -1,0 +1,63 @@
+{
+  "phase": "E1",
+  "quality_dimensions": {
+    "temporal_integrity": {
+      "weight": 0.2,
+      "max_score": 1.0
+    },
+    "pit_confidence": {
+      "weight": 0.2,
+      "max_score": 1.0
+    },
+    "completeness": {
+      "weight": 0.15,
+      "max_score": 1.0
+    },
+    "coverage": {
+      "weight": 0.15,
+      "max_score": 1.0
+    },
+    "duplicate_integrity": {
+      "weight": 0.1,
+      "max_score": 1.0
+    },
+    "source_provenance": {
+      "weight": 0.1,
+      "max_score": 1.0
+    },
+    "revision_transparency": {
+      "weight": 0.05,
+      "max_score": 1.0
+    },
+    "reproducibility": {
+      "weight": 0.05,
+      "max_score": 1.0
+    }
+  },
+  "dataset_scores": {
+    "DS-EXP-050": {
+      "temporal_integrity": 1.0,
+      "pit_confidence": 0.9,
+      "completeness": 1.0,
+      "coverage": 1.0,
+      "duplicate_integrity": 1.0,
+      "source_provenance": 1.0,
+      "revision_transparency": 1.0,
+      "reproducibility": 1.0,
+      "weighted_total": 0.98,
+      "overall_classification": "HIGH"
+    },
+    "DS-000003": {
+      "temporal_integrity": 0.8,
+      "pit_confidence": 0.7,
+      "completeness": 0.9,
+      "coverage": 0.8,
+      "duplicate_integrity": 1.0,
+      "source_provenance": 1.0,
+      "revision_transparency": 0.5,
+      "reproducibility": 1.0,
+      "weighted_total": 0.83,
+      "overall_classification": "MEDIUM"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "components": {
+    "data_raw_store": {
+      "path": "data/raw/",
+      "status": "REUSE",
+      "reason": "Write-once immutable raw store with IMMUTABLE.json seals. Well-designed."
+    },
+    "data_normalized_store": {
+      "path": "data/normalized/",
+      "status": "REUSE",
+      "reason": "Parquet format with schema sidecars. Solid foundation."
+    },
+    "data_manifests": {
+      "path": "data/manifests/",
+      "status": "REUSE",
+      "reason": "JSON manifests with SHA-256 checksums. Compatible with new system."
+    },
+    "data_registry_duckdb": {
+      "path": "data/registry.duckdb",
+      "status": "REUSE",
+      "reason": "DuckDB ingestion catalog with snapshot/artifact tracking. Extend, don't replace."
+    },
+    "temporal_pit_engine": {
+      "path": "src/orbit/temporal/engine.py",
+      "status": "REUSE",
+      "reason": "Full PIT engine with publication-time availability gate. Core infrastructure."
+    },
+    "pit_snapshot": {
+      "path": "src/orbit/temporal/snapshot.py",
+      "status": "REUSE",
+      "reason": "PointInTimeSnapshot with content digest. Provenance root."
+    },
+    "ingestion_pipeline": {
+      "path": "src/orbit/ingestion/pipeline.py",
+      "status": "REUSE",
+      "reason": "Raw\u2192Normalized pipeline with checksums. Extend for new providers."
+    },
+    "ingestion_manifests": {
+      "path": "src/orbit/ingestion/manifests.py",
+      "status": "REUSE",
+      "reason": "Manifest model with per-file checksums. Compatible."
+    },
+    "ingestion_checksums": {
+      "path": "src/orbit/ingestion/checksums.py",
+      "status": "REUSE",
+      "reason": "SHA-256 content addressing. Standard."
+    },
+    "data_spec_schema": {
+      "path": "schemas/data_spec_schema.json",
+      "status": "MODIFY",
+      "reason": "Needs expansion for 5-timestamp model and vintage metadata."
+    },
+    "data_governance_policy": {
+      "path": "policies/data_governance_policy.json",
+      "status": "MODIFY",
+      "reason": "Needs expansion for availability policy engine integration."
+    },
+    "universe_construction": {
+      "path": "src/orbit/ml/phase11_2_universe.py",
+      "status": "REUSE",
+      "reason": "Universe building logic. Extend for new datasets."
+    },
+    "feature_builders": {
+      "path": "src/orbit/ml/phase12b_fundamentals.py",
+      "status": "REUSE",
+      "reason": "Feature computation with PIT joins. Extend, don't replace."
+    },
+    "dataset_assembly": {
+      "path": "src/orbit/ml/dataset.py",
+      "status": "REUSE",
+      "reason": "Feature-label join with split assignment. Core infrastructure."
+    },
+    "instrument_master": {
+      "path": "configs/instrument_master_dev.json",
+      "status": "REUSE",
+      "reason": "Canonical instrument IDs. Stable identity layer."
+    },
+    "identity_mapping": {
+      "path": "src/orbit/ml/phase12c_identity.py",
+      "status": "REUSE",
+      "reason": "ORBIT ID to CIK mapping. Extend for new instruments."
+    },
+    "phase9_snapshots": {
+      "path": "data/cache/phase9_snapshots/",
+      "status": "DO_NOT_TOUCH",
+      "reason": "Historical feature/label snapshots. Immutable research artifacts."
+    },
+    "phase10_snapshots": {
+      "path": "data/cache/phase10_snapshots/",
+      "status": "DO_NOT_TOUCH",
+      "reason": "Historical feature/label snapshots. Immutable research artifacts."
+    }
+  },
+  "classification_summary": {
+    "REUSE": 14,
+    "MODIFY": 2,
+    "WRAP": 0,
+    "DEPRECATE": 0,
+    "DO_NOT_TOUCH": 2
+  }
+}

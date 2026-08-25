@@ -1,0 +1,39 @@
+{
+  "phase": "E1",
+  "lineage_chain": {
+    "SOURCE": {
+      "description": "Original data provider"
+    },
+    "RAW_DATASET": {
+      "description": "data/raw/{domain}/{provider}/{snapshot_id}/"
+    },
+    "STAGED_DATASET": {
+      "description": "data/normalized/{domain}/{provider}/{snapshot_id}/"
+    },
+    "VALIDATED_DATASET": {
+      "description": "Data passing schema/integrity checks"
+    },
+    "PIT_TRANSFORMATION": {
+      "description": "Data with availability policies applied"
+    },
+    "RESEARCH_SNAPSHOT": {
+      "description": "Immutable dataset version for experiments"
+    },
+    "FEATURE": {
+      "description": "Computed feature set"
+    },
+    "EXPERIMENT": {
+      "description": "Research experiment"
+    }
+  },
+  "example_lineage": {
+    "DS-EXP-050": {
+      "SOURCE": "Yahoo Finance API",
+      "RAW_DATASET": "data/raw/market/yahoo_chart_api/DS-EXP-050/",
+      "STAGED_DATASET": "data/normalized/market/yahoo_chart_api/DS-EXP-050/",
+      "VALIDATED_DATASET": "Same as staged (validation in pipeline)",
+      "PIT_TRANSFORMATION": "PIT_WITH_KNOWN_LAG applied",
+      "RESEARCH_SNAPSHOT": "Referenced by experiments"
+    }
+  }
+}

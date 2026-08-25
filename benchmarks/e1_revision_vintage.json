@@ -1,0 +1,24 @@
+{
+  "phase": "E1",
+  "vintage_system": {
+    "vintage_types": {
+      "ORIGINAL_FIRST_RELEASE": "Initial publication of observation",
+      "REVISED_RELEASE": "Subsequent revision to historical value",
+      "LATEST_AVAILABLE_VALUE": "Most recent version of observation",
+      "VINTAGE_SNAPSHOT": "Exact version available at historical timestamp"
+    },
+    "current_limitation": "No actual vintage data available for existing datasets",
+    "recommendation": "Integrate ALFRED for macroeconomic vintages",
+    "implementation": {
+      "vintage_id_field": "vintage_id",
+      "original_value_field": "original_value",
+      "revision_date_field": "revision_date",
+      "is_revised_field": "is_revised"
+    },
+    "support_level": {
+      "market_data": "N/A (not revised)",
+      "sec_fundamentals": "Partial (filing date = version)",
+      "fred_macro": "Limited (latest only)"
+    }
+  }
+}

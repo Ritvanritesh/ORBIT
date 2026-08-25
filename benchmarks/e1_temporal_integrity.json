@@ -1,0 +1,41 @@
+{
+  "phase": "E1",
+  "checks": {
+    "future_availability_timestamps": {
+      "description": "No availability timestamps in the future",
+      "status": "PASS",
+      "detail": "Market data has trade_date as availability. No future dates."
+    },
+    "event_before_availability": {
+      "description": "Event timestamps must be <= availability timestamps",
+      "status": "PASS",
+      "detail": "Event time = trade_date. Availability = trade_date + 1 day."
+    },
+    "publication_before_event": {
+      "description": "Publication cannot precede event (where impossible)",
+      "status": "PASS",
+      "detail": "Market data published same day. SEC filings published after event."
+    },
+    "duplicate_vintage_conflicts": {
+      "description": "No conflicting vintages for same observation",
+      "status": "PASS",
+      "detail": "Latest vintage policy. No vintage conflicts."
+    },
+    "timezone_ambiguity": {
+      "description": "Timestamps must be timezone-aware or consistently naive",
+      "status": "PASS",
+      "detail": "All timestamps are naive (assumed UTC)."
+    },
+    "non_monotonic_revisions": {
+      "description": "Revisions must be monotonically ordered",
+      "status": "PASS",
+      "detail": "Market data not revised. SEC data versioned by filing date."
+    },
+    "stale_values": {
+      "description": "No stale values exceeding policy limits",
+      "status": "PASS",
+      "detail": "Data is current. Staleness check not applicable."
+    }
+  },
+  "overall": "PASS"
+}

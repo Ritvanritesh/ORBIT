@@ -1,0 +1,47 @@
+{
+  "phase": "E1",
+  "layers": {
+    "RAW": {
+      "path": "data/raw/",
+      "description": "Exact acquired source data",
+      "immutability": "Write-once, sealed with IMMUTABLE.json",
+      "overwrite_allowed": false,
+      "traceability": "Source \u2192 Raw"
+    },
+    "STAGED": {
+      "path": "data/normalized/",
+      "description": "Parsed and normalized data",
+      "immutability": "Versioned by snapshot ID",
+      "overwrite_allowed": false,
+      "traceability": "Raw \u2192 Staged"
+    },
+    "VALIDATED": {
+      "description": "Data that passed schema and integrity checks",
+      "immutability": "Validated data is part of staged layer",
+      "overwrite_allowed": false,
+      "traceability": "Staged \u2192 Validated"
+    },
+    "PIT_READY": {
+      "description": "Data transformed according to availability policies",
+      "immutability": "PIT transformation is versioned",
+      "overwrite_allowed": false,
+      "traceability": "Validated \u2192 PIT Ready"
+    },
+    "RESEARCH_SNAPSHOT": {
+      "description": "Immutable dataset version referenced by experiments",
+      "immutability": "True",
+      "overwrite_allowed": false,
+      "traceability": "PIT Ready \u2192 Research Snapshot"
+    }
+  },
+  "layer_status": {
+    "RAW": {
+      "exists": true,
+      "n_files": 284
+    },
+    "STAGED": {
+      "exists": true,
+      "n_files": 202
+    }
+  }
+}

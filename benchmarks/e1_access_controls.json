@@ -1,0 +1,41 @@
+{
+  "phase": "E1",
+  "access_rules": {
+    "EXPLORATORY": {
+      "allowed_classifications": [
+        "STRICT_PIT",
+        "PIT_WITH_KNOWN_LAG",
+        "REVISED_NON_PIT",
+        "UNKNOWN_PIT"
+      ],
+      "conditions": {
+        "REVISED_NON_PIT": "Must document limitation",
+        "UNKNOWN_PIT": "Must document restriction"
+      }
+    },
+    "CONFIRMATORY": {
+      "allowed_classifications": [
+        "STRICT_PIT",
+        "PIT_WITH_KNOWN_LAG"
+      ],
+      "conditions": {}
+    },
+    "CONFIRMATORY_HISTORICAL": {
+      "allowed_classifications": [
+        "STRICT_PIT"
+      ],
+      "conditions": {}
+    },
+    "BLOCKED": {
+      "classifications": [
+        "UNSAFE_FOR_HISTORICAL_CONFIRMATION"
+      ],
+      "reason": "Cannot safely support historical confirmatory claims"
+    }
+  },
+  "integration": {
+    "data_governance_policy": "policies/data_governance_policy.json",
+    "confirmatory_registration": "schemas/confirmatory_registration_schema.json",
+    "note": "Access controls integrate with existing Phase 17B-R governance. Not duplicated."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id_schema": "DSID-{hash}",
+  "components": [
+    "provider",
+    "dataset_name",
+    "series_id",
+    "instrument_or_universe_scope",
+    "frequency",
+    "event_time_definition",
+    "publication_time_definition",
+    "availability_time_policy",
+    "vintage_policy",
+    "transformation_version",
+    "raw_source_snapshot_digest",
+    "schema_version"
+  ],
+  "deterministic": true,
+  "collision_free": true,
+  "test_results": {
+    "generated_ids": {
+      "DS-EXP-050": "DSID-C4C4D9440FAF2D85",
+      "DS-000003": "DSID-538FCEE8305E0CC0"
+    },
+    "determinism": true,
+    "uniqueness": true
+  }
+}

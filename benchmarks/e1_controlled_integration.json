@@ -1,0 +1,28 @@
+{
+  "phase": "E1",
+  "integration_test": {
+    "dataset": "DS-000003",
+    "provider": "fred_csv",
+    "rows": 28240,
+    "columns": [
+      "series_id",
+      "observation_date",
+      "value",
+      "vintage_note",
+      "provider",
+      "snapshot_id"
+    ],
+    "series_ids": [
+      "DFF",
+      "UNRATE",
+      "CPIAUCSL"
+    ],
+    "pit_classification": "PIT_WITH_KNOWN_LAG",
+    "manifest_created": true,
+    "snapshot_generated": true,
+    "availability_logic_tested": true,
+    "lineage_recorded": true,
+    "reproducibility_verified": true,
+    "differences_from_historical": "None \u2014 using existing normalized data"
+  }
+}

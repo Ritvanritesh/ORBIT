@@ -1,0 +1,98 @@
+{
+  "phase": "E1",
+  "tests": {
+    "A1_future_observation_injected": {
+      "attack": "Future observation injected before availability time",
+      "result": "BLOCKED",
+      "detail": "Availability engine checks as_of_time >= event_time + shift. Future observations blocked."
+    },
+    "A2_missing_availability_defaults": {
+      "attack": "Missing availability timestamp defaults to usable",
+      "result": "BLOCKED",
+      "detail": "Fail-closed: unknown availability defaults to NOT_AVAILABLE."
+    },
+    "A3_revised_labeled_original": {
+      "attack": "Revised value labeled as original vintage",
+      "result": "BLOCKED",
+      "detail": "Vintage identity tracked. Revision metadata prevents mislabeling."
+    },
+    "A4_snapshot_overwritten": {
+      "attack": "Dataset snapshot overwritten",
+      "result": "BLOCKED",
+      "detail": "Snapshots are immutable. New data creates new snapshot."
+    },
+    "A5_raw_source_modified": {
+      "attack": "Raw source silently modified",
+      "result": "BLOCKED",
+      "detail": "Raw store is IMMUTABLE. Checksums verified on reuse."
+    },
+    "A6_dataset_identity_collision": {
+      "attack": "Dataset identity collision",
+      "result": "BLOCKED",
+      "detail": "Collision test verified. IDs are deterministic from inputs."
+    },
+    "A7_transform_without_version": {
+      "attack": "Transformation changes without version change",
+      "result": "BLOCKED",
+      "detail": "Transformation version is part of dataset identity. Change = new ID."
+    },
+    "A8_feature_references_nonexistent": {
+      "attack": "Feature references nonexistent snapshot",
+      "result": "BLOCKED",
+      "detail": "Dataset assembly validates snapshot existence before feature computation."
+    },
+    "A9_duplicate_conflicting_values": {
+      "attack": "Duplicate observations with conflicting values",
+      "result": "BLOCKED",
+      "detail": "Schema validation rejects duplicate (instrument, timestamp) keys."
+    },
+    "A10_timestamp_timezone_ambiguity": {
+      "attack": "Timestamp timezone ambiguity",
+      "result": "BLOCKED",
+      "detail": "All timestamps consistently naive (assumed UTC). Policy documented."
+    },
+    "A11_provider_metadata_contradicts": {
+      "attack": "Provider metadata contradicts dataset metadata",
+      "result": "BLOCKED",
+      "detail": "Schema validation checks metadata consistency."
+    },
+    "A12_unknown_pit_enters_confirmatory": {
+      "attack": "UNKNOWN_PIT data enters confirmatory experiment",
+      "result": "BLOCKED",
+      "detail": "Access controls block UNKNOWN_PIT from confirmatory research."
+    },
+    "A13_unsafe_bypasses_access": {
+      "attack": "UNSAFE data bypasses research access controls",
+      "result": "BLOCKED",
+      "detail": "UNSAFE_FOR_HISTORICAL_CONFIRMATION blocked from all confirmatory use."
+    },
+    "A14_availability_lag_removed": {
+      "attack": "Availability lag removed after favorable result",
+      "result": "BLOCKED",
+      "detail": "Availability policy is part of locked dataset identity. Cannot change silently."
+    },
+    "A15_experiment_reads_latest_revised": {
+      "attack": "Historical experiment silently reads latest revised dataset",
+      "result": "BLOCKED",
+      "detail": "Experiments reference immutable snapshots, not mutable datasets."
+    },
+    "A16_lineage_chain_broken": {
+      "attack": "Lineage chain broken",
+      "result": "BLOCKED",
+      "detail": "Lineage is recorded at each layer. Broken chain detected."
+    },
+    "A17_missing_raw_but_processed_exists": {
+      "attack": "Missing raw artifact but processed artifact exists",
+      "result": "BLOCKED",
+      "detail": "Raw store checksums verified. Missing raw = invalid processed."
+    },
+    "A18_snapshot_digest_mismatch": {
+      "attack": "Snapshot digest mismatch",
+      "result": "BLOCKED",
+      "detail": "SHA-256 digest verified. Mismatch = corruption detected."
+    }
+  },
+  "overall": "PASS",
+  "n_tests": 18,
+  "n_blocked": 18
+}

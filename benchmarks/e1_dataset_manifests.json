@@ -1,0 +1,3266 @@
+{
+  "phase": "E1",
+  "manifests": {
+    "DS-000001": {
+      "checksums": {
+        "AAPL.json": "40bdce3ce4953d62e035bde7ddbfe2078cddb6ad53a933238521a7b2476cd171",
+        "JNJ.json": "deb0cdc32d5e72bcd431744cb46e185a7ac7c4933d4b6e2d5ba106d83e9c0b15",
+        "MSFT.json": "e78356021acc002cadeacebb8e37d8481aabdc1025fe660a18fca5b5ccad744d",
+        "WMT.json": "841b3dbd7576c87554b1345402cbb5c0057371eb1f83ef6a1430417b79f01e08",
+        "XOM.json": "bfb5f0f4a79675d46ad2de6d1e3823ac66c42e41a949ac2b0317508114384c93"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "1996-01-02",
+        "2026-08-14"
+      ],
+      "domain": "market",
+      "downloaded_at": "2026-08-17T13:12:11.878125Z",
+      "file_paths": {
+        "AAPL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000001\\AAPL.json",
+        "JNJ.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000001\\JNJ.json",
+        "MSFT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000001\\MSFT.json",
+        "WMT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000001\\WMT.json",
+        "XOM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000001\\XOM.json"
+      },
+      "instruments": [
+        "INS-000001",
+        "INS-000002",
+        "INS-000003",
+        "INS-000004",
+        "INS-000005"
+      ],
+      "license_ref": "DEVELOPMENT - see configs/sources.json",
+      "manifest_created_at": "2026-08-17T13:12:11.880119+00:00",
+      "meta": {
+        "adjclose_warning": "adjclose is retroactively dividend+split adjusted by the provider; it is a look-ahead if used as a point-in-time price. Use 'close' for returns (split-adjusted basis is return-neutral).",
+        "adjustment_note": "yahoo_chart_api OHLC AND volume are split-adjusted to the current share basis (volume confirmed continuous across the 7:1 and 4:1 splits in the dev sample); stooq_csv Close is split-adjusted but volume is raw shares - dollar volume from stooq close*volume is discontinuous at splits and must be reconstructed from events",
+        "corporate_actions": 528,
+        "reconciliation": {
+          "finding_count": 16,
+          "findings": [
+            {
+              "instrument_id": "INS-000001",
+              "code": "volume_spike",
+              "message": "volume up to 12x the trailing 60-day median on 1997-01-06 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "1997-01-06"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "volume_spike",
+              "message": "volume up to 31x the trailing 60-day median on 1997-08-06..1997-08-11 (4 consecutive day(s)) - possible corrupt print",
+              "event_date": "1997-08-06"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "volume_spike",
+              "message": "volume up to 11x the trailing 60-day median on 1998-07-16 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "1998-07-16"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "volume_spike",
+              "message": "volume up to 27x the trailing 60-day median on 2000-09-29 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "2000-09-29"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "unexplained_discontinuity",
+              "message": "overnight move 33.2% on 1997-08-06 (no corporate action within 5 days)",
+              "event_date": "1997-08-06"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "unexplained_discontinuity",
+              "message": "overnight move -51.9% on 2000-09-29 (no corporate action within 5 days)",
+              "event_date": "2000-09-29"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "split_adjustment_inconsistency",
+              "message": "split 2.00 on 2000-06-21: expected close 0.9040 (continuous), got 0.9598 (6.2% off)",
+              "event_date": "2000-06-21"
+            },
+            {
+              "instrument_id": "INS-000001",
+              "code": "split_adjustment_inconsistency",
+              "message": "split 4.00 on 2020-08-31: expected close 124.8075 (continuous), got 134.1800 (7.5% off)",
+              "event_date": "2020-08-31"
+            },
+            {
+              "instrument_id": "INS-000002",
+              "code": "volume_spike",
+              "message": "volume up to 11x the trailing 60-day median on 2006-04-28 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "2006-04-28"
+            },
+            {
+              "instrument_id": "INS-000002",
+              "code": "split_adjustment_inconsistency",
+              "message": "split 2.00 on 1996-12-09: expected close 9.5547 (continuous), got 10.2344 (7.1% off)",
+              "event_date": "1996-12-09"
+            },
+            {
+              "instrument_id": "INS-000002",
+              "code": "split_adjustment_inconsistency",
+              "message": "split 2.00 on 1998-02-23: expected close 19.3906 (continuous), got 20.5312 (5.9% off)",
+              "event_date": "1998-02-23"
+            },
+            {
+              "instrument_id": "INS-000005",
+              "code": "volume_spike",
+              "message": "volume up to 11x the trailing 60-day median on 2015-10-14 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "2015-10-14"
+            },
+            {
+              "instrument_id": "INS-000005",
+              "code": "volume_spike",
+              "message": "volume up to 22x the trailing 60-day median on 2026-01-16 (1 consecutive day(s)) - possible corrupt print",
+              "event_date": "2026-01-16"
+            },
+            {
+              "instrument_id": "INS-000005",
+              "code": "split_adjustment_inconsistency",
+              "message": "split 2.00 on 1999-04-20: expected close 14.9583 (continuous), got 16.2500 (8.6% off)",
+              "event_date": "1999-04-20"
+            },
+            {
+              "instrument_id": "INS-000003",
+              "code": "volume_spike",
+              "message": "volume up to 13x the trailing 60-day median on 2023-08-15..2023-08-16 (2 consecutive day(s)) - possible corrupt print",
+              "event_date": "2023-08-15"
+            },
+            {
+              "instrument_id": "INS-000003",
+              "code": "volume_spike",
+              "message": "volume up to 21x the trailing 60-day median on 2023-08-21..2023-08-23 (2 consecutive day(s)) - possible corrupt print",
+              "event_date": "2023-08-21"
+            }
+          ]
+        },
+        "symbols": [
+          "AAPL",
+          "JNJ",
+          "MSFT",
+          "WMT",
+          "XOM"
+        ],
+        "timezone_rule": "see normalized _schema.json"
+      },
+      "provider": "yahoo_chart_api",
+      "request_fingerprint": "8053399f7e022cc0822d26466fa533404e6f6abf273926e06d6086e4d2452299",
+      "row_count": 38525,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000001",
+      "source": "yahoo_chart_api",
+      "source_uri": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?period1=820454400&period2=1786924800&interval=1d&events=div%2Csplit",
+      "validation_issues": [
+        {
+          "code": "missing_weekday",
+          "context": "AAPL",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "JNJ",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MSFT",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "WMT",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "XOM",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        }
+      ],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "1996-01-02",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-17T13:12:11.878125Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-000002": {
+      "checksums": {
+        "cik0000034088_companyfacts.json": "9b95535419e5662e3deed01de803e83deead477a4c81316e1c45186368fdd8b8",
+        "cik0000104169_companyfacts.json": "8f3d9abe26f7f7842a070f4b639dbd39296144349270eeb0df5659e7510e9cec",
+        "cik0000200406_companyfacts.json": "7141c0c988fa1d30f779687b4c78ab561e19aa5990a58ad86a66467d0a783980",
+        "cik0000320193_companyfacts.json": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "cik0000789019_companyfacts.json": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "2009-07-22",
+        "2026-07-31"
+      ],
+      "domain": "sec",
+      "downloaded_at": "2026-08-17T13:16:29.835205Z",
+      "file_paths": {
+        "cik0000034088_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000002\\cik0000034088_companyfacts.json",
+        "cik0000104169_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000002\\cik0000104169_companyfacts.json",
+        "cik0000200406_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000002\\cik0000200406_companyfacts.json",
+        "cik0000320193_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000002\\cik0000320193_companyfacts.json",
+        "cik0000789019_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000002\\cik0000789019_companyfacts.json"
+      },
+      "instruments": [
+        "104169",
+        "200406",
+        "320193",
+        "34088",
+        "789019"
+      ],
+      "license_ref": "AUTHORITATIVE - SEC EDGAR public filings",
+      "manifest_created_at": "2026-08-17T13:16:29.836203+00:00",
+      "meta": {
+        "ciks": [
+          34088,
+          104169,
+          200406,
+          320193,
+          789019
+        ],
+        "date_range_semantics": "earliest/latest are FILING dates (point-in-time availability), not reporting-period dates; period coverage lives in start/end columns of facts.parquet",
+        "filing_metadata_preserved": true
+      },
+      "provider": "sec_edgar_companyfacts",
+      "request_fingerprint": "75db3797ddb08b11cb6f8883834364dc0c990562115611c9ae61bd70a0608f96",
+      "row_count": 130800,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000002",
+      "source": "SEC EDGAR / XBRL companyfacts",
+      "source_uri": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000034088.json",
+      "validation_issues": [],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "2009-07-22",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-17T13:16:29.835205Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-000003": {
+      "checksums": {
+        "CPIAUCSL.csv": "5a102ceb6a4c5fe5a2e0319d6feca89b55dde6199e51de0760f42791a949cdaa",
+        "DFF.csv": "c744fbe3a4d07ee6a8812698fef1a769eb1e1084f2050f13eafda2db6895bf42",
+        "UNRATE.csv": "b671b94c9381e263cafeb2c24f035b49829d805ee2650498c8eb08a33b156f60"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "1947-01-01",
+        "2026-08-13"
+      ],
+      "domain": "macro",
+      "downloaded_at": "2026-08-17T13:16:32.373367Z",
+      "file_paths": {
+        "CPIAUCSL.csv": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\macro\\fred_csv\\DS-000003\\CPIAUCSL.csv",
+        "DFF.csv": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\macro\\fred_csv\\DS-000003\\DFF.csv",
+        "UNRATE.csv": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\macro\\fred_csv\\DS-000003\\UNRATE.csv"
+      },
+      "instruments": [
+        "CPIAUCSL",
+        "DFF",
+        "UNRATE"
+      ],
+      "license_ref": "AUTHORITATIVE - FRED public data",
+      "manifest_created_at": "2026-08-17T13:16:32.373367+00:00",
+      "meta": {
+        "series": [
+          "CPIAUCSL",
+          "DFF",
+          "UNRATE"
+        ],
+        "vintage_note": "latest_published_vintage"
+      },
+      "provider": "fred_csv",
+      "request_fingerprint": "89b58d601eac01efe8ea6d5ec39b92afb06f14993010ba7eaa4ac1cb4173212c",
+      "row_count": 28240,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000003",
+      "source": "FRED / ALFRED",
+      "source_uri": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+      "validation_issues": [
+        {
+          "code": "null_values",
+          "context": "",
+          "level": "warning",
+          "message": "column value has 1 nulls"
+        },
+        {
+          "code": "missing_observations",
+          "context": "",
+          "level": "warning",
+          "message": "1 null observations kept as-is"
+        },
+        {
+          "code": "null_values",
+          "context": "",
+          "level": "warning",
+          "message": "column value has 1 nulls"
+        },
+        {
+          "code": "missing_observations",
+          "context": "",
+          "level": "warning",
+          "message": "1 null observations kept as-is"
+        }
+      ],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "1947-01-01",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-17T13:16:32.373367Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-000004": {
+      "checksums": {
+        "AAPL.json": "3bfd86c426d260dbda9af1ba863876bcbad6801dccb76cc0c1e28cc60d3433c9",
+        "AMZN.json": "9c34241b0c1fd2ef6477dc53f3fb536d8afa64eda7a48da0a11d9f682aa1d685",
+        "BAC.json": "18f5ee2434956c46b2ef2cb9779096a01335761e35c11ca43959539555157569",
+        "CVX.json": "299675046ee64204682d52411f7ec111d11a56c8a6a9b4118cb430b5f0c94e41",
+        "DIS.json": "f45d88b93b0dc8018cab8632c9ca77c7e1a7ada3542e22a5f4f44f214a63255b",
+        "GOOGL.json": "16cd95067fd6f00b19b48e48530f9abd6176e7eb29927f1167090ef435a5e53f",
+        "HD.json": "5202c86e0ad17f82b7ba35c2e6e8c2c1559c44f5907a83697347c818847ba349",
+        "JNJ.json": "8908303ecb6c76da19034abf6e1cf002620a39ddff520fc0995eab447caa44aa",
+        "JPM.json": "df45614a535743bf319858231925aca21854d3d708168912a1081adb09158c02",
+        "KO.json": "65a50e762ccd3b9adcdf68ce939a6272e9cd861d7d0d9e2d79f53fc7c925271d",
+        "META.json": "b4a7da3fd94f0e1032ec80327ec239c5dcf8826c2cc7dd2749894c23218958ea",
+        "MSFT.json": "ee56248ed29eb7cdd018572fced89700abf51f59bc3d5a3522afdfc4158a0bac",
+        "NVDA.json": "0d121d6326429d278b376a5e6cb7663746491de1e0bf81dbec7085691c8ca711",
+        "PFE.json": "8ba6e26cc6e3e17cb89be2667fc17be06b2d3813f36a6d6ce6e72a009686fe0c",
+        "PG.json": "155d3e9a627f5ac90c76db765ed569639569cf4e1632a528c61deb88de19eaa0",
+        "TSLA.json": "aeba78a4152bcb6d80324fdd5067749ec3fad022679c83a4eaae3242f5717f94",
+        "UNH.json": "4e9dc696b9ffcd3945a92dfca930d9573ed6778352bbae57db4b646ba266d978",
+        "V.json": "712f7f362c8b29eea4597f96a7f69ead0ece52852179f6de4e47845fdcc09d1b",
+        "WMT.json": "3eb308c818b8f438cb3f9d8ab9646472a0c215eb165392d7a0b08e57136f24cc",
+        "XOM.json": "e3edf5a4c722a374b08f0767680f893cd21cb3e15877118375d37e9f6a76dd20"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "1996-01-02",
+        "2026-08-14"
+      ],
+      "domain": "market",
+      "downloaded_at": "2026-08-18T15:15:32.657532Z",
+      "file_paths": {
+        "AAPL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\AAPL.json",
+        "AMZN.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\AMZN.json",
+        "BAC.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\BAC.json",
+        "CVX.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\CVX.json",
+        "DIS.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\DIS.json",
+        "GOOGL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\GOOGL.json",
+        "HD.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\HD.json",
+        "JNJ.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\JNJ.json",
+        "JPM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\JPM.json",
+        "KO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\KO.json",
+        "META.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\META.json",
+        "MSFT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\MSFT.json",
+        "NVDA.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\NVDA.json",
+        "PFE.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\PFE.json",
+        "PG.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\PG.json",
+        "TSLA.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\TSLA.json",
+        "UNH.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\UNH.json",
+        "V.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\V.json",
+        "WMT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\WMT.json",
+        "XOM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000004\\XOM.json"
+      },
+      "instruments": [
+        "INS-000001",
+        "INS-000002",
+        "INS-000003",
+        "INS-000004",
+        "INS-000005",
+        "INS-000006",
+        "INS-000007",
+        "INS-000008",
+        "INS-000009",
+        "INS-000010",
+        "INS-000011",
+        "INS-000012",
+        "INS-000013",
+        "INS-000014",
+        "INS-000015",
+        "INS-000016",
+        "INS-000017",
+        "INS-000018",
+        "INS-000019",
+        "INS-000020"
+      ],
+      "license_ref": "DEVELOPMENT - see configs/sources.json",
+      "manifest_created_at": "2026-08-18T15:15:32.658529+00:00",
+      "meta": {
+        "adjclose_warning": "adjclose is retroactively dividend+split adjusted by the provider; it is a look-ahead if used as a point-in-time price. Use 'close' for returns (split-adjusted basis is return-neutral).",
+        "adjustment_note": "yahoo_chart_api OHLC AND volume are split-adjusted to the current share basis (volume confirmed continuous across the 7:1 and 4:1 splits in the dev sample); stooq_csv Close is split-adjusted but volume is raw shares - dollar volume from stooq close*volume is discontinuous at splits and must be reconstructed from events",
+        "corporate_actions": 1694,
+        "reconciliation": {
+          "finding_count": 96,
+          "findings": [
+            {
+              "code": "volume_spike",
+              "event_date": "2004-08-19",
+              "instrument_id": "INS-000007",
+              "message": "volume up to 18x the trailing 60-day median on 2004-08-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-09-29",
+              "instrument_id": "INS-000007",
+              "message": "volume up to 12x the trailing 60-day median on 2004-09-29 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-05-15",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 15x the trailing 60-day median on 1997-05-15 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-11-18",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 12x the trailing 60-day median on 2005-11-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-07-26",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 14x the trailing 60-day median on 2006-07-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2007-04-25",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 17x the trailing 60-day median on 2007-04-25..2007-04-26 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-10-23",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 10x the trailing 60-day median on 2009-10-23 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-01-03",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.6% on 2001-01-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-03-05",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.3% on 2001-03-05 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-04-09",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 33.6% on 2001-04-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-11-14",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 30.2% on 2001-11-14 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-11-26",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 34.5% on 2001-11-26 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2007-04-25",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.9% on 2007-04-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-10-23",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.8% on 2009-10-23 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-01-05",
+              "instrument_id": "INS-000006",
+              "message": "split 3.00 on 1999-01-05: expected close 2.9578 (continuous), got 3.4500 (16.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-04-28",
+              "instrument_id": "INS-000002",
+              "message": "volume up to 11x the trailing 60-day median on 2006-04-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1996-12-09",
+              "instrument_id": "INS-000002",
+              "message": "split 2.00 on 1996-12-09: expected close 9.5547 (continuous), got 10.2344 (7.1% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-02-23",
+              "instrument_id": "INS-000002",
+              "message": "split 2.00 on 1998-02-23: expected close 19.3906 (continuous), got 20.5312 (5.9% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2015-10-14",
+              "instrument_id": "INS-000005",
+              "message": "volume up to 11x the trailing 60-day median on 2015-10-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2026-01-16",
+              "instrument_id": "INS-000005",
+              "message": "volume up to 22x the trailing 60-day median on 2026-01-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-04-20",
+              "instrument_id": "INS-000005",
+              "message": "split 2.00 on 1999-04-20: expected close 14.9583 (continuous), got 16.2500 (8.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2020-11-09",
+              "instrument_id": "INS-000020",
+              "message": "volume up to 10x the trailing 60-day median on 2020-11-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-07-01",
+              "instrument_id": "INS-000020",
+              "message": "split 3.00 on 1999-07-01: expected close 34.4719 (continuous), got 36.6461 (6.3% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-12-27",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 14x the trailing 60-day median on 2010-12-27 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-03-31",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 11x the trailing 60-day median on 2011-03-31 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-04-01",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 10x the trailing 60-day median on 2013-04-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-05-09",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 13x the trailing 60-day median on 2013-05-09..2013-05-10 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-05-14",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 14x the trailing 60-day median on 2013-05-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2020-08-31",
+              "instrument_id": "INS-000010",
+              "message": "split 5.00 on 2020-08-31: expected close 147.5600 (continuous), got 158.3500 (7.3% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2012-05-18",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 28x the trailing 60-day median on 2012-05-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-07-25",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 11x the trailing 60-day median on 2013-07-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2018-07-26",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 10x the trailing 60-day median on 2018-07-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2022-02-03",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 10x the trailing 60-day median on 2022-02-03 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2013-07-25",
+              "instrument_id": "INS-000008",
+              "message": "overnight move 29.6% on 2013-07-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2022-02-03",
+              "instrument_id": "INS-000008",
+              "message": "overnight move -26.4% on 2022-02-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-03-19",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 80x the trailing 60-day median on 2008-03-19..2008-03-20 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-03-24",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 17x the trailing 60-day median on 2008-03-24 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-03",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 11x the trailing 60-day median on 2008-04-03 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 12x the trailing 60-day median on 2008-04-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-29",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 22x the trailing 60-day median on 2008-04-25..2008-04-30 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-12-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 16x the trailing 60-day median on 2009-12-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-05-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 11x the trailing 60-day median on 2010-05-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-12-16",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 10x the trailing 60-day median on 2010-12-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1996-05-13",
+              "instrument_id": "INS-000015",
+              "message": "split 2.00 on 1996-05-13: expected close 20.9688 (continuous), got 22.1875 (5.8% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2023-08-15",
+              "instrument_id": "INS-000003",
+              "message": "volume up to 13x the trailing 60-day median on 2023-08-15..2023-08-16 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2023-08-21",
+              "instrument_id": "INS-000003",
+              "message": "volume up to 21x the trailing 60-day median on 2023-08-21..2023-08-23 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-10-12",
+              "instrument_id": "INS-000016",
+              "message": "volume up to 13x the trailing 60-day median on 2000-10-12 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-10-12",
+              "instrument_id": "INS-000016",
+              "message": "overnight move -28.7% on 2000-10-12 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-07-06",
+              "instrument_id": "INS-000016",
+              "message": "split 2.00 on 1998-07-06: expected close 28.6250 (continuous), got 30.7917 (7.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1996-07-11",
+              "instrument_id": "INS-000017",
+              "message": "volume up to 12x the trailing 60-day median on 1996-07-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-08-06",
+              "instrument_id": "INS-000017",
+              "message": "volume up to 22x the trailing 60-day median on 1998-08-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2025-05-15",
+              "instrument_id": "INS-000017",
+              "message": "volume up to 20x the trailing 60-day median on 2025-05-15..2025-05-16 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1996-07-11",
+              "instrument_id": "INS-000017",
+              "message": "overnight move -29.9% on 1996-07-11 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1998-08-06",
+              "instrument_id": "INS-000017",
+              "message": "overnight move -28.4% on 1998-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-10-13",
+              "instrument_id": "INS-000017",
+              "message": "overnight move 34.8% on 2008-10-13 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-08-19",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 15x the trailing 60-day median on 1999-08-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-05-09",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 13x the trailing 60-day median on 2003-05-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-08-06",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 10x the trailing 60-day median on 2004-08-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 42.4% on 2000-03-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-13",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 26.5% on 2000-03-13 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-14",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -26.2% on 2000-03-14 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-12-22",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 25.8% on 2000-12-22 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-01-03",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 30.7% on 2001-01-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2002-07-31",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -31.8% on 2002-07-31 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2003-05-09",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 33.1% on 2003-05-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-08-06",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -35.2% on 2004-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-07-03",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -30.7% on 2008-07-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2016-11-11",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 29.8% on 2016-11-11 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-06-27",
+              "instrument_id": "INS-000009",
+              "message": "split 2.00 on 2000-06-27: expected close 0.3457 (continuous), got 0.2854 (17.4% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2001-09-10",
+              "instrument_id": "INS-000009",
+              "message": "split 2.00 on 2001-09-10: expected close 0.3251 (continuous), got 0.2833 (12.9% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-09-20",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 11x the trailing 60-day median on 2001-09-20 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-02-11",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 15x the trailing 60-day median on 2004-02-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2015-08-05",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 11x the trailing 60-day median on 2015-08-05..2015-08-06 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-07-10",
+              "instrument_id": "INS-000019",
+              "message": "split 3.00 on 1998-07-10: expected close 36.5005 (continuous), got 38.8434 (6.4% off)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-10-07",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -26.2% on 2008-10-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-11-24",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 27.2% on 2008-11-24 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-20",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -29.0% on 2009-01-20 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-21",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 31.0% on 2009-01-21 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-02-06",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 26.7% on 2009-02-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-02-27",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -25.8% on 2009-02-27 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-03-10",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 27.7% on 2009-03-10 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-03-23",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 26.0% on 2009-03-23 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-04-09",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 35.3% on 2009-04-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-01-06",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 12x the trailing 60-day median on 1997-01-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-08-06",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 31x the trailing 60-day median on 1997-08-06..1997-08-11 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-07-16",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 11x the trailing 60-day median on 1998-07-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-09-29",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 27x the trailing 60-day median on 2000-09-29 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1997-08-06",
+              "instrument_id": "INS-000001",
+              "message": "overnight move 33.2% on 1997-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-09-29",
+              "instrument_id": "INS-000001",
+              "message": "overnight move -51.9% on 2000-09-29 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-06-21",
+              "instrument_id": "INS-000001",
+              "message": "split 2.00 on 2000-06-21: expected close 0.9040 (continuous), got 0.9598 (6.2% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2020-08-31",
+              "instrument_id": "INS-000001",
+              "message": "split 4.00 on 2020-08-31: expected close 124.8075 (continuous), got 134.1800 (7.5% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 26x the trailing 60-day median on 2000-03-07..2000-03-08 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-01-28",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 10x the trailing 60-day median on 2005-01-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2016-09-30",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 15x the trailing 60-day median on 2016-09-28..2016-09-30 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000014",
+              "message": "overnight move -30.2% on 2000-03-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-21",
+              "instrument_id": "INS-000011",
+              "message": "overnight move 25.1% on 2009-01-21 (no corporate action within 5 days)"
+            }
+          ]
+        },
+        "symbols": [
+          "AAPL",
+          "AMZN",
+          "BAC",
+          "CVX",
+          "DIS",
+          "GOOGL",
+          "HD",
+          "JNJ",
+          "JPM",
+          "KO",
+          "META",
+          "MSFT",
+          "NVDA",
+          "PFE",
+          "PG",
+          "TSLA",
+          "UNH",
+          "V",
+          "WMT",
+          "XOM"
+        ],
+        "timezone_rule": "see normalized _schema.json"
+      },
+      "provider": "yahoo_chart_api",
+      "request_fingerprint": "c57c29531d56ab20e4f5d8c8a91c65623ddcc9921e008d52275f3e431a47315e",
+      "row_count": 139961,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000004",
+      "source": "yahoo_chart_api",
+      "source_uri": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?period1=820454400&period2=1786924800&interval=1d&events=div%2Csplit",
+      "validation_issues": [
+        {
+          "code": "missing_weekday",
+          "context": "AAPL",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "AMZN",
+          "level": "warning",
+          "message": "2962 weekday(s) absent (e.g. ['1997-05-26', '1997-07-04', '1997-09-01']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "BAC",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "CVX",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "DIS",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "GOOGL",
+          "level": "warning",
+          "message": "2134 weekday(s) absent (e.g. ['2004-09-06', '2004-11-01', '2004-11-02']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "HD",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "JNJ",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "JPM",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "KO",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "META",
+          "level": "warning",
+          "message": "1335 weekday(s) absent (e.g. ['2012-05-28', '2012-07-04', '2012-09-03']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MSFT",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "NVDA",
+          "level": "warning",
+          "message": "4672 weekday(s) absent (e.g. ['1999-02-15', '1999-04-02', '1999-04-05']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PFE",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PG",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "TSLA",
+          "level": "warning",
+          "message": "1522 weekday(s) absent (e.g. ['2010-07-05', '2010-09-06', '2010-11-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "UNH",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "V",
+          "level": "warning",
+          "message": "1717 weekday(s) absent (e.g. ['2008-03-21', '2008-05-26', '2008-07-04']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "WMT",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "XOM",
+          "level": "warning",
+          "message": "5123 weekday(s) absent (e.g. ['1996-02-19', '1996-04-05', '1996-04-08']) - compare against exchange calendar"
+        }
+      ],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "1996-01-02",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-18T15:15:32.657532Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-000005": {
+      "checksums": {
+        "cik0000019617_companyfacts.json": "030c307b36d64f0e9cad7ec539c230bb40a75a3b7a3a93a343509e14a436653e",
+        "cik0000021344_companyfacts.json": "53d363a9aa3071406cda9857654358f4dca42e174a1defb8cc1ce9ad2a4c9e40",
+        "cik0000034088_companyfacts.json": "9b95535419e5662e3deed01de803e83deead477a4c81316e1c45186368fdd8b8",
+        "cik0000070858_companyfacts.json": "58b34dc615b53d0a549ab7cecdf551d3bcec110803154c6792063542fb30b7bc",
+        "cik0000078003_companyfacts.json": "bd072131f9dcf001f22e843fded5910c2c7fc178e2a739ce0c58b1934e84d566",
+        "cik0000080424_companyfacts.json": "bf73074c0d325164dc023441dc69ee240eca95a3b7560c13b213115fa2596994",
+        "cik0000093410_companyfacts.json": "c09b160603412cb45acf1bb9bf3732e531dedfb548afa0e275fd8aefd7ab397e",
+        "cik0000104169_companyfacts.json": "8f3d9abe26f7f7842a070f4b639dbd39296144349270eeb0df5659e7510e9cec",
+        "cik0000200406_companyfacts.json": "7141c0c988fa1d30f779687b4c78ab561e19aa5990a58ad86a66467d0a783980",
+        "cik0000320193_companyfacts.json": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43",
+        "cik0000354950_companyfacts.json": "0f1881180df72a4c46894616cf661f3e7e78116ee5d9cfcac203a3d93ef953dd",
+        "cik0000731766_companyfacts.json": "6c9dff59732b7c597542b2d5eadaae0313ca0de03defdba2c00203e693632d76",
+        "cik0000789019_companyfacts.json": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f",
+        "cik0001018724_companyfacts.json": "e6aadb0da7384597dbd78f74d1379ffb7fd0829a4d2e797b6d7e442b5e1da0d7",
+        "cik0001045810_companyfacts.json": "93edcffe24f55d08284ff1736e41aa1a8e743ab6e4a6eea52cb8e9392b0ae6be",
+        "cik0001318605_companyfacts.json": "d0c2b9288d027a6d735039a6fe874a348b65a7fdbc6c133130666c777c885204",
+        "cik0001326801_companyfacts.json": "7518e76d6dac2d016e1a3d1dec1cc55ff9ea3bdd58a151b16fcaa067a6c9d94e",
+        "cik0001403161_companyfacts.json": "df3caf7c5667296569fc3074ce2ff13629c9a555184a06c5ea9925b43e63971d",
+        "cik0001652044_companyfacts.json": "a017f26ee88cb4a639d1c1ddb06d53b4afe22f0ac89cabec7cd67c88919fe1c5",
+        "cik0001744489_companyfacts.json": "f737e2272b6fb76cda801a8a5d493621a917ad4f73e0752b4ab14ffda694a57b"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "2009-05-07",
+        "2026-08-18"
+      ],
+      "domain": "sec",
+      "downloaded_at": "2026-08-18T15:16:28.175693Z",
+      "file_paths": {
+        "cik0000019617_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000019617_companyfacts.json",
+        "cik0000021344_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000021344_companyfacts.json",
+        "cik0000034088_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000034088_companyfacts.json",
+        "cik0000070858_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000070858_companyfacts.json",
+        "cik0000078003_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000078003_companyfacts.json",
+        "cik0000080424_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000080424_companyfacts.json",
+        "cik0000093410_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000093410_companyfacts.json",
+        "cik0000104169_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000104169_companyfacts.json",
+        "cik0000200406_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000200406_companyfacts.json",
+        "cik0000320193_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000320193_companyfacts.json",
+        "cik0000354950_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000354950_companyfacts.json",
+        "cik0000731766_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000731766_companyfacts.json",
+        "cik0000789019_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0000789019_companyfacts.json",
+        "cik0001018724_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001018724_companyfacts.json",
+        "cik0001045810_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001045810_companyfacts.json",
+        "cik0001318605_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001318605_companyfacts.json",
+        "cik0001326801_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001326801_companyfacts.json",
+        "cik0001403161_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001403161_companyfacts.json",
+        "cik0001652044_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001652044_companyfacts.json",
+        "cik0001744489_companyfacts.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\sec\\sec_edgar_companyfacts\\DS-000005\\cik0001744489_companyfacts.json"
+      },
+      "instruments": [
+        "1018724",
+        "104169",
+        "1045810",
+        "1318605",
+        "1326801",
+        "1403161",
+        "1652044",
+        "1744489",
+        "19617",
+        "200406",
+        "21344",
+        "320193",
+        "34088",
+        "354950",
+        "70858",
+        "731766",
+        "78003",
+        "789019",
+        "80424",
+        "93410"
+      ],
+      "license_ref": "AUTHORITATIVE - SEC EDGAR public filings",
+      "manifest_created_at": "2026-08-18T15:16:28.176690+00:00",
+      "meta": {
+        "ciks": [
+          19617,
+          21344,
+          34088,
+          70858,
+          78003,
+          80424,
+          93410,
+          104169,
+          200406,
+          320193,
+          354950,
+          731766,
+          789019,
+          1018724,
+          1045810,
+          1318605,
+          1326801,
+          1403161,
+          1652044,
+          1744489
+        ],
+        "date_range_semantics": "earliest/latest are FILING dates (point-in-time availability), not reporting-period dates; period coverage lives in start/end columns of facts.parquet",
+        "filing_metadata_preserved": true
+      },
+      "provider": "sec_edgar_companyfacts",
+      "request_fingerprint": "c0d72ff43d654e130ac46cd78ec6bd297f2b287f0ab1b92be6bf34d06685d5a7",
+      "row_count": 564100,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000005",
+      "source": "SEC EDGAR / XBRL companyfacts",
+      "source_uri": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019617.json",
+      "validation_issues": [],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "2009-05-07",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-18T15:16:28.175693Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-000006": {
+      "checksums": {
+        "AAPL.json": "5510ec73427244cfbe802a7b2ada7bcf36b920aae64bc8c0f07a1b9fd80854e8",
+        "ABBV.json": "66a7153cc3cbc7569a04093969cbc90cae4f303de6dd70cc6284bd084c8877d0",
+        "ABT.json": "ad43232c65596c4810152ba39a61a5067671070e2f62e79425114eda0bf2ff1f",
+        "ACN.json": "80bb96bc3c1e33cae4df958dae93ec1d3ca9e9f0d1eb133385b384c8d3e2ffdd",
+        "ADBE.json": "78d59d99467b6d4c5379ecbde0d54b9ec259f74f856a6f33385e0bf12661331b",
+        "AMZN.json": "2c4a56dbbf9b28b1b7eb912cfdda2c5dc616046d22d8495b7f19d3fc87f045b9",
+        "AVGO.json": "4558321d9a1f229368cb5c47ad5fde1d8330d2e3037b4101fe698d4da6572356",
+        "BAC.json": "4ada633e7629052588bec987b631e3e925a9dee6d76d6488c13affa846d763c1",
+        "BRK-B.json": "640465f82b1704c9126a4716180810ba09f4cfb104757d8e89a908b974764a6a",
+        "CL.json": "083035930fc79c0c31b5f99c73947bf63da29ddd9c835134b54b3a4f268f8837",
+        "COST.json": "025a96701ef2b2ff4e51bb8192d146b569bba384d721e6ece96b7295db9e2192",
+        "CRM.json": "f3568038c06f11d308f89e56e78faec35e69008eb0a5c6916b06c4c46ad123ec",
+        "CSCO.json": "54ae83d7ff8fbf0fbd2bdce12c82a188fb75a3f83f5ce82a37da313a237fec0a",
+        "CVX.json": "e7bfbdd94d7a3377a64dea76d236e2d913e11478baeef86a5348dcaa87771413",
+        "DHR.json": "cc6c1e4620452585f243c0a2188a8f5f9b014c635eda2f6ada0812e1e88d414e",
+        "DIS.json": "6cc813e7ea03b2ff546ad88211c9c1715496ea8d172ff2cfcc903f108251a43d",
+        "DUK.json": "afa2f1b04c32d6d3e981b472acc2f4b5a0d283eaac5bcdec1281ae047910fd46",
+        "EMR.json": "d757014011f65d1cef3f992a28b10cfba9cbfb4adfb622accf9b11cb17c229b2",
+        "EOG.json": "37c70ffc798c4e38691d3e57a3f3fa4d121f0e75cd8b930b619a3b6a6d54e896",
+        "GOOGL.json": "eda01e0cb228b4b49e0cc56131c98b7025351a02411b0782a594b9a4cd3ec701",
+        "HD.json": "cc14a40ea31aaab6fea2dc3f618748cb606a580cbe0cc2016004b81fcc39ec06",
+        "INTC.json": "75ef3be37cfbe46f3be97e0040d65ac01bcc835f38ba168a76f46af1b3e245e8",
+        "JNJ.json": "960f0072267289986fac849cf2d1e03c661c385d9a352eb36b8b886db881b144",
+        "JPM.json": "8def4b5965ec064554503f8f2fab6ce0562fc259628f3b451b4f8941a11a7340",
+        "KO.json": "c719c8480322d6ebf4a8a181059ceb1501a7764ba5e7d51e92e1c3fc967504d7",
+        "LOW.json": "da059739a2559eafdd000bf7ddd4bcded92c8706f9ba1a97b99a594a0e56a168",
+        "MA.json": "0065a0d785f22aa2cadda1d65e12f0e015862c3effbcc8ce85a9abfae2ceda94",
+        "MCD.json": "58c7c593a2edaa07c8ccdfa333c6d7c4f7f413bd81b8ab7faa58f4d8a0f53c1c",
+        "META.json": "1a343367d8f9ef6bd5fa661699c7305e893d23c26272dfb806a76c0e9b1d1f9a",
+        "MRK.json": "947a20bfb14d854b10bd6dd2b31ad672fd4d125046db49ed197c46e79532ed5f",
+        "MSFT.json": "7ca88faf0ee42a055d4940286b977006ae86e30cfd1e832cd0491ebaa352c32a",
+        "NFLX.json": "fc640551b3415f45c5fc3c19cb46fff6a95b10af9ef6b3d55b0e92ef902171bc",
+        "NKE.json": "b22b9131973baef4bb9b25cc48aef57f4c5cd7e51582aa42c8f04faefd6f9f26",
+        "NVDA.json": "c18a3307d3d5f30d32fdfba460005a4da6b5f849c9f6adf7dda0e4e2686b8dca",
+        "PEP.json": "2c9b2abdf33815447ac9e25e08159e9a4e29058d36baa7130a369f68b0f9ed90",
+        "PFE.json": "5e66663e7b9f710322381fac802ea90b289c0c028e74bd204ed6edf01d314716",
+        "PG.json": "4760b44deb605258fdaca813225177619e5c421247e6a218d89400dab7527989",
+        "PLD.json": "985cef75930f0c5f7248d87277e1de443221a452865b6efe33244cd6b196cb45",
+        "SBUX.json": "c44e66267512a3ad60cb060b30bb98835b254d3dda1d8ea4e462a8545bb690d2",
+        "SCHW.json": "89070d9685eefa307efa0cf95d6469ad4d336f2ea4f8ed5adaa1975ca9e0ab3d",
+        "SO.json": "cd30d844794b9f64b46c4cb80255a40db5d3ccc77df8094ecda7097080e4c142",
+        "T.json": "5c12e0abab0ac45fc696a052b8530414868138fdd35228a57cf3ada8f35e4c6f",
+        "TMO.json": "ba221498ca96d5bcd83fc28d72198f17bbefa7af7011e66dfe3a81c534bda01d",
+        "TSLA.json": "99a689f8fee4cab07aa8351913f768d5048d60746341324b13eedfb5499b2f3b",
+        "TXN.json": "4f8a49425858e642c65bb129b54705c73192c474ebfe10553b0126f0075b8a1f",
+        "UNH.json": "431e07788f58fa823a1586ff82ae27f22f12fd1255a8b0ecb0f893b753fa73da",
+        "UNP.json": "74d449912d6e83e249a44cc413a0ca07af9319df5085e9256d8f564ee478fd95",
+        "V.json": "ac72a1e2ad7aabbf8f48b2582c57f668b3e4a61a94bc27c37fe2453ff6166b9c",
+        "WMT.json": "18d8817fea1f7698c86bb3170a8f52eb67574a90eab84ff3e546ac3942bcb491",
+        "XOM.json": "ddc149d012bedefb46e85ce634b47e04e611a47466788e991826661aa881b128"
+      },
+      "data_version": "v1",
+      "date_range": [
+        "1996-08-21",
+        "2026-08-20"
+      ],
+      "domain": "market",
+      "downloaded_at": "2026-08-21T09:03:23.013078Z",
+      "file_paths": {
+        "AAPL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\AAPL.json",
+        "ABBV.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\ABBV.json",
+        "ABT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\ABT.json",
+        "ACN.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\ACN.json",
+        "ADBE.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\ADBE.json",
+        "AMZN.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\AMZN.json",
+        "AVGO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\AVGO.json",
+        "BAC.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\BAC.json",
+        "BRK-B.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\BRK-B.json",
+        "CL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\CL.json",
+        "COST.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\COST.json",
+        "CRM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\CRM.json",
+        "CSCO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\CSCO.json",
+        "CVX.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\CVX.json",
+        "DHR.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\DHR.json",
+        "DIS.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\DIS.json",
+        "DUK.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\DUK.json",
+        "EMR.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\EMR.json",
+        "EOG.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\EOG.json",
+        "GOOGL.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\GOOGL.json",
+        "HD.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\HD.json",
+        "INTC.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\INTC.json",
+        "JNJ.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\JNJ.json",
+        "JPM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\JPM.json",
+        "KO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\KO.json",
+        "LOW.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\LOW.json",
+        "MA.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\MA.json",
+        "MCD.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\MCD.json",
+        "META.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\META.json",
+        "MRK.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\MRK.json",
+        "MSFT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\MSFT.json",
+        "NFLX.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\NFLX.json",
+        "NKE.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\NKE.json",
+        "NVDA.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\NVDA.json",
+        "PEP.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\PEP.json",
+        "PFE.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\PFE.json",
+        "PG.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\PG.json",
+        "PLD.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\PLD.json",
+        "SBUX.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\SBUX.json",
+        "SCHW.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\SCHW.json",
+        "SO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\SO.json",
+        "T.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\T.json",
+        "TMO.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\TMO.json",
+        "TSLA.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\TSLA.json",
+        "TXN.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\TXN.json",
+        "UNH.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\UNH.json",
+        "UNP.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\UNP.json",
+        "V.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\V.json",
+        "WMT.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\WMT.json",
+        "XOM.json": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\raw\\market\\yahoo_chart_api\\DS-000006\\XOM.json"
+      },
+      "instruments": [
+        "INS-000001",
+        "INS-000002",
+        "INS-000003",
+        "INS-000004",
+        "INS-000005",
+        "INS-000006",
+        "INS-000007",
+        "INS-000008",
+        "INS-000009",
+        "INS-000010",
+        "INS-000011",
+        "INS-000012",
+        "INS-000013",
+        "INS-000014",
+        "INS-000015",
+        "INS-000016",
+        "INS-000017",
+        "INS-000018",
+        "INS-000019",
+        "INS-000020",
+        "INS-000021",
+        "INS-000022",
+        "INS-000023",
+        "INS-000024",
+        "INS-000025",
+        "INS-000026",
+        "INS-000027",
+        "INS-000028",
+        "INS-000029",
+        "INS-000030",
+        "INS-000031",
+        "INS-000032",
+        "INS-000033",
+        "INS-000034",
+        "INS-000035",
+        "INS-000036",
+        "INS-000037",
+        "INS-000038",
+        "INS-000039",
+        "INS-000040",
+        "INS-000041",
+        "INS-000042",
+        "INS-000043",
+        "INS-000044",
+        "INS-000045",
+        "INS-000046",
+        "INS-000047",
+        "INS-000048",
+        "INS-000049",
+        "INS-000050"
+      ],
+      "license_ref": "DEVELOPMENT - see configs/sources.json",
+      "manifest_created_at": "2026-08-21T09:03:23.017067+00:00",
+      "meta": {
+        "adjclose_warning": "adjclose is retroactively dividend+split adjusted by the provider; it is a look-ahead if used as a point-in-time price. Use 'close' for returns (split-adjusted basis is return-neutral).",
+        "adjustment_note": "yahoo_chart_api OHLC AND volume are split-adjusted to the current share basis (volume confirmed continuous across the 7:1 and 4:1 splits in the dev sample); stooq_csv Close is split-adjusted but volume is raw shares - dollar volume from stooq close*volume is discontinuous at splits and must be reconstructed from events",
+        "corporate_actions": 4441,
+        "reconciliation": {
+          "finding_count": 225,
+          "findings": [
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-10-07",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -26.2% on 2008-10-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-11-24",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 27.2% on 2008-11-24 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-20",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -29.0% on 2009-01-20 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-21",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 31.0% on 2009-01-21 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-02-06",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 26.7% on 2009-02-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-02-27",
+              "instrument_id": "INS-000012",
+              "message": "overnight move -25.8% on 2009-02-27 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-03-10",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 27.7% on 2009-03-10 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-03-23",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 26.0% on 2009-03-23 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-04-09",
+              "instrument_id": "INS-000012",
+              "message": "overnight move 35.3% on 2009-04-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-12-07",
+              "instrument_id": "INS-000045",
+              "message": "volume up to 10x the trailing 60-day median on 2000-12-07 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-08-06",
+              "instrument_id": "INS-000017",
+              "message": "volume up to 22x the trailing 60-day median on 1998-08-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2025-05-15",
+              "instrument_id": "INS-000017",
+              "message": "volume up to 20x the trailing 60-day median on 2025-05-15..2025-05-16 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1998-08-06",
+              "instrument_id": "INS-000017",
+              "message": "overnight move -28.4% on 1998-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-10-13",
+              "instrument_id": "INS-000017",
+              "message": "overnight move 34.8% on 2008-10-13 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-01-06",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 12x the trailing 60-day median on 1997-01-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-08-06",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 31x the trailing 60-day median on 1997-08-06..1997-08-11 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-07-16",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 11x the trailing 60-day median on 1998-07-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-09-29",
+              "instrument_id": "INS-000001",
+              "message": "volume up to 27x the trailing 60-day median on 2000-09-29 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1997-08-06",
+              "instrument_id": "INS-000001",
+              "message": "overnight move 33.2% on 1997-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-09-29",
+              "instrument_id": "INS-000001",
+              "message": "overnight move -51.9% on 2000-09-29 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-06-21",
+              "instrument_id": "INS-000001",
+              "message": "split 2.00 on 2000-06-21: expected close 0.9040 (continuous), got 0.9598 (6.2% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2020-08-31",
+              "instrument_id": "INS-000001",
+              "message": "split 4.00 on 2020-08-31: expected close 124.8075 (continuous), got 134.1800 (7.5% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1996-12-31",
+              "instrument_id": "INS-000031",
+              "message": "volume up to 18x the trailing 60-day median on 1996-12-31 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-05-08",
+              "instrument_id": "INS-000031",
+              "message": "volume up to 20x the trailing 60-day median on 2006-05-08 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-02-26",
+              "instrument_id": "INS-000022",
+              "message": "volume up to 10x the trailing 60-day median on 1998-02-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1996-10-16",
+              "instrument_id": "INS-000022",
+              "message": "split 1.49 on 1996-10-16: expected close 12.5024 (continuous), got 13.4688 (7.7% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-07-19",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 14x the trailing 60-day median on 2001-07-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2002-05-17",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 20x the trailing 60-day median on 2002-05-17..2002-05-20 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-09-24",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 12x the trailing 60-day median on 2003-09-24 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-01-13",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 12x the trailing 60-day median on 2004-01-13 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-10-13",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 14x the trailing 60-day median on 2004-10-13 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2007-06-22",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 12x the trailing 60-day median on 2007-06-22 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-08-31",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 20x the trailing 60-day median on 2009-08-31 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-06-25",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 12x the trailing 60-day median on 2010-06-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-07-05",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 26x the trailing 60-day median on 2011-07-05 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-06-28",
+              "instrument_id": "INS-000035",
+              "message": "volume up to 11x the trailing 60-day median on 2013-06-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-07-24",
+              "instrument_id": "INS-000042",
+              "message": "volume up to 13x the trailing 60-day median on 1998-07-24 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-07-01",
+              "instrument_id": "INS-000042",
+              "message": "volume up to 52x the trailing 60-day median on 1999-07-01..1999-07-02 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-06-07",
+              "instrument_id": "INS-000042",
+              "message": "volume up to 17x the trailing 60-day median on 2000-06-07 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2024-08-13",
+              "instrument_id": "INS-000042",
+              "message": "volume up to 15x the trailing 60-day median on 2024-08-13 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "1999-07-01",
+              "instrument_id": "INS-000042",
+              "message": "overnight move -28.3% on 1999-07-01 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2001-04-30",
+              "instrument_id": "INS-000042",
+              "message": "split 2.00 on 2001-04-30: expected close 4.6450 (continuous), got 5.0050 (7.8% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-08-05",
+              "instrument_id": "INS-000039",
+              "message": "volume up to 18x the trailing 60-day median on 2003-08-05 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2017-06-16",
+              "instrument_id": "INS-000039",
+              "message": "volume up to 14x the trailing 60-day median on 2017-06-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-01-14",
+              "instrument_id": "INS-000039",
+              "message": "split 2.00 on 2000-01-14: expected close 47.4688 (continuous), got 51.2500 (8.0% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-12-20",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 24x the trailing 60-day median on 2004-12-20 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-09-12",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 14x the trailing 60-day median on 2008-09-12 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2016-10-05",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 11x the trailing 60-day median on 2016-10-05 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2020-08-26",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 12x the trailing 60-day median on 2020-08-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2020-12-02",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 10x the trailing 60-day median on 2020-12-02 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2024-05-30",
+              "instrument_id": "INS-000026",
+              "message": "volume up to 15x the trailing 60-day median on 2024-05-30 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-07-21",
+              "instrument_id": "INS-000026",
+              "message": "overnight move -27.1% on 2004-07-21 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2020-08-26",
+              "instrument_id": "INS-000026",
+              "message": "overnight move 26.0% on 2020-08-26 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2014-10-15",
+              "instrument_id": "INS-000033",
+              "message": "volume up to 12x the trailing 60-day median on 2014-10-15 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2019-06-25",
+              "instrument_id": "INS-000033",
+              "message": "volume up to 19x the trailing 60-day median on 2019-06-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-06-03",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 12x the trailing 60-day median on 1998-06-03 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-07-17",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 11x the trailing 60-day median on 1998-07-17 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-09-30",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 11x the trailing 60-day median on 1998-09-30 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-12-02",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 38x the trailing 60-day median on 1998-12-02..1998-12-07 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-12-11",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 10x the trailing 60-day median on 1998-12-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-01-28",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 18x the trailing 60-day median on 1999-01-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-04-16",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 22x the trailing 60-day median on 1999-04-16..1999-04-22 (3 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-05-05",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 13x the trailing 60-day median on 1999-05-05..1999-05-06 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-08-18",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 13x the trailing 60-day median on 1999-08-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-09-22",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 15x the trailing 60-day median on 1999-09-22..1999-09-24 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-12-09",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 24x the trailing 60-day median on 1999-12-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-12-14",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 17x the trailing 60-day median on 1999-12-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-09-19",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 12x the trailing 60-day median on 2001-09-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-01-27",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 22x the trailing 60-day median on 2003-01-27 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2007-03-01",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 14x the trailing 60-day median on 2007-03-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-06-02",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 30x the trailing 60-day median on 2011-06-02 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-06-23",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 15x the trailing 60-day median on 2011-06-23 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-04-25",
+              "instrument_id": "INS-000049",
+              "message": "volume up to 11x the trailing 60-day median on 2013-04-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-11-12",
+              "instrument_id": "INS-000049",
+              "message": "overnight move -30.1% on 2008-11-12 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-11-13",
+              "instrument_id": "INS-000049",
+              "message": "overnight move 26.3% on 2008-11-13 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-12-16",
+              "instrument_id": "INS-000049",
+              "message": "overnight move 25.0% on 2008-12-16 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-05-25",
+              "instrument_id": "INS-000023",
+              "message": "volume up to 88x the trailing 60-day median on 2006-05-25..2006-05-26 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-06-01",
+              "instrument_id": "INS-000023",
+              "message": "volume up to 14x the trailing 60-day median on 2006-05-30..2006-06-01 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-06-06",
+              "instrument_id": "INS-000023",
+              "message": "volume up to 11x the trailing 60-day median on 2006-06-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-11-01",
+              "instrument_id": "INS-000023",
+              "message": "volume up to 10x the trailing 60-day median on 2006-11-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2007-02-09",
+              "instrument_id": "INS-000023",
+              "message": "volume up to 11x the trailing 60-day median on 2007-02-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-04-27",
+              "instrument_id": "INS-000034",
+              "message": "volume up to 17x the trailing 60-day median on 1998-04-27 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-11-17",
+              "instrument_id": "INS-000034",
+              "message": "volume up to 30x the trailing 60-day median on 1998-11-17 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-08-01",
+              "instrument_id": "INS-000034",
+              "message": "volume up to 11x the trailing 60-day median on 2001-08-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-08-08",
+              "instrument_id": "INS-000034",
+              "message": "volume up to 12x the trailing 60-day median on 2001-08-08 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2019-12-16",
+              "instrument_id": "INS-000034",
+              "message": "volume up to 37x the trailing 60-day median on 2019-12-09..2019-12-19 (9 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-11-11",
+              "instrument_id": "INS-000028",
+              "message": "volume up to 11x the trailing 60-day median on 2010-11-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-03-23",
+              "instrument_id": "INS-000028",
+              "message": "split 2.00 on 2000-03-23: expected close 72.1875 (continuous), got 79.3750 (10.0% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-10-05",
+              "instrument_id": "INS-000040",
+              "message": "volume up to 16x the trailing 60-day median on 2006-10-04..2006-10-05 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-03-08",
+              "instrument_id": "INS-000040",
+              "message": "split 2.00 on 1999-03-08: expected close 47.1562 (continuous), got 43.5000 (7.8% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 26x the trailing 60-day median on 2000-03-07..2000-03-08 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-01-28",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 10x the trailing 60-day median on 2005-01-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2016-09-30",
+              "instrument_id": "INS-000014",
+              "message": "volume up to 15x the trailing 60-day median on 2016-09-28..2016-09-30 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000014",
+              "message": "overnight move -30.2% on 2000-03-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-03-19",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 80x the trailing 60-day median on 2008-03-19..2008-03-20 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-03-24",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 17x the trailing 60-day median on 2008-03-24 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-03",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 11x the trailing 60-day median on 2008-04-03 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 12x the trailing 60-day median on 2008-04-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2008-04-29",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 22x the trailing 60-day median on 2008-04-25..2008-04-30 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-12-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 16x the trailing 60-day median on 2009-12-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-05-18",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 11x the trailing 60-day median on 2010-05-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-12-16",
+              "instrument_id": "INS-000013",
+              "message": "volume up to 10x the trailing 60-day median on 2010-12-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2023-08-15",
+              "instrument_id": "INS-000003",
+              "message": "volume up to 13x the trailing 60-day median on 2023-08-15..2023-08-16 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2023-08-21",
+              "instrument_id": "INS-000003",
+              "message": "volume up to 21x the trailing 60-day median on 2023-08-21..2023-08-23 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-03-20",
+              "instrument_id": "INS-000050",
+              "message": "split 2.00 on 1998-03-20: expected close 31.6276 (continuous), got 33.9879 (7.5% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2022-04-11",
+              "instrument_id": "INS-000050",
+              "message": "split 1.32 on 2022-04-11: expected close 18.2326 (continuous), got 19.5600 (7.3% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1998-03-27",
+              "instrument_id": "INS-000025",
+              "message": "volume up to 13x the trailing 60-day median on 1998-03-27 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-09-22",
+              "instrument_id": "INS-000025",
+              "message": "volume up to 17x the trailing 60-day median on 2010-09-22 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-10-07",
+              "instrument_id": "INS-000025",
+              "message": "volume up to 10x the trailing 60-day median on 2010-10-07 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2022-09-15",
+              "instrument_id": "INS-000025",
+              "message": "volume up to 12x the trailing 60-day median on 2022-09-15 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2002-08-01",
+              "instrument_id": "INS-000025",
+              "message": "overnight move -29.8% on 2002-08-01 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-10-27",
+              "instrument_id": "INS-000025",
+              "message": "split 2.00 on 1999-10-27: expected close 15.7266 (continuous), got 16.6250 (5.7% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-10-25",
+              "instrument_id": "INS-000025",
+              "message": "split 2.00 on 2000-10-25: expected close 33.7969 (continuous), got 36.2188 (7.2% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2013-01-02",
+              "instrument_id": "INS-000030",
+              "message": "split 2.08 on 2013-01-02: expected close 31.4269 (continuous), got 33.2700 (5.9% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2024-06-28",
+              "instrument_id": "INS-000041",
+              "message": "volume up to 15x the trailing 60-day median on 2024-06-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-10-12",
+              "instrument_id": "INS-000016",
+              "message": "volume up to 13x the trailing 60-day median on 2000-10-12 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-10-12",
+              "instrument_id": "INS-000016",
+              "message": "overnight move -28.7% on 2000-10-12 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-07-06",
+              "instrument_id": "INS-000016",
+              "message": "split 2.00 on 1998-07-06: expected close 28.6250 (continuous), got 30.7917 (7.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-08-11",
+              "instrument_id": "INS-000047",
+              "message": "volume up to 40x the trailing 60-day median on 1999-08-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-11-01",
+              "instrument_id": "INS-000047",
+              "message": "volume up to 20x the trailing 60-day median on 2000-11-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2020-03-09",
+              "instrument_id": "INS-000047",
+              "message": "overnight move -32.0% on 2020-03-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-05-15",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 15x the trailing 60-day median on 1997-05-15 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-11-18",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 12x the trailing 60-day median on 2005-11-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-07-26",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 14x the trailing 60-day median on 2006-07-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2007-04-25",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 17x the trailing 60-day median on 2007-04-25..2007-04-26 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-10-23",
+              "instrument_id": "INS-000006",
+              "message": "volume up to 10x the trailing 60-day median on 2009-10-23 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-01-03",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.6% on 2001-01-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-03-05",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.3% on 2001-03-05 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-04-09",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 33.6% on 2001-04-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-11-14",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 30.2% on 2001-11-14 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-11-26",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 34.5% on 2001-11-26 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2007-04-25",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.9% on 2007-04-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-10-23",
+              "instrument_id": "INS-000006",
+              "message": "overnight move 26.8% on 2009-10-23 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-01-05",
+              "instrument_id": "INS-000006",
+              "message": "split 3.00 on 1999-01-05: expected close 2.9578 (continuous), got 3.4500 (16.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-12-27",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 14x the trailing 60-day median on 2010-12-27 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-03-31",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 11x the trailing 60-day median on 2011-03-31 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-04-01",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 10x the trailing 60-day median on 2013-04-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-05-09",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 13x the trailing 60-day median on 2013-05-09..2013-05-10 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-05-14",
+              "instrument_id": "INS-000010",
+              "message": "volume up to 14x the trailing 60-day median on 2013-05-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2020-08-31",
+              "instrument_id": "INS-000010",
+              "message": "split 5.00 on 2020-08-31: expected close 147.5600 (continuous), got 158.3500 (7.3% off)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2009-01-21",
+              "instrument_id": "INS-000011",
+              "message": "overnight move 25.1% on 2009-01-21 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1997-05-30",
+              "instrument_id": "INS-000048",
+              "message": "volume up to 18x the trailing 60-day median on 1997-05-30 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2020-10-05",
+              "instrument_id": "INS-000048",
+              "message": "volume up to 12x the trailing 60-day median on 2020-10-05 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2023-03-13",
+              "instrument_id": "INS-000048",
+              "message": "volume up to 21x the trailing 60-day median on 2023-03-10..2023-03-15 (4 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-01-03",
+              "instrument_id": "INS-000048",
+              "message": "overnight move 26.1% on 2001-01-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1997-09-16",
+              "instrument_id": "INS-000048",
+              "message": "split 1.50 on 1997-09-16: expected close 6.8241 (continuous), got 7.4583 (9.3% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-12-14",
+              "instrument_id": "INS-000048",
+              "message": "split 1.50 on 1998-12-14: expected close 13.1389 (continuous), got 13.8333 (5.3% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-05-31",
+              "instrument_id": "INS-000048",
+              "message": "split 1.50 on 2000-05-31: expected close 26.3750 (continuous), got 28.5000 (8.1% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2001-09-20",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 11x the trailing 60-day median on 2001-09-20 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-02-11",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 15x the trailing 60-day median on 2004-02-11 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2015-08-05",
+              "instrument_id": "INS-000019",
+              "message": "volume up to 11x the trailing 60-day median on 2015-08-05..2015-08-06 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-07-10",
+              "instrument_id": "INS-000019",
+              "message": "split 3.00 on 1998-07-10: expected close 36.5005 (continuous), got 38.8434 (6.4% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2000-09-14",
+              "instrument_id": "INS-000043",
+              "message": "volume up to 13x the trailing 60-day median on 2000-09-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-09-21",
+              "instrument_id": "INS-000043",
+              "message": "volume up to 15x the trailing 60-day median on 2004-09-20..2004-09-21 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2024-08-02",
+              "instrument_id": "INS-000027",
+              "message": "overnight move -26.1% on 2024-08-02 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1997-07-14",
+              "instrument_id": "INS-000027",
+              "message": "split 2.00 on 1997-07-14: expected close 19.2266 (continuous), got 20.2266 (5.2% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-04-12",
+              "instrument_id": "INS-000027",
+              "message": "split 2.00 on 1999-04-12: expected close 32.7031 (continuous), got 30.2500 (7.5% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-04-28",
+              "instrument_id": "INS-000002",
+              "message": "volume up to 11x the trailing 60-day median on 2006-04-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1996-12-09",
+              "instrument_id": "INS-000002",
+              "message": "split 2.00 on 1996-12-09: expected close 9.5547 (continuous), got 10.2344 (7.1% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1998-02-23",
+              "instrument_id": "INS-000002",
+              "message": "split 2.00 on 1998-02-23: expected close 19.3906 (continuous), got 20.5312 (5.9% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-08-19",
+              "instrument_id": "INS-000007",
+              "message": "volume up to 18x the trailing 60-day median on 2004-08-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-09-29",
+              "instrument_id": "INS-000007",
+              "message": "volume up to 12x the trailing 60-day median on 2004-09-29 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-01-27",
+              "instrument_id": "INS-000021",
+              "message": "volume up to 12x the trailing 60-day median on 2010-01-27..2010-01-29 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-02-12",
+              "instrument_id": "INS-000021",
+              "message": "volume up to 178x the trailing 60-day median on 2010-02-11..2010-02-12 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-02-16",
+              "instrument_id": "INS-000021",
+              "message": "volume up to 14x the trailing 60-day median on 2010-02-16..2010-02-19 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-06-25",
+              "instrument_id": "INS-000021",
+              "message": "volume up to 22x the trailing 60-day median on 2010-06-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2015-10-14",
+              "instrument_id": "INS-000005",
+              "message": "volume up to 11x the trailing 60-day median on 2015-10-14 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2026-01-16",
+              "instrument_id": "INS-000005",
+              "message": "volume up to 22x the trailing 60-day median on 2026-01-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-04-20",
+              "instrument_id": "INS-000005",
+              "message": "split 2.00 on 1999-04-20: expected close 14.9583 (continuous), got 16.2500 (8.6% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1999-08-19",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 15x the trailing 60-day median on 1999-08-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-05-09",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 13x the trailing 60-day median on 2003-05-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-08-06",
+              "instrument_id": "INS-000009",
+              "message": "volume up to 10x the trailing 60-day median on 2004-08-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-07",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 42.4% on 2000-03-07 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-13",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 26.5% on 2000-03-13 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-03-14",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -26.2% on 2000-03-14 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2000-12-22",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 25.8% on 2000-12-22 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2001-01-03",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 30.7% on 2001-01-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2002-07-31",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -31.8% on 2002-07-31 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2003-05-09",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 33.1% on 2003-05-09 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-08-06",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -35.2% on 2004-08-06 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2008-07-03",
+              "instrument_id": "INS-000009",
+              "message": "overnight move -30.7% on 2008-07-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2016-11-11",
+              "instrument_id": "INS-000009",
+              "message": "overnight move 29.8% on 2016-11-11 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2000-06-27",
+              "instrument_id": "INS-000009",
+              "message": "split 2.00 on 2000-06-27: expected close 0.3457 (continuous), got 0.2854 (17.4% off)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2001-09-10",
+              "instrument_id": "INS-000009",
+              "message": "split 2.00 on 2001-09-10: expected close 0.3251 (continuous), got 0.2833 (12.9% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2020-11-09",
+              "instrument_id": "INS-000020",
+              "message": "volume up to 10x the trailing 60-day median on 2020-11-09 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "1999-07-01",
+              "instrument_id": "INS-000020",
+              "message": "split 3.00 on 1999-07-01: expected close 34.4719 (continuous), got 36.6461 (6.3% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "1996-11-26",
+              "instrument_id": "INS-000046",
+              "message": "volume up to 11x the trailing 60-day median on 1996-11-25..1996-11-26 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2001-01-29",
+              "instrument_id": "INS-000046",
+              "message": "split 2.00 on 2001-01-29: expected close 67.1171 (continuous), got 63.2818 (5.7% off)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-09-30",
+              "instrument_id": "INS-000032",
+              "message": "volume up to 28x the trailing 60-day median on 2004-09-30..2004-10-01 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-11-01",
+              "instrument_id": "INS-000032",
+              "message": "volume up to 12x the trailing 60-day median on 2004-11-01..2004-11-02 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2021-10-01",
+              "instrument_id": "INS-000032",
+              "message": "volume up to 11x the trailing 60-day median on 2021-10-01 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-09-30",
+              "instrument_id": "INS-000032",
+              "message": "overnight move -26.8% on 2004-09-30 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2012-05-18",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 28x the trailing 60-day median on 2012-05-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2013-07-25",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 11x the trailing 60-day median on 2013-07-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2018-07-26",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 10x the trailing 60-day median on 2018-07-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2022-02-03",
+              "instrument_id": "INS-000008",
+              "message": "volume up to 10x the trailing 60-day median on 2022-02-03 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2013-07-25",
+              "instrument_id": "INS-000008",
+              "message": "overnight move 29.6% on 2013-07-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2022-02-03",
+              "instrument_id": "INS-000008",
+              "message": "overnight move -26.4% on 2022-02-03 (no corporate action within 5 days)"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2009-08-06",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 11x the trailing 60-day median on 2009-08-06 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-01-28",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 52x the trailing 60-day median on 2010-01-28..2010-01-29 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-06-25",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 16x the trailing 60-day median on 2010-06-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2010-12-07",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 14x the trailing 60-day median on 2010-12-07 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2011-01-18",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 10x the trailing 60-day median on 2011-01-18 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2014-05-07",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 27x the trailing 60-day median on 2014-05-07 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2015-05-28",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 12x the trailing 60-day median on 2015-05-28 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2018-07-12",
+              "instrument_id": "INS-000037",
+              "message": "volume up to 14x the trailing 60-day median on 2018-07-12 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2002-05-23",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 12x the trailing 60-day median on 2002-05-23 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2003-10-16",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 11x the trailing 60-day median on 2003-10-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-07-16",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 14x the trailing 60-day median on 2004-07-16 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-10-05",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 11x the trailing 60-day median on 2004-10-05 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2004-10-15",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 24x the trailing 60-day median on 2004-10-15 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-05-19",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 22x the trailing 60-day median on 2005-05-19 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2005-07-26",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 15x the trailing 60-day median on 2005-07-26 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-07-25",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 15x the trailing 60-day median on 2006-07-25 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2006-10-24",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 12x the trailing 60-day median on 2006-10-24 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2022-01-21",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 20x the trailing 60-day median on 2022-01-21..2022-01-24 (2 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "volume_spike",
+              "event_date": "2022-04-20",
+              "instrument_id": "INS-000024",
+              "message": "volume up to 24x the trailing 60-day median on 2022-04-20 (1 consecutive day(s)) - possible corrupt print"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2002-10-10",
+              "instrument_id": "INS-000024",
+              "message": "overnight move 35.8% on 2002-10-10 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-07-16",
+              "instrument_id": "INS-000024",
+              "message": "overnight move -28.1% on 2004-07-16 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2004-10-15",
+              "instrument_id": "INS-000024",
+              "message": "overnight move -40.9% on 2004-10-15 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2011-10-25",
+              "instrument_id": "INS-000024",
+              "message": "overnight move -34.9% on 2011-10-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2012-07-25",
+              "instrument_id": "INS-000024",
+              "message": "overnight move -25.0% on 2012-07-25 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2013-01-24",
+              "instrument_id": "INS-000024",
+              "message": "overnight move 42.2% on 2013-01-24 (no corporate action within 5 days)"
+            },
+            {
+              "code": "unexplained_discontinuity",
+              "event_date": "2022-04-20",
+              "instrument_id": "INS-000024",
+              "message": "overnight move -35.1% on 2022-04-20 (no corporate action within 5 days)"
+            },
+            {
+              "code": "split_adjustment_inconsistency",
+              "event_date": "2015-07-15",
+              "instrument_id": "INS-000024",
+              "message": "split 7.00 on 2015-07-15: expected close 10.0371 (continuous), got 11.5810 (15.4% off)"
+            }
+          ]
+        },
+        "symbols": [
+          "AAPL",
+          "ABBV",
+          "ABT",
+          "ACN",
+          "ADBE",
+          "AMZN",
+          "AVGO",
+          "BAC",
+          "BRK-B",
+          "CL",
+          "COST",
+          "CRM",
+          "CSCO",
+          "CVX",
+          "DHR",
+          "DIS",
+          "DUK",
+          "EMR",
+          "EOG",
+          "GOOGL",
+          "HD",
+          "INTC",
+          "JNJ",
+          "JPM",
+          "KO",
+          "LOW",
+          "MA",
+          "MCD",
+          "META",
+          "MRK",
+          "MSFT",
+          "NFLX",
+          "NKE",
+          "NVDA",
+          "PEP",
+          "PFE",
+          "PG",
+          "PLD",
+          "SBUX",
+          "SCHW",
+          "SO",
+          "T",
+          "TMO",
+          "TSLA",
+          "TXN",
+          "UNH",
+          "UNP",
+          "V",
+          "WMT",
+          "XOM"
+        ],
+        "timezone_rule": "see normalized _schema.json"
+      },
+      "provider": "yahoo_chart_api",
+      "request_fingerprint": "a686cb1e46a4b20ede58096135c1b025b60ba28ed2be7dc8d82d41c5f3076445",
+      "row_count": 349374,
+      "schema_version": "v1.0.0",
+      "snapshot_id": "DS-000006",
+      "source": "yahoo_chart_api",
+      "source_uri": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=30y&interval=1d&events=div%2Csplit",
+      "validation_issues": [
+        {
+          "code": "missing_weekday",
+          "context": "AAPL",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "ABBV",
+          "level": "warning",
+          "message": "2396 weekday(s) absent (e.g. ['2013-01-21', '2013-02-18', '2013-03-11']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "ABT",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "ACN",
+          "level": "warning",
+          "message": "2495 weekday(s) absent (e.g. ['2001-09-03', '2001-09-11', '2001-09-12']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "ADBE",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "AMZN",
+          "level": "warning",
+          "message": "2962 weekday(s) absent (e.g. ['1997-05-26', '1997-07-04', '1997-09-01']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "AVGO",
+          "level": "warning",
+          "message": "1620 weekday(s) absent (e.g. ['2009-09-07', '2009-11-02', '2009-11-03']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "BAC",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "BRK-B",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "CL",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "COST",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "CRM",
+          "level": "warning",
+          "message": "2135 weekday(s) absent (e.g. ['2004-07-05', '2004-09-06', '2004-11-01']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "CSCO",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "CVX",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "DHR",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "DIS",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "DUK",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "EMR",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "EOG",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "GOOGL",
+          "level": "warning",
+          "message": "2134 weekday(s) absent (e.g. ['2004-09-06', '2004-11-01', '2004-11-02']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "HD",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "INTC",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "JNJ",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "JPM",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "KO",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "LOW",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MA",
+          "level": "warning",
+          "message": "1909 weekday(s) absent (e.g. ['2006-05-29', '2006-07-04', '2006-09-04']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MCD",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "META",
+          "level": "warning",
+          "message": "1335 weekday(s) absent (e.g. ['2012-05-28', '2012-07-04', '2012-09-03']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MRK",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "MSFT",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "NFLX",
+          "level": "warning",
+          "message": "2375 weekday(s) absent (e.g. ['2002-05-27', '2002-07-04', '2002-09-02']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "NKE",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "NVDA",
+          "level": "warning",
+          "message": "4676 weekday(s) absent (e.g. ['1999-02-15', '1999-04-02', '1999-04-05']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PEP",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PFE",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PG",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "PLD",
+          "level": "warning",
+          "message": "4830 weekday(s) absent (e.g. ['1997-11-27', '1997-12-25', '1998-01-01']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "SBUX",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "SCHW",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "SO",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "T",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "TMO",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "TSLA",
+          "level": "warning",
+          "message": "1522 weekday(s) absent (e.g. ['2010-07-05', '2010-09-06', '2010-11-08']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "TXN",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "UNH",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "UNP",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "V",
+          "level": "warning",
+          "message": "1717 weekday(s) absent (e.g. ['2008-03-21', '2008-05-26', '2008-07-04']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "WMT",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        },
+        {
+          "code": "missing_weekday",
+          "context": "XOM",
+          "level": "warning",
+          "message": "3078 weekday(s) absent (e.g. ['1996-09-02', '1996-10-28', '1996-10-29']) - compare against exchange calendar"
+        }
+      ],
+      "validation_status": "ok",
+      "time_metadata": {
+        "event_time": "1996-08-21",
+        "publication_time": "unknown",
+        "availability_time": "unknown",
+        "ingestion_time": "2026-08-21T09:03:23.013078Z",
+        "vintage": "latest"
+      },
+      "pit_classification": "UNKNOWN",
+      "quality_dimensions": {
+        "temporal_integrity": "NOT_ASSESSED",
+        "pit_confidence": "NOT_ASSESSED",
+        "completeness": "NOT_ASSESSED",
+        "coverage": "NOT_ASSESSED",
+        "duplicate_integrity": "NOT_ASSESSED",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "NOT_ASSESSED",
+        "reproducibility": "VERIFIED"
+      }
+    },
+    "DS-EXP-050": {
+      "snapshot_id": "DS-EXP-050",
+      "domain": "market",
+      "provider": "yahoo_chart_api",
+      "source": "yahoo_chart_api",
+      "description": "50-instrument equity universe",
+      "frequency": "daily",
+      "instruments": 50,
+      "row_count": 349374,
+      "time_metadata": {
+        "event_time": "trade_date",
+        "publication_time": "trade_date (same-day for market data)",
+        "availability_time": "trade_date + 1 day (next trading session)",
+        "ingestion_time": "acquisition timestamp",
+        "vintage": "latest"
+      },
+      "pit_classification": "PIT_WITH_KNOWN_LAG",
+      "quality_dimensions": {
+        "temporal_integrity": "PASS",
+        "pit_confidence": "HIGH",
+        "completeness": "HIGH",
+        "coverage": "HIGH",
+        "duplicate_integrity": "PASS",
+        "source_provenance": "VERIFIED",
+        "revision_transparency": "N/A (market data not revised)",
+        "reproducibility": "VERIFIED"
+      }
+    }
+  },
+  "n_manifests": 7
+}

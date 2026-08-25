@@ -1,0 +1,39 @@
+{
+  "phase": "E1",
+  "migration": {
+    "existing_data_paths": {
+      "data/raw/": {
+        "classification": "SUPPORTED_LEGACY",
+        "action": "Continue using. Write-once immutable store.",
+        "migration_required": false
+      },
+      "data/normalized/": {
+        "classification": "SUPPORTED_LEGACY",
+        "action": "Continue using. Extend with new metadata fields.",
+        "migration_required": false
+      },
+      "data/manifests/": {
+        "classification": "SUPPORTED_LEGACY",
+        "action": "Continue using. Enhance with 5-timestamp model.",
+        "migration_required": false
+      },
+      "data/registry.duckdb": {
+        "classification": "SUPPORTED_LEGACY",
+        "action": "Continue using. Extend schema for new fields.",
+        "migration_required": false
+      },
+      "data/cache/phase9_snapshots/": {
+        "classification": "DO_NOT_TOUCH",
+        "action": "Historical artifacts. Immutable.",
+        "migration_required": false
+      },
+      "data/cache/phase10_snapshots/": {
+        "classification": "DO_NOT_TOUCH",
+        "action": "Historical artifacts. Immutable.",
+        "migration_required": false
+      }
+    },
+    "no_destructive_migration": true,
+    "rollback_procedure": "All changes are additive. Rollback = revert to previous commit."
+  }
+}

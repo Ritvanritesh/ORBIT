@@ -1,0 +1,59 @@
+{
+  "phase": "E1",
+  "adapter_interface": {
+    "required_methods": {
+      "get_metadata": "Retrieve dataset metadata (schema, frequency, coverage)",
+      "acquire_raw": "Download/fetch raw data from provider",
+      "extract_timestamps": "Extract event, publication, and availability timestamps",
+      "get_revision_metadata": "Retrieve revision/vintage information if available",
+      "validate_source": "Validate data source integrity",
+      "generate_snapshot": "Create immutable snapshot of acquired data"
+    },
+    "implemented_adapters": {
+      "yahoo_chart_api": {
+        "status": "IMPLEMENTED",
+        "location": "scripts/ingest_market.py",
+        "pit_support": "PIT_WITH_KNOWN_LAG",
+        "revision_support": "N/A"
+      },
+      "fred_csv": {
+        "status": "IMPLEMENTED",
+        "location": "scripts/ingest_fred.py",
+        "pit_support": "PIT_WITH_KNOWN_LAG",
+        "revision_support": "LIMITED (latest only)"
+      },
+      "sec_edgar_companyfacts": {
+        "status": "IMPLEMENTED",
+        "location": "scripts/ingest_sec.py",
+        "pit_support": "STRICT_PIT",
+        "revision_support": "VERSIONED (filing date)"
+      }
+    },
+    "future_adapters": {
+      "alfred": {
+        "status": "PLANNED",
+        "purpose": "Vintage macroeconomic data"
+      },
+      "treasury_yield": {
+        "status": "PLANNED",
+        "purpose": "Yield curve data"
+      },
+      "credit_spread": {
+        "status": "PLANNED",
+        "purpose": "Credit risk data"
+      },
+      "volatility": {
+        "status": "PLANNED",
+        "purpose": "VIX and implied vol"
+      },
+      "commodity": {
+        "status": "PLANNED",
+        "purpose": "Commodity prices"
+      },
+      "liquidity": {
+        "status": "PLANNED",
+        "purpose": "Market liquidity metrics"
+      }
+    }
+  }
+}

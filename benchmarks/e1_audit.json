@@ -1,0 +1,28 @@
+{
+  "phase": "E1",
+  "timestamp": "2026-08-25T11:14:16.355176+00:00",
+  "verification_checks": {
+    "plan_locked": true,
+    "deterministic_dataset_identity": true,
+    "no_identity_collisions": true,
+    "manifests_complete": true,
+    "pit_classifications_evidence_based": true,
+    "unknown_availability_fails_closed": true,
+    "unsafe_data_blocked": true,
+    "snapshots_immutable": true,
+    "raw_data_never_overwritten": true,
+    "transformations_versioned": true,
+    "lineage_complete": true,
+    "schema_violations_detected": true,
+    "temporal_integrity_violations_detected": true,
+    "revision_vintage_limitations_explicit": true,
+    "provider_adapters_dont_bypass_validation": true,
+    "adversarial_tests_pass": true,
+    "reproducibility_succeeds": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: 18/18 checks pass."
+}

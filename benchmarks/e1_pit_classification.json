@@ -1,0 +1,75 @@
+{
+  "phase": "E1",
+  "classification_definitions": {
+    "STRICT_PIT": {
+      "definition": "Information is available at or before the timestamp claimed by the dataset",
+      "examples": [
+        "Real-time market data with verified publication timestamp"
+      ],
+      "conclusion_strength": "Full evidential status",
+      "confirmation_allowed": true
+    },
+    "PIT_WITH_KNOWN_LAG": {
+      "definition": "Information is valid only after a deterministic or documented lag",
+      "examples": [
+        "Market data (next-day availability)",
+        "Macro data with publication lag"
+      ],
+      "conclusion_strength": "Full evidential status with lag documented",
+      "confirmation_allowed": true
+    },
+    "REVISED_NON_PIT": {
+      "definition": "Historical values may have changed after the decision date",
+      "examples": [
+        "Revised GDP figures",
+        "Restated financial statements"
+      ],
+      "conclusion_strength": "Exploratory or sensitivity-qualified only",
+      "confirmation_allowed": false
+    },
+    "UNKNOWN_PIT": {
+      "definition": "Availability cannot be verified",
+      "examples": [
+        "Data with unclear publication timeline"
+      ],
+      "conclusion_strength": "No strong conclusions allowed",
+      "confirmation_allowed": false
+    },
+    "UNSAFE_FOR_HISTORICAL_CONFIRMATION": {
+      "definition": "Dataset cannot safely support historical confirmatory claims",
+      "examples": [
+        "Look-ahead adjusted data",
+        "Survivorship-biased data"
+      ],
+      "conclusion_strength": "Blocked from confirmatory historical evaluation",
+      "confirmation_allowed": false
+    }
+  },
+  "dataset_classifications": {
+    "DS-EXP-050": {
+      "classification": "PIT_WITH_KNOWN_LAG",
+      "rationale": "Market data available next trading day. Lag is known and consistent.",
+      "availability_lag": "1 trading day"
+    },
+    "DS-EXP-100": {
+      "classification": "PIT_WITH_KNOWN_LAG",
+      "rationale": "Market data available next trading day.",
+      "availability_lag": "1 trading day"
+    },
+    "DS-000003": {
+      "classification": "PIT_WITH_KNOWN_LAG",
+      "rationale": "FRED data with publication lag (1-2 months for monthly series).",
+      "availability_lag": "1-2 months"
+    },
+    "BENCH-001": {
+      "classification": "PIT_WITH_KNOWN_LAG",
+      "rationale": "SPY market data available next trading day.",
+      "availability_lag": "1 trading day"
+    },
+    "SEC_FUNDAMENTALS": {
+      "classification": "STRICT_PIT",
+      "rationale": "SEC EDGAR filings with exact filing date as availability.",
+      "availability_lag": "0 (filing date = availability)"
+    }
+  }
+}

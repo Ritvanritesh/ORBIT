@@ -1,0 +1,101 @@
+{
+  "phase": "E1",
+  "validators": {
+    "required_columns": {
+      "description": "Check all required columns exist",
+      "fail_action": "REJECT"
+    },
+    "timestamp_types": {
+      "description": "Verify timestamp columns have correct types",
+      "fail_action": "REJECT"
+    },
+    "timestamp_ordering": {
+      "description": "Verify timestamps are monotonically increasing",
+      "fail_action": "FLAG"
+    },
+    "duplicate_keys": {
+      "description": "Check for duplicate (instrument, timestamp) keys",
+      "fail_action": "REJECT"
+    },
+    "frequency_consistency": {
+      "description": "Verify data frequency matches expected",
+      "fail_action": "FLAG"
+    },
+    "invalid_numerics": {
+      "description": "Check for NaN/Inf in critical columns",
+      "fail_action": "FLAG"
+    },
+    "missingness": {
+      "description": "Measure and report missing data fractions",
+      "fail_action": "REPORT"
+    },
+    "impossible_ranges": {
+      "description": "Check for impossible values (negative prices, etc.)",
+      "fail_action": "REJECT"
+    }
+  },
+  "validation_results": {
+    "DS-EXP-050": {
+      "checks": {
+        "required_columns": {
+          "status": "PASS",
+          "missing": []
+        },
+        "duplicate_keys": {
+          "status": "PASS",
+          "n_rows": 349374,
+          "n_unique": 349374
+        },
+        "no_negative_open": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_high": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_low": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_close": {
+          "status": "PASS",
+          "negatives": 0
+        }
+      },
+      "passed": 6,
+      "total": 6
+    },
+    "DS-EXP-100": {
+      "checks": {
+        "required_columns": {
+          "status": "PASS",
+          "missing": []
+        },
+        "duplicate_keys": {
+          "status": "PASS",
+          "n_rows": 680878,
+          "n_unique": 680878
+        },
+        "no_negative_open": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_high": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_low": {
+          "status": "PASS",
+          "negatives": 0
+        },
+        "no_negative_close": {
+          "status": "PASS",
+          "negatives": 0
+        }
+      },
+      "passed": 6,
+      "total": 6
+    }
+  }
+}

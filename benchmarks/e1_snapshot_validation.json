@@ -1,0 +1,36 @@
+{
+  "phase": "E1",
+  "snapshot_system": {
+    "snapshot_schema": {
+      "snapshot_id": "SNAP-{hash}",
+      "dataset_identity": "DSID-{hash}",
+      "creation_timestamp": "ISO-8601",
+      "source_coverage": {
+        "start": "date",
+        "end": "date"
+      },
+      "row_count": "integer",
+      "schema": {
+        "column_name": "dtype"
+      },
+      "raw_data_digest": "SHA-256",
+      "processed_data_digest": "SHA-256",
+      "transversion_version": "string",
+      "pit_policy": "string",
+      "vintage_identity": "string"
+    },
+    "immutability": true,
+    "creation_rule": "New snapshot on any source data change",
+    "reference_rule": "Experiments reference snapshots, not mutable paths",
+    "existing_snapshots": {
+      "DS-EXP-050_oos": {
+        "rows": 1800,
+        "digest": "c064798fb40f8a22..."
+      },
+      "DS-EXP-100_oos": {
+        "rows": 3492,
+        "digest": "698b26a28053e684..."
+      }
+    }
+  }
+}

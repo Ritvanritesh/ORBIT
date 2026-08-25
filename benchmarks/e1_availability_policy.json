@@ -1,0 +1,48 @@
+{
+  "phase": "E1",
+  "availability_engine": {
+    "policies": {
+      "same_day": {
+        "description": "Observation available at event time",
+        "shift": 0,
+        "unit": "trading_days",
+        "applies_to": [
+          "STRICT_PIT"
+        ]
+      },
+      "next_day": {
+        "description": "Observation available next trading day",
+        "shift": 1,
+        "unit": "trading_days",
+        "applies_to": [
+          "PIT_WITH_KNOWN_LAG"
+        ]
+      },
+      "publication_lag": {
+        "description": "Observation available after publication lag",
+        "shift": "variable",
+        "unit": "calendar_days",
+        "applies_to": [
+          "PIT_WITH_KNOWN_LAG"
+        ]
+      },
+      "blocked": {
+        "description": "Observation not available for historical use",
+        "shift": null,
+        "unit": null,
+        "applies_to": [
+          "REVISED_NON_PIT",
+          "UNKNOWN_PIT",
+          "UNSAFE_FOR_HISTORICAL_CONFIRMATION"
+        ]
+      }
+    },
+    "evaluation_function": {
+      "description": "Determine if observation at event_time is available at as_of_time",
+      "logic": "as_of_time >= event_time + availability_shift",
+      "fail_closed": true,
+      "unknown_default": "NOT_AVAILABLE"
+    },
+    "integration": "Compatible with src/orbit/temporal/engine.py PointInTimeEngine"
+  }
+}
