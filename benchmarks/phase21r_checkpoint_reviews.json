@@ -1,0 +1,29 @@
+{
+  "checkpoint_005": {
+    "checkpoint_id": "CP-005",
+    "n_experiments": 5,
+    "n_completed": 5,
+    "mean_ic": 0.15368,
+    "positive_fraction": 1.0,
+    "classification": "CONSISTENT_SUPPORT",
+    "decision": "CONTINUE"
+  },
+  "checkpoint_010": {
+    "checkpoint_id": "CP-010",
+    "n_experiments": 10,
+    "n_completed": 10,
+    "mean_ic": 0.141335,
+    "positive_fraction": 1.0,
+    "classification": "CONSISTENT_SUPPORT",
+    "decision": "CONTINUE"
+  },
+  "checkpoint_015": {
+    "checkpoint_id": "CP-015",
+    "n_experiments": 15,
+    "n_completed": 15,
+    "mean_ic": 0.14503,
+    "positive_fraction": 1.0,
+    "classification": "CONSISTENT_SUPPORT",
+    "decision": "CONTINUE"
+  }
+}

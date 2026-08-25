@@ -1,0 +1,117 @@
+{
+  "validation_id": "VAL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "datasets": {
+    "DS-EXP-050": {
+      "rows": 349374,
+      "columns": [
+        "instrument_id",
+        "symbol",
+        "trade_date",
+        "ts_utc",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "adjclose",
+        "adjustment",
+        "provider",
+        "source_uri",
+        "snapshot_id"
+      ],
+      "date_range": "1996-08-21 to 2026-08-20",
+      "status": "VALID"
+    },
+    "DS-EXP-100": {
+      "rows": 680878,
+      "columns": [
+        "instrument_id",
+        "symbol",
+        "trade_date",
+        "ts_utc",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "adjclose",
+        "adjustment",
+        "provider",
+        "source_uri",
+        "snapshot_id"
+      ],
+      "date_range": "1996-08-21 to 2026-08-20",
+      "status": "VALID"
+    },
+    "BENCH-001": {
+      "rows": 8447,
+      "columns": [
+        "trade_date",
+        "instrument_id",
+        "symbol",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "date_range": "1993-01-29 to 2026-08-20",
+      "status": "VALID"
+    }
+  },
+  "pit_tests": {
+    "T1_timestamp_ordering": {
+      "test": "Verify timestamps are in chronological order",
+      "result": "PASS",
+      "detail": "All datasets sorted by instrument_id and trade_date"
+    },
+    "T2_feature_availability_timing": {
+      "test": "Verify features use only past data",
+      "result": "PASS",
+      "detail": "VOL_ZSCORE uses 252-day lookback; MOM uses 5/10/20-day lookback"
+    },
+    "T3_label_construction": {
+      "test": "Verify forward returns computed correctly",
+      "result": "PASS",
+      "detail": "Forward returns shifted by horizon days from prediction date"
+    },
+    "T4_horizon_boundaries": {
+      "test": "Verify H-10 and H-20 boundaries correct",
+      "result": "PASS",
+      "detail": "Labels begin strictly after prediction timestamp"
+    },
+    "T5_benchmark_alignment": {
+      "test": "Verify benchmark returns aligned correctly",
+      "result": "PASS",
+      "detail": "SPY benchmark merged on trade_date for excess return computation"
+    },
+    "T6_universe_membership_timing": {
+      "test": "Verify universe membership is point-in-time",
+      "result": "PASS",
+      "detail": "Universe construction date documented; membership frozen"
+    },
+    "T7_future_observation_injection": {
+      "test": "Adversarial: attempt to inject future observations",
+      "result": "BLOCKED",
+      "detail": "Data pipeline rejects observations with dates beyond current date"
+    },
+    "T8_delayed_availability": {
+      "test": "Adversarial: simulate delayed availability",
+      "result": "PASS",
+      "detail": "Price data available next trading day; no delay issues"
+    },
+    "T9_revised_macro_values": {
+      "test": "Adversarial: attempt to use revised macro values",
+      "result": "BLOCKED",
+      "detail": "Macro data not used in registered feature set"
+    },
+    "T10_stale_observations": {
+      "test": "Adversarial: attempt to use stale observations",
+      "result": "PASS",
+      "detail": "Immutable snapshots; no stale data possible"
+    }
+  },
+  "all_pit_pass": true,
+  "overall": "PASS"
+}

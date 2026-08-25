@@ -1,0 +1,88 @@
+{
+  "audit_id": "ADV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "attacks": {
+    "A1_experiment_added_after_lock": {
+      "attack": "Experiment added after plan lock",
+      "result": "PASS",
+      "detail": "Plan locked before experiment execution; inventory matches plan"
+    },
+    "A2_failed_experiment_removed": {
+      "attack": "Failed experiment removed from inventory",
+      "result": "PASS",
+      "detail": "All 20 experiments remain in inventory; 0 failed"
+    },
+    "A3_hidden_hyperparameter_retry": {
+      "attack": "Hidden hyperparameter retry",
+      "result": "PASS",
+      "detail": "No hyperparameter tuning during confirmatory execution"
+    },
+    "A4_horizon_added_after_results": {
+      "attack": "Horizon added after observing results",
+      "result": "PASS",
+      "detail": "H-10 and H-20 pre-registered; no additional horizons added"
+    },
+    "A5_representation_selected_post_result": {
+      "attack": "Feature representation selected post-result",
+      "result": "PASS",
+      "detail": "VOL_BINARY and VOL_ZSCORE pre-registered; no new representations added"
+    },
+    "A6_future_data_leakage": {
+      "attack": "Future data leakage",
+      "result": "PASS",
+      "detail": "PIT integrity verified; features use only past data"
+    },
+    "A7_revised_macro_data_leakage": {
+      "attack": "Revised macro data leakage",
+      "result": "PASS",
+      "detail": "Macro data not used in registered feature set"
+    },
+    "A8_universe_cherry_picking": {
+      "attack": "Universe cherry-picking",
+      "result": "PASS",
+      "detail": "ENV-050 and ENV-100 pre-registered; both tested"
+    },
+    "A9_selective_model_exclusion": {
+      "attack": "Selective model exclusion",
+      "result": "PASS",
+      "detail": "Ridge and Lasso both tested; no selective exclusion"
+    },
+    "A10_checkpoint_rule_violation": {
+      "attack": "Checkpoint rule violation",
+      "result": "PASS",
+      "detail": "Checkpoints at 5, 10, 15 executed as registered"
+    },
+    "A11_baseline_substitution": {
+      "attack": "Baseline substitution",
+      "result": "PASS",
+      "detail": "Baselines pre-registered; no substitution occurred"
+    },
+    "A12_metric_calculation_inconsistency": {
+      "attack": "Metric calculation inconsistency",
+      "result": "PASS",
+      "detail": "Spearman IC calculated consistently across all experiments"
+    },
+    "A13_duplicate_experiment_counting": {
+      "attack": "Duplicate experiment counting",
+      "result": "PASS",
+      "detail": "Each experiment counted once; no duplicates"
+    },
+    "A14_data_digest_mismatch": {
+      "attack": "Data digest mismatch",
+      "result": "PASS",
+      "detail": "Data digests verified; no mismatches"
+    },
+    "A15_configuration_mismatch": {
+      "attack": "Configuration mismatch",
+      "result": "PASS",
+      "detail": "Configurations match plan; no unauthorized changes"
+    },
+    "A16_result_file_reconstruction_failure": {
+      "attack": "Result file reconstruction failure",
+      "result": "PASS",
+      "detail": "Result files reproducible from experiment inventory"
+    }
+  },
+  "all_pass": true,
+  "overall": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "analysis_id": "HORIZ-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "H-10": {
+    "n_experiments": 10,
+    "mean_ic": 0.1382897,
+    "ic_std": 0.028050866696235962,
+    "min_ic": 0.060207,
+    "max_ic": 0.168352,
+    "positive_count": 10,
+    "directional_consistency": "PASS"
+  },
+  "H-20": {
+    "n_experiments": 10,
+    "mean_ic": 0.1482745,
+    "ic_std": 0.00903481088069916,
+    "min_ic": 0.133439,
+    "max_ic": 0.163508,
+    "positive_count": 10,
+    "directional_consistency": "PASS"
+  },
+  "horizon_consistency": {
+    "h10_mean_ic": 0.1382897,
+    "h20_mean_ic": 0.1482745,
+    "difference": 0.009984800000000016,
+    "consistent": true
+  }
+}

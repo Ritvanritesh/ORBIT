@@ -1,0 +1,33 @@
+{
+  "phase": "21R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T14:58:04.346589+00:00",
+  "verification_checks": {
+    "plan_locked": true,
+    "data_pit_validated": true,
+    "baselines_established": true,
+    "experiment_budget_executed": true,
+    "horizon_tests_completed": true,
+    "representation_tests_completed": true,
+    "model_tests_completed": true,
+    "checkpoints_reviewed": true,
+    "temporal_analysis_completed": true,
+    "universe_analysis_completed": true,
+    "statistics_computed": true,
+    "incremental_value_computed": true,
+    "failure_analysis_completed": true,
+    "adversarial_audit_passed": true,
+    "reproducibility_verified": true,
+    "scorecard_complete": true,
+    "branch_decision_assigned": true,
+    "historical_artifacts_unchanged": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: 18/18 checks pass. Outcome: STRONG_EXPLORATORY_SUPPORT.",
+  "outcome": "A",
+  "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+  "confirmatory_eligibility": "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION"
+}

@@ -1,0 +1,45 @@
+{
+  "baseline_id": "BASE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "baselines": {
+    "BL_NULL": {
+      "identity": "Random/Null Baseline",
+      "expected_ic": 0.0,
+      "description": "Expected IC under null hypothesis of no predictability"
+    },
+    "BL_MOMENTUM": {
+      "identity": "Momentum-Only Baseline",
+      "features": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "model": "Ridge(alpha=1.0)",
+      "description": "Model with only momentum features (no volatility regime)",
+      "purpose": "Tests whether volatility features add value beyond momentum"
+    }
+  },
+  "baseline_results": {
+    "BL_MOMENTUM_H10_ENV050": {
+      "spearman_ic": 0.143333,
+      "mean_monthly_ic": 0.12657
+    },
+    "BL_MOMENTUM_H10_ENV100": {
+      "spearman_ic": 0.132272,
+      "mean_monthly_ic": 0.122239
+    },
+    "BL_MOMENTUM_H20_ENV050": {
+      "spearman_ic": 0.139819,
+      "mean_monthly_ic": 0.085663
+    },
+    "BL_MOMENTUM_H20_ENV100": {
+      "spearman_ic": 0.133439,
+      "mean_monthly_ic": 0.090816
+    }
+  },
+  "baseline_mean_ic": {
+    "momentum_h10": 0.137803,
+    "momentum_h20": 0.136629,
+    "overall": 0.137216
+  }
+}

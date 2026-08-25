@@ -1,0 +1,95 @@
+{
+  "phase": "21R",
+  "plan_id": "21R-PLAN-001",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "created": "2026-08-25T14:58:03.538900+00:00",
+  "locked": true,
+  "hypothesis": {
+    "statement": "Higher volatility regimes should be associated with higher expected returns at intermediate horizons H-10 and H-20",
+    "mechanism": "Volatility regimes persist and influence investor risk appetite, affecting expected returns over multi-week periods",
+    "expected_direction": "positive"
+  },
+  "approved_datasets": [
+    "DS-EXP-050",
+    "DS-EXP-100",
+    "BENCH-001"
+  ],
+  "pit_classification": "PIT_NATIVE",
+  "universe_definitions": {
+    "ENV-050": {
+      "n_instruments": 50,
+      "dataset": "DS-EXP-050"
+    },
+    "ENV-100": {
+      "n_instruments": 97,
+      "dataset": "DS-EXP-100"
+    }
+  },
+  "target_horizons": [
+    "H-10",
+    "H-20"
+  ],
+  "model_families": [
+    "Ridge",
+    "Lasso"
+  ],
+  "baseline_definitions": {
+    "BL_MOMENTUM": {
+      "features": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D"
+      ],
+      "model": "Ridge"
+    },
+    "BL_NULL": {
+      "expected_ic": 0.0
+    }
+  },
+  "feature_representations": {
+    "VOL_ZSCORE": "Z-score of 20-day rolling realized volatility",
+    "VOL_BINARY": "Binary regime based on 75th/25th percentile"
+  },
+  "experiment_budget": {
+    "total": 20,
+    "checkpoints": [
+      5,
+      10,
+      15
+    ],
+    "review_checkpoints": [
+      5,
+      10,
+      15
+    ]
+  },
+  "metrics": {
+    "primary": "Spearman IC",
+    "secondary": [
+      "mean monthly IC",
+      "IC std",
+      "positive-period ratio",
+      "sign consistency"
+    ]
+  },
+  "exploratory_success_criteria": {
+    "directional_consistency": "IC > 0 in majority of configurations",
+    "incremental_value": "IC(vol_features) > IC(baseline)",
+    "universe_stability": "IC consistent across ENV-050 and ENV-100",
+    "model_stability": "IC consistent across Ridge and Lasso",
+    "temporal_stability": "IC positive across time windows"
+  },
+  "exploratory_failure_criteria": {
+    "no_effect": "IC <= 0 across all configurations",
+    "unstable": "IC sign reverses across universes or models",
+    "data_integrity": "PIT or leakage failure detected"
+  },
+  "stopping_conditions": [
+    "Budget exhausted",
+    "Falsification criterion met",
+    "Data integrity failure"
+  ],
+  "data_source": "Phase 19-E experiment results (reused to avoid redundant computation)",
+  "plan_digest": "cce19bd6a3268fc85644a11f56065dc423762461b97f07ec064ece935f31a17a"
+}

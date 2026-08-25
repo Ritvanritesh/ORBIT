@@ -1,0 +1,22 @@
+{
+  "analysis_id": "INCR-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "vol_model": {
+    "n_experiments": 16,
+    "mean_ic": 0.144799
+  },
+  "baseline_model": {
+    "n_experiments": 4,
+    "mean_ic": 0.137216
+  },
+  "incremental": {
+    "absolute_improvement": 0.007583,
+    "relative_improvement": 5.53,
+    "positive": true
+  },
+  "consistency": {
+    "across_universes": true,
+    "across_horizons": true,
+    "across_models": true
+  }
+}

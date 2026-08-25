@@ -114,6 +114,16 @@
             "version": "568f89b5173aa7c7"
           }
         }
+      },
+      "exploratory_research": {
+        "phase": "21R",
+        "timestamp": "2026-08-25T14:58:04.359555+00:00",
+        "outcome": "A",
+        "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+        "confirmatory_eligibility": "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION",
+        "mean_ic": 0.143282,
+        "incremental_ic": 0.007583,
+        "pass_count": 10
       }
     },
     {
@@ -177,6 +187,16 @@
             "version": "568f89b5173aa7c7"
           }
         }
+      },
+      "exploratory_research": {
+        "phase": "21R",
+        "timestamp": "2026-08-25T14:58:04.359555+00:00",
+        "outcome": "A",
+        "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+        "confirmatory_eligibility": "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION",
+        "mean_ic": 0.143282,
+        "incremental_ic": 0.007583,
+        "pass_count": 10
       }
     }
   ],

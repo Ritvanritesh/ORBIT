@@ -1,0 +1,23 @@
+{
+  "analysis_id": "FAIL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "failed_experiments": [],
+  "failure_summary": {
+    "total_failed": 0,
+    "failure_rate": 0.0,
+    "failure_categories": {
+      "NO_EFFECT": 0,
+      "HORIZON_MISMATCH": 0,
+      "REGIME_DEPENDENT": 0,
+      "UNIVERSE_DEPENDENT": 0,
+      "MODEL_DEPENDENT": 0,
+      "REPRESENTATION_DEPENDENT": 0,
+      "DATA_LIMITATION": 0,
+      "PIT_LIMITATION": 0,
+      "INSUFFICIENT_SAMPLE": 0,
+      "MODEL_DEGENERACY": 0,
+      "TEMPORAL_INSTABILITY": 0,
+      "UNRESOLVED": 0
+    }
+  }
+}

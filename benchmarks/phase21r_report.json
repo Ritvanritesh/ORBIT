@@ -1,0 +1,32 @@
+{
+  "phase": "21R",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "timestamp": "2026-08-25T14:58:04.358557+00:00",
+  "gate": "GREEN",
+  "verdict": "A",
+  "outcome": "A",
+  "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+  "confirmatory_eligibility": "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION",
+  "summary": {
+    "experiments_attempted": 20,
+    "experiments_completed": 20,
+    "experiments_failed": 0,
+    "mean_ic": 0.143282,
+    "incremental_ic": 0.007583,
+    "positive_fraction": 1.0,
+    "pass_count": 10,
+    "fail_count": 0
+  },
+  "evidence_dimensions": {
+    "mechanism_consistency": "PASS",
+    "directional_consistency": "PASS",
+    "incremental_value": "PASS",
+    "horizon_consistency": "PASS",
+    "universe_stability": "PASS",
+    "model_stability": "PASS",
+    "statistical_support": "PASS"
+  },
+  "required_changes": [],
+  "next_steps": "Proceed to Phase 19-C for locked confirmatory registration"
+}

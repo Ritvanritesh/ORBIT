@@ -1,0 +1,20 @@
+{
+  "analysis_id": "UNIV-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "ENV-050": {
+    "n_experiments": 10,
+    "mean_ic": 0.14899579999999998,
+    "positive_count": 10
+  },
+  "ENV-100": {
+    "n_experiments": 10,
+    "mean_ic": 0.13756839999999998,
+    "positive_count": 10
+  },
+  "universe_consistency": {
+    "env050_mean_ic": 0.14899579999999998,
+    "env100_mean_ic": 0.13756839999999998,
+    "difference": 0.011427400000000004,
+    "classification": "UNIVERSE_CONSISTENT"
+  }
+}

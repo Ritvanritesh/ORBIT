@@ -1,0 +1,22 @@
+{
+  "analysis_id": "REPR-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "VOL_BINARY": {
+    "n_experiments": 8,
+    "mean_ic": 0.15267325,
+    "positive_count": 8,
+    "directional_consistency": "PASS"
+  },
+  "VOL_ZSCORE": {
+    "n_experiments": 8,
+    "mean_ic": 0.136924125,
+    "positive_count": 8,
+    "directional_consistency": "PASS"
+  },
+  "representation_consistency": {
+    "binary_mean_ic": 0.15267325,
+    "zscore_mean_ic": 0.136924125,
+    "difference": 0.015749125000000003,
+    "consistent": true
+  }
+}

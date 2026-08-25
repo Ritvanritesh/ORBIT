@@ -1,0 +1,62 @@
+{
+  "scorecard_id": "SCORE-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "dimensions": {
+    "mechanism_consistency": {
+      "status": "PASS",
+      "detail": "Mean IC 0.143282 > 0"
+    },
+    "directional_consistency": {
+      "status": "PASS",
+      "detail": "Positive sign fraction 100.00% > 50%"
+    },
+    "incremental_value": {
+      "status": "PASS",
+      "detail": "Incremental IC 0.007583 > 0"
+    },
+    "horizon_consistency": {
+      "status": "PASS",
+      "detail": "H-10/H-20 difference 0.009985 < 0.02"
+    },
+    "temporal_stability": {
+      "status": "PARTIAL",
+      "detail": "Temporal analysis limited by available windows"
+    },
+    "universe_stability": {
+      "status": "PASS",
+      "detail": "ENV-050/ENV-100 difference 0.011427"
+    },
+    "model_stability": {
+      "status": "PASS",
+      "detail": "Ridge/Lasso difference 0.014280"
+    },
+    "representation_stability": {
+      "status": "PASS",
+      "detail": "BINARY/ZSCORE difference 0.015749"
+    },
+    "statistical_support": {
+      "status": "PASS",
+      "detail": "P-value 0.000000"
+    },
+    "pit_integrity": {
+      "status": "PASS",
+      "detail": "PIT tests: 10/10"
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "detail": "Results reproducible from Phase 19-E"
+    },
+    "economic_relevance": {
+      "status": "INSUFFICIENT_DATA",
+      "detail": "Portfolio evaluation not performed in exploratory phase"
+    }
+  },
+  "summary": {
+    "pass": 10,
+    "fail": 0,
+    "partial": 1,
+    "insufficient_data": 1,
+    "total": 12
+  }
+}

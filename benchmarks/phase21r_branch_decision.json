@@ -1,0 +1,19 @@
+{
+  "decision_id": "DEC-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "hypothesis_id": "HYP-CAND-001",
+  "outcome": "A",
+  "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+  "confirmatory_eligibility": "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION",
+  "evidence_summary": {
+    "mean_ic": 0.143282,
+    "positive_fraction": 1.0,
+    "incremental_positive": true,
+    "horizon_consistent": true,
+    "universe_consistent": true,
+    "model_consistent": true,
+    "pass_count": 10,
+    "fail_count": 0
+  },
+  "required_changes_before_confirmation": []
+}

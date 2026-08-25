@@ -1,0 +1,22 @@
+{
+  "analysis_id": "MODEL-BR-E2AFD3AC901A",
+  "branch_id": "BR-E2AFD3AC901A",
+  "Ridge": {
+    "n_experiments": 12,
+    "mean_ic": 0.14899408333333333,
+    "positive_count": 12,
+    "degeneracy": "NONE"
+  },
+  "Lasso": {
+    "n_experiments": 8,
+    "mean_ic": 0.134714125,
+    "positive_count": 8,
+    "degeneracy": "NONE"
+  },
+  "model_consistency": {
+    "ridge_mean_ic": 0.14899408333333333,
+    "lasso_mean_ic": 0.134714125,
+    "difference": 0.014279958333333342,
+    "consistent": true
+  }
+}
