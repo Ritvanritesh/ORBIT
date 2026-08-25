@@ -1,0 +1,27 @@
+{
+  "phase": "18R",
+  "timestamp": "2026-08-25T10:52:48.780012+00:00",
+  "verification_checks": {
+    "plan_locked_before_execution": true,
+    "plan_digest_recorded": true,
+    "deterministic_baseline_ids": true,
+    "no_identity_collisions": true,
+    "null_procedures_valid": true,
+    "no_future_information": true,
+    "candidate_baseline_alignment_enforced": true,
+    "incompatible_comparisons_rejected": true,
+    "random_seeds_reproducible": true,
+    "primitive_outputs_traceable": true,
+    "economic_comparisons_equivalent": true,
+    "multiple_testing_documented": true,
+    "historical_artifacts_unchanged": true,
+    "double_run_reproducibility": true,
+    "adversarial_tests_pass": true
+  },
+  "all_checks_pass": true,
+  "overall_verdict": "A",
+  "gate": "GREEN",
+  "gate_rationale": "Verdict A: 15/15 checks pass.",
+  "n_baselines": 8,
+  "n_canonical": 8
+}

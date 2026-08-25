@@ -1,0 +1,192 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "null_baselines": {
+    "NULL-001": {
+      "id": "BL-NULL-001",
+      "name": "IID Random Scores",
+      "family": "NULL",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Deterministic seeded random prediction scores, uniformly distributed",
+      "implementation": {
+        "method": "uniform_random",
+        "seed": 42,
+        "n_repetitions": 100,
+        "preserve_timestamps": true,
+        "preserve_universe": true
+      },
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-1",
+        "H-21",
+        "H-63"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio"
+      ],
+      "expected_behavior": {
+        "ic_mean": "approximately 0",
+        "ic_std": "approximately 1/sqrt(n_instruments)",
+        "positive_ratio": "approximately 0.5"
+      },
+      "limitations": [
+        "Does not preserve cross-sectional correlation structure",
+        "May not match real prediction distribution shape"
+      ],
+      "status": "CANONICAL"
+    },
+    "NULL-002": {
+      "id": "BL-NULL-002",
+      "name": "Cross-sectional Permutation",
+      "family": "NULL",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Targets randomly permuted within evaluation units, preserving timestamps and universe",
+      "implementation": {
+        "method": "cross_sectional_permutation",
+        "seed": 42,
+        "n_permutations": 1000,
+        "preserve_timestamps": true,
+        "preserve_universe": true,
+        "permute_within": "timestamp"
+      },
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio",
+        "permutation_p_value"
+      ],
+      "expected_behavior": {
+        "ic_mean": "approximately 0",
+        "permutation_p_value": "approximately uniform under null"
+      },
+      "limitations": [
+        "Only valid when cross-sectional structure is exchangeable",
+        "Does not preserve temporal autocorrelation"
+      ],
+      "status": "CANONICAL"
+    },
+    "NULL-003": {
+      "id": "BL-NULL-003",
+      "name": "Target Permutation",
+      "family": "NULL",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Predictive features replaced with Gaussian noise, breaking prediction-target relationship",
+      "implementation": {
+        "method": "feature_destruction",
+        "seed": 42,
+        "noise_distribution": "standard_normal",
+        "preserve_timestamps": true
+      },
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "expected_behavior": {
+        "ic_mean": "approximately 0"
+      },
+      "limitations": [
+        "Destroys all feature information, not just predictive component",
+        "May not match real null distribution if features have non-linear effects"
+      ],
+      "status": "CANONICAL"
+    },
+    "NULL-004": {
+      "id": "BL-NULL-004",
+      "name": "Constant Prediction",
+      "family": "NULL",
+      "version": "1.0",
+      "level": "LEVEL_1_NULL",
+      "definition": "Degenerate predictor: constant score for all instruments at all times. Zero cross-sectional information.",
+      "implementation": {
+        "method": "constant",
+        "value": 0.0,
+        "preserve_timestamps": true
+      },
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "expected_behavior": {
+        "ic_mean": "exactly 0",
+        "ic_std": "exactly 0"
+      },
+      "limitations": [
+        "Provides no cross-sectional ranking information",
+        "IC is undefined if all predictions are identical"
+      ],
+      "status": "CANONICAL"
+    }
+  },
+  "null_distributions": {
+    "NULL-001": {
+      "ic_mean": -0.0108553181272509,
+      "ic_median": -0.018535414165666265,
+      "ic_std": 0.14533804225952077,
+      "ic_q025": -0.30635774309723884,
+      "ic_q975": 0.2804825930372149,
+      "positive_ratio": 0.456,
+      "n_samples": 1000
+    },
+    "NULL-002": {
+      "ic_mean": -0.00276561824729892,
+      "ic_median": 0.0012004801920768309,
+      "ic_std": 0.14689488400610307,
+      "ic_q025": -0.3055702280912364,
+      "ic_q975": 0.27981752701080426,
+      "positive_ratio": 0.506,
+      "n_samples": 1000
+    },
+    "NULL-003": {
+      "ic_mean": 0.0016447539015606249,
+      "ic_median": 0.006290516206482593,
+      "ic_std": 0.1374971062111609,
+      "ic_q025": -0.2715534213685474,
+      "ic_q975": 0.2539783913565426,
+      "positive_ratio": 0.515,
+      "n_samples": 1000
+    },
+    "NULL-004": {
+      "ic_mean": 0.0038029291716686685,
+      "ic_median": 0.008259303721488595,
+      "ic_std": 0.14039891595898668,
+      "ic_q025": -0.28355582232893156,
+      "ic_q975": 0.265906362545018,
+      "positive_ratio": 0.521,
+      "n_samples": 1000
+    }
+  },
+  "calibration_note": "Null distributions computed for reference. No claim that finite simulation proves no signal."
+}

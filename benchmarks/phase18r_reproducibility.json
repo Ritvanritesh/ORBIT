@@ -1,0 +1,23 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "tests": {
+    "identical_ids": {
+      "status": "PASS",
+      "detail": "BL-92DDF3D60AA9 == BL-92DDF3D60AA9"
+    },
+    "identical_scores": {
+      "status": "PASS",
+      "detail": "Random outputs identical"
+    },
+    "identical_digests": {
+      "status": "PASS",
+      "detail": "Artifact digests identical"
+    },
+    "seed_changes_digest": {
+      "status": "PASS",
+      "detail": "Different seed produces different digest"
+    }
+  },
+  "overall": "PASS"
+}

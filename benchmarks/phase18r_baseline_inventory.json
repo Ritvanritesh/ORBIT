@@ -1,0 +1,290 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "inventory": {
+    "NULL-001": {
+      "baseline_id": "BL-NULL-001",
+      "name": "IID Random Scores",
+      "family": "NULL",
+      "level": "LEVEL_1_NULL",
+      "purpose": "Deterministic seeded random prediction scores, uniformly distributed",
+      "applicable_horizons": [
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-1",
+        "H-21",
+        "H-63"
+      ],
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "primary_metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio"
+      ],
+      "limitations": [
+        "Does not preserve cross-sectional correlation structure",
+        "May not match real prediction distribution shape"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "NULL-002": {
+      "baseline_id": "BL-NULL-002",
+      "name": "Cross-sectional Permutation",
+      "family": "NULL",
+      "level": "LEVEL_1_NULL",
+      "purpose": "Targets randomly permuted within evaluation units, preserving timestamps and universe",
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "primary_metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio",
+        "permutation_p_value"
+      ],
+      "limitations": [
+        "Only valid when cross-sectional structure is exchangeable",
+        "Does not preserve temporal autocorrelation"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "NULL-003": {
+      "baseline_id": "BL-NULL-003",
+      "name": "Target Permutation",
+      "family": "NULL",
+      "level": "LEVEL_1_NULL",
+      "purpose": "Predictive features replaced with Gaussian noise, breaking prediction-target relationship",
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "primary_metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "limitations": [
+        "Destroys all feature information, not just predictive component",
+        "May not match real null distribution if features have non-linear effects"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "NULL-004": {
+      "baseline_id": "BL-NULL-004",
+      "name": "Constant Prediction",
+      "family": "NULL",
+      "level": "LEVEL_1_NULL",
+      "purpose": "Degenerate predictor: constant score for all instruments at all times. Zero cross-sectional information.",
+      "applicable_horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "primary_metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "limitations": [
+        "Provides no cross-sectional ranking information",
+        "IC is undefined if all predictions are identical"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "PRED-001": {
+      "baseline_id": "BL-PRED-001",
+      "name": "Ridge Predictive Baseline",
+      "family": "PREDICTIVE",
+      "level": "LEVEL_2_SIMPLE_PREDICTIVE",
+      "purpose": "Ridge regression (alpha=1.0) on FS-001 features, LAB-006 label, H-5 horizon",
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "primary_metrics": {
+        "predictive": [
+          "ic_mean",
+          "ic_median",
+          "ic_std",
+          "positive_ratio",
+          "sign_consistency",
+          "temporal_dispersion"
+        ],
+        "statistical": [
+          "permutation_p_value",
+          "bootstrap_ci_lower",
+          "bootstrap_ci_upper"
+        ]
+      },
+      "limitations": [
+        "Only applicable to H-5 horizon",
+        "Requires FS-001 feature set",
+        "Model performance may degrade out-of-sample"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "ECON-001": {
+      "baseline_id": "BL-ECON-001",
+      "name": "Equal-Weight Universe Portfolio",
+      "family": "ECONOMIC",
+      "level": "LEVEL_3_ECONOMIC",
+      "purpose": "Equal-weight portfolio across all universe members, rebalanced monthly",
+      "applicable_horizons": [],
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "primary_metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown",
+          "turnover",
+          "transaction_costs"
+        ],
+        "reporting": [
+          "sample_length",
+          "universe_coverage"
+        ]
+      },
+      "limitations": [
+        "No transaction cost optimization",
+        "Equal weighting may not be optimal"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "ECON-002": {
+      "baseline_id": "BL-ECON-002",
+      "name": "SPY Benchmark",
+      "family": "ECONOMIC",
+      "level": "LEVEL_3_ECONOMIC",
+      "purpose": "SPY buy-and-hold benchmark",
+      "applicable_horizons": [],
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "primary_metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown"
+        ]
+      },
+      "limitations": [
+        "Single-instrument benchmark",
+        "Does not represent diversified portfolio"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    },
+    "MODEL-COMP-001": {
+      "baseline_id": "BL-MODEL-COMP-001",
+      "name": "Incremental Evidence Comparator",
+      "family": "MODEL_COMPARATOR",
+      "level": "LEVEL_2_SIMPLE_PREDICTIVE",
+      "purpose": "Framework for comparing candidate against existing model with aligned identity tuples",
+      "applicable_horizons": [],
+      "applicable_universes": [],
+      "primary_metrics": [],
+      "limitations": [
+        "Does not imply existing model is validated",
+        "Incremental improvement does not guarantee economic value"
+      ],
+      "required_alignment_conditions": [
+        "identical_universe",
+        "identical_horizon",
+        "identical_label",
+        "identical_split",
+        "identical_evaluation_period"
+      ],
+      "evidence_status": "CANONICAL",
+      "reproducibility_status": "VERIFIED",
+      "classification": "CANONICAL"
+    }
+  },
+  "n_baselines": 8,
+  "classifications": {
+    "CANONICAL": 8,
+    "LIMITED": 0,
+    "EXPERIMENTAL": 0,
+    "RETIRED": 0
+  }
+}

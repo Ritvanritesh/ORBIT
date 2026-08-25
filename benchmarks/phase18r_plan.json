@@ -1,0 +1,118 @@
+{
+  "phase": "18R",
+  "plan_id": "18R-PLAN-001",
+  "created": "2026-08-25T10:52:46.772193+00:00",
+  "purpose": "Establish canonical baselines for ORBIT hypothesis-driven research",
+  "datasets": {
+    "DS-EXP-050": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\market\\yahoo_chart_api\\DS-EXP-050\\bars.parquet",
+      "instruments": 50,
+      "range": "1996-08-21 to 2026-08-20"
+    },
+    "DS-EXP-100": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\market\\yahoo_chart_api\\DS-EXP-100\\bars.parquet",
+      "instruments": 97,
+      "range": "1996-08-21 to 2026-08-20"
+    },
+    "BENCH-001": {
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\benchmark\\BENCH-001\\bars.parquet",
+      "instruments": 1,
+      "symbol": "SPY"
+    }
+  },
+  "universes": [
+    "ENV-050",
+    "ENV-100"
+  ],
+  "horizons": [
+    "H-5",
+    "H-10",
+    "H-20"
+  ],
+  "splits": {
+    "train": {
+      "start": "2010-01-04",
+      "end": "2018-12-31"
+    },
+    "val": {
+      "start": "2019-01-02",
+      "end": "2021-12-31"
+    },
+    "test": {
+      "start": "2022-01-03",
+      "end": "2026-06-30"
+    }
+  },
+  "baselines": {
+    "NULL": [
+      "NULL-001",
+      "NULL-002",
+      "NULL-003",
+      "NULL-004"
+    ],
+    "PREDICTIVE": [
+      "PRED-001"
+    ],
+    "ECONOMIC": [
+      "ECON-001",
+      "ECON-002"
+    ],
+    "MODEL_COMPARATOR": [
+      "MODEL-COMP-001"
+    ]
+  },
+  "metrics": {
+    "predictive": [
+      "ic_mean",
+      "ic_median",
+      "ic_std",
+      "positive_ratio",
+      "sign_consistency"
+    ],
+    "economic": [
+      "return",
+      "volatility",
+      "sharpe",
+      "max_drawdown",
+      "turnover",
+      "transaction_costs"
+    ],
+    "comparative": [
+      "absolute_difference",
+      "relative_difference",
+      "sign_agreement",
+      "temporal_consistency"
+    ]
+  },
+  "statistical_tests": {
+    "null_distribution": "bootstrap_permutation",
+    "n_permutations": 1000,
+    "confidence_level": 0.95,
+    "multiple_testing": "holm"
+  },
+  "seeds": {
+    "null_generation": 42,
+    "permutation": 42,
+    "random_portfolio": 42,
+    "bootstrap": 42
+  },
+  "decision_thresholds": {
+    "ic_materiality": "hypothesis_specific",
+    "economic_materiality": "hypothesis_specific",
+    "note": "No universal IC threshold. Thresholds derived from economic rationale and baseline distribution."
+  },
+  "failure_conditions": [
+    "baseline_id_collision",
+    "non_deterministic_output",
+    "future_information_leak",
+    "evaluation_mismatch",
+    "missing_primitive_output"
+  ],
+  "exclusions": [
+    "no_hypothesis_search",
+    "no_feature_addition",
+    "no_model_tuning",
+    "no_historical_artifact_modification"
+  ],
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc"
+}

@@ -1,0 +1,36 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "multiple_testing_policy": {
+    "when_baseline_comparison_counts_as_test": {
+      "confirmatory": "Yes \u2014 must be included in multiple testing family",
+      "exploratory": "No \u2014 descriptive calibration only",
+      "economic": "Separate \u2014 economic tests have their own family"
+    },
+    "hypothesis_family_definition": {
+      "primary_family": "All confirmatory tests for a single hypothesis",
+      "cross_hypothesis_family": "All confirmatory tests across all hypotheses (if tested on same data)",
+      "baseline_comparisons": "Included in hypothesis family when confirmatory"
+    },
+    "exploratory_logging": {
+      "required": "All exploratory baseline comparisons must be logged",
+      "format": "Experiment ID, baseline ID, metric, value",
+      "use": "Calibration and evidence accumulation, not validation"
+    },
+    "baseline_shopping_prevention": {
+      "rules": [
+        "Baseline family specified before confirmatory execution",
+        "All applicable baselines must be reported",
+        "Selective reporting prohibited",
+        "Weakest baseline selection after results is prohibited"
+      ]
+    },
+    "correction_methods": {
+      "primary": "Holm",
+      "secondary": "Benjamini-Hochberg",
+      "rationale": "Holm controls FWER; BH controls FDR. Both are valid."
+    },
+    "policy_id": "18R-MULT-TEST-001",
+    "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc"
+  }
+}

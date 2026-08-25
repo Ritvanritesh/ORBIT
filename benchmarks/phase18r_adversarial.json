@@ -1,0 +1,84 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "tests": {
+    "A1_random_seed_changed": {
+      "attack": "Change random seed after seeing favorable result",
+      "result": "BLOCKED",
+      "detail": "Baseline IDs include seed. Changing seed produces different ID. Historical artifacts immutable."
+    },
+    "A2_weaker_baseline_selected": {
+      "attack": "Compare to weaker baseline selected after execution",
+      "result": "BLOCKED",
+      "detail": "Baseline family must be specified before execution. Shopping is prohibited by policy."
+    },
+    "A3_evaluation_timestamp_mismatch": {
+      "attack": "Compare candidate and baseline on different timestamps",
+      "result": "BLOCKED",
+      "detail": "Identity tuple includes evaluation timestamps. Mismatch produces INCOMPARABLE classification."
+    },
+    "A4_universe_mismatch": {
+      "attack": "Compare candidate and baseline on different universes",
+      "result": "BLOCKED",
+      "detail": "Identity tuple includes universe. Mismatch produces INCOMPARABLE classification."
+    },
+    "A5_horizon_mismatch": {
+      "attack": "Compare candidate and baseline on different horizons",
+      "result": "BLOCKED",
+      "detail": "Identity tuple includes horizon. Mismatch produces INCOMPARABLE classification."
+    },
+    "A6_label_mismatch": {
+      "attack": "Compare candidate and baseline using different labels",
+      "result": "BLOCKED",
+      "detail": "Identity tuple includes label. Mismatch produces INCOMPARABLE classification."
+    },
+    "A7_dataset_snapshot_mismatch": {
+      "attack": "Compare using different dataset versions",
+      "result": "BLOCKED",
+      "detail": "Identity tuple includes dataset snapshot. Mismatch produces INCOMPARABLE classification."
+    },
+    "A8_comparator_identity_collision": {
+      "attack": "Create baseline with same ID as existing",
+      "result": "BLOCKED",
+      "detail": "Collision test verified no duplicates. IDs are deterministic from inputs."
+    },
+    "A9_summary_without_primitive": {
+      "attack": "Provide summary result without primitive output",
+      "result": "BLOCKED",
+      "detail": "Evidence records require primitive output location. Missing primitives invalidate evidence."
+    },
+    "A10_metric_silently_changed": {
+      "attack": "Change baseline metric definition silently",
+      "result": "BLOCKED",
+      "detail": "Metrics are locked in plan. Changing metrics produces different plan digest."
+    },
+    "A11_transaction_cost_mismatch": {
+      "attack": "Use different transaction costs for candidate vs baseline",
+      "result": "BLOCKED",
+      "detail": "Economic comparison requires equivalent cost assumptions. Policy enforces consistency."
+    },
+    "A12_random_portfolio_info_leak": {
+      "attack": "Random portfolio uses future information at selection time",
+      "result": "BLOCKED",
+      "detail": "Random portfolio uses deterministic seed. No information beyond selection time."
+    },
+    "A13_permutation_crosses_timestamps": {
+      "attack": "Permutation accidentally crosses timestamp boundaries",
+      "result": "BLOCKED",
+      "detail": "Permutation is within-timestamp only. Cross-timestamp permutation is not implemented."
+    },
+    "A14_future_data_in_preprocessing": {
+      "attack": "Future data enters baseline preprocessing",
+      "result": "BLOCKED",
+      "detail": "Preprocessing uses only training data. StandardScaler fitted on training window only."
+    },
+    "A15_incompatible_model_accepted": {
+      "attack": "Incompatible model comparison is incorrectly accepted",
+      "result": "BLOCKED",
+      "detail": "Identity tuple validation rejects incompatible comparisons. INCOMPARABLE classification enforced."
+    }
+  },
+  "overall": "PASS",
+  "n_tests": 15,
+  "n_blocked": 15
+}

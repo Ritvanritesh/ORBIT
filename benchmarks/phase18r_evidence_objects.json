@@ -1,0 +1,250 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "evidence_records": {
+    "NULL-001": {
+      "evidence_id": "EV-BL-NULL-001",
+      "baseline_id": "BL-NULL-001",
+      "baseline_family": "NULL",
+      "baseline_name": "IID Random Scores",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "horizons": [
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-1",
+        "H-21",
+        "H-63"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio"
+      ],
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_null-001_primitives.json"
+      }
+    },
+    "NULL-002": {
+      "evidence_id": "EV-BL-NULL-002",
+      "baseline_id": "BL-NULL-002",
+      "baseline_family": "NULL",
+      "baseline_name": "Cross-sectional Permutation",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std",
+        "positive_ratio",
+        "permutation_p_value"
+      ],
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_null-002_primitives.json"
+      }
+    },
+    "NULL-003": {
+      "evidence_id": "EV-BL-NULL-003",
+      "baseline_id": "BL-NULL-003",
+      "baseline_family": "NULL",
+      "baseline_name": "Target Permutation",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050"
+      ],
+      "horizons": [
+        "H-5"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_null-003_primitives.json"
+      }
+    },
+    "NULL-004": {
+      "evidence_id": "EV-BL-NULL-004",
+      "baseline_id": "BL-NULL-004",
+      "baseline_family": "NULL",
+      "baseline_name": "Constant Prediction",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "horizons": [
+        "H-5",
+        "H-10",
+        "H-20"
+      ],
+      "metrics": [
+        "ic_mean",
+        "ic_std"
+      ],
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_null-004_primitives.json"
+      }
+    },
+    "PRED-001": {
+      "evidence_id": "EV-BL-PRED-001",
+      "baseline_id": "BL-PRED-001",
+      "baseline_family": "PREDICTIVE",
+      "baseline_name": "Ridge Predictive Baseline",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050"
+      ],
+      "horizons": [
+        "H-5"
+      ],
+      "metrics": {
+        "predictive": [
+          "ic_mean",
+          "ic_median",
+          "ic_std",
+          "positive_ratio",
+          "sign_consistency",
+          "temporal_dispersion"
+        ],
+        "statistical": [
+          "permutation_p_value",
+          "bootstrap_ci_lower",
+          "bootstrap_ci_upper"
+        ]
+      },
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_pred-001_primitives.json"
+      }
+    },
+    "ECON-001": {
+      "evidence_id": "EV-BL-ECON-001",
+      "baseline_id": "BL-ECON-001",
+      "baseline_family": "ECONOMIC",
+      "baseline_name": "Equal-Weight Universe Portfolio",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050"
+      ],
+      "horizons": [],
+      "metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown",
+          "turnover",
+          "transaction_costs"
+        ],
+        "reporting": [
+          "sample_length",
+          "universe_coverage"
+        ]
+      },
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_econ-001_primitives.json"
+      }
+    },
+    "ECON-002": {
+      "evidence_id": "EV-BL-ECON-002",
+      "baseline_id": "BL-ECON-002",
+      "baseline_family": "ECONOMIC",
+      "baseline_name": "SPY Benchmark",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "horizons": [],
+      "metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown"
+        ]
+      },
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_econ-002_primitives.json"
+      }
+    },
+    "MODEL-COMP-001": {
+      "evidence_id": "EV-BL-MODEL-COMP-001",
+      "baseline_id": "BL-MODEL-COMP-001",
+      "baseline_family": "MODEL_COMPARATOR",
+      "baseline_name": "Incremental Evidence Comparator",
+      "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+      "dataset_snapshot": {
+        "DS-EXP-050": "active",
+        "DS-EXP-100": "active"
+      },
+      "universes": [],
+      "horizons": [],
+      "metrics": {},
+      "status": "CANONICAL",
+      "reproducibility": {
+        "deterministic": true,
+        "seed": 42,
+        "primitive_outputs": "benchmarks/phase18r_model-comp-001_primitives.json"
+      }
+    }
+  }
+}

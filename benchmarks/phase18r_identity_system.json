@@ -1,0 +1,35 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "identity_system": {
+    "id_schema": "BL-{family_code}-{hash}",
+    "family_codes": {
+      "NULL": "NULL",
+      "PREDICTIVE": "PRED",
+      "ECONOMIC": "ECON",
+      "MODEL_COMPARATOR": "MCMP"
+    },
+    "identity_components": [
+      "baseline_family",
+      "version",
+      "universe",
+      "horizon",
+      "label_identity",
+      "evaluation_protocol",
+      "dataset_snapshot",
+      "random_seed",
+      "portfolio_construction_method"
+    ],
+    "deterministic": true,
+    "collision_free": true,
+    "collision_test": {
+      "total_ids": 24,
+      "unique_ids": 24,
+      "no_collisions": true
+    },
+    "determinism_test": {
+      "identical_inputs": true,
+      "different_inputs_different_id": true
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "checks": {
+    "baseline_registry_exists": {
+      "status": "PASS",
+      "detail": "Path: E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\research\\baseline_registry.json"
+    },
+    "schemas_exist": {
+      "status": "PASS",
+      "detail": "Found 8 schema files"
+    },
+    "policies_exist": {
+      "status": "PASS",
+      "detail": "Found 11 policy files"
+    },
+    "branch_registry_exists": {
+      "status": "PASS",
+      "detail": "Path: E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\research\\branch_registry.json"
+    },
+    "hash_baseline_registry": {
+      "status": "PASS",
+      "detail": "Hash: ed787a4b4972affe..."
+    },
+    "hash_branch_registry": {
+      "status": "PASS",
+      "detail": "Hash: ef9e948e3316daf5..."
+    },
+    "hash_B001_plan": {
+      "status": "PASS",
+      "detail": "Hash: 8c5216b67b0265b3..."
+    },
+    "hash_B001_hypotheses": {
+      "status": "PASS",
+      "detail": "Hash: fdee2e2d3dcb4cd5..."
+    }
+  },
+  "overall": "PASS"
+}

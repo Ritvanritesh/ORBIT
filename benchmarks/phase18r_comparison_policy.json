@@ -1,0 +1,58 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "comparison_policy": {
+    "exploratory_comparison": {
+      "rules": [
+        "May compare against baselines for calibration",
+        "Cannot claim validation solely from outperforming a baseline",
+        "Comparison is descriptive, not inferential",
+        "Results must be reported with appropriate uncertainty"
+      ],
+      "baseline_levels_required": [
+        "LEVEL_1_NULL"
+      ]
+    },
+    "confirmatory_comparison": {
+      "prerequisites": [
+        "Baseline family must be specified before execution",
+        "Primary metric must be pre-registered",
+        "Expected effect direction must be specified",
+        "Minimum meaningful improvement must be defined"
+      ],
+      "registration_requirements": [
+        "baseline_id",
+        "primary_metric",
+        "secondary_metrics",
+        "expected_effect_direction",
+        "minimum_improvement",
+        "decision_rule"
+      ],
+      "baseline_levels_required": [
+        "LEVEL_1_NULL",
+        "LEVEL_2_SIMPLE_PREDICTIVE"
+      ]
+    },
+    "economic_comparison": {
+      "rules": [
+        "Predictive improvement alone does not justify economic promotion",
+        "Must compare against LEVEL_3_ECONOMIC baselines",
+        "Must use equivalent transaction cost assumptions",
+        "Must use equivalent universe and rebalance schedule"
+      ],
+      "baseline_levels_required": [
+        "LEVEL_3_ECONOMIC"
+      ]
+    },
+    "comparator_selection": {
+      "anti_shopping_rules": [
+        "Baseline family must be specified before confirmatory execution",
+        "Researchers may not select the weakest baseline after seeing results",
+        "All applicable baselines must be reported",
+        "Selective reporting of favorable baselines is prohibited"
+      ]
+    },
+    "policy_id": "18R-CMP-POLICY-001",
+    "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc"
+  }
+}

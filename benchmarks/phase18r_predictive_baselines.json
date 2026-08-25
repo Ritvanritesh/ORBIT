@@ -1,0 +1,57 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "predictive_baselines": {
+    "PRED-001": {
+      "id": "BL-PRED-001",
+      "name": "Ridge Predictive Baseline",
+      "family": "PREDICTIVE",
+      "version": "1.0",
+      "level": "LEVEL_2_SIMPLE_PREDICTIVE",
+      "definition": "Ridge regression (alpha=1.0) on FS-001 features, LAB-006 label, H-5 horizon",
+      "implementation": {
+        "model": "Ridge",
+        "alpha": 1.0,
+        "features": [
+          "ret_10",
+          "ret_20",
+          "ret_30",
+          "vol_10",
+          "vol_30"
+        ],
+        "label": "LAB-006",
+        "horizon": "H-5",
+        "split": "train+val",
+        "preprocessing": "StandardScaler"
+      },
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [
+        "H-5"
+      ],
+      "metrics": {
+        "predictive": [
+          "ic_mean",
+          "ic_median",
+          "ic_std",
+          "positive_ratio",
+          "sign_consistency",
+          "temporal_dispersion"
+        ],
+        "statistical": [
+          "permutation_p_value",
+          "bootstrap_ci_lower",
+          "bootstrap_ci_upper"
+        ]
+      },
+      "distinction": "PREDICTIVE BASELINE \u2014 not economic baseline. Predictive significance does not imply portfolio usefulness.",
+      "limitations": [
+        "Only applicable to H-5 horizon",
+        "Requires FS-001 feature set",
+        "Model performance may degrade out-of-sample"
+      ],
+      "status": "CANONICAL"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "minimum_effect_policy": {
+    "framework": "Hypothesis-specific thresholds derived from economic rationale, baseline distribution, statistical power, and portfolio relevance",
+    "distinctions": {
+      "statistically_non_zero": "p < 0.05 after multiple testing correction. Does not imply economic significance.",
+      "economically_meaningful": "Effect size exceeds transaction costs and minimum portfolio relevance. Hypothesis-specific.",
+      "robust_enough_for_promotion": "Passes all confirmatory criteria including temporal stability, universe consistency, and model consistency."
+    },
+    "threshold_sources": [
+      "economic_rationale",
+      "historical_baseline_distribution",
+      "statistical_power_analysis",
+      "portfolio_relevance",
+      "hypothesis_specific_mechanism"
+    ],
+    "prohibitions": [
+      "No retroactive threshold definition using candidate results",
+      "No universal IC threshold applied across all hypotheses",
+      "No threshold modification after observing results"
+    ],
+    "current_thresholds": {
+      "note": "Thresholds are hypothesis-specific. See individual hypothesis registrations.",
+      "minimum_material_ic": 0.01,
+      "minimum_positive_window_fraction": 0.6
+    },
+    "policy_id": "18R-MIN-EFFECT-001",
+    "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc"
+  }
+}

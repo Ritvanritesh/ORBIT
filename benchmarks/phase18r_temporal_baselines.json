@@ -1,0 +1,35 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "temporal_analysis": {
+    "analysis_framework": {
+      "expanding_windows": true,
+      "rolling_windows": false,
+      "regime_partitions": "Use existing regime definitions only"
+    },
+    "splits": {
+      "train": {
+        "start": "2010-01-04",
+        "end": "2018-12-31",
+        "purpose": "train period evaluation"
+      },
+      "val": {
+        "start": "2019-01-02",
+        "end": "2021-12-31",
+        "purpose": "val period evaluation"
+      },
+      "test": {
+        "start": "2022-01-03",
+        "end": "2026-06-30",
+        "purpose": "test period evaluation"
+      }
+    },
+    "temporal_tests": {
+      "consistency_across_splits": "Metric should be stable across train/val/test",
+      "regime_sensitivity": "Report metrics per regime if regime definitions exist",
+      "degradation_detection": "Flag if test performance significantly degrades from train"
+    },
+    "policy_id": "18R-TEMPORAL-001",
+    "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc"
+  }
+}

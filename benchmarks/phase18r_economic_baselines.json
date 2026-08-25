@@ -1,0 +1,95 @@
+{
+  "phase": "18R",
+  "plan_digest": "a0aca34487ace04a9e9dcd23f290c65de175fcdb643b2609d8fb45dac8e3d7cc",
+  "economic_baselines": {
+    "ECON-001": {
+      "id": "BL-ECON-001",
+      "name": "Equal-Weight Universe Portfolio",
+      "family": "ECONOMIC",
+      "version": "1.0",
+      "level": "LEVEL_3_ECONOMIC",
+      "definition": "Equal-weight portfolio across all universe members, rebalanced monthly",
+      "implementation": {
+        "method": "equal_weight",
+        "rebalance_frequency": "monthly",
+        "universe": "all_members",
+        "transaction_cost_model": "canonical"
+      },
+      "applicable_universes": [
+        "ENV-050"
+      ],
+      "applicable_horizons": [],
+      "metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown",
+          "turnover",
+          "transaction_costs"
+        ],
+        "reporting": [
+          "sample_length",
+          "universe_coverage"
+        ]
+      },
+      "limitations": [
+        "No transaction cost optimization",
+        "Equal weighting may not be optimal"
+      ],
+      "status": "CANONICAL"
+    },
+    "ECON-002": {
+      "id": "BL-ECON-002",
+      "name": "SPY Benchmark",
+      "family": "ECONOMIC",
+      "version": "1.0",
+      "level": "LEVEL_3_ECONOMIC",
+      "definition": "SPY buy-and-hold benchmark",
+      "implementation": {
+        "method": "buy_and_hold",
+        "instrument": "SPY",
+        "source": "BENCH-001"
+      },
+      "applicable_universes": [
+        "ENV-050",
+        "ENV-100"
+      ],
+      "applicable_horizons": [],
+      "metrics": {
+        "economic": [
+          "return",
+          "volatility",
+          "sharpe",
+          "max_drawdown"
+        ]
+      },
+      "limitations": [
+        "Single-instrument benchmark",
+        "Does not represent diversified portfolio"
+      ],
+      "status": "CANONICAL",
+      "performance_train": {
+        "total_return": 1.205241,
+        "annualized_return": 0.134152,
+        "annualized_volatility": 0.149696,
+        "sharpe_ratio": 0.8962,
+        "n_days": 2264
+      },
+      "performance_val": {
+        "total_return": 0.898473,
+        "annualized_return": 0.299095,
+        "annualized_volatility": 0.220082,
+        "sharpe_ratio": 1.359,
+        "n_days": 757
+      },
+      "performance_test": {
+        "total_return": 0.563229,
+        "annualized_return": 0.126051,
+        "annualized_volatility": 0.17664,
+        "sharpe_ratio": 0.7136,
+        "n_days": 1126
+      }
+    }
+  }
+}
