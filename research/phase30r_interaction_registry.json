@@ -1,0 +1,117 @@
+{
+  "registry_id": "INTERACT-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "interactions": [
+    {
+      "interaction_id": "INT-001",
+      "macro_component": "YC_SLOPE_10Y2Y",
+      "sector_component": "Financials",
+      "mechanism": "Bank profitability is directly affected by yield curve slope. Steep curve improves net interest margin, flattening compresses margins.",
+      "data_requirements": [
+        "YC_SLOPE_10Y2Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If term spread has no differential effect on financial sector returns vs other sectors"
+    },
+    {
+      "interaction_id": "INT-002",
+      "macro_component": "YC_LEVEL_10Y",
+      "sector_component": "Utilities",
+      "mechanism": "Utility stocks are bond proxies. Higher yields make utilities less attractive relative to bonds, reducing utility stock prices.",
+      "data_requirements": [
+        "YC_LEVEL_10Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If yield level has no differential effect on utility sector returns"
+    },
+    {
+      "interaction_id": "INT-003",
+      "macro_component": "YC_LEVEL_10Y",
+      "sector_component": "Real Estate",
+      "mechanism": "Real estate is highly interest-rate sensitive due to leverage and duration. Higher yields increase financing costs and reduce property valuations.",
+      "data_requirements": [
+        "YC_LEVEL_10Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If yield level has no differential effect on real estate sector returns"
+    },
+    {
+      "interaction_id": "INT-004",
+      "macro_component": "YC_SLOPE_10Y2Y",
+      "sector_component": "Information Technology",
+      "mechanism": "Growth stocks (technology) are more sensitive to long-term discount rates. Steep curve may signal accommodative conditions favoring growth.",
+      "data_requirements": [
+        "YC_SLOPE_10Y2Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If term spread has no differential effect on technology sector returns"
+    },
+    {
+      "interaction_id": "INT-005",
+      "macro_component": "YC_CHANGE_10D_10Y",
+      "sector_component": "Consumer Discretionary",
+      "mechanism": "Rising yields may signal tightening financial conditions, reducing consumer spending and discretionary purchases.",
+      "data_requirements": [
+        "YC_CHANGE_10D_10Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If yield changes have no differential effect on consumer discretionary returns"
+    },
+    {
+      "interaction_id": "INT-006",
+      "macro_component": "YC_SLOPE_10Y2Y",
+      "sector_component": "Energy",
+      "mechanism": "Energy sector is more influenced by commodity prices than interest rates. Term spread should have weaker effect on energy vs other sectors.",
+      "data_requirements": [
+        "YC_SLOPE_10Y2Y",
+        "SECTOR_RET_20",
+        "SECTOR_VOL_20"
+      ],
+      "pit_classification": "PIT_NATIVE",
+      "exploratory_eligible": true,
+      "falsification_criteria": "If term spread has strong differential effect on energy sector (contradicts mechanism)"
+    }
+  ],
+  "interactions_not_included": [
+    {
+      "interaction_id": "INT-NOT-001",
+      "description": "All 11 sectors x all 10 yield curve features = 110 combinations",
+      "reason": "Combinatorial explosion. Must select based on economic mechanism, not exhaustive testing.",
+      "selection_principle": "Only include interactions with clear, specific economic rationale"
+    }
+  ],
+  "summary": {
+    "total_interactions": 6,
+    "macro_components": [
+      "YC_SLOPE_10Y2Y",
+      "YC_LEVEL_10Y",
+      "YC_CHANGE_10D_10Y"
+    ],
+    "sector_components": [
+      "Financials",
+      "Utilities",
+      "Real Estate",
+      "Information Technology",
+      "Consumer Discretionary",
+      "Energy"
+    ],
+    "pit_native": 6,
+    "exploratory_eligible": 6
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "objective": "Acquire, validate, and integrate data for Yield Curve and Sector x Macro research",
+  "included_branches": [
+    {
+      "branch_id": "BR-A1B2C3D4E5F6",
+      "name": "Yield Curve / Term Structure",
+      "priority": 1,
+      "data_needs": "Treasury yields, term spreads, yield changes"
+    },
+    {
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "name": "Sector x Macro Interaction",
+      "priority": 2,
+      "data_needs": "Sector classification, sector-level aggregations, macro features"
+    }
+  ],
+  "excluded_branches": [
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "name": "Regime-Conditional Prediction",
+      "priority": 3,
+      "reason": "Phase 30-R covers only Priority 1 and Priority 2"
+    }
+  ],
+  "scientific_firewall": [
+    "No OOS targets accessed",
+    "No IC calculated",
+    "No models evaluated",
+    "No portfolios constructed",
+    "No hypothesis outcomes inspected",
+    "No existing artifacts modified"
+  ],
+  "locked_scope": {
+    "data_acquisition": true,
+    "pit_validation": true,
+    "feature_engineering": false,
+    "exploratory_research": false,
+    "confirmatory_research": false
+  }
+}

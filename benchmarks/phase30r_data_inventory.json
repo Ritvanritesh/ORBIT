@@ -1,0 +1,119 @@
+{
+  "inventory_id": "DATA-INV-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "existing_data": {
+    "market": {
+      "DS-EXP-050": {
+        "path": "data/normalized/market/yahoo_chart_api/DS-EXP-050/bars.parquet",
+        "schema": [
+          "instrument_id",
+          "symbol",
+          "trade_date",
+          "ts_utc",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "adjclose",
+          "adjustment",
+          "provider",
+          "source_uri",
+          "snapshot_id"
+        ],
+        "rows": 349374,
+        "instruments": 50,
+        "date_range": "2010-01-04 to 2026-06-30",
+        "pit_classification": "PIT_NATIVE",
+        "branch_relevance": [
+          "BR-E2AFD3AC901A",
+          "BR-A1B2C3D4E5F6",
+          "BR-B2C3D4E5F6A1"
+        ]
+      },
+      "DS-EXP-100": {
+        "path": "data/normalized/market/yahoo_chart_api/DS-EXP-100/bars.parquet",
+        "schema": [
+          "instrument_id",
+          "symbol",
+          "trade_date",
+          "ts_utc",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume",
+          "adjclose",
+          "adjustment",
+          "provider",
+          "source_uri",
+          "snapshot_id"
+        ],
+        "rows": 680878,
+        "instruments": 97,
+        "date_range": "2010-01-04 to 2026-06-30",
+        "pit_classification": "PIT_NATIVE",
+        "branch_relevance": [
+          "BR-E2AFD3AC901A",
+          "BR-A1B2C3D4E5F6",
+          "BR-B2C3D4E5F6A1"
+        ]
+      }
+    },
+    "benchmark": {
+      "BENCH-001": {
+        "path": "data/normalized/benchmark/BENCH-001/bars.parquet",
+        "pit_classification": "PIT_NATIVE",
+        "branch_relevance": [
+          "BR-E2AFD3AC901A"
+        ]
+      }
+    },
+    "macro": {
+      "DS-000003": {
+        "path": "data/normalized/macro/fred_csv/DS-000003/series.parquet",
+        "pit_classification": "PIT_SAFE_WITH_LAG",
+        "branch_relevance": [
+          "BR-A1B2C3D4E5F6"
+        ],
+        "note": "Generic macro series - need to verify if Treasury yields are included"
+      }
+    },
+    "sector_classification": {
+      "source": "Instrument master JSON configs",
+      "files": [
+        "configs/instrument_master_universe-050.json",
+        "configs/instrument_master_universe-100.json"
+      ],
+      "taxonomy": "GICS_depth1",
+      "pit_classification": "PIT_SAFE_WITH_LAG",
+      "branch_relevance": [
+        "BR-B2C3D4E5F6A1"
+      ],
+      "note": "Sector classification embedded in instrument attributes, not standalone file"
+    }
+  },
+  "required_new_data": {
+    "yield_curve": {
+      "series": [
+        "DGS3MO (3-Month Treasury)",
+        "DGS2 (2-Year Treasury)",
+        "DGS5 (5-Year Treasury)",
+        "DGS10 (10-Year Treasury)",
+        "DGS30 (30-Year Treasury)"
+      ],
+      "source": "FRED (Federal Reserve Economic Data)",
+      "frequency": "Daily",
+      "pit_classification": "PIT_NATIVE",
+      "branch_relevance": [
+        "BR-A1B2C3D4E5F6"
+      ]
+    }
+  },
+  "candidate_datasets_evaluated": 12,
+  "accepted": 6,
+  "deferred": 3,
+  "rejected": 2,
+  "ineligible": 1
+}

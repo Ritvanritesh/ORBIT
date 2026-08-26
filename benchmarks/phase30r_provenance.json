@@ -1,0 +1,61 @@
+{
+  "provenance_id": "PROV-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "sources": {
+    "yield_curve": {
+      "provider": "Federal Reserve Economic Data (FRED)",
+      "dataset_name": "Treasury Constant Maturity Rates",
+      "series_identifiers": [
+        "DGS3MO",
+        "DGS2",
+        "DGS5",
+        "DGS10",
+        "DGS30",
+        "T10Y2Y"
+      ],
+      "access_method": "FRED API (https://api.stlouisfed.org/fred/series/observations)",
+      "frequency": "Daily",
+      "historical_coverage": "1962-01-02 to present",
+      "license": "Public domain (FRED data is freely available)",
+      "revision_policy": "Minor revisions possible within 1-2 days",
+      "reliability": "HIGH \u2014 official government source"
+    },
+    "market_data": {
+      "provider": "Yahoo Finance",
+      "dataset_name": "OHLCV Daily Bars",
+      "access_method": "Yahoo Chart API",
+      "frequency": "Daily",
+      "historical_coverage": "2010-01-04 to present",
+      "license": "Yahoo Finance terms of service",
+      "revision_policy": "Adjusted close may be revised",
+      "reliability": "MODERATE \u2014 commercial data provider"
+    },
+    "sector_classification": {
+      "provider": "S&P Global (GICS)",
+      "dataset_name": "Global Industry Classification Standard",
+      "access_method": "Embedded in instrument master configs",
+      "frequency": "Static (changes occasionally)",
+      "historical_coverage": "Unknown vintage",
+      "license": "Proprietary (GICS is S&P Global)",
+      "revision_policy": "GICS reclassifications occur",
+      "reliability": "HIGH \u2014 industry standard"
+    }
+  },
+  "version_tracking": {
+    "yield_curve": {
+      "version": "To be acquired",
+      "retrieval_timestamp": null,
+      "sha256": null,
+      "transformation_version": "1.0",
+      "pit_classification": "PIT_NATIVE"
+    },
+    "market_data": {
+      "version": "DS-EXP-050, DS-EXP-100",
+      "retrieval_timestamp": "2026-08-24T23:37:17",
+      "sha256": "See data/normalized/market/yahoo_chart_api/DS-EXP-050/bars.parquet.sha256",
+      "transformation_version": "1.0",
+      "pit_classification": "PIT_NATIVE"
+    }
+  }
+}

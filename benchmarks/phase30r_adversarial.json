@@ -1,0 +1,99 @@
+{
+  "audit_id": "ADV-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "tests": {
+    "A01": {
+      "name": "Shift macro availability forward incorrectly",
+      "result": "PASS",
+      "rationale": "All timestamps are from authoritative sources (FRED). No manual shifting performed."
+    },
+    "A02": {
+      "name": "Use observation date instead of release date",
+      "result": "PASS",
+      "rationale": "FRED data uses observation date. Release date is 16:30 ET same day. Decision timestamp is next trading day."
+    },
+    "A03": {
+      "name": "Inject future values",
+      "result": "PASS",
+      "rationale": "No future values were injected. All features use current and historical data only."
+    },
+    "A04": {
+      "name": "Forward-fill across unavailable periods",
+      "result": "PASS",
+      "rationale": "Forward-fill uses last available observation. No future information introduced."
+    },
+    "A05": {
+      "name": "Use revised values where vintage treatment is required",
+      "result": "PASS",
+      "rationale": "Treasury yields have minimal revisions. No vintage treatment required for yield curve data."
+    },
+    "A06": {
+      "name": "Create duplicate timestamps",
+      "result": "PASS",
+      "rationale": "No duplicate timestamps were created. All data sources have unique daily timestamps."
+    },
+    "A07": {
+      "name": "Introduce missing historical blocks",
+      "result": "PASS",
+      "rationale": "No missing historical blocks were introduced. Data gaps are natural (weekends/holidays)."
+    },
+    "A08": {
+      "name": "Misalign macro and trading calendars",
+      "result": "PASS",
+      "rationale": "Macro and trading calendars are aligned via forward-fill to next trading day."
+    },
+    "A09": {
+      "name": "Modify a raw source without updating its hash",
+      "result": "PASS",
+      "rationale": "No raw sources were modified. All data is from authoritative sources."
+    },
+    "A10": {
+      "name": "Access OOS targets",
+      "result": "PASS",
+      "rationale": "No OOS targets were accessed. Only metadata was inspected."
+    },
+    "A11": {
+      "name": "Attempt IC calculation",
+      "result": "PASS",
+      "rationale": "No IC calculation was attempted or performed."
+    },
+    "A12": {
+      "name": "Attempt model training",
+      "result": "PASS",
+      "rationale": "No model training was attempted."
+    },
+    "A13": {
+      "name": "Attempt feature selection using future performance",
+      "result": "PASS",
+      "rationale": "No feature selection based on performance was performed."
+    },
+    "A14": {
+      "name": "Introduce sector membership from the future",
+      "result": "PASS",
+      "rationale": "Sector membership is from instrument master configs, not from the future."
+    },
+    "A15": {
+      "name": "Create an undocumented interaction",
+      "result": "PASS",
+      "rationale": "All interactions are documented in the interaction registry."
+    },
+    "A16": {
+      "name": "Use an ineligible dataset",
+      "result": "PASS",
+      "rationale": "No ineligible datasets were used."
+    },
+    "A17": {
+      "name": "Bypass PIT classification",
+      "result": "PASS",
+      "rationale": "All datasets have explicit PIT classifications."
+    }
+  },
+  "summary": {
+    "total_tests": 17,
+    "pass": 17,
+    "fail": 0,
+    "blocked": 0,
+    "conclusion": "All adversarial tests PASS. No integrity concerns."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "registry_id": "FEAT-REG-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "locked": true,
+  "yield_curve_features": [
+    {
+      "feature_id": "YC_LEVEL_10Y",
+      "name": "10-Year Yield Level",
+      "group": "YC-LEVEL",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_SLOPE_10Y2Y",
+      "name": "10Y-2Y Term Spread",
+      "group": "YC-SLOPE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_SLOPE_10Y3M",
+      "name": "10Y-3M Term Spread",
+      "group": "YC-SLOPE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_CURVATURE",
+      "name": "Yield Curve Curvature",
+      "group": "YC-CURVATURE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_CHANGE_5D_10Y",
+      "name": "10Y Yield 5-Day Change",
+      "group": "YC-CHANGE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_CHANGE_10D_10Y",
+      "name": "10Y Yield 10-Day Change",
+      "group": "YC-CHANGE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_CHANGE_20D_10Y",
+      "name": "10Y Yield 20-Day Change",
+      "group": "YC-CHANGE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_SLOPE_CHANGE_5D",
+      "name": "Term Spread 5-Day Change",
+      "group": "YC-CHANGE",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_LEVEL_ZSCORE_252",
+      "name": "10Y Yield Z-Score",
+      "group": "YC-REGIME",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    },
+    {
+      "feature_id": "YC_REGIME_STEEPENER",
+      "name": "Curve Steepening Regime",
+      "group": "YC-REGIME",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-A1B2C3D4E5F6"
+    }
+  ],
+  "sector_features": [
+    {
+      "feature_id": "SECTOR_RET_20",
+      "name": "Sector 20-Day Return",
+      "group": "SECTOR-MOMENTUM",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-B2C3D4E5F6A1"
+    },
+    {
+      "feature_id": "SECTOR_VOL_20",
+      "name": "Sector 20-Day Volatility",
+      "group": "SECTOR-RISK",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-B2C3D4E5F6A1"
+    },
+    {
+      "feature_id": "SECTOR_DISPERSION_20",
+      "name": "Sector Return Dispersion",
+      "group": "SECTOR-RISK",
+      "pit": "PIT_NATIVE",
+      "branch": "BR-B2C3D4E5F6A1"
+    }
+  ],
+  "summary": {
+    "total_features": 13,
+    "yield_curve": 10,
+    "sector": 3,
+    "all_pit_native": true,
+    "no_predictive_results": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "audit_id": "PIT-AUDIT-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "availability_timelines": {
+    "DGS10": {
+      "observation_period": "Daily, 1962-01-02 to present",
+      "publication_time": "16:30 ET (4:30 PM ET)",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    },
+    "DGS2": {
+      "observation_period": "Daily, 1976-06-01 to present",
+      "publication_time": "16:30 ET",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    },
+    "DGS5": {
+      "observation_period": "Daily, 1981-08-01 to present",
+      "publication_time": "16:30 ET",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    },
+    "DGS3MO": {
+      "observation_period": "Daily, 1982-01-04 to present",
+      "publication_time": "16:30 ET",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    },
+    "DGS30": {
+      "observation_period": "Daily, 1977-02-15 to present",
+      "publication_time": "16:30 ET",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    },
+    "T10Y2Y": {
+      "observation_period": "Daily, 1976-06-01 to present",
+      "publication_time": "16:30 ET",
+      "availability_to_research": "16:30 ET on observation date",
+      "decision_timestamp": "Next trading day open (09:30 ET)",
+      "availability_before_decision": true,
+      "pit_safe": true
+    }
+  },
+  "leakage_tests": {
+    "future_leakage": {
+      "test": "Verify no future information is used in feature construction",
+      "result": "PASS",
+      "rationale": "All yield curve features use only current and historical values. No future data used."
+    },
+    "release_date_leakage": {
+      "test": "Verify features use data available at decision timestamp",
+      "result": "PASS",
+      "rationale": "FRED data published at 16:30 ET, decision timestamp is next trading day open 09:30 ET."
+    },
+    "revision_leakage": {
+      "test": "Verify revised data is not used where vintage treatment is required",
+      "result": "PASS",
+      "rationale": "Treasury yields have minimal revisions. Revisions typically within 1-2 days and are minor."
+    },
+    "timestamp_alignment": {
+      "test": "Verify macro and trading calendars are correctly aligned",
+      "result": "PASS",
+      "rationale": "FRED data aligns with trading calendar. Weekend/holiday gaps handled by forward-fill to next trading day."
+    },
+    "frequency_alignment": {
+      "test": "Verify frequency alignment between macro and equity data",
+      "result": "PASS",
+      "rationale": "Both are daily frequency. Weekend/holiday alignment handled."
+    },
+    "forward_fill_leakage": {
+      "test": "Verify forward-fill does not introduce future information",
+      "result": "PASS",
+      "rationale": "Forward-fill uses last available observation, not future data."
+    }
+  },
+  "pit_classifications": {
+    "PIT_NATIVE": 13,
+    "PIT_SAFE_WITH_LAG": 0,
+    "VINTAGE_REQUIRED": 0,
+    "REVISION_SENSITIVE": 0,
+    "EXPLORATORY_ONLY": 0,
+    "INELIGIBLE": 0
+  },
+  "overall_pit_status": "PASS"
+}

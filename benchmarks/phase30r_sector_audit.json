@@ -1,0 +1,98 @@
+{
+  "audit_id": "SECTOR-AUDIT-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "existing_classification": {
+    "source": "Instrument master JSON configs",
+    "files": [
+      "configs/instrument_master_universe-050.json",
+      "configs/instrument_master_universe-100.json"
+    ],
+    "taxonomy": "GICS_depth1",
+    "sectors_observed": [
+      "Financials",
+      "Information Technology",
+      "Utilities",
+      "Energy",
+      "Consumer Discretionary",
+      "Consumer Staples",
+      "Industrials",
+      "Health Care",
+      "Materials",
+      "Real Estate",
+      "Communication Services"
+    ],
+    "sector_count": 11,
+    "pit_classification": "PIT_SAFE_WITH_LAG",
+    "temporal_stability": "UNKNOWN \u2014 must verify historical consistency",
+    "classification_leakage_risk": "MODERATE \u2014 sector labels may change over time (GICS reclassifications)",
+    "survivorship_risk": "LOW \u2014 instruments are from universe files, not survivorship-filtered"
+  },
+  "pit_risks": [
+    {
+      "risk_id": "SECTOR-PIT-001",
+      "risk": "GICS reclassifications may introduce look-ahead bias",
+      "severity": "MODERATE",
+      "mitigation": "Use historical sector labels, not current labels. If historical labels unavailable, document limitation."
+    },
+    {
+      "risk_id": "SECTOR-PIT-002",
+      "risk": "Sector membership changes over time (additions/removals from universe)",
+      "severity": "LOW",
+      "mitigation": "Use instrument master configs which reflect historical membership."
+    },
+    {
+      "risk_id": "SECTOR-PIT-003",
+      "risk": "Small sectors may have insufficient observations for robust analysis",
+      "severity": "MODERATE",
+      "mitigation": "Document sector observation counts. Consider grouping small sectors."
+    }
+  ],
+  "required_additional_data": [
+    {
+      "data_id": "SECTOR-HIST-001",
+      "description": "Historical GICS sector classifications with effective dates",
+      "source": "Bloomberg, S&P Global, or MSCI",
+      "pit_classification": "VINTAGE_REQUIRED",
+      "priority": "HIGH \u2014 needed to avoid look-ahead bias",
+      "status": "NOT_ACQUIRED"
+    }
+  ],
+  "sector_feature_inventory": [
+    {
+      "feature_id": "SECTOR_RET_20",
+      "name": "Sector 20-Day Return",
+      "definition": "Mean of 20-day returns for instruments in same sector",
+      "source": "Derived from existing price data",
+      "pit_classification": "PIT_NATIVE",
+      "economic_mechanism": "Sector-level momentum may capture sector-specific information flows",
+      "branch_linkage": "BR-B2C3D4E5F6A1"
+    },
+    {
+      "feature_id": "SECTOR_VOL_20",
+      "name": "Sector 20-Day Volatility",
+      "definition": "Standard deviation of 20-day returns for instruments in same sector",
+      "source": "Derived from existing price data",
+      "pit_classification": "PIT_NATIVE",
+      "economic_mechanism": "Sector-level volatility may capture sector-specific risk conditions",
+      "branch_linkage": "BR-B2C3D4E5F6A1"
+    },
+    {
+      "feature_id": "SECTOR_DISPERSION_20",
+      "name": "Sector Return Dispersion",
+      "definition": "Standard deviation of cross-sectional returns within sector",
+      "source": "Derived from existing price data",
+      "pit_classification": "PIT_NATIVE",
+      "economic_mechanism": "High dispersion may indicate sector uncertainty or idiosyncratic risk",
+      "branch_linkage": "BR-B2C3D4E5F6A1"
+    }
+  ],
+  "summary": {
+    "classification_exists": true,
+    "taxonomy": "GICS_depth1",
+    "pit_status": "PARTIALLY_READY",
+    "historical_labels_available": false,
+    "additional_data_required": true,
+    "feature_inventory_ready": true
+  }
+}

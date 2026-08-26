@@ -1,0 +1,62 @@
+{
+  "quality_id": "QUAL-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "yield_curve_quality": {
+    "coverage": {
+      "start_date": "1962-01-02 (DGS10)",
+      "end_date": "present",
+      "overlap_with_orbit": "Full overlap with ORBIT research history (2010-2026)",
+      "sufficient": true
+    },
+    "completeness": {
+      "missing_values": "Weekends and holidays have no observations",
+      "unexpected_gaps": "None identified in historical data",
+      "duplicate_timestamps": "None expected",
+      "sufficient": true
+    },
+    "consistency": {
+      "monotonic_timestamps": true,
+      "valid_frequency": "Daily",
+      "impossible_values": "None expected (yields are bounded and continuous)",
+      "stable_units": "Percent",
+      "sufficient": true
+    },
+    "alignment": {
+      "trading_calendar_alignment": "Aligned via forward-fill to next trading day",
+      "future_carryback": "None",
+      "weekend_holiday_handling": "Forward-fill to next available observation",
+      "sufficient": true
+    },
+    "transformation": {
+      "deterministic": true,
+      "reproducible": true,
+      "mathematically_documented": true
+    },
+    "reproducibility": {
+      "identical_outputs_on_rerun": true,
+      "source_snapshot_dependency": "Outputs depend on source snapshot; identical if source unchanged"
+    }
+  },
+  "sector_quality": {
+    "classification_coverage": {
+      "instruments_with_sector": "All instruments in universe files",
+      "instruments_without_sector": "None expected",
+      "sufficient": true
+    },
+    "temporal_stability": {
+      "known_reclassifications": "GICS reclassifications occur occasionally",
+      "impact": "MODERATE \u2014 must use historical labels",
+      "sufficient": false
+    },
+    "pit_compatibility": {
+      "current_labels_pit_safe": true,
+      "historical_labels_pit_safe": "UNKNOWN \u2014 requires vintage data",
+      "sufficient": false
+    }
+  },
+  "overall_quality": "PARTIALLY_READY",
+  "blockers": [
+    "Sector historical labels not available \u2014 needed for PIT safety"
+  ]
+}

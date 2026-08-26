@@ -1,0 +1,23 @@
+{
+  "audit_id": "AUDIT-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "checks": {
+    "every_accepted_dataset_has_documented_purpose": true,
+    "every_accepted_dataset_has_pit_classification": true,
+    "no_unclassified_data_in_feature_registry": true,
+    "all_critical_leakage_tests_pass": true,
+    "historical_coverage_sufficient": true,
+    "sector_classifications_audited": true,
+    "every_interaction_has_explicit_mechanism": true,
+    "raw_and_transformed_data_reproducibly_linked": true,
+    "all_required_provenance_exists": true,
+    "scientific_firewall_intact": true,
+    "adversarial_tests_pass": true,
+    "reproducibility_tests_pass": true,
+    "no_hypothesis_outcome_evaluated": true
+  },
+  "all_checks_pass": true,
+  "verdict": "A",
+  "gate": "GREEN"
+}

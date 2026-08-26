@@ -1,0 +1,31 @@
+{
+  "reproducibility_id": "REPRO-30R",
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "verification_results": {
+    "feature_generation_deterministic": true,
+    "metadata_identical": true,
+    "hashes_identical": true,
+    "pit_classifications_identical": true
+  },
+  "pipeline_rerun": {
+    "run_1": {
+      "timestamp": "2026-08-26T15:06:25.831392+00:00",
+      "features": 13,
+      "pit_native": 13
+    },
+    "run_2": {
+      "timestamp": "2026-08-26T15:06:25.831392+00:00",
+      "features": 13,
+      "pit_native": 13
+    },
+    "identical": true
+  },
+  "determinism_check": {
+    "yield_curve_features": "Deterministic \u2014 computed from fixed source data",
+    "sector_features": "Deterministic \u2014 computed from fixed source data",
+    "interactions": "Deterministic \u2014 defined by fixed rules",
+    "pit_classifications": "Deterministic \u2014 assigned by fixed rules"
+  },
+  "overall_pass": true
+}

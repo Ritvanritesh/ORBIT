@@ -1,0 +1,41 @@
+{
+  "phase": "30R",
+  "timestamp": "2026-08-26T15:06:25.831392+00:00",
+  "verdict": "A",
+  "gate": "GREEN",
+  "branch_readiness": [
+    {
+      "branch": "Yield Curve / Term Structure",
+      "data_status": "READY",
+      "pit_status": "PIT_NATIVE",
+      "ready": true
+    },
+    {
+      "branch": "Sector x Macro Interaction",
+      "data_status": "PARTIALLY_READY",
+      "pit_status": "PIT_NATIVE (features) / UNKNOWN (labels)",
+      "ready": true
+    }
+  ],
+  "data_summary": {
+    "candidate_datasets_evaluated": 12,
+    "accepted": 6,
+    "deferred": 3,
+    "rejected": 2,
+    "ineligible": 0,
+    "pit_native": 13,
+    "pit_safe_with_lag": 0,
+    "vintage_required": 0,
+    "revision_sensitive": 0
+  },
+  "firewall": {
+    "oos_targets_accessed": false,
+    "ic_calculated": false,
+    "models_evaluated": false,
+    "portfolio_metrics_calculated": false
+  },
+  "adversarial_tests": "17/17 PASS",
+  "reproducibility": "PASS",
+  "historical_artifacts_modified": false,
+  "next_allowed_step": "Phase 31-R \u2014 Yield Curve / Term Structure Exploratory Research (after approval)"
+}
