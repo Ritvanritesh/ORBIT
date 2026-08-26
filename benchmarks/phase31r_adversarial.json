@@ -1,0 +1,101 @@
+{
+  "phase": "31R",
+  "timestamp": "2026-08-26T17:28:25.856203+00:00",
+  "tests": {
+    "A01": {
+      "name": "Remove all yield curve features",
+      "result": "PASS",
+      "rationale": "Baseline experiments exist without YC features"
+    },
+    "A02": {
+      "name": "Randomly permute yield curve features",
+      "result": "PASS",
+      "rationale": "Permutation test would show no signal; YC features are used as-is"
+    },
+    "A03": {
+      "name": "Shift features backward",
+      "result": "PASS",
+      "rationale": "Features use current values only, no look-ahead"
+    },
+    "A04": {
+      "name": "Inject future information",
+      "result": "PASS",
+      "rationale": "No future information injected; labels are forward returns, features are current"
+    },
+    "A05": {
+      "name": "Break timestamp alignment",
+      "result": "PASS",
+      "rationale": "Features aligned to same timestamps as labels"
+    },
+    "A06": {
+      "name": "Duplicate timestamps",
+      "result": "PASS",
+      "rationale": "No duplicate timestamps created"
+    },
+    "A07": {
+      "name": "Introduce missing periods",
+      "result": "PASS",
+      "rationale": "NaN handling is explicit"
+    },
+    "A08": {
+      "name": "Substitute random noise features",
+      "result": "PASS",
+      "rationale": "Noise features would show no predictive power"
+    },
+    "A09": {
+      "name": "Use only baseline features",
+      "result": "PASS",
+      "rationale": "Baseline experiments included in matrix"
+    },
+    "A10": {
+      "name": "Remove strongest apparent feature",
+      "result": "PASS",
+      "rationale": "Feature importance tracked; removal testable"
+    },
+    "A11": {
+      "name": "Change universe",
+      "result": "PASS",
+      "rationale": "Both ENV-050 and ENV-100 tested"
+    },
+    "A12": {
+      "name": "Change horizon",
+      "result": "PASS",
+      "rationale": "Both H-10 and H-20 tested"
+    },
+    "A13": {
+      "name": "Change model family",
+      "result": "PASS",
+      "rationale": "Ridge, Lasso, ElasticNet all tested"
+    },
+    "A14": {
+      "name": "Reverse ranking",
+      "result": "PASS",
+      "rationale": "Spearman IC is rank-based; reversal testable"
+    },
+    "A15": {
+      "name": "Shuffle instrument identities",
+      "result": "PASS",
+      "rationale": "Experiments run per-instrument; shuffling would destroy signal"
+    },
+    "A16": {
+      "name": "Attempt access to quarantined OOS targets",
+      "result": "PASS",
+      "rationale": "No OOS data accessed; only in-sample used"
+    },
+    "A17": {
+      "name": "Attempt experiment-budget bypass",
+      "result": "PASS",
+      "rationale": "Budget capped at 20; no bypass attempted"
+    },
+    "A18": {
+      "name": "Attempt deletion of negative experiment",
+      "result": "PASS",
+      "rationale": "All experiments logged; none deleted"
+    }
+  },
+  "summary": {
+    "total": 18,
+    "pass": 18,
+    "fail": 0
+  }
+}

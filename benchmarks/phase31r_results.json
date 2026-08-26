@@ -1,0 +1,858 @@
+{
+  "phase": "31R",
+  "timestamp": "2026-08-26T17:28:25.856203+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "total_experiments": 20,
+  "completed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "status": "SUCCESS",
+      "ic": 0.2659450610290035,
+      "ic_baseline": 0.26601438389950616,
+      "ic_incremental": -6.932287050265273e-05,
+      "sign_consistency": 0.5990788393885224,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.005259092258076829,
+        "MOM_10D": 0.005259092257762944,
+        "MOM_20D": 0.005259092257822696,
+        "realized_vol": 0.0009294002141468986,
+        "YC_SLOPE_10Y2Y": 5.9942707462984994e-05,
+        "YC_SLOPE_10Y3M": 7.320554164025607e-05
+      },
+      "experiment_id": "EXP-001",
+      "experiment_config": {
+        "experiment_id": "EXP-001",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.2628076080847017,
+      "ic_baseline": 0.26282125574608,
+      "ic_incremental": -1.3647661378290987e-05,
+      "sign_consistency": 0.5984444862651447,
+      "n_train": 719118,
+      "n_test": 308194,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.005268011749776518,
+        "MOM_10D": 0.005268011748582054,
+        "MOM_20D": 0.005268011748852272,
+        "realized_vol": 0.0007388856290486553,
+        "YC_SLOPE_10Y2Y": 1.366991378021057e-05,
+        "YC_SLOPE_10Y3M": 5.278907323854434e-05
+      },
+      "experiment_id": "EXP-002",
+      "experiment_config": {
+        "experiment_id": "EXP-002",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.26376432664671834,
+      "ic_baseline": 0.26376432664671834,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5988816295891038,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.014782700254445476,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0,
+        "YC_SLOPE_10Y2Y": 0.0,
+        "YC_SLOPE_10Y3M": 0.0
+      },
+      "experiment_id": "EXP-003",
+      "experiment_config": {
+        "experiment_id": "EXP-003",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.2593429839799407,
+      "ic_baseline": 0.2593429839799407,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5980745893820126,
+      "n_train": 719118,
+      "n_test": 308194,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.01480763581983964,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0,
+        "YC_SLOPE_10Y2Y": 0.0,
+        "YC_SLOPE_10Y3M": 0.0
+      },
+      "experiment_id": "EXP-004",
+      "experiment_config": {
+        "experiment_id": "EXP-004",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.26620067336703174,
+      "ic_baseline": 0.26601438389950616,
+      "ic_incremental": 0.00018628946752557995,
+      "sign_consistency": 0.5990724777820895,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.0052590794047439925,
+        "MOM_10D": 0.005259079404430099,
+        "MOM_20D": 0.005259079404489852,
+        "realized_vol": 0.0009380911645379434,
+        "YC_LEVEL_10Y": 0.00017525427941517368
+      },
+      "experiment_id": "EXP-005",
+      "experiment_config": {
+        "experiment_id": "EXP-005",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.2625743461744847,
+      "ic_baseline": 0.26282125574608,
+      "ic_incremental": -0.0002469095715952885,
+      "sign_consistency": 0.598450975684147,
+      "n_train": 719118,
+      "n_test": 308194,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.005267903871638003,
+        "MOM_10D": 0.00526790387044355,
+        "MOM_20D": 0.005267903870713744,
+        "realized_vol": 0.0007671806643317304,
+        "YC_LEVEL_10Y": 0.00028865343856558407
+      },
+      "experiment_id": "EXP-006",
+      "experiment_config": {
+        "experiment_id": "EXP-006",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.26376432664671834,
+      "ic_baseline": 0.26376432664671834,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5988816295891038,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.014782700254445476,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0,
+        "YC_LEVEL_10Y": 0.0
+      },
+      "experiment_id": "EXP-007",
+      "experiment_config": {
+        "experiment_id": "EXP-007",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.2593429839799407,
+      "ic_baseline": 0.2593429839799407,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5980745893820126,
+      "n_train": 719118,
+      "n_test": 308194,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.01480763581983964,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0,
+        "YC_LEVEL_10Y": 0.0
+      },
+      "experiment_id": "EXP-008",
+      "experiment_config": {
+        "experiment_id": "EXP-008",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 10,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.18419045261043648,
+      "ic_baseline": 0.18420627298480036,
+      "ic_incremental": -1.5820374363872958e-05,
+      "sign_consistency": 0.5849990130091758,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.0051992923184144444,
+        "MOM_10D": 0.005199292317284873,
+        "MOM_20D": 0.00519929231725253,
+        "realized_vol": 0.0014266642753031483,
+        "YC_SLOPE_10Y2Y": 5.3877028972122064e-05,
+        "YC_SLOPE_10Y3M": 0.00011969748473658985
+      },
+      "experiment_id": "EXP-009",
+      "experiment_config": {
+        "experiment_id": "EXP-009",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1857745923571129,
+      "ic_baseline": 0.18575327294256347,
+      "ic_incremental": 2.1319414549442195e-05,
+      "sign_consistency": 0.5862000649561546,
+      "n_train": 718432,
+      "n_test": 307900,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.005187940016359786,
+        "MOM_10D": 0.005187940017662833,
+        "MOM_20D": 0.005187940017568275,
+        "realized_vol": 0.0013019003012067632,
+        "YC_SLOPE_10Y2Y": 3.409825254864842e-05,
+        "YC_SLOPE_10Y3M": 8.624867242558654e-05
+      },
+      "experiment_id": "EXP-010",
+      "experiment_config": {
+        "experiment_id": "EXP-010",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1829600148572625,
+      "ic_baseline": 0.1829600148572625,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5850945282502245,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.014603748515335326,
+        "MOM_10D": 7.911487734116661e-18,
+        "MOM_20D": 1.551272104728757e-19,
+        "realized_vol": 0.0004322392710172058,
+        "YC_SLOPE_10Y2Y": 0.0,
+        "YC_SLOPE_10Y3M": 0.0
+      },
+      "experiment_id": "EXP-011",
+      "experiment_config": {
+        "experiment_id": "EXP-011",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1832468788886474,
+      "ic_baseline": 0.1832468788886474,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5857486196817149,
+      "n_train": 718432,
+      "n_test": 307900,
+      "n_features": 6,
+      "feature_importance": {
+        "MOM_5D": 0.014568649817825657,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0003066289698002468,
+        "YC_SLOPE_10Y2Y": 0.0,
+        "YC_SLOPE_10Y3M": 0.0
+      },
+      "experiment_id": "EXP-012",
+      "experiment_config": {
+        "experiment_id": "EXP-012",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_SLOPE_10Y2Y",
+          "YC_SLOPE_10Y3M"
+        ],
+        "yc_representation": "YC_SLOPE",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.18441312341901622,
+      "ic_baseline": 0.18420627298480036,
+      "ic_incremental": 0.00020685043421586613,
+      "sign_consistency": 0.5852409849531657,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.005199279728678965,
+        "MOM_10D": 0.0051992797275493986,
+        "MOM_20D": 0.005199279727517051,
+        "realized_vol": 0.001444873793198124,
+        "YC_LEVEL_10Y": 0.0003703927604048898
+      },
+      "experiment_id": "EXP-013",
+      "experiment_config": {
+        "experiment_id": "EXP-013",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.18517494495188871,
+      "ic_baseline": 0.18575327294256347,
+      "ic_incremental": -0.000578327990674754,
+      "sign_consistency": 0.5863397206885352,
+      "n_train": 718432,
+      "n_test": 307900,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.005187693461924201,
+        "MOM_10D": 0.0051876934632272146,
+        "MOM_20D": 0.005187693463132704,
+        "realized_vol": 0.0013632536855745282,
+        "YC_LEVEL_10Y": 0.0006252894523462762
+      },
+      "experiment_id": "EXP-014",
+      "experiment_config": {
+        "experiment_id": "EXP-014",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1829600148572625,
+      "ic_baseline": 0.1829600148572625,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5850945282502245,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.014603748515335326,
+        "MOM_10D": 7.911487734116661e-18,
+        "MOM_20D": 1.551272104728757e-19,
+        "realized_vol": 0.0004322392710172058,
+        "YC_LEVEL_10Y": 0.0
+      },
+      "experiment_id": "EXP-015",
+      "experiment_config": {
+        "experiment_id": "EXP-015",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1832468788886474,
+      "ic_baseline": 0.1832468788886474,
+      "ic_incremental": 0.0,
+      "sign_consistency": 0.5857486196817149,
+      "n_train": 718432,
+      "n_test": 307900,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.014568649817825657,
+        "MOM_10D": 0.0,
+        "MOM_20D": 0.0,
+        "realized_vol": 0.0003066289698002468,
+        "YC_LEVEL_10Y": 0.0
+      },
+      "experiment_id": "EXP-016",
+      "experiment_config": {
+        "experiment_id": "EXP-016",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M1_DISCOUNT_RATE",
+        "horizon": 20,
+        "universe": "ENV-100",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_LEVEL_10Y"
+        ],
+        "yc_representation": "YC_LEVEL",
+        "model": "Lasso",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "A_HORIZON_VALIDATION"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.26597312448804983,
+      "ic_baseline": 0.26601438389950616,
+      "ic_incremental": -4.1259411456329165e-05,
+      "sign_consistency": 0.5990979242078209,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.005259096969566782,
+        "MOM_10D": 0.005259096969252893,
+        "MOM_20D": 0.005259096969312646,
+        "realized_vol": 0.0009294063988389905,
+        "YC_CURVATURE": 4.0411006594192237e-05
+      },
+      "experiment_id": "EXP-017",
+      "experiment_config": {
+        "experiment_id": "EXP-017",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M2_ECONOMIC_EXPECTATIONS",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_CURVATURE"
+        ],
+        "yc_representation": "YC_CURVATURE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "B_REPRESENTATION_TESTING"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.18422673337358209,
+      "ic_baseline": 0.18420627298480036,
+      "ic_incremental": 2.0460388781728955e-05,
+      "sign_consistency": 0.5849417038645467,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 5,
+      "feature_importance": {
+        "MOM_5D": 0.005199309371783638,
+        "MOM_10D": 0.0051993093706540665,
+        "MOM_20D": 0.0051993093706217165,
+        "realized_vol": 0.0014265544555980378,
+        "YC_CURVATURE": 0.00011457951251120238
+      },
+      "experiment_id": "EXP-018",
+      "experiment_config": {
+        "experiment_id": "EXP-018",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M2_ECONOMIC_EXPECTATIONS",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_CURVATURE"
+        ],
+        "yc_representation": "YC_CURVATURE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "B_REPRESENTATION_TESTING"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.2652368480322009,
+      "ic_baseline": 0.26601438389950616,
+      "ic_incremental": -0.000777535867305279,
+      "sign_consistency": 0.5989070760148353,
+      "n_train": 366781,
+      "n_test": 157193,
+      "n_features": 8,
+      "feature_importance": {
+        "MOM_5D": 0.005258881721462811,
+        "MOM_10D": 0.0052588817211489045,
+        "MOM_20D": 0.0052588817212086665,
+        "realized_vol": 0.0009299846532354547,
+        "YC_CHANGE_5D_10Y": 1.6071662386455103e-05,
+        "YC_CHANGE_10D_10Y": 4.8936302205999626e-05,
+        "YC_CHANGE_20D_10Y": 0.0001993275275771219,
+        "YC_SLOPE_CHANGE_5D": 0.0001237202484086401
+      },
+      "experiment_id": "EXP-019",
+      "experiment_config": {
+        "experiment_id": "EXP-019",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M2_ECONOMIC_EXPECTATIONS",
+        "horizon": 10,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_CHANGE_5D_10Y",
+          "YC_CHANGE_10D_10Y",
+          "YC_CHANGE_20D_10Y",
+          "YC_SLOPE_CHANGE_5D"
+        ],
+        "yc_representation": "YC_CHANGE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "B_REPRESENTATION_TESTING"
+      }
+    },
+    {
+      "status": "SUCCESS",
+      "ic": 0.1829847790493135,
+      "ic_baseline": 0.18420627298480036,
+      "ic_incremental": -0.0012214939354868448,
+      "sign_consistency": 0.5849862776437027,
+      "n_train": 366431,
+      "n_test": 157043,
+      "n_features": 8,
+      "feature_importance": {
+        "MOM_5D": 0.00519890092129366,
+        "MOM_10D": 0.005198900920164078,
+        "MOM_20D": 0.00519890092013177,
+        "realized_vol": 0.0014278665941178166,
+        "YC_CHANGE_5D_10Y": 0.00027003014776212566,
+        "YC_CHANGE_10D_10Y": 1.6012732350078267e-05,
+        "YC_CHANGE_20D_10Y": 0.00041112890196007165,
+        "YC_SLOPE_CHANGE_5D": 0.00040040568625209996
+      },
+      "experiment_id": "EXP-020",
+      "experiment_config": {
+        "experiment_id": "EXP-020",
+        "branch_id": "BR-A1B2C3D4E5F6",
+        "mechanism": "M2_ECONOMIC_EXPECTATIONS",
+        "horizon": 20,
+        "universe": "ENV-050",
+        "baseline_features": [
+          "MOM_5D",
+          "MOM_10D",
+          "MOM_20D",
+          "realized_vol"
+        ],
+        "yc_features": [
+          "YC_CHANGE_5D_10Y",
+          "YC_CHANGE_10D_10Y",
+          "YC_CHANGE_20D_10Y",
+          "YC_SLOPE_CHANGE_5D"
+        ],
+        "yc_representation": "YC_CHANGE",
+        "model": "Ridge",
+        "preprocessing": "standardize",
+        "evaluation_methodology": "Spearman IC on test set",
+        "expected_outcome": "Incremental IC > 0",
+        "falsification_condition": "Incremental IC <= 0",
+        "group": "B_REPRESENTATION_TESTING"
+      }
+    }
+  ]
+}

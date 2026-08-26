@@ -1,0 +1,12 @@
+{
+  "phase": "31R",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "timestamp": "2026-08-26T17:28:25.856203+00:00",
+  "outcome": "D",
+  "outcome_label": "NO_MEANINGFUL_SUPPORT",
+  "mean_ic": 0.223706534784098,
+  "mean_incremental_ic": -0.00012646989888453474,
+  "positive_incremental_ic_fraction": 0.2,
+  "eligible_for_confirmatory_registration": false,
+  "next_step": "REDESIGN_OR_RETIRE"
+}

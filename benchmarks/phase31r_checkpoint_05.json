@@ -1,0 +1,11 @@
+{
+  "phase": "31R",
+  "checkpoint": 5,
+  "timestamp": "2026-08-26T17:28:25.856203+00:00",
+  "experiments_completed": 5,
+  "mean_ic": 0.2636121306214792,
+  "mean_incremental_ic": 2.0663787128927245e-05,
+  "positive_incremental_ic": 1,
+  "total_with_ic": 5,
+  "assessment": "INITIAL"
+}

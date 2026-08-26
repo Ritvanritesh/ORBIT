@@ -1,0 +1,25 @@
+{
+  "phase": "31R",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "timestamp": "2026-08-26T17:28:25.856203+00:00",
+  "dimensions": {
+    "mechanism_consistency": "FAIL",
+    "incremental_predictive_value": "FAIL",
+    "horizon_consistency": "FAIL",
+    "temporal_stability": "PARTIAL",
+    "universe_stability": "PARTIAL",
+    "model_stability": "PARTIAL",
+    "representation_stability": "PARTIAL",
+    "statistical_support": "FAIL",
+    "feature_redundancy": "PARTIALLY_REDUNDANT",
+    "pit_integrity": "PASS",
+    "reproducibility": "PASS",
+    "economic_relevance": "FAIL"
+  },
+  "summary": {
+    "mean_ic": 0.223706534784098,
+    "mean_incremental_ic": -0.00012646989888453474,
+    "positive_ic_fraction": 1.0,
+    "positive_incremental_ic_fraction": 0.2
+  }
+}
