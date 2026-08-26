@@ -1,0 +1,149 @@
+{
+  "sequencing_id": "SEQ-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "execution_sequence": {
+    "priority_1": {
+      "branch_id": "BR-A1B2C3D4E5F6",
+      "name": "Yield Curve / Term Structure",
+      "sequence": [
+        {
+          "step": 1,
+          "action": "Data Acquisition",
+          "description": "Acquire Treasury yield data from FRED or similar source",
+          "dependencies": []
+        },
+        {
+          "step": 2,
+          "action": "PIT Audit",
+          "description": "Verify Treasury yield data is PIT-compatible",
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Feature Engineering",
+          "description": "Create yield curve features (term spreads, yield changes)",
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Exploratory Research",
+          "description": "Execute 20-experiment exploratory budget",
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Evidence Review",
+          "description": "Review exploratory results and determine confirmatory eligibility",
+          "dependencies": [
+            4
+          ]
+        }
+      ],
+      "can_run_in_parallel": "Partially \u2014 data acquisition can start immediately, but exploratory research must wait for data."
+    },
+    "priority_2": {
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "name": "Sector x Macro Interaction",
+      "sequence": [
+        {
+          "step": 1,
+          "action": "Data Acquisition",
+          "description": "Acquire historical sector classification data",
+          "dependencies": []
+        },
+        {
+          "step": 2,
+          "action": "PIT Audit",
+          "description": "Verify sector classification is PIT-compatible",
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Feature Engineering",
+          "description": "Create sector-macro interaction features",
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Exploratory Research",
+          "description": "Execute 20-experiment exploratory budget",
+          "dependencies": [
+            3
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Evidence Review",
+          "description": "Review exploratory results and determine confirmatory eligibility",
+          "dependencies": [
+            4
+          ]
+        }
+      ],
+      "can_run_in_parallel": "Partially \u2014 data acquisition can start in parallel with Priority 1 data acquisition."
+    },
+    "priority_3": {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "name": "Regime-Conditional Prediction",
+      "sequence": [
+        {
+          "step": 1,
+          "action": "Dependency Check",
+          "description": "Wait for BR-E2AFD3AC901A OOS results",
+          "dependencies": [
+            "BR-E2AFD3AC901A Phase 26-R"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Feature Engineering",
+          "description": "Create regime-conditional interaction features",
+          "dependencies": [
+            1
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Exploratory Research",
+          "description": "Execute 20-experiment exploratory budget",
+          "dependencies": [
+            2
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Evidence Review",
+          "description": "Review exploratory results and determine confirmatory eligibility",
+          "dependencies": [
+            3
+          ]
+        }
+      ],
+      "can_run_in_parallel": "Sequential \u2014 must wait for volatility branch OOS results."
+    }
+  },
+  "parallelism_analysis": {
+    "fully_parallel": "Priority 1 and Priority 2 data acquisition can run in parallel.",
+    "partially_parallel": "Priority 1 and Priority 2 exploratory research can run in parallel after data acquisition.",
+    "sequential": "Priority 3 must wait for BR-E2AFD3AC901A OOS results.",
+    "contamination_risk": "LOW \u2014 branches test distinct mechanisms. However, shared data features (MOM_5D, etc.) must be frozen to prevent cross-contamination.",
+    "computational_resources": "LOW \u2014 linear models (Ridge, Lasso) are computationally inexpensive."
+  },
+  "recommended_order": [
+    "1. Priority 1 (Yield Curve): Start data acquisition immediately",
+    "2. Priority 2 (Sector x Macro): Start data acquisition in parallel",
+    "3. Priority 1 & 2 Exploratory: Run in parallel after data acquisition",
+    "4. Priority 3 (Regime-Conditional): Wait for BR-E2AFD3AC901A OOS results, then proceed"
+  ]
+}

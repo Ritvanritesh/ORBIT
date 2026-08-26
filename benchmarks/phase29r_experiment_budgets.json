@@ -1,0 +1,226 @@
+{
+  "budget_id": "BUDGET-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "default_budget": 20,
+  "budget_rule": "Maximum 20 exploratory experiments per branch. Budget expansion requires new registered decision.",
+  "candidates": {
+    "CAND-A": {
+      "name": "Yield Curve / Term Structure",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if yield curve features have any signal. If mean IC < 0.001, consider STOP_NO_SIGNAL."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if yield curve features show consistent signal. If mean IC < 0.003, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if yield curve features are robust. If inconsistent across universes, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation. Classify as ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION or STOP_NO_SIGNAL."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: Mean IC < 0.001 after 10 experiments",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "STOP_REDUNDANT: Effect entirely explained by existing features",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-B": {
+      "name": "Credit Stress / Credit Spreads",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if credit spread features have incremental signal beyond volatility. If incremental IC < 0.001, consider STOP_REDUNDANT."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if credit spread features show consistent incremental signal. If incremental IC < 0.003, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if credit spread features are robust. If inconsistent, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: Incremental IC < 0.001 after 10 experiments",
+        "STOP_REDUNDANT: Effect entirely explained by volatility",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-C": {
+      "name": "Sector x Macro Interaction",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if sector classification is available and PIT-compatible. If not, consider STOP_DATA_UNAVAILABLE."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if sector interactions have incremental signal. If incremental IC < 0.001, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if sector effects are robust across time. If inconsistent, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: Incremental IC < 0.001 after 10 experiments",
+        "STOP_DATA_UNAVAILABLE: Sector classification not PIT-compatible",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-D": {
+      "name": "Horizon-Aware Momentum",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if momentum has different IC at different horizons. If IC is identical across horizons, consider STOP_NO_SIGNAL."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if horizon effects are consistent. If inconsistent, consider STOP_REDUNDANT."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if horizon effects are robust. If not, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: No horizon differentiation after 10 experiments",
+        "STOP_REDUNDANT: Effect is same as existing momentum features",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-E": {
+      "name": "Regime-Conditional Prediction",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if regime interactions have incremental signal. If incremental IC < 0.001, consider STOP_NO_SIGNAL."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if regime-conditional models outperform unconditional models. If not, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if regime effects are robust across time. If inconsistent, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: Incremental IC < 0.001 after 10 experiments",
+        "STOP_REDUNDANT: Effect is same as existing volatility regime features",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-F": {
+      "name": "Nonlinear Feature Interactions",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if interactions have incremental signal beyond main effects. If incremental IC < 0.001, consider STOP_NO_SIGNAL."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if tree-based models outperform linear models. If not, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if interactions are robust. If not, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: Incremental IC < 0.001 after 10 experiments",
+        "STOP_REDUNDANT: Interactions add no value beyond main effects",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    },
+    "CAND-G": {
+      "name": "Momentum Decay & Reversal",
+      "budget": 20,
+      "checkpoints": {
+        "exp_5": {
+          "action": "REVIEW",
+          "criteria": "Check if momentum decays across horizons. If no decay, consider STOP_NO_SIGNAL."
+        },
+        "exp_10": {
+          "action": "REVIEW",
+          "criteria": "Check if decay is predictable. If not, consider STOP_NO_SIGNAL."
+        },
+        "exp_15": {
+          "action": "REVIEW",
+          "criteria": "Check if decay pattern is robust. If not, consider STOP_REDUNDANT."
+        },
+        "exp_20": {
+          "action": "FINAL_REVIEW",
+          "criteria": "Complete exploratory evaluation."
+        }
+      },
+      "stopping_rules": [
+        "STOP_NO_SIGNAL: No momentum decay after 10 experiments",
+        "STOP_REDUNDANT: Decay is not predictable or not robust",
+        "STOP_PIT_FAILURE: PIT violation detected",
+        "STOP_MECHANISM_FAILURE: Economic mechanism falsified",
+        "CONTINUE: Signal detected and mechanism viable",
+        "PROMISING: Strong signal warrants confirmatory registration",
+        "ELIGIBLE_FOR_CONFIRMATORY_REGISTRATION: Meets all criteria for Phase 19-C"
+      ]
+    }
+  }
+}

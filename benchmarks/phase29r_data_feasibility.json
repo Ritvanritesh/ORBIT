@@ -1,0 +1,195 @@
+{
+  "feasibility_id": "DATA-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "candidates": {
+    "CAND-A": {
+      "name": "Yield Curve / Term Structure",
+      "required_data": [
+        {
+          "domain": "US Treasury yields (2Y, 5Y, 10Y, 30Y)",
+          "availability": "LIKELY_AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "FRED, Yahoo Finance, or similar"
+        },
+        {
+          "domain": "Term spreads (10Y-2Y, 30Y-10Y)",
+          "availability": "LIKELY_AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Derived from yield data"
+        }
+      ],
+      "overall_feasibility": "LIKELY_AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 daily yield data is widely available",
+      "notes": "Treasury yields are published daily with minimal delay. No revision risk. Weekend/holiday alignment needed."
+    },
+    "CAND-B": {
+      "name": "Credit Stress / Credit Spreads",
+      "required_data": [
+        {
+          "domain": "High Yield OAS",
+          "availability": "LIKELY_AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "FRED ICE BofA High Yield Index"
+        },
+        {
+          "domain": "Investment Grade OAS",
+          "availability": "LIKELY_AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "FRED ICE BofA IG Index"
+        }
+      ],
+      "overall_feasibility": "LIKELY_AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 credit spread data is widely available",
+      "notes": "Credit spreads may be highly correlated with volatility. Must test incremental value."
+    },
+    "CAND-C": {
+      "name": "Sector x Macro Interaction",
+      "required_data": [
+        {
+          "domain": "Sector classification (GICS)",
+          "availability": "UNCERTAIN",
+          "pit_risk": "MODERATE",
+          "frequency": "Static (changes occasionally)",
+          "delay": "N/A",
+          "revision": "GICS reclassifications occur",
+          "source": "Yahoo Finance, Bloomberg"
+        },
+        {
+          "domain": "Sector-level feature aggregations",
+          "availability": "LIKELY_AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Derived from existing data"
+        }
+      ],
+      "overall_feasibility": "UNCERTAIN",
+      "overall_pit_risk": "MODERATE",
+      "acquisition_complexity": "MODERATE \u2014 sector classification must be PIT-compatible and historical",
+      "notes": "Sector classification may change over time. Must ensure PIT-compatible historical labels. Small sectors may have insufficient observations."
+    },
+    "CAND-D": {
+      "name": "Horizon-Aware Momentum",
+      "required_data": [
+        {
+          "domain": "Price returns at multiple horizons",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Already in dataset"
+        },
+        {
+          "domain": "Momentum features at multiple horizons",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Already in dataset (MOM_5D, MOM_10D, MOM_20D)"
+        }
+      ],
+      "overall_feasibility": "AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 all features derivable from existing data",
+      "notes": "No new data required. All momentum features already exist."
+    },
+    "CAND-E": {
+      "name": "Regime-Conditional Prediction",
+      "required_data": [
+        {
+          "domain": "Regime classification (volatility)",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "VOL_ZSCORE already in dataset"
+        },
+        {
+          "domain": "Regime-conditional feature interactions",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Derived from existing features"
+        }
+      ],
+      "overall_feasibility": "AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 regime features and interactions derivable from existing data",
+      "notes": "VOL_ZSCORE already provides regime classification. Interactions can be derived."
+    },
+    "CAND-F": {
+      "name": "Nonlinear Feature Interactions",
+      "required_data": [
+        {
+          "domain": "Interaction features (products)",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Derived from existing features"
+        }
+      ],
+      "overall_feasibility": "AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 interactions derivable from existing data",
+      "notes": "All interaction features can be derived from existing data."
+    },
+    "CAND-G": {
+      "name": "Momentum Decay & Reversal",
+      "required_data": [
+        {
+          "domain": "Price returns at multiple horizons",
+          "availability": "AVAILABLE",
+          "pit_risk": "LOW",
+          "frequency": "Daily",
+          "delay": "Same-day",
+          "revision": "None",
+          "source": "Already in dataset"
+        }
+      ],
+      "overall_feasibility": "AVAILABLE",
+      "overall_pit_risk": "LOW",
+      "acquisition_complexity": "LOW \u2014 all features derivable from existing data",
+      "notes": "No new data required."
+    }
+  },
+  "summary": {
+    "AVAILABLE": [
+      "CAND-D",
+      "CAND-E",
+      "CAND-F",
+      "CAND-G"
+    ],
+    "LIKELY_AVAILABLE": [
+      "CAND-A",
+      "CAND-B"
+    ],
+    "UNCERTAIN": [
+      "CAND-C"
+    ],
+    "DIFFICULT": [],
+    "UNAVAILABLE": []
+  }
+}

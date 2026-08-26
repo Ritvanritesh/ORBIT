@@ -1,0 +1,104 @@
+{
+  "audit_id": "ADV-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "tests": {
+    "A1": {
+      "name": "Existing volatility branch modified",
+      "result": "PASS",
+      "rationale": "BR-E2AFD3AC901A was not modified. Registry entries preserved."
+    },
+    "A2": {
+      "name": "OOS data accessed",
+      "result": "PASS",
+      "rationale": "No OOS data was accessed. All analysis used in-sample artifacts and predefined rules."
+    },
+    "A3": {
+      "name": "OOS targets inspected",
+      "result": "PASS",
+      "rationale": "No OOS targets were inspected."
+    },
+    "A4": {
+      "name": "Candidate selected using predictive performance",
+      "result": "PASS",
+      "rationale": "Selection used mechanism strength, independence, gap importance, and feasibility. No IC or Sharpe used."
+    },
+    "A5": {
+      "name": "Duplicate branch accepted",
+      "result": "PASS",
+      "rationale": "Redundancy analysis performed. CAND-D and CAND-G flagged as HIGH overlap; both deferred or rejected."
+    },
+    "A6": {
+      "name": "Unfalsifiable mechanism accepted",
+      "result": "PASS",
+      "rationale": "All selected branches have specific falsification criteria defined."
+    },
+    "A7": {
+      "name": "PIT-critical data ignored",
+      "result": "PASS",
+      "rationale": "PIT feasibility assessed for all candidates. CAND-C flagged as UNCERTAIN due to sector classification."
+    },
+    "A8": {
+      "name": "Budget silently expanded",
+      "result": "PASS",
+      "rationale": "Budget is fixed at 20 experiments. Stopping rules are pre-registered."
+    },
+    "A9": {
+      "name": "Candidate ranking manipulated",
+      "result": "PASS",
+      "rationale": "Ranking is deterministic from predefined weights and scores. Sensitivity analysis performed."
+    },
+    "A10": {
+      "name": "Weight sensitivity ignored",
+      "result": "PASS",
+      "rationale": "Sensitivity analysis performed with +/- 20% variation in mechanism weight."
+    },
+    "A11": {
+      "name": "Branch ID collision",
+      "result": "PASS",
+      "rationale": "New branch IDs verified against existing registry. No collisions."
+    },
+    "A12": {
+      "name": "Historical artifact modified",
+      "result": "PASS",
+      "rationale": "No historical artifacts were modified. All existing entries preserved."
+    },
+    "A13": {
+      "name": "Random ordering changes selection",
+      "result": "PASS",
+      "rationale": "No randomization involved. All ordering is deterministic."
+    },
+    "A14": {
+      "name": "Hidden horizon fishing",
+      "result": "PASS",
+      "rationale": "Horizons are pre-registered and economically justified for each candidate."
+    },
+    "A15": {
+      "name": "Model-first branch design",
+      "result": "PASS",
+      "rationale": "All branches are mechanism-first. Model requirements follow from mechanism, not vice versa."
+    },
+    "A16": {
+      "name": "Rejected candidate silently registered",
+      "result": "PASS",
+      "rationale": "CAND-D and CAND-F explicitly rejected with documented reasons."
+    },
+    "A17": {
+      "name": "Registry provenance missing",
+      "result": "PASS",
+      "rationale": "All new branches include phase29r_provenance with selection rationale."
+    },
+    "A18": {
+      "name": "Reproducibility failure",
+      "result": "PASS",
+      "rationale": "Reproducibility check passed. All steps deterministic."
+    }
+  },
+  "summary": {
+    "total_tests": 18,
+    "pass": 18,
+    "fail": 0,
+    "limitation": 0,
+    "conclusion": "All adversarial tests PASS. No integrity concerns."
+  }
+}

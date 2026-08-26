@@ -1,0 +1,155 @@
+{
+  "inventory_id": "EVID-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "active_branches": {
+    "BR-E2AFD3AC901A": {
+      "name": "Volatility Regime Hypothesis",
+      "status": "CONFIRMATORY_REGISTERED",
+      "hypothesis": "VOL_ZSCORE improves equity return prediction at H-10/H-20",
+      "mean_ic": 0.143282,
+      "incremental_ic": 0.007583,
+      "exploratory_outcome": "STRONG_EXPLORATORY_SUPPORT",
+      "oos_status": "DATA_NOT_READY",
+      "oos_trading_days": 36,
+      "oos_minimum_required": 60,
+      "models_approved": [
+        "Ridge",
+        "Lasso"
+      ],
+      "models_excluded_from_confirmation": [
+        "ElasticNet",
+        "HistGradientBoosting",
+        "LightGBM"
+      ],
+      "features_locked": [
+        "MOM_5D",
+        "MOM_10D",
+        "MOM_20D",
+        "VOL_ZSCORE",
+        "realized_vol"
+      ],
+      "horizons_locked": [
+        "H-10",
+        "H-20"
+      ],
+      "confirmed_capabilities": [
+        "Ridge alpha=1.0 approved",
+        "Lasso alpha=0.001 approved",
+        "VOL_ZSCORE feature validated",
+        "Holm-Bonferroni correction locked",
+        "7-experiment matrix locked",
+        "Independent replication infrastructure ready",
+        "6-dimension robustness plan locked"
+      ]
+    }
+  },
+  "legacy_branches": {
+    "B001": {
+      "name": "Horizon-Aware Signal Investigation",
+      "status": "ACTIVE",
+      "hypothesis_family": "horizon_mismatch",
+      "mechanism": "Different information types operate over different horizons",
+      "experiments_completed": 0,
+      "note": "Legacy branch, never executed. Superseded by BR-E2AFD3AC901A."
+    }
+  },
+  "legacy_hypotheses": {
+    "HYP-MAC": {
+      "name": "Macro Conditions",
+      "mechanism": "Macro conditions influence corporate earnings and discount rates over weeks to months",
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "p19_status": "PARTIALLY_CONFIRMED",
+      "p19_mean_val_ic": 0.0197,
+      "data_availability": "LIMITED \u2014 macro features require external data not in current dataset"
+    },
+    "HYP-MOM": {
+      "name": "Momentum",
+      "mechanism": "Price trends propagate through investor underreaction over multiple sessions",
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "p19_status": "PARTIALLY_CONFIRMED",
+      "p19_mean_val_ic": 0.0142,
+      "data_availability": "READY \u2014 price-based features derivable from existing data"
+    },
+    "HYP-VOL": {
+      "name": "Volatility (Legacy)",
+      "mechanism": "Volatility regimes persist over multi-session periods",
+      "features": [
+        "vol_10",
+        "vol_30"
+      ],
+      "p19_status": "PARTIALLY_CONFIRMED",
+      "p19_mean_val_ic": 0.0118,
+      "data_availability": "READY \u2014 volatility features derivable from existing data",
+      "note": "Superseded by BR-E2AFD3AC901A which uses VOL_ZSCORE (standardized volatility)"
+    },
+    "HYP-XSEC": {
+      "name": "Cross-Sectional",
+      "mechanism": "Relative ranking captures mean-reversion and momentum across instruments",
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "p19_status": "PARTIALLY_CONFIRMED",
+      "p19_mean_val_ic": 0.0264,
+      "data_availability": "READY \u2014 technical features derivable from existing data"
+    }
+  },
+  "model_toolbox": {
+    "approved": [
+      "Ridge",
+      "Lasso",
+      "ElasticNet",
+      "HistGradientBoosting",
+      "LightGBM"
+    ],
+    "rejected": [
+      "DeepLearning"
+    ],
+    "regime_model": "RESEARCH_JUSTIFIED",
+    "null_test_fix": "Phase 22-R null test fixed by evaluating OOS R2 instead of IS R2"
+  },
+  "data_infrastructure": {
+    "in_sample": {
+      "DS-EXP-050": "READY",
+      "DS-EXP-100": "READY",
+      "BENCH-001": "READY"
+    },
+    "oos": {
+      "DS-EXP-050": "36/60 trading days",
+      "DS-EXP-100": "36/60 trading days",
+      "status": "DATA_NOT_READY"
+    },
+    "pit_classification": "PIT_NATIVE for all datasets"
+  },
+  "failed_or_limitations": {
+    "momentum_portfolio": "Phase 16 portfolio evaluation showed momentum alone is insufficient for trading",
+    "regime_detection_models": "Phase 13a regime models had limited predictive power",
+    "deep_learning": "Phase 22-R concluded deep learning unjustified for current data\u89c4\u6a21",
+    "histogram_gradient_boosting_low_unique_value": "Phase 22-R noted HistGradientBoosting and LightGBM have low unique value (similar capability)"
+  },
+  "unresolved_gaps": [
+    "Interest-rate transmission to equity returns",
+    "Credit conditions as predictive signals",
+    "Sector-specific macro sensitivity",
+    "Horizon mismatch for non-volatility features",
+    "Regime-conditional prediction relationships",
+    "Nonlinear feature interactions"
+  ],
+  "governance_state": {
+    "research_framework": "Hypothesis-driven, Phase 17B-R complete",
+    "model_locking": "Phase 24-R locked",
+    "feature_freeze": "Phase 24-R locked",
+    "oos_firewall": "Phase 20A complete",
+    "independent_replication": "Phase 25-R complete",
+    "adversarial_testing": "Phase 24-R 18/18 PASS, Phase 25-R 18/18 PASS"
+  }
+}

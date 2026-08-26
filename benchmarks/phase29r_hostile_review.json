@@ -1,0 +1,269 @@
+{
+  "review_id": "HOSTILE-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "top_branches_reviewed": [
+    "CAND-A",
+    "CAND-C",
+    "CAND-E"
+  ],
+  "attacks": {
+    "CAND-A": {
+      "CAND-A_A1": {
+        "attack": "Duplicate hypothesis disguised with new wording",
+        "result": "PASS",
+        "rationale": "Yield curve features are entirely distinct from volatility features. No overlap in mechanism or data."
+      },
+      "CAND-A_A2": {
+        "attack": "Mechanism too vague",
+        "result": "PASS",
+        "rationale": "Discount rate transmission is well-established in finance. Specific mechanism: yield curve changes affect equity valuations through discount rates."
+      },
+      "CAND-A_A3": {
+        "attack": "Horizon fishing",
+        "result": "PASS",
+        "rationale": "Horizons H-10, H-20, H-40 are pre-registered and economically justified (weeks to months for interest rate transmission)."
+      },
+      "CAND-A_A4": {
+        "attack": "Data mining incentive",
+        "result": "PASS",
+        "rationale": "Candidate is mechanism-first, not data-first. The economic mechanism (discount rate transmission) is independent of the data."
+      },
+      "CAND-A_A5": {
+        "attack": "PIT infeasibility",
+        "result": "PASS",
+        "rationale": "Treasury yields are published daily with minimal delay. No revision risk. PIT-compatible."
+      },
+      "CAND-A_A6": {
+        "attack": "Revision leakage",
+        "result": "PASS",
+        "rationale": "Treasury yield data is not revised. No revision leakage risk."
+      },
+      "CAND-A_A7": {
+        "attack": "Candidate selected because it sounds interesting",
+        "result": "PASS",
+        "rationale": "Candidate is selected based on economic mechanism strength and research gap importance, not novelty."
+      },
+      "CAND-A_A8": {
+        "attack": "Excessive overlap with volatility research",
+        "result": "PASS",
+        "rationale": "Yield curve features are entirely distinct from volatility features. No overlap."
+      },
+      "CAND-A_A9": {
+        "attack": "Unfalsifiable hypothesis",
+        "result": "PASS",
+        "rationale": "Hypothesis is falsifiable: if yield curve changes have zero correlation with equity returns, the mechanism is falsified."
+      },
+      "CAND-A_A10": {
+        "attack": "Experiment budget manipulation",
+        "result": "PASS",
+        "rationale": "Budget is fixed at 20 experiments with pre-registered checkpoints and stopping rules."
+      },
+      "CAND-A_A11": {
+        "attack": "Model-first rather than mechanism-first design",
+        "result": "PASS",
+        "rationale": "Design is mechanism-first: discount rate transmission determines the hypothesis, not model selection."
+      },
+      "CAND-A_A12": {
+        "attack": "Impossible data requirements",
+        "result": "PASS",
+        "rationale": "Treasury yield data is widely available from FRED, Yahoo Finance, and other sources."
+      },
+      "CAND-A_A13": {
+        "attack": "Hidden multiple-comparison expansion",
+        "result": "PASS",
+        "rationale": "Experiment matrix is pre-registered and locked. No expansion allowed."
+      },
+      "CAND-A_A14": {
+        "attack": "Sector survivorship or classification leakage",
+        "result": "PASS",
+        "rationale": "Yield curve analysis does not depend on sector classification."
+      },
+      "CAND-A_A15": {
+        "attack": "Post-hoc rationale construction",
+        "result": "PASS",
+        "rationale": "Economic mechanism is pre-registered and based on established finance theory."
+      },
+      "CAND-A_summary": {
+        "total_attacks": 15,
+        "pass": 15,
+        "fail": 0,
+        "limitation": 0
+      }
+    },
+    "CAND-C": {
+      "CAND-C_A1": {
+        "attack": "Duplicate hypothesis disguised with new wording",
+        "result": "PASS",
+        "rationale": "Sector heterogeneity is a distinct dimension from volatility regime persistence."
+      },
+      "CAND-C_A2": {
+        "attack": "Mechanism too vague",
+        "result": "PASS",
+        "rationale": "Sector-macro interaction is well-documented. Specific mechanism: different sectors have different exposures to macro factors."
+      },
+      "CAND-C_A3": {
+        "attack": "Horizon fishing",
+        "result": "PASS",
+        "rationale": "Horizons H-10, H-20 are pre-registered and economically justified."
+      },
+      "CAND-C_A4": {
+        "attack": "Data mining incentive",
+        "result": "LIMITATION",
+        "rationale": "Sector classification choices could be data-mined. Must pre-register specific sector groupings."
+      },
+      "CAND-C_A5": {
+        "attack": "PIT infeasibility",
+        "result": "LIMITATION",
+        "rationale": "Sector classification may change over time (GICS reclassifications). Must ensure PIT-compatible historical labels."
+      },
+      "CAND-C_A6": {
+        "attack": "Revision leakage",
+        "result": "PASS",
+        "rationale": "Sector classifications are not revised historically. No revision leakage risk."
+      },
+      "CAND-C_A7": {
+        "attack": "Candidate selected because it sounds interesting",
+        "result": "PASS",
+        "rationale": "Candidate is selected based on mechanism strength and gap importance."
+      },
+      "CAND-C_A8": {
+        "attack": "Excessive overlap with volatility research",
+        "result": "PASS",
+        "rationale": "Sector heterogeneity is distinct from volatility regime persistence."
+      },
+      "CAND-C_A9": {
+        "attack": "Unfalsifiable hypothesis",
+        "result": "PASS",
+        "rationale": "Hypothesis is falsifiable: if sector-specific models do not outperform pooled models, the mechanism is falsified."
+      },
+      "CAND-C_A10": {
+        "attack": "Experiment budget manipulation",
+        "result": "PASS",
+        "rationale": "Budget is fixed at 20 experiments with pre-registered checkpoints."
+      },
+      "CAND-C_A11": {
+        "attack": "Model-first rather than mechanism-first design",
+        "result": "PASS",
+        "rationale": "Design is mechanism-first: sector-macro interaction determines the hypothesis."
+      },
+      "CAND-C_A12": {
+        "attack": "Impossible data requirements",
+        "result": "LIMITATION",
+        "rationale": "Sector classification must be historically available and PIT-compatible. This may require additional data acquisition."
+      },
+      "CAND-C_A13": {
+        "attack": "Hidden multiple-comparison expansion",
+        "result": "PASS",
+        "rationale": "Experiment matrix is pre-registered and locked."
+      },
+      "CAND-C_A14": {
+        "attack": "Sector survivorship or classification leakage",
+        "result": "LIMITATION",
+        "rationale": "Sector survivorship bias may affect results. Must use historical sector classifications, not current ones."
+      },
+      "CAND-C_A15": {
+        "attack": "Post-hoc rationale construction",
+        "result": "PASS",
+        "rationale": "Economic mechanism is pre-registered and based on established finance theory."
+      },
+      "CAND-C_summary": {
+        "total_attacks": 15,
+        "pass": 11,
+        "fail": 0,
+        "limitation": 4
+      }
+    },
+    "CAND-E": {
+      "CAND-E_A1": {
+        "attack": "Duplicate hypothesis disguised with new wording",
+        "result": "PASS",
+        "rationale": "Regime-conditional prediction is distinct from volatility features as predictors."
+      },
+      "CAND-E_A2": {
+        "attack": "Mechanism too vague",
+        "result": "LIMITATION",
+        "rationale": "Regime conditionality is economically intuitive but the specific mechanism (which relationships change and why) needs to be defined more precisely."
+      },
+      "CAND-E_A3": {
+        "attack": "Horizon fishing",
+        "result": "PASS",
+        "rationale": "Horizons H-10, H-20 are pre-registered and economically justified."
+      },
+      "CAND-E_A4": {
+        "attack": "Data mining incentive",
+        "result": "LIMITATION",
+        "rationale": "Regime classification choices could be data-mined. Must pre-register specific regime definitions."
+      },
+      "CAND-E_A5": {
+        "attack": "PIT infeasibility",
+        "result": "PASS",
+        "rationale": "VOL_ZSCORE is already PIT-compatible. Regime interactions can be derived from existing features."
+      },
+      "CAND-E_A6": {
+        "attack": "Revision leakage",
+        "result": "PASS",
+        "rationale": "Regime classifications are based on historical data. No revision leakage risk."
+      },
+      "CAND-E_A7": {
+        "attack": "Candidate selected because it sounds interesting",
+        "result": "PASS",
+        "rationale": "Candidate is selected based on mechanism strength and gap importance."
+      },
+      "CAND-E_A8": {
+        "attack": "Excessive overlap with volatility research",
+        "result": "LIMITATION",
+        "rationale": "Regime-conditional prediction builds on volatility branch. Must explicitly test whether regime-conditional models improve over regime-feature models."
+      },
+      "CAND-E_A9": {
+        "attack": "Unfalsifiable hypothesis",
+        "result": "PASS",
+        "rationale": "Hypothesis is falsifiable: if regime-conditional models do not outperform unconditional models, the mechanism is falsified."
+      },
+      "CAND-E_A10": {
+        "attack": "Experiment budget manipulation",
+        "result": "PASS",
+        "rationale": "Budget is fixed at 20 experiments with pre-registered checkpoints."
+      },
+      "CAND-E_A11": {
+        "attack": "Model-first rather than mechanism-first design",
+        "result": "PASS",
+        "rationale": "Design is mechanism-first: regime conditionality determines the hypothesis."
+      },
+      "CAND-E_A12": {
+        "attack": "Impossible data requirements",
+        "result": "PASS",
+        "rationale": "All regime features are derivable from existing data."
+      },
+      "CAND-E_A13": {
+        "attack": "Hidden multiple-comparison expansion",
+        "result": "PASS",
+        "rationale": "Experiment matrix is pre-registered and locked."
+      },
+      "CAND-E_A14": {
+        "attack": "Sector survivorship or classification leakage",
+        "result": "PASS",
+        "rationale": "Regime analysis does not depend on sector classification."
+      },
+      "CAND-E_A15": {
+        "attack": "Post-hoc rationale construction",
+        "result": "PASS",
+        "rationale": "Economic mechanism is pre-registered and based on established finance theory."
+      },
+      "CAND-E_summary": {
+        "total_attacks": 15,
+        "pass": 12,
+        "fail": 0,
+        "limitation": 3
+      }
+    }
+  },
+  "overall_summary": {
+    "total_branches_reviewed": 3,
+    "total_attacks": 45,
+    "total_pass": 38,
+    "total_fail": 0,
+    "total_limitation": 7,
+    "conclusion": "All three top branches PASS hostile review. CAND-C and CAND-E have documented limitations that must be addressed in the exploratory phase."
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "selection_id": "SELECT-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "selection_criteria": [
+    "Economic mechanism strength >= MODERATE",
+    "No FAIL in hostile review",
+    "Data feasibility >= LIKELY_AVAILABLE",
+    "PIT risk <= MODERATE",
+    "Independence from existing branches >= LOW",
+    "Falsifiability >= MODERATE"
+  ],
+  "selected_branches": [
+    {
+      "branch_id": "BR-A1B2C3D4E5F6",
+      "candidate_id": "CAND-A",
+      "name": "Yield Curve / Term Structure",
+      "status": "SELECTED_PRIORITY_1",
+      "research_question": "Do changes in the shape or level of the Treasury yield curve contain information about future equity or sector returns at intermediate horizons?",
+      "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations",
+      "hypothesis_family": [
+        "Term spread changes predict equity returns at H-10/H-20",
+        "Yield level changes predict sector-specific returns",
+        "Curve steepening/flattening regimes affect cross-sectional equity performance"
+      ],
+      "expected_direction": "Rising term spread -> positive equity returns; Falling term spread -> negative equity returns",
+      "justified_horizons": [
+        "H-10",
+        "H-20",
+        "H-40"
+      ],
+      "required_data_domains": [
+        "US Treasury yields (2Y, 5Y, 10Y, 30Y)",
+        "Term spreads"
+      ],
+      "pit_requirements": "Treasury yields: PIT_NATIVE, daily, no revision",
+      "exploratory_experiment_budget": 20,
+      "checkpoints": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "stopping_rules": [
+        "STOP_NO_SIGNAL",
+        "STOP_PIT_FAILURE",
+        "STOP_MECHANISM_FAILURE",
+        "STOP_REDUNDANT"
+      ],
+      "dependencies": [],
+      "known_limitations": [
+        "Yield curve data must be acquired from external source (FRED or similar)",
+        "Weekend/holiday alignment with equity data needed",
+        "Must handle Treasury market holidays"
+      ],
+      "addresses_gap": "GAP-001",
+      "hostile_review_result": "15/15 PASS"
+    },
+    {
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "candidate_id": "CAND-C",
+      "name": "Sector x Macro Interaction",
+      "status": "SELECTED_PRIORITY_2",
+      "research_question": "Do macroeconomic conditions affect sectors differently, producing predictive information that disappears when all equities are modeled as a homogeneous universe?",
+      "mechanism": "Different sectors have different exposures to macroeconomic factors: interest-rate sensitivity, energy sensitivity, growth sensitivity",
+      "hypothesis_family": [
+        "Volatility regime has different predictive power across sectors",
+        "Momentum effects are stronger in some sectors than others",
+        "Sector-specific features improve predictions within sectors"
+      ],
+      "expected_direction": "Direction depends on specific macro factor and sector. Defensive sectors may benefit from high volatility; cyclical sectors may suffer.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "Sector classification (GICS)",
+        "Sector-level feature aggregations"
+      ],
+      "pit_requirements": "Sector classification: must be PIT-compatible with historical labels",
+      "exploratory_experiment_budget": 20,
+      "checkpoints": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "stopping_rules": [
+        "STOP_NO_SIGNAL",
+        "STOP_DATA_UNAVAILABLE",
+        "STOP_PIT_FAILURE",
+        "STOP_MECHANISM_FAILURE"
+      ],
+      "dependencies": [],
+      "known_limitations": [
+        "Sector classification must be historically available and PIT-compatible",
+        "Small sectors may have insufficient observations",
+        "GICS reclassifications may affect continuity",
+        "Must pre-register specific sector groupings"
+      ],
+      "addresses_gap": "GAP-003",
+      "hostile_review_result": "11/15 PASS, 4 LIMITATION"
+    },
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "candidate_id": "CAND-E",
+      "name": "Regime-Conditional Prediction",
+      "status": "SELECTED_PRIORITY_3",
+      "research_question": "Do predictive relationships change systematically across economically interpretable market regimes?",
+      "mechanism": "Market relationships are not stationary. Predictive effects may be strong in some regimes and weak or reversed in others",
+      "hypothesis_family": [
+        "Momentum IC is higher in high-volatility regimes",
+        "Volatility regime features interact with other features",
+        "Regime-conditional models outperform unconditional models"
+      ],
+      "expected_direction": "Direction depends on specific regime and feature. For momentum: may be stronger in low-volatility regimes.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "Regime classification (VOL_ZSCORE)",
+        "Regime-conditional feature interactions"
+      ],
+      "pit_requirements": "Regime classification: PIT_NATIVE using VOL_ZSCORE",
+      "exploratory_experiment_budget": 20,
+      "checkpoints": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "stopping_rules": [
+        "STOP_NO_SIGNAL",
+        "STOP_REDUNDANT",
+        "STOP_PIT_FAILURE",
+        "STOP_MECHANISM_FAILURE"
+      ],
+      "dependencies": [
+        "BR-E2AFD3AC901A (volatility branch)"
+      ],
+      "known_limitations": [
+        "Builds on volatility branch \u2014 must explicitly test incremental value",
+        "Regime classification must be pre-registered to avoid fishing",
+        "Small regime samples may lack statistical power"
+      ],
+      "addresses_gap": "GAP-005",
+      "hostile_review_result": "12/15 PASS, 3 LIMITATION"
+    }
+  ],
+  "deferred_candidates": [
+    {
+      "candidate_id": "CAND-B",
+      "name": "Credit Stress / Credit Spreads",
+      "status": "DEFERRED",
+      "reason": "MODERATE mechanism strength. May overlap with volatility branch. Deferred until volatility branch OOS results are available.",
+      "addresses_gap": "GAP-002"
+    },
+    {
+      "candidate_id": "CAND-G",
+      "name": "Momentum Decay & Reversal",
+      "status": "DEFERRED",
+      "reason": "MODERATE mechanism strength. Overlaps with CAND-D. Deferred until CAND-D results are available.",
+      "addresses_gap": "GAP-004"
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "candidate_id": "CAND-D",
+      "name": "Horizon-Aware Momentum",
+      "status": "REJECTED",
+      "reason": "WEAK mechanism strength. Horizon mismatch is a modeling observation, not an economic mechanism. Hypothesis needs reframing.",
+      "addresses_gap": "GAP-004"
+    },
+    {
+      "candidate_id": "CAND-F",
+      "name": "Nonlinear Feature Interactions",
+      "status": "REJECTED",
+      "reason": "WEAK mechanism strength. Interactions are a statistical concept, not an economic mechanism. Hypothesis needs reframing.",
+      "addresses_gap": "GAP-006"
+    }
+  ],
+  "selection_summary": {
+    "selected": 3,
+    "deferred": 2,
+    "rejected": 2,
+    "total": 7,
+    "rationale": "Three branches selected based on mechanism strength, independence, and feasibility. Two deferred pending additional evidence. Two rejected due to weak mechanisms."
+  }
+}

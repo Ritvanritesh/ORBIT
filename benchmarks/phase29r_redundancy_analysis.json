@@ -1,0 +1,117 @@
+{
+  "analysis_id": "REDUND-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "reference_branch": {
+    "branch_id": "BR-E2AFD3AC901A",
+    "name": "Volatility Regime Hypothesis",
+    "features": [
+      "MOM_5D",
+      "MOM_10D",
+      "MOM_20D",
+      "VOL_ZSCORE",
+      "realized_vol"
+    ],
+    "horizons": [
+      "H-10",
+      "H-20"
+    ],
+    "mechanism": "Volatility regimes persist and influence investor risk compensation"
+  },
+  "legacy_references": [
+    {
+      "id": "HYP-MOM",
+      "features": [
+        "ret_10",
+        "ret_20",
+        "ret_30"
+      ],
+      "status": "PARTIALLY_CONFIRMED"
+    },
+    {
+      "id": "HYP-XSEC",
+      "features": [
+        "sma_ratio_5_30",
+        "sma_ratio_15_40",
+        "log_dv_med_20"
+      ],
+      "status": "PARTIALLY_CONFIRMED"
+    },
+    {
+      "id": "HYP-MAC",
+      "features": [
+        "vol_30",
+        "log_dv_med_20"
+      ],
+      "status": "PARTIALLY_CONFIRMED"
+    }
+  ],
+  "overlap_matrix": {
+    "CAND-A_vs_BR-E2AFD3AC901A": {
+      "classification": "NONE",
+      "rationale": "Yield curve features are entirely distinct from volatility features"
+    },
+    "CAND-B_vs_BR-E2AFD3AC901A": {
+      "classification": "MODERATE",
+      "rationale": "Credit spreads may correlate with volatility. Must test whether credit spread IC is incremental to volatility."
+    },
+    "CAND-C_vs_BR-E2AFD3AC901A": {
+      "classification": "LOW",
+      "rationale": "Sector heterogeneity is a distinct dimension. Volatility features may interact with sectors but this tests a different mechanism."
+    },
+    "CAND-D_vs_BR-E2AFD3AC901A": {
+      "classification": "LOW",
+      "rationale": "Horizon mismatch tests momentum features, not volatility features. Distinct mechanism."
+    },
+    "CAND-E_vs_BR-E2AFD3AC901A": {
+      "classification": "MODERATE",
+      "rationale": "Regime-conditional prediction builds on volatility regime features but tests a different question (regime-dependent relationships vs regime features as predictors)."
+    },
+    "CAND-F_vs_BR-E2AFD3AC901A": {
+      "classification": "LOW",
+      "rationale": "Feature interactions are a modeling dimension, not a mechanism. May use volatility features but tests a different hypothesis."
+    },
+    "CAND-G_vs_BR-E2AFD3AC901A": {
+      "classification": "LOW",
+      "rationale": "Momentum decay is distinct from volatility regime persistence."
+    },
+    "CAND-A_vs_CAND-B": {
+      "classification": "LOW",
+      "rationale": "Yield curve and credit spreads are related but distinct economic signals"
+    },
+    "CAND-A_vs_CAND-C": {
+      "classification": "LOW",
+      "rationale": "Yield curve effects may vary by sector but this tests a different mechanism"
+    },
+    "CAND-B_vs_CAND-C": {
+      "classification": "LOW",
+      "rationale": "Credit spreads may affect sectors differently but this tests a different mechanism"
+    },
+    "CAND-D_vs_CAND-G": {
+      "classification": "HIGH",
+      "rationale": "Horizon-Aware Momentum and Momentum Decay overlap significantly. Both test momentum across horizons."
+    },
+    "CAND-E_vs_CAND-F": {
+      "classification": "MODERATE",
+      "rationale": "Regime-conditional prediction may use interaction features but tests a different hypothesis"
+    },
+    "CAND-A_vs_HYP-MAC": {
+      "classification": "LOW",
+      "rationale": "Yield curve is more specific than generic macro features"
+    },
+    "CAND-B_vs_HYP-MAC": {
+      "classification": "MODERATE",
+      "rationale": "Credit spreads are a type of macro condition but more specific"
+    },
+    "CAND-D_vs_HYP-MOM": {
+      "classification": "MODERATE",
+      "rationale": "Horizon-Aware Momentum refines HYP-MOM but uses different features"
+    }
+  },
+  "duplicate_rejections": [],
+  "high_overlap_justifications": {
+    "CAND-D_vs_CAND-G": "Both test momentum across horizons. CAND-D focuses on horizon mismatch (different horizons for different signals), while CAND-G focuses on decay dynamics (predictable decay pattern). These are related but distinct hypotheses. However, they would use overlapping features and could be consolidated.",
+    "CAND-B_vs_BR-E2AFD3AC901A": "Credit spreads may correlate with volatility. The branch must explicitly test whether credit spread IC is incremental to volatility IC."
+  },
+  "recommendation": "CAND-D and CAND-G should be evaluated as potentially consolidatable. If both survive, they should share exploratory budget to avoid duplication."
+}

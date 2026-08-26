@@ -198,6 +198,113 @@
         "incremental_ic": 0.007583,
         "pass_count": 10
       }
+    },
+    {
+      "branch_id": "BR-A1B2C3D4E5F6",
+      "branch_name": "Yield Curve / Term Structure",
+      "research_question_id": "RQ-29R-001",
+      "hypothesis_family": "yield_curve_transmission",
+      "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations",
+      "status": "PROPOSED",
+      "locked_plan_digest": null,
+      "experiment_budget": 20,
+      "experiments_completed": 0,
+      "experiments_remaining": 20,
+      "exploratory_evidence": [],
+      "review_decisions": [],
+      "confirmatory_registrations": [],
+      "final_classification": null,
+      "start_timestamp": null,
+      "parent_evidence_references": [
+        "phase29r_prior_evidence",
+        "phase29r_candidate_branches",
+        "phase29r_prioritization"
+      ],
+      "phase29r_provenance": {
+        "candidate_id": "CAND-A",
+        "selection_priority": 1,
+        "selection_timestamp": "2026-08-26T14:32:12.503269+00:00",
+        "mechanism_classification": "STRONG",
+        "data_feasibility": "LIKELY_AVAILABLE",
+        "pit_risk": "LOW",
+        "hostile_review": "15/15 PASS",
+        "addresses_gap": "GAP-001"
+      }
+    },
+    {
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "branch_name": "Sector x Macro Interaction",
+      "research_question_id": "RQ-29R-002",
+      "hypothesis_family": "sector_macro_interaction",
+      "mechanism": "Different sectors have different exposures to macroeconomic factors, creating predictive information that disappears when all equities are modeled as homogeneous",
+      "status": "PROPOSED",
+      "locked_plan_digest": null,
+      "experiment_budget": 20,
+      "experiments_completed": 0,
+      "experiments_remaining": 20,
+      "exploratory_evidence": [],
+      "review_decisions": [],
+      "confirmatory_registrations": [],
+      "final_classification": null,
+      "start_timestamp": null,
+      "parent_evidence_references": [
+        "phase29r_prior_evidence",
+        "phase29r_candidate_branches",
+        "phase29r_prioritization"
+      ],
+      "phase29r_provenance": {
+        "candidate_id": "CAND-C",
+        "selection_priority": 2,
+        "selection_timestamp": "2026-08-26T14:32:12.503269+00:00",
+        "mechanism_classification": "STRONG",
+        "data_feasibility": "UNCERTAIN",
+        "pit_risk": "MODERATE",
+        "hostile_review": "11/15 PASS, 4 LIMITATION",
+        "addresses_gap": "GAP-003",
+        "limitations": [
+          "Sector classification must be PIT-compatible",
+          "Small sectors may have insufficient observations"
+        ]
+      }
+    },
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "branch_name": "Regime-Conditional Prediction",
+      "research_question_id": "RQ-29R-003",
+      "hypothesis_family": "regime_conditional_prediction",
+      "mechanism": "Market relationships are not stationary. Predictive effects may be strong in some regimes and weak or reversed in others",
+      "status": "PROPOSED",
+      "locked_plan_digest": null,
+      "experiment_budget": 20,
+      "experiments_completed": 0,
+      "experiments_remaining": 20,
+      "exploratory_evidence": [],
+      "review_decisions": [],
+      "confirmatory_registrations": [],
+      "final_classification": null,
+      "start_timestamp": null,
+      "parent_evidence_references": [
+        "phase29r_prior_evidence",
+        "phase29r_candidate_branches",
+        "phase29r_prioritization"
+      ],
+      "phase29r_provenance": {
+        "candidate_id": "CAND-E",
+        "selection_priority": 3,
+        "selection_timestamp": "2026-08-26T14:32:12.503269+00:00",
+        "mechanism_classification": "MODERATE",
+        "data_feasibility": "AVAILABLE",
+        "pit_risk": "LOW",
+        "hostile_review": "12/15 PASS, 3 LIMITATION",
+        "addresses_gap": "GAP-005",
+        "dependencies": [
+          "BR-E2AFD3AC901A"
+        ],
+        "limitations": [
+          "Must test incremental value over volatility branch",
+          "Regime definitions must be pre-registered"
+        ]
+      }
     }
   ],
   "prevention_rules": [
@@ -220,5 +327,13 @@
     "review_decisions": "array of decision IDs",
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
+  },
+  "last_updated": "2026-08-26T14:32:12.503269+00:00",
+  "phase29r_update": {
+    "phase": "29R",
+    "timestamp": "2026-08-26T14:32:12.503269+00:00",
+    "branches_added": 3,
+    "existing_branches_preserved": 4,
+    "total_branches": 7
   }
 }

@@ -1,0 +1,205 @@
+{
+  "prioritization_id": "PRIOR-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "weights": {
+    "economic_mechanism_strength": 0.2,
+    "independence_from_existing": 0.15,
+    "research_gap_importance": 0.15,
+    "data_feasibility": 0.15,
+    "pit_integrity_feasibility": 0.1,
+    "falsifiability": 0.1,
+    "expected_information_value": 0.05,
+    "computational_feasibility": 0.05,
+    "estimated_research_cost": 0.03,
+    "relevance_to_long_term_objective": 0.02
+  },
+  "weight_sum": 1.0,
+  "weight_rationale": "Economic mechanism strength weighted highest (0.20) to ensure mechanism-first design. Independence and research gap importance weighted at 0.15 each to prioritize novel directions. Data feasibility and PIT integrity weighted at 0.15 and 0.10 respectively to ensure practical viability.",
+  "raw_scores": {
+    "CAND-A": {
+      "economic_mechanism_strength": 0.95,
+      "independence_from_existing": 0.95,
+      "research_gap_importance": 0.9,
+      "data_feasibility": 0.85,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.9,
+      "expected_information_value": 0.85,
+      "computational_feasibility": 0.95,
+      "estimated_research_cost": 0.9,
+      "relevance_to_long_term_objective": 0.9
+    },
+    "CAND-B": {
+      "economic_mechanism_strength": 0.75,
+      "independence_from_existing": 0.7,
+      "research_gap_importance": 0.75,
+      "data_feasibility": 0.85,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.8,
+      "expected_information_value": 0.7,
+      "computational_feasibility": 0.95,
+      "estimated_research_cost": 0.9,
+      "relevance_to_long_term_objective": 0.75
+    },
+    "CAND-C": {
+      "economic_mechanism_strength": 0.9,
+      "independence_from_existing": 0.85,
+      "research_gap_importance": 0.85,
+      "data_feasibility": 0.7,
+      "pit_integrity_feasibility": 0.75,
+      "falsifiability": 0.85,
+      "expected_information_value": 0.85,
+      "computational_feasibility": 0.85,
+      "estimated_research_cost": 0.8,
+      "relevance_to_long_term_objective": 0.85
+    },
+    "CAND-D": {
+      "economic_mechanism_strength": 0.5,
+      "independence_from_existing": 0.6,
+      "research_gap_importance": 0.6,
+      "data_feasibility": 0.95,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.8,
+      "expected_information_value": 0.6,
+      "computational_feasibility": 0.95,
+      "estimated_research_cost": 0.95,
+      "relevance_to_long_term_objective": 0.6
+    },
+    "CAND-E": {
+      "economic_mechanism_strength": 0.7,
+      "independence_from_existing": 0.65,
+      "research_gap_importance": 0.8,
+      "data_feasibility": 0.95,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.8,
+      "expected_information_value": 0.75,
+      "computational_feasibility": 0.9,
+      "estimated_research_cost": 0.9,
+      "relevance_to_long_term_objective": 0.8
+    },
+    "CAND-F": {
+      "economic_mechanism_strength": 0.45,
+      "independence_from_existing": 0.7,
+      "research_gap_importance": 0.55,
+      "data_feasibility": 0.95,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.75,
+      "expected_information_value": 0.6,
+      "computational_feasibility": 0.9,
+      "estimated_research_cost": 0.95,
+      "relevance_to_long_term_objective": 0.55
+    },
+    "CAND-G": {
+      "economic_mechanism_strength": 0.65,
+      "independence_from_existing": 0.55,
+      "research_gap_importance": 0.65,
+      "data_feasibility": 0.95,
+      "pit_integrity_feasibility": 0.95,
+      "falsifiability": 0.8,
+      "expected_information_value": 0.65,
+      "computational_feasibility": 0.95,
+      "estimated_research_cost": 0.95,
+      "relevance_to_long_term_objective": 0.65
+    }
+  },
+  "weighted_scores": {
+    "CAND-A": 0.915,
+    "CAND-B": 0.7945,
+    "CAND-C": 0.826,
+    "CAND-D": 0.7155,
+    "CAND-E": 0.8005,
+    "CAND-F": 0.7045,
+    "CAND-G": 0.749
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "candidate_id": "CAND-A",
+      "score": 0.915
+    },
+    {
+      "rank": 2,
+      "candidate_id": "CAND-C",
+      "score": 0.826
+    },
+    {
+      "rank": 3,
+      "candidate_id": "CAND-E",
+      "score": 0.8005
+    },
+    {
+      "rank": 4,
+      "candidate_id": "CAND-B",
+      "score": 0.7945
+    },
+    {
+      "rank": 5,
+      "candidate_id": "CAND-G",
+      "score": 0.749
+    },
+    {
+      "rank": 6,
+      "candidate_id": "CAND-D",
+      "score": 0.7155
+    },
+    {
+      "rank": 7,
+      "candidate_id": "CAND-F",
+      "score": 0.7045
+    }
+  ],
+  "sensitivity_analysis": {
+    "method": "Vary economic mechanism weight by +/- 20%, adjust other weights proportionally",
+    "results": {
+      "CAND-A": {
+        "base": 0.915,
+        "high_mechanism_weight": 0.9349,
+        "low_mechanism_weight": 0.8951,
+        "rank_change": "base=1, high_mech=1, low_mech=1"
+      },
+      "CAND-B": {
+        "base": 0.7945,
+        "high_mechanism_weight": 0.8084,
+        "low_mechanism_weight": 0.7806,
+        "rank_change": "base=4, high_mech=4, low_mech=4"
+      },
+      "CAND-C": {
+        "base": 0.826,
+        "high_mechanism_weight": 0.8458,
+        "low_mechanism_weight": 0.8061,
+        "rank_change": "base=2, high_mech=2, low_mech=2"
+      },
+      "CAND-D": {
+        "base": 0.7155,
+        "high_mechanism_weight": 0.7201,
+        "low_mechanism_weight": 0.7109,
+        "rank_change": "base=6, high_mech=6, low_mech=6"
+      },
+      "CAND-E": {
+        "base": 0.8005,
+        "high_mechanism_weight": 0.812,
+        "low_mechanism_weight": 0.789,
+        "rank_change": "base=3, high_mech=3, low_mech=3"
+      },
+      "CAND-F": {
+        "base": 0.7045,
+        "high_mechanism_weight": 0.7071,
+        "low_mechanism_weight": 0.7019,
+        "rank_change": "base=7, high_mech=7, low_mech=7"
+      },
+      "CAND-G": {
+        "base": 0.749,
+        "high_mechanism_weight": 0.7595,
+        "low_mechanism_weight": 0.7385,
+        "rank_change": "base=5, high_mech=5, low_mech=5"
+      }
+    },
+    "conclusion": "Ranking is sensitive to mechanism weight. CAND-A (Yield Curve) remains top across all scenarios. CAND-C (Sector x Macro) remains second. CAND-E (Regime-Conditional) and CAND-B (Credit) may swap positions."
+  },
+  "top_candidates": [
+    "CAND-A",
+    "CAND-C",
+    "CAND-E"
+  ],
+  "methodology": "No predictive performance metrics used. Scores based on mechanism strength, independence, gap importance, feasibility, and falsifiability."
+}

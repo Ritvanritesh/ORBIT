@@ -1,0 +1,261 @@
+{
+  "review_id": "MECH-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "evaluations": {
+    "CAND-A": {
+      "name": "Yield Curve / Term Structure",
+      "classification": "STRONG",
+      "questions": [
+        {
+          "q": "Why should yield curve changes predict equity returns?",
+          "a": "Yield curve changes reflect shifts in interest-rate expectations, which directly affect equity valuations through discount rates. This is a fundamental, well-established mechanism in finance."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Causal \u2014 interest rates directly affect equity valuations through discounted cash flow models. The relationship is well-documented in academic literature."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Partially \u2014 some yield curve movements may reflect simultaneous economic shocks. However, the predictive component (yield changes preceding equity returns) is well-established."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Partially \u2014 interest rate sensitivity is captured by some equity factors (e.g., duration). However, the yield curve itself is not a factor in the current system."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If yield curve changes have zero correlation with equity returns at any horizon, or if the relationship reverses sign across different equity universes."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Yes \u2014 interest rate changes affect equity valuations over weeks to months as expectations adjust and financing conditions change."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 specific predictions about term spread changes and equity returns at H-10/H-20 can be tested and falsified."
+        }
+      ]
+    },
+    "CAND-B": {
+      "name": "Credit Stress / Credit Spreads",
+      "classification": "MODERATE",
+      "questions": [
+        {
+          "q": "Why should credit spread changes predict equity returns?",
+          "a": "Credit spreads reflect risk appetite and financing conditions. Widening spreads signal increasing risk aversion, which may precede equity underperformance."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Partially causal \u2014 credit spreads reflect financing conditions that affect equity valuations. However, the relationship may be largely correlational (both driven by underlying economic conditions)."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Yes \u2014 credit spreads and equity returns may move simultaneously in response to economic shocks. The predictive component is less clear than for yield curves."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Yes \u2014 credit spreads may be largely explained by volatility (BR-E2AFD3AC901A). Must test whether credit spread IC is incremental to volatility IC."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If credit spread changes have zero incremental predictive power beyond volatility regime features."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Moderate \u2014 credit conditions affect equity returns over weeks to months, but the specific horizon is less clearly defined than for yield curves."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 specific predictions about OAS changes and equity returns can be tested. However, the overlap with volatility must be explicitly addressed."
+        }
+      ]
+    },
+    "CAND-C": {
+      "name": "Sector x Macro Interaction",
+      "classification": "STRONG",
+      "questions": [
+        {
+          "q": "Why should sector interactions predict equity returns?",
+          "a": "Different sectors have fundamentally different exposures to macroeconomic factors. This heterogeneity is well-documented and economically intuitive."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Causal \u2014 sector exposures to macro factors are driven by business models, cost structures, and revenue sources. These are fundamental economic relationships."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Partially \u2014 sector-macro relationships may be contemporaneous. However, the predictive component (macro conditions preceding sector-specific returns) is well-established."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Partially \u2014 sector effects may be captured by sector ETFs or sector factors. However, the current system does not model sectors separately."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If sector-specific models do not outperform pooled models, or if sector interactions have no incremental predictive power."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Yes \u2014 macro conditions affect sectors over weeks to months as economic expectations adjust."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 specific predictions about sector-macro interactions can be tested. The hypothesis must define which macro factors and which sectors to test."
+        }
+      ]
+    },
+    "CAND-D": {
+      "name": "Horizon-Aware Momentum",
+      "classification": "WEAK",
+      "questions": [
+        {
+          "q": "Why should momentum have different effects at different horizons?",
+          "a": "Momentum may reflect different information at different horizons. However, the economic mechanism for why momentum would be stronger at H-5 than H-10 is not clearly defined."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Speculative \u2014 horizon mismatch is a modeling observation, not an economic mechanism. The hypothesis needs to be reframed as an economic question."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Not applicable \u2014 this is a horizon-specific question, not a contemporaneous relationship."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Yes \u2014 momentum is already captured in the existing feature set (MOM_5D, MOM_10D, MOM_20D). This candidate tests whether the horizon matters, but the mechanism is unclear."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If momentum IC is identical across all horizons, or if horizon effects are not consistent across time periods."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Unclear \u2014 the economic rationale for why momentum would be stronger at H-5 than H-10 is not well-defined."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 the hypothesis can be tested and falsified. However, the mechanism is weak and may not be economically meaningful."
+        }
+      ]
+    },
+    "CAND-E": {
+      "name": "Regime-Conditional Prediction",
+      "classification": "MODERATE",
+      "questions": [
+        {
+          "q": "Why should predictive relationships change across regimes?",
+          "a": "Market relationships are not stationary. Economic conditions change, and predictive effects may be regime-dependent. This is economically intuitive."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Moderate \u2014 regime conditionality is economically intuitive but the specific mechanism (which relationships change and why) needs to be defined."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Partially \u2014 regime classification may be contemporaneous with returns. Must ensure regime classification is PIT-compatible."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Partially \u2014 regime effects may be captured by volatility regime features. Must test whether regime-conditional models improve over regime-feature models."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If regime-conditional models do not outperform unconditional models, or if regime interactions have no incremental predictive power."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Yes \u2014 regime changes affect equity returns over weeks to months as market conditions adjust."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 specific predictions about regime-conditional relationships can be tested. However, the hypothesis must define which regimes and which relationships to test."
+        }
+      ]
+    },
+    "CAND-F": {
+      "name": "Nonlinear Feature Interactions",
+      "classification": "WEAK",
+      "questions": [
+        {
+          "q": "Why should feature interactions predict equity returns?",
+          "a": "Economic relationships are often nonlinear. However, the specific interactions that should be predictive are not clearly defined."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Speculative \u2014 interactions are a statistical concept, not an economic mechanism. The hypothesis needs to be tied to specific economic stories."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Not applicable \u2014 this is a modeling question, not a contemporaneous relationship."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Yes \u2014 interactions may be captured by tree-based models. Must test whether explicit interaction features improve over tree-based models."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If interaction features have no incremental IC beyond main effects, or if tree-based models do not outperform linear models."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Not applicable \u2014 this is a modeling question, not a horizon-specific hypothesis."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Partially \u2014 the hypothesis can be tested, but the mechanism is weak and the specific interactions are not pre-defined."
+        }
+      ]
+    },
+    "CAND-G": {
+      "name": "Momentum Decay & Reversal",
+      "classification": "MODERATE",
+      "questions": [
+        {
+          "q": "Why should momentum decay predictably?",
+          "a": "Momentum profits may reflect temporary mispricing that decays as information is incorporated. This is a well-documented phenomenon in academic finance."
+        },
+        {
+          "q": "Is the mechanism causal, correlational, or speculative?",
+          "a": "Moderate \u2014 momentum decay is well-documented but the specific predictive channel is less clear. The hypothesis tests whether decay is predictable, not why it occurs."
+        },
+        {
+          "q": "Could the relationship be contemporaneous?",
+          "a": "Not applicable \u2014 this is a horizon-specific question, not a contemporaneous relationship."
+        },
+        {
+          "q": "Could the effect be explained by an existing factor?",
+          "a": "Yes \u2014 momentum is already captured in the existing feature set. This candidate tests whether decay is predictable, but the mechanism is a refinement of existing momentum research."
+        },
+        {
+          "q": "What observation would falsify the mechanism?",
+          "a": "If momentum does not decay across horizons, or if decay pattern is not consistent across time periods."
+        },
+        {
+          "q": "Does the expected horizon make economic sense?",
+          "a": "Yes \u2014 momentum decay over weeks to months is consistent with information incorporation and overreaction correction."
+        },
+        {
+          "q": "Is the hypothesis specific enough to fail?",
+          "a": "Yes \u2014 specific predictions about momentum decay can be tested. However, the hypothesis must pre-register the decay functional form to avoid fishing."
+        }
+      ]
+    }
+  },
+  "summary": {
+    "STRONG": [
+      "CAND-A",
+      "CAND-C"
+    ],
+    "MODERATE": [
+      "CAND-B",
+      "CAND-E",
+      "CAND-G"
+    ],
+    "WEAK": [
+      "CAND-D",
+      "CAND-F"
+    ],
+    "SPECULATIVE": []
+  }
+}

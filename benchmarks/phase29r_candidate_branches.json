@@ -1,0 +1,280 @@
+{
+  "candidate_set_id": "CAND-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "total_candidates": 7,
+  "candidates": [
+    {
+      "candidate_id": "CAND-A",
+      "name": "Yield Curve / Term Structure",
+      "research_question": "Do changes in the shape or level of the Treasury yield curve contain information about future equity or sector returns at intermediate horizons?",
+      "economic_mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations. The yield curve reflects market expectations about future economic conditions and monetary policy.",
+      "testable_hypothesis_family": [
+        "Term spread (10Y-2Y) changes predict equity returns at H-10/H-20",
+        "Yield level changes predict sector-specific returns",
+        "Curve steepening/flattening regimes affect cross-sectional equity performance"
+      ],
+      "expected_directional_relationship": "Rising term spread (steepening) -> positive equity returns; Falling term spread (flattening) -> negative equity returns. Sectors with high duration (technology, utilities) more sensitive.",
+      "justified_horizons": [
+        "H-10",
+        "H-20",
+        "H-40"
+      ],
+      "required_data_domains": [
+        "US Treasury yields (2Y, 5Y, 10Y, 30Y)",
+        "Term spreads (10Y-2Y, 30Y-10Y)",
+        "Daily yield changes"
+      ],
+      "expected_pit_challenges": [
+        "Treasury yields are published daily with minimal delay (PIT_NATIVE)",
+        "No revision risk for yields",
+        "Weekend/holiday alignment with equity data",
+        "Need to handle Treasury market holidays that differ from equity markets"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso for linear term structure effects",
+        "Potential interaction with sector classification"
+      ],
+      "falsification_criteria": [
+        "If term spread changes have no correlation with equity returns at any horizon",
+        "If yield level changes show opposite sign across different equity universes",
+        "If the effect disappears after controlling for volatility regime"
+      ],
+      "overlap_with_existing": "LOW \u2014 no yield curve features exist in current system",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-001"
+    },
+    {
+      "candidate_id": "CAND-B",
+      "name": "Credit Stress / Credit Spreads",
+      "research_question": "Do changes in credit conditions predict medium-horizon equity returns or changes in cross-sectional equity performance?",
+      "economic_mechanism": "Credit spreads reflect risk appetite, financing stress, expected default conditions, and macroeconomic deterioration. Widening spreads signal increasing risk aversion, which may precede equity underperformance.",
+      "testable_hypothesis_family": [
+        "High Yield OAS changes predict equity returns at H-10/H-20",
+        "Investment Grade OAS changes predict defensive sector outperformance",
+        "Credit stress regime changes affect cross-sectional equity rankings"
+      ],
+      "expected_directional_relationship": "Rising credit spreads -> negative equity returns; Falling credit spreads -> positive equity returns. Financial and cyclical sectors more sensitive.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "High Yield OAS (Option-Adjusted Spread)",
+        "Investment Grade OAS",
+        "Spread changes (daily)"
+      ],
+      "expected_pit_challenges": [
+        "Credit spreads published daily with minimal delay",
+        "No revision risk for spread levels",
+        "May be highly correlated with volatility (potential redundancy)",
+        "Need to verify data availability for full research period"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso for linear credit spread effects",
+        "Potential interaction with volatility regime"
+      ],
+      "falsification_criteria": [
+        "If credit spread changes have no correlation with equity returns",
+        "If the effect is entirely explained by volatility regime (BR-E2AFD3AC901A)",
+        "If credit spreads show opposite signs across universes"
+      ],
+      "overlap_with_existing": "MODERATE \u2014 may overlap with volatility branch if credit stress and volatility are highly correlated",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-002"
+    },
+    {
+      "candidate_id": "CAND-C",
+      "name": "Sector x Macro Interaction",
+      "research_question": "Do macroeconomic conditions affect sectors differently, producing predictive information that disappears when all equities are modeled as a homogeneous universe?",
+      "economic_mechanism": "Different sectors have different exposures to macroeconomic factors: interest-rate sensitivity (utilities, real estate), energy sensitivity (energy, industrials), growth sensitivity (technology, consumer discretionary). This heterogeneity may create conditional predictive effects.",
+      "testable_hypothesis_family": [
+        "Volatility regime has different predictive power across sectors",
+        "Momentum effects are stronger in some sectors than others",
+        "Sector-specific features improve predictions within sectors"
+      ],
+      "expected_directional_relationship": "Direction depends on the specific macro factor and sector. For volatility: defensive sectors (utilities, staples) may benefit from high volatility; cyclical sectors (technology, consumer discretionary) may suffer.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "Sector classification for each equity (GICS or equivalent)",
+        "Sector-level aggregations of existing features",
+        "Sector-specific momentum and volatility features"
+      ],
+      "expected_pit_challenges": [
+        "Sector classification may change over time (GICS reclassifications)",
+        "Need to ensure sector labels are PIT-compatible",
+        "Sector membership may have survivorship bias",
+        "Small sectors may have insufficient observations"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso with sector interaction features",
+        "Potential sector-specific models (separate model per sector)"
+      ],
+      "falsification_criteria": [
+        "If sector-specific models do not outperform pooled models",
+        "If sector interactions have no incremental predictive power",
+        "If sector effects are not consistent across time periods"
+      ],
+      "overlap_with_existing": "LOW \u2014 sector heterogeneity is a distinct dimension from the volatility branch",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-003"
+    },
+    {
+      "candidate_id": "CAND-D",
+      "name": "Horizon-Aware Momentum",
+      "research_question": "Did earlier negative or weak momentum results occur because the tested prediction horizon was mismatched to the mechanism?",
+      "economic_mechanism": "Momentum may decay or reverse across different horizons. Short-term momentum (H-5) may reflect different information than intermediate-term momentum (H-10/H-20). The optimal horizon for momentum prediction may depend on the specific momentum signal and market conditions.",
+      "testable_hypothesis_family": [
+        "Momentum features have different predictive power at H-5 vs H-10 vs H-20",
+        "Short-term momentum reverses at longer horizons",
+        "Combining momentum across horizons improves predictions"
+      ],
+      "expected_directional_relationship": "Short-term momentum (H-5) may be positive; longer-term momentum (H-20) may be negative or weaker. The relationship may be non-monotonic.",
+      "justified_horizons": [
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-40"
+      ],
+      "required_data_domains": [
+        "Price returns at multiple lookback windows",
+        "Momentum features at multiple horizons",
+        "No new external data required"
+      ],
+      "expected_pit_challenges": [
+        "All features derivable from existing price data",
+        "No PIT risk \u2014 pure price-based features",
+        "Risk of horizon fishing must be managed through pre-registration"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso for linear horizon effects",
+        "Potential multi-horizon feature combinations"
+      ],
+      "falsification_criteria": [
+        "If momentum IC is identical across all horizons",
+        "If horizon-specific momentum shows opposite signs consistently",
+        "If multi-horizon combinations do not improve over single-horizon momentum"
+      ],
+      "overlap_with_existing": "MODERATE \u2014 legacy HYP-MOM tested momentum at multiple horizons. This candidate reframes as a horizon-mismatch hypothesis.",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-004"
+    },
+    {
+      "candidate_id": "CAND-E",
+      "name": "Regime-Conditional Prediction",
+      "research_question": "Do predictive relationships change systematically across economically interpretable market regimes?",
+      "economic_mechanism": "Market relationships are not stationary. Predictive effects may be strong in some regimes (e.g., high volatility) and weak or reversed in others (e.g., low volatility). Regime-aware models could adapt to changing market conditions.",
+      "testable_hypothesis_family": [
+        "Momentum IC is higher in high-volatility regimes",
+        "Volatility regime features interact with other features",
+        "Regime-conditional models outperform unconditional models"
+      ],
+      "expected_directional_relationship": "Direction depends on the specific regime and feature. For momentum: may be stronger in low-volatility regimes (trending markets). For volatility: may be stronger in high-volatility regimes.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "Regime classification (volatility, trend, credit stress)",
+        "Regime-conditional feature interactions",
+        "No new external data required if using existing regime definitions"
+      ],
+      "expected_pit_challenges": [
+        "Regime classification must be PIT-compatible (no future information)",
+        "Regime definitions must be pre-registered to avoid fishing",
+        "Small regime samples may lack statistical power"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso with regime interaction features",
+        "Potential regime-specific models"
+      ],
+      "falsification_criteria": [
+        "If regime-conditional models do not outperform unconditional models",
+        "If regime interactions have no incremental predictive power",
+        "If regime effects are not consistent across time periods"
+      ],
+      "overlap_with_existing": "MODERATE \u2014 builds on volatility branch regime features, but tests regime-dependent relationships rather than regime features as predictors",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-005"
+    },
+    {
+      "candidate_id": "CAND-F",
+      "name": "Nonlinear Feature Interactions",
+      "research_question": "Do feature interactions (e.g., volatility x momentum) contain predictive information beyond individual features?",
+      "economic_mechanism": "Economic relationships are often nonlinear. For example, momentum may work differently in high-volatility vs low-volatility environments. Interactions capture these conditional effects.",
+      "testable_hypothesis_family": [
+        "Volatility x momentum interaction improves predictions",
+        "Feature interactions have incremental IC beyond main effects",
+        "Tree-based models capture interactions that linear models miss"
+      ],
+      "expected_directional_relationship": "Direction depends on the specific interaction. For volatility x momentum: may be positive in some regimes, negative in others.",
+      "justified_horizons": [
+        "H-10",
+        "H-20"
+      ],
+      "required_data_domains": [
+        "Interaction features (products of existing features)",
+        "No new external data required"
+      ],
+      "expected_pit_challenges": [
+        "Interaction features increase dimensionality",
+        "Risk of overfitting with many interactions",
+        "Must pre-register specific interactions to avoid fishing"
+      ],
+      "likely_model_requirements": [
+        "ElasticNet for sparse interaction selection",
+        "HistGradientBoosting/LightGBM for automatic interaction detection"
+      ],
+      "falsification_criteria": [
+        "If interaction features have no incremental IC beyond main effects",
+        "If tree-based models do not outperform linear models",
+        "If interactions are not consistent across time periods"
+      ],
+      "overlap_with_existing": "LOW \u2014 interactions are a distinct modeling dimension",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-006"
+    },
+    {
+      "candidate_id": "CAND-G",
+      "name": "Momentum Decay & Reversal",
+      "research_question": "Does momentum predictability decay systematically over time, and does short-term momentum reverse at longer horizons?",
+      "economic_mechanism": "Momentum profits may reflect temporary mispricing that decays as information is incorporated. Short-term momentum may reverse as overreaction corrects. The decay pattern may be predictable.",
+      "testable_hypothesis_family": [
+        "Momentum IC decays monotonically from H-5 to H-40",
+        "Short-term momentum (H-5) reverses at H-20/H-40",
+        "Momentum decay rate is predictable using volatility or other features"
+      ],
+      "expected_directional_relationship": "Positive momentum at H-5, weakening at H-10, potentially negative at H-20/H-40. Decay rate may vary by volatility regime.",
+      "justified_horizons": [
+        "H-5",
+        "H-10",
+        "H-20",
+        "H-40"
+      ],
+      "required_data_domains": [
+        "Price returns at multiple horizons",
+        "No new external data required"
+      ],
+      "expected_pit_challenges": [
+        "All features derivable from existing price data",
+        "No PIT risk",
+        "Must pre-register decay functional form to avoid fishing"
+      ],
+      "likely_model_requirements": [
+        "Ridge/Lasso for linear decay effects",
+        "Potential nonlinear decay models"
+      ],
+      "falsification_criteria": [
+        "If momentum does not decay across horizons",
+        "If short-term momentum does not reverse",
+        "If decay pattern is not consistent across time periods"
+      ],
+      "overlap_with_existing": "MODERATE \u2014 overlaps with CAND-D (Horizon-Aware Momentum) but focuses specifically on decay dynamics rather than horizon mismatch",
+      "estimated_experiment_budget": 20,
+      "addresses_gap": "GAP-004"
+    }
+  ]
+}

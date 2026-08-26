@@ -1,0 +1,75 @@
+{
+  "gap_map_id": "GAPS-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "gaps": [
+    {
+      "gap_id": "GAP-001",
+      "name": "Interest-Rate Transmission",
+      "question": "Do changes in Treasury yields or yield curve shape predict equity returns at intermediate horizons?",
+      "why_unanswered": "ORBIT has no interest-rate features. Legacy HYP-MAC used vol_30 and log_dv_med_20 but these are not interest-rate specific. No yield curve data has been acquired.",
+      "relevant_prior_evidence": "HYP-MAC partially confirmed (IC 0.0197) using macro-like features. Volatility branch shows regime information has predictive value.",
+      "material_improvement_potential": "HIGH \u2014 interest rates are a primary driver of equity valuations via discount rates. If yield changes predict sector returns, this could complement the volatility branch.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "STRONG \u2014 discount rate transmission is well-established in finance theory"
+    },
+    {
+      "gap_id": "GAP-002",
+      "name": "Credit Conditions",
+      "question": "Do credit spreads or credit stress indicators predict medium-horizon equity returns?",
+      "why_unanswered": "No credit spread data in current dataset. Legacy hypotheses did not address credit conditions.",
+      "relevant_prior_evidence": "None directly. Indirectly, volatility regime persistence (BR-E2AFD3AC901A) suggests market stress regimes may be predictive.",
+      "material_improvement_potential": "MODERATE \u2014 credit spreads reflect risk appetite and financing conditions, but may be correlated with volatility.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "MODERATE \u2014 credit spreads reflect multiple economic forces; isolating the predictive component requires careful feature design"
+    },
+    {
+      "gap_id": "GAP-003",
+      "name": "Sector Heterogeneity",
+      "question": "Do macroeconomic conditions affect sectors differently, creating predictive information that disappears when all equities are modeled as homogeneous?",
+      "why_unanswered": "ORBIT currently models all equities in a pooled universe. No sector-specific features or sector-conditional models exist.",
+      "relevant_prior_evidence": "Phase 11-2 universe comparisons showed some variation across universes. HYP-XSEC partially confirmed (IC 0.0264) using cross-sectional features.",
+      "material_improvement_potential": "HIGH \u2014 if sectors respond differently to macro conditions, sector-aware models could significantly improve predictions.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "MODERATE \u2014 sector heterogeneity is well-documented but the specific predictive channel needs to be defined carefully"
+    },
+    {
+      "gap_id": "GAP-004",
+      "name": "Horizon Mismatch for Non-Volatility Features",
+      "question": "Did earlier negative or weak momentum results occur because the tested prediction horizon was mismatched to the mechanism?",
+      "why_unanswered": "Legacy HYP-MOM was PARTIALLY_CONFIRMED (IC 0.0142) but the horizon-mismatch hypothesis was not rigorously tested. B001 branch was never executed.",
+      "relevant_prior_evidence": "HYP-MOM partially confirmed at H-5/H-10/H-20. Phase 16 showed momentum alone is insufficient for trading.",
+      "material_improvement_potential": "MODERATE \u2014 if momentum has different optimal horizons than volatility, this could inform multi-horizon modeling.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "WEAK \u2014 horizon mismatch is a modeling question, not an economic mechanism. Must be reframed as an economic hypothesis."
+    },
+    {
+      "gap_id": "GAP-005",
+      "name": "Regime-Conditional Prediction",
+      "question": "Do predictive relationships change systematically across economically interpretable market regimes?",
+      "why_unanswered": "Phase 13a explored regime detection but with limited success. The volatility branch uses regime features as predictors but does not test regime-dependent relationships.",
+      "relevant_prior_evidence": "Volatility regime persistence (BR-E2AFD3AC901A) suggests regime features are predictive. Phase 22-R regime model assessment: RESEARCH_JUSTIFIED.",
+      "material_improvement_potential": "HIGH \u2014 if relationships are regime-dependent, regime-aware models could outperform static models.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "MODERATE \u2014 regime conditionality is economically intuitive but requires careful definition of what constitutes a 'regime'"
+    },
+    {
+      "gap_id": "GAP-006",
+      "name": "Nonlinear Feature Interactions",
+      "question": "Do feature interactions (e.g., volatility x momentum) contain predictive information beyond individual features?",
+      "why_unanswered": "ORBIT has primarily used linear models. Tree-based models were approved in Phase 22-R but not used for confirmation. No interaction features have been tested.",
+      "relevant_prior_evidence": "Phase 22-R approved ElasticNet, HistGradientBoosting, LightGBM for general toolbox. These models can capture interactions.",
+      "material_improvement_potential": "MODERATE \u2014 interactions may capture regime-dependent effects but increase model complexity and overfitting risk.",
+      "duplicates_existing": false,
+      "mechanism_clarity": "WEAK \u2014 interactions are a statistical concept, not an economic mechanism. Must be tied to specific economic stories."
+    }
+  ],
+  "gap_prioritization_rationale": [
+    "GAP-001 (Interest Rates): Highest priority \u2014 clear economic mechanism, no existing coverage, data likely available",
+    "GAP-003 (Sector Heterogeneity): High priority \u2014 could unlock conditional prediction, builds on existing data",
+    "GAP-005 (Regime-Conditional): High priority \u2014 builds on volatility branch success, regime model justified",
+    "GAP-002 (Credit Conditions): Moderate priority \u2014 economically meaningful but may overlap with volatility",
+    "GAP-006 (Interactions): Moderate priority \u2014 technical improvement but lacks economic mechanism",
+    "GAP-004 (Horizon Mismatch): Lowest priority \u2014 reframing needed, may not be a distinct mechanism"
+  ]
+}

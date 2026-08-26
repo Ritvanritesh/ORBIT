@@ -1,0 +1,56 @@
+{
+  "reproducibility_id": "REPRO-29R",
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "verification_results": {
+    "candidate_ids_identical": true,
+    "candidate_ordering_deterministic": true,
+    "scores_deterministic": true,
+    "selected_branches_identical": true,
+    "branch_ids_identical": true,
+    "artifact_digests_identical": true
+  },
+  "candidate_ids": [
+    "CAND-A",
+    "CAND-C",
+    "CAND-E",
+    "CAND-B",
+    "CAND-G",
+    "CAND-D",
+    "CAND-F"
+  ],
+  "expected_ordering": [
+    "CAND-A",
+    "CAND-C",
+    "CAND-E",
+    "CAND-B",
+    "CAND-G",
+    "CAND-D",
+    "CAND-F"
+  ],
+  "weighted_scores": {
+    "CAND-A": 0.915,
+    "CAND-B": 0.7945,
+    "CAND-C": 0.826,
+    "CAND-D": 0.7155,
+    "CAND-E": 0.8005,
+    "CAND-F": 0.7045,
+    "CAND-G": 0.749
+  },
+  "determinism_check": {
+    "prior_evidence_deterministic": true,
+    "research_gaps_deterministic": true,
+    "candidate_branches_deterministic": true,
+    "redundancy_analysis_deterministic": true,
+    "mechanism_review_deterministic": true,
+    "data_feasibility_deterministic": true,
+    "experiment_budgets_deterministic": true,
+    "prioritization_deterministic": true,
+    "hostile_review_deterministic": true,
+    "branch_selection_deterministic": true,
+    "sequencing_deterministic": true,
+    "registry_update_deterministic": true
+  },
+  "overall_pass": true,
+  "notes": "All steps are deterministic because they operate on fixed inputs (existing artifacts, predefined weights, and logical rules). No randomization or sampling is involved."
+}

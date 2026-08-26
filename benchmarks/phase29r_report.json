@@ -1,0 +1,36 @@
+{
+  "phase": "29R",
+  "timestamp": "2026-08-26T14:32:12.503269+00:00",
+  "verdict": "A",
+  "gate": "GREEN",
+  "selected_branches": [
+    {
+      "branch_id": "BR-A1B2C3D4E5F6",
+      "name": "Yield Curve / Term Structure",
+      "priority": 1
+    },
+    {
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "name": "Sector x Macro Interaction",
+      "priority": 2
+    },
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "name": "Regime-Conditional Prediction",
+      "priority": 3
+    }
+  ],
+  "candidate_count": {
+    "total": 7,
+    "selected": 3,
+    "deferred": 2,
+    "rejected": 2
+  },
+  "top_research_gap_addressed": "GAP-001: Interest-Rate Transmission to Equity Returns",
+  "adversarial_tests": "18/18 PASS",
+  "reproducibility": "PASS",
+  "historical_artifacts_modified": "NO",
+  "volatility_branch_modified": "NO",
+  "oos_data_accessed": "NO",
+  "next_step": "Phase 30-R data acquisition for Priority 1 and Priority 2 branches (after approval)"
+}
