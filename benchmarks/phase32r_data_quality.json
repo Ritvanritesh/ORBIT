@@ -1,0 +1,95 @@
+{
+  "quality_id": "QUAL-32R",
+  "phase": "32R",
+  "timestamp": "2026-08-27T08:07:11.699586+00:00",
+  "series_quality": {
+    "DGS3MO": {
+      "total_rows": 11736,
+      "null_count": 491,
+      "missing_percentage": 0.04183708248125426,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.0,
+      "max_value": 17.01,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "DGS1": {
+      "total_rows": 16866,
+      "null_count": 719,
+      "missing_percentage": 0.042630143483932174,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.04,
+      "max_value": 17.31,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "DGS2": {
+      "total_rows": 13106,
+      "null_count": 551,
+      "missing_percentage": 0.0420418129101175,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.09,
+      "max_value": 16.95,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "DGS5": {
+      "total_rows": 16866,
+      "null_count": 719,
+      "missing_percentage": 0.042630143483932174,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.19,
+      "max_value": 16.27,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "DGS10": {
+      "total_rows": 16866,
+      "null_count": 719,
+      "missing_percentage": 0.042630143483932174,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.52,
+      "max_value": 15.84,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "DGS30": {
+      "total_rows": 12921,
+      "null_count": 544,
+      "missing_percentage": 0.04210200448881665,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": 0.99,
+      "max_value": 15.21,
+      "has_negative": false,
+      "quality_status": "PASS"
+    },
+    "T10Y2Y": {
+      "total_rows": 13107,
+      "null_count": 551,
+      "missing_percentage": 0.042038605325398645,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": -2.41,
+      "max_value": 2.91,
+      "has_negative": true,
+      "quality_status": "PASS"
+    },
+    "T10Y3M": {
+      "total_rows": 11648,
+      "null_count": 483,
+      "missing_percentage": 0.04146634615384615,
+      "duplicate_dates": 0,
+      "is_sorted": true,
+      "min_value": -1.89,
+      "max_value": 5.18,
+      "has_negative": true,
+      "quality_status": "PASS"
+    }
+  }
+}

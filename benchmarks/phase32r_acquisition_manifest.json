@@ -1,0 +1,177 @@
+{
+  "manifest_id": "ACQ-32R",
+  "phase": "32R",
+  "timestamp": "2026-08-27T08:07:11.699586+00:00",
+  "source": "FRED",
+  "download_method": "Direct CSV from fred.stlouisfed.org",
+  "series": {
+    "DGS3MO": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS3MO_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS3MO.parquet",
+      "raw_hash": "deb67e7378beeb84ab2b1f7536f2d5895134d6bccc282f77d464ea00168a42d9",
+      "parsed_hash": "70d4d3d4de7936c8b1c32c25fc60f2ff5f1fea6a0cb15992f87ca1a2d7ebb631",
+      "rows": 11736,
+      "date_range": {
+        "start": "1981-09-01",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "DGS1": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS1_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS1.parquet",
+      "raw_hash": "340e03281487b0adcbf516f0b67a6835557b98dd3579b5426e84b7b948c1fd18",
+      "parsed_hash": "df61597c29bae3ce153b8ce714529dfd28992c018cf4a79f9e045f88291ce2f2",
+      "rows": 16866,
+      "date_range": {
+        "start": "1962-01-02",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "DGS2": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS2_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS2.parquet",
+      "raw_hash": "0934914091bda2854a01f131b39974ae957ab2af4916ac74a9690553551091ec",
+      "parsed_hash": "1ee0456339de97b998b07ff27ed4877054e0bc7d1496afac03055c3813f667ea",
+      "rows": 13106,
+      "date_range": {
+        "start": "1976-06-01",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "DGS5": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS5_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS5.parquet",
+      "raw_hash": "a19ba6c0b42f501e2c6372e6a9560c12986d14e6b6ae81ba590566836ee24ae5",
+      "parsed_hash": "96e43730ffbcb5bd297451ecd092307d70ddc2d6888edd8f6e4efb409ba772a4",
+      "rows": 16866,
+      "date_range": {
+        "start": "1962-01-02",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "DGS10": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS10_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS10.parquet",
+      "raw_hash": "3fba763522cc48a38e66794ed132fb21deafa5a8b1fc0951e27b1b79ba5415d7",
+      "parsed_hash": "f62fa9a6d08176c9b3ef5d3d9ab5d20a2ad900af695bc0e00ea98becd380623b",
+      "rows": 16866,
+      "date_range": {
+        "start": "1962-01-02",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "DGS30": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS30_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\DGS30.parquet",
+      "raw_hash": "42de93919237db243cb965abb7f7c1026bf7a6c0aeb0c63f6395eb430f2cd789",
+      "parsed_hash": "e2a70b91580266668d24202f585844b243d4de322a826a0a0c521dc8ac1755fa",
+      "rows": 12921,
+      "date_range": {
+        "start": "1977-02-15",
+        "end": "2026-08-25"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "T10Y2Y": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\T10Y2Y_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\T10Y2Y.parquet",
+      "raw_hash": "dca67e2a45639972864bf1db4a65c622dcceb362055da927ec5188d6bf94e5ec",
+      "parsed_hash": "87d7b7ca987e99ad9eff8faf1e54ae0c051196c69cdf93984b2fea46b96260e8",
+      "rows": 13107,
+      "date_range": {
+        "start": "1976-06-01",
+        "end": "2026-08-26"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    },
+    "T10Y3M": {
+      "status": "DOWNLOADED",
+      "raw_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\T10Y3M_raw.csv",
+      "parsed_file": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\normalized\\macro\\fred_treasury\\T10Y3M.parquet",
+      "raw_hash": "fb7bc231a816bdfae00d92ab753943fca0e3d57cbca7cd61f193b6f5188ff890",
+      "parsed_hash": "617b8d973fae36911ed6b99d65d8e32ecd3bcd106c9e0c26984325f6fa4603c3",
+      "rows": 11648,
+      "date_range": {
+        "start": "1982-01-04",
+        "end": "2026-08-26"
+      },
+      "columns": [
+        "observation_date",
+        "value",
+        "series_id",
+        "provider",
+        "snapshot_id",
+        "vintage_note"
+      ],
+      "download_timestamp": "2026-08-27T08:07:11.699586+00:00"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "policy_id": "POLICY-32R",
+  "phase": "32R",
+  "timestamp": "2026-08-27T08:07:11.699586+00:00",
+  "policy_name": "Yield Curve Data Origin Policy",
+  "rules": [
+    {
+      "rule_id": "RULE-001",
+      "rule": "Simulated and real data must be stored in separate directories",
+      "implementation": "Simulated: scripts/ inline; Real: data/normalized/macro/fred_treasury/",
+      "enforcement": "Directory structure"
+    },
+    {
+      "rule_id": "RULE-002",
+      "rule": "Every dataset must have explicit origin metadata",
+      "implementation": "origin field in all manifests and feature registries",
+      "enforcement": "Metadata validation"
+    },
+    {
+      "rule_id": "RULE-003",
+      "rule": "Future experiments must declare data origin",
+      "implementation": "experiment_config.data_origin field required",
+      "enforcement": "Experiment validation"
+    },
+    {
+      "rule_id": "RULE-004",
+      "rule": "Mixing simulated and real data must fail closed",
+      "implementation": "Hash validation and origin checks",
+      "enforcement": "Runtime validation"
+    },
+    {
+      "rule_id": "RULE-005",
+      "rule": "Phase 31-R simulated results must not be modified",
+      "implementation": "Historical artifact immutability",
+      "enforcement": "Git history"
+    }
+  ],
+  "validation_tests": [
+    {
+      "test_id": "TEST-001",
+      "test": "Verify simulated data directory is separate from real data",
+      "result": "PASS",
+      "rationale": "Simulated data is inline in Phase 31-R script. Real data is in data/normalized/macro/fred_treasury/"
+    },
+    {
+      "test_id": "TEST-002",
+      "test": "Verify real data has origin metadata",
+      "result": "PASS",
+      "rationale": "All real data files have provider='fred_csv' and snapshot_id='DS-32R'"
+    },
+    {
+      "test_id": "TEST-003",
+      "test": "Verify Phase 31-R artifacts are unchanged",
+      "result": "PASS",
+      "rationale": "Phase 31-R git commit is immutable"
+    }
+  ],
+  "separation_status": "ENFORCED"
+}

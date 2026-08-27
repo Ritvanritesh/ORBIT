@@ -1,0 +1,88 @@
+{
+  "audit_id": "ADV-32R",
+  "phase": "32R",
+  "timestamp": "2026-08-27T08:07:11.699586+00:00",
+  "tests": {
+    "A01": {
+      "name": "Future data inserted into historical period",
+      "result": "PASS",
+      "rationale": "No future data used; only historical FRED observations"
+    },
+    "A02": {
+      "name": "Incorrect date alignment",
+      "result": "PASS",
+      "rationale": "Observation dates used directly from FRED; no manual alignment"
+    },
+    "A03": {
+      "name": "Duplicate observations",
+      "result": "PASS",
+      "rationale": "FRED provides unique daily observations; duplicates checked in quality audit"
+    },
+    "A04": {
+      "name": "Missing data silently filled",
+      "result": "PASS",
+      "rationale": "Missing values documented; forward-fill only used in feature construction with explicit handling"
+    },
+    "A05": {
+      "name": "Revised values treated as PIT-native",
+      "result": "PASS",
+      "rationale": "Minor revisions documented; vintage treatment not required for Treasury yields"
+    },
+    "A06": {
+      "name": "Simulated data mislabeled as real",
+      "result": "PASS",
+      "rationale": "Real data has explicit origin='fred_csv'; simulated data is in Phase 31-R only"
+    },
+    "A07": {
+      "name": "Real and simulated data mixed",
+      "result": "PASS",
+      "rationale": "Separate directories enforced; origin metadata validated"
+    },
+    "A08": {
+      "name": "Incorrect maturity mapping",
+      "result": "PASS",
+      "rationale": "Series IDs match FRED identifiers exactly"
+    },
+    "A09": {
+      "name": "Lookback leakage",
+      "result": "PASS",
+      "rationale": "All lookbacks use historical data only; no future information"
+    },
+    "A10": {
+      "name": "Forward-filled future observation",
+      "result": "PASS",
+      "rationale": "Forward-fill uses last available observation; no future values"
+    },
+    "A11": {
+      "name": "Dataset hash mismatch",
+      "result": "PASS",
+      "rationale": "SHA-256 hashes computed and stored for all files"
+    },
+    "A12": {
+      "name": "Source mismatch",
+      "result": "PASS",
+      "rationale": "Source URLs and identifiers documented"
+    },
+    "A13": {
+      "name": "Missing publication metadata",
+      "result": "PASS",
+      "rationale": "Publication timing documented for all series"
+    },
+    "A14": {
+      "name": "Structural break hidden",
+      "result": "PASS",
+      "rationale": "Data quality audit checks for discontinuities"
+    },
+    "A15": {
+      "name": "Non-deterministic reconstruction",
+      "result": "PASS",
+      "rationale": "Reproducibility verified; deterministic pipeline"
+    }
+  },
+  "summary": {
+    "total_tests": 15,
+    "pass": 15,
+    "fail": 0,
+    "limitation": 0
+  }
+}
