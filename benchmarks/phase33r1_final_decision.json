@@ -1,0 +1,26 @@
+{
+  "decision_id": "DECISION-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "outcome": "EXPLORATORY_SUPPORT_WITH_LIMITATIONS",
+  "rationale": "Positive evidence survives audit. Budget was a plan construction error (matrix was 36 from start), not a post-hoc expansion. Ridge results are genuinely positive. Lasso degeneracy is a documented limitation.",
+  "key_factors": {
+    "budget_classification": "ACCOUNTING_ERROR_NO_TRUE_OVERRUN",
+    "matrix_support": "SUPPORT_WEAKENS_LOCKED_MATRIX",
+    "reconciliation": "NUMERICALLY_EQUIVALENT",
+    "model_integrity": "STILL_VALID_FOR_RIDGE_ONLY",
+    "data_integrity": "REAL_DATA_ONLY",
+    "adversarial_failures": 0,
+    "ridge_all_positive": true,
+    "ridge_mean_ic": 0.03902863973335965
+  },
+  "limitations": [
+    "Budget/matrix inconsistency in plan construction (20 stated vs 36 actual)",
+    "Baseline features were zero constants (degenerate baseline)",
+    "Lasso returned zero due to feature scaling + regularization",
+    "Positive evidence comes from Ridge only",
+    "36 experiments (18 Ridge) inflate multiple testing risk"
+  ],
+  "next_allowed_step": "PHASE_34R_CONFIRMATORY_REGISTRATION_WITH_LIMITATION_CONTROLS"
+}

@@ -1,0 +1,92 @@
+{
+  "analysis_id": "FIRST20-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "experiment_count": 20,
+  "experiment_ids": [
+    "EXP-001",
+    "EXP-002",
+    "EXP-003",
+    "EXP-004",
+    "EXP-005",
+    "EXP-006",
+    "EXP-007",
+    "EXP-008",
+    "EXP-009",
+    "EXP-010",
+    "EXP-011",
+    "EXP-012",
+    "EXP-013",
+    "EXP-014",
+    "EXP-015",
+    "EXP-016",
+    "EXP-017",
+    "EXP-018",
+    "EXP-019",
+    "EXP-020"
+  ],
+  "mean_ic_yc": 0.017022182835289935,
+  "mean_ic_baseline": 0.0,
+  "mean_incremental_ic": 0.017022182835289935,
+  "median_incremental_ic": 0.011702629326877694,
+  "std_incremental_ic": 0.01814050905800793,
+  "positive_experiments": 20,
+  "total_universe_experiments": 40,
+  "positive_proportion": 0.5,
+  "effect_size": {
+    "cohens_d": 0.938351993367886
+  },
+  "statistical_test": {
+    "test": "One-sample t-test (H0: mean incremental IC = 0)",
+    "t_statistic": 4.090181512560563,
+    "p_value": 0.0006235711280059117,
+    "n_experiments": 20
+  },
+  "horizon_breakdown": {
+    "5": {
+      "mean": 0.014883725549323065,
+      "n": 12
+    },
+    "10": {
+      "mean": 0.02022986876424024,
+      "n": 8
+    }
+  },
+  "model_breakdown": {
+    "Ridge": {
+      "mean": 0.03404436567057987,
+      "n": 10
+    },
+    "Lasso": {
+      "mean": 0.0,
+      "n": 10
+    }
+  },
+  "feature_group_breakdown": {
+    "LEVEL": {
+      "mean": 0.013496912449539922,
+      "n": 4
+    },
+    "SLOPE": {
+      "mean": 0.02219359186533467,
+      "n": 4
+    },
+    "CURVATURE": {
+      "mean": 0.016250104528620316,
+      "n": 4
+    },
+    "CHANGE": {
+      "mean": 0.017504558272509844,
+      "n": 4
+    },
+    "REGIME": {
+      "mean": 0.011702629326877694,
+      "n": 2
+    },
+    "ALL_YC": {
+      "mean": 0.019628864794012144,
+      "n": 2
+    }
+  },
+  "status": "COMPUTABLE"
+}

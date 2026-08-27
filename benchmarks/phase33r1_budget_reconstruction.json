@@ -1,0 +1,38 @@
+{
+  "audit_id": "BUDGET-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "budget_stated": 20,
+  "matrix_count": 36,
+  "total_in_plan_field": 36,
+  "matrix_composition": {
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "feature_groups": [
+      "ALL_YC",
+      "CHANGE",
+      "CURVATURE",
+      "LEVEL",
+      "REGIME",
+      "SLOPE"
+    ],
+    "models": [
+      "Lasso",
+      "Ridge"
+    ],
+    "expected_cartesian_product": 36,
+    "actual_matrix_size": 36
+  },
+  "amendment_found": false,
+  "discrepancy_analysis": {
+    "budget_equals_matrix": false,
+    "matrix_exceeds_budget": true,
+    "excess_experiments": 16,
+    "root_cause": "PLAN_CONSTRUCTION_ERROR: The experiment matrix was constructed as a full Cartesian product (3 horizons x 6 feature groups x 2 models = 36) but the budget field was set to 20. The matrix and budget were inconsistent from plan creation."
+  },
+  "classification": "ACCOUNTING_ERROR_NO_TRUE_OVERRUN",
+  "justification": "The 36 experiments were ALL specified in the locked experiment matrix BEFORE execution. No experiments were added after results were observed. The runner executed exactly the locked matrix. The budget field (20) was inconsistent with the matrix size (36) from the start. This is a plan construction error, not a post-hoc expansion."
+}

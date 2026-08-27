@@ -1,0 +1,23 @@
+{
+  "audit_id": "POST-AUDIT-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "hashes": {
+    "phase33r_plan.json": "4eb60bf606961d1972bfc6ff963068414f0de03d8f124dbe4a9c5b7feb9b5a18",
+    "phase33r_results.json": "ae8ae6fbfb6862a6a0a4f9d6fe5ec225a4a038470f4a3b11119288960450671a",
+    "phase33r_preflight.json": "9d33f5888318581122e2df9fd97d504fc724600e02998ccfb8041f6d509a5f6b",
+    "phase33r_checkpoint_5.json": "f6e2255c0eae419747d5b6c5c5678146d5237bd0cf91b002e05b10bc6bf8025c",
+    "phase33r_checkpoint_10.json": "b972e3ca994f7d56ca502fd60988f4f1a8666fed14b684634823902ff585b8b2",
+    "phase33r_checkpoint_15.json": "9fa0b119e3bae33e2d7e4410bbeae98094f2dc15661f2626c5c1b0f352492359",
+    "phase33r_incremental_value.json": "bc0ef601a6e807a18b9bd4a130423fbe6ef32b6226f3e0440624b423ee11778e",
+    "phase33r_temporal_stability.json": "5c28f11878a20ed45b1933452439db664fa9670930c271784f250cd3bce1a599",
+    "phase33r_feature_redundancy.json": "c4d3e56b05e750ff56d3a43a0d22a7a1add0e37553b01e1fd13b9de55d030d42",
+    "phase33r_statistics.json": "54bdd4b2eff1367bb5260aab82b39af0f77028ebc7cd250cf2741031f44689fb",
+    "phase33r_evidence_scorecard.json": "c2566de3e2a58068faf09537796f14e3b04ed855c766c97dd8fdfc37f2bdd801",
+    "phase33r_adversarial.json": "3a5ad0021f3486988be27790882887c3ee0e193bec46d191afa064231c7147ab",
+    "phase33r_reproducibility.json": "7371cdba07e438c37fc293cf24fdfc46da5b503892b406c4ffdd96278f82b596",
+    "phase33r_branch_decision.json": "6b8944fe27e908f158a6a680f6afef238ffd670c0806883063cc8e9cdea3c740",
+    "phase33r_audit.json": "e395edad032556b0d181465860684ac58170fa068a9bdcde39fec99aa7706179"
+  },
+  "all_unchanged": true
+}

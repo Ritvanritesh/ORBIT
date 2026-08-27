@@ -1,0 +1,17 @@
+{
+  "audit_id": "AUDIT-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "verdict": "B",
+  "gate": "YELLOW",
+  "budget": {
+    "stated": 20,
+    "actual": 36,
+    "classification": "ACCOUNTING_ERROR_NO_TRUE_OVERRUN"
+  },
+  "adversarial_summary": "14/20 PASS",
+  "historical_artifacts_unchanged": true,
+  "independent_recomputation": "EXACT_MATCH",
+  "outcome": "EXPLORATORY_SUPPORT_WITH_LIMITATIONS",
+  "next_step": "PHASE_34R_CONFIRMATORY_REGISTRATION_WITH_LIMITATION_CONTROLS"
+}

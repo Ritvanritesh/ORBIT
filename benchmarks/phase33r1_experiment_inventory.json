@@ -1,0 +1,980 @@
+{
+  "inventory_id": "INV-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "total_experiments": 36,
+  "experiments": [
+    {
+      "experiment_id": "EXP-001",
+      "execution_order": 1,
+      "horizon": 5,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.025554761329391686,
+      "mean_ic_yc": 0.025554761329391686,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "execution_order": 2,
+      "horizon": 5,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-003",
+      "execution_order": 3,
+      "horizon": 5,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.03926839331775461,
+      "mean_ic_yc": 0.03926839331775461,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-004",
+      "execution_order": 4,
+      "horizon": 5,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-005",
+      "execution_order": 5,
+      "horizon": 5,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.024778162963095172,
+      "mean_ic_yc": 0.024778162963095172,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-006",
+      "execution_order": 6,
+      "horizon": 5,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-007",
+      "execution_order": 7,
+      "horizon": 5,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.026340400739855628,
+      "mean_ic_yc": 0.026340400739855628,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-008",
+      "execution_order": 8,
+      "horizon": 5,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-009",
+      "execution_order": 9,
+      "horizon": 5,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.02340525865375539,
+      "mean_ic_yc": 0.02340525865375539,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-010",
+      "execution_order": 10,
+      "horizon": 5,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-011",
+      "execution_order": 11,
+      "horizon": 5,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.03925772958802429,
+      "mean_ic_yc": 0.03925772958802429,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-012",
+      "execution_order": 12,
+      "horizon": 5,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-013",
+      "execution_order": 13,
+      "horizon": 10,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.028432888468768007,
+      "mean_ic_yc": 0.028432888468768007,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-014",
+      "execution_order": 14,
+      "horizon": 10,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-015",
+      "execution_order": 15,
+      "horizon": 10,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.04950597414358407,
+      "mean_ic_yc": 0.04950597414358407,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-016",
+      "execution_order": 16,
+      "horizon": 10,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-017",
+      "execution_order": 17,
+      "horizon": 10,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.04022225515138608,
+      "mean_ic_yc": 0.04022225515138608,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-018",
+      "execution_order": 18,
+      "horizon": 10,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-019",
+      "execution_order": 19,
+      "horizon": 10,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.04367783235018374,
+      "mean_ic_yc": 0.04367783235018374,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-020",
+      "execution_order": 20,
+      "horizon": 10,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": true,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-021",
+      "execution_order": 21,
+      "horizon": 10,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.03922132990123084,
+      "mean_ic_yc": 0.03922132990123084,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-022",
+      "execution_order": 22,
+      "horizon": 10,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-023",
+      "execution_order": 23,
+      "horizon": 10,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.04756160879330085,
+      "mean_ic_yc": 0.04756160879330085,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-024",
+      "execution_order": 24,
+      "horizon": 10,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-025",
+      "execution_order": 25,
+      "horizon": 20,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.021997056037997766,
+      "mean_ic_yc": 0.021997056037997766,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-026",
+      "execution_order": 26,
+      "horizon": 20,
+      "feature_group": "LEVEL",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-027",
+      "execution_order": 27,
+      "horizon": 20,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0567251015402398,
+      "mean_ic_yc": 0.0567251015402398,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-028",
+      "execution_order": 28,
+      "horizon": 20,
+      "feature_group": "SLOPE",
+      "features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-029",
+      "execution_order": 29,
+      "horizon": 20,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.03831833611296655,
+      "mean_ic_yc": 0.03831833611296655,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-030",
+      "execution_order": 30,
+      "horizon": 20,
+      "feature_group": "CURVATURE",
+      "features": [
+        "YC_CURVATURE"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-031",
+      "execution_order": 31,
+      "horizon": 20,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.03929582480172994,
+      "mean_ic_yc": 0.03929582480172994,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-032",
+      "execution_order": 32,
+      "horizon": 20,
+      "feature_group": "CHANGE",
+      "features": [
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-033",
+      "execution_order": 33,
+      "horizon": 20,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.04788136937488423,
+      "mean_ic_yc": 0.04788136937488423,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-034",
+      "execution_order": 34,
+      "horizon": 20,
+      "feature_group": "REGIME",
+      "features": [
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-035",
+      "execution_order": 35,
+      "horizon": 20,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Ridge",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.07107123193232498,
+      "mean_ic_yc": 0.07107123193232498,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 2,
+      "positive_proportion": 1.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    },
+    {
+      "experiment_id": "EXP-036",
+      "execution_order": 36,
+      "horizon": 20,
+      "feature_group": "ALL_YC",
+      "features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y",
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y",
+        "YC_CURVATURE",
+        "YC_CHANGE_5D_10Y",
+        "YC_CHANGE_10D_10Y",
+        "YC_CHANGE_20D_10Y",
+        "YC_SLOPE_CHANGE_5D",
+        "YC_LEVEL_ZSCORE_252",
+        "YC_REGIME_STEEPENER"
+      ],
+      "model": "Lasso",
+      "universes": [
+        "DS-EXP-050",
+        "DS-EXP-100"
+      ],
+      "data_origin": "REAL",
+      "result_available": true,
+      "mean_incremental_ic": 0.0,
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "positive_incremental": 0,
+      "positive_proportion": 0.0,
+      "in_locked_matrix": true,
+      "within_first_20": false,
+      "classification": "UNIQUE_AUTHORIZED"
+    }
+  ]
+}

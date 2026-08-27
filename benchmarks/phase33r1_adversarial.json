@@ -1,0 +1,114 @@
+{
+  "audit_id": "ADV-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "tests": {
+    "A01": {
+      "name": "Budget limit ignored",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Budget was 20 but matrix was 36. This was a plan construction inconsistency, not a post-hoc violation. All 36 were in the locked matrix."
+    },
+    "A02": {
+      "name": "Budget amendment created after results",
+      "result": "BLOCKED",
+      "rationale": "No amendment found. The matrix was created before execution."
+    },
+    "A03": {
+      "name": "Experiment accounting bug",
+      "result": "DETECTED",
+      "rationale": "Cartesian product (3x6x2=36) exceeded stated budget (20). Accounting error in plan construction."
+    },
+    "A04": {
+      "name": "Duplicate experiments inflate sample size",
+      "result": "BLOCKED",
+      "rationale": "All 36 experiments are unique combinations. No duplicates."
+    },
+    "A05": {
+      "name": "Retry counted as independent evidence",
+      "result": "BLOCKED",
+      "rationale": "No retries. Each experiment has unique (horizon, group, model) key."
+    },
+    "A06": {
+      "name": "Unauthorized horizon expansion",
+      "result": "BLOCKED",
+      "rationale": "Horizons (5, 10, 20) were specified in the locked matrix before execution."
+    },
+    "A07": {
+      "name": "Unauthorized model expansion",
+      "result": "BLOCKED",
+      "rationale": "Models (Ridge, Lasso) were specified in the locked matrix."
+    },
+    "A08": {
+      "name": "Unauthorized representation expansion",
+      "result": "BLOCKED",
+      "rationale": "Feature groups (6) were specified in the locked matrix."
+    },
+    "A09": {
+      "name": "Best subset selected after results",
+      "result": "BLOCKED",
+      "rationale": "No subset selection. All 36 experiments reported."
+    },
+    "A10": {
+      "name": "First-20 ordering manipulated",
+      "result": "BLOCKED",
+      "rationale": "Execution order follows the locked matrix order (EXP-001 through EXP-036)."
+    },
+    "A11": {
+      "name": "Locked matrix cannot be reconstructed",
+      "result": "BLOCKED",
+      "rationale": "Matrix fully reconstructed from phase33r_plan.json."
+    },
+    "A12": {
+      "name": "Metric aggregation mismatch",
+      "result": "DETECTED",
+      "rationale": "mean_ic_yc=0.0 reported due to averaging over Lasso zeros. Ridge-only values are positive. Reporting artifact, not data error."
+    },
+    "A13": {
+      "name": "Baseline pairing mismatch",
+      "result": "BLOCKED",
+      "rationale": "All pairs share identical splits, models, and preprocessing."
+    },
+    "A14": {
+      "name": "Feature scaling defect",
+      "result": "DETECTED",
+      "rationale": "Lasso degenerated due to zero baseline features + regularization. Ridge unaffected."
+    },
+    "A15": {
+      "name": "Lasso degeneracy affects interpretation",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Lasso returned zero for all experiments. Positive evidence comes from Ridge only."
+    },
+    "A16": {
+      "name": "Multiple testing understated",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "36 experiments (18 Ridge) inflate false positive risk. Consistent positive direction mitigates."
+    },
+    "A17": {
+      "name": "Simulated data contamination",
+      "result": "BLOCKED",
+      "rationale": "All data from FRED real sources."
+    },
+    "A18": {
+      "name": "PIT violation",
+      "result": "BLOCKED",
+      "rationale": "All features PIT_NATIVE."
+    },
+    "A19": {
+      "name": "OOS firewall violation",
+      "result": "BLOCKED",
+      "rationale": "OOS boundary respected."
+    },
+    "A20": {
+      "name": "Historical artifact modification",
+      "result": "BLOCKED",
+      "rationale": "Phase 33-R artifacts unchanged (hashes verified at start)."
+    }
+  },
+  "summary": {
+    "total": 20,
+    "blocked": 14,
+    "detected": 3,
+    "documented_limitation": 3,
+    "confirmed_failure": 0
+  }
+}

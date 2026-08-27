@@ -1,0 +1,19 @@
+{
+  "audit_id": "DATA-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "yield_curve_data_origin": "REAL",
+  "source": "FRED (Federal Reserve Economic Data)",
+  "pit_classification": "PIT_NATIVE",
+  "pit_rationale": "FRED publishes at 16:30 ET, available before next trading day",
+  "simulated_data_contamination": false,
+  "pit_violation": false,
+  "future_information_leak": false,
+  "oos_target_access": false,
+  "verification": {
+    "data_loaded_from": "data/normalized/macro/fred_treasury/",
+    "all_series_real": true,
+    "phase32r_approval_referenced": true
+  },
+  "classification": "REAL_DATA_ONLY"
+}

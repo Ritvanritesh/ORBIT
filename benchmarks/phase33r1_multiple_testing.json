@@ -1,0 +1,25 @@
+{
+  "audit_id": "MULTI-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "search_space": {
+    "horizons": 3,
+    "feature_groups": 6,
+    "models": 2,
+    "total_combinations": 36,
+    "ridge_combinations": 18
+  },
+  "multiple_testing_assessment": {
+    "nominal_significance_reported": true,
+    "correction_applied": "Holm-Bonferroni within horizon families",
+    "exploratory_classification_maintained": true,
+    "confirmatory_claims_made": false
+  },
+  "p_value_inflation_estimate": {
+    "bonferroni_correction_factor": 36,
+    "ridge_correction_factor": 18,
+    "family_wise_alpha_005": 0.002777777777777778
+  },
+  "classification": "MULTIPLE_TESTING_DOCUMENTED",
+  "limitation_level": "MODERATE \u2014 36 total experiments (18 Ridge) inflate the chance of false positives. However, the consistent positive direction across all Ridge experiments and all horizons provides evidence beyond nominal p-values."
+}

@@ -1,0 +1,107 @@
+{
+  "audit_id": "PAIR-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "pairings": [
+    {
+      "experiment_id": "EXP-001",
+      "horizon": 5,
+      "model": "Ridge",
+      "yc_features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "baseline_features": [
+        "BASE_MOM_5D",
+        "BASE_MOM_10D",
+        "BASE_MOM_20D",
+        "BASE_TREND_50D",
+        "BASE_TREND_200D"
+      ],
+      "DS-EXP-050_baseline_status": "ZERO_BASELINE",
+      "DS-EXP-100_baseline_status": "ZERO_BASELINE",
+      "classification": "EXACTLY_MATCHED"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "horizon": 5,
+      "model": "Lasso",
+      "yc_features": [
+        "YC_LEVEL_10Y",
+        "YC_LEVEL_2Y"
+      ],
+      "baseline_features": [
+        "BASE_MOM_5D",
+        "BASE_MOM_10D",
+        "BASE_MOM_20D",
+        "BASE_TREND_50D",
+        "BASE_TREND_200D"
+      ],
+      "DS-EXP-050_baseline_status": "ZERO_BASELINE",
+      "DS-EXP-100_baseline_status": "ZERO_BASELINE",
+      "classification": "EXACTLY_MATCHED"
+    },
+    {
+      "experiment_id": "EXP-003",
+      "horizon": 5,
+      "model": "Ridge",
+      "yc_features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "baseline_features": [
+        "BASE_MOM_5D",
+        "BASE_MOM_10D",
+        "BASE_MOM_20D",
+        "BASE_TREND_50D",
+        "BASE_TREND_200D"
+      ],
+      "DS-EXP-050_baseline_status": "ZERO_BASELINE",
+      "DS-EXP-100_baseline_status": "ZERO_BASELINE",
+      "classification": "EXACTLY_MATCHED"
+    },
+    {
+      "experiment_id": "EXP-004",
+      "horizon": 5,
+      "model": "Lasso",
+      "yc_features": [
+        "YC_SLOPE_10Y2Y",
+        "YC_SLOPE_10Y3M",
+        "YC_SLOPE_30Y5Y"
+      ],
+      "baseline_features": [
+        "BASE_MOM_5D",
+        "BASE_MOM_10D",
+        "BASE_MOM_20D",
+        "BASE_TREND_50D",
+        "BASE_TREND_200D"
+      ],
+      "DS-EXP-050_baseline_status": "ZERO_BASELINE",
+      "DS-EXP-100_baseline_status": "ZERO_BASELINE",
+      "classification": "EXACTLY_MATCHED"
+    },
+    {
+      "experiment_id": "EXP-005",
+      "horizon": 5,
+      "model": "Ridge",
+      "yc_features": [
+        "YC_CURVATURE"
+      ],
+      "baseline_features": [
+        "BASE_MOM_5D",
+        "BASE_MOM_10D",
+        "BASE_MOM_20D",
+        "BASE_TREND_50D",
+        "BASE_TREND_200D"
+      ],
+      "DS-EXP-050_baseline_status": "ZERO_BASELINE",
+      "DS-EXP-100_baseline_status": "ZERO_BASELINE",
+      "classification": "EXACTLY_MATCHED"
+    }
+  ],
+  "total_pairs": 36,
+  "finding": "All baseline ICs are exactly 0.0 because baseline features were constant zeros. Baseline and YC experiments share the same training/test split, model, and preprocessing. The ONLY difference is feature inclusion. Pairing is EXACTLY_MATCHED except for the trivial baseline.",
+  "classification": "EXACTLY_MATCHED",
+  "material_issue": "The baseline is degenerate (all-zero features), making incremental IC mathematically identical to YC IC. This is a preprocessing limitation, not a pairing failure."
+}

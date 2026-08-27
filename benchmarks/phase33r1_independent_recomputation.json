@@ -1,0 +1,30 @@
+{
+  "recomputation_id": "RECOMP-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "full_36": {
+    "mean_incremental_ic": 0.019514319866679824,
+    "median_incremental_ic": 0.010998528018998883,
+    "positive_experiments": 36,
+    "total_universe_experiments": 72,
+    "positive_rate": 0.5,
+    "t_statistic": 5.388374962939198,
+    "p_value": 4.94642218391323e-06,
+    "cohens_d": 0.9108016052001353
+  },
+  "ridge_only": {
+    "mean_ic": 0.03902863973335965,
+    "median_ic": 0.03926306145288945,
+    "count": 18,
+    "all_positive": true,
+    "t_statistic": 12.864026547742743,
+    "p_value": 3.4488011763783596e-10,
+    "cohens_d": 3.1199847192407666
+  },
+  "comparison_to_reported": {
+    "phase33r_reported_mean_incr": 0.019514,
+    "independent_mean_incr": 0.019514319866679824,
+    "match": true
+  },
+  "classification": "EXACT_MATCH"
+}

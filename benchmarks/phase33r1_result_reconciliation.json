@@ -1,0 +1,48 @@
+{
+  "reconciliation_id": "RECONCILE-33R.1",
+  "phase": "33R.1",
+  "timestamp": "2026-08-27T13:42:00.291448+00:00",
+  "comparison_table": [
+    {
+      "analysis": "Phase 33-R reported",
+      "experiment_count": 36,
+      "mean_yc_ic": 0.0,
+      "mean_baseline_ic": 0.0,
+      "mean_incremental_ic": 0.019514,
+      "median_incremental_ic": 0.010999,
+      "positive_rate": 0.5,
+      "statistical_support": "p=0.0"
+    },
+    {
+      "analysis": "Independent full recomputation",
+      "experiment_count": 36,
+      "mean_yc_ic": 0.019514319866679824,
+      "mean_baseline_ic": 0.0,
+      "mean_incremental_ic": 0.019514319866679824,
+      "median_incremental_ic": 0.010998528018998883,
+      "positive_rate": 0.5,
+      "statistical_support": "p=4.94642218391323e-06"
+    },
+    {
+      "analysis": "First authorized budget (20)",
+      "experiment_count": 20,
+      "mean_yc_ic": 0.017022182835289935,
+      "mean_baseline_ic": 0.0,
+      "mean_incremental_ic": 0.017022182835289935,
+      "median_incremental_ic": 0.011702629326877694,
+      "positive_rate": 0.5,
+      "statistical_support": "p=0.0006235711280059117"
+    },
+    {
+      "analysis": "Original locked matrix (36)",
+      "experiment_count": 36,
+      "mean_yc_ic": null,
+      "mean_baseline_ic": null,
+      "mean_incremental_ic": 0.019514319866679824,
+      "median_incremental_ic": 0.010998528018998883,
+      "positive_rate": 0.5,
+      "statistical_support": "SUPPORT_WEAKENS_LOCKED_MATRIX"
+    }
+  ],
+  "reconciliation_verdict": "NUMERICALLY_EQUIVALENT"
+}
