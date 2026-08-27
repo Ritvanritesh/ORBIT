@@ -1,0 +1,72 @@
+{
+  "analysis_id": "REDUN-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "feature_classifications": {
+    "YC_LEVEL_10Y": {
+      "max_correlation": 0.9677188197735105,
+      "mean_correlation": 0.23620429464383375,
+      "classification": "HIGHLY_REDUNDANT"
+    },
+    "YC_LEVEL_2Y": {
+      "max_correlation": 0.9677188197735105,
+      "mean_correlation": 0.25090604749351403,
+      "classification": "HIGHLY_REDUNDANT"
+    },
+    "YC_SLOPE_10Y2Y": {
+      "max_correlation": 0.8837586331503494,
+      "mean_correlation": 0.29048753151729567,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_SLOPE_10Y3M": {
+      "max_correlation": 0.8643126460816637,
+      "mean_correlation": 0.2375114200733658,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_SLOPE_30Y5Y": {
+      "max_correlation": 0.8837586331503494,
+      "mean_correlation": 0.28297307344452677,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_CURVATURE": {
+      "max_correlation": 0.6469204531130274,
+      "mean_correlation": 0.18786369884829562,
+      "classification": "INCREMENTALLY_INFORMATIVE"
+    },
+    "YC_CHANGE_5D_10Y": {
+      "max_correlation": 0.7071797136402745,
+      "mean_correlation": 0.17036389119394513,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_CHANGE_10D_10Y": {
+      "max_correlation": 0.7186999141810486,
+      "mean_correlation": 0.18814220237337131,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_CHANGE_20D_10Y": {
+      "max_correlation": 0.7186999141810487,
+      "mean_correlation": 0.17775388311922521,
+      "classification": "PARTIALLY_REDUNDANT"
+    },
+    "YC_SLOPE_CHANGE_5D": {
+      "max_correlation": 0.2229433232679862,
+      "mean_correlation": 0.0629227941682538,
+      "classification": "INCREMENTALLY_INFORMATIVE"
+    },
+    "YC_LEVEL_ZSCORE_252": {
+      "max_correlation": 0.49754981838773,
+      "mean_correlation": 0.1490558272021681,
+      "classification": "INCREMENTALLY_INFORMATIVE"
+    },
+    "YC_REGIME_STEEPENER": {
+      "max_correlation": 0.21390497284264023,
+      "mean_correlation": 0.1005874630111126,
+      "classification": "INCREMENTALLY_INFORMATIVE"
+    }
+  },
+  "correlation_matrix_shape": [
+    12,
+    12
+  ],
+  "mean_abs_correlation": 0.19456434392407565
+}

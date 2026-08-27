@@ -1,0 +1,1622 @@
+[
+  {
+    "experiment_id": "EXP-001",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.027095221769254253,
+        "p_value_yc": 1.7803275259747326e-18,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.027095221769254253
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.02401430088952912,
+        "p_value_yc": 1.972118912712618e-27,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.02401430088952912
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.025554761329391686,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.025554761329391686,
+      "median_incremental_ic": 0.025554761329391686,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-002",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-003",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.04045129919422851,
+        "p_value_yc": 3.4452568333536746e-39,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04045129919422851
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.03808548744128072,
+        "p_value_yc": 2.1236549306166864e-66,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.03808548744128072
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.03926839331775461,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.03926839331775461,
+      "median_incremental_ic": 0.03926839331775461,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-004",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-005",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.026945471737247696,
+        "p_value_yc": 2.7354771260207987e-18,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.026945471737247696
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.02261085418894265,
+        "p_value_yc": 1.6693350317790822e-24,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.02261085418894265
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.024778162963095172,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.024778162963095172,
+      "median_incremental_ic": 0.024778162963095172,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-006",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-007",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.02430892127807421,
+        "p_value_yc": 3.597058013423825e-15,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.02430892127807421
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.02837188020163705,
+        "p_value_yc": 1.2547580793153888e-37,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.02837188020163705
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.026340400739855628,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.026340400739855628,
+      "median_incremental_ic": 0.026340400739855628,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-008",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-009",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.017021996085130112,
+        "p_value_yc": 3.60458669844543e-08,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.017021996085130112
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.029788521222380668,
+        "p_value_yc": 2.6463520312854483e-41,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.029788521222380668
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.02340525865375539,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.02340525865375539,
+      "median_incremental_ic": 0.02340525865375539,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-010",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-011",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.038495131596491636,
+        "p_value_yc": 1.19193964125066e-35,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.038495131596491636
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.040020327579556945,
+        "p_value_yc": 3.955807156759154e-73,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.040020327579556945
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.03925772958802429,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.03925772958802429,
+      "median_incremental_ic": 0.03925772958802429,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-012",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 5,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244386,
+        "n_test": 104738,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 476275,
+        "n_test": 204118,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-013",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.029422299264445666,
+        "p_value_yc": 1.722650402015576e-21,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.029422299264445666
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.027443477673090345,
+        "p_value_yc": 2.7245132494149405e-35,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.027443477673090345
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.028432888468768007,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.028432888468768007,
+      "median_incremental_ic": 0.028432888468768007,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-014",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-015",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.04892855473261562,
+        "p_value_yc": 1.6880671337192178e-56,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04892855473261562
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.05008339355455252,
+        "p_value_yc": 2.0324777248580203e-113,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.05008339355455252
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.04950597414358407,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.04950597414358407,
+      "median_incremental_ic": 0.04950597414358407,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-016",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-017",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.04661787228266005,
+        "p_value_yc": 1.8935948360981792e-51,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04661787228266005
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.03382663802011211,
+        "p_value_yc": 1.0153029061607322e-52,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.03382663802011211
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.04022225515138608,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.04022225515138608,
+      "median_incremental_ic": 0.04022225515138608,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-018",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-019",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.044528265630586344,
+        "p_value_yc": 4.3110549989444624e-47,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.044528265630586344
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.042827399069781134,
+        "p_value_yc": 1.9970695655949875e-83,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.042827399069781134
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.04367783235018374,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.04367783235018374,
+      "median_incremental_ic": 0.04367783235018374,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-020",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-021",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.034539345387553794,
+        "p_value_yc": 5.269573326406974e-29,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.034539345387553794
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.04390331441490789,
+        "p_value_yc": 1.4086568633473293e-87,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04390331441490789
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.03922132990123084,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.03922132990123084,
+      "median_incremental_ic": 0.03922132990123084,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-022",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-023",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.05037467177178387,
+        "p_value_yc": 8.772037008185539e-60,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.05037467177178387
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.044748545814817825,
+        "p_value_yc": 6.5341776373764e-91,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.044748545814817825
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.04756160879330085,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.04756160879330085,
+      "median_incremental_ic": 0.04756160879330085,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-024",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 10,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 244211,
+        "n_test": 104663,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475935,
+        "n_test": 203973,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-025",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.024987647462537885,
+        "p_value_yc": 6.514548703591005e-16,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.024987647462537885
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.019006464613457646,
+        "p_value_yc": 9.607090636825836e-18,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.019006464613457646
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.021997056037997766,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.021997056037997766,
+      "median_incremental_ic": 0.021997056037997766,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-026",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "LEVEL",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-027",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.04884327766697668,
+        "p_value_yc": 3.134676732702563e-56,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04884327766697668
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.06460692541350291,
+        "p_value_yc": 2.7410712543285895e-187,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.06460692541350291
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0567251015402398,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0567251015402398,
+      "median_incremental_ic": 0.0567251015402398,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-028",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "SLOPE",
+    "features": [
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-029",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.030563509472237516,
+        "p_value_yc": 4.9379957057310916e-23,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.030563509472237516
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.04607316275369557,
+        "p_value_yc": 3.9598843534296386e-96,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04607316275369557
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.03831833611296655,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.03831833611296655,
+      "median_incremental_ic": 0.03831833611296655,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-030",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "CURVATURE",
+    "features": [
+      "YC_CURVATURE"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-031",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.037721650701925756,
+        "p_value_yc": 3.1455554054457182e-34,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.037721650701925756
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.04086999890153413,
+        "p_value_yc": 4.9609647264372615e-76,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.04086999890153413
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.03929582480172994,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.03929582480172994,
+      "median_incremental_ic": 0.03929582480172994,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-032",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "CHANGE",
+    "features": [
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-033",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.050023860627463355,
+        "p_value_yc": 6.768850461816234e-59,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.050023860627463355
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0457388781223051,
+        "p_value_yc": 9.143895098758332e-95,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0457388781223051
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.04788136937488423,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.04788136937488423,
+      "median_incremental_ic": 0.04788136937488423,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-034",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "REGIME",
+    "features": [
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  },
+  {
+    "experiment_id": "EXP-035",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Ridge",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.08224017150631747,
+        "p_value_yc": 2.909019457075888e-156,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.08224017150631747
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.05990229235833248,
+        "p_value_yc": 3.0156702010751085e-161,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.05990229235833248
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.07107123193232498,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.07107123193232498,
+      "median_incremental_ic": 0.07107123193232498,
+      "positive_incremental": 2,
+      "total_experiments": 2,
+      "positive_proportion": 1.0
+    }
+  },
+  {
+    "experiment_id": "EXP-036",
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "data_origin": "REAL",
+    "horizon": 20,
+    "feature_group": "ALL_YC",
+    "features": [
+      "YC_LEVEL_10Y",
+      "YC_LEVEL_2Y",
+      "YC_SLOPE_10Y2Y",
+      "YC_SLOPE_10Y3M",
+      "YC_SLOPE_30Y5Y",
+      "YC_CURVATURE",
+      "YC_CHANGE_5D_10Y",
+      "YC_CHANGE_10D_10Y",
+      "YC_CHANGE_20D_10Y",
+      "YC_SLOPE_CHANGE_5D",
+      "YC_LEVEL_ZSCORE_252",
+      "YC_REGIME_STEEPENER"
+    ],
+    "model": "Lasso",
+    "datasets": {
+      "DS-EXP-050": {
+        "status": "COMPLETED",
+        "n_train": 243861,
+        "n_test": 104513,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      },
+      "DS-EXP-100": {
+        "status": "COMPLETED",
+        "n_train": 475256,
+        "n_test": 203682,
+        "ic_yield_curve": 0.0,
+        "p_value_yc": NaN,
+        "ic_baseline": 0.0,
+        "p_value_base": NaN,
+        "incremental_ic": 0.0
+      }
+    },
+    "aggregate": {
+      "mean_ic_yc": 0.0,
+      "mean_ic_baseline": 0.0,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_incremental": 0,
+      "total_experiments": 2,
+      "positive_proportion": 0.0
+    }
+  }
+]

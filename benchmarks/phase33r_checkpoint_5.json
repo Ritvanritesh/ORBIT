@@ -1,0 +1,8 @@
+{
+  "decision": "CONTINUE",
+  "rationale": "Mean incremental IC=0.017920, positive proportion=60.00%",
+  "experiments_evaluated": 5,
+  "mean_incremental_ic": 0.017920263522048296,
+  "median_incremental_ic": 0.024778162963095172,
+  "positive_proportion": 0.6
+}

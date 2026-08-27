@@ -1,0 +1,54 @@
+{
+  "audit_id": "PREFLIGHT-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "data_origin": "REAL",
+  "simulated_data_allowed": false,
+  "oos_targets_accessible": false,
+  "phase31r_simulated_data_excluded": true,
+  "phase32r_data_status": "DATA_READY",
+  "phase32r_pit_native_count": 8,
+  "total_yield_curve_features": 12,
+  "branch": {
+    "branch_id": "BR-A1B2C3D4E5F6",
+    "branch_name": "Yield Curve / Term Structure",
+    "status_before_execution": "PROPOSED",
+    "research_question": "Do real yield curve and term structure features provide meaningful incremental predictive information for equity returns beyond ORBIT baseline features?",
+    "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations",
+    "hypothesis_family": "yield_curve_transmission"
+  },
+  "exploratory_budget": 20,
+  "allowed_models": [
+    "Ridge",
+    "Lasso"
+  ],
+  "allowed_horizons": [
+    5,
+    10,
+    20
+  ],
+  "allowed_universes": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "allowed_feature_sets": [
+    "YC_LEVEL_10Y",
+    "YC_LEVEL_2Y",
+    "YC_SLOPE_10Y2Y",
+    "YC_SLOPE_10Y3M",
+    "YC_SLOPE_30Y5Y",
+    "YC_CURVATURE",
+    "YC_CHANGE_5D_10Y",
+    "YC_CHANGE_10D_10Y",
+    "YC_CHANGE_20D_10Y",
+    "YC_SLOPE_CHANGE_5D",
+    "YC_LEVEL_ZSCORE_252",
+    "YC_REGIME_STEEPENER"
+  ],
+  "firewall": {
+    "historical_artifacts_modified": false,
+    "oos_targets_accessed": false,
+    "portfolio_metrics_calculated": false,
+    "confirmatory_branch_touched": false
+  }
+}

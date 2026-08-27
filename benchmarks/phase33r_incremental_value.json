@@ -1,0 +1,95 @@
+{
+  "analysis_id": "INCR-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "overall": {
+    "mean_incremental_ic": 0.019514319866679824,
+    "median_incremental_ic": 0.010998528018998883,
+    "std_incremental_ic": 0.021425434205720177,
+    "positive_experiments": 18,
+    "total_experiments": 36,
+    "positive_proportion": 0.5,
+    "ci_95_lower": 0.012515344692811233,
+    "ci_95_upper": 0.026513295040548415
+  },
+  "by_horizon": {
+    "5": {
+      "mean": 0.014883725549323065,
+      "median": 0.011702629326877694,
+      "n": 12,
+      "positive": 6
+    },
+    "10": {
+      "mean": 0.0207184907340378,
+      "median": 0.014216444234384003,
+      "n": 12,
+      "positive": 6
+    },
+    "20": {
+      "mean": 0.022940743316678603,
+      "median": 0.010998528018998883,
+      "n": 12,
+      "positive": 6
+    }
+  },
+  "by_model": {
+    "Ridge": {
+      "mean": 0.03902863973335965,
+      "median": 0.03926306145288945,
+      "n": 18,
+      "positive": 18
+    },
+    "Lasso": {
+      "mean": 0.0,
+      "median": 0.0,
+      "n": 18,
+      "positive": 0
+    }
+  },
+  "by_feature_group": {
+    "LEVEL": {
+      "mean": 0.012664117639359576,
+      "median": 0.010998528018998883,
+      "n": 6,
+      "positive": 3
+    },
+    "SLOPE": {
+      "mean": 0.02424991150026308,
+      "median": 0.019634196658877306,
+      "n": 6,
+      "positive": 3
+    },
+    "CURVATURE": {
+      "mean": 0.017219792371241303,
+      "median": 0.012389081481547586,
+      "n": 6,
+      "positive": 3
+    },
+    "CHANGE": {
+      "mean": 0.01821900964862822,
+      "median": 0.013170200369927814,
+      "n": 6,
+      "positive": 3
+    },
+    "REGIME": {
+      "mean": 0.018417992988311743,
+      "median": 0.011702629326877694,
+      "n": 6,
+      "positive": 3
+    },
+    "ALL_YC": {
+      "mean": 0.026315095052275018,
+      "median": 0.019628864794012144,
+      "n": 6,
+      "positive": 3
+    }
+  },
+  "best_configuration": {
+    "experiment_id": "EXP-035",
+    "horizon": 20,
+    "model": "Ridge",
+    "feature_group": "ALL_YC",
+    "incremental_ic": 0.07107123193232498
+  },
+  "best_justified_horizon": 20
+}

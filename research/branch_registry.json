@@ -205,15 +205,17 @@
       "research_question_id": "RQ-29R-001",
       "hypothesis_family": "yield_curve_transmission",
       "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations",
-      "status": "PROPOSED",
+      "status": "ACTIVE",
       "locked_plan_digest": null,
       "experiment_budget": 20,
-      "experiments_completed": 0,
-      "experiments_remaining": 20,
-      "exploratory_evidence": [],
+      "experiments_completed": 20,
+      "experiments_remaining": 0,
+      "exploratory_evidence": [
+        "phase33r_exploratory_support"
+      ],
       "review_decisions": [],
       "confirmatory_registrations": [],
-      "final_classification": null,
+      "final_classification": "EXPLORATORY_SUPPORT",
       "start_timestamp": null,
       "parent_evidence_references": [
         "phase29r_prior_evidence",
@@ -229,6 +231,15 @@
         "pit_risk": "LOW",
         "hostile_review": "15/15 PASS",
         "addresses_gap": "GAP-001"
+      },
+      "phase33r_result": {
+        "phase": "33R",
+        "timestamp": "2026-08-27T13:32:06.901603+00:00",
+        "outcome": "EXPLORATORY_SUPPORT",
+        "data_used": "REAL",
+        "mean_incremental_ic": 0.019514319866679824,
+        "positive_proportion": 0.5,
+        "next_step": "PHASE_34R_CONFIRMATORY_REGISTRATION"
       }
     },
     {
@@ -328,7 +339,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-26T14:32:12.503269+00:00",
+  "last_updated": "2026-08-27T13:32:06.901603+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

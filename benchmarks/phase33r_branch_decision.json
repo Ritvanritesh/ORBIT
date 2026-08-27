@@ -1,0 +1,23 @@
+{
+  "decision_id": "DECISION-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "outcome": "EXPLORATORY_SUPPORT",
+  "outcome_label": "Evidence is promising but limitations remain",
+  "metrics": {
+    "mean_incremental_ic": 0.019514319866679824,
+    "median_incremental_ic": 0.010998528018998883,
+    "positive_proportion": 0.5,
+    "positive_experiments": 18,
+    "total_experiments": 36,
+    "corrected_significance": true,
+    "meaningful_effect": true,
+    "pass_dimensions": 4,
+    "fail_dimensions": 0,
+    "adversarial_pass": 13
+  },
+  "recommendation": "Recommend confirmatory registration",
+  "data_used": "REAL",
+  "next_allowed_step": "PHASE_34R_CONFIRMATORY_REGISTRATION"
+}

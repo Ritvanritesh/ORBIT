@@ -1,0 +1,40 @@
+{
+  "analysis_id": "STAT-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "overall_test": {
+    "test": "One-sample t-test (H0: mean incremental IC = 0)",
+    "t_statistic": 5.388374962939198,
+    "p_value": 4.94642218391323e-06,
+    "n_experiments": 36,
+    "mean_ic": 0.019514319866679824,
+    "exploratory_note": "All p-values are exploratory, not confirmatory"
+  },
+  "by_horizon_corrected": {
+    "H-5": {
+      "nominal_p": 0.009123926145574944,
+      "corrected_p": 0.09123926145574944,
+      "n_experiments": 12
+    },
+    "H-10": {
+      "nominal_p": 0.008028524476994729,
+      "corrected_p": 0.08028524476994729,
+      "n_experiments": 12
+    },
+    "H-20": {
+      "nominal_p": 0.012179619626490916,
+      "corrected_p": 0.02435923925298183,
+      "n_experiments": 12
+    }
+  },
+  "effect_size": {
+    "cohens_d": 0.9108016052001353,
+    "interpretation": "Large"
+  },
+  "classification": {
+    "nominal_significance": "True",
+    "corrected_significance": true,
+    "exploratory_evidence": "True",
+    "meaningful_effect": true
+  }
+}

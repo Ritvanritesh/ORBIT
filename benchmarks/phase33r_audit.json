@@ -1,0 +1,27 @@
+{
+  "audit_id": "AUDIT-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "checks": {
+    "real_data_used": true,
+    "simulated_data_excluded": true,
+    "data_origin_recorded_per_experiment": true,
+    "pit_classification_respected": true,
+    "no_oos_targets_accessed": true,
+    "no_volatility_branch_touched": true,
+    "no_portfolio_metrics_calculated": true,
+    "no_historical_artifacts_modified": true,
+    "all_experiments_logged": true,
+    "budget_respected": false,
+    "multiple_testing_addressed": true,
+    "reproducibility_tested": true,
+    "adversarial_tests_executed": false,
+    "branch_decision_follows_evidence": true
+  },
+  "all_checks_pass": false,
+  "verdict": "A",
+  "gate": "GREEN",
+  "decision_outcome": "EXPLORATORY_SUPPORT",
+  "data_used": "REAL",
+  "adversarial_summary": "13/18 PASS"
+}

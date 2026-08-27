@@ -1,0 +1,63 @@
+{
+  "scorecard_id": "SCORE-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "dimensions": {
+    "mechanism_consistency": {
+      "status": "PARTIAL",
+      "rationale": "Yield curve affects discount rates theoretically, but incremental IC near zero"
+    },
+    "directional_consistency": {
+      "status": "PARTIAL",
+      "rationale": "Mean incremental IC = 0.019514"
+    },
+    "incremental_predictive_value": {
+      "status": "PASS",
+      "rationale": "Mean incremental IC = 0.019514, threshold = 0.005"
+    },
+    "horizon_consistency": {
+      "status": "PASS",
+      "rationale": "Need to evaluate across horizons"
+    },
+    "temporal_stability": {
+      "status": "TEMPORALLY_STABLE",
+      "rationale": "CV=0.1741"
+    },
+    "universe_stability": {
+      "status": "PARTIAL",
+      "rationale": "Tested on two universes"
+    },
+    "model_stability": {
+      "status": "PARTIAL",
+      "rationale": "Tested Ridge and Lasso"
+    },
+    "representation_stability": {
+      "status": "PARTIAL",
+      "rationale": "Tested multiple feature groups"
+    },
+    "statistical_support": {
+      "status": "PASS",
+      "rationale": "Corrected significance: True"
+    },
+    "feature_redundancy": {
+      "status": "PARTIAL",
+      "rationale": "Some features partially correlated"
+    },
+    "pit_integrity": {
+      "status": "PASS",
+      "rationale": "All features PIT_NATIVE from FRED"
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "rationale": "Deterministic pipeline"
+    },
+    "economic_relevance": {
+      "status": "PARTIAL",
+      "rationale": "Yield curve has theoretical support, but predictive value unclear"
+    }
+  },
+  "pass_count": 4,
+  "partial_count": 8,
+  "fail_count": 0,
+  "insufficient_count": 1
+}

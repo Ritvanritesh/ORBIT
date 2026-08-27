@@ -1,0 +1,104 @@
+{
+  "audit_id": "ADV-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "tests": {
+    "A01": {
+      "name": "Simulated data accidentally enters pipeline",
+      "result": "BLOCKED",
+      "rationale": "All data loaded from data/normalized/macro/fred_treasury/ with origin=REAL"
+    },
+    "A02": {
+      "name": "Real and simulated data mixed",
+      "result": "BLOCKED",
+      "rationale": "Separate directories enforced by Phase 32-R policy"
+    },
+    "A03": {
+      "name": "Future data leakage",
+      "result": "BLOCKED",
+      "rationale": "All features use current or historical observations only"
+    },
+    "A04": {
+      "name": "Incorrect PIT alignment",
+      "result": "BLOCKED",
+      "rationale": "FRED data published at 16:30 ET, available before next trading day"
+    },
+    "A05": {
+      "name": "Feature selected after observing results",
+      "result": "BLOCKED",
+      "rationale": "Feature groups locked in plan before execution"
+    },
+    "A06": {
+      "name": "Baseline mismatch",
+      "result": "BLOCKED",
+      "rationale": "Same training procedure, same data, only feature set differs"
+    },
+    "A07": {
+      "name": "Horizon fishing",
+      "result": "BLOCKED",
+      "rationale": "Horizons fixed at H-5, H-10, H-20 based on mechanism"
+    },
+    "A08": {
+      "name": "Model fishing",
+      "result": "BLOCKED",
+      "rationale": "Models fixed at Ridge and Lasso per plan"
+    },
+    "A09": {
+      "name": "Multiple testing ignored",
+      "result": "DETECTED",
+      "rationale": "Holm-Bonferroni correction applied; exploratory evidence noted"
+    },
+    "A10": {
+      "name": "One universe drives all results",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Results reported per universe; combined analysis shown"
+    },
+    "A11": {
+      "name": "One time period drives all results",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Temporal stability analysis performed"
+    },
+    "A12": {
+      "name": "One model drives all results",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Results reported per model"
+    },
+    "A13": {
+      "name": "Feature redundancy mistaken for new information",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Redundancy analysis performed"
+    },
+    "A14": {
+      "name": "Missing data creates artificial signal",
+      "result": "BLOCKED",
+      "rationale": "Rows with nulls dropped; forward-fill for gaps"
+    },
+    "A15": {
+      "name": "Dataset hash mismatch",
+      "result": "BLOCKED",
+      "rationale": "SHA-256 digests computed for all artifacts"
+    },
+    "A16": {
+      "name": "Non-reproducible experiment",
+      "result": "BLOCKED",
+      "rationale": "Deterministic pipeline, seed=42"
+    },
+    "A17": {
+      "name": "OOS firewall violation",
+      "result": "BLOCKED",
+      "rationale": "OOS boundary respected; no OOS targets accessed"
+    },
+    "A18": {
+      "name": "Historical artifact modification",
+      "result": "BLOCKED",
+      "rationale": "Phase 31-R artifacts not modified"
+    }
+  },
+  "summary": {
+    "total": 18,
+    "blocked": 13,
+    "detected": 1,
+    "documented_limitation": 4,
+    "fail": 0
+  }
+}

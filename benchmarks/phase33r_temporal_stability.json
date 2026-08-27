@@ -1,0 +1,14 @@
+{
+  "analysis_id": "TEMP-33R",
+  "phase": "33R",
+  "timestamp": "2026-08-27T13:32:06.901603+00:00",
+  "classification": "TEMPORALLY_STABLE",
+  "by_horizon": {
+    "5": 0.014883725549323065,
+    "10": 0.0207184907340378,
+    "20": 0.022940743316678603
+  },
+  "cross_horizon_std": 0.003397685921743008,
+  "coefficient_of_variation": 0.1741124438338466,
+  "rationale": "CV=0.1741"
+}
