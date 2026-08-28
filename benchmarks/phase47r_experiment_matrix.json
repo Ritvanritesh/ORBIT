@@ -1,0 +1,187 @@
+{
+  "timestamp": "2026-08-28T17:38:52.451930+00:00",
+  "budget": 20,
+  "digest": "29c27b8ffc0d4a1807de405ad4fc4a6df80c645ef28003cf79f23e2956888c2d",
+  "matrix": [
+    {
+      "id": "FIX-001",
+      "group": "A",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "FIX-002",
+      "group": "A",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 20
+    },
+    {
+      "id": "FIX-003",
+      "group": "A",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "FIX-004",
+      "group": "A",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 20
+    },
+    {
+      "id": "REG-005",
+      "group": "B",
+      "alpha": 0.1,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "REG-006",
+      "group": "B",
+      "alpha": 0.1,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "REG-007",
+      "group": "B",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "REG-008",
+      "group": "B",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "REG-009",
+      "group": "B",
+      "alpha": 10.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "REG-010",
+      "group": "B",
+      "alpha": 10.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "WIN-011",
+      "group": "C",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "WIN-012",
+      "group": "C",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "WIN-013",
+      "group": "C",
+      "alpha": 1.0,
+      "window": 500,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "WIN-014",
+      "group": "C",
+      "alpha": 1.0,
+      "window": 500,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "NRM-015",
+      "group": "D",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "NRM-016",
+      "group": "D",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "NRM-017",
+      "group": "D",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "rolling",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "NRM-018",
+      "group": "D",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "rolling",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "RSV-019",
+      "group": "E",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "050",
+      "horizon": 20
+    },
+    {
+      "id": "RSV-020",
+      "group": "E",
+      "alpha": 1.0,
+      "window": null,
+      "normalization": "global",
+      "universe": "100",
+      "horizon": 20
+    }
+  ]
+}

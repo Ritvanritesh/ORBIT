@@ -1,0 +1,13 @@
+{
+  "id": "CAND-RIDGE-FS001-001",
+  "model": "Ridge",
+  "alpha": 1.0,
+  "features": [
+    "YC_LEVEL",
+    "YC_SLOPE",
+    "YC_CURVATURE",
+    "YC_CHG_10D"
+  ],
+  "architecture": "pooled",
+  "feature_system": "FS-001"
+}

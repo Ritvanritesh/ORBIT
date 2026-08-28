@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-28T17:38:52.451930+00:00",
+  "evidence": {
+    "positive_mean_ic": false,
+    "positive_worst_partition": false,
+    "low_concentration": true,
+    "signal_distinguishable": true,
+    "universe_consistent": true,
+    "overall": "WEAK_OR_UNCERTAIN"
+  }
+}

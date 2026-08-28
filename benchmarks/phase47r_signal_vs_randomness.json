@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-28T17:38:52.451930+00:00",
+  "audit": {
+    "real_ic": 0.061098059181478474,
+    "feature_permutation_mean_ic": -0.0027282607302637147,
+    "label_permutation_mean_ic": -0.006721733215219651,
+    "timestamp_shift_ic": 0.07260984236005982,
+    "signal_distinguishable": true,
+    "classification": "SIGNAL_DISTINGUISHABLE_FROM_RANDOMNESS"
+  }
+}

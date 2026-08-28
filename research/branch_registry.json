@@ -473,6 +473,16 @@
         "cand_ic": -0.038074282773241146,
         "incr_vs_baseline": -0.08559567912194631
       }
+    },
+    {
+      "branch_id": "BR-B2C3D4E5F6A2",
+      "name": "Targeted Candidate Research",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T17:38:52.451930+00:00",
+      "result": {
+        "candidate": "CAND-RIDGE-FS001-001",
+        "evidence": "WEAK_OR_UNCERTAIN"
+      }
     }
   ],
   "prevention_rules": [
@@ -496,7 +506,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T17:14:46.312964+00:00",
+  "last_updated": "2026-08-28T17:38:52.451930+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

@@ -1,0 +1,163 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_feature_leakage",
+      "result": "BLOCKED",
+      "rationale": "All historical"
+    },
+    "A02": {
+      "name": "future_norm_leakage",
+      "result": "BLOCKED",
+      "rationale": "Norm fit on train"
+    },
+    "A03": {
+      "name": "centered_rolling",
+      "result": "BLOCKED",
+      "rationale": "Backward windows"
+    },
+    "A04": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "Time-ordered"
+    },
+    "A05": {
+      "name": "incorrect_temporal",
+      "result": "BLOCKED",
+      "rationale": "Pre-defined partitions"
+    },
+    "A06": {
+      "name": "post_hoc_selection",
+      "result": "BLOCKED",
+      "rationale": "Locked before execution"
+    },
+    "A07": {
+      "name": "hidden_alpha_search",
+      "result": "BLOCKED",
+      "rationale": "Alpha pre-defined"
+    },
+    "A08": {
+      "name": "hidden_rolling_search",
+      "result": "BLOCKED",
+      "rationale": "Window pre-defined"
+    },
+    "A09": {
+      "name": "unmatched_baseline",
+      "result": "BLOCKED",
+      "rationale": "Matched splits"
+    },
+    "A10": {
+      "name": "horizon_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Both horizons reported"
+    },
+    "A11": {
+      "name": "universe_contamination",
+      "result": "BLOCKED",
+      "rationale": "Separate eval"
+    },
+    "A12": {
+      "name": "duplicate_experiments",
+      "result": "BLOCKED",
+      "rationale": "All unique"
+    },
+    "A13": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Matrix=20"
+    },
+    "A14": {
+      "name": "target_shuffle",
+      "result": "BLOCKED",
+      "rationale": "Placebo PASS"
+    },
+    "A15": {
+      "name": "temporal_shuffle",
+      "result": "BLOCKED",
+      "rationale": "Not used"
+    },
+    "A16": {
+      "name": "feature_permutation",
+      "result": "BLOCKED",
+      "rationale": "Placebo PASS"
+    },
+    "A17": {
+      "name": "nondeterministic",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    },
+    "A18": {
+      "name": "coeff_error",
+      "result": "BLOCKED",
+      "rationale": "Verified"
+    },
+    "A19": {
+      "name": "incorrect_scaler",
+      "result": "BLOCKED",
+      "rationale": "Fit on train only"
+    },
+    "A20": {
+      "name": "perf_conc_masking",
+      "result": "BLOCKED",
+      "rationale": "Concentration LOW"
+    },
+    "A21": {
+      "name": "worst_period_omit",
+      "result": "BLOCKED",
+      "rationale": "All reported"
+    },
+    "A22": {
+      "name": "cherry_pick",
+      "result": "BLOCKED",
+      "rationale": "All results visible"
+    },
+    "A23": {
+      "name": "feature_freeze_violation",
+      "result": "BLOCKED",
+      "rationale": "FS-001 frozen"
+    },
+    "A24": {
+      "name": "new_feature_injection",
+      "result": "BLOCKED",
+      "rationale": "None"
+    },
+    "A25": {
+      "name": "model_class_injection",
+      "result": "BLOCKED",
+      "rationale": "Ridge only"
+    },
+    "A26": {
+      "name": "oos_access",
+      "result": "BLOCKED",
+      "rationale": "No OOS"
+    },
+    "A27": {
+      "name": "oos_ic_calc",
+      "result": "BLOCKED",
+      "rationale": "Not calculated"
+    },
+    "A28": {
+      "name": "confirmatory_exec",
+      "result": "BLOCKED",
+      "rationale": "Not executed"
+    },
+    "A29": {
+      "name": "registration_mod",
+      "result": "BLOCKED",
+      "rationale": "Immutable"
+    },
+    "A30": {
+      "name": "artifact_mod",
+      "result": "BLOCKED",
+      "rationale": "Additive"
+    },
+    "A31": {
+      "name": "report_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Results verified"
+    }
+  },
+  "summary": {
+    "total": 31,
+    "blocked": 31
+  }
+}
