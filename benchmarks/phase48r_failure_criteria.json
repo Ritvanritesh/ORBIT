@@ -1,0 +1,55 @@
+{
+  "conditions": [
+    {
+      "id": "F01",
+      "condition": "Primary incremental IC <= 0",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F02",
+      "condition": "Primary incremental IC <= +0.005",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F03",
+      "condition": "Statistical significance fails after correction",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F04",
+      "condition": "Material inconsistency across universes",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F05",
+      "condition": "Baseline integrity fails",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F06",
+      "condition": "PIT integrity fails",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F07",
+      "condition": "OOS data integrity fails",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F08",
+      "condition": "Implementation mismatch",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F09",
+      "condition": "Future leakage detected",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F10",
+      "condition": "Reproducibility fails",
+      "result": "CONFIRMATORY_FAIL"
+    }
+  ],
+  "frozen": true
+}

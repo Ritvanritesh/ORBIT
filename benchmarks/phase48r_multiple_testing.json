@@ -1,0 +1,12 @@
+{
+  "family_size": 2,
+  "correction": "Holm-Bonferroni",
+  "alpha": 0.05,
+  "primary_horizon": "H-10",
+  "universes": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "secondary_horizon": "H-20",
+  "secondary_role": "robustness_only"
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "limitations": {
+    "YC_LEVEL": "UNSTABLE",
+    "YC_SLOPE": "STABLE",
+    "YC_CURVATURE": "STABLE",
+    "YC_CHG_10D": "PARTIAL"
+  },
+  "note": "YC_LEVEL instability documented in Phase 47-R. Not removed per registration rules."
+}

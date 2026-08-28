@@ -1,0 +1,9 @@
+{
+  "config": {
+    "model": "Ridge",
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "random_state": 42
+  },
+  "digest": "d9ae433d135060ae0ee9ac99bb4f6de041c8ff69959278c593782530cae0c390"
+}

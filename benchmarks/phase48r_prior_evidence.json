@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "evidence": {
+    "phase44r": "FS-001 selected (4 features, 76% reduction vs full system)",
+    "phase45r": "LightGBM+FS-001 best aggregate but temporally unstable",
+    "phase46r": "Ridge+FS-001 temporally stable; LightGBM/HGB unstable",
+    "phase47r": "CAND-RIDGE-FS001-001 positive across all periods but decays",
+    "limitations": [
+      "TEMPORAL_SIGNAL_DECAY",
+      "YC_LEVEL_UNSTABLE"
+    ]
+  }
+}

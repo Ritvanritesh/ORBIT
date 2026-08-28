@@ -1,0 +1,10 @@
+{
+  "id": "HYP-CONF-FS001-001",
+  "candidate_id": "CAND-RIDGE-FS001-001",
+  "statement": "The frozen FS-001 yield curve feature system, evaluated using the frozen Ridge regression configuration, produces positive and practically meaningful predictive information for future equity returns on untouched confirmatory OOS data.",
+  "comparison": "IC(BASELINE + FS-001) - IC(BASELINE)",
+  "primary_threshold": 0.005,
+  "statistical_criterion": "p < 0.05 (Holm-Bonferroni)",
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "digest": "0bfde224372b7ebc84b728f2d30e80778eb76a451d4854737a231236ac2e0c1c"
+}

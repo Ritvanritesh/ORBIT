@@ -1,0 +1,11 @@
+{
+  "TEMPORAL_SIGNAL_DECAY": {
+    "observed_pattern": {
+      "early": 0.058,
+      "middle": 0.041,
+      "late": 0.012
+    },
+    "classification": "SECONDARY_DIAGNOSTIC",
+    "note": "Must not be hidden if aggregate OOS results are positive."
+  }
+}

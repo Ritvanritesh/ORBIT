@@ -1,0 +1,8 @@
+{
+  "config": {
+    "method": "StandardScaler",
+    "fit_on": "train_only",
+    "transform": "both"
+  },
+  "digest": "46022834c698405c9cb94731277a9549ed75d0f742ee565f41649cdc6ebf15f1"
+}

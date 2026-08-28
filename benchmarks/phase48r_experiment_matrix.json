@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "budget": 6,
+  "matrix": [
+    {
+      "id": "CONF-001",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "config": "baseline"
+    },
+    {
+      "id": "CONF-002",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "config": "baseline_plus_fs001"
+    },
+    {
+      "id": "CONF-003",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "config": "baseline"
+    },
+    {
+      "id": "CONF-004",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "config": "baseline_plus_fs001"
+    },
+    {
+      "id": "CONF-005",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "config": "baseline_plus_fs001"
+    },
+    {
+      "id": "CONF-006",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "config": "baseline_plus_fs001"
+    }
+  ],
+  "digest": "437a25fc72306562220e686d75b826a838e8bd4a1f6613a5c9cee5968f04bac7"
+}

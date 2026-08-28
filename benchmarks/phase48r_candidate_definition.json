@@ -1,0 +1,23 @@
+{
+  "id": "CAND-RIDGE-FS001-001",
+  "branch": "BR-C3D4E5F6A1B2",
+  "model": "Ridge",
+  "alpha": 1.0,
+  "preprocessing": "StandardScaler",
+  "feature_system": "FS-001",
+  "features": [
+    "YC_LEVEL",
+    "YC_SLOPE",
+    "YC_CURVATURE",
+    "YC_CHG_10D"
+  ],
+  "n_features": 4,
+  "architecture": "pooled",
+  "limitations": [
+    "TEMPORAL_SIGNAL_DECAY",
+    "YC_LEVEL_UNSTABLE"
+  ],
+  "frozen": true,
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "digest": "27705885c3a3b187e00a2f5ffd152c7f0539c2228c2f52850341533e34cf1e72"
+}

@@ -1,0 +1,8 @@
+{
+  "label": "fwd_return",
+  "definition": "(price[t+h] - price[t]) / price[t]",
+  "horizons": [
+    10,
+    20
+  ]
+}

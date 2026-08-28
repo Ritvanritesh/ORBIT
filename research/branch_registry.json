@@ -483,6 +483,34 @@
         "candidate": "CAND-RIDGE-FS001-001",
         "evidence": "WEAK_OR_UNCERTAIN"
       }
+    },
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "name": "Regime-Conditional Prediction (Confirmatory)",
+      "status": "CONFIRMATORY_REGISTERED",
+      "created": "2026-08-28T18:53:46.696958+00:00",
+      "candidate": "CAND-RIDGE-FS001-001",
+      "hypothesis": "HYP-CONF-FS001-001",
+      "registration_digest": "103d60be4ca71e7dbaba7b3c97fedee335793de42095528d96b4ce5c4e7f3072",
+      "limitations": [
+        "TEMPORAL_SIGNAL_DECAY",
+        "YC_LEVEL_UNSTABLE"
+      ],
+      "oos_status": "DATA_NOT_READY"
+    },
+    {
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "name": "Regime-Conditional Prediction (Confirmatory)",
+      "status": "CONFIRMATORY_REGISTERED",
+      "created": "2026-08-28T18:55:54.989678+00:00",
+      "candidate": "CAND-RIDGE-FS001-001",
+      "hypothesis": "HYP-CONF-FS001-001",
+      "registration_digest": "0ec14813613ce647ffda226c255568c75904bec82974fa4481706d4b84fbab5e",
+      "limitations": [
+        "TEMPORAL_SIGNAL_DECAY",
+        "YC_LEVEL_UNSTABLE"
+      ],
+      "oos_status": "DATA_NOT_READY"
     }
   ],
   "prevention_rules": [
@@ -506,7 +534,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T17:38:52.451930+00:00",
+  "last_updated": "2026-08-28T18:55:54.989678+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

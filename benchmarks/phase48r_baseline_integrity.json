@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "audit": {
+    "contains_real_features": true,
+    "non_degenerate": true,
+    "non_zero_variance": true,
+    "matched_samples_identical": true,
+    "preprocessing_identical": true,
+    "labels_identical": true,
+    "only_fs001_differs": true,
+    "digest": "84b8399aaca4df38968f559f5181659d3c7fb7bcdff977a1ac18d389ffcdb897"
+  }
+}

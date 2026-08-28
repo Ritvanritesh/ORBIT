@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-08-28T18:55:54.989678+00:00",
+  "freeze": {
+    "feature_manifest_digest": "482c589c2e1a44e30d3f266adf347e84cfe09a6b3b93b6551ecf6d2e143fd778",
+    "baseline_manifest_digest": "84b8399aaca4df38968f559f5181659d3c7fb7bcdff977a1ac18d389ffcdb897",
+    "model_config_digest": "d9ae433d135060ae0ee9ac99bb4f6de041c8ff69959278c593782530cae0c390",
+    "preprocessing_config_digest": "46022834c698405c9cb94731277a9549ed75d0f742ee565f41649cdc6ebf15f1",
+    "horizon_definition": "H-10 primary, H-20 secondary",
+    "universe_definition": "DS-EXP-050, DS-EXP-100",
+    "label_definition": "fwd_return, horizons [10, 20]",
+    "experiment_matrix_digest": "437a25fc72306562220e686d75b826a838e8bd4a1f6613a5c9cee5968f04bac7",
+    "success_criteria_digest": "2a06f38cc2caa5362248c0d4643b309aa67b35f5a8b5eab2baf92bc1899af6c8",
+    "failure_criteria_digest": "c304c5f2435c9aea701eac8a4b3b1a4c261707ed985fb63d416a5696fc9b834f",
+    "multiple_testing_digest": "48d64d79dd9138173a7af72a671ddfd259a3795b65ab4b5a9d0fd165f28c65d9",
+    "temporal_limitations_digest": "31e23e8286f6a352cf076103fdb0e70831f2df3b3b73945f656b3e58f1be240c",
+    "pit_integrity_digest": "d3e0ca56964e7222e45b4c3d09664fbe7624a26e32419f81626eabbed6a7886f",
+    "freeze_digest": "e3353cc62948894b20b57e4d1bc43cd2f2662a34eb36a53df871e1dca7f4853c"
+  }
+}

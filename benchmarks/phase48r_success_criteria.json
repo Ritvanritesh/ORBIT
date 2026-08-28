@@ -1,0 +1,13 @@
+{
+  "primary": {
+    "incremental_ic_threshold": 0.005,
+    "statistical_significance": 0.05,
+    "correction": "Holm-Bonferroni",
+    "family_size": 2,
+    "must_satisfy_both": true
+  },
+  "secondary": {
+    "horizon": "H-20",
+    "role": "robustness_only"
+  }
+}

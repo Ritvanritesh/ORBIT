@@ -1,0 +1,34 @@
+{
+  "version": "FS-001",
+  "features": [
+    {
+      "name": "YC_LEVEL",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "FRED DGS10",
+      "definition": "DGS10 level"
+    },
+    {
+      "name": "YC_SLOPE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "FRED DGS10-DGS2",
+      "definition": "DGS10 - DGS2"
+    },
+    {
+      "name": "YC_CURVATURE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "FRED DGS30-2*DGS10+DGS2",
+      "definition": "DGS30 - 2*DGS10 + DGS2"
+    },
+    {
+      "name": "YC_CHG_10D",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "FRED DGS10 10-day change",
+      "definition": "DGS10[t] - DGS10[t-10]"
+    }
+  ],
+  "digest": "482c589c2e1a44e30d3f266adf347e84cfe09a6b3b93b6551ecf6d2e143fd778"
+}

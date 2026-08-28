@@ -1,0 +1,35 @@
+{
+  "features": [
+    {
+      "name": "RET_5D",
+      "family": "BASELINE",
+      "pit": "PIT_NATIVE",
+      "definition": "5-day return"
+    },
+    {
+      "name": "RET_10D",
+      "family": "BASELINE",
+      "pit": "PIT_NATIVE",
+      "definition": "10-day return"
+    },
+    {
+      "name": "RET_20D",
+      "family": "BASELINE",
+      "pit": "PIT_NATIVE",
+      "definition": "20-day return"
+    },
+    {
+      "name": "VOL_20D",
+      "family": "BASELINE",
+      "pit": "PIT_NATIVE",
+      "definition": "20-day volatility"
+    },
+    {
+      "name": "MKT_RET_20D",
+      "family": "BASELINE",
+      "pit": "PIT_NATIVE",
+      "definition": "20-day market return"
+    }
+  ],
+  "digest": "84b8399aaca4df38968f559f5181659d3c7fb7bcdff977a1ac18d389ffcdb897"
+}

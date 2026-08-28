@@ -1,0 +1,10 @@
+{
+  "all_artifacts_exist": true,
+  "budget_match": true,
+  "freeze_complete": true,
+  "pit_integrity": true,
+  "firewall_intact": true,
+  "adversarial_pass": true,
+  "reproducibility": "EXACT_MATCH",
+  "registration_digest": "0ec14813613ce647ffda226c255568c75904bec82974fa4481706d4b84fbab5e"
+}

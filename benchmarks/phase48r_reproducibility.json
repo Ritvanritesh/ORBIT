@@ -1,0 +1,8 @@
+{
+  "classification": "EXACT_MATCH",
+  "deterministic": true,
+  "candidate_digest": "27705885c3a3b187e00a2f5ffd152c7f0539c2228c2f52850341533e34cf1e72",
+  "hypothesis_digest": "0bfde224372b7ebc84b728f2d30e80778eb76a451d4854737a231236ac2e0c1c",
+  "freeze_digest": "e3353cc62948894b20b57e4d1bc43cd2f2662a34eb36a53df871e1dca7f4853c",
+  "registration_digest": "0ec14813613ce647ffda226c255568c75904bec82974fa4481706d4b84fbab5e"
+}

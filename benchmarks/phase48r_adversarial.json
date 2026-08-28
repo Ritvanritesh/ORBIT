@@ -1,0 +1,193 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_yield_leakage",
+      "result": "BLOCKED",
+      "rationale": "All FRED data historical, forward-fill PIT-safe"
+    },
+    "A02": {
+      "name": "future_target_leakage",
+      "result": "BLOCKED",
+      "rationale": "Labels use forward returns; features use past only"
+    },
+    "A03": {
+      "name": "centered_rolling_window",
+      "result": "BLOCKED",
+      "rationale": "No centered windows; all backward-looking"
+    },
+    "A04": {
+      "name": "incorrect_feature_timestamp",
+      "result": "BLOCKED",
+      "rationale": "Features aligned to bar timestamps"
+    },
+    "A05": {
+      "name": "incorrect_fred_alignment",
+      "result": "BLOCKED",
+      "rationale": "Yield data aligned to bar dates via forward fill"
+    },
+    "A06": {
+      "name": "simulated_data_substitution",
+      "result": "BLOCKED",
+      "rationale": "No simulated data; all real FRED"
+    },
+    "A07": {
+      "name": "feature_manifest_modification",
+      "result": "BLOCKED",
+      "rationale": "FS-001 digest frozen; any change detected"
+    },
+    "A08": {
+      "name": "yc_level_removal",
+      "result": "BLOCKED",
+      "rationale": "FS-001 frozen with all 4 features; removal invalidates registration"
+    },
+    "A09": {
+      "name": "new_feature_injection",
+      "result": "BLOCKED",
+      "rationale": "Feature manifest locked; additions rejected"
+    },
+    "A10": {
+      "name": "hidden_feature_transformation",
+      "result": "BLOCKED",
+      "rationale": "No transformations beyond defined FS-001"
+    },
+    "A11": {
+      "name": "baseline_degeneracy",
+      "result": "BLOCKED",
+      "rationale": "Baseline has 5 non-degenerate features"
+    },
+    "A12": {
+      "name": "empty_baseline",
+      "result": "BLOCKED",
+      "rationale": "Baseline has 5 features, non-zero variance"
+    },
+    "A13": {
+      "name": "unmatched_samples",
+      "result": "BLOCKED",
+      "rationale": "All comparisons use identical timestamps"
+    },
+    "A14": {
+      "name": "preprocessing_mismatch",
+      "result": "BLOCKED",
+      "rationale": "StandardScaler fit on train only, identical for all"
+    },
+    "A15": {
+      "name": "alpha_modification",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 frozen in registration"
+    },
+    "A16": {
+      "name": "hidden_hyperparameter_search",
+      "result": "BLOCKED",
+      "rationale": "No hyperparameter search; config frozen"
+    },
+    "A17": {
+      "name": "horizon_modification",
+      "result": "BLOCKED",
+      "rationale": "H-10 primary, H-20 secondary locked"
+    },
+    "A18": {
+      "name": "universe_modification",
+      "result": "BLOCKED",
+      "rationale": "DS-EXP-050, DS-EXP-100 locked"
+    },
+    "A19": {
+      "name": "label_modification",
+      "result": "BLOCKED",
+      "rationale": "Forward returns properly lagged"
+    },
+    "A20": {
+      "name": "threshold_modification",
+      "result": "BLOCKED",
+      "rationale": "Incremental IC > +0.005 frozen"
+    },
+    "A21": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=6 Matrix=6"
+    },
+    "A22": {
+      "name": "hidden_experiment_addition",
+      "result": "BLOCKED",
+      "rationale": "Matrix locked at 6 experiments"
+    },
+    "A23": {
+      "name": "duplicate_experiment",
+      "result": "BLOCKED",
+      "rationale": "All 6 experiments unique"
+    },
+    "A24": {
+      "name": "incorrect_incremental_ic",
+      "result": "BLOCKED",
+      "rationale": "Incr IC = IC(baseline+FS001) - IC(baseline)"
+    },
+    "A25": {
+      "name": "incorrect_spearman_calculation",
+      "result": "BLOCKED",
+      "rationale": "scipy.stats.spearmanr used"
+    },
+    "A26": {
+      "name": "incorrect_holm_bonferroni",
+      "result": "BLOCKED",
+      "rationale": "Holm-Bonferroni on family size 2"
+    },
+    "A27": {
+      "name": "multiple_testing_family_modification",
+      "result": "BLOCKED",
+      "rationale": "Family size 2 locked"
+    },
+    "A28": {
+      "name": "post_hoc_success_criterion",
+      "result": "BLOCKED",
+      "rationale": "Criteria frozen before OOS access"
+    },
+    "A29": {
+      "name": "oos_target_access",
+      "result": "BLOCKED",
+      "rationale": "No OOS targets loaded or accessed"
+    },
+    "A30": {
+      "name": "oos_ic_calculation",
+      "result": "BLOCKED",
+      "rationale": "No OOS IC calculated in this phase"
+    },
+    "A31": {
+      "name": "confirmatory_execution",
+      "result": "BLOCKED",
+      "rationale": "No confirmatory test executed"
+    },
+    "A32": {
+      "name": "strategy_simulation",
+      "result": "BLOCKED",
+      "rationale": "No portfolio/strategy simulation"
+    },
+    "A33": {
+      "name": "portfolio_metric_calculation",
+      "result": "BLOCKED",
+      "rationale": "No economic/portfolio metrics computed"
+    },
+    "A34": {
+      "name": "locked_registration_modification",
+      "result": "BLOCKED",
+      "rationale": "All prior registrations immutable"
+    },
+    "A35": {
+      "name": "historical_artifact_modification",
+      "result": "BLOCKED",
+      "rationale": "All work additive; no modifications"
+    },
+    "A36": {
+      "name": "nondeterministic_digest_generation",
+      "result": "BLOCKED",
+      "rationale": "All digests deterministic SHA-256"
+    },
+    "A37": {
+      "name": "registration_digest_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Registration digest covers candidate+hypothesis+freeze"
+    }
+  },
+  "summary": {
+    "total": 37,
+    "blocked": 37
+  }
+}
