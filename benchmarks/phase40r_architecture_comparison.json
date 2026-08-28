@@ -1,0 +1,30 @@
+{
+  "A_BASELINE": {
+    "mean_ic": 0.05961383536903231,
+    "mean_incr_ic": 0.0,
+    "median_incr_ic": 0.0,
+    "positive_pct": 0.0,
+    "n": 4
+  },
+  "B_RATE_FEATURE": {
+    "mean_ic": 0.05961383536903231,
+    "mean_incr_ic": 0.0,
+    "median_incr_ic": 0.0,
+    "positive_pct": 0.0,
+    "n": 4
+  },
+  "C_INTERACTION": {
+    "mean_ic": 0.06509983431340956,
+    "mean_incr_ic": 0.0013850747214744577,
+    "median_incr_ic": 3.486187651839667e-05,
+    "positive_pct": 0.6666666666666666,
+    "n": 6
+  },
+  "D_SEPARATE": {
+    "mean_ic": 0.06749415033442417,
+    "mean_incr_ic": 0.006513340224424256,
+    "median_incr_ic": 0.0062753903264685384,
+    "positive_pct": 1.0,
+    "n": 6
+  }
+}

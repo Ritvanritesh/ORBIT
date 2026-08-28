@@ -1,0 +1,10 @@
+{
+  "regime": "RATE_REGIME",
+  "definition": "HIGH if DGS10 > rolling 60-day median, LOW otherwise",
+  "input_series": "DGS10 (FRED 10-Year Treasury Constant Maturity Rate)",
+  "pit_classification": "PIT_NATIVE",
+  "no_future_info": true,
+  "deterministic": true,
+  "threshold_type": "rolling_median (data-dependent, not fixed)",
+  "threshold_optimized": false
+}

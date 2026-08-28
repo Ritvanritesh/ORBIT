@@ -1,0 +1,8 @@
+{
+  "hypothesis_id": "HYP-CAND-RM-002",
+  "phase": "40R",
+  "timestamp": "2026-08-28T14:10:07.260800+00:00",
+  "statement": "The predictive relationship between ORBIT's existing price-derived features and future equity returns differs systematically between observable interest-rate regimes, such that explicitly conditioning predictions on the interest-rate regime produces incremental predictive value relative to an otherwise equivalent regime-agnostic model.",
+  "mechanism": "Interest-rate environments influence discount rates, equity valuation sensitivity, capital allocation, risk appetite, and momentum persistence.",
+  "falsification": "Incremental IC approximately zero, positive effects disappear across universes, isolated to one architecture, or depend on post-hoc threshold selection."
+}

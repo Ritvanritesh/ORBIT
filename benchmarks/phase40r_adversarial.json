@@ -1,0 +1,129 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_rate_leakage",
+      "result": "BLOCKED",
+      "rationale": "DGS10 rolling median uses only past data"
+    },
+    "A02": {
+      "name": "future_percentile_leakage",
+      "result": "BLOCKED",
+      "rationale": "No percentile used \u2014 median only"
+    },
+    "A03": {
+      "name": "centered_rolling_window",
+      "result": "BLOCKED",
+      "rationale": "Rolling median is backward-looking"
+    },
+    "A04": {
+      "name": "incorrect_regime_classification",
+      "result": "BLOCKED",
+      "rationale": "Median-based, deterministic"
+    },
+    "A05": {
+      "name": "regime_threshold_tuning",
+      "result": "BLOCKED",
+      "rationale": "Threshold not optimized \u2014 rolling median"
+    },
+    "A06": {
+      "name": "hidden_threshold_search",
+      "result": "BLOCKED",
+      "rationale": "Single threshold family (median)"
+    },
+    "A07": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "70/30 time-ordered split"
+    },
+    "A08": {
+      "name": "unmatched_baseline",
+      "result": "BLOCKED",
+      "rationale": "Every experiment has matched baseline"
+    },
+    "A09": {
+      "name": "incorrect_incremental_ic",
+      "result": "BLOCKED",
+      "rationale": "Incr IC = IC(model) - IC(baseline)"
+    },
+    "A10": {
+      "name": "horizon_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Horizons pre-specified (10, 20)"
+    },
+    "A11": {
+      "name": "universe_contamination",
+      "result": "BLOCKED",
+      "rationale": "Universes independently reported"
+    },
+    "A12": {
+      "name": "sample_fragmentation",
+      "result": "BLOCKED",
+      "rationale": "LOW risk \u2014 median split balanced"
+    },
+    "A13": {
+      "name": "empty_regime",
+      "result": "BLOCKED",
+      "rationale": "Both regimes have sufficient observations"
+    },
+    "A14": {
+      "name": "regime_imbalance",
+      "result": "BLOCKED",
+      "rationale": "~50/50 split by construction"
+    },
+    "A15": {
+      "name": "incorrect_model_routing",
+      "result": "BLOCKED",
+      "rationale": "Separate models use correct regime"
+    },
+    "A16": {
+      "name": "interaction_explosion",
+      "result": "BLOCKED",
+      "rationale": "Only 3 pre-specified interactions"
+    },
+    "A17": {
+      "name": "duplicate_experiments",
+      "result": "BLOCKED",
+      "rationale": "All 20 unique"
+    },
+    "A18": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=20, matrix=20 MATCHED"
+    },
+    "A19": {
+      "name": "hyperparameter_search",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 fixed"
+    },
+    "A20": {
+      "name": "cherry_picking",
+      "result": "BLOCKED",
+      "rationale": "All 20 experiments reported"
+    },
+    "A21": {
+      "name": "protected_oos_access",
+      "result": "BLOCKED",
+      "rationale": "No OOS data loaded"
+    },
+    "A22": {
+      "name": "registration_modification",
+      "result": "BLOCKED",
+      "rationale": "No registrations modified"
+    },
+    "A23": {
+      "name": "historical_artifact_modification",
+      "result": "BLOCKED",
+      "rationale": "All work additive"
+    },
+    "A24": {
+      "name": "nondeterministic_rerun",
+      "result": "BLOCKED",
+      "rationale": "Fixed seed, deterministic"
+    }
+  },
+  "summary": {
+    "total": 24,
+    "blocked": 24,
+    "confirmed_failure": 0
+  }
+}

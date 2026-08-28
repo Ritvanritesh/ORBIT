@@ -1,0 +1,22 @@
+{
+  "A_BASELINE": {
+    "incr": 0,
+    "complexity": "LOW",
+    "score": 0
+  },
+  "B_RATE_FEATURE": {
+    "incr": 0.0,
+    "complexity": "LOW",
+    "score": 0.0
+  },
+  "C_INTERACTION": {
+    "incr": 0.0013850747214744577,
+    "complexity": "LOW-MEDIUM",
+    "score": 0.001246567249327012
+  },
+  "D_SEPARATE": {
+    "incr": 0.006513340224424256,
+    "complexity": "MEDIUM",
+    "score": 0.0052106721795394054
+  }
+}

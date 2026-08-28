@@ -1,0 +1,14 @@
+{
+  "diagnostic": "VOLATILITY_INCONSISTENCY_DIAGNOSTIC",
+  "phase": "40R",
+  "timestamp": "2026-08-28T14:10:07.260800+00:00",
+  "question": "Why was VOL_REGIME inconsistent in Phase 39-R?",
+  "findings": {
+    "regime_balance": "Approximately balanced (median-based) \u2014 NOT the cause",
+    "regime_persistence": "Volatility regimes persist for weeks but transition timing creates noise",
+    "correlation_with_rate_regime": "LOW \u2014 correlation < 0.15, NOT confounded",
+    "horizon_dependence": "VOL_REGIME positive at H-20, negative at H-10 \u2014 HORIZON_DEPENDENT",
+    "feature_redundancy": "VOL_20D is already a baseline feature \u2014 VOL_REGIME adds limited marginal information"
+  },
+  "conclusion": "HORIZON_DEPENDENCE + FEATURE_REDUNDANCY \u2014 volatility regime adds limited information beyond VOL_20D baseline feature, and effect direction flips across horizons"
+}
