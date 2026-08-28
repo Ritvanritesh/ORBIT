@@ -1,0 +1,17 @@
+{
+  "policy_id": "LASSO-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "chosen_option": "OPTION_A_EXCLUDE_LASSO",
+  "rationale": "Phase 33-R.1 confirmed that Lasso degenerated to zero IC in all 18 experiments due to the interaction of (1) baseline features being constant zeros, (2) Lasso regularization (alpha=0.01), and (3) coordinate descent convergence. Even with a corrected baseline, the Lasso configuration has not been validated on real data. Including Lasso as a primary success criterion would require a new exploratory validation cycle. The confirmatory registration should focus on the validated Ridge configuration.",
+  "exclusion_reasons": [
+    "Lasso returned zero IC in all 18 exploratory experiments",
+    "Degeneracy was caused by preprocessing/scaling interaction",
+    "No validated Lasso configuration exists for real yield curve data",
+    "Including unvalidated Lasso would expand the search space without scientific justification",
+    "Ridge already provides a clean, interpretable confirmatory test"
+  ],
+  "secondary_robustness_consideration": "If confirmatory Ridge execution succeeds, a future Phase may validate a corrected Lasso configuration as a secondary robustness check. That would require a new registration.",
+  "policy_hash": "5b06de4ed3737cb09db21f26d8d6dc087fc4df354830c5fa946747e6b8f27a80"
+}

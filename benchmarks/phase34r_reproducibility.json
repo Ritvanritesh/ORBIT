@@ -1,0 +1,41 @@
+{
+  "reproducibility_id": "REPRO-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "run_1": {
+    "timestamp": "2026-08-28T13:01:23.125659+00:00",
+    "digests": {
+      "hypothesis": "a49fab7718ecdb449590cc7c76851b7ec6086a79aaa6be108175077042f257f1",
+      "model": "d027fdade978972ece59c2fc8f24a19391138845e5af871719022a407fd58bdd",
+      "feature_manifest": "e41307333151f4e46dba9f1175fa8dd97217c55226fc90e4f00a0d87200a6c7f",
+      "horizon_policy": "74732384f045cbc48a6cf83ba01685d7498b1b2b1cc028375a432126d69bfc22",
+      "experiment_matrix": "c3c688f09222a9efcd63a3fc9133a4435819a8cb8164a0cc387e41fa0378759e",
+      "success_criteria": "69f6e20388a08e3564fcb7b0dc5d65a789fcac4baa7ae0faa613a212f90d14a0",
+      "execution_protocol": "6a9f25c08f4143fceafd1cd16b649372b314d1d70be5b7160fb5bf400c917c31"
+    }
+  },
+  "run_2": {
+    "timestamp": "2026-08-28T13:01:23.125659+00:00",
+    "digests": {
+      "hypothesis": "a49fab7718ecdb449590cc7c76851b7ec6086a79aaa6be108175077042f257f1",
+      "model": "d027fdade978972ece59c2fc8f24a19391138845e5af871719022a407fd58bdd",
+      "feature_manifest": "e41307333151f4e46dba9f1175fa8dd97217c55226fc90e4f00a0d87200a6c7f",
+      "horizon_policy": "74732384f045cbc48a6cf83ba01685d7498b1b2b1cc028375a432126d69bfc22",
+      "experiment_matrix": "c3c688f09222a9efcd63a3fc9133a4435819a8cb8164a0cc387e41fa0378759e",
+      "success_criteria": "69f6e20388a08e3564fcb7b0dc5d65a789fcac4baa7ae0faa613a212f90d14a0",
+      "execution_protocol": "6a9f25c08f4143fceafd1cd16b649372b314d1d70be5b7160fb5bf400c917c31"
+    }
+  },
+  "verification": {
+    "hypothesis_match": true,
+    "model_match": true,
+    "feature_manifest_match": true,
+    "horizon_match": true,
+    "matrix_match": true,
+    "success_match": true,
+    "protocol_match": true,
+    "all_match": true
+  },
+  "classification": "EXACT_REPRODUCTION"
+}

@@ -205,7 +205,7 @@
       "research_question_id": "RQ-29R-001",
       "hypothesis_family": "yield_curve_transmission",
       "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations",
-      "status": "ACTIVE",
+      "status": "CONFIRMATORY_REGISTERED",
       "locked_plan_digest": null,
       "experiment_budget": 20,
       "experiments_completed": 20,
@@ -240,6 +240,18 @@
         "mean_incremental_ic": 0.019514319866679824,
         "positive_proportion": 0.5,
         "next_step": "PHASE_34R_CONFIRMATORY_REGISTRATION"
+      },
+      "confirmatory_registration": {
+        "registration_id": "CONF-REG-34R",
+        "registration_digest": "a49fab7718ecdb449590cc7c76851b7ec6086a79aaa6be108175077042f257f1",
+        "timestamp": "2026-08-28T13:01:23.125659+00:00",
+        "outcome": "REGISTERED_WAITING_FOR_DATA",
+        "primary_horizon": 20,
+        "primary_model": "Ridge",
+        "n_experiments": 6,
+        "minimum_ic": 0.005,
+        "data_eligibility": "REGISTERED_WAITING_FOR_DATA",
+        "confirmatory_execution_eligible": false
       }
     },
     {
@@ -339,7 +351,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-27T13:32:06.901603+00:00",
+  "last_updated": "2026-08-28T13:01:23.125659+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

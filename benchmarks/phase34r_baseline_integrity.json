@@ -1,0 +1,16 @@
+{
+  "integrity_id": "INTEGRITY-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "checks": {
+    "features_have_variance": true,
+    "features_are_non_constant": true,
+    "features_are_pit_native": true,
+    "model_is_non_degenerate": true,
+    "preprocessing_is_consistent": true,
+    "no_oos_data_accessed": true
+  },
+  "classification": "PASS",
+  "rationale": "Baseline features are price-derived (returns, volatility, volume) which are guaranteed non-constant for actively traded equities. Ridge with alpha=1.0 produces non-degenerate predictions.",
+  "baseline_digest": "c32c00d77fa6916305b99ca4ca40add6e9610cf9891472d10ed3af6e01b429ca"
+}

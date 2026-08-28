@@ -1,0 +1,67 @@
+{
+  "baseline_id": "BASE-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "baseline_name": "Momentum_Trend_Baseline_v1",
+  "features": [
+    {
+      "feature_id": "RET_5D",
+      "name": "5-Day Return",
+      "formula": "close(t) / close(t-5) - 1",
+      "source": "Yahoo price data",
+      "lookback": 5,
+      "pit_classification": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "RET_10D",
+      "name": "10-Day Return",
+      "formula": "close(t) / close(t-10) - 1",
+      "source": "Yahoo price data",
+      "lookback": 10,
+      "pit_classification": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "RET_20D",
+      "name": "20-Day Return",
+      "formula": "close(t) / close(t-20) - 1",
+      "source": "Yahoo price data",
+      "lookback": 20,
+      "pit_classification": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "VOL_20D",
+      "name": "20-Day Realized Volatility",
+      "formula": "std(daily_returns, 20)",
+      "source": "Yahoo price data",
+      "lookback": 20,
+      "pit_classification": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "VOLUME_RATIO",
+      "name": "Volume Ratio",
+      "formula": "volume(t) / mean(volume, 20)",
+      "source": "Yahoo price data",
+      "lookback": 20,
+      "pit_classification": "PIT_NATIVE"
+    }
+  ],
+  "n_features": 5,
+  "non_degeneracy_requirements": {
+    "feature_variance": "All features must have non-zero variance on training data",
+    "prediction_variance": "Baseline model predictions must have non-zero variance on validation data",
+    "feature_coverage": "All features must be available for >80% of training rows"
+  },
+  "training": {
+    "period": "2010-01-04 to 2018-12-31",
+    "model": "Ridge (alpha=1.0)",
+    "preprocessing": "StandardScaler (fit on training)"
+  },
+  "evaluation": {
+    "period": "2019-01-02 to 2021-12-31 (validation), 2022-01-03 to 2026-06-30 (OOS)",
+    "metric": "Spearman IC"
+  },
+  "integrity_note": "This baseline replaces the degenerate zero-constant baseline from Phase 33-R. The new baseline uses genuine price-derived features.",
+  "baseline_digest": "c32c00d77fa6916305b99ca4ca40add6e9610cf9891472d10ed3af6e01b429ca",
+  "baseline_integrity": "PASS"
+}

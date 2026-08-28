@@ -1,0 +1,115 @@
+{
+  "audit_id": "ADV-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "tests": {
+    "A01": {
+      "name": "Confirmatory OOS target access during registration",
+      "result": "BLOCKED",
+      "rationale": "No OOS targets read. Registration phase only."
+    },
+    "A02": {
+      "name": "Feature modification after registration",
+      "result": "BLOCKED",
+      "rationale": "Feature manifest locked with SHA-256 digest."
+    },
+    "A03": {
+      "name": "Horizon modification after registration",
+      "result": "BLOCKED",
+      "rationale": "Horizons locked: H-20 primary, H-5/H-10 secondary."
+    },
+    "A04": {
+      "name": "Model substitution",
+      "result": "BLOCKED",
+      "rationale": "Ridge locked as primary. Lasso excluded."
+    },
+    "A05": {
+      "name": "Ridge hyperparameter modification",
+      "result": "BLOCKED",
+      "rationale": "alpha=1.0 frozen. Any change invalidates registration."
+    },
+    "A06": {
+      "name": "Budget differs from experiment matrix",
+      "result": "BLOCKED",
+      "rationale": "Budget=6, matrix=6. MATCHED."
+    },
+    "A07": {
+      "name": "Baseline becomes degenerate",
+      "result": "BLOCKED",
+      "rationale": "Baseline integrity check enforced at execution start."
+    },
+    "A08": {
+      "name": "Lasso promoted to primary without justification",
+      "result": "BLOCKED",
+      "rationale": "Lasso policy: EXCLUDED. Documented in lasso_policy.json."
+    },
+    "A09": {
+      "name": "Multiple testing correction modified",
+      "result": "BLOCKED",
+      "rationale": "Holm-Bonferroni locked. Any change invalidates registration."
+    },
+    "A10": {
+      "name": "Success threshold modified",
+      "result": "BLOCKED",
+      "rationale": "Threshold 0.005 immutable. Any change invalidates registration."
+    },
+    "A11": {
+      "name": "Falsification criteria modified",
+      "result": "BLOCKED",
+      "rationale": "6 hard failures locked. Cannot be weakened."
+    },
+    "A12": {
+      "name": "Dataset hash mismatch",
+      "result": "BLOCKED",
+      "rationale": "OOS dataset integrity verified at execution start."
+    },
+    "A13": {
+      "name": "Feature manifest mismatch",
+      "result": "BLOCKED",
+      "rationale": "SHA-256 digest locked. Verified at execution start."
+    },
+    "A14": {
+      "name": "PIT classification mismatch",
+      "result": "BLOCKED",
+      "rationale": "All 12 features PIT_NATIVE. Verified."
+    },
+    "A15": {
+      "name": "Simulated data contamination",
+      "result": "BLOCKED",
+      "rationale": "All data from FRED real sources. Phase 32-R approved."
+    },
+    "A16": {
+      "name": "Historical artifact modification",
+      "result": "BLOCKED",
+      "rationale": "All prior phase artifacts preserved."
+    },
+    "A17": {
+      "name": "Protected volatility branch access",
+      "result": "BLOCKED",
+      "rationale": "BR-E2AFD3AC901A not touched."
+    },
+    "A18": {
+      "name": "Unauthorized experiment insertion",
+      "result": "BLOCKED",
+      "rationale": "Matrix locked with 6 explicit experiments."
+    },
+    "A19": {
+      "name": "Statistical test substitution",
+      "result": "BLOCKED",
+      "rationale": "One-sided t-test locked. Cannot be changed."
+    },
+    "A20": {
+      "name": "Execution protocol modification",
+      "result": "BLOCKED",
+      "rationale": "Protocol locked with SHA-256 digest."
+    }
+  },
+  "summary": {
+    "total": 20,
+    "blocked": 20,
+    "detected": 0,
+    "documented_limitation": 0,
+    "confirmed_failure": 0
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "matrix_id": "MATRIX-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "n_experiments": 6,
+  "declared_budget": 6,
+  "budget_matches_matrix": true,
+  "experiments": [
+    {
+      "experiment_id": "CONF-001",
+      "type": "PRIMARY",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    },
+    {
+      "experiment_id": "CONF-002",
+      "type": "PRIMARY",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    },
+    {
+      "experiment_id": "CONF-003",
+      "type": "SECONDARY",
+      "horizon": 5,
+      "universe": "DS-EXP-050",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    },
+    {
+      "experiment_id": "CONF-004",
+      "type": "SECONDARY",
+      "horizon": 5,
+      "universe": "DS-EXP-100",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    },
+    {
+      "experiment_id": "CONF-005",
+      "type": "SECONDARY",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    },
+    {
+      "experiment_id": "CONF-006",
+      "type": "SECONDARY",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "model": "Ridge",
+      "baseline": "Momentum_Trend_Baseline_v1",
+      "treatment": "YC_12_Features_Locked",
+      "preprocessing": "StandardScaler",
+      "statistical_test": "One-sided Spearman IC > 0.005"
+    }
+  ],
+  "verification": {
+    "every_experiment_explicit": true,
+    "no_vague_specifications": true,
+    "budget_equals_matrix_size": true
+  },
+  "matrix_digest": "c3c688f09222a9efcd63a3fc9133a4435819a8cb8164a0cc387e41fa0378759e"
+}

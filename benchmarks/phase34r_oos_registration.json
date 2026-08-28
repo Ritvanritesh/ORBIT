@@ -1,0 +1,27 @@
+{
+  "registration_id": "OOS-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "dataset": {
+    "identity": "OOS Equities (DS-EXP-050, DS-EXP-100)",
+    "oos_boundary": "2022-01-03",
+    "earliest_confirmatory_date": "2022-01-03",
+    "current_status": "DATA_NOT_READY"
+  },
+  "sufficiency": {
+    "current_trading_days": 36,
+    "minimum_required": 60,
+    "remaining_days": 24,
+    "sufficient": false
+  },
+  "access_restrictions": [
+    "OOS targets must not be read during registration",
+    "No model predictions against OOS targets during registration",
+    "No IC calculation against OOS targets during registration",
+    "No economic evaluation against OOS targets during registration"
+  ],
+  "firewall_status": "ACTIVE",
+  "registration_status": "REGISTERED_WAITING_FOR_DATA",
+  "note": "Registration is valid but OOS data is not yet sufficient. Must wait for DATA_READY before confirmatory execution."
+}

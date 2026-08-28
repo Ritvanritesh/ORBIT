@@ -1,0 +1,20 @@
+{
+  "policy_id": "HORIZON-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "primary_horizon": 20,
+  "primary_justification": "H-20 showed the strongest mean incremental IC (+0.046) in exploratory analysis. The yield curve mechanism (discount rate transmission, growth expectations) operates over multi-week periods, making H-20 economically justified as the primary horizon. H-20 is consistent with the mechanism's natural timescale.",
+  "secondary_horizons": [
+    5,
+    10
+  ],
+  "secondary_justification": "H-5 and H-10 are included as robustness checks to assess horizon consistency. They are NOT primary success criteria.",
+  "horizon_classification": {
+    "H-20": "PRIMARY",
+    "H-5": "SECONDARY_ROBUSTNESS",
+    "H-10": "SECONDARY_ROBUSTNESS"
+  },
+  "decision_rule": "Primary success requires passing at H-20. Secondary horizons provide supporting evidence but do not determine overall PASS/FAIL.",
+  "policy_digest": "74732384f045cbc48a6cf83ba01685d7498b1b2b1cc028375a432126d69bfc22"
+}

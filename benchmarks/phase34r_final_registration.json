@@ -1,0 +1,18 @@
+{
+  "decision_id": "DECISION-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "outcome": "REGISTERED_WAITING_FOR_DATA",
+  "checks": {
+    "oos_sufficient": false,
+    "adversarial_failures": 0,
+    "reproducibility_pass": true,
+    "budget_matches_matrix": true,
+    "baseline_integrity_pass": true
+  },
+  "hypothesis_digest": "a49fab7718ecdb449590cc7c76851b7ec6086a79aaa6be108175077042f257f1",
+  "matrix_digest": "c3c688f09222a9efcd63a3fc9133a4435819a8cb8164a0cc387e41fa0378759e",
+  "experiment_count": 6,
+  "next_allowed_step": "WAIT_FOR_DATA_READY (estimated ~5 weeks)"
+}

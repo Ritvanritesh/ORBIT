@@ -1,0 +1,31 @@
+{
+  "hypothesis_id": "HYP-CONF-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "mechanism": "Changes in interest-rate expectations and term structure affect discount rates, financing conditions, growth expectations, and sector valuations, creating predictive information for equity returns over multi-week horizons.",
+  "prediction": "Adding the locked 12-feature real yield curve set to the locked baseline under Ridge regression produces incremental Spearman rank IC greater than 0.005 at the primary horizon on the untouched confirmatory OOS dataset.",
+  "primary_horizon": 20,
+  "feature_set": "12 real FRED Treasury yield curve features (LOCKED)",
+  "baseline": "Momentum + trend features (5 features, non-degenerate, LOCKED)",
+  "model": "Ridge regression (alpha=1.0, standardScaler, LOCKED)",
+  "evaluation_metric": "Incremental Spearman IC = IC(yield_curve_model) - IC(baseline_model)",
+  "minimum_effect_size": 0.005,
+  "falsification_criteria": [
+    "Incremental IC <= 0.005 at primary horizon",
+    "One-sided p-value > 0.05 after Holm-Bonferroni correction",
+    "Baseline degeneracy detected (zero prediction variance)",
+    "Feature manifest hash mismatch",
+    "PIT integrity failure",
+    "OOS data integrity failure"
+  ],
+  "scope_limitations": [
+    "This hypothesis applies ONLY to Ridge regression",
+    "This hypothesis applies ONLY to H-20 as primary horizon",
+    "This hypothesis does NOT claim universality across all models or horizons",
+    "Secondary horizons (H-5, H-10) are robustness checks, not primary tests",
+    "Lasso is excluded from primary success criteria"
+  ],
+  "narrowness": "This is the narrowest hypothesis supported by the exploratory evidence. It tests one model (Ridge), one primary horizon (H-20), one feature set (12 YC features), and one metric (incremental IC).",
+  "hypothesis_digest": "a49fab7718ecdb449590cc7c76851b7ec6086a79aaa6be108175077042f257f1"
+}

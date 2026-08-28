@@ -1,0 +1,69 @@
+{
+  "criteria_id": "FALSIFY-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "hard_failures": [
+    {
+      "id": "HF-01",
+      "condition": "Incremental IC <= 0.005 at primary horizon (H-20)",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration FAILS. Branch does not advance."
+    },
+    {
+      "id": "HF-02",
+      "condition": "Corrected p-value > 0.05 at primary horizon",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration FAILS."
+    },
+    {
+      "id": "HF-03",
+      "condition": "Baseline prediction variance = 0 (degenerate)",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration FAILS. Baseline must be re-validated."
+    },
+    {
+      "id": "HF-04",
+      "condition": "Feature manifest hash mismatch",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration INVALID. Feature set was modified."
+    },
+    {
+      "id": "HF-05",
+      "condition": "PIT integrity failure (future data leakage detected)",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration INVALID."
+    },
+    {
+      "id": "HF-06",
+      "condition": "OOS data integrity failure",
+      "severity": "HARD_FAIL",
+      "consequence": "Registration FAILS."
+    }
+  ],
+  "documented_limitations": [
+    {
+      "id": "DL-01",
+      "condition": "Secondary horizons (H-5, H-10) do not pass",
+      "severity": "DOCUMENTED_LIMITATION",
+      "consequence": "Primary still passes. Limitation noted."
+    },
+    {
+      "id": "DL-02",
+      "condition": "One universe passes, one fails",
+      "severity": "DOCUMENTED_LIMITATION",
+      "consequence": "Primary still passes if overall mean exceeds threshold. Limitation noted."
+    }
+  ],
+  "secondary_failures": [
+    {
+      "id": "SF-01",
+      "condition": "Reproducibility check fails",
+      "severity": "SECONDARY_FAILURE",
+      "consequence": "Investigate. May require re-execution."
+    }
+  ],
+  "total_hard_failures": 6,
+  "total_limitations": 2,
+  "total_secondary": 1
+}

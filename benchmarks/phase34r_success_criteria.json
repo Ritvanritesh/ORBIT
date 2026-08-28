@@ -1,0 +1,33 @@
+{
+  "criteria_id": "SUCCESS-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "primary_metric": "Incremental Spearman IC = IC(yield_curve) - IC(baseline)",
+  "statistical_significance": {
+    "test": "One-sided t-test on incremental IC across primary universe experiments",
+    "alpha": 0.05,
+    "correction": "Holm-Bonferroni across primary horizon experiments (n=2)",
+    "threshold": "p_corrected < 0.05"
+  },
+  "practical_relevance": {
+    "minimum_incremental_ic": 0.005,
+    "justification": "0.005 is economically meaningful for equity prediction. Below this, the yield curve signal is too weak for practical deployment."
+  },
+  "success_requires": [
+    "Mean incremental IC > 0.005 at H-20",
+    "Corrected p-value < 0.05 at H-20",
+    "Baseline non-degenerate (prediction variance > 0)",
+    "Feature manifest hash matches",
+    "PIT integrity PASS"
+  ],
+  "success_does_not_require": [
+    "Success at secondary horizons (H-5, H-10)",
+    "Success at both universes",
+    "Specific Sharpe ratio",
+    "Specific portfolio return"
+  ],
+  "immutable": true,
+  "modification_prohibited": "Success criteria cannot be changed after registration",
+  "criteria_digest": "69f6e20388a08e3564fcb7b0dc5d65a789fcac4baa7ae0faa613a212f90d14a0"
+}

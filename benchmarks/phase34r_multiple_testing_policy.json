@@ -1,0 +1,26 @@
+{
+  "policy_id": "MULTI-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "hypothesis_family": {
+    "name": "Yield curve incremental IC at primary horizon",
+    "n_tests": 2,
+    "description": "Two primary experiments: H-20 on DS-EXP-050 and H-20 on DS-EXP-100"
+  },
+  "correction_procedure": "Holm-Bonferroni",
+  "correction_rationale": "Holm-Bonferroni is less conservative than Bonferroni while still controlling family-wise error rate. With only 2 primary tests, the correction is mild.",
+  "secondary_family": {
+    "name": "Yield curve incremental IC at secondary horizons",
+    "n_tests": 4,
+    "description": "Four secondary experiments: H-5 and H-10 on two universes",
+    "correction": "Holm-Bonferroni within secondary family",
+    "role": "Robustness only. Does not determine primary success."
+  },
+  "overall": {
+    "primary_family_size": 2,
+    "secondary_family_size": 4,
+    "total_family_size": 6,
+    "primary_drives_success": true
+  }
+}

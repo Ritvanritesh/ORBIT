@@ -1,0 +1,29 @@
+{
+  "model_id": "MODEL-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "model_name": "Ridge",
+  "model_class": "sklearn.linear_model.Ridge",
+  "justification": "Ridge showed positive incremental IC in all 18 exploratory experiments. Lasso degenerated due to zero baseline features. Ridge is the only model with validated exploratory evidence.",
+  "configuration": {
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "solver": "auto",
+    "random_state": 42
+  },
+  "preprocessing": {
+    "feature_scaling": "StandardScaler (fit on training data only)",
+    "missing_values": "Drop rows with any null in features or target",
+    "feature_standardization": "Zero mean, unit variance on training set, applied to test set"
+  },
+  "training": {
+    "procedure": "Fit on training data (2010-01-04 to 2018-12-31)",
+    "validation": "Not used for Ridge (no hyperparameters to tune beyond alpha)",
+    "random_seed": 42
+  },
+  "frozen": true,
+  "frozen_at": "2026-08-28T13:01:23.125659+00:00",
+  "modification_prohibited": "Any change to model configuration invalidates the registration",
+  "model_digest": "d027fdade978972ece59c2fc8f24a19391138845e5af871719022a407fd58bdd"
+}

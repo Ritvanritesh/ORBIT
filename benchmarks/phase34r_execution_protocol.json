@@ -1,0 +1,100 @@
+{
+  "protocol_id": "PROTO-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "preconditions": [
+    "OOS data sufficiency >= 60 trading days",
+    "Feature manifest hash matches registration",
+    "Baseline integrity check passes",
+    "Model configuration matches registration",
+    "No OOS data has been accessed"
+  ],
+  "execution_steps": [
+    {
+      "step": 1,
+      "action": "Verify OOS data sufficiency",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 2,
+      "action": "Verify feature manifest hash",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 3,
+      "action": "Verify baseline integrity",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 4,
+      "action": "Verify model configuration",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 5,
+      "action": "Verify experiment matrix",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 6,
+      "action": "Release OOS firewall",
+      "on_fail": "ABORT"
+    },
+    {
+      "step": 7,
+      "action": "Execute primary experiments (H-20, 2 universes)",
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "step": 8,
+      "action": "Compute incremental IC",
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "step": 9,
+      "action": "Apply Holm-Bonferroni correction",
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "step": 10,
+      "action": "Evaluate primary success criteria",
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "step": 11,
+      "action": "Execute secondary experiments (H-5, H-10)",
+      "on_fail": "DOCUMENT"
+    },
+    {
+      "step": 12,
+      "action": "Run robustness diagnostics",
+      "on_fail": "DOCUMENT"
+    },
+    {
+      "step": 13,
+      "action": "Reproducibility check",
+      "on_fail": "INVESTIGATE"
+    },
+    {
+      "step": 14,
+      "action": "Adversarial checks",
+      "on_fail": "FAIL_CLOSED"
+    },
+    {
+      "step": 15,
+      "action": "Final PASS/FAIL decision",
+      "on_fail": "N/A"
+    }
+  ],
+  "rejection_rules": [
+    "Reject if feature manifest changed",
+    "Reject if model parameters changed",
+    "Reject if horizons changed",
+    "Reject if experiment count changed",
+    "Reject if success threshold changed",
+    "Reject if statistical policy changed",
+    "Reject if unauthorized experiments added"
+  ],
+  "protocol_digest": "6a9f25c08f4143fceafd1cd16b649372b314d1d70be5b7160fb5bf400c917c31"
+}

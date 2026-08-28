@@ -1,0 +1,49 @@
+{
+  "policy_id": "ROBUST-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "dimensions": {
+    "temporal": {
+      "requirement": "PRIMARY",
+      "metric": "Incremental IC at H-20",
+      "decision_rule": "Must exceed 0.005",
+      "failure_blocks_promotion": true,
+      "note": "Temporal robustness is inherent in the single OOS period test"
+    },
+    "universe": {
+      "requirement": "ROBUSTNESS_DIAGNOSTIC",
+      "metric": "Incremental IC across universes",
+      "decision_rule": "Both universes should show positive IC; failure of one is a documented limitation",
+      "failure_blocks_promotion": false,
+      "note": "Universe heterogeneity is expected. Overall mean drives success."
+    },
+    "model": {
+      "requirement": "NOT_TESTED",
+      "metric": "N/A (only Ridge tested)",
+      "decision_rule": "N/A",
+      "failure_blocks_promotion": false,
+      "note": "Lasso excluded. Only Ridge is tested."
+    },
+    "representation": {
+      "requirement": "NOT_VARIED",
+      "metric": "N/A (single feature set)",
+      "decision_rule": "N/A",
+      "failure_blocks_promotion": false,
+      "note": "Single locked feature set. No representation variation."
+    }
+  },
+  "summary": {
+    "primary_requirements": [
+      "temporal"
+    ],
+    "robustness_diagnostics": [
+      "universe"
+    ],
+    "not_tested": [
+      "model",
+      "representation"
+    ],
+    "failure_blocks_only_if_primary": true
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "inventory_id": "EVIDENCE-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "total_artifacts": 27,
+  "artifacts": [
+    {
+      "artifact": "phase31r_results.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase31r_results.json",
+      "phase": "31R",
+      "purpose": "Exploratory yield curve results (SIMULATED data)",
+      "included_in_evidence_review": true,
+      "digest": "ccf852f09afa0e8d3b6f4c6b3680bd207cfe5172224e0dc3124d708e6d68b361"
+    },
+    {
+      "artifact": "phase31r_conclusion.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase31r_conclusion.json",
+      "phase": "31R",
+      "purpose": "Phase 31-R conclusion",
+      "included_in_evidence_review": true,
+      "digest": "c1eb196c40f3d6279e5f70bc3e1af8aa42c2bca70487a9f50c2da657b0ffeba0"
+    },
+    {
+      "artifact": "phase32r_data_readiness.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase32r_data_readiness.json",
+      "phase": "32R",
+      "purpose": "Real data readiness confirmation",
+      "included_in_evidence_review": true,
+      "digest": "9f41dea037c2c2e209755e57d15c1811bd0d5e1ff7cd81ad93dd099771359277"
+    },
+    {
+      "artifact": "phase32r_feature_specification.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase32r_feature_specification.json",
+      "phase": "32R",
+      "purpose": "Feature specification from real data",
+      "included_in_evidence_review": true,
+      "digest": "c2019b2418a3cd4556b5c1bdf1962bf3f7e8e8a2f821acaf28005edb0f20dd71"
+    },
+    {
+      "artifact": "phase32r_pit_classification.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase32r_pit_classification.json",
+      "phase": "32R",
+      "purpose": "PIT classification of yield curve features",
+      "included_in_evidence_review": true,
+      "digest": "945910411a4f96f955f79ccac58a6db0fae7252aeb87072c414e1c5ba2141199"
+    },
+    {
+      "artifact": "phase32r_acquisition_manifest.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase32r_acquisition_manifest.json",
+      "phase": "32R",
+      "purpose": "FRED data acquisition manifest",
+      "included_in_evidence_review": true,
+      "digest": "0522a15fc7ddacb7e54d6954d58e00833007732685a6553cbfca62b23a2ee2ff"
+    },
+    {
+      "artifact": "phase33r_plan.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_plan.json",
+      "phase": "33R",
+      "purpose": "Exploratory plan (budget/matrix inconsistency)",
+      "included_in_evidence_review": true,
+      "digest": "4eb60bf606961d1972bfc6ff963068414f0de03d8f124dbe4a9c5b7feb9b5a18"
+    },
+    {
+      "artifact": "phase33r_results.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_results.json",
+      "phase": "33R",
+      "purpose": "Exploratory results (36 experiments, REAL data)",
+      "included_in_evidence_review": true,
+      "digest": "ae8ae6fbfb6862a6a0a4f9d6fe5ec225a4a038470f4a3b11119288960450671a"
+    },
+    {
+      "artifact": "phase33r_preflight.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_preflight.json",
+      "phase": "33R",
+      "purpose": "Pre-experiment audit",
+      "included_in_evidence_review": true,
+      "digest": "9d33f5888318581122e2df9fd97d504fc724600e02998ccfb8041f6d509a5f6b"
+    },
+    {
+      "artifact": "phase33r_incremental_value.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_incremental_value.json",
+      "phase": "33R",
+      "purpose": "Incremental value analysis",
+      "included_in_evidence_review": true,
+      "digest": "bc0ef601a6e807a18b9bd4a130423fbe6ef32b6226f3e0440624b423ee11778e"
+    },
+    {
+      "artifact": "phase33r_temporal_stability.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_temporal_stability.json",
+      "phase": "33R",
+      "purpose": "Temporal stability analysis",
+      "included_in_evidence_review": true,
+      "digest": "5c28f11878a20ed45b1933452439db664fa9670930c271784f250cd3bce1a599"
+    },
+    {
+      "artifact": "phase33r_statistics.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_statistics.json",
+      "phase": "33R",
+      "purpose": "Statistical analysis",
+      "included_in_evidence_review": true,
+      "digest": "54bdd4b2eff1367bb5260aab82b39af0f77028ebc7cd250cf2741031f44689fb"
+    },
+    {
+      "artifact": "phase33r_evidence_scorecard.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_evidence_scorecard.json",
+      "phase": "33R",
+      "purpose": "Evidence scorecard",
+      "included_in_evidence_review": true,
+      "digest": "c2566de3e2a58068faf09537796f14e3b04ed855c766c97dd8fdfc37f2bdd801"
+    },
+    {
+      "artifact": "phase33r_adversarial.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_adversarial.json",
+      "phase": "33R",
+      "purpose": "Adversarial review",
+      "included_in_evidence_review": true,
+      "digest": "3a5ad0021f3486988be27790882887c3ee0e193bec46d191afa064231c7147ab"
+    },
+    {
+      "artifact": "phase33r_branch_decision.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r_branch_decision.json",
+      "phase": "33R",
+      "purpose": "Branch decision",
+      "included_in_evidence_review": true,
+      "digest": "6b8944fe27e908f158a6a680f6afef238ffd670c0806883063cc8e9cdea3c740"
+    },
+    {
+      "artifact": "phase33r1_budget_reconstruction.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_budget_reconstruction.json",
+      "phase": "33R.1",
+      "purpose": "Budget audit - accounting error confirmed",
+      "included_in_evidence_review": true,
+      "digest": "847e2cea6d15847836b6e906791898a68fdd9a9a84002ba914d0b485908aa6b9"
+    },
+    {
+      "artifact": "phase33r1_experiment_inventory.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_experiment_inventory.json",
+      "phase": "33R.1",
+      "purpose": "Complete experiment inventory",
+      "included_in_evidence_review": true,
+      "digest": "ab6d432123960f7c15339e901b0838f89839d7f3cc66722f08fa6191be19a05b"
+    },
+    {
+      "artifact": "phase33r1_first20_results.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_first20_results.json",
+      "phase": "33R.1",
+      "purpose": "First-20 authorized experiment analysis",
+      "included_in_evidence_review": true,
+      "digest": "325a21d8ed94d9effbaced2198729a5ce80e1a1340d91f7635063b90ad847d57"
+    },
+    {
+      "artifact": "phase33r1_locked_matrix_analysis.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_locked_matrix_analysis.json",
+      "phase": "33R.1",
+      "purpose": "Locked matrix analysis",
+      "included_in_evidence_review": true,
+      "digest": "d516d8b661b031bd5dd11e7764a19f5ad4b99f4f35b8e6bdbe063c94d477d3c9"
+    },
+    {
+      "artifact": "phase33r1_metric_reconciliation.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_metric_reconciliation.json",
+      "phase": "33R.1",
+      "purpose": "Zero IC / positive incremental reconciliation",
+      "included_in_evidence_review": true,
+      "digest": "f22737a494687f40b7588aeae95e406ee8b898b35d1ff9872f9f3d77af74efd9"
+    },
+    {
+      "artifact": "phase33r1_model_integrity.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_model_integrity.json",
+      "phase": "33R.1",
+      "purpose": "Lasso degeneracy documented",
+      "included_in_evidence_review": true,
+      "digest": "e4831d7f16f1e3d9d627718a426199a65758377744b81a0babc77efa45c19cb3"
+    },
+    {
+      "artifact": "phase33r1_multiple_testing.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_multiple_testing.json",
+      "phase": "33R.1",
+      "purpose": "Multiple testing assessment",
+      "included_in_evidence_review": true,
+      "digest": "e429b32daf7b7caf4131ecb0f453ef8dcf102ded215f19f408d1d441188033b6"
+    },
+    {
+      "artifact": "phase33r1_independent_recomputation.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_independent_recomputation.json",
+      "phase": "33R.1",
+      "purpose": "Independent recomputation",
+      "included_in_evidence_review": true,
+      "digest": "cb453dcbdc21a504717c7ac33a2d6012b5548b274f42b07fc71fd3ba42415cd3"
+    },
+    {
+      "artifact": "phase33r1_final_decision.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_final_decision.json",
+      "phase": "33R.1",
+      "purpose": "EXPLORATORY_SUPPORT_WITH_LIMITATIONS",
+      "included_in_evidence_review": true,
+      "digest": "8c0ceece4fd637a668c5e03c99b57b962b4f762a04594d2e932a9a6decdffad7"
+    },
+    {
+      "artifact": "phase33r1_audit.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase33r1_audit.json",
+      "phase": "33R.1",
+      "purpose": "Final audit result",
+      "included_in_evidence_review": true,
+      "digest": "05c8b77cf4dbd088e25ed0992fb28b2f1874a56c8c873d9d7482d00e2b142208"
+    },
+    {
+      "artifact": "phase20r_sufficiency.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\benchmarks\\phase20r_sufficiency.json",
+      "phase": "20R",
+      "purpose": "OOS data sufficiency (36/60 days)",
+      "included_in_evidence_review": true,
+      "digest": "549749cf060c4777362c615c345fd8a42b8af49fbc7178f292bb0af0e46b869a"
+    },
+    {
+      "artifact": "branch_registry.json",
+      "path": "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\research\\branch_registry.json",
+      "phase": "Registry",
+      "purpose": "Branch registry state",
+      "included_in_evidence_review": true,
+      "digest": "1479bee27a1cd665da82b12852baea0f724646dff933301ab965e4c4c01f8f5d"
+    }
+  ],
+  "inconvenient_evidence_included": true,
+  "note": "Phase 31-R (SIMULATED data, NO_MEANINGFUL_SUPPORT) is included as inconvenient evidence. Phase 33-R budget inconsistency is included."
+}

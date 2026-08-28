@@ -1,0 +1,127 @@
+{
+  "manifest_id": "FEAT-MANIFEST-34R",
+  "phase": "34R",
+  "timestamp": "2026-08-28T13:01:23.125659+00:00",
+  "branch_id": "BR-A1B2C3D4E5F6",
+  "n_features": 12,
+  "features": [
+    {
+      "feature_id": "YC_LEVEL_10Y",
+      "source": "DGS10",
+      "transformation": "Direct",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_LEVEL_2Y",
+      "source": "DGS2",
+      "transformation": "Direct",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_SLOPE_10Y2Y",
+      "source": "DGS10-DGS2",
+      "transformation": "Difference",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_SLOPE_10Y3M",
+      "source": "DGS10-DGS3MO",
+      "transformation": "Difference",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_SLOPE_30Y5Y",
+      "source": "DGS30-DGS5",
+      "transformation": "Difference",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_CURVATURE",
+      "source": "(DGS5-DGS2)-(DGS10-DGS5)",
+      "transformation": "Butterfly",
+      "release": "T+0",
+      "lag": 0,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_CHANGE_5D_10Y",
+      "source": "DGS10(t)-DGS10(t-5)",
+      "transformation": "Lag diff",
+      "release": "T+0",
+      "lag": 5,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_CHANGE_10D_10Y",
+      "source": "DGS10(t)-DGS10(t-10)",
+      "transformation": "Lag diff",
+      "release": "T+0",
+      "lag": 10,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_CHANGE_20D_10Y",
+      "source": "DGS10(t)-DGS10(t-20)",
+      "transformation": "Lag diff",
+      "release": "T+0",
+      "lag": 20,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_SLOPE_CHANGE_5D",
+      "source": "T10Y2Y(t)-T10Y2Y(t-5)",
+      "transformation": "Lag diff",
+      "release": "T+0",
+      "lag": 5,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_LEVEL_ZSCORE_252",
+      "source": "(DGS10-mean)/std, 252d",
+      "transformation": "Rolling z-score",
+      "release": "T+0",
+      "lag": 252,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    },
+    {
+      "feature_id": "YC_REGIME_STEEPENER",
+      "source": "T10Y2Y > median(T10Y2Y,252)",
+      "transformation": "Regime indicator",
+      "release": "T+0",
+      "lag": 252,
+      "pit": "PIT_NATIVE",
+      "missing": "Forward-fill"
+    }
+  ],
+  "source": "FRED Treasury yields (Phase 32-R approved)",
+  "origin": "REAL_DATA",
+  "all_pit_native": true,
+  "locking_rules": [
+    "Features cannot be added, removed, or modified after registration",
+    "Feature transformations cannot be changed",
+    "Source data cannot be substituted",
+    "Missing value handling cannot be changed"
+  ],
+  "manifest_digest": "e41307333151f4e46dba9f1175fa8dd97217c55226fc90e4f00a0d87200a6c7f"
+}
