@@ -1,0 +1,8 @@
+{
+  "regime": "RATE_REGIME",
+  "definition": "HIGH if DGS10 > rolling 60-day median, LOW otherwise",
+  "phase_40r_digest": "reproduced",
+  "pit_classification": "PIT_NATIVE",
+  "reproduced_exactly": true,
+  "no_threshold_optimization": true
+}

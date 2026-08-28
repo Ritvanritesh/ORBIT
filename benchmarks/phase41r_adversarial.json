@@ -1,0 +1,144 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_yield_leakage",
+      "result": "BLOCKED",
+      "rationale": "DGS10 rolling median backward-looking"
+    },
+    "A02": {
+      "name": "future_regime_classification",
+      "result": "BLOCKED",
+      "rationale": "Regime uses only past data"
+    },
+    "A03": {
+      "name": "centered_rolling_window",
+      "result": "BLOCKED",
+      "rationale": "Rolling median not centered"
+    },
+    "A04": {
+      "name": "regime_threshold_modification",
+      "result": "BLOCKED",
+      "rationale": "Threshold frozen from Phase 40-R"
+    },
+    "A05": {
+      "name": "hidden_threshold_search",
+      "result": "BLOCKED",
+      "rationale": "Single threshold (median)"
+    },
+    "A06": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "70/30 time-ordered split"
+    },
+    "A07": {
+      "name": "incorrect_model_routing",
+      "result": "BLOCKED",
+      "rationale": "Routing uses PIT-safe regime"
+    },
+    "A08": {
+      "name": "regime_routing_future_info",
+      "result": "BLOCKED",
+      "rationale": "Regime at date t uses data through t"
+    },
+    "A09": {
+      "name": "unmatched_baseline",
+      "result": "BLOCKED",
+      "rationale": "Every experiment has matched baseline"
+    },
+    "A10": {
+      "name": "incorrect_incremental_ic",
+      "result": "BLOCKED",
+      "rationale": "Incr IC correctly computed"
+    },
+    "A11": {
+      "name": "placebo_hidden_econ_info",
+      "result": "BLOCKED",
+      "rationale": "Placebo uses instrument ID hash"
+    },
+    "A12": {
+      "name": "placebo_threshold_optimization",
+      "result": "BLOCKED",
+      "rationale": "No threshold in placebo"
+    },
+    "A13": {
+      "name": "placebo_sample_imbalance",
+      "result": "BLOCKED",
+      "rationale": "Placebo ~50/50 by construction"
+    },
+    "A14": {
+      "name": "sample_fragmentation",
+      "result": "BLOCKED",
+      "rationale": "LOW risk \u2014 balanced splits"
+    },
+    "A15": {
+      "name": "empty_regime",
+      "result": "BLOCKED",
+      "rationale": "Both regimes have sufficient observations"
+    },
+    "A16": {
+      "name": "regime_imbalance",
+      "result": "BLOCKED",
+      "rationale": "~50/50 by construction"
+    },
+    "A17": {
+      "name": "insufficient_training",
+      "result": "BLOCKED",
+      "rationale": "Minimum 20 per regime enforced"
+    },
+    "A18": {
+      "name": "duplicate_experiment",
+      "result": "BLOCKED",
+      "rationale": "All 20 unique"
+    },
+    "A19": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=20 matrix=20 MATCHED"
+    },
+    "A20": {
+      "name": "temporal_split_selected",
+      "result": "BLOCKED",
+      "rationale": "Split locked at median date"
+    },
+    "A21": {
+      "name": "coefficient_comparison_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Same features compared"
+    },
+    "A22": {
+      "name": "feature_diagnostic_selection",
+      "result": "BLOCKED",
+      "rationale": "Diagnostic only, no feature changes"
+    },
+    "A23": {
+      "name": "protected_oos_access",
+      "result": "BLOCKED",
+      "rationale": "No OOS data loaded"
+    },
+    "A24": {
+      "name": "confirmatory_execution",
+      "result": "BLOCKED",
+      "rationale": "No confirmatory test executed"
+    },
+    "A25": {
+      "name": "registration_modification",
+      "result": "BLOCKED",
+      "rationale": "No registrations modified"
+    },
+    "A26": {
+      "name": "historical_artifact_modification",
+      "result": "BLOCKED",
+      "rationale": "All work additive"
+    },
+    "A27": {
+      "name": "nondeterministic_rerun",
+      "result": "BLOCKED",
+      "rationale": "Fixed seed deterministic"
+    }
+  },
+  "summary": {
+    "total": 27,
+    "blocked": 27,
+    "confirmed_failure": 0
+  }
+}

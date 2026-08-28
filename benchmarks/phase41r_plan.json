@@ -1,0 +1,319 @@
+{
+  "plan_id": "PLAN-41R",
+  "phase": "41R",
+  "timestamp": "2026-08-28T14:20:35.142488+00:00",
+  "budget": 20,
+  "n_experiments": 20,
+  "budget_matches_matrix": true,
+  "matrix": [
+    {
+      "id": "EXP-001",
+      "group": "A_BASELINE",
+      "arch": "POOLED",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-002",
+      "group": "A_BASELINE",
+      "arch": "POOLED",
+      "h": 10,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-003",
+      "group": "A_BASELINE",
+      "arch": "POOLED",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-004",
+      "group": "A_BASELINE",
+      "arch": "POOLED",
+      "h": 20,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-005",
+      "group": "B_RATE_SEPARATE",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-006",
+      "group": "B_RATE_SEPARATE",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-007",
+      "group": "B_RATE_SEPARATE",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-008",
+      "group": "B_RATE_SEPARATE",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME"
+    },
+    {
+      "id": "EXP-009",
+      "group": "C_PLACEBO",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "PLACEBO"
+    },
+    {
+      "id": "EXP-010",
+      "group": "C_PLACEBO",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "PLACEBO"
+    },
+    {
+      "id": "EXP-011",
+      "group": "C_PLACEBO",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "PLACEBO"
+    },
+    {
+      "id": "EXP-012",
+      "group": "C_PLACEBO",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "PLACEBO"
+    },
+    {
+      "id": "EXP-013",
+      "group": "D_TEMPORAL",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "period": "EARLY"
+    },
+    {
+      "id": "EXP-014",
+      "group": "D_TEMPORAL",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "period": "LATE"
+    },
+    {
+      "id": "EXP-015",
+      "group": "D_TEMPORAL",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "period": "EARLY"
+    },
+    {
+      "id": "EXP-016",
+      "group": "D_TEMPORAL",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "period": "LATE"
+    },
+    {
+      "id": "EXP-017",
+      "group": "E_BALANCE",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "variant": "STANDARD"
+    },
+    {
+      "id": "EXP-018",
+      "group": "E_BALANCE",
+      "arch": "SEPARATE",
+      "h": 10,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "variant": "MIN_SAMPLE"
+    },
+    {
+      "id": "EXP-019",
+      "group": "E_BALANCE",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "variant": "STANDARD"
+    },
+    {
+      "id": "EXP-020",
+      "group": "E_BALANCE",
+      "arch": "SEPARATE",
+      "h": 20,
+      "ds": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "split": "RATE_REGIME",
+      "variant": "MIN_SAMPLE"
+    }
+  ],
+  "digest": "ac248ed89c745f818d219794554e06ac57aad0fc156624ec0bb0256221dd3a79"
+}

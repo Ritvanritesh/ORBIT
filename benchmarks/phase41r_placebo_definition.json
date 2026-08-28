@@ -1,0 +1,8 @@
+{
+  "method": "Instrument ID parity",
+  "rule": "PLACEBO_SPLIT = 1 if hash(instrument_id) % 2 == 0, else 0",
+  "balance": "Approximately 50/50 split",
+  "no_economic_information": true,
+  "deterministic": true,
+  "no_future_info": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "HYP-CAND-RM-003",
+  "phase": "41R",
+  "timestamp": "2026-08-28T14:20:35.142488+00:00",
+  "statement": "Separately estimated regime-specific Ridge models should outperform an equivalent pooled Ridge model because the underlying feature-return relationships are not stable across interest-rate regimes.",
+  "mechanism": "Interest-rate environments influence discount rates, valuation sensitivity, and momentum persistence, causing the same price-derived feature to have different predictive relationships depending on regime.",
+  "falsification": "Separate-model advantage disappears under matched comparisons, placebo produces comparable improvement, coefficient differences are unstable, or effect concentrated in one universe/horizon."
+}

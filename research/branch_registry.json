@@ -371,6 +371,11 @@
         "verdict": "B",
         "best_arch": "D_SEPARATE",
         "next": "PHASE_41R_TARGETED_REGIME_RESEARCH"
+      },
+      "phase41r_result": {
+        "outcome": "STRONG_EXPLORATORY_SUPPORT",
+        "verdict": "A",
+        "next": "PHASE_42R_REGIME_AWARE_CONFIRMATORY_REGISTRATION"
       }
     }
   ],
@@ -395,7 +400,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T14:10:07.260800+00:00",
+  "last_updated": "2026-08-28T14:20:35.142488+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

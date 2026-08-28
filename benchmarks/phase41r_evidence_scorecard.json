@@ -1,0 +1,16 @@
+{
+  "outcome": "STRONG_EXPLORATORY_SUPPORT",
+  "pass": 9,
+  "scorecard": {
+    "positive_incremental_ic": true,
+    "meaningfulness": true,
+    "advantage_over_placebo": true,
+    "coefficient_heterogeneity": false,
+    "temporal_stability": true,
+    "horizon_stability": true,
+    "universe_stability": true,
+    "sample_fragmentation": true,
+    "pit_integrity": true,
+    "reproducibility": true
+  }
+}
