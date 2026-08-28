@@ -1,0 +1,50 @@
+{
+  "audit_id": "DATA-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "current_data": {
+    "price_data": "DS-EXP-050 (50 instruments, ~2000 trading days), DS-EXP-100 (100 instruments, ~2000 trading days)",
+    "macro_data": "FRED Treasury yields (daily, 1962-present)",
+    "effective_independent_observations": "~2000 daily periods (NOT 100K rows \u2014 temporal autocorrelation)",
+    "cross_sectional_units": "50-100 instruments",
+    "feature_to_sample_ratio": "5-15 features / ~2000 observations = FAVORABLE for linear models, MARGINAL for tree models"
+  },
+  "model_class_assessments": {
+    "Linear_models": {
+      "classification": "DATA_READY",
+      "rationale": "5-15 features with ~2000 observations provides adequate sample for Ridge/Lasso/ElasticNet"
+    },
+    "Tree_models": {
+      "classification": "DATA_READY",
+      "rationale": "Phase 22-R validated infrastructure. ~2000 observations sufficient for shallow trees with regularization"
+    },
+    "Regime_conditioned_linear": {
+      "classification": "DATA_READY",
+      "rationale": "Regime split divides data ~50/50, still ~1000 observations per regime \u2014 sufficient"
+    },
+    "Hidden_Markov_Model": {
+      "classification": "DATA_LIMITED_BUT_EXPLORABLE",
+      "rationale": "~2000 daily observations may be sufficient for simple HMM with 2-3 states, but convergence is not guaranteed"
+    },
+    "Mixture_of_experts": {
+      "classification": "DATA_LIMITED_BUT_EXPLORABLE",
+      "rationale": "Gating network requires sufficient data per expert \u2014 marginal with regime splits"
+    },
+    "LSTM": {
+      "classification": "CURRENTLY_UNJUSTIFIED",
+      "rationale": "~2000 time periods insufficient for meaningful sequence learning. Need 10K+ periods."
+    },
+    "TCN": {
+      "classification": "CURRENTLY_UNJUSTIFIED",
+      "rationale": "Same as LSTM \u2014 insufficient temporal depth"
+    },
+    "Transformer": {
+      "classification": "CURRENTLY_UNJUSTIFIED",
+      "rationale": "Far beyond current data scale"
+    }
+  },
+  "compute_assessment": {
+    "current_infrastructure": "Python + polars + numpy + scipy + sklearn \u2014 SUFFICIENT for all justified model classes",
+    "additional_compute_needed": "None for justified models. GPU required for deep learning (NOT justified)."
+  }
+}

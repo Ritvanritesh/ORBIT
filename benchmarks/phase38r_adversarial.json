@@ -1,0 +1,113 @@
+{
+  "audit_id": "ADV-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "tests": {
+    "A01": {
+      "name": "Complexity bias",
+      "result": "BLOCKED",
+      "rationale": "Recommendation is for simplest architecture (regime-conditioned linear), not most complex"
+    },
+    "A02": {
+      "name": "Bigger model must be better",
+      "result": "BLOCKED",
+      "rationale": "Deep learning rejected, ensemble deferred. Linear regime model recommended."
+    },
+    "A03": {
+      "name": "Data leakage disguised as regime information",
+      "result": "BLOCKED",
+      "rationale": "Regime labels are PIT_NATIVE (FRED data same-day publication)"
+    },
+    "A04": {
+      "name": "Regime definitions selected after observing returns",
+      "result": "BLOCKED",
+      "rationale": "Regime definition (60-day rolling median) is objectively specified, not selected based on IC"
+    },
+    "A05": {
+      "name": "Sample fragmentation",
+      "result": "DOCUMENTED_LIMITATION",
+      "rationale": "Regime conditioning splits data ~50/50. Still ~1000 observations per regime \u2014 adequate but noted."
+    },
+    "A06": {
+      "name": "False interaction discovery",
+      "result": "BLOCKED",
+      "rationale": "Phase 36-R showed regime differentials in exploratory testing. Phase 37-R will confirm."
+    },
+    "A07": {
+      "name": "Overlapping-label inflation",
+      "result": "BLOCKED",
+      "rationale": "Forward returns properly lagged. No overlapping labels."
+    },
+    "A08": {
+      "name": "Multiple-model fishing",
+      "result": "BLOCKED",
+      "rationale": "Only one model class recommended (regime-conditioned linear). No model comparison."
+    },
+    "A09": {
+      "name": "Hyperparameter explosion",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 locked from Phase 36-R. No tuning."
+    },
+    "A10": {
+      "name": "Data sufficiency illusion",
+      "result": "BLOCKED",
+      "rationale": "~2000 independent time periods adequate for linear models. Deep learning rejected for data insufficiency."
+    },
+    "A11": {
+      "name": "Raw observations confused with independent samples",
+      "result": "BLOCKED",
+      "rationale": "Data sufficiency audit uses effective independent observations (~2000 periods), not raw rows (~100K)"
+    },
+    "A12": {
+      "name": "Deep learning hype bias",
+      "result": "BLOCKED",
+      "rationale": "Deep learning explicitly rejected with detailed justification"
+    },
+    "A13": {
+      "name": "Ensemble overfitting",
+      "result": "BLOCKED",
+      "rationale": "Ensemble deferred \u2014 no evidence of complementarity"
+    },
+    "A14": {
+      "name": "Using protected OOS information indirectly",
+      "result": "BLOCKED",
+      "rationale": "No OOS data accessed. Recommendations based on exploratory evidence only."
+    },
+    "A15": {
+      "name": "Modifying future priorities based on confirmatory OOS data",
+      "result": "BLOCKED",
+      "rationale": "OOS status is DATA_NOT_READY. No confirmatory data used."
+    },
+    "A16": {
+      "name": "Recommending without identifying capability gap",
+      "result": "BLOCKED",
+      "rationale": "Capability gaps explicitly identified: regime switching, conditional nonlinear, temporal dependencies"
+    },
+    "A17": {
+      "name": "Recommending complexity when simpler model suffices",
+      "result": "BLOCKED",
+      "rationale": "Simplest architecture recommended (regime-conditioned linear)"
+    },
+    "A18": {
+      "name": "Treating exploratory evidence as confirmation",
+      "result": "BLOCKED",
+      "rationale": "Phase 36-R evidence explicitly labeled as exploratory. Phase 37-R registration acknowledges pending confirmatory test."
+    },
+    "A19": {
+      "name": "Ignoring failed model classes",
+      "result": "BLOCKED",
+      "rationale": "All evaluated model classes documented with reasons for rejection"
+    },
+    "A20": {
+      "name": "Ignoring computational constraints",
+      "result": "BLOCKED",
+      "rationale": "Compute assessment confirms current infrastructure sufficient for justified models"
+    }
+  },
+  "summary": {
+    "total": 20,
+    "blocked": 19,
+    "documented_limitation": 1,
+    "confirmed_failure": 0
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "analysis_id": "REGIME-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "candidate_architectures": [
+    {
+      "name": "Explicit regime interaction features",
+      "description": "Add FEATURE x REGIME interactions to linear model",
+      "scientific_justification": "DIRECTLY_SUPPORTED \u2014 Phase 36-R showed regime differentials",
+      "complexity": "LOW",
+      "data_requirements": "None additional",
+      "interpretability": "HIGH",
+      "leakage_risk": "LOW \u2014 regime labels PIT_NATIVE",
+      "regime_classification_risk": "LOW \u2014 uses predefined regimes",
+      "sample_fragmentation": "NONE \u2014 all data used in single model",
+      "overfitting_risk": "LOW",
+      "compatibility_with_orbit": "HIGH \u2014 extends existing linear framework",
+      "recommendation": "RECOMMENDED \u2014 simplest regime-aware architecture"
+    },
+    {
+      "name": "Separate models per regime",
+      "description": "Train independent model for each regime state",
+      "scientific_justification": "DIRECTLY_SUPPORTED \u2014 same mechanism as interaction features",
+      "complexity": "LOW",
+      "data_requirements": "Sufficient samples per regime",
+      "interpretability": "HIGH",
+      "leakage_risk": "LOW",
+      "regime_classification_risk": "LOW",
+      "sample_fragmentation": "MODERATE \u2014 data split across regimes",
+      "overfitting_risk": "LOW per model, MODERATE overall",
+      "compatibility_with_orbit": "HIGH",
+      "recommendation": "ALTERNATIVE to interaction features"
+    },
+    {
+      "name": "Regime-conditioned linear model",
+      "description": "Single model with regime-dependent coefficients",
+      "scientific_justification": "DIRECTLY_SUPPORTED",
+      "complexity": "LOW-MEDIUM",
+      "data_requirements": "None additional",
+      "interpretability": "HIGH",
+      "leakage_risk": "LOW",
+      "regime_classification_risk": "LOW",
+      "sample_fragmentation": "NONE",
+      "overfitting_risk": "LOW-MEDIUM",
+      "compatibility_with_orbit": "HIGH",
+      "recommendation": "EQUIVALENT to interaction features"
+    },
+    {
+      "name": "Tree-based conditional modelling",
+      "description": "Use tree models with regime features to capture nonlinear regime interactions",
+      "scientific_justification": "PLAUSIBLE_BUT_UNCONFIRMED",
+      "complexity": "MEDIUM",
+      "data_requirements": "None additional",
+      "interpretability": "MEDIUM",
+      "leakage_risk": "LOW",
+      "regime_classification_risk": "LOW",
+      "sample_fragmentation": "NONE",
+      "overfitting_risk": "MEDIUM",
+      "compatibility_with_orbit": "HIGH \u2014 infrastructure exists from Phase 22-R",
+      "recommendation": "WORTH_EXPLORING if linear regime conditioning succeeds"
+    },
+    {
+      "name": "Hidden Markov Model",
+      "description": "Latent state model for regime discovery",
+      "scientific_justification": "SPECULATIVE",
+      "complexity": "HIGH",
+      "data_requirements": "Sufficient observations for HMM convergence",
+      "interpretability": "LOW-MEDIUM",
+      "leakage_risk": "MODERATE \u2014 latent states may use future information",
+      "regime_classification_risk": "HIGH \u2014 states are latent",
+      "sample_fragmentation": "HIGH",
+      "overfitting_risk": "HIGH",
+      "compatibility_with_orbit": "LOW \u2014 different paradigm",
+      "recommendation": "DEFERRED \u2014 predefined regimes must be tested first"
+    },
+    {
+      "name": "Mixture-of-experts",
+      "description": "Gating network routes inputs to regime-specialized expert models",
+      "scientific_justification": "SPECULATIVE",
+      "complexity": "HIGH",
+      "data_requirements": "Large training set for gating network",
+      "interpretability": "LOW-MEDIUM",
+      "leakage_risk": "MODERATE",
+      "regime_classification_risk": "MODERATE",
+      "sample_fragmentation": "MODERATE",
+      "overfitting_risk": "HIGH",
+      "compatibility_with_orbit": "LOW",
+      "recommendation": "DEFERRED"
+    }
+  ],
+  "recommended_simplest_architecture": {
+    "name": "Explicit regime interaction features",
+    "rationale": "Lowest complexity, directly supported by evidence, highest interpretability, compatible with ORBIT framework"
+  }
+}

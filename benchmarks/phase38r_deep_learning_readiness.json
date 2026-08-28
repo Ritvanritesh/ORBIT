@@ -1,0 +1,43 @@
+{
+  "audit_id": "DL-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "data_assessment": {
+    "observation_count": "~50 instruments x ~2000 trading days = ~100K rows (but many are not independent)",
+    "effective_independent_observations": "~2000 time periods (daily), ~50 cross-sectional units",
+    "cross_sectional_sample_structure": "Panel data \u2014 instruments are not independent (market correlation)",
+    "feature_dimensionality": "5-15 features (LOW for deep learning)",
+    "temporal_depth": "60-day rolling windows (LIMITED for sequence models)",
+    "horizon_structure": "5, 10, 20-day forward returns",
+    "regime_complexity": "Binary regime classification (SIMPLE)",
+    "existing_model_performance": "Linear models achieve modest IC (0.05-0.10)",
+    "evidence_of_nonlinear_structure": "PARTIAL \u2014 tree models validated but not shown to improve IC",
+    "evidence_of_sequential_structure": "NOT_DEMONSTRATED"
+  },
+  "architecture_assessments": {
+    "LSTM": {
+      "classification": "NOT_JUSTIFIED",
+      "rationale": "Insufficient temporal depth for meaningful sequence learning. Lag features already provide temporal representation. Very high overfitting risk with ~2000 time periods."
+    },
+    "TemporalConvNet": {
+      "classification": "NOT_JUSTIFIED",
+      "rationale": "Rolling window features (VOL_20D, RET_20D) already capture local temporal patterns. No evidence that learned temporal filters would improve prediction."
+    },
+    "Transformer": {
+      "classification": "NOT_JUSTIFIED",
+      "rationale": "Far beyond current data scale. Cross-sectional attention is not supported by evidence. Extremely high overfitting risk."
+    },
+    "OtherTemporalArchitectures": {
+      "classification": "NOT_JUSTIFIED",
+      "rationale": "No ORBIT evidence demonstrates sequential modelling superiority over lag features."
+    }
+  },
+  "overall_classification": "NOT_JUSTIFIED",
+  "rationale": "Deep learning requires substantially more data, stronger evidence of temporal/nonlinear structure, and demonstration that simpler models are insufficient. None of these conditions are met.",
+  "when_to_reconsider": [
+    "After 5+ years of additional OOS data",
+    "After evidence demonstrates lag features are insufficient",
+    "After linear and tree models show clear ceiling",
+    "After cross-asset temporal patterns are documented"
+  ]
+}

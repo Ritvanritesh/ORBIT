@@ -1,0 +1,137 @@
+{
+  "inventory_id": "INV-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "models": {
+    "Ridge": {
+      "type": "LINEAR",
+      "linear_relationships": true,
+      "nonlinear_relationships": false,
+      "feature_interactions": false,
+      "conditional_relationships": false,
+      "temporal_dependencies": false,
+      "regime_switching": false,
+      "sequential_memory": false,
+      "interpretability": "HIGH",
+      "data_requirements": "LOW",
+      "overfitting_risk": "LOW"
+    },
+    "Lasso": {
+      "type": "LINEAR",
+      "linear_relationships": true,
+      "nonlinear_relationships": false,
+      "feature_interactions": false,
+      "conditional_relationships": false,
+      "temporal_dependencies": false,
+      "regime_switching": false,
+      "sequential_memory": false,
+      "interpretability": "HIGH",
+      "data_requirements": "LOW",
+      "overfitting_risk": "LOW"
+    },
+    "ElasticNet": {
+      "type": "LINEAR",
+      "linear_relationships": true,
+      "nonlinear_relationships": false,
+      "feature_interactions": false,
+      "conditional_relationships": false,
+      "temporal_dependencies": false,
+      "regime_switching": false,
+      "sequential_memory": false,
+      "interpretability": "HIGH",
+      "data_requirements": "LOW",
+      "overfitting_risk": "LOW"
+    },
+    "HistGradientBoosting": {
+      "type": "NONLINEAR_TREE",
+      "linear_relationships": true,
+      "nonlinear_relationships": true,
+      "feature_interactions": true,
+      "conditional_relationships": true,
+      "temporal_dependencies": false,
+      "regime_switching": false,
+      "sequential_memory": false,
+      "interpretability": "MEDIUM",
+      "data_requirements": "MEDIUM",
+      "overfitting_risk": "MEDIUM"
+    },
+    "LightGBM": {
+      "type": "NONLINEAR_TREE",
+      "linear_relationships": true,
+      "nonlinear_relationships": true,
+      "feature_interactions": true,
+      "conditional_relationships": true,
+      "temporal_dependencies": false,
+      "regime_switching": false,
+      "sequential_memory": false,
+      "interpretability": "MEDIUM",
+      "data_requirements": "MEDIUM",
+      "overfitting_risk": "MEDIUM"
+    }
+  },
+  "capability_matrix": {
+    "linear_relationships": {
+      "available": [
+        "Ridge",
+        "Lasso",
+        "ElasticNet",
+        "HistGradientBoosting",
+        "LightGBM"
+      ],
+      "status": "COVERED"
+    },
+    "nonlinear_relationships": {
+      "available": [
+        "HistGradientBoosting",
+        "LightGBM"
+      ],
+      "status": "COVERED"
+    },
+    "feature_interactions": {
+      "available": [
+        "HistGradientBoosting",
+        "LightGBM"
+      ],
+      "status": "COVERED"
+    },
+    "conditional_relationships": {
+      "available": [
+        "HistGradientBoosting",
+        "LightGBM"
+      ],
+      "status": "PARTIALLY_COVERED"
+    },
+    "temporal_dependencies": {
+      "available": [],
+      "status": "NOT_COVERED"
+    },
+    "regime_switching": {
+      "available": [],
+      "status": "NOT_COVERED"
+    },
+    "sequential_memory": {
+      "available": [],
+      "status": "NOT_COVERED"
+    }
+  },
+  "identified_gaps": [
+    {
+      "gap": "TEMPORAL_DEPENDENCIES",
+      "description": "No model captures sequential/autoregressive structure in features",
+      "severity": "MODERATE",
+      "current_workaround": "Lag features (RET_5D, RET_10D, RET_20D) provide partial temporal representation"
+    },
+    {
+      "gap": "REGIME_SWITCHING",
+      "description": "No model explicitly switches behavior based on market state",
+      "severity": "HIGH",
+      "current_workaround": "Phase 37-R tests regime-conditioned linear models"
+    },
+    {
+      "gap": "CONDITIONAL_NONLINEAR",
+      "description": "Tree models can represent conditional relationships, but no explicit regime-aware nonlinear model exists",
+      "severity": "MODERATE",
+      "current_workaround": "Tree models with regime features provide partial coverage"
+    }
+  ]
+}

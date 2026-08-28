@@ -1,0 +1,42 @@
+{
+  "analysis_id": "NL-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "branch_evaluations": [
+    {
+      "branch": "BR-E2AFD3AC901A (Volatility Regime)",
+      "verdict": "LINEAR_SUFFICIENT",
+      "rationale": "Ridge and Lasso produced consistent results. No evidence that nonlinear models would improve volatility regime prediction."
+    },
+    {
+      "branch": "BR-A1B2C3D4E5F6 (Yield Curve)",
+      "verdict": "NONLINEAR_EXPLORATION_JUSTIFIED",
+      "rationale": "Ridge produced stronger evidence than Lasso, suggesting potential nonlinear structure in yield-price relationships. Infrastructure exists from Phase 22-R.",
+      "mechanism": "Yield curve features may interact nonlinearly with price-derived features",
+      "expected_nonlinear_structure": "Threshold effects at extreme yield levels, interaction between yield slope and momentum",
+      "experimental_budget": 10,
+      "baseline": "Ridge with yield curve features (Phase 34-R registration)",
+      "falsification_criterion": "If tree models show no incremental IC over Ridge, nonlinearity is not supported"
+    },
+    {
+      "branch": "BR-C3D4E5F6A1B2 (Regime-Conditional)",
+      "verdict": "NONLINEAR_EXPLORATION_JUSTIFIED",
+      "rationale": "Regime differential is strong (0.014). Tree models with regime features could capture nonlinear regime interactions.",
+      "mechanism": "Interest-rate regime may alter the nonlinear structure of feature-return relationships",
+      "expected_nonlinear_structure": "Different feature importance across regimes, nonlinear regime boundaries",
+      "experimental_budget": 10,
+      "baseline": "Regime-conditioned linear model (Phase 37-R registration)",
+      "falsification_criterion": "If tree models show no regime differential improvement over linear, nonlinearity is not supported"
+    },
+    {
+      "branch": "BR-B2C3D4E5F6A1 (Sector x Macro)",
+      "verdict": "INSUFFICIENT_EVIDENCE",
+      "rationale": "Small incremental IC from sector x macro interactions. Economic relevance unclear. Nonlinear exploration not justified until linear evidence strengthens."
+    }
+  ],
+  "summary": {
+    "LINEAR_SUFFICIENT": 1,
+    "NONLINEAR_EXPLORATION_JUSTIFIED": 2,
+    "INSUFFICIENT_EVIDENCE": 1
+  }
+}

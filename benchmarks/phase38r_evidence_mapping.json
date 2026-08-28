@@ -1,0 +1,101 @@
+{
+  "mapping_id": "MAP-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "findings": [
+    {
+      "finding": "Predictive IC differs across volatility regimes (BR-E2AFD3AC901A)",
+      "observed_limitation": "Single model applied uniformly may miss regime-specific predictive patterns",
+      "missing_capability": "Regime-aware modelling",
+      "candidate_model_classes": [
+        {
+          "name": "Regime-conditioned linear",
+          "evidence": "DIRECTLY_SUPPORTED",
+          "priority": 1
+        },
+        {
+          "name": "Separate models per regime",
+          "evidence": "DIRECTLY_SUPPORTED",
+          "priority": 1
+        },
+        {
+          "name": "Mixture-of-experts",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 3
+        },
+        {
+          "name": "Hidden Markov Model",
+          "evidence": "SPECULATIVE",
+          "priority": 4
+        }
+      ]
+    },
+    {
+      "finding": "Yield curve features add incremental IC (BR-A1B2C3D4E5F6)",
+      "observed_limitation": "Linear models capture additive macro effects but may miss nonlinear macro-price interactions",
+      "missing_capability": "Nonlinear interaction modelling",
+      "candidate_model_classes": [
+        {
+          "name": "Tree-based interaction discovery",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 2
+        },
+        {
+          "name": "Explicit interaction features",
+          "evidence": "DIRECTLY_SUPPORTED",
+          "priority": 1
+        },
+        {
+          "name": "Neural interaction network",
+          "evidence": "SPECULATIVE",
+          "priority": 5
+        }
+      ]
+    },
+    {
+      "finding": "Interest-rate regime produces strongest regime differential (BR-C3D4E5F6A1B2)",
+      "observed_limitation": "Regime-conditional linear model tests differential prediction but not conditional nonlinearity",
+      "missing_capability": "Regime-conditioned nonlinear modelling",
+      "candidate_model_classes": [
+        {
+          "name": "Tree models with regime features",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 2
+        },
+        {
+          "name": "Regime-switching neural network",
+          "evidence": "SPECULATIVE",
+          "priority": 5
+        },
+        {
+          "name": "Separate nonlinear models per regime",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 2
+        }
+      ]
+    },
+    {
+      "finding": "Sector x macro interaction has small incremental IC (BR-B2C3D4E5F6A1)",
+      "observed_limitation": "Sector-specific macro sensitivity may require nonlinear interaction modelling",
+      "missing_capability": "Feature interaction modelling",
+      "candidate_model_classes": [
+        {
+          "name": "Tree-based interaction discovery",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 2
+        },
+        {
+          "name": "Explicit interaction features",
+          "evidence": "PLAUSIBLE_BUT_UNCONFIRMED",
+          "priority": 2
+        }
+      ]
+    }
+  ],
+  "evidence_strength_summary": {
+    "DIRECTLY_SUPPORTED": 4,
+    "PLAUSIBLE_BUT_UNCONFIRMED": 7,
+    "SPECULATIVE": 4,
+    "NOT_SUPPORTED": 0
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "recommendation_id": "REC-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "primary_recommendation": {
+    "next_phase": "PHASE_39R_REGIME_AWARE_MODEL_EXPLORATION",
+    "model_class": "Regime-conditioned linear model",
+    "rationale": [
+      "Strongest evidence: Phase 36-R (STRONG_EXPLORATORY_SUPPORT) and Phase 37-R (REGISTERED_WAITING_FOR_DATA)",
+      "Clear mechanism: interest-rate regime alters predictive relationships",
+      "Data ready: uses existing PIT data with no additional requirements",
+      "Low overfitting risk: linear model with regime interactions",
+      "High interpretability: regime-dependent coefficients are economically interpretable",
+      "Compatible with ORBIT framework: extends existing linear pipeline"
+    ],
+    "expected_capabilities": [
+      "Test whether regime-conditioned model improves IC over non-regime model",
+      "Identify which features are most regime-sensitive",
+      "Quantify regime-dependent predictive strength"
+    ],
+    "falsification_path": "If regime-conditioned model shows no IC improvement over baseline, regime-aware modelling is not supported"
+  },
+  "secondary_recommendations": [
+    {
+      "phase": "PHASE_40R (if 39-R succeeds)",
+      "model_class": "Tree-based nonlinear exploration on yield curve features",
+      "rationale": "Yield curve branch showed Ridge > Lasso, suggesting potential nonlinear structure"
+    },
+    {
+      "phase": "DEFERRED",
+      "model_class": "Ensemble modelling",
+      "rationale": "Requires evidence of model complementarity before ensemble research"
+    },
+    {
+      "phase": "REJECTED_FOR_NOW",
+      "model_class": "Deep learning (LSTM, TCN, Transformer)",
+      "rationale": "Data insufficient, evidence insufficient, simpler alternatives exist"
+    }
+  ],
+  "why_this_option": [
+    "1. Strongest evidence chain: Phase 36-R -> Phase 37-R -> Phase 39-R",
+    "2. Simplest architecture that tests the observed mechanism",
+    "3. Data ready \u2014 no additional data requirements",
+    "4. Low overfitting risk with linear model",
+    "5. High scientific interpretability"
+  ]
+}

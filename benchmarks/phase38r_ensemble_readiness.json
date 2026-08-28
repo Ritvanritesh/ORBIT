@@ -1,0 +1,15 @@
+{
+  "analysis_id": "ENSEMBLE-38R",
+  "phase": "38R",
+  "timestamp": "2026-08-28T13:50:06.235339+00:00",
+  "requirements": {
+    "prediction_disagreement": "NOT_OBSERVED \u2014 no evidence that models produce meaningfully different predictions",
+    "complementary_errors": "NOT_OBSERVED \u2014 no analysis of error correlation between models",
+    "low_moderate_correlation": "UNKNOWN \u2014 not measured",
+    "different_strengths_across_environments": "PARTIALLY_OBSERVED \u2014 Ridge outperformed Lasso in yield curve branch",
+    "incremental_information": "NOT_OBSERVED \u2014 no evidence that ensemble adds value over single best model"
+  },
+  "classification": "NOT_JUSTIFIED",
+  "rationale": "No ORBIT evidence demonstrates that model combination provides incremental predictive value. Ensemble research should be deferred until individual model evidence is established.",
+  "when_to_reconsider": "After individual model classes have been tested and shown to capture complementary patterns"
+}
