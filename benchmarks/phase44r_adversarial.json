@@ -1,0 +1,158 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_feature_leakage",
+      "result": "BLOCKED",
+      "rationale": "All features historical"
+    },
+    "A02": {
+      "name": "future_norm_leakage",
+      "result": "BLOCKED",
+      "rationale": "Normalization from train only"
+    },
+    "A03": {
+      "name": "centered_rolling",
+      "result": "BLOCKED",
+      "rationale": "Backward windows"
+    },
+    "A04": {
+      "name": "target_leakage",
+      "result": "BLOCKED",
+      "rationale": "Labels forward, features backward"
+    },
+    "A05": {
+      "name": "timestamp_align",
+      "result": "BLOCKED",
+      "rationale": "Aligned to bar dates"
+    },
+    "A06": {
+      "name": "duplicate_feature",
+      "result": "BLOCKED",
+      "rationale": "Unique IDs"
+    },
+    "A07": {
+      "name": "duplicate_experiment",
+      "result": "BLOCKED",
+      "rationale": "All unique"
+    },
+    "A08": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=24 Matrix=24"
+    },
+    "A09": {
+      "name": "hidden_feature_add",
+      "result": "BLOCKED",
+      "rationale": "No new features"
+    },
+    "A10": {
+      "name": "post_hoc_removal",
+      "result": "BLOCKED",
+      "rationale": "Pre-defined systems"
+    },
+    "A11": {
+      "name": "post_hoc_modification",
+      "result": "BLOCKED",
+      "rationale": "Systems locked before execution"
+    },
+    "A12": {
+      "name": "uncontrolled_search",
+      "result": "BLOCKED",
+      "rationale": "Controlled matrix"
+    },
+    "A13": {
+      "name": "unmatched_comparison",
+      "result": "BLOCKED",
+      "rationale": "Matched baselines"
+    },
+    "A14": {
+      "name": "horizon_contamination",
+      "result": "BLOCKED",
+      "rationale": "Separate horizons"
+    },
+    "A15": {
+      "name": "universe_contamination",
+      "result": "BLOCKED",
+      "rationale": "Separate universes"
+    },
+    "A16": {
+      "name": "temporal_contamination",
+      "result": "BLOCKED",
+      "rationale": "Time-ordered splits"
+    },
+    "A17": {
+      "name": "incorrect_incr",
+      "result": "BLOCKED",
+      "rationale": "IC(system)-IC(baseline)"
+    },
+    "A18": {
+      "name": "redundant_misclass",
+      "result": "BLOCKED",
+      "rationale": "Redundancy measured"
+    },
+    "A19": {
+      "name": "correlation_leakage",
+      "result": "BLOCKED",
+      "rationale": "Correlation from val set only"
+    },
+    "A20": {
+      "name": "missing_inconsistency",
+      "result": "BLOCKED",
+      "rationale": "Consistent NaN handling"
+    },
+    "A21": {
+      "name": "scaling_leakage",
+      "result": "BLOCKED",
+      "rationale": "Scaler fit on train"
+    },
+    "A22": {
+      "name": "hyperparam_leakage",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 fixed"
+    },
+    "A23": {
+      "name": "protected_oos",
+      "result": "BLOCKED",
+      "rationale": "No OOS loaded"
+    },
+    "A24": {
+      "name": "registration_mod",
+      "result": "BLOCKED",
+      "rationale": "All immutable"
+    },
+    "A25": {
+      "name": "artifact_mod",
+      "result": "BLOCKED",
+      "rationale": "All additive"
+    },
+    "A26": {
+      "name": "nondeterministic",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    },
+    "A27": {
+      "name": "simulated_yield",
+      "result": "BLOCKED",
+      "rationale": "Real FRED data"
+    },
+    "A28": {
+      "name": "hidden_candidate",
+      "result": "BLOCKED",
+      "rationale": "Systems pre-defined"
+    },
+    "A29": {
+      "name": "complexity_manipulation",
+      "result": "BLOCKED",
+      "rationale": "Complexity objectively scored"
+    },
+    "A30": {
+      "name": "cherry_picking",
+      "result": "BLOCKED",
+      "rationale": "Complete matrix reported"
+    }
+  },
+  "summary": {
+    "total": 30,
+    "blocked": 30
+  }
+}

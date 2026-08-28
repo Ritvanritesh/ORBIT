@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "families": [
+    "A_MOMENTUM",
+    "B_TREND",
+    "C_VOLATILITY",
+    "D_RELATIVE",
+    "F_YIELD",
+    "G_REGIME_COND"
+  ],
+  "features": 19
+}

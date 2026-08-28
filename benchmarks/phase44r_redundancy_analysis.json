@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "redundancy": {
+    "A_MOMENTUM": {
+      "avg_corr": 0.6548931632193254,
+      "max_corr": 0.7235922160424233,
+      "classification": "HIGH"
+    },
+    "B_TREND": {
+      "avg_corr": 0.37190347545430136,
+      "max_corr": 0.6873924237787484,
+      "classification": "MODERATE"
+    },
+    "C_VOLATILITY": {
+      "avg_corr": 0.2859828129077739,
+      "max_corr": 0.8326686688877266,
+      "classification": "LOW"
+    },
+    "D_RELATIVE": {
+      "avg_corr": 0.770673894951198,
+      "max_corr": 0.9615610398053803,
+      "classification": "HIGH"
+    },
+    "F_YIELD": {
+      "avg_corr": 0.38722369229776504,
+      "max_corr": 0.9452089306441077,
+      "classification": "MODERATE"
+    },
+    "G_REGIME_COND": {
+      "avg_corr": 0.44699198806165313,
+      "max_corr": 0.6847090369000447,
+      "classification": "MODERATE"
+    }
+  },
+  "cross_family": {
+    "A_D_corr": 0.5388952204467026,
+    "classification": "HIGH"
+  }
+}

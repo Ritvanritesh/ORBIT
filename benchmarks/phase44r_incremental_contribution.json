@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "contribution": {
+    "A_MOMENTUM": {
+      "incr_h10_050": 0.0007138841342535507,
+      "incr_h10_100": 0.0017982454171142082,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.0006280323878419397,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    },
+    "B_TREND": {
+      "incr_h10_050": 0.002200038458340825,
+      "incr_h10_100": 0.0013050578017433923,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.0008762740650210543,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    },
+    "C_VOLATILITY": {
+      "incr_h10_050": 0.013702955418171348,
+      "incr_h10_100": 0.014553485499536611,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.00706411022942699,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    },
+    "D_RELATIVE": {
+      "incr_h10_050": 0.004910877183311069,
+      "incr_h10_100": 0.005699861506962889,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.0026526846725684894,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    },
+    "F_YIELD": {
+      "incr_h10_050": 0.02571745954754104,
+      "incr_h10_100": 0.0354871282261883,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.015301146943432334,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    },
+    "G_REGIME_COND": {
+      "incr_h10_050": 0.004873656427103967,
+      "incr_h10_100": 0.005000794499934902,
+      "incr_h20_050": 0,
+      "incr_h20_100": 0,
+      "avg_incr": 0.0024686127317597173,
+      "positive_count": 2,
+      "decision": "MARGINAL"
+    }
+  }
+}

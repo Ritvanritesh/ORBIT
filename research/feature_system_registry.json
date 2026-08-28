@@ -1,0 +1,23 @@
+{
+  "systems": [
+    {
+      "version": "FS-001",
+      "created": "2026-08-28T16:18:49.433574+00:00",
+      "phase": "44R",
+      "families": [],
+      "n_features": 0,
+      "digest": "e8b02bd4aae540011b973585ee457159d48a53dfe0f0c2e7138ef806cd9852c0"
+    },
+    {
+      "version": "FS-001",
+      "created": "2026-08-28T16:24:00.077536+00:00",
+      "phase": "44R",
+      "families": [
+        "F_YIELD"
+      ],
+      "n_features": 4,
+      "digest": "727788bebaebba37083b5af847c3fb219669ad3feeca84564356f5eb804b4856"
+    }
+  ],
+  "last_updated": "2026-08-28T16:24:00.077536+00:00"
+}

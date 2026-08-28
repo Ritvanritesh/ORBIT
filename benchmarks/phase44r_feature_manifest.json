@@ -1,0 +1,139 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "features": [
+    {
+      "id": "FEAT-001",
+      "name": "MOM_8D",
+      "family": "A_MOMENTUM",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-002",
+      "name": "MOM_15D",
+      "family": "A_MOMENTUM",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-003",
+      "name": "MOM_30D",
+      "family": "A_MOMENTUM",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-004",
+      "name": "TREND_CONSISTENCY_20D",
+      "family": "B_TREND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-005",
+      "name": "TREND_ACCEL_10D",
+      "family": "B_TREND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-006",
+      "name": "DIST_FROM_MA_20D",
+      "family": "B_TREND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-007",
+      "name": "VOL_RATIO_5_20",
+      "family": "C_VOLATILITY",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-008",
+      "name": "VOL_EXPANSION_20D",
+      "family": "C_VOLATILITY",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-009",
+      "name": "VOL_TREND_20D",
+      "family": "C_VOLATILITY",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-010",
+      "name": "CS_PCTILE_RET20",
+      "family": "D_RELATIVE",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-011",
+      "name": "CS_PCTILE_RET5",
+      "family": "D_RELATIVE",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-012",
+      "name": "CS_ZSCORE_RET20",
+      "family": "D_RELATIVE",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-013",
+      "name": "YC_LEVEL",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "fred_treasury"
+    },
+    {
+      "id": "FEAT-014",
+      "name": "YC_SLOPE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "fred_treasury"
+    },
+    {
+      "id": "FEAT-015",
+      "name": "YC_CURVATURE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "fred_treasury"
+    },
+    {
+      "id": "FEAT-016",
+      "name": "YC_CHG_10D",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE",
+      "source": "fred_treasury"
+    },
+    {
+      "id": "FEAT-017",
+      "name": "MOM_X_VOL_10D",
+      "family": "G_REGIME_COND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-018",
+      "name": "MOM_ABS_VOL_10D",
+      "family": "G_REGIME_COND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    },
+    {
+      "id": "FEAT-019",
+      "name": "RET_SIGNED_VOL_10D",
+      "family": "G_REGIME_COND",
+      "pit": "PIT_NATIVE",
+      "source": "bar_data"
+    }
+  ],
+  "digest": "5059e6faba6941dcfa95b1477c4f2f6b47a6f375adfc7f0ac97f3427f049a3af"
+}

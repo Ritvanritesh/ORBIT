@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "features": [
+    {
+      "feature": "MOM_8D",
+      "family": "A_MOMENTUM",
+      "lookback": 8,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_15D",
+      "family": "A_MOMENTUM",
+      "lookback": 15,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_30D",
+      "family": "A_MOMENTUM",
+      "lookback": 30,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_CONSISTENCY_20D",
+      "family": "B_TREND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_ACCEL_10D",
+      "family": "B_TREND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "DIST_FROM_MA_20D",
+      "family": "B_TREND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_RATIO_5_20",
+      "family": "C_VOLATILITY",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_EXPANSION_20D",
+      "family": "C_VOLATILITY",
+      "lookback": 40,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_TREND_20D",
+      "family": "C_VOLATILITY",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET20",
+      "family": "D_RELATIVE",
+      "lookback": 60,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET5",
+      "family": "D_RELATIVE",
+      "lookback": 60,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_ZSCORE_RET20",
+      "family": "D_RELATIVE",
+      "lookback": 60,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_LEVEL",
+      "family": "F_YIELD",
+      "lookback": 0,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_SLOPE",
+      "family": "F_YIELD",
+      "lookback": 0,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CURVATURE",
+      "family": "F_YIELD",
+      "lookback": 0,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CHG_10D",
+      "family": "F_YIELD",
+      "lookback": 10,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_X_VOL_10D",
+      "family": "G_REGIME_COND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_ABS_VOL_10D",
+      "family": "G_REGIME_COND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "RET_SIGNED_VOL_10D",
+      "family": "G_REGIME_COND",
+      "lookback": 20,
+      "classification": "PIT_NATIVE"
+    }
+  ]
+}

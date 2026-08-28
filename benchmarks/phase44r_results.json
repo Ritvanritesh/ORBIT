@@ -1,0 +1,418 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "results": [
+    {
+      "exp_id": "FULL-001",
+      "group": "A",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.25499676397382787,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07502426789156708,
+      "system": "SYSTEM_FULL",
+      "remove": null
+    },
+    {
+      "exp_id": "FULL-002",
+      "group": "A",
+      "universe": "050",
+      "horizon": 20,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.30393206092630404,
+      "base_ic": 0.23472318928418623,
+      "incr_ic": 0.06920887164211781,
+      "system": "SYSTEM_FULL",
+      "remove": null
+    },
+    {
+      "exp_id": "FULL-003",
+      "group": "A",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2666916491945787,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.09601826315740117,
+      "system": "SYSTEM_FULL",
+      "remove": null
+    },
+    {
+      "exp_id": "FULL-004",
+      "group": "A",
+      "universe": "100",
+      "horizon": 20,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.3063531266665446,
+      "base_ic": 0.2291645803774743,
+      "incr_ic": 0.07718854628907026,
+      "system": "SYSTEM_FULL",
+      "remove": null
+    },
+    {
+      "exp_id": "ABL-005",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2542828798395743,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07431038375731353,
+      "system": null,
+      "remove": "A_MOMENTUM"
+    },
+    {
+      "exp_id": "ABL-006",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2648934037774645,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.09422001774028696,
+      "system": null,
+      "remove": "A_MOMENTUM"
+    },
+    {
+      "exp_id": "ABL-007",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.25279672551548704,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07282422943322625,
+      "system": null,
+      "remove": "B_TREND"
+    },
+    {
+      "exp_id": "ABL-008",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2653865913928353,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.09471320535565778,
+      "system": null,
+      "remove": "B_TREND"
+    },
+    {
+      "exp_id": "ABL-009",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.24129380855565652,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.06132131247339573,
+      "system": null,
+      "remove": "C_VOLATILITY"
+    },
+    {
+      "exp_id": "ABL-010",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2521381636950421,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.08146477765786456,
+      "system": null,
+      "remove": "C_VOLATILITY"
+    },
+    {
+      "exp_id": "ABL-011",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2500858867905168,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07011339070825601,
+      "system": null,
+      "remove": "D_RELATIVE"
+    },
+    {
+      "exp_id": "ABL-012",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.26099178768761583,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.09031840165043828,
+      "system": null,
+      "remove": "D_RELATIVE"
+    },
+    {
+      "exp_id": "ABL-013",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.22927930442628683,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.04930680834402604,
+      "system": null,
+      "remove": "F_YIELD"
+    },
+    {
+      "exp_id": "ABL-014",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.23120452096839042,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.06053113493121287,
+      "system": null,
+      "remove": "F_YIELD"
+    },
+    {
+      "exp_id": "ABL-015",
+      "group": "B",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD"
+      ],
+      "ic": 0.2501231075467239,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07015061146446311,
+      "system": null,
+      "remove": "G_REGIME_COND"
+    },
+    {
+      "exp_id": "ABL-016",
+      "group": "B",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD"
+      ],
+      "ic": 0.2616908546946438,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.09101746865746627,
+      "system": null,
+      "remove": "G_REGIME_COND"
+    },
+    {
+      "exp_id": "RED-017",
+      "group": "C",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM"
+      ],
+      "ic": 0.18034113362773685,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.0003686375454760582,
+      "system": null,
+      "remove": null
+    },
+    {
+      "exp_id": "RED-018",
+      "group": "C",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "D_RELATIVE"
+      ],
+      "ic": 0.19476197483411742,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.014789478751856627,
+      "system": null,
+      "remove": null
+    },
+    {
+      "exp_id": "RED-019",
+      "group": "C",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM"
+      ],
+      "ic": 0.17278704281076282,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.0021136567735852707,
+      "system": null,
+      "remove": null
+    },
+    {
+      "exp_id": "RED-020",
+      "group": "C",
+      "universe": "100",
+      "horizon": 10,
+      "families": [
+        "D_RELATIVE"
+      ],
+      "ic": 0.19068453329959417,
+      "base_ic": 0.17067338603717755,
+      "incr_ic": 0.020011147262416623,
+      "system": null,
+      "remove": null
+    },
+    {
+      "exp_id": "CMP-021",
+      "group": "D",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.2500858867905168,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.07011339070825601,
+      "system": "SYSTEM_COMPACT",
+      "remove": null
+    },
+    {
+      "exp_id": "CMP-022",
+      "group": "D",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY",
+        "F_YIELD"
+      ],
+      "ic": 0.23777828267242626,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.05780578659016547,
+      "system": "SYSTEM_MINIMAL",
+      "remove": null
+    },
+    {
+      "exp_id": "CMP-023",
+      "group": "D",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "F_YIELD",
+        "A_MOMENTUM"
+      ],
+      "ic": 0.2253399892299905,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.0453674931477297,
+      "system": "SYSTEM_YIELD_MOMENTUM",
+      "remove": null
+    },
+    {
+      "exp_id": "CMP-024",
+      "group": "D",
+      "universe": "050",
+      "horizon": 10,
+      "families": [
+        "F_YIELD",
+        "C_VOLATILITY",
+        "G_REGIME_COND"
+      ],
+      "ic": 0.24756793650456907,
+      "base_ic": 0.1799724960822608,
+      "incr_ic": 0.06759544042230828,
+      "system": "SYSTEM_VERY_COMPACT",
+      "remove": null
+    }
+  ]
+}

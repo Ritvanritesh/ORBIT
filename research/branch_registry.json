@@ -415,6 +415,30 @@
         ],
         "features": 19
       }
+    },
+    {
+      "branch_id": "BR-E5F6A1B2C3D4",
+      "name": "Feature Selection and System Freeze",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T16:18:49.433574+00:00",
+      "result": {
+        "families": [],
+        "features": 0,
+        "fs_version": "FS-001"
+      }
+    },
+    {
+      "branch_id": "BR-E5F6A1B2C3D4",
+      "name": "Feature Selection and System Freeze",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T16:24:00.077536+00:00",
+      "result": {
+        "families": [
+          "F_YIELD"
+        ],
+        "features": 4,
+        "fs_version": "FS-001"
+      }
     }
   ],
   "prevention_rules": [
@@ -438,7 +462,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T15:52:38.871337+00:00",
+  "last_updated": "2026-08-28T16:24:00.077536+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

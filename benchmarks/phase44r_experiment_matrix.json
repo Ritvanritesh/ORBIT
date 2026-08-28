@@ -1,0 +1,182 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "budget": 24,
+  "matrix": [
+    {
+      "id": "FULL-001",
+      "group": "A",
+      "system": "SYSTEM_FULL",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "FULL-002",
+      "group": "A",
+      "system": "SYSTEM_FULL",
+      "universe": "050",
+      "horizon": 20
+    },
+    {
+      "id": "FULL-003",
+      "group": "A",
+      "system": "SYSTEM_FULL",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "FULL-004",
+      "group": "A",
+      "system": "SYSTEM_FULL",
+      "universe": "100",
+      "horizon": 20
+    },
+    {
+      "id": "ABL-005",
+      "group": "B",
+      "remove": "A_MOMENTUM",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-006",
+      "group": "B",
+      "remove": "A_MOMENTUM",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-007",
+      "group": "B",
+      "remove": "B_TREND",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-008",
+      "group": "B",
+      "remove": "B_TREND",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-009",
+      "group": "B",
+      "remove": "C_VOLATILITY",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-010",
+      "group": "B",
+      "remove": "C_VOLATILITY",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-011",
+      "group": "B",
+      "remove": "D_RELATIVE",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-012",
+      "group": "B",
+      "remove": "D_RELATIVE",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-013",
+      "group": "B",
+      "remove": "F_YIELD",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-014",
+      "group": "B",
+      "remove": "F_YIELD",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-015",
+      "group": "B",
+      "remove": "G_REGIME_COND",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "ABL-016",
+      "group": "B",
+      "remove": "G_REGIME_COND",
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "RED-017",
+      "group": "C",
+      "families": [
+        "A_MOMENTUM"
+      ],
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "RED-018",
+      "group": "C",
+      "families": [
+        "D_RELATIVE"
+      ],
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "RED-019",
+      "group": "C",
+      "families": [
+        "A_MOMENTUM"
+      ],
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "RED-020",
+      "group": "C",
+      "families": [
+        "D_RELATIVE"
+      ],
+      "universe": "100",
+      "horizon": 10
+    },
+    {
+      "id": "CMP-021",
+      "group": "D",
+      "system": "SYSTEM_COMPACT",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "CMP-022",
+      "group": "D",
+      "system": "SYSTEM_MINIMAL",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "CMP-023",
+      "group": "D",
+      "system": "SYSTEM_YIELD_MOMENTUM",
+      "universe": "050",
+      "horizon": 10
+    },
+    {
+      "id": "CMP-024",
+      "group": "D",
+      "system": "SYSTEM_VERY_COMPACT",
+      "universe": "050",
+      "horizon": 10
+    }
+  ]
+}

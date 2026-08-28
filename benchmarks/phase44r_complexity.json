@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "complexity": {
+    "selected_families": 1,
+    "selected_features": 4,
+    "complexity_score": 4.5,
+    "vs_full": "4 vs 19 features"
+  }
+}

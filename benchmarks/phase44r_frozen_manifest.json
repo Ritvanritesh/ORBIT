@@ -1,0 +1,39 @@
+{
+  "version": "FS-001",
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "phase": "44R",
+  "selected_families": [
+    "F_YIELD"
+  ],
+  "selected_features": [
+    "YC_LEVEL",
+    "YC_SLOPE",
+    "YC_CURVATURE",
+    "YC_CHG_10D"
+  ],
+  "n_features": 4,
+  "n_families": 1,
+  "features": [
+    {
+      "name": "YC_LEVEL",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "name": "YC_SLOPE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "name": "YC_CURVATURE",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "name": "YC_CHG_10D",
+      "family": "F_YIELD",
+      "pit": "PIT_NATIVE"
+    }
+  ],
+  "digest": "727788bebaebba37083b5af847c3fb219669ad3feeca84564356f5eb804b4856"
+}

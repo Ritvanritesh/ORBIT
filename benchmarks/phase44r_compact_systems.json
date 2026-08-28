@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-08-28T16:24:00.077536+00:00",
+  "systems": {
+    "SYSTEM_FULL": {
+      "n_families": 6,
+      "n_features": 19,
+      "avg_ic": 0.2829934001903138,
+      "complexity": 22.0,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "D_RELATIVE",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "incr_vs_full": 0.0
+    },
+    "SYSTEM_COMPACT": {
+      "n_families": 5,
+      "n_features": 16,
+      "avg_ic": 0.2500858867905168,
+      "complexity": 18.5,
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY",
+        "F_YIELD",
+        "G_REGIME_COND"
+      ],
+      "incr_vs_full": -0.03290751339979703
+    },
+    "SYSTEM_MINIMAL": {
+      "n_families": 3,
+      "n_features": 10,
+      "avg_ic": 0.23777828267242626,
+      "complexity": 11.5,
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY",
+        "F_YIELD"
+      ],
+      "incr_vs_full": -0.045215117517887565
+    },
+    "SYSTEM_YIELD_MOMENTUM": {
+      "n_families": 2,
+      "n_features": 7,
+      "avg_ic": 0.2253399892299905,
+      "complexity": 8.0,
+      "families": [
+        "F_YIELD",
+        "A_MOMENTUM"
+      ],
+      "incr_vs_full": -0.05765341096032334
+    },
+    "SYSTEM_YIELD_ONLY": {
+      "n_families": 1,
+      "n_features": 4,
+      "avg_ic": 0.2829934001903138,
+      "complexity": 4.5,
+      "families": [
+        "F_YIELD"
+      ],
+      "incr_vs_full": 0.0
+    },
+    "SYSTEM_VERY_COMPACT": {
+      "n_families": 3,
+      "n_features": 10,
+      "avg_ic": 0.24756793650456907,
+      "complexity": 11.5,
+      "families": [
+        "F_YIELD",
+        "C_VOLATILITY",
+        "G_REGIME_COND"
+      ],
+      "incr_vs_full": -0.03542546368574476
+    }
+  }
+}
