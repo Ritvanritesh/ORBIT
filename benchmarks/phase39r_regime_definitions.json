@@ -1,0 +1,24 @@
+{
+  "VOL_REGIME": {
+    "name": "Volatility Regime",
+    "definition": "VOL_20D > rolling 60-day median",
+    "states": {
+      "LOW": 0,
+      "HIGH": 1
+    },
+    "pit_classification": "PIT_NATIVE",
+    "input": "Rolling 20-day realized volatility from price data",
+    "no_future_info": true
+  },
+  "RATE_REGIME": {
+    "name": "Interest Rate Regime",
+    "definition": "DGS10 > rolling 60-day median",
+    "states": {
+      "LOW": 0,
+      "HIGH": 1
+    },
+    "pit_classification": "PIT_NATIVE",
+    "input": "FRED DGS10, published same day",
+    "no_future_info": true
+  }
+}

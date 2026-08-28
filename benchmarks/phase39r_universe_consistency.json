@@ -1,0 +1,13 @@
+{
+  "by_universe": {
+    "DS-EXP-050": {
+      "mean": 0.00019041350194698282,
+      "n": 18
+    },
+    "DS-EXP-100": {
+      "mean": 0.0021244486801598127,
+      "n": 6
+    }
+  },
+  "assessment": "UNIVERSE_CONSISTENT"
+}

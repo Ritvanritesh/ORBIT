@@ -1,0 +1,32 @@
+{
+  "A_BASELINE": {
+    "params_added": 0,
+    "features_added": 0,
+    "models": 1,
+    "complexity": "LOW"
+  },
+  "B_REGIME_CONDITIONED": {
+    "params_added": 1,
+    "features_added": 1,
+    "models": 1,
+    "complexity": "LOW"
+  },
+  "C_INTERACTION": {
+    "params_added": 3,
+    "features_added": 3,
+    "models": 1,
+    "complexity": "LOW-MEDIUM"
+  },
+  "D_SEPARATE_REGIME": {
+    "params_added": 0,
+    "features_added": 0,
+    "models": 2,
+    "complexity": "MEDIUM"
+  },
+  "E_TREE_CONDITIONAL": {
+    "params_added": 2,
+    "features_added": 2,
+    "models": 1,
+    "complexity": "MEDIUM"
+  }
+}

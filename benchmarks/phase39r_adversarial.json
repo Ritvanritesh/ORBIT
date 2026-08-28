@@ -1,0 +1,120 @@
+{
+  "tests": {
+    "A01": {
+      "name": "Future regime leakage",
+      "result": "BLOCKED",
+      "rationale": "Regime labels use only past data (rolling median)"
+    },
+    "A02": {
+      "name": "Target leakage through regime",
+      "result": "BLOCKED",
+      "rationale": "Regime labels PIT_NATIVE, forward returns properly lagged"
+    },
+    "A03": {
+      "name": "Post-hoc regime threshold",
+      "result": "BLOCKED",
+      "rationale": "Threshold (rolling median) objectively specified"
+    },
+    "A04": {
+      "name": "Regime labels from future",
+      "result": "BLOCKED",
+      "rationale": "Rolling windows use only past observations"
+    },
+    "A05": {
+      "name": "Train/test contamination",
+      "result": "BLOCKED",
+      "rationale": "70/30 time-ordered split"
+    },
+    "A06": {
+      "name": "Incorrect regime routing",
+      "result": "BLOCKED",
+      "rationale": "Separate regime models use correct regime labels"
+    },
+    "A07": {
+      "name": "Sample fragmentation",
+      "result": "DOCUMENTED_LIMITATION",
+      "rationale": "Regime splits ~50/50, adequate but noted"
+    },
+    "A08": {
+      "name": "Empty regime",
+      "result": "BLOCKED",
+      "rationale": "Both regimes have sufficient observations"
+    },
+    "A09": {
+      "name": "Imbalanced regime",
+      "result": "BLOCKED",
+      "rationale": "Median-based classification ensures ~50/50"
+    },
+    "A10": {
+      "name": "Regime transition leakage",
+      "result": "BLOCKED",
+      "rationale": "No regime transition features used"
+    },
+    "A11": {
+      "name": "Interaction explosion",
+      "result": "BLOCKED",
+      "rationale": "Only 3 pre-specified interactions"
+    },
+    "A12": {
+      "name": "Hidden hyperparameter search",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 fixed, no tuning"
+    },
+    "A13": {
+      "name": "Tree complexity explosion",
+      "result": "BLOCKED",
+      "rationale": "Tree models use default parameters"
+    },
+    "A14": {
+      "name": "Unmatched baselines",
+      "result": "BLOCKED",
+      "rationale": "All comparisons use identical baseline"
+    },
+    "A15": {
+      "name": "Cherry-picking best config",
+      "result": "BLOCKED",
+      "rationale": "All 24 experiments reported"
+    },
+    "A16": {
+      "name": "Incorrect incremental IC",
+      "result": "BLOCKED",
+      "rationale": "Incremental IC = IC(model) - IC(baseline), correctly computed"
+    },
+    "A17": {
+      "name": "Horizon leakage",
+      "result": "BLOCKED",
+      "rationale": "Horizons pre-specified"
+    },
+    "A18": {
+      "name": "Universe contamination",
+      "result": "BLOCKED",
+      "rationale": "Universes independently reported"
+    },
+    "A19": {
+      "name": "Protected OOS access",
+      "result": "BLOCKED",
+      "rationale": "No OOS data loaded"
+    },
+    "A20": {
+      "name": "Registration modification",
+      "result": "BLOCKED",
+      "rationale": "No existing registrations modified"
+    },
+    "A21": {
+      "name": "Historical artifact modification",
+      "result": "BLOCKED",
+      "rationale": "All work additive"
+    },
+    "A22": {
+      "name": "Non-deterministic execution",
+      "result": "BLOCKED",
+      "rationale": "Fixed seed, deterministic pipeline"
+    }
+  },
+  "summary": {
+    "total": 22,
+    "blocked": 21,
+    "documented_limitation": 1,
+    "confirmed_failure": 0
+  }
+}

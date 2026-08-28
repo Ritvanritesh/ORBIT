@@ -1,0 +1,444 @@
+{
+  "plan_id": "PLAN-39R",
+  "phase": "39R",
+  "timestamp": "2026-08-28T14:01:07.092886+00:00",
+  "budget": 24,
+  "n_experiments": 24,
+  "budget_matches_matrix": true,
+  "experiment_matrix": [
+    {
+      "experiment_id": "EXP-001",
+      "architecture": "A_BASELINE",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "architecture": "A_BASELINE",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-003",
+      "architecture": "A_BASELINE",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-004",
+      "architecture": "A_BASELINE",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-005",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-006",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-007",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-008",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-009",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-010",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-011",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-012",
+      "architecture": "B_REGIME_CONDITIONED",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-013",
+      "architecture": "C_INTERACTION",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "interaction_bases": [
+        "RET_20D"
+      ],
+      "interaction_name": "MOMxVOL",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-014",
+      "architecture": "C_INTERACTION",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "interaction_bases": [
+        "RET_20D"
+      ],
+      "interaction_name": "MOMxVOL",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-015",
+      "architecture": "C_INTERACTION",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "interaction_bases": [
+        "RET_20D"
+      ],
+      "interaction_name": "MOMxRATE",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-016",
+      "architecture": "C_INTERACTION",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "interaction_bases": [
+        "RET_20D"
+      ],
+      "interaction_name": "MOMxRATE",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-017",
+      "architecture": "C_INTERACTION",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "interaction_bases": [
+        "VOL_20D"
+      ],
+      "interaction_name": "VOLxRATE",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-018",
+      "architecture": "C_INTERACTION",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "interaction_bases": [
+        "VOL_20D"
+      ],
+      "interaction_name": "VOLxRATE",
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-019",
+      "architecture": "D_SEPARATE_REGIME",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-020",
+      "architecture": "D_SEPARATE_REGIME",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-021",
+      "architecture": "D_SEPARATE_REGIME",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-022",
+      "architecture": "D_SEPARATE_REGIME",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "RATE_REGIME"
+      ],
+      "model": "Ridge"
+    },
+    {
+      "experiment_id": "EXP-023",
+      "architecture": "E_TREE_CONDITIONAL",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME",
+        "RATE_REGIME"
+      ],
+      "model": "HistGradientBoosting"
+    },
+    {
+      "experiment_id": "EXP-024",
+      "architecture": "E_TREE_CONDITIONAL",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "regime_features": [
+        "VOL_REGIME",
+        "RATE_REGIME"
+      ],
+      "model": "HistGradientBoosting"
+    }
+  ],
+  "architectures": [
+    "A_BASELINE",
+    "B_REGIME_CONDITIONED",
+    "C_INTERACTION",
+    "D_SEPARATE_REGIME",
+    "E_TREE_CONDITIONAL"
+  ],
+  "plan_digest": "4b311b729962d9dbeeef2cd7b884da4a3a6b22a39986e896e30aa82ec2da0e59"
+}

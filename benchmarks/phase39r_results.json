@@ -1,0 +1,380 @@
+[
+  {
+    "experiment_id": "EXP-001",
+    "architecture": "A_BASELINE",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.0692061418936831,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": 0.0,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-002",
+    "architecture": "A_BASELINE",
+    "horizon": 10,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [],
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic": 0.049697546408340586,
+    "baseline_ic": 0.049697546408340586,
+    "incremental_ic": 0.0,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-003",
+    "architecture": "A_BASELINE",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07412887196487715,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.0,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-004",
+    "architecture": "A_BASELINE",
+    "horizon": 20,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [],
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic": 0.06268108289805516,
+    "baseline_ic": 0.06268108289805516,
+    "incremental_ic": 0.0,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-005",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.055448846859351295,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": -0.013757295034331804,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-006",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 10,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic": 0.04729043789427613,
+    "baseline_ic": 0.049697546408340586,
+    "incremental_ic": -0.0024071085140644558,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-007",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07169520476509793,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": -0.0024336671997792214,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-008",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 20,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic": 0.06369157612436166,
+    "baseline_ic": 0.06268108289805516,
+    "incremental_ic": 0.0010104932263065025,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-009",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.07729069512757858,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": 0.00808455323389548,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-010",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 10,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic": 0.05929017138758292,
+    "baseline_ic": 0.049697546408340586,
+    "incremental_ic": 0.009592624979242334,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-011",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07958597944540066,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.005457107480523513,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-012",
+    "architecture": "B_REGIME_CONDITIONED",
+    "horizon": 20,
+    "universe": "DS-EXP-100",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic": 0.06723176528752965,
+    "baseline_ic": 0.06268108289805516,
+    "incremental_ic": 0.004550682389474495,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-013",
+    "architecture": "C_INTERACTION",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.05520955142286312,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": -0.013996590470819976,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-014",
+    "architecture": "C_INTERACTION",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07144837108434707,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": -0.0026805008805300817,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-015",
+    "architecture": "C_INTERACTION",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.07796619652180477,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": 0.008760054628121669,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-016",
+    "architecture": "C_INTERACTION",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07822628052479064,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.004097408559913487,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-017",
+    "architecture": "C_INTERACTION",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.07462962435750056,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": 0.005423482463817464,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-018",
+    "architecture": "C_INTERACTION",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07990622289383925,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.005777350928962102,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-019",
+    "architecture": "D_SEPARATE_REGIME",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.060199708594045546,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": -0.009006433299637552,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-020",
+    "architecture": "D_SEPARATE_REGIME",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "VOL_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07564875817913981,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.0015198862142626612,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-021",
+    "architecture": "D_SEPARATE_REGIME",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.07390663843805576,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": 0.0047004965443726565,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-022",
+    "architecture": "D_SEPARATE_REGIME",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "Ridge",
+    "regime_features": [
+      "RATE_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07839518703949999,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.004266315074622842,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-023",
+    "architecture": "E_TREE_CONDITIONAL",
+    "horizon": 10,
+    "universe": "DS-EXP-050",
+    "model": "HistGradientBoosting",
+    "regime_features": [
+      "VOL_REGIME",
+      "RATE_REGIME"
+    ],
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic": 0.06399967418085142,
+    "baseline_ic": 0.0692061418936831,
+    "incremental_ic": -0.005206467712831675,
+    "status": "COMPLETED"
+  },
+  {
+    "experiment_id": "EXP-024",
+    "architecture": "E_TREE_CONDITIONAL",
+    "horizon": 20,
+    "universe": "DS-EXP-050",
+    "model": "HistGradientBoosting",
+    "regime_features": [
+      "VOL_REGIME",
+      "RATE_REGIME"
+    ],
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic": 0.07655061446936128,
+    "baseline_ic": 0.07412887196487715,
+    "incremental_ic": 0.0024217425044841256,
+    "status": "COMPLETED"
+  }
+]

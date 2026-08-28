@@ -1,0 +1,48 @@
+{
+  "analysis_id": "INCR-39R",
+  "phase": "39R",
+  "timestamp": "2026-08-28T14:01:07.092886+00:00",
+  "overall": {
+    "mean_incremental_ic": 0.0006739222965001903,
+    "median_incremental_ic": 0.0012651897202845819,
+    "positive_experiments": 13,
+    "total_experiments": 24
+  },
+  "by_architecture": {
+    "A_BASELINE": {
+      "mean_ic": 0.06392841079123901,
+      "mean_incremental_ic": 0.0,
+      "median_incremental_ic": 0.0,
+      "positive_proportion": 0.0,
+      "n_experiments": 4
+    },
+    "B_REGIME_CONDITIONED": {
+      "mean_ic": 0.06519058461139735,
+      "mean_incremental_ic": 0.0012621738201583554,
+      "median_incremental_ic": 0.0027805878078904986,
+      "positive_proportion": 0.625,
+      "n_experiments": 8
+    },
+    "C_INTERACTION": {
+      "mean_ic": 0.07289770780085757,
+      "mean_incremental_ic": 0.001230200871577444,
+      "median_incremental_ic": 0.004760445511865476,
+      "positive_proportion": 0.6666666666666666,
+      "n_experiments": 6
+    },
+    "D_SEPARATE_REGIME": {
+      "mean_ic": 0.07203757306268527,
+      "mean_incremental_ic": 0.000370066133405152,
+      "median_incremental_ic": 0.0028931006444427518,
+      "positive_proportion": 0.75,
+      "n_experiments": 4
+    },
+    "E_TREE_CONDITIONAL": {
+      "mean_ic": 0.07027514432510634,
+      "mean_incremental_ic": -0.0013923626041737747,
+      "median_incremental_ic": -0.0013923626041737747,
+      "positive_proportion": 0.5,
+      "n_experiments": 2
+    }
+  }
+}

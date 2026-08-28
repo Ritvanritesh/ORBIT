@@ -1,0 +1,9 @@
+{
+  "budget_matches_matrix": true,
+  "all_experiments_completed": false,
+  "no_oos_accessed": true,
+  "no_registrations_modified": true,
+  "regime_integrity_passes": true,
+  "reproducibility_passes": true,
+  "adversarial_confirmed_failures": 0
+}

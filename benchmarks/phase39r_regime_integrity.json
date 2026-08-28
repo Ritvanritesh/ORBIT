@@ -1,0 +1,16 @@
+{
+  "VOL_REGIME": {
+    "pit": "PIT_NATIVE",
+    "no_lookahead": true,
+    "deterministic": true,
+    "threshold_optimized": false,
+    "classification": "PIT_NATIVE"
+  },
+  "RATE_REGIME": {
+    "pit": "PIT_NATIVE",
+    "no_lookahead": true,
+    "deterministic": true,
+    "threshold_optimized": false,
+    "classification": "PIT_NATIVE"
+  }
+}

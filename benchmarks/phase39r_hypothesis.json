@@ -1,0 +1,8 @@
+{
+  "hypothesis_id": "HYP-CAND-RM-001",
+  "phase": "39R",
+  "timestamp": "2026-08-28T14:01:07.092886+00:00",
+  "statement": "The relationship between predictive features and future returns varies systematically across observable market regimes, such that regime-aware model specifications produce incremental predictive performance relative to equivalent regime-agnostic specifications.",
+  "mechanism": "Market regimes alter risk appetite, discount rates, investor behavior, and the persistence of predictive signals.",
+  "falsification": "If regime-aware models fail to produce stable incremental IC across justified configurations, the hypothesis fails."
+}
