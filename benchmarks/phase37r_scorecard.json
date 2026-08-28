@@ -1,0 +1,48 @@
+{
+  "scorecard_id": "SCORE-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "dimensions": {
+    "hypothesis_locked": {
+      "status": "PASS"
+    },
+    "regime_definition_locked": {
+      "status": "PASS"
+    },
+    "model_locked": {
+      "status": "PASS"
+    },
+    "baseline_locked": {
+      "status": "PASS"
+    },
+    "experiment_matrix_locked": {
+      "status": "PASS"
+    },
+    "budget_matches_matrix": {
+      "status": "PASS"
+    },
+    "success_criteria_locked": {
+      "status": "PASS"
+    },
+    "falsification_criteria_locked": {
+      "status": "PASS"
+    },
+    "multiple_testing_locked": {
+      "status": "PASS"
+    },
+    "pit_integrity": {
+      "status": "PASS"
+    },
+    "firewall_intact": {
+      "status": "PASS"
+    },
+    "adversarial_executed": {
+      "status": "PASS"
+    },
+    "reproducibility": {
+      "status": "PASS"
+    }
+  },
+  "pass_count": 13,
+  "fail_count": 0
+}

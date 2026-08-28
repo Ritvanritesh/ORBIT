@@ -1,0 +1,139 @@
+{
+  "audit_id": "ADV-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "tests": {
+    "A01": {
+      "name": "Direct OOS target access",
+      "result": "BLOCKED",
+      "rationale": "No confirmatory execution. OOS data exists but not loaded."
+    },
+    "A02": {
+      "name": "Indirect OOS target access",
+      "result": "BLOCKED",
+      "rationale": "No OOS data in computation pipeline."
+    },
+    "A03": {
+      "name": "Cached prediction access",
+      "result": "BLOCKED",
+      "rationale": "No predictions generated on OOS data."
+    },
+    "A04": {
+      "name": "Benchmark leakage",
+      "result": "BLOCKED",
+      "rationale": "Benchmark files are outputs, not inputs."
+    },
+    "A05": {
+      "name": "Helper-function leakage",
+      "result": "BLOCKED",
+      "rationale": "Helper functions do not access OOS data."
+    },
+    "A06": {
+      "name": "Future-date contamination",
+      "result": "BLOCKED",
+      "rationale": "No feature computation in this phase."
+    },
+    "A07": {
+      "name": "Accidental OOS joins",
+      "result": "BLOCKED",
+      "rationale": "No data joining in this phase."
+    },
+    "A08": {
+      "name": "Modification of locked registration",
+      "result": "BLOCKED",
+      "rationale": "All artifacts generated, none modified."
+    },
+    "A09": {
+      "name": "Threshold modification after results",
+      "result": "BLOCKED",
+      "rationale": "No results to see. Threshold locked at 0.010."
+    },
+    "A10": {
+      "name": "Experiment expansion",
+      "result": "BLOCKED",
+      "rationale": "Matrix locked at 5 experiments."
+    },
+    "A11": {
+      "name": "Regime look-ahead bias",
+      "result": "BLOCKED",
+      "rationale": "Regime definition uses only PIT_NATIVE data with rolling windows."
+    },
+    "A12": {
+      "name": "Threshold modification",
+      "result": "BLOCKED",
+      "rationale": "Threshold (0.010) locked before any results."
+    },
+    "A13": {
+      "name": "Regime definition modification",
+      "result": "BLOCKED",
+      "rationale": "Regime definition locked with digest."
+    },
+    "A14": {
+      "name": "Feature modification",
+      "result": "BLOCKED",
+      "rationale": "Feature set locked (5 features)."
+    },
+    "A15": {
+      "name": "Model modification",
+      "result": "BLOCKED",
+      "rationale": "Model locked (Ridge, alpha=1.0)."
+    },
+    "A16": {
+      "name": "Horizon modification",
+      "result": "BLOCKED",
+      "rationale": "Primary horizon locked (H-10)."
+    },
+    "A17": {
+      "name": "Hyperparameter tuning",
+      "result": "BLOCKED",
+      "rationale": "Alpha locked at 1.0. No tuning allowed."
+    },
+    "A18": {
+      "name": "Baseline substitution",
+      "result": "BLOCKED",
+      "rationale": "Baseline locked with digest."
+    },
+    "A19": {
+      "name": "Multiple-testing manipulation",
+      "result": "BLOCKED",
+      "rationale": "Family size locked at 5. Holm-Bonferroni pre-specified."
+    },
+    "A20": {
+      "name": "Tiny regime exploitation",
+      "result": "BLOCKED",
+      "rationale": "Minimum regime sample size locked at 30."
+    },
+    "A21": {
+      "name": "Universe cherry-picking",
+      "result": "BLOCKED",
+      "rationale": "Both universes included in matrix."
+    },
+    "A22": {
+      "name": "Period cherry-picking",
+      "result": "BLOCKED",
+      "rationale": "No period selection in registration phase."
+    },
+    "A23": {
+      "name": "Configuration digest mismatch",
+      "result": "BLOCKED",
+      "rationale": "All digests generated and locked."
+    },
+    "A24": {
+      "name": "Stale artifact usage",
+      "result": "BLOCKED",
+      "rationale": "All artifacts generated fresh."
+    },
+    "A25": {
+      "name": "Post-hoc success criterion modification",
+      "result": "BLOCKED",
+      "rationale": "Success criteria locked before any results."
+    }
+  },
+  "summary": {
+    "total": 25,
+    "blocked": 25,
+    "detected": 0,
+    "documented_limitation": 0,
+    "confirmed_failure": 0
+  }
+}

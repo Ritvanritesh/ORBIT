@@ -1,0 +1,113 @@
+{
+  "matrix_id": "MATRIX-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "budget": 5,
+  "n_experiments": 5,
+  "budget_matches_matrix": true,
+  "experiment_matrix": [
+    {
+      "experiment_id": "CONF-001",
+      "classification": "PRIMARY",
+      "universe": "DS-EXP-050",
+      "horizon": 10,
+      "regime_representation": "BINARY_LEVEL",
+      "model": "Ridge",
+      "alpha": 1.0,
+      "feature_set": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "metric": "REGIME_DIFFERENTIAL",
+      "decision_rule": "PASS if |IC(HIGH) - IC(LOW)| >= 0.010"
+    },
+    {
+      "experiment_id": "CONF-002",
+      "classification": "SECONDARY",
+      "name": "H-20 Robustness",
+      "universe": "DS-EXP-050",
+      "horizon": 20,
+      "regime_representation": "BINARY_LEVEL",
+      "model": "Ridge",
+      "alpha": 1.0,
+      "feature_set": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "metric": "REGIME_DIFFERENTIAL",
+      "decision_rule": "PASS if |IC(HIGH) - IC(LOW)| >= 0.010"
+    },
+    {
+      "experiment_id": "CONF-003",
+      "classification": "SECONDARY",
+      "name": "DS-EXP-100 Robustness",
+      "universe": "DS-EXP-100",
+      "horizon": 10,
+      "regime_representation": "BINARY_LEVEL",
+      "model": "Ridge",
+      "alpha": 1.0,
+      "feature_set": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "metric": "REGIME_DIFFERENTIAL",
+      "decision_rule": "PASS if |IC(HIGH) - IC(LOW)| >= 0.010"
+    },
+    {
+      "experiment_id": "CONF-004",
+      "classification": "SECONDARY",
+      "name": "Continuous Regime",
+      "universe": "DS-EXP-050",
+      "horizon": 10,
+      "regime_representation": "CONTINUOUS_SLOPE",
+      "model": "Ridge",
+      "alpha": 1.0,
+      "feature_set": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "metric": "REGIME_DIFFERENTIAL",
+      "decision_rule": "PASS if |IC(slope_high) - IC(slope_low)| >= 0.010"
+    },
+    {
+      "experiment_id": "CONF-005",
+      "classification": "SECONDARY",
+      "name": "Incremental IC Test",
+      "universe": "DS-EXP-050",
+      "horizon": 10,
+      "regime_representation": "BINARY_LEVEL",
+      "model": "Ridge",
+      "alpha": 1.0,
+      "feature_set": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "metric": "INCREMENTAL_IC",
+      "decision_rule": "PASS if mean(IC_conditioned) - mean(IC_baseline) > 0"
+    }
+  ],
+  "primary_experiments": 1,
+  "secondary_experiments": 4,
+  "total_family_size": 5,
+  "checkpoints": [
+    1,
+    3,
+    5
+  ],
+  "matrix_digest": "f755f9e54254f301ec033dbfeaf3dce3ba035d9ff4b125ec8f969f7f4d4fda2e"
+}

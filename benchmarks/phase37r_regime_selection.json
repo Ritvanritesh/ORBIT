@@ -1,0 +1,12 @@
+{
+  "selection_id": "REG-SEL-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "primary_regime_family": "B_INTEREST_RATE",
+  "selection_basis": "Phase 36-R frozen results \u2014 strongest mean regime differential (0.021479)",
+  "alternative_families_considered": [
+    "A_VOLATILITY",
+    "C_MARKET_TREND"
+  ],
+  "alternatives_rejected_because": "Lower mean regime differential in Phase 36-R"
+}

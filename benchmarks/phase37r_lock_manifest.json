@@ -1,0 +1,27 @@
+{
+  "manifest_id": "LOCK-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "locked_objects": {
+    "hypothesis": "5659ee4cbc0da147e329a60da6af9e2fcc77d1a6845272570e36ec1c2bc3391c",
+    "regime_definition": "8d35a691e911aa6d2c457b2c6e7a1e6453e1a6f54f14784a985c94b05bc2dbe3",
+    "model_config": "7c649bd7274e2fafa905b4b2148f3602db6c02554d1bef9585fdf40d4c9e3589",
+    "baseline": "3cf50aa301cc99a37b4be691a90c473c105d241dd04edbcdd1f6eeb083dc34fe",
+    "experiment_matrix": "f755f9e54254f301ec033dbfeaf3dce3ba035d9ff4b125ec8f969f7f4d4fda2e",
+    "primary_horizon": 10,
+    "primary_regime": "B_INTEREST_RATE",
+    "primary_model": "Ridge",
+    "primary_alpha": 1.0,
+    "primary_threshold": 0.01,
+    "random_seed": 42,
+    "oos_boundary": "2026-06-30"
+  },
+  "verification_rules": [
+    "All digests must match before confirmatory execution",
+    "If any digest differs, execution must STOP",
+    "Classification: CONFIGURATION_MISMATCH"
+  ],
+  "immutable_after": "2026-08-28T13:40:34.876704+00:00",
+  "manifest_digest": "f0f939a0017f7401f962d2a00ee22e5f864eeae9feedc71dafece937f75accbb"
+}

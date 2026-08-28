@@ -1,0 +1,35 @@
+{
+  "test_id": "PRIMARY-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "question": "Does the predictive relationship between the locked baseline feature set and future equity returns differ materially between high and low interest-rate regimes at H-10?",
+  "metric": {
+    "name": "REGIME_DIFFERENTIAL",
+    "formula": "|IC(rate_regime_HIGH) - IC(rate_regime_LOW)|",
+    "direction": "Non-directional (test that regimes DIFFER)",
+    "minimum_meaningful_threshold": 0.01
+  },
+  "procedure": {
+    "step1": "Split test data into HIGH and LOW rate regimes using locked definition",
+    "step2": "Compute Spearman IC within each regime",
+    "step3": "Compute absolute difference",
+    "step4": "Compare against locked threshold of 0.010"
+  },
+  "statistical_test": {
+    "type": "Permutation test (non-parametric)",
+    "n_permutations": 1000,
+    "test_statistic": "Absolute IC difference",
+    "p_value": "Fraction of permutations with test statistic >= observed",
+    "significance_level": 0.05,
+    "correction": "Holm-Bonferroni across confirmatory family"
+  },
+  "confidence_interval": {
+    "method": "Bootstrap (1000 resamples)",
+    "level": 0.95,
+    "interpretation": "If CI excludes 0.010, confirms meaningful regime difference"
+  },
+  "sample_sufficiency": {
+    "minimum_per_regime": 30,
+    "rationale": "Sufficient for stable IC estimation"
+  }
+}

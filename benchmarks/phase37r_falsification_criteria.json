@@ -1,0 +1,57 @@
+{
+  "criteria_id": "FALSIFY-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "hard_falsification_conditions": [
+    {
+      "condition": "REGIME_DIFFERENTIAL_BELOW_THRESHOLD",
+      "description": "Regime differential < 0.010 on confirmatory data",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "EFFECT_REVERSAL",
+      "description": "Regime differential reverses direction or becomes negligible",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "STATISTICAL_FAILURE",
+      "description": "p-value >= 0.05 after Holm-Bonferroni correction",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "INSUFFICIENT_REGIME_SAMPLES",
+      "description": "Either regime subset has < 30 observations",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "PIT_VIOLATION",
+      "description": "Point-in-time violation detected in any feature or label",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "OOS_IMPROPER_ACCESS",
+      "description": "OOS data accessed outside approved protocol",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "CONFIGURATION_MODIFIED",
+      "description": "Any locked configuration changed after registration",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "DATA_INTEGRITY_FAILURE",
+      "description": "Data provenance cannot be established",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "SINGLE_SUBSET_DEPENDENCE",
+      "description": "Result depends entirely on one invalid subset",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "condition": "EXPERIMENT_BUDGET_VIOLATION",
+      "description": "More experiments executed than registered",
+      "result": "CONFIRMATORY_FAIL"
+    }
+  ]
+}

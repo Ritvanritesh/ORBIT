@@ -1,0 +1,48 @@
+{
+  "definition_id": "REG-DEF-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "regime_family": "B_INTEREST_RATE",
+  "input_series": {
+    "primary": "DGS10 (10-Year Treasury Constant Maturity Rate)",
+    "source": "FRED",
+    "frequency": "Daily",
+    "pit_classification": "PIT_NATIVE"
+  },
+  "transformations": {
+    "rolling_median": {
+      "description": "60-day rolling median of DGS10",
+      "window": 60,
+      "input": "DGS10",
+      "output": "DGS10_median_60d",
+      "pit_safe": true,
+      "rationale": "Rolling median provides a stable, PIT-safe threshold for regime classification"
+    }
+  },
+  "classification_rule": {
+    "formula": "RATE_REGIME = (DGS10 > DGS10_median_60d) ? HIGH : LOW",
+    "states": {
+      "LOW": "DGS10 <= rolling 60-day median",
+      "HIGH": "DGS10 > rolling 60-day median"
+    },
+    "threshold_type": "rolling_median",
+    "threshold_value": "data-dependent (60-day rolling median)",
+    "optimization_allowed": false,
+    "rationale": "Median-based classification is objective and does not require threshold selection"
+  },
+  "regime_assignment_timing": {
+    "assignment_date": "trade_date",
+    "data_used": "DGS10 values up to and including trade_date",
+    "lookahead": "NONE \u2014 regime at date t uses only data through date t",
+    "lag": "NONE \u2014 FRED data available same day"
+  },
+  "handling_missing": {
+    "missing_regime": "Forward-fill from last valid regime assignment",
+    "missing_input": "Forward-fill DGS10, then recompute rolling median"
+  },
+  "expected_regime_sizes": {
+    "based_on": "Phase 36-R exploratory evidence",
+    "binary_balance": "Approximately balanced (median-based classification ensures ~50/50 split)",
+    "minimum_sample_size": 30
+  }
+}

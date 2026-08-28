@@ -1,0 +1,34 @@
+{
+  "hypothesis_id": "HYP-CONF-37R",
+  "hypothesis_family": "regime_conditional_prediction",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "statement": "The predictive performance of the locked baseline feature set differs materially between high and low interest-rate regimes at the H-10 forecast horizon.",
+  "mechanism": "Interest-rate levels alter discount rates, financing conditions, and growth expectations. When the 10-year Treasury yield is above its rolling 60-day median, the cross-sectional predictive relationship between price-derived features and forward returns differs materially from when yields are below the median.",
+  "prediction": "The absolute difference in Spearman IC between the high-rate regime and the low-rate regime exceeds the locked minimum meaningful threshold of 0.010.",
+  "primary_metric": "REGIME_DIFFERENTIAL = |IC(high_rate_regime) - IC(low_rate_regime)|",
+  "expected_direction": "Non-directional: we test that the regimes DIFFER, not that one regime is better",
+  "minimum_meaningful_effect": {
+    "threshold": 0.01,
+    "rationale": "Phase 36-R observed mean regime differential of 0.021479 for interest-rate regime. A confirmatory threshold of 0.010 represents approximately 47% shrinkage from exploratory estimate, accounting for winner's curse.",
+    "economic_relevance": "A 1 percentage point difference in IC between regimes implies meaningfully different predictive environments"
+  },
+  "falsification_criteria": [
+    "Regime differential < 0.010 on confirmatory data",
+    "Effect reverses direction",
+    "Statistical criterion fails after Holm-Bonferroni correction",
+    "Regime sample sizes insufficient (< 30 observations per regime)",
+    "PIT violation detected",
+    "OOS data improperly accessed",
+    "Locked configuration modified"
+  ],
+  "economic_interpretation": "If confirmed, regime-conditional models could adapt predictive weights based on the interest-rate environment, improving forecast quality in different macroeconomic states.",
+  "pit_requirements": {
+    "regime_labels": "PIT_NATIVE (FRED data published same day)",
+    "features": "PIT_NATIVE (price-derived)",
+    "labels": "PIT_NATIVE (forward returns with proper lag)",
+    "no_lookahead": "Regime assignment uses only data available at decision date"
+  },
+  "hypothesis_digest": "5659ee4cbc0da147e329a60da6af9e2fcc77d1a6845272570e36ec1c2bc3391c"
+}

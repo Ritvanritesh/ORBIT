@@ -1,0 +1,49 @@
+{
+  "inventory_id": "EVID-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "phase36r_results": {
+    "verdict": "A",
+    "verdict_label": "STRONG_EXPLORATORY_SUPPORT",
+    "gate": "GREEN",
+    "experiments_completed": 20,
+    "mean_regime_differential": 0.01418,
+    "positive_regime_differentials": 18,
+    "total_experiments": 20,
+    "mean_incremental_ic": 0.00045,
+    "universe_stability": "UNIVERSE_CONSISTENT",
+    "representation_stability": "PARTIAL",
+    "economic_interpretation": "ECONOMICALLY_PLAUSIBLE",
+    "p_value_regime_differential": 0.0
+  },
+  "regime_family_ranking": {
+    "1_B_INTEREST_RATE": {
+      "mean_regime_differential": 0.021479,
+      "n_experiments": 8,
+      "rationale": "Strongest mean regime differential across both horizons and representations"
+    },
+    "2_A_VOLATILITY": {
+      "mean_regime_differential": 0.010107,
+      "n_experiments": 8,
+      "rationale": "Moderate regime differential"
+    },
+    "3_C_MARKET_TREND": {
+      "mean_regime_differential": 0.004479,
+      "n_experiments": 4,
+      "rationale": "Weakest regime differential"
+    }
+  },
+  "primary_regime_selection": {
+    "selected": "B_INTEREST_RATE",
+    "justification": "Strongest mean regime differential (0.021479) across all regime families in Phase 36-R"
+  },
+  "primary_horizon_selection": {
+    "selected": "H-10",
+    "justification": "H-10 shows consistent regime differentials across both binary and continuous representations. H-20 shows larger peak differential but less consistency."
+  },
+  "primary_model_selection": {
+    "selected": "Ridge",
+    "alpha": 1.0,
+    "justification": "Same model that produced valid exploratory evidence. No model comparison performed."
+  }
+}

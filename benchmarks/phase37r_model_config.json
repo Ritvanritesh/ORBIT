@@ -1,0 +1,36 @@
+{
+  "config_id": "MODEL-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "model": {
+    "type": "Ridge",
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "justification": "Same configuration that produced valid exploratory evidence in Phase 36-R"
+  },
+  "preprocessing": {
+    "standardization": "Z-score (mean=0, std=1) on training data, applied to test data",
+    "missing_values": "Forward-fill, then drop remaining NaN",
+    "feature_set": [
+      "RET_5D",
+      "RET_10D",
+      "RET_20D",
+      "VOL_20D",
+      "MKT_RET_20D"
+    ],
+    "n_features": 5,
+    "regime_feature": "RATE_REGIME_BINARY (not included in baseline, used for regime splitting)"
+  },
+  "data_split": {
+    "train": "trade_date <= 2018-12-31",
+    "validation": "2019-01-02 <= trade_date <= 2021-12-31",
+    "test": "trade_date > 2021-12-31 (OOS \u2014 BLOCKED until DATA_READY)"
+  },
+  "random_seed": 42,
+  "locked_hyperparameters": {
+    "alpha": 1.0,
+    "no_tuning": true,
+    "rationale": "Hyperparameters locked from Phase 36-R exploratory evidence"
+  },
+  "config_digest": "7c649bd7274e2fafa905b4b2148f3602db6c02554d1bef9585fdf40d4c9e3589"
+}

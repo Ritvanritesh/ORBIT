@@ -1,0 +1,28 @@
+{
+  "policy_id": "MT-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "family_definition": {
+    "primary_test": 1,
+    "secondary_tests": 4,
+    "total_family_size": 5,
+    "tests_included": [
+      "CONF-001: Primary (H-10, DS-EXP-050, Binary)",
+      "CONF-002: H-20 Robustness",
+      "CONF-003: DS-EXP-100 Robustness",
+      "CONF-004: Continuous Regime",
+      "CONF-005: Incremental IC"
+    ]
+  },
+  "correction_method": "Holm-Bonferroni",
+  "family_wise_alpha": 0.05,
+  "corrected_alpha_per_test": "Dynamic (Holm procedure)",
+  "rules": [
+    "All 5 tests are in the same family",
+    "Holm-Bonferroni correction applied across all 5 tests",
+    "Primary test is evaluated first",
+    "Secondary tests are exploratory within the confirmatory framework",
+    "No tests may be added after results are observed"
+  ],
+  "locked_at": "2026-08-28T13:40:34.876704+00:00"
+}

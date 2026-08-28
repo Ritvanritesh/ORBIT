@@ -1,0 +1,18 @@
+{
+  "audit_id": "PIT-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "features": {
+    "RET_5D": "PIT_NATIVE",
+    "RET_10D": "PIT_NATIVE",
+    "RET_20D": "PIT_NATIVE",
+    "VOL_20D": "PIT_NATIVE",
+    "MKT_RET_20D": "PIT_NATIVE",
+    "DGS10": "PIT_NATIVE",
+    "RATE_REGIME": "PIT_NATIVE (rolling median of PIT_NATIVE data)"
+  },
+  "labels": {
+    "fwd_return": "PIT_NATIVE (computed with proper lag)"
+  },
+  "verdict": "ALL_PIT_NATIVE_OR_PIT_SAFE"
+}

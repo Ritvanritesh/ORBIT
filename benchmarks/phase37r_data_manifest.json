@@ -1,0 +1,26 @@
+{
+  "manifest_id": "DATA-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "allowed_data": [
+    "DS-EXP-050 bars.parquet (price data, PIT_NATIVE)",
+    "DS-EXP-100 bars.parquet (price data, PIT_NATIVE)",
+    "FRED DGS10 parquet (PIT_NATIVE)",
+    "Instrument master JSON (PIT_SAFE_WITH_LAG)"
+  ],
+  "forbidden_data": [
+    "OOS labels (trade_date > 2021-12-31)",
+    "OOS IC values",
+    "OOS Sharpe ratios",
+    "OOS portfolio returns",
+    "Phase 24-R locked confirmatory test data",
+    "Phase 25-R replication data",
+    "Phase 26-R OOS evaluation data",
+    "Phase 34-R yield curve confirmatory data"
+  ],
+  "provenance": {
+    "price_data": "Yahoo Finance Chart API, normalized",
+    "macro_data": "FRED CSV direct download, normalized",
+    "sector_labels": "Instrument master JSON configs"
+  }
+}

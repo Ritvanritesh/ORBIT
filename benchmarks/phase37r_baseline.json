@@ -1,0 +1,21 @@
+{
+  "baseline_id": "BASE-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "baseline_name": "Non-regime-conditioned Ridge on locked features",
+  "features": [
+    "RET_5D",
+    "RET_10D",
+    "RET_20D",
+    "VOL_20D",
+    "MKT_RET_20D"
+  ],
+  "n_features": 5,
+  "model": "Ridge (alpha=1.0)",
+  "description": "Standard Ridge regression on the 5 locked price-derived features without any regime conditioning. This provides the non-regime baseline IC for comparison.",
+  "comparison": {
+    "primary_test": "Regime-specific IC vs. this baseline IC",
+    "metric": "Absolute IC difference between HIGH and LOW regime subsets"
+  },
+  "baseline_digest": "3cf50aa301cc99a37b4be691a90c473c105d241dd04edbcdd1f6eeb083dc34fe"
+}

@@ -1,0 +1,11 @@
+{
+  "repro_id": "REPRO-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "deterministic_generation": true,
+  "digest_test_1": "51658bcd7f97db2582516d52a366ec4b183d5c5b930b34e208e89d282d178f7e",
+  "digest_test_2": "51658bcd7f97db2582516d52a366ec4b183d5c5b930b34e208e89d282d178f7e",
+  "digests_match": true,
+  "classification": "EXACT_MATCH",
+  "rationale": "Deterministic configuration generation produces identical digests across independent runs"
+}

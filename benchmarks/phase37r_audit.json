@@ -1,0 +1,19 @@
+{
+  "audit_id": "AUDIT-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "all_artifacts_exist": true,
+  "all_digests_verify": true,
+  "experiment_matrix_equals_budget": true,
+  "primary_test_unambiguous": true,
+  "null_hypothesis_falsifiable": true,
+  "success_criteria_immutable": true,
+  "failure_criteria_immutable": true,
+  "no_oos_target_accessed": true,
+  "no_exploratory_result_modified": true,
+  "no_historical_artifact_modified": true,
+  "reproducibility_passes": true,
+  "adversarial_classifications_correct": true,
+  "verdict": "REGISTRATION_COMPLETE",
+  "gate": "GREEN"
+}

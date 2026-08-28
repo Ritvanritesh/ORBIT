@@ -1,0 +1,42 @@
+{
+  "tests_id": "SEC-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "secondary_tests": [
+    {
+      "test_id": "SEC-001",
+      "name": "H-20 Robustness",
+      "horizon": 20,
+      "description": "Repeat primary test at H-20 to check horizon robustness",
+      "classification": "SECONDARY",
+      "in_family": true
+    },
+    {
+      "test_id": "SEC-002",
+      "name": "DS-EXP-100 Robustness",
+      "universe": "DS-EXP-100",
+      "description": "Repeat primary test on broader universe",
+      "classification": "SECONDARY",
+      "in_family": true
+    },
+    {
+      "test_id": "SEC-003",
+      "name": "Continuous Regime Representation",
+      "representation": "CONTINUOUS_SLOPE",
+      "description": "Use continuous yield curve slope instead of binary classification",
+      "classification": "SECONDARY",
+      "in_family": true
+    },
+    {
+      "test_id": "SEC-004",
+      "name": "Incremental IC Test",
+      "description": "Test whether regime-conditioned model improves overall IC (secondary claim)",
+      "classification": "SECONDARY",
+      "in_family": true,
+      "note": "This is a weaker claim than the primary regime differential test"
+    }
+  ],
+  "n_secondary_tests": 4,
+  "primary_tests": 1,
+  "total_family_size": 5
+}

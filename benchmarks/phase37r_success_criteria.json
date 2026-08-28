@@ -1,0 +1,43 @@
+{
+  "criteria_id": "SUCCESS-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "primary_success_conditions": [
+    {
+      "condition": "REGIME_DIFFERENTIAL_EXCEEDS_THRESHOLD",
+      "description": "Primary regime differential >= 0.010 on confirmatory data",
+      "metric": "|IC(HIGH) - IC(LOW)|",
+      "threshold": 0.01,
+      "required": true
+    },
+    {
+      "condition": "STATISTICAL_CRITERION_PASSES",
+      "description": "p-value < 0.05 after Holm-Bonferroni correction (family size 5)",
+      "corrected_alpha": 0.01,
+      "required": true
+    },
+    {
+      "condition": "SAMPLE_SUFFICIENCY",
+      "description": "Both regime subsets have >= 30 observations",
+      "minimum_per_regime": 30,
+      "required": true
+    },
+    {
+      "condition": "PIT_INTEGRITY",
+      "description": "No PIT violations detected",
+      "required": true
+    },
+    {
+      "condition": "FIREWALL_INTACT",
+      "description": "OOS data not improperly accessed",
+      "required": true
+    },
+    {
+      "condition": "NO_HARD_FALSIFICATION",
+      "description": "No hard falsification condition triggered",
+      "required": true
+    }
+  ],
+  "pass_definition": "ALL primary success conditions must be satisfied",
+  "fail_definition": "ANY primary success condition fails or ANY hard falsification triggered"
+}

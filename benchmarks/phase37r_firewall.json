@@ -1,0 +1,24 @@
+{
+  "firewall_id": "FW-37R",
+  "phase": "37R",
+  "timestamp": "2026-08-28T13:40:34.876704+00:00",
+  "oos_boundary": "2026-06-30",
+  "current_oos_status": "DATA_NOT_READY",
+  "trading_days_available": 36,
+  "trading_days_required": 60,
+  "checks": {
+    "oos_files_exist": true,
+    "oos_files_loaded": false,
+    "oos_ic_calculated": false,
+    "oos_sharpe_calculated": false,
+    "oos_returns_calculated": false,
+    "oos_portfolio_metrics": false,
+    "no_future_date_in_features": true,
+    "no_protected_data_accessed": true
+  },
+  "oos_files_present": [
+    "DS-EXP-050_oos.parquet",
+    "DS-EXP-100_oos.parquet"
+  ],
+  "verification": "Registration phase \u2014 no confirmatory execution occurred. OOS data exists but was not loaded or inspected."
+}
