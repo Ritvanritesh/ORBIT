@@ -1,0 +1,19 @@
+{
+  "interpretation_id": "ECON-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "classification": "ECONOMICALLY_PLAUSIBLE",
+  "questions": {
+    "q1_mechanism": "Regime-dependent prediction is economically plausible: volatility regimes change risk appetite, rate regimes change discount rates, trend regimes change momentum persistence.",
+    "q2_direction": "Mean regime differential = 0.014180. Positive, consistent with mechanism.",
+    "q3_alteration": "Regime conditioning alters the predictive relationship itself by allowing features to have different weights in different market states.",
+    "q4_transaction_costs": "Unclear \u2014 regime switches are infrequent (monthly), so transaction costs may not dominate.",
+    "q5_useful_decision": "If regime differential is robust, regime-conditional models could improve prediction quality."
+  },
+  "strongest_family": "B_INTEREST_RATE",
+  "family_means": {
+    "A_VOLATILITY": 0.010482142978609683,
+    "B_INTEREST_RATE": 0.022729076625903216,
+    "C_MARKET_TREND": 0.0044788617898051004
+  }
+}

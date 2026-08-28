@@ -1,0 +1,20 @@
+{
+  "analysis_id": "UNIV-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "by_universe": {
+    "DS-EXP-050": {
+      "mean_incremental_ic": 0.0008360219220467327,
+      "mean_regime_differential": 0.013099208539130169,
+      "n_experiments": 10,
+      "classification": "UNIVERSE_CONSISTENT"
+    },
+    "DS-EXP-100": {
+      "mean_incremental_ic": 6.450506602426743e-05,
+      "mean_regime_differential": 0.01526131186040219,
+      "n_experiments": 10,
+      "classification": "UNIVERSE_CONSISTENT"
+    }
+  },
+  "cross_universe_consistency": "UNIVERSE_CONSISTENT"
+}

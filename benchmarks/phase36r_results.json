@@ -1,0 +1,672 @@
+[
+  {
+    "experiment_id": "EXP-001",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "BINARY",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic_baseline": 0.05132878908399963,
+    "ic_regime_conditioned": 0.04818898840168122,
+    "incremental_ic": -0.003139800682318415,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.04656669115423024,
+        "p_value": 6.939526409902876e-27,
+        "n": 53093
+      },
+      "regime_1": {
+        "ic": 0.05650891811197541,
+        "p_value": 4.0276458541913686e-37,
+        "n": 50670
+      }
+    },
+    "regime_differential": 0.009942226957745173,
+    "p_value_baseline": 1.7433458755756983e-61,
+    "p_value_regime_conditioned": 2.1202153892715962e-54
+  },
+  {
+    "experiment_id": "EXP-002",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "BINARY",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic_baseline": 0.06418721053520685,
+    "ic_regime_conditioned": 0.06247415384893822,
+    "incremental_ic": -0.0017130566862686228,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.06507443966117943,
+        "p_value": 5.578317325751662e-98,
+        "n": 103998
+      },
+      "regime_1": {
+        "ic": 0.0610207796380291,
+        "p_value": 1.1193326402529299e-81,
+        "n": 98229
+      }
+    },
+    "regime_differential": 0.0040536600231503295,
+    "p_value_baseline": 1.4044530296785539e-183,
+    "p_value_regime_conditioned": 5.3171024935722355e-174
+  },
+  {
+    "experiment_id": "EXP-003",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "CONTINUOUS",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242070,
+    "n_test": 103745,
+    "ic_baseline": 0.04626380896111649,
+    "ic_regime_conditioned": 0.04822084998328843,
+    "incremental_ic": 0.0019570410221719445,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.04983215855876738,
+        "p_value": 4.7645033795574915e-30,
+        "n": 52168
+      },
+      "regime_high": {
+        "ic": 0.04949733606075928,
+        "p_value": 2.3757801022081413e-29,
+        "n": 51577
+      }
+    },
+    "regime_differential": 0.00033482249800809855,
+    "p_value_baseline": 2.8746918705709174e-50,
+    "p_value_regime_conditioned": 1.8444176960599752e-54
+  },
+  {
+    "experiment_id": "EXP-004",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "CONTINUOUS",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471820,
+    "n_test": 202209,
+    "ic_baseline": 0.047912791392264835,
+    "ic_regime_conditioned": 0.04823931601572207,
+    "incremental_ic": 0.00032652462345723193,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.059223716546402766,
+        "p_value": 1.4596778080325456e-79,
+        "n": 101527
+      },
+      "regime_high": {
+        "ic": 0.03994669984637911,
+        "p_value": 7.617427037827283e-37,
+        "n": 100682
+      }
+    },
+    "regime_differential": 0.019277016700023658,
+    "p_value_baseline": 4.502254501538425e-103,
+    "p_value_regime_conditioned": 1.8566948264236757e-104
+  },
+  {
+    "experiment_id": "EXP-005",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "BINARY",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic_baseline": 0.06901458408725934,
+    "ic_regime_conditioned": 0.06931991232341052,
+    "incremental_ic": 0.00030532823615117555,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.07545814434209745,
+        "p_value": 9.613218633894185e-68,
+        "n": 52970
+      },
+      "regime_1": {
+        "ic": 0.06396275456524939,
+        "p_value": 4.570257159831924e-47,
+        "n": 50643
+      }
+    },
+    "regime_differential": 0.011495389776848067,
+    "p_value_baseline": 1.3681266376197417e-109,
+    "p_value_regime_conditioned": 1.5113164086567854e-110
+  },
+  {
+    "experiment_id": "EXP-006",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "BINARY",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic_baseline": 0.0696110889446229,
+    "ic_regime_conditioned": 0.062267123928827696,
+    "incremental_ic": -0.007343965015795199,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.06717210222580111,
+        "p_value": 6.042221266842552e-104,
+        "n": 103652
+      },
+      "regime_1": {
+        "ic": 0.06158522591273789,
+        "p_value": 3.294552916428578e-83,
+        "n": 98284
+      }
+    },
+    "regime_differential": 0.005586876313063219,
+    "p_value_baseline": 2.561432916324819e-215,
+    "p_value_regime_conditioned": 1.2923492263204381e-172
+  },
+  {
+    "experiment_id": "EXP-007",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "CONTINUOUS",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 241720,
+    "n_test": 103595,
+    "ic_baseline": 0.05660237238720834,
+    "ic_regime_conditioned": 0.0528193392992887,
+    "incremental_ic": -0.003783033087919642,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.06363694339202354,
+        "p_value": 4.0978639701164306e-48,
+        "n": 52347
+      },
+      "regime_high": {
+        "ic": 0.047074183993707205,
+        "p_value": 1.527480777213331e-26,
+        "n": 51248
+      }
+    },
+    "regime_differential": 0.016562759398316335,
+    "p_value_baseline": 2.8479678479912683e-74,
+    "p_value_regime_conditioned": 6.669026917334903e-65
+  },
+  {
+    "experiment_id": "EXP-008",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "A_VOLATILITY",
+    "regime_representation": "CONTINUOUS",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471141,
+    "n_test": 201918,
+    "ic_baseline": 0.07402332909817379,
+    "ic_regime_conditioned": 0.06982563984035388,
+    "incremental_ic": -0.004197689257819909,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.07951560365073129,
+        "p_value": 1.0966797153937953e-141,
+        "n": 101255
+      },
+      "regime_high": {
+        "ic": 0.06291121148900872,
+        "p_value": 8.279166356222894e-89,
+        "n": 100663
+      }
+    },
+    "regime_differential": 0.016604392161722575,
+    "p_value_baseline": 2.9483830808562804e-243,
+    "p_value_regime_conditioned": 1.2824893479726047e-216
+  },
+  {
+    "experiment_id": "EXP-009",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "BINARY_LEVEL",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic_baseline": 0.05797988637338705,
+    "ic_regime_conditioned": 0.06423353946191877,
+    "incremental_ic": 0.0062536530885317215,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.06821830970510527,
+        "p_value": 7.66873071939419e-58,
+        "n": 55102
+      },
+      "regime_1": {
+        "ic": 0.042005876470115944,
+        "p_value": 1.860940057225066e-20,
+        "n": 48661
+      }
+    },
+    "regime_differential": 0.026212433234989327,
+    "p_value_baseline": 5.737146833000457e-78,
+    "p_value_regime_conditioned": 2.6878711932018038e-95
+  },
+  {
+    "experiment_id": "EXP-010",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "BINARY_LEVEL",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic_baseline": 0.05130773262292212,
+    "ic_regime_conditioned": 0.059849948304640764,
+    "incremental_ic": 0.008542215681718646,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.06077348639084708,
+        "p_value": 3.097484192755552e-88,
+        "n": 107172
+      },
+      "regime_1": {
+        "ic": 0.0375040746306108,
+        "p_value": 6.070843853767901e-31,
+        "n": 95055
+      }
+    },
+    "regime_differential": 0.02326941176023628,
+    "p_value_baseline": 6.115212129668909e-118,
+    "p_value_regime_conditioned": 7.822007745263917e-160
+  },
+  {
+    "experiment_id": "EXP-011",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "CONTINUOUS_SLOPE",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic_baseline": 0.05662312006404778,
+    "ic_regime_conditioned": 0.05662035231449292,
+    "incremental_ic": -2.7677495548633635e-06,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.050273256863672525,
+        "p_value": 2.143569947559535e-30,
+        "n": 51882
+      },
+      "regime_high": {
+        "ic": 0.06305341572654698,
+        "p_value": 7.332280982917551e-47,
+        "n": 51881
+      }
+    },
+    "regime_differential": 0.012780158862874452,
+    "p_value_baseline": 1.922477222870642e-74,
+    "p_value_regime_conditioned": 1.9541911029275198e-74
+  },
+  {
+    "experiment_id": "EXP-012",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "CONTINUOUS_SLOPE",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic_baseline": 0.04948974363293943,
+    "ic_regime_conditioned": 0.049261948485873064,
+    "incremental_ic": -0.00022779514706636889,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.03252471143516072,
+        "p_value": 4.4041411093614995e-25,
+        "n": 101117
+      },
+      "regime_high": {
+        "ic": 0.06624653456597383,
+        "p_value": 1.028396217267767e-98,
+        "n": 101110
+      }
+    },
+    "regime_differential": 0.033721823130813115,
+    "p_value_baseline": 7.403618089161334e-110,
+    "p_value_regime_conditioned": 7.272346697054042e-109
+  },
+  {
+    "experiment_id": "EXP-013",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "BINARY_LEVEL",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic_baseline": 0.05247834766734723,
+    "ic_regime_conditioned": 0.05983218535519343,
+    "incremental_ic": 0.0073538376878462056,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.05578091210533114,
+        "p_value": 3.960980180586437e-39,
+        "n": 54952
+      },
+      "regime_1": {
+        "ic": 0.044086962247648014,
+        "p_value": 2.2519252069051884e-22,
+        "n": 48661
+      }
+    },
+    "regime_differential": 0.011693949857683128,
+    "p_value_baseline": 4.2264842322721886e-64,
+    "p_value_regime_conditioned": 8.476911558125987e-83
+  },
+  {
+    "experiment_id": "EXP-014",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "BINARY_LEVEL",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic_baseline": 0.06624904878808935,
+    "ic_regime_conditioned": 0.07274328471187817,
+    "incremental_ic": 0.006494235923788824,
+    "regime_ic_results": {
+      "regime_0": {
+        "ic": 0.07006097061108442,
+        "p_value": 1.31303720008944e-116,
+        "n": 107089
+      },
+      "regime_1": {
+        "ic": 0.05961901231976744,
+        "p_value": 2.003427790695225e-75,
+        "n": 94847
+      }
+    },
+    "regime_differential": 0.010441958291316979,
+    "p_value_baseline": 3.563031923757741e-195,
+    "p_value_regime_conditioned": 5.472015641549529e-235
+  },
+  {
+    "experiment_id": "EXP-015",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "CONTINUOUS_SLOPE",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 241761,
+    "n_test": 103613,
+    "ic_baseline": 0.06356065367977434,
+    "ic_regime_conditioned": 0.06111374356987118,
+    "incremental_ic": -0.0024469101099031595,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.04921406226427049,
+        "p_value": 3.7164023932026286e-29,
+        "n": 51807
+      },
+      "regime_high": {
+        "ic": 0.07850956980499522,
+        "p_value": 1.2510686991280527e-71,
+        "n": 51806
+      }
+    },
+    "regime_differential": 0.029295507540724734,
+    "p_value_baseline": 3.2476505978879637e-93,
+    "p_value_regime_conditioned": 2.624077206155995e-86
+  },
+  {
+    "experiment_id": "EXP-016",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "B_INTEREST_RATE",
+    "regime_representation": "CONTINUOUS_SLOPE",
+    "horizon": 20,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471182,
+    "n_test": 201936,
+    "ic_baseline": 0.0493375781993997,
+    "ic_regime_conditioned": 0.04757322829732542,
+    "incremental_ic": -0.0017643499020742748,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.03168315000587711,
+        "p_value": 7.496271733576278e-24,
+        "n": 100971
+      },
+      "regime_high": {
+        "ic": 0.06610052033446484,
+        "p_value": 3.779563622546379e-98,
+        "n": 100965
+      }
+    },
+    "regime_differential": 0.03441737032858773,
+    "p_value_baseline": 4.864856504931903e-109,
+    "p_value_regime_conditioned": 1.6521253746393137e-101
+  },
+  {
+    "experiment_id": "EXP-017",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "C_MARKET_TREND",
+    "regime_representation": "BINARY_TREND",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic_baseline": 0.0520608921556948,
+    "ic_regime_conditioned": 0.0520608921556948,
+    "incremental_ic": 0.0,
+    "regime_ic_results": {
+      "regime_1": {
+        "ic": 0.0520608921556948,
+        "p_value": 3.351667160686722e-63,
+        "n": 103763
+      }
+    },
+    "regime_differential": 0.0,
+    "p_value_baseline": 3.351667160686722e-63,
+    "p_value_regime_conditioned": 3.351667160686722e-63
+  },
+  {
+    "experiment_id": "EXP-018",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "C_MARKET_TREND",
+    "regime_representation": "BINARY_TREND",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic_baseline": 0.05440689642149128,
+    "ic_regime_conditioned": 0.05440689642149128,
+    "incremental_ic": 0.0,
+    "regime_ic_results": {
+      "regime_1": {
+        "ic": 0.05440689642149128,
+        "p_value": 2.1564294144648214e-132,
+        "n": 202227
+      }
+    },
+    "regime_differential": 0.0,
+    "p_value_baseline": 2.1564294144648214e-132,
+    "p_value_regime_conditioned": 2.1564294144648214e-132
+  },
+  {
+    "experiment_id": "EXP-019",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "C_MARKET_TREND",
+    "regime_representation": "CONTINUOUS_MOMENTUM",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-050",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 242111,
+    "n_test": 103763,
+    "ic_baseline": 0.057422500620524716,
+    "ic_regime_conditioned": 0.059285371435987076,
+    "incremental_ic": 0.00186287081546236,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.053365456649055454,
+        "p_value": 4.847753189483267e-34,
+        "n": 51882
+      },
+      "regime_high": {
+        "ic": 0.06604029391316783,
+        "p_value": 3.0433426093969814e-51,
+        "n": 51881
+      }
+    },
+    "regime_differential": 0.012674837264112379,
+    "p_value_baseline": 1.6482065007554963e-76,
+    "p_value_regime_conditioned": 1.9403888045262819e-81
+  },
+  {
+    "experiment_id": "EXP-020",
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "status": "COMPLETED",
+    "type": "REGIME_CONDITIONED",
+    "regime_family": "C_MARKET_TREND",
+    "regime_representation": "CONTINUOUS_MOMENTUM",
+    "horizon": 10,
+    "model": "Ridge",
+    "universe": "DS-EXP-100",
+    "data_origin": "REAL",
+    "n_features_baseline": 5,
+    "n_features_regime": 6,
+    "n_train": 471861,
+    "n_test": 202227,
+    "ic_baseline": 0.055078250037463916,
+    "ic_regime_conditioned": 0.05560718047776626,
+    "incremental_ic": 0.000528930440302347,
+    "regime_ic_results": {
+      "regime_low": {
+        "ic": 0.05264344856413862,
+        "p_value": 5.549813813828587e-63,
+        "n": 101114
+      },
+      "regime_high": {
+        "ic": 0.05788405845924664,
+        "p_value": 8.857093874977081e-76,
+        "n": 101113
+      }
+    },
+    "regime_differential": 0.005240609895108023,
+    "p_value_baseline": 1.233120641109302e-135,
+    "p_value_regime_conditioned": 3.2218932403747137e-138
+  }
+]

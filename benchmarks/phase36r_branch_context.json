@@ -1,0 +1,22 @@
+{
+  "context_id": "CONTEXT-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "branch": {
+    "branch_id": "BR-C3D4E5F6A1B2",
+    "branch_name": "Regime-Conditional Prediction",
+    "research_question_id": "RQ-36R-001",
+    "hypothesis_family": "regime_conditional_prediction",
+    "status": "PROPOSED",
+    "experiment_budget": 20,
+    "priority": 3
+  },
+  "inherited_evidence": [
+    "Phase 17A: IC varied substantially across historical periods",
+    "Inflation/rate-hike regime: consistently weak or negative predictive performance",
+    "Volatility branch: exploratory support for VOL_ZSCORE at H-10",
+    "Yield curve branch: exploratory support for rate-level interactions at H-20"
+  ],
+  "research_question": "Does predictive strength materially differ across objectively defined market regimes?",
+  "hypothesis_id": "HYP-CAND-REGIME-001"
+}

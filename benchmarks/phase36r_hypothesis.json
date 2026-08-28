@@ -1,0 +1,24 @@
+{
+  "hypothesis_id": "HYP-CAND-REGIME-001",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "statement": "The predictive relationship between the locked baseline price-derived features and future equity returns differs materially across objectively defined market regimes.",
+  "mechanism": "Different market environments alter investor risk appetite, cross-sectional dispersion, trend persistence, volatility persistence, correlation structure, and interest-rate sensitivity. As a result, the same features may have different predictive usefulness in different regimes.",
+  "null_hypothesis": "Predictive performance does not materially differ across objectively defined regimes, and apparent historical differences are explainable by sampling variation.",
+  "falsification_criteria": [
+    "Mean regime differential <= 0 across all regime families",
+    "Fewer than 40% of experiments show positive regime differential",
+    "Effect is driven by a single isolated historical episode",
+    "Representations produce contradictory conclusions",
+    "Effect disappears under leave-one-period-out sensitivity"
+  ],
+  "alternative_explanations": [
+    "Differences are driven by varying sample sizes across regimes",
+    "Differences reflect overall market return changes rather than predictive relationship changes",
+    "Differences are artifacts of arbitrary regime boundaries",
+    "Differences are driven by one outlier period"
+  ],
+  "hypothesis_vs_feature_engineering": "This is a MECHANISM-based hypothesis. The economic rationale (different market environments alter predictive relationships) is testable and falsifiable.",
+  "hypothesis_digest": "b1fe0cbeda9b1467c801e7254e83c1b491e3fa7e4b52401239878f18feb8ee5c"
+}

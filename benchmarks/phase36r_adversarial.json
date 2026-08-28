@@ -1,0 +1,124 @@
+{
+  "audit_id": "ADV-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "tests": {
+    "A01": {
+      "name": "Direct OOS target access",
+      "result": "BLOCKED",
+      "rationale": "All experiments use trade_date <= 2021-12-31. OOS boundary is 2026-06-30."
+    },
+    "A02": {
+      "name": "Indirect label access through joins",
+      "result": "BLOCKED",
+      "rationale": "No OOS data loaded. Labels computed from price data with proper lag."
+    },
+    "A03": {
+      "name": "Target leakage through joins",
+      "result": "BLOCKED",
+      "rationale": "Forward returns computed from price data at decision date + horizon. No future data."
+    },
+    "A04": {
+      "name": "Future timestamp contamination",
+      "result": "BLOCKED",
+      "rationale": "All timestamps verified <= 2021-12-31 for features, forward return lag properly implemented."
+    },
+    "A05": {
+      "name": "Accidental inclusion of protected data",
+      "result": "BLOCKED",
+      "rationale": "OOS files not loaded. Firewall verified."
+    },
+    "A06": {
+      "name": "Access through cached artifacts",
+      "result": "BLOCKED",
+      "rationale": "No OOS artifacts loaded into computation."
+    },
+    "A07": {
+      "name": "Access through benchmark files",
+      "result": "BLOCKED",
+      "rationale": "Benchmark files are outputs, not inputs to this phase."
+    },
+    "A08": {
+      "name": "Access through helper functions",
+      "result": "BLOCKED",
+      "rationale": "Helper functions compute only from allowed data."
+    },
+    "A09": {
+      "name": "Regime look-ahead bias",
+      "result": "BLOCKED",
+      "rationale": "Regime definitions use rolling windows of past data only (PIT-safe)."
+    },
+    "A10": {
+      "name": "Arbitrary threshold selection",
+      "result": "BLOCKED",
+      "rationale": "Thresholds are objectively specified: rolling median for binary, rolling z-score for continuous."
+    },
+    "A11": {
+      "name": "Threshold sensitivity",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Binary thresholds use median. Sensitivity not tested in this phase."
+    },
+    "A12": {
+      "name": "Single-period concentration",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Temporal stability tested but not exhaustive leave-one-period-out."
+    },
+    "A13": {
+      "name": "Tiny-regime sample exploitation",
+      "result": "BLOCKED",
+      "rationale": "Regime splits are approximately balanced (median-based)."
+    },
+    "A14": {
+      "name": "Universe cherry-picking",
+      "result": "BLOCKED",
+      "rationale": "Both DS-EXP-050 and DS-EXP-100 tested."
+    },
+    "A15": {
+      "name": "Model cherry-picking",
+      "result": "BLOCKED",
+      "rationale": "Only Ridge used. No model comparison."
+    },
+    "A16": {
+      "name": "Representation cherry-picking",
+      "result": "BLOCKED",
+      "rationale": "Binary and continuous representations both tested."
+    },
+    "A17": {
+      "name": "Duplicated observations",
+      "result": "BLOCKED",
+      "rationale": "Each (instrument, date, horizon) is unique."
+    },
+    "A18": {
+      "name": "Overlapping regime contamination",
+      "result": "BLOCKED",
+      "rationale": "Regime labels are assigned per-date, not per-period. No overlapping windows."
+    },
+    "A19": {
+      "name": "Incorrect baseline construction",
+      "result": "BLOCKED",
+      "rationale": "Baseline uses identical data, splits, preprocessing, and model. Only regime feature is removed."
+    },
+    "A20": {
+      "name": "Experiment budget violation",
+      "result": "BLOCKED",
+      "rationale": "Budget=20, matrix=20. ASSERTION verified."
+    },
+    "A21": {
+      "name": "Hidden matrix expansion",
+      "result": "BLOCKED",
+      "rationale": "Matrix locked before execution. No post-hoc additions."
+    },
+    "A22": {
+      "name": "Post-hoc regime selection",
+      "result": "BLOCKED",
+      "rationale": "Regime families and definitions locked before execution."
+    }
+  },
+  "summary": {
+    "total": 22,
+    "blocked": 20,
+    "detected": 0,
+    "documented_limitation": 2,
+    "confirmed_failure": 0
+  }
+}

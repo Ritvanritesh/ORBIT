@@ -1,0 +1,17 @@
+{
+  "audit_id": "AUDIT-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "planned_experiments": 20,
+  "completed_experiments": 20,
+  "failed_experiments": 0,
+  "budget_exceeded": false,
+  "matrix_equals_budget": true,
+  "oos_accessed": false,
+  "protected_branch_modified": false,
+  "historical_artifact_modified": false,
+  "all_artifacts_exist": true,
+  "adversarial_executed": true,
+  "adversarial_confirmed_failures": 0,
+  "verdict_derived_from_evidence": true
+}

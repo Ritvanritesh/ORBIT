@@ -1,0 +1,38 @@
+{
+  "analysis_id": "REP-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "by_representation": {
+    "BINARY": {
+      "mean_regime_differential": 0.007769538267701697,
+      "n_experiments": 4,
+      "classification": "REPRESENTATION_CONSISTENT"
+    },
+    "CONTINUOUS": {
+      "mean_regime_differential": 0.013194747689517667,
+      "n_experiments": 4,
+      "classification": "REPRESENTATION_CONSISTENT"
+    },
+    "BINARY_LEVEL": {
+      "mean_regime_differential": 0.01790443828605643,
+      "n_experiments": 4,
+      "classification": "REPRESENTATION_CONSISTENT"
+    },
+    "CONTINUOUS_SLOPE": {
+      "mean_regime_differential": 0.027553714965750008,
+      "n_experiments": 4,
+      "classification": "REPRESENTATION_CONSISTENT"
+    },
+    "BINARY_TREND": {
+      "mean_regime_differential": 0.0,
+      "n_experiments": 2,
+      "classification": "PARTIAL"
+    },
+    "CONTINUOUS_MOMENTUM": {
+      "mean_regime_differential": 0.008957723579610201,
+      "n_experiments": 2,
+      "classification": "REPRESENTATION_CONSISTENT"
+    }
+  },
+  "cross_representation_consistency": "PARTIAL"
+}

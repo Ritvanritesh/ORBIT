@@ -1,0 +1,30 @@
+{
+  "stats_id": "STAT-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "regime_differential_test": {
+    "test": "One-sample t-test (H0: mean regime differential = 0)",
+    "t_statistic": 5.914227588742072,
+    "p_value_nominal": 1.0777351709565126e-05,
+    "n_experiments": 20,
+    "mean": 0.014180260199766181,
+    "cohens_d": 1.3568168625487855
+  },
+  "incremental_ic_test": {
+    "test": "One-sample t-test (H0: mean incremental IC = 0)",
+    "t_statistic": 0.49076473953890226,
+    "p_value_nominal": 0.6292129859337456,
+    "n_experiments": 20,
+    "mean": 0.00045026349403550007,
+    "cohens_d": 0.11258915287911235
+  },
+  "multiple_testing": {
+    "n_tests": 20,
+    "correction": "Holm-Bonferroni",
+    "family_wise_alpha": 0.05,
+    "corrected_alpha_per_test": 0.0025,
+    "any_regime_diff_significant": true,
+    "any_incr_ic_significant": false
+  },
+  "exploratory_note": "All p-values are exploratory, not confirmatory"
+}

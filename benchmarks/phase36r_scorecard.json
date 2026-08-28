@@ -1,0 +1,57 @@
+{
+  "scorecard_id": "SCORE-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "dimensions": {
+    "mechanism_consistency": {
+      "status": "PARTIAL",
+      "rationale": "Regime-dependent prediction is economically justified, but mean regime differential is small"
+    },
+    "regime_differential": {
+      "status": "PASS",
+      "rationale": "Mean regime differential = 0.014180"
+    },
+    "directional_consistency": {
+      "status": "PASS",
+      "rationale": "Mean incremental IC = 0.000450"
+    },
+    "temporal_stability": {
+      "status": "PARTIALLY_STABLE"
+    },
+    "universe_stability": {
+      "status": "UNIVERSE_CONSISTENT"
+    },
+    "model_stability": {
+      "status": "NOT_VARIED",
+      "rationale": "Only Ridge tested"
+    },
+    "representation_stability": {
+      "status": "PARTIAL"
+    },
+    "sample_sufficiency": {
+      "status": "PASS",
+      "rationale": "20 experiments completed"
+    },
+    "statistical_support": {
+      "status": "PASS",
+      "rationale": "p-value = 0.0000"
+    },
+    "pit_integrity": {
+      "status": "PASS",
+      "rationale": "All features PIT_NATIVE or PIT_SAFE_WITH_LAG"
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "rationale": "Deterministic pipeline with fixed seed"
+    },
+    "economic_interpretability": {
+      "status": "PARTIAL",
+      "rationale": "Regime effect exists but small, economic significance unclear"
+    }
+  },
+  "pass_count": 6,
+  "partial_count": 3,
+  "fail_count": 0,
+  "insufficient_count": 2,
+  "not_varied_count": 1
+}

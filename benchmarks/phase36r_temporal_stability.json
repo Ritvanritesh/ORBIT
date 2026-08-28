@@ -1,0 +1,37 @@
+{
+  "stability_id": "STAB-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "temporal": {
+    "by_horizon": {
+      "10": {
+        "mean": 0.01229225002725507,
+        "n": 12
+      },
+      "20": {
+        "mean": 0.017012275458532844,
+        "n": 8
+      }
+    },
+    "assessment": "PARTIALLY_STABLE"
+  },
+  "universe": {
+    "by_universe": {
+      "DS-EXP-050": {
+        "mean": 0.013099208539130169,
+        "n": 10
+      },
+      "DS-EXP-100": {
+        "mean": 0.01526131186040219,
+        "n": 10
+      }
+    },
+    "assessment": "STABLE"
+  },
+  "concentration": {
+    "mean_regime_differential": 0.014180260199766181,
+    "std_regime_differential": 0.010451123206951091,
+    "max_regime_differential": 0.03441737032858773,
+    "min_regime_differential": 0.0
+  }
+}

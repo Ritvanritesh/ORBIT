@@ -1,0 +1,78 @@
+{
+  "regime_id": "REG-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "families": {
+    "A_VOLATILITY": {
+      "name": "Volatility Regime",
+      "economic_rationale": "High-volatility environments may alter predictive relationships by changing investor risk appetite, cross-sectional dispersion, and mean-reversion speed.",
+      "definitions": {
+        "BINARY": {
+          "description": "Binary regime: high volatility vs. low volatility",
+          "formula": "VOL_20D > rolling_60d_median(VOL_20D)",
+          "threshold": "60-day rolling median of 20-day realized volatility",
+          "states": {
+            "LOW": "VOL_20D <= median",
+            "HIGH": "VOL_20D > median"
+          },
+          "pit_classification": "PIT_NATIVE"
+        },
+        "CONTINUOUS": {
+          "description": "Continuous volatility regime (percentile)",
+          "formula": "VOL_PERCENTILE = rank(VOL_20D, 60d) / 60",
+          "range": "[0, 1]",
+          "pit_classification": "PIT_NATIVE"
+        }
+      }
+    },
+    "B_INTEREST_RATE": {
+      "name": "Interest Rate Regime",
+      "economic_rationale": "Rate level and curve shape affect discount rates, financing conditions, growth expectations, and sector valuations differently.",
+      "definitions": {
+        "BINARY_LEVEL": {
+          "description": "Binary regime: high rate level vs. low rate level",
+          "formula": "DGS10 > rolling_60d_median(DGS10)",
+          "threshold": "60-day rolling median of 10-year yield",
+          "states": {
+            "LOW": "DGS10 <= median",
+            "HIGH": "DGS10 > median"
+          },
+          "pit_classification": "PIT_NATIVE"
+        },
+        "CONTINUOUS_SLOPE": {
+          "description": "Continuous yield curve slope (10Y-2Y spread)",
+          "formula": "SLOPE = DGS10 - DGS2",
+          "range": "[-1, 3] typical range",
+          "pit_classification": "PIT_NATIVE"
+        }
+      }
+    },
+    "C_MARKET_TREND": {
+      "name": "Market Trend / Stress Regime",
+      "economic_rationale": "Market stress environments may alter correlation structure, dispersion, and trend persistence, changing how price-derived features predict forward returns.",
+      "definitions": {
+        "BINARY_TREND": {
+          "description": "Binary regime: positive trend vs. negative trend",
+          "formula": "MKT_RET_20D > 0",
+          "states": {
+            "NEGATIVE": "MKT_RET_20D <= 0",
+            "POSITIVE": "MKT_RET_20D > 0"
+          },
+          "pit_classification": "PIT_NATIVE"
+        },
+        "CONTINUOUS_MOMENTUM": {
+          "description": "Continuous market momentum (normalized)",
+          "formula": "MKT_MOMENTUM = (MKT_RET_20D - rolling_mean) / rolling_std",
+          "range": "approximately [-3, 3]",
+          "pit_classification": "PIT_NATIVE"
+        }
+      }
+    }
+  },
+  "design_rules": [
+    "All thresholds are objectively specified before seeing results",
+    "No manual threshold adjustment after inspecting IC values",
+    "Rolling windows use only past data (PIT-safe)",
+    "Regime definitions are locked before execution"
+  ]
+}

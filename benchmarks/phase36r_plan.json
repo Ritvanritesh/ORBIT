@@ -1,0 +1,279 @@
+{
+  "plan_id": "PLAN-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "budget": 20,
+  "n_experiments": 20,
+  "budget_matches_matrix": true,
+  "regime_families": [
+    "A_VOLATILITY",
+    "B_INTEREST_RATE",
+    "C_MARKET_TREND"
+  ],
+  "horizons": [
+    10,
+    20
+  ],
+  "models": [
+    "Ridge"
+  ],
+  "universes": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "experiment_matrix": [
+    {
+      "experiment_id": "EXP-001",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "BINARY",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-002",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "BINARY",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-003",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "CONTINUOUS",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-004",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "CONTINUOUS",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-005",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "BINARY",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-006",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "BINARY",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-007",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "CONTINUOUS",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-008",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "A_VOLATILITY",
+      "regime_representation": "CONTINUOUS",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-009",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "BINARY_LEVEL",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-010",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "BINARY_LEVEL",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-011",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "CONTINUOUS_SLOPE",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-012",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "CONTINUOUS_SLOPE",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-013",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "BINARY_LEVEL",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-014",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "BINARY_LEVEL",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-015",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "CONTINUOUS_SLOPE",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-016",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "B_INTEREST_RATE",
+      "regime_representation": "CONTINUOUS_SLOPE",
+      "horizon": 20,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-017",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "C_MARKET_TREND",
+      "regime_representation": "BINARY_TREND",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-018",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "C_MARKET_TREND",
+      "regime_representation": "BINARY_TREND",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-019",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "C_MARKET_TREND",
+      "regime_representation": "CONTINUOUS_MOMENTUM",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-020",
+      "branch_id": "BR-C3D4E5F6A1B2",
+      "type": "REGIME_CONDITIONED",
+      "regime_family": "C_MARKET_TREND",
+      "regime_representation": "CONTINUOUS_MOMENTUM",
+      "horizon": 10,
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    }
+  ],
+  "checkpoints": [
+    5,
+    10,
+    15,
+    20
+  ],
+  "stopping_rules": {
+    "futility": "Zero positive regime differentials in first 5 experiments",
+    "data_issue": "Any data quality failure",
+    "budget_exhausted": "20 experiments completed"
+  },
+  "plan_digest": "b560a89a48717facf5e2ca44fe156036b7bc9664b3d38cfa694ec21f07e42b0c"
+}

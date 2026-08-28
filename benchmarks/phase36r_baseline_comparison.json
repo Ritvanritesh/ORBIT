@@ -1,0 +1,37 @@
+{
+  "comparison_id": "COMP-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "overall": {
+    "mean_incremental_ic": 0.00045026349403550007,
+    "median_incremental_ic": 0.0,
+    "mean_regime_differential": 0.014180260199766181,
+    "median_regime_differential": 0.012184393560897754,
+    "positive_experiments": 9,
+    "total_experiments": 20,
+    "positive_regime_diff": 18
+  },
+  "by_family": {
+    "A_VOLATILITY": {
+      "mean_incremental_ic": -0.0021985813560426795,
+      "mean_regime_differential": 0.010482142978609683,
+      "n_experiments": 8,
+      "positive_ic": 3,
+      "positive_diff": 8
+    },
+    "B_INTEREST_RATE": {
+      "mean_incremental_ic": 0.0030252649341608413,
+      "mean_regime_differential": 0.022729076625903216,
+      "n_experiments": 8,
+      "positive_ic": 4,
+      "positive_diff": 8
+    },
+    "C_MARKET_TREND": {
+      "mean_incremental_ic": 0.0005979503139411767,
+      "mean_regime_differential": 0.0044788617898051004,
+      "n_experiments": 4,
+      "positive_ic": 2,
+      "positive_diff": 2
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "audit_id": "PIT-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "features": {
+    "RET_5D": "PIT_NATIVE",
+    "RET_10D": "PIT_NATIVE",
+    "RET_20D": "PIT_NATIVE",
+    "VOL_20D": "PIT_NATIVE",
+    "MKT_RET_20D": "PIT_NATIVE",
+    "VOL_ZSCORE": "PIT_NATIVE (computed from PIT_NATIVE price data)",
+    "VOL_PERCENTILE": "PIT_NATIVE (computed from PIT_NATIVE price data)"
+  },
+  "regime_features": {
+    "VOL_REGIME_BINARY": "PIT_NATIVE (threshold on PIT_NATIVE volatility)",
+    "VOL_REGIME_CONTINUOUS": "PIT_NATIVE (continuous volatility percentile)",
+    "RATE_REGIME_BINARY": "PIT_NATIVE (threshold on PIT_NATIVE FRED data)",
+    "RATE_REGIME_CONTINUOUS": "PIT_NATIVE (continuous yield curve slope)",
+    "TREND_REGIME_BINARY": "PIT_NATIVE (threshold on PIT_NATIVE market returns)",
+    "TREND_REGIME_CONTINUOUS": "PIT_NATIVE (continuous market momentum)"
+  },
+  "labels": {
+    "fwd_return": "PIT_NATIVE (computed from price data with proper lag)"
+  },
+  "verdict": "ALL_FEATURES_PIT_NATIVE_OR_PIT_SAFE"
+}

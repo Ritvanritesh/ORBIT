@@ -1,0 +1,27 @@
+{
+  "manifest_id": "DATA-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "allowed_data": [
+    "DS-EXP-050 (price data, PIT_NATIVE)",
+    "DS-EXP-100 (price data, PIT_NATIVE)",
+    "FRED Treasury yields (PIT_NATIVE)",
+    "Instrument master configs (PIT_SAFE_WITH_LAG)",
+    "Existing exploratory/training data"
+  ],
+  "forbidden_data": [
+    "OOS labels (OOS_BOUNDARY > 2026-06-30)",
+    "OOS IC values",
+    "OOS Sharpe ratios",
+    "OOS portfolio returns",
+    "Phase 24-R locked confirmatory test data",
+    "Phase 25-R independent replication data",
+    "Phase 26-R OOS evaluation data",
+    "Phase 34-R yield curve confirmatory data"
+  ],
+  "provenance_verification": {
+    "price_data": "DS-EXP-050/100 bars.parquet \u2014 PIT_NATIVE",
+    "macro_data": "FRED CSV downloads \u2014 PIT_NATIVE",
+    "sector_labels": "Instrument master JSON \u2014 PIT_SAFE_WITH_LAG"
+  }
+}

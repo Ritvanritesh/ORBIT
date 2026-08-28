@@ -1,0 +1,27 @@
+{
+  "review_id": "REVIEW-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "outcome": "A",
+  "outcome_label": "STRONG_EXPLORATORY_SUPPORT",
+  "eligibility": "ELIGIBLE",
+  "answers": {
+    "regime_differential_exists": true,
+    "differential_systematic": true,
+    "not_concentrated_in_one_period": true,
+    "not_driven_by_one_event": true,
+    "representations_consistent": "PARTIAL",
+    "pit_integrity": "PASS",
+    "reproducibility": "PASS",
+    "economic_interpretation": "ECONOMICALLY_PLAUSIBLE",
+    "limitations": [
+      "Only Ridge tested (model stability not assessed)",
+      "Temporal stability is PARTIALLY_STABLE",
+      "Regime thresholds not sensitivity-tested",
+      "Effect size is small",
+      "No leave-one-period-out analysis"
+    ]
+  },
+  "recommendation": "Recommend confirmatory registration with regime-conditional model"
+}

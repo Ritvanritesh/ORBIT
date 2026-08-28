@@ -1,0 +1,20 @@
+{
+  "firewall_id": "FW-36R",
+  "phase": "36R",
+  "timestamp": "2026-08-28T13:28:50.304341+00:00",
+  "checks": {
+    "oos_boundary": "2026-06-30",
+    "data_filter": "ALL trade_date <= '2021-12-31' for feature computation",
+    "label_filter": "ALL fwd_return computed from price data with proper lag",
+    "no_oos_files_loaded": true,
+    "no_oos_ic_calculated": true,
+    "no_oos_sharpe_calculated": true,
+    "no_oos_portfolio_returns": true
+  },
+  "oos_files_present": [
+    "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible\\DS-EXP-050_oos.parquet",
+    "E:\\Orbit (Optimized Research & Behavioral Intelligence Trading)\\data\\oos\\eligible\\DS-EXP-100_oos.parquet"
+  ],
+  "oos_files_loaded": false,
+  "verification": "All experiments use training/validation data only (trade_date <= 2021-12-31)"
+}
