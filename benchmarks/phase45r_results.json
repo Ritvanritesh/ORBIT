@@ -1,0 +1,269 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "results": [
+    {
+      "exp_id": "EXP-001",
+      "feature_system": "FS-001",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.13216784397889503,
+      "h20_ic": 0.11488014881956853,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-002",
+      "feature_system": "FS-001",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.17557192788519596,
+      "h20_ic": 0.14672790165998645,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-003",
+      "feature_system": "FS-001",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.13314201415452068,
+      "h20_ic": 0.07401039285276083,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-004",
+      "feature_system": "FS-001",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.1748618300795323,
+      "h20_ic": 0,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-005",
+      "feature_system": "FS-001",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.49608499367937464,
+      "h20_ic": 0.49410755937406636,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-006",
+      "feature_system": "FS-001",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.47974090832799793,
+      "h20_ic": 0.4657064147419998,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-007",
+      "feature_system": "FS-001",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.5003788040650291,
+      "h20_ic": 0.49806919737486677,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-008",
+      "feature_system": "FS-001",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.47580899383823805,
+      "h20_ic": 0.47131282967584603,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-009",
+      "feature_system": "SYSTEM_FULL",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.26354052855685883,
+      "h20_ic": 0.28785117702478485,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-010",
+      "feature_system": "SYSTEM_FULL",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.27122280163407886,
+      "h20_ic": 0.29174515392148026,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-011",
+      "feature_system": "SYSTEM_FULL",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.2027908224153329,
+      "h20_ic": 0.24791310766070826,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-012",
+      "feature_system": "SYSTEM_FULL",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.2002674221207052,
+      "h20_ic": 0.2408124339675811,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-013",
+      "feature_system": "SYSTEM_FULL",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.48535001834809965,
+      "h20_ic": 0.4772847743426309,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-014",
+      "feature_system": "SYSTEM_FULL",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.5020249462748123,
+      "h20_ic": 0.48390389124735717,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-015",
+      "feature_system": "SYSTEM_FULL",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.4902135747237357,
+      "h20_ic": 0.47683202524723844,
+      "h10_n": 37250,
+      "h20_n": 37250
+    },
+    {
+      "exp_id": "EXP-016",
+      "feature_system": "SYSTEM_FULL",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.5061231212283661,
+      "h20_ic": 0.48859438413442097,
+      "h10_n": 72265,
+      "h20_n": 72265
+    },
+    {
+      "exp_id": "EXP-017",
+      "feature_system": "BASELINE",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.18137944650201845,
+      "h20_ic": 0.23618803515505213,
+      "h10_n": 37850,
+      "h20_n": 37850
+    },
+    {
+      "exp_id": "EXP-018",
+      "feature_system": "BASELINE",
+      "model": "Ridge",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.15798123575938475,
+      "h20_ic": 0.22238507335561478,
+      "h10_n": 73429,
+      "h20_n": 73429
+    },
+    {
+      "exp_id": "EXP-019",
+      "feature_system": "BASELINE",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.17354088056053665,
+      "h20_ic": 0.22886534494880928,
+      "h10_n": 37850,
+      "h20_n": 37850
+    },
+    {
+      "exp_id": "EXP-020",
+      "feature_system": "BASELINE",
+      "model": "ElasticNet",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.15704280923460884,
+      "h20_ic": 0.22405809683543387,
+      "h10_n": 73429,
+      "h20_n": 73429
+    },
+    {
+      "exp_id": "EXP-021",
+      "feature_system": "BASELINE",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.23033148117597205,
+      "h20_ic": 0.20515644572745187,
+      "h10_n": 37850,
+      "h20_n": 37850
+    },
+    {
+      "exp_id": "EXP-022",
+      "feature_system": "BASELINE",
+      "model": "HistGradientBoosting",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.2074504250326921,
+      "h20_ic": 0.20812526741144993,
+      "h10_n": 73429,
+      "h20_n": 73429
+    },
+    {
+      "exp_id": "EXP-023",
+      "feature_system": "BASELINE",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "050",
+      "h10_ic": 0.21774464082010522,
+      "h20_ic": 0.20158516317383193,
+      "h10_n": 37850,
+      "h20_n": 37850
+    },
+    {
+      "exp_id": "EXP-024",
+      "feature_system": "BASELINE",
+      "model": "LightGBM",
+      "mode": "pooled",
+      "universe": "100",
+      "h10_ic": 0.20400517656587783,
+      "h20_ic": 0.20892887869536605,
+      "h10_n": 73429,
+      "h20_n": 73429
+    }
+  ]
+}

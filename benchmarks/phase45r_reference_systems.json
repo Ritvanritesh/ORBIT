@@ -1,0 +1,20 @@
+{
+  "FS-001": {
+    "features": 4,
+    "keys": [
+      "fs001"
+    ]
+  },
+  "SYSTEM_FULL_REFERENCE": {
+    "features": 19,
+    "keys": [
+      "full19"
+    ]
+  },
+  "BASELINE_REFERENCE": {
+    "features": 5,
+    "keys": [
+      "base"
+    ]
+  }
+}

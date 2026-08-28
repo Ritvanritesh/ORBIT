@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "evidence": {
+    "FS-001": {
+      "mean_ic": 0.3020357350317424,
+      "complexity": 4.0,
+      "complexity_adjusted": 0.0755089337579356
+    },
+    "SYSTEM_FULL": {
+      "mean_ic": 0.369779386428012,
+      "complexity": 0.0,
+      "complexity_adjusted": 0.369779386428012
+    },
+    "BASELINE": {
+      "mean_ic": 0.20404802505963787,
+      "complexity": 0.0,
+      "complexity_adjusted": 0.20404802505963787
+    }
+  }
+}

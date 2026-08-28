@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "comparison": {
+    "FS-001": {
+      "n_features": 4,
+      "mean_ic": 0.3020357350317424,
+      "incr_vs_baseline": 0.09798770997210454
+    },
+    "SYSTEM_FULL": {
+      "n_features": 0,
+      "mean_ic": 0.369779386428012,
+      "incr_vs_baseline": 0.16573136136837413
+    },
+    "BASELINE": {
+      "n_features": 0,
+      "mean_ic": 0.20404802505963787,
+      "incr_vs_baseline": 0.0
+    }
+  }
+}

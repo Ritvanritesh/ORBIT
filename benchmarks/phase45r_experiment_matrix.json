@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "budget": 24,
+  "matrix": [
+    {
+      "id": "EXP-001",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-002",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-003",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-004",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-005",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-006",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-007",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-008",
+      "feature_system": "FS-001",
+      "feat_key": "fs001",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-009",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-010",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-011",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-012",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-013",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-014",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-015",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-016",
+      "feature_system": "SYSTEM_FULL",
+      "feat_key": "full19",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-017",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-018",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "Ridge",
+      "model_type": "ridge",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-019",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-020",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "ElasticNet",
+      "model_type": "elasticnet",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-021",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-022",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "HistGradientBoosting",
+      "model_type": "hgb",
+      "mode": "pooled",
+      "universe": "100"
+    },
+    {
+      "id": "EXP-023",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "050"
+    },
+    {
+      "id": "EXP-024",
+      "feature_system": "BASELINE",
+      "feat_key": "base",
+      "model": "LightGBM",
+      "model_type": "lgbm",
+      "mode": "pooled",
+      "universe": "100"
+    }
+  ]
+}

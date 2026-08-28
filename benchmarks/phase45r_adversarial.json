@@ -1,0 +1,178 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_feature_leakage",
+      "result": "BLOCKED",
+      "rationale": "All historical"
+    },
+    "A02": {
+      "name": "future_yield_leakage",
+      "result": "BLOCKED",
+      "rationale": "PIT-safe yield"
+    },
+    "A03": {
+      "name": "centered_rolling",
+      "result": "BLOCKED",
+      "rationale": "Backward windows"
+    },
+    "A04": {
+      "name": "incorrect_forward_fill",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    },
+    "A05": {
+      "name": "label_leakage",
+      "result": "BLOCKED",
+      "rationale": "Forward returns in labels"
+    },
+    "A06": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "Time-ordered"
+    },
+    "A07": {
+      "name": "shuffled_split",
+      "result": "BLOCKED",
+      "rationale": "Temporal order preserved"
+    },
+    "A08": {
+      "name": "random_split",
+      "result": "BLOCKED",
+      "rationale": "Not used"
+    },
+    "A09": {
+      "name": "feature_freeze_violation",
+      "result": "BLOCKED",
+      "rationale": "FS-001 frozen"
+    },
+    "A10": {
+      "name": "manifest_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Digest verified"
+    },
+    "A11": {
+      "name": "wrong_feature_count",
+      "result": "BLOCKED",
+      "rationale": "4 features verified"
+    },
+    "A12": {
+      "name": "duplicate_experiment",
+      "result": "BLOCKED",
+      "rationale": "All unique"
+    },
+    "A13": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=24 Matrix=24"
+    },
+    "A14": {
+      "name": "hidden_search",
+      "result": "BLOCKED",
+      "rationale": "No tuning"
+    },
+    "A15": {
+      "name": "post_hoc_selection",
+      "result": "BLOCKED",
+      "rationale": "Pre-defined matrix"
+    },
+    "A16": {
+      "name": "unmatched_comparison",
+      "result": "BLOCKED",
+      "rationale": "Matched splits"
+    },
+    "A17": {
+      "name": "unmatched_regime",
+      "result": "BLOCKED",
+      "rationale": "Same regime definition"
+    },
+    "A18": {
+      "name": "horizon_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Both reported"
+    },
+    "A19": {
+      "name": "universe_contamination",
+      "result": "BLOCKED",
+      "rationale": "Separate eval"
+    },
+    "A20": {
+      "name": "incorrect_incr",
+      "result": "BLOCKED",
+      "rationale": "IC difference computed"
+    },
+    "A21": {
+      "name": "protected_oos",
+      "result": "BLOCKED",
+      "rationale": "No OOS loaded"
+    },
+    "A22": {
+      "name": "oos_ic",
+      "result": "BLOCKED",
+      "rationale": "Not calculated"
+    },
+    "A23": {
+      "name": "confirmatory",
+      "result": "BLOCKED",
+      "rationale": "Not executed"
+    },
+    "A24": {
+      "name": "registration_mod",
+      "result": "BLOCKED",
+      "rationale": "All immutable"
+    },
+    "A25": {
+      "name": "artifact_mod",
+      "result": "BLOCKED",
+      "rationale": "All additive"
+    },
+    "A26": {
+      "name": "regime_def_mod",
+      "result": "BLOCKED",
+      "rationale": "Frozen definition"
+    },
+    "A27": {
+      "name": "regime_thresh_tune",
+      "result": "BLOCKED",
+      "rationale": "No tuning"
+    },
+    "A28": {
+      "name": "regime_routing_error",
+      "result": "BLOCKED",
+      "rationale": "Correct routing"
+    },
+    "A29": {
+      "name": "empty_regime",
+      "result": "BLOCKED",
+      "rationale": "Both populated"
+    },
+    "A30": {
+      "name": "fragmentation_conceal",
+      "result": "BLOCKED",
+      "rationale": "Reported"
+    },
+    "A31": {
+      "name": "nondeterministic",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    },
+    "A32": {
+      "name": "cherry_picking",
+      "result": "BLOCKED",
+      "rationale": "All results reported"
+    },
+    "A33": {
+      "name": "config_drift",
+      "result": "BLOCKED",
+      "rationale": "Configurations frozen"
+    },
+    "A34": {
+      "name": "preprocessing_drift",
+      "result": "BLOCKED",
+      "rationale": "Consistent scaling"
+    }
+  },
+  "summary": {
+    "total": 34,
+    "blocked": 34
+  }
+}

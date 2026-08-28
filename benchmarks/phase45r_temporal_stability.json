@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "temporal": {
+    "status": "TEMPORALLY_STABLE",
+    "rationale": "All evaluations use time-ordered splits"
+  }
+}

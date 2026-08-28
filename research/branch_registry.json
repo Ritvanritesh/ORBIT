@@ -439,6 +439,28 @@
         "features": 4,
         "fs_version": "FS-001"
       }
+    },
+    {
+      "branch_id": "BR-F6A1B2C3D4E5",
+      "name": "Expanded Model Benchmarking",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T16:43:39.158475+00:00",
+      "result": {
+        "best_model": "LightGBM",
+        "fs001_advantage": true,
+        "regime_beneficial": false
+      }
+    },
+    {
+      "branch_id": "BR-F6A1B2C3D4E5",
+      "name": "Expanded Model Benchmarking",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T16:50:15.956897+00:00",
+      "result": {
+        "best_model": "LightGBM",
+        "fs001_advantage": true,
+        "regime_beneficial": false
+      }
     }
   ],
   "prevention_rules": [
@@ -462,7 +484,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T16:24:00.077536+00:00",
+  "last_updated": "2026-08-28T16:50:15.956897+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

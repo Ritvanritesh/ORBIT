@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "comparison": {
+    "Ridge_FS-001": {
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "mean_ic": 0.14233695558591147,
+      "n_experiments": 4
+    },
+    "Ridge_SYSTEM_FULL": {
+      "model": "Ridge",
+      "feature_system": "SYSTEM_FULL",
+      "mean_ic": 0.2785899152843007,
+      "n_experiments": 4
+    },
+    "Ridge_BASELINE": {
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "mean_ic": 0.1994834476930175,
+      "n_experiments": 4
+    },
+    "ElasticNet_FS-001": {
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "mean_ic": 0.09550355927170345,
+      "n_experiments": 4
+    },
+    "ElasticNet_SYSTEM_FULL": {
+      "model": "ElasticNet",
+      "feature_system": "SYSTEM_FULL",
+      "mean_ic": 0.22294594654108188,
+      "n_experiments": 4
+    },
+    "ElasticNet_BASELINE": {
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "mean_ic": 0.19587678289484714,
+      "n_experiments": 4
+    },
+    "HistGradientBoosting_FS-001": {
+      "model": "HistGradientBoosting",
+      "feature_system": "FS-001",
+      "mean_ic": 0.4839099690308597,
+      "n_experiments": 4
+    },
+    "HistGradientBoosting_SYSTEM_FULL": {
+      "model": "HistGradientBoosting",
+      "feature_system": "SYSTEM_FULL",
+      "mean_ic": 0.48714090755322503,
+      "n_experiments": 4
+    },
+    "HistGradientBoosting_BASELINE": {
+      "model": "HistGradientBoosting",
+      "feature_system": "BASELINE",
+      "mean_ic": 0.2127659048368915,
+      "n_experiments": 4
+    },
+    "LightGBM_FS-001": {
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "mean_ic": 0.486392456238495,
+      "n_experiments": 4
+    },
+    "LightGBM_SYSTEM_FULL": {
+      "model": "LightGBM",
+      "feature_system": "SYSTEM_FULL",
+      "mean_ic": 0.4904407763334403,
+      "n_experiments": 4
+    },
+    "LightGBM_BASELINE": {
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "mean_ic": 0.20806596481379525,
+      "n_experiments": 4
+    }
+  }
+}

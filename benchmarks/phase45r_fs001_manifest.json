@@ -1,0 +1,10 @@
+{
+  "version": "FS-001",
+  "features": [
+    "YC_LEVEL",
+    "YC_SLOPE",
+    "YC_CURVATURE",
+    "YC_CHG_10D"
+  ],
+  "digest": "0ee094300cc8e9360f01c1512f38e6594b097474378a5f8b2a7de3a44854fc06"
+}

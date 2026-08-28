@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-08-28T16:50:15.956897+00:00",
+  "incremental": {
+    "Ridge": {
+      "fs001_vs_baseline": -0.05714649210710604,
+      "fs001_vs_full": -0.13625295969838924
+    },
+    "ElasticNet": {
+      "fs001_vs_baseline": -0.10037322362314369,
+      "fs001_vs_full": -0.12744238726937843
+    },
+    "HistGradientBoosting": {
+      "fs001_vs_baseline": 0.2711440641939682,
+      "fs001_vs_full": -0.003230938522365334
+    },
+    "LightGBM": {
+      "fs001_vs_baseline": 0.27832649142469973,
+      "fs001_vs_full": -0.0040483200949453235
+    }
+  }
+}

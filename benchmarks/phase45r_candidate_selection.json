@@ -1,0 +1,5 @@
+{
+  "feature_system": "FS-001",
+  "best_model": "LightGBM",
+  "regime_awareness": "pooled"
+}

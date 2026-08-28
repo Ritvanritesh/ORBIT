@@ -1,0 +1,6 @@
+{
+  "definition": "HIGH if DGS10 > rolling 60-day median, LOW otherwise",
+  "pit_classification": "PIT_NATIVE",
+  "rolling_window": 60,
+  "frozen": true
+}
