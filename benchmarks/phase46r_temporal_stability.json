@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "temporal": {
+    "A_LGBM_FS001_early": {
+      "mean_ic": 0.022736111601509824,
+      "n": 4
+    },
+    "A_LGBM_FS001_middle": {
+      "mean_ic": -0.05582117348654836,
+      "n": 4
+    },
+    "A_LGBM_FS001_late": {
+      "mean_ic": -0.08113778643468489,
+      "n": 4
+    },
+    "B_LGBM_FULL_early": {
+      "mean_ic": 0.10265062130775321,
+      "n": 4
+    },
+    "B_LGBM_FULL_middle": {
+      "mean_ic": -0.028950764877094762,
+      "n": 4
+    },
+    "B_LGBM_FULL_late": {
+      "mean_ic": -0.0543790877418726,
+      "n": 4
+    },
+    "C_HGB_FS001_early": {
+      "mean_ic": -0.011622363883708001,
+      "n": 4
+    },
+    "C_HGB_FS001_middle": {
+      "mean_ic": -0.029577378545999275,
+      "n": 4
+    },
+    "C_HGB_FS001_late": {
+      "mean_ic": -0.05799609012025243,
+      "n": 4
+    },
+    "D_RIDGE_FS001_early": {
+      "mean_ic": 0.06314795422205247,
+      "n": 4
+    },
+    "D_RIDGE_FS001_middle": {
+      "mean_ic": 0.05526369920208808,
+      "n": 4
+    },
+    "D_RIDGE_FS001_late": {
+      "mean_ic": 0.024152535621974922,
+      "n": 4
+    }
+  },
+  "candidate_stable": false,
+  "status": "TEMPORALLY_PARTIAL"
+}

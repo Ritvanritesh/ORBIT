@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "budget": 24,
+  "digest": "f9b4f2b54fff7f760e0dd9d722c3d4795efbf3d271e504554daffcbe9ccd31da",
+  "matrix": [
+    {
+      "id": "VAL-001",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-002",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-003",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-004",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-005",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-006",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-007",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-008",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-009",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-010",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-011",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-012",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-013",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-014",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-015",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-016",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-017",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-018",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-019",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-020",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-021",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal_partition": "late"
+    },
+    {
+      "id": "VAL-022",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal_partition": "early"
+    },
+    {
+      "id": "VAL-023",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal_partition": "middle"
+    },
+    {
+      "id": "VAL-024",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal_partition": "late"
+    }
+  ]
+}

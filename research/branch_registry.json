@@ -461,6 +461,18 @@
         "fs001_advantage": true,
         "regime_beneficial": false
       }
+    },
+    {
+      "branch_id": "BR-A1B2C3D4E5F7",
+      "name": "Model Selection System Freeze",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T17:14:46.312964+00:00",
+      "result": {
+        "candidate": "CS-LGBM-FS001-001",
+        "verdict": "A",
+        "cand_ic": -0.038074282773241146,
+        "incr_vs_baseline": -0.08559567912194631
+      }
     }
   ],
   "prevention_rules": [
@@ -484,7 +496,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T16:50:15.956897+00:00",
+  "last_updated": "2026-08-28T17:14:46.312964+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

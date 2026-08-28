@@ -1,0 +1,22 @@
+{
+  "A_LGBM_FS001": {
+    "model": "lgbm",
+    "feat": "fs001",
+    "label": "LightGBM + FS-001 (candidate)"
+  },
+  "B_LGBM_FULL": {
+    "model": "lgbm",
+    "feat": "full19",
+    "label": "LightGBM + SYSTEM_FULL"
+  },
+  "C_HGB_FS001": {
+    "model": "hgb",
+    "feat": "fs001",
+    "label": "HGB + FS-001"
+  },
+  "D_RIDGE_FS001": {
+    "model": "ridge",
+    "feat": "fs001",
+    "label": "Ridge + FS-001"
+  }
+}

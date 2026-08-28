@@ -1,0 +1,21 @@
+{
+  "id": "CS-LGBM-FS001-001",
+  "model": "LightGBM",
+  "model_type": "lgbm",
+  "feature_system": "FS-001",
+  "features": [
+    "YC_LEVEL",
+    "YC_SLOPE",
+    "YC_CURVATURE",
+    "YC_CHG_10D"
+  ],
+  "architecture": "pooled",
+  "n_features": 4,
+  "config": {
+    "n_estimators": 100,
+    "learning_rate": 0.1,
+    "max_depth": 5,
+    "min_child_samples": 20
+  },
+  "digest": "8fdb76778f8f73135b9d7bb50bf22cc05cb7f90cc7e1ab771c9788456e68463d"
+}

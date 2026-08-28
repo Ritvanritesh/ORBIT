@@ -1,0 +1,7 @@
+{
+  "ridge_ic": 0.04752139634870516,
+  "hgb_ic": -0.03306527751665323,
+  "lgbm_ic": -0.038074282773241146,
+  "tree_vs_linear": false,
+  "classification": "NONLINEARITY_NOT_REQUIRED"
+}

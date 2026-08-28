@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "ablation": {
+    "fs001": {
+      "name": "FS-001 (all)",
+      "mean_ic": 0.018448350559221262,
+      "n": 4
+    },
+    "fs001_no_level": {
+      "name": "without YC_LEVEL",
+      "mean_ic": 0.02604274677120308,
+      "n": 4
+    },
+    "fs001_no_slope": {
+      "name": "without YC_SLOPE",
+      "mean_ic": -0.028561737188927058,
+      "n": 4
+    },
+    "fs001_no_curv": {
+      "name": "without YC_CURVATURE",
+      "mean_ic": -0.05244765459768166,
+      "n": 4
+    },
+    "fs001_no_chg": {
+      "name": "without YC_CHG_10D",
+      "mean_ic": 0.03986809895370515,
+      "n": 4
+    }
+  },
+  "feature_classification": {
+    "YC_LEVEL": "UNSTABLE",
+    "YC_SLOPE": "CORE",
+    "YC_CURV": "CORE",
+    "YC_CHG": "UNSTABLE"
+  }
+}

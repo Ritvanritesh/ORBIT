@@ -1,0 +1,437 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "results": [
+    {
+      "exp_id": "VAL-001",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.01296978044208905,
+      "n": 31476
+    },
+    {
+      "exp_id": "VAL-001",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.0232155925275629,
+      "n": 31472
+    },
+    {
+      "exp_id": "VAL-002",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.05119351587665919,
+      "n": 31570
+    },
+    {
+      "exp_id": "VAL-002",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.0777660779174002,
+      "n": 31567
+    },
+    {
+      "exp_id": "VAL-003",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.08407485946581263,
+      "n": 31594
+    },
+    {
+      "exp_id": "VAL-003",
+      "system": "A_LGBM_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.11610017553851643,
+      "n": 31591
+    },
+    {
+      "exp_id": "VAL-004",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.026253621169817734,
+      "n": 61061
+    },
+    {
+      "exp_id": "VAL-004",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.028505452266569618,
+      "n": 61058
+    },
+    {
+      "exp_id": "VAL-005",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.04191497265064351,
+      "n": 61255
+    },
+    {
+      "exp_id": "VAL-005",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.05241012750149056,
+      "n": 61252
+    },
+    {
+      "exp_id": "VAL-006",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.05137502746567098,
+      "n": 61295
+    },
+    {
+      "exp_id": "VAL-006",
+      "system": "A_LGBM_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.07300108326873955,
+      "n": 61291
+    },
+    {
+      "exp_id": "VAL-007",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.057269919298127275,
+      "n": 31476
+    },
+    {
+      "exp_id": "VAL-007",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.13978090981428412,
+      "n": 31472
+    },
+    {
+      "exp_id": "VAL-008",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.04146205248244702,
+      "n": 31570
+    },
+    {
+      "exp_id": "VAL-008",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.023326565105256575,
+      "n": 31567
+    },
+    {
+      "exp_id": "VAL-009",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.06984444616887653,
+      "n": 31594
+    },
+    {
+      "exp_id": "VAL-009",
+      "system": "B_LGBM_FULL",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.05752785508938451,
+      "n": 31591
+    },
+    {
+      "exp_id": "VAL-010",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.0632562605123608,
+      "n": 61061
+    },
+    {
+      "exp_id": "VAL-010",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.15029539560624064,
+      "n": 61058
+    },
+    {
+      "exp_id": "VAL-011",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.03826794101452199,
+      "n": 61255
+    },
+    {
+      "exp_id": "VAL-011",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.012746500906153445,
+      "n": 61252
+    },
+    {
+      "exp_id": "VAL-012",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.05033297298923857,
+      "n": 61295
+    },
+    {
+      "exp_id": "VAL-012",
+      "system": "B_LGBM_FULL",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.03981107671999079,
+      "n": 61291
+    },
+    {
+      "exp_id": "VAL-013",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": -0.01618161907642142,
+      "n": 31476
+    },
+    {
+      "exp_id": "VAL-013",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": -0.002212966734812031,
+      "n": 31472
+    },
+    {
+      "exp_id": "VAL-014",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.027607116975085614,
+      "n": 31570
+    },
+    {
+      "exp_id": "VAL-014",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.043704389056112666,
+      "n": 31567
+    },
+    {
+      "exp_id": "VAL-015",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.04390305857336739,
+      "n": 31594
+    },
+    {
+      "exp_id": "VAL-015",
+      "system": "C_HGB_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.09279307588224907,
+      "n": 31591
+    },
+    {
+      "exp_id": "VAL-016",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": -0.0015274081566870148,
+      "n": 61061
+    },
+    {
+      "exp_id": "VAL-016",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": -0.02656746156691154,
+      "n": 61058
+    },
+    {
+      "exp_id": "VAL-017",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": -0.014712448272193944,
+      "n": 61255
+    },
+    {
+      "exp_id": "VAL-017",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": -0.03228555988060489,
+      "n": 61252
+    },
+    {
+      "exp_id": "VAL-018",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": -0.034449170381774995,
+      "n": 61295
+    },
+    {
+      "exp_id": "VAL-018",
+      "system": "C_HGB_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": -0.06083905564361828,
+      "n": 61291
+    },
+    {
+      "exp_id": "VAL-019",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.061509036210587495,
+      "n": 31476
+    },
+    {
+      "exp_id": "VAL-019",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.07462961907821745,
+      "n": 31472
+    },
+    {
+      "exp_id": "VAL-020",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": 0.038374392014337004,
+      "n": 31570
+    },
+    {
+      "exp_id": "VAL-020",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": 0.06465667611682177,
+      "n": 31567
+    },
+    {
+      "exp_id": "VAL-021",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": 0.00719037414923157,
+      "n": 31594
+    },
+    {
+      "exp_id": "VAL-021",
+      "system": "D_RIDGE_FS001",
+      "universe": "050",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": 0.03340792857684416,
+      "n": 31591
+    },
+    {
+      "exp_id": "VAL-022",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 10,
+      "ic": 0.054428255787688846,
+      "n": 61061
+    },
+    {
+      "exp_id": "VAL-022",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "early",
+      "horizon": 20,
+      "ic": 0.06202490581171609,
+      "n": 61058
+    },
+    {
+      "exp_id": "VAL-023",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 10,
+      "ic": 0.04450161976443226,
+      "n": 61255
+    },
+    {
+      "exp_id": "VAL-023",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "middle",
+      "horizon": 20,
+      "ic": 0.07352210891276129,
+      "n": 61252
+    },
+    {
+      "exp_id": "VAL-024",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 10,
+      "ic": 0.01558038701932585,
+      "n": 61295
+    },
+    {
+      "exp_id": "VAL-024",
+      "system": "D_RIDGE_FS001",
+      "universe": "100",
+      "temporal": "late",
+      "horizon": 20,
+      "ic": 0.04043145274249811,
+      "n": 61291
+    }
+  ]
+}

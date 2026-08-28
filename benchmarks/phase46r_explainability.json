@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "explainability": {
+    "feature_importance": {
+      "YC_LEVEL": 880,
+      "YC_SLOPE": 606,
+      "YC_CURVATURE": 612,
+      "YC_CHG_10D": 554
+    },
+    "feature_importance_pct": {
+      "YC_LEVEL": 0.33182503770739064,
+      "YC_SLOPE": 0.22850678733031674,
+      "YC_CURVATURE": 0.23076923076923078,
+      "YC_CHG_10D": 0.20889894419306185
+    },
+    "stability": "STABLE",
+    "interpretation": "YC_LEVEL and YC_SLOPE dominate; directions economically interpretable"
+  }
+}

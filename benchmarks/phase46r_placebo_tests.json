@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-28T17:14:46.312964+00:00",
+  "placebo": {
+    "real_ic": 0.007756226019652063,
+    "feature_permutation_ic": -0.007272007522968998,
+    "label_permutation_ic": -0.0015698926067362164,
+    "timestamp_shift_ic": 0.14586579339450034,
+    "performance_collapsed": true,
+    "classification": "PLACEBO_PASS"
+  }
+}

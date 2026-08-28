@@ -1,0 +1,173 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_feature_leakage",
+      "result": "BLOCKED",
+      "rationale": "All historical"
+    },
+    "A02": {
+      "name": "target_leakage",
+      "result": "BLOCKED",
+      "rationale": "Labels forward"
+    },
+    "A03": {
+      "name": "timestamp_misalignment",
+      "result": "BLOCKED",
+      "rationale": "Aligned to bars"
+    },
+    "A04": {
+      "name": "label_shift",
+      "result": "BLOCKED",
+      "rationale": "No shift"
+    },
+    "A05": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "Time-ordered"
+    },
+    "A06": {
+      "name": "duplicate_rows",
+      "result": "BLOCKED",
+      "rationale": "No duplicates"
+    },
+    "A07": {
+      "name": "duplicate_symbols",
+      "result": "BLOCKED",
+      "rationale": "Unique instruments"
+    },
+    "A08": {
+      "name": "cross_universe",
+      "result": "BLOCKED",
+      "rationale": "Separate eval"
+    },
+    "A09": {
+      "name": "feature_fit_future",
+      "result": "BLOCKED",
+      "rationale": "Fit on train only"
+    },
+    "A10": {
+      "name": "incorrect_forward_fill",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    },
+    "A11": {
+      "name": "missing_data_leakage",
+      "result": "BLOCKED",
+      "rationale": "NaN excluded"
+    },
+    "A12": {
+      "name": "accidental_target",
+      "result": "BLOCKED",
+      "rationale": "No target in features"
+    },
+    "A13": {
+      "name": "incorrect_ic",
+      "result": "BLOCKED",
+      "rationale": "Spearman computed correctly"
+    },
+    "A14": {
+      "name": "unmatched_samples",
+      "result": "BLOCKED",
+      "rationale": "Matched splits"
+    },
+    "A15": {
+      "name": "random_state_nondet",
+      "result": "BLOCKED",
+      "rationale": "Fixed seed"
+    },
+    "A16": {
+      "name": "hyperparameter_drift",
+      "result": "BLOCKED",
+      "rationale": "Config frozen"
+    },
+    "A17": {
+      "name": "candidate_modification",
+      "result": "BLOCKED",
+      "rationale": "Digest verified"
+    },
+    "A18": {
+      "name": "hidden_feature_add",
+      "result": "BLOCKED",
+      "rationale": "No additions"
+    },
+    "A19": {
+      "name": "hidden_model_add",
+      "result": "BLOCKED",
+      "rationale": "No additions"
+    },
+    "A20": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Matrix=24"
+    },
+    "A21": {
+      "name": "temporal_overlap",
+      "result": "BLOCKED",
+      "rationale": "Non-overlapping"
+    },
+    "A22": {
+      "name": "cherry_pick_period",
+      "result": "BLOCKED",
+      "rationale": "All reported"
+    },
+    "A23": {
+      "name": "perf_concentration",
+      "result": "BLOCKED",
+      "rationale": "Audited"
+    },
+    "A24": {
+      "name": "feature_permutation",
+      "result": "BLOCKED",
+      "rationale": "Placebo PASS"
+    },
+    "A25": {
+      "name": "label_permutation",
+      "result": "BLOCKED",
+      "rationale": "Placebo PASS"
+    },
+    "A26": {
+      "name": "timestamp_shift",
+      "result": "BLOCKED",
+      "rationale": "Placebo PASS"
+    },
+    "A27": {
+      "name": "protected_oos",
+      "result": "BLOCKED",
+      "rationale": "No OOS"
+    },
+    "A28": {
+      "name": "registration_mod",
+      "result": "BLOCKED",
+      "rationale": "Immutable"
+    },
+    "A29": {
+      "name": "artifact_mod",
+      "result": "BLOCKED",
+      "rationale": "Additive only"
+    },
+    "A30": {
+      "name": "reproducibility",
+      "result": "BLOCKED",
+      "rationale": "Exact match"
+    },
+    "A31": {
+      "name": "feature_freeze_violation",
+      "result": "BLOCKED",
+      "rationale": "FS-001 frozen"
+    },
+    "A32": {
+      "name": "manifest_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Digest verified"
+    },
+    "A33": {
+      "name": "model_config_drift",
+      "result": "BLOCKED",
+      "rationale": "Configuration frozen"
+    }
+  },
+  "summary": {
+    "total": 33,
+    "blocked": 33
+  }
+}
