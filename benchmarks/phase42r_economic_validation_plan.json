@@ -1,0 +1,13 @@
+{
+  "future_requirements": [
+    "Portfolio construction analysis",
+    "Turnover and transaction cost analysis",
+    "Capacity analysis",
+    "Concentration analysis",
+    "Drawdown analysis",
+    "Sharpe ratio analysis",
+    "Net performance analysis",
+    "Benchmark comparison"
+  ],
+  "rule": "No economic or portfolio metric may redefine confirmatory success."
+}

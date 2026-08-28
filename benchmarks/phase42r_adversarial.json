@@ -1,0 +1,139 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_yield_leakage",
+      "result": "BLOCKED",
+      "rationale": "DGS10 rolling median backward-looking"
+    },
+    "A02": {
+      "name": "future_regime_classification",
+      "result": "BLOCKED",
+      "rationale": "Regime at date t uses data through t"
+    },
+    "A03": {
+      "name": "centered_rolling_window",
+      "result": "BLOCKED",
+      "rationale": "Rolling median not centered"
+    },
+    "A04": {
+      "name": "regime_threshold_modification",
+      "result": "BLOCKED",
+      "rationale": "Threshold frozen, not optimizable"
+    },
+    "A05": {
+      "name": "hidden_threshold_search",
+      "result": "BLOCKED",
+      "rationale": "Single threshold (median)"
+    },
+    "A06": {
+      "name": "model_hyperparameter_modification",
+      "result": "BLOCKED",
+      "rationale": "Alpha=1.0 frozen"
+    },
+    "A07": {
+      "name": "feature_modification",
+      "result": "BLOCKED",
+      "rationale": "5 features frozen, no additions"
+    },
+    "A08": {
+      "name": "label_modification",
+      "result": "BLOCKED",
+      "rationale": "Forward returns properly lagged"
+    },
+    "A09": {
+      "name": "horizon_substitution",
+      "result": "BLOCKED",
+      "rationale": "H-10 primary, H-20 secondary only"
+    },
+    "A10": {
+      "name": "universe_substitution",
+      "result": "BLOCKED",
+      "rationale": "Both universes required"
+    },
+    "A11": {
+      "name": "unmatched_baseline",
+      "result": "BLOCKED",
+      "rationale": "Every test has matched baseline"
+    },
+    "A12": {
+      "name": "incorrect_incremental_ic",
+      "result": "BLOCKED",
+      "rationale": "Incr IC = IC(model) - IC(baseline)"
+    },
+    "A13": {
+      "name": "incorrect_model_routing",
+      "result": "BLOCKED",
+      "rationale": "Routing uses PIT-safe regime"
+    },
+    "A14": {
+      "name": "train_test_contamination",
+      "result": "BLOCKED",
+      "rationale": "70/30 time-ordered split"
+    },
+    "A15": {
+      "name": "protected_oos_target_access",
+      "result": "BLOCKED",
+      "rationale": "No OOS data loaded"
+    },
+    "A16": {
+      "name": "oos_ic_calculation",
+      "result": "BLOCKED",
+      "rationale": "No OOS IC calculated"
+    },
+    "A17": {
+      "name": "oos_portfolio_evaluation",
+      "result": "BLOCKED",
+      "rationale": "No portfolio constructed"
+    },
+    "A18": {
+      "name": "experiment_budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=6 matrix=6 MATCHED"
+    },
+    "A19": {
+      "name": "duplicate_experiment",
+      "result": "BLOCKED",
+      "rationale": "All 6 unique"
+    },
+    "A20": {
+      "name": "matrix_modification_after_freeze",
+      "result": "BLOCKED",
+      "rationale": "Matrix frozen"
+    },
+    "A21": {
+      "name": "digest_mismatch",
+      "result": "BLOCKED",
+      "rationale": "All digests generated"
+    },
+    "A22": {
+      "name": "multiple_testing_modification",
+      "result": "BLOCKED",
+      "rationale": "Holm-Bonferroni family=2 frozen"
+    },
+    "A23": {
+      "name": "falsification_criterion_modification",
+      "result": "BLOCKED",
+      "rationale": "10 conditions frozen"
+    },
+    "A24": {
+      "name": "existing_registration_modification",
+      "result": "BLOCKED",
+      "rationale": "No registrations modified"
+    },
+    "A25": {
+      "name": "historical_artifact_modification",
+      "result": "BLOCKED",
+      "rationale": "All work additive"
+    },
+    "A26": {
+      "name": "nondeterministic_registration",
+      "result": "BLOCKED",
+      "rationale": "Deterministic generation"
+    }
+  },
+  "summary": {
+    "total": 26,
+    "blocked": 26,
+    "confirmed_failure": 0
+  }
+}

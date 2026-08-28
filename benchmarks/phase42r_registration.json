@@ -1,0 +1,10 @@
+{
+  "registration_id": "REG-RM-001",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "branch_id": "BR-C3D4E5F6A1B2",
+  "hypothesis_id": "HYP-RM-001",
+  "status": "CONFIRMATORY_REGISTERED",
+  "waiting_for": "OOS DATA_READY (36/60 days)",
+  "freeze_digest": "ef26fae0b7c8619ec0fd0b2c7d46f25ca86d508ccb490653ed422966898026d3"
+}

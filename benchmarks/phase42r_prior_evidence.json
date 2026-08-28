@@ -1,0 +1,26 @@
+{
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "evidence_chain": [
+    {
+      "phase": "39-R",
+      "verdict": "B",
+      "outcome": "PARTIAL_SUPPORT",
+      "finding": "Rate regime more consistent than volatility regime"
+    },
+    {
+      "phase": "40-R",
+      "verdict": "B",
+      "outcome": "PARTIAL_SUPPORT",
+      "finding": "Rate-separate +0.006513, rate-feature 0% positive"
+    },
+    {
+      "phase": "41-R",
+      "verdict": "A",
+      "outcome": "STRONG_EXPLORATORY_SUPPORT",
+      "finding": "Rate-separate +0.009273, placebo -0.004530, advantage +0.013802"
+    }
+  ],
+  "critical_finding": "Interest-rate regime improves model selection (separate models), not direct prediction (feature). Coefficient heterogeneity is WEAK.",
+  "supported_claim": "Regime-based model partitioning produces incremental IC. NOT coefficient heterogeneity."
+}

@@ -1,0 +1,55 @@
+{
+  "conditions": [
+    {
+      "id": "F01",
+      "condition": "Incremental IC <= 0",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F02",
+      "condition": "Incremental IC does not exceed +0.005",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F03",
+      "condition": "Statistical significance fails",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F04",
+      "condition": "Only one universe succeeds",
+      "result": "PARTIAL_SUPPORT_NOT_FULLY_CONFIRMED"
+    },
+    {
+      "id": "F05",
+      "condition": "PIT violation detected",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F06",
+      "condition": "Routing cannot be reproduced",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F07",
+      "condition": "Baseline matching fails",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F08",
+      "condition": "OOS data integrity compromised",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F09",
+      "condition": "Configuration digests mismatch",
+      "result": "CONFIRMATORY_FAIL"
+    },
+    {
+      "id": "F10",
+      "condition": "Unauthorized configuration change",
+      "result": "CONFIRMATORY_FAIL"
+    }
+  ],
+  "frozen": true
+}

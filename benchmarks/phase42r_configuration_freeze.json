@@ -1,0 +1,17 @@
+{
+  "freeze_id": "FREEZE-42R",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "digests": {
+    "hypothesis": "b205242c997835f0461cb522adf70c4d2700a3577fea81287916a418db734858",
+    "regime_definition": "fa67a9590f1373fd2da6579b08d9d25680cb985ab0a297b39acff3f2f7841600",
+    "feature_manifest": "fce308da8a9748cd755c385f51c6daac20681ce40d1e3904df25e7acac000e64",
+    "label_definition": "58ccdcbffc1c4203f63e282d3143905e2bc994021319b0e42bb7cd73233b8cb5",
+    "model_configuration": "878b2eb5f6d2aae14624a7161e2dea06fccbcee453aa06e544c349623632a283",
+    "baseline_configuration": "0892a0ce2970b31607fe5496efc022db51769c1f312dad108b8164b678d7afb3",
+    "experiment_matrix": "22273e87b1d002ad2b15b3fce3702c928e5de9d2a42b64982e0671481952c7c6"
+  },
+  "all_locked": true,
+  "immutable_after": "2026-08-28T14:43:35.435621+00:00",
+  "freeze_digest": "ef26fae0b7c8619ec0fd0b2c7d46f25ca86d508ccb490653ed422966898026d3"
+}

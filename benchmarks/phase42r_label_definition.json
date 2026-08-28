@@ -1,0 +1,10 @@
+{
+  "label": "fwd_return",
+  "definition": "(price[t+h] - price[t]) / price[t]",
+  "horizons": [
+    10,
+    20
+  ],
+  "pit": "PIT_NATIVE",
+  "digest": "58ccdcbffc1c4203f63e282d3143905e2bc994021319b0e42bb7cd73233b8cb5"
+}

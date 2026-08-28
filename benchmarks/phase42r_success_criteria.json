@@ -1,0 +1,41 @@
+{
+  "primary": [
+    {
+      "condition": "INCREMENTAL_IC_EXCEEDS_THRESHOLD",
+      "description": "Incremental IC > +0.005 on OOS",
+      "required": true
+    },
+    {
+      "condition": "STATISTICAL_SIGNIFICANCE",
+      "description": "p < 0.05 after Holm-Bonferroni correction",
+      "required": true
+    },
+    {
+      "condition": "BOTH_UNIVERSES_SUCCEED",
+      "description": "Both ENV-050 and ENV-100 primary tests pass",
+      "required": true
+    },
+    {
+      "condition": "PIT_INTEGRITY",
+      "description": "No PIT violations detected",
+      "required": true
+    },
+    {
+      "condition": "ROUTING_REPRODUCED",
+      "description": "Rate-regime routing reproduced exactly",
+      "required": true
+    },
+    {
+      "condition": "BASELINE_MATCHING",
+      "description": "Matched baseline verified",
+      "required": true
+    },
+    {
+      "condition": "NO_CONFIGURATION_CHANGE",
+      "description": "All digests match",
+      "required": true
+    }
+  ],
+  "pass_definition": "ALL primary conditions must be satisfied",
+  "fail_definition": "ANY primary condition fails or ANY hard falsification triggered"
+}

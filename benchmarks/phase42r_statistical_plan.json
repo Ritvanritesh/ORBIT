@@ -1,0 +1,7 @@
+{
+  "primary_metric": "Incremental Spearman IC",
+  "threshold": 0.005,
+  "significance_level": 0.05,
+  "correction": "Holm-Bonferroni",
+  "procedure": "One-sample t-test on incremental IC"
+}

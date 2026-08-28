@@ -1,0 +1,74 @@
+{
+  "matrix_id": "MATRIX-42R",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "budget": 6,
+  "n_experiments": 6,
+  "budget_matches_matrix": true,
+  "matrix": [
+    {
+      "id": "CONF-001",
+      "classification": "PRIMARY",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "INCREMENTAL_IC",
+      "decision": "PASS if incr_ic > 0.005 and p < 0.05"
+    },
+    {
+      "id": "CONF-002",
+      "classification": "PRIMARY",
+      "horizon": 10,
+      "universe": "DS-EXP-100",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "INCREMENTAL_IC",
+      "decision": "PASS if incr_ic > 0.005 and p < 0.05"
+    },
+    {
+      "id": "CONF-003",
+      "classification": "SECONDARY",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "INCREMENTAL_IC",
+      "decision": "Robustness only"
+    },
+    {
+      "id": "CONF-004",
+      "classification": "SECONDARY",
+      "horizon": 20,
+      "universe": "DS-EXP-100",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "INCREMENTAL_IC",
+      "decision": "Robustness only"
+    },
+    {
+      "id": "CONF-005",
+      "classification": "PRIMARY_INTEGRITY",
+      "horizon": 10,
+      "universe": "DS-EXP-050",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "ARCHITECTURE_RECONSTRUCTION",
+      "decision": "Verify routing and model reconstruction"
+    },
+    {
+      "id": "CONF-006",
+      "classification": "SECONDARY_INTEGRITY",
+      "horizon": 20,
+      "universe": "DS-EXP-050",
+      "model": "RIDGE_SEPARATE_RATE_REGIME",
+      "baseline": "RIDGE_POOLED_BASELINE",
+      "metric": "ARCHITECTURE_RECONSTRUCTION",
+      "decision": "Verify routing and model reconstruction"
+    }
+  ],
+  "primary": 2,
+  "secondary": 2,
+  "integrity": 2,
+  "digest": "22273e87b1d002ad2b15b3fce3702c928e5de9d2a42b64982e0671481952c7c6"
+}

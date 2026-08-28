@@ -1,0 +1,12 @@
+{
+  "all_artifacts_exist": true,
+  "all_digests_verify": true,
+  "matrix_equals_budget": true,
+  "success_criteria_locked": true,
+  "falsification_locked": true,
+  "mt_locked": true,
+  "no_oos_accessed": true,
+  "no_registrations_modified": true,
+  "adv_confirmed_failures": 0,
+  "reproducibility_passes": true
+}

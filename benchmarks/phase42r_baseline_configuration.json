@@ -1,0 +1,18 @@
+{
+  "baseline_id": "RIDGE_POOLED_BASELINE",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "model": "Ridge",
+  "alpha": 1.0,
+  "fit_intercept": true,
+  "preprocessing": "StandardScaler on training data",
+  "architecture": "Single pooled Ridge model, no regime routing",
+  "features": [
+    "RET_5D",
+    "RET_10D",
+    "RET_20D",
+    "VOL_20D",
+    "MKT_RET_20D"
+  ],
+  "digest": "0892a0ce2970b31607fe5496efc022db51769c1f312dad108b8164b678d7afb3"
+}

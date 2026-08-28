@@ -1,0 +1,40 @@
+{
+  "manifest_id": "DATA-MANIFEST-42R",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "inputs": [
+    {
+      "name": "DS-EXP-050 bars.parquet",
+      "source": "Yahoo Finance Chart API",
+      "pit": "PIT_NATIVE",
+      "feature": "price"
+    },
+    {
+      "name": "DS-EXP-100 bars.parquet",
+      "source": "Yahoo Finance Chart API",
+      "pit": "PIT_NATIVE",
+      "feature": "price"
+    },
+    {
+      "name": "DGS10 parquet",
+      "source": "FRED",
+      "pit": "PIT_NATIVE",
+      "feature": "macro"
+    },
+    {
+      "name": "Instrument master JSON",
+      "source": "Configs",
+      "pit": "PIT_SAFE_WITH_LAG",
+      "feature": "sector"
+    }
+  ],
+  "forbidden": [
+    "OOS data",
+    "OOS labels",
+    "OOS IC",
+    "Phase 24-R",
+    "Phase 25-R",
+    "Phase 26-R"
+  ],
+  "digest": "47d824af5a813c516a80c1440e3bfe4ef0a315e9aca5049ff06ddd6b397df33f"
+}

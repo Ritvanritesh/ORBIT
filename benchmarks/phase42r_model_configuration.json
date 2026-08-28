@@ -1,0 +1,13 @@
+{
+  "model_id": "RIDGE_SEPARATE_RATE_REGIME",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "model": "Ridge",
+  "alpha": 1.0,
+  "fit_intercept": true,
+  "preprocessing": "StandardScaler on training data",
+  "architecture": "Route by RATE_REGIME to separate Ridge models",
+  "routing": "LOW_RATE_MODEL for regime=0, HIGH_RATE_MODEL for regime=1",
+  "no_tuning": true,
+  "digest": "878b2eb5f6d2aae14624a7161e2dea06fccbcee453aa06e544c349623632a283"
+}

@@ -306,7 +306,7 @@
       "research_question_id": "RQ-29R-003",
       "hypothesis_family": "regime_conditional_prediction",
       "mechanism": "Market relationships are not stationary. Predictive effects may be strong in some regimes and weak or reversed in others",
-      "status": "ACTIVE",
+      "status": "CONFIRMATORY_REGISTERED",
       "locked_plan_digest": null,
       "experiment_budget": 20,
       "experiments_completed": 20,
@@ -376,6 +376,15 @@
         "outcome": "STRONG_EXPLORATORY_SUPPORT",
         "verdict": "A",
         "next": "PHASE_42R_REGIME_AWARE_CONFIRMATORY_REGISTRATION"
+      },
+      "phase42r_registration": {
+        "timestamp": "2026-08-28T14:43:35.435621+00:00",
+        "hypothesis": "HYP-RM-001",
+        "primary_horizon": "H-10",
+        "model": "RIDGE_SEPARATE_RATE_REGIME",
+        "threshold": 0.005,
+        "budget": 6,
+        "oos_status": "DATA_NOT_READY"
       }
     }
   ],
@@ -400,7 +409,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T14:20:35.142488+00:00",
+  "last_updated": "2026-08-28T14:43:35.435621+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

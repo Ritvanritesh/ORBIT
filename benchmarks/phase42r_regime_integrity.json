@@ -1,0 +1,7 @@
+{
+  "pit": "PIT_NATIVE",
+  "no_lookahead": true,
+  "deterministic": true,
+  "threshold_optimized": false,
+  "digest": "fa67a9590f1373fd2da6579b08d9d25680cb985ab0a297b39acff3f2f7841600"
+}

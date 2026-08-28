@@ -1,0 +1,7 @@
+{
+  "primary_family_size": 2,
+  "secondary_family_size": 2,
+  "total_family": 4,
+  "correction": "Holm-Bonferroni",
+  "alpha": 0.05
+}

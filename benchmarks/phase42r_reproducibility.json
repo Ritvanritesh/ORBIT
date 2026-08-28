@@ -1,0 +1,5 @@
+{
+  "classification": "EXACT_MATCH",
+  "deterministic": true,
+  "rationale": "All artifacts generated deterministically"
+}

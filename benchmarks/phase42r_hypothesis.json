@@ -1,0 +1,23 @@
+{
+  "hypothesis_id": "HYP-RM-001",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "statement": "Using a pre-defined, PIT-safe interest-rate regime to route observations to separately trained Ridge models produces incremental predictive value relative to an otherwise equivalent pooled Ridge model.",
+  "claim_type": "REGIME_BASED_MODEL_PARTITIONING",
+  "not_claiming": [
+    "RATE_REGIME is directly predictive",
+    "Feature coefficients differ materially between regimes",
+    "Volatility regimes improve prediction",
+    "Nonlinear models are superior"
+  ],
+  "mechanism": "Observable interest-rate environments contain information useful for partitioning the model estimation problem into more conditionally appropriate training regimes.",
+  "falsification": [
+    "Incremental IC <= 0",
+    "Incremental IC does not exceed +0.005",
+    "Statistical significance fails",
+    "Success only in one universe",
+    "PIT violation detected",
+    "Routing cannot be reproduced"
+  ],
+  "digest": "b205242c997835f0461cb522adf70c4d2700a3577fea81287916a418db734858"
+}

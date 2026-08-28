@@ -1,0 +1,15 @@
+{
+  "regime_id": "RATE_REGIME_FROZEN",
+  "phase": "42R",
+  "timestamp": "2026-08-28T14:43:35.435621+00:00",
+  "definition": "HIGH if DGS10 > rolling 60-day median, LOW otherwise",
+  "input_series": "DGS10 (FRED 10-Year Treasury Constant Maturity Rate)",
+  "pit_classification": "PIT_NATIVE",
+  "rolling_window": 60,
+  "threshold_type": "rolling_median",
+  "threshold_optimized": false,
+  "no_future_info": true,
+  "deterministic": true,
+  "reproduced_from": "Phase 40-R / Phase 41-R frozen definition",
+  "digest": "fa67a9590f1373fd2da6579b08d9d25680cb985ab0a297b39acff3f2f7841600"
+}

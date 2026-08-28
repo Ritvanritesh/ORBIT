@@ -1,0 +1,12 @@
+{
+  "features": [
+    "RET_5D",
+    "RET_10D",
+    "RET_20D",
+    "VOL_20D",
+    "MKT_RET_20D"
+  ],
+  "n_features": 5,
+  "pit_all": "PIT_NATIVE",
+  "digest": "fce308da8a9748cd755c385f51c6daac20681ce40d1e3904df25e7acac000e64"
+}

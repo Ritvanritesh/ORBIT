@@ -1,0 +1,12 @@
+{
+  "secondary_tests": [
+    "H-20 on ENV-050",
+    "H-20 on ENV-100"
+  ],
+  "classification": [
+    "ROBUSTNESS_SUPPORTED",
+    "ROBUSTNESS_PARTIAL",
+    "ROBUSTNESS_NOT_SUPPORTED"
+  ],
+  "rule": "Secondary success cannot rescue primary failure. Primary+secondary = STRONGER_CONFIRMATORY_EVIDENCE."
+}
