@@ -1,0 +1,16 @@
+{
+  "policy_id": "MODEL-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "primary_model": {
+    "name": "Ridge",
+    "justification": "Linear model provides interpretable sector-macro sensitivities. Alpha=1.0 regularizes against overfitting. Validated in yield curve branch."
+  },
+  "excluded_models": {
+    "Lasso": "Excluded due to degeneracy risk (same issue as yield curve branch)",
+    "ElasticNet": "Not justified \u2014 linear mechanism is sufficient for initial exploration",
+    "HistGradientBoosting": "Not justified \u2014 nonlinear interactions not yet established",
+    "LightGBM": "Not justified \u2014 would expand search space without mechanism justification"
+  },
+  "model_fishing_prevention": "Only Ridge is used. No model comparison is performed in this exploratory phase."
+}

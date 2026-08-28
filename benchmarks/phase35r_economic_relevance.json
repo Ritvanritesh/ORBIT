@@ -1,0 +1,8 @@
+{
+  "relevance_id": "ECON-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "classification": "ECONOMICALLY_UNCLEAR",
+  "mean_incremental_ic": 0.0005764827874379048,
+  "rationale": "Mean incremental IC = 0.000576. Effect is small but positive."
+}

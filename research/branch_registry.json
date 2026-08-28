@@ -260,15 +260,17 @@
       "research_question_id": "RQ-29R-002",
       "hypothesis_family": "sector_macro_interaction",
       "mechanism": "Different sectors have different exposures to macroeconomic factors, creating predictive information that disappears when all equities are modeled as homogeneous",
-      "status": "PROPOSED",
+      "status": "ACTIVE",
       "locked_plan_digest": null,
       "experiment_budget": 20,
-      "experiments_completed": 0,
-      "experiments_remaining": 20,
-      "exploratory_evidence": [],
+      "experiments_completed": 20,
+      "experiments_remaining": 0,
+      "exploratory_evidence": [
+        "phase35r_exploratory_support"
+      ],
       "review_decisions": [],
       "confirmatory_registrations": [],
-      "final_classification": null,
+      "final_classification": "EXPLORATORY_SUPPORT",
       "start_timestamp": null,
       "parent_evidence_references": [
         "phase29r_prior_evidence",
@@ -288,6 +290,14 @@
           "Sector classification must be PIT-compatible",
           "Small sectors may have insufficient observations"
         ]
+      },
+      "phase35r_result": {
+        "phase": "35R",
+        "timestamp": "2026-08-28T13:14:20.584351+00:00",
+        "outcome": "C",
+        "mean_incremental_ic": 0.0005764827874379048,
+        "positive_proportion": 0.6,
+        "eligibility": "ELIGIBLE_WITH_LIMITATIONS"
       }
     },
     {
@@ -351,7 +361,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T13:01:23.125659+00:00",
+  "last_updated": "2026-08-28T13:14:20.584351+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

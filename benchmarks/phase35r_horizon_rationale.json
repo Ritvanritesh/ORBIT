@@ -1,0 +1,20 @@
+{
+  "rationale_id": "HORIZ-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "horizons": {
+    "H-10": {
+      "inclusion": "Two-week horizon captures medium-term macro transmission",
+      "economic_justification": "Sector-specific macro sensitivity may take 1-2 weeks to manifest in relative returns",
+      "classification": "PRIMARY"
+    },
+    "H-20": {
+      "inclusion": "One-month horizon captures longer-term macro effects",
+      "economic_justification": "Macro regime changes may take a month to fully affect sector valuations",
+      "classification": "PRIMARY"
+    }
+  },
+  "excluded_horizons": {
+    "H-5": "Excluded to stay within 20-experiment budget. Shorter horizon may be too noisy for sector-level effects."
+  }
+}

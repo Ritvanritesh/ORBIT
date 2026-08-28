@@ -21,7 +21,7 @@ Run the relevant tests again.
 
 After fixing the issues, perform a second independent pass looking specifically for problems missed during the first review.
 
-Do not declare the phase complete until the implementation, tests, documentation, and architecture are consistent with the ORBIT roadmap.
+Do not declare the phase complete until the implementation, tests, documentation, and architecture are consistent
 
 
 
@@ -56,223 +56,227 @@ Do not declare the phase complete until the implementation, tests, documentation
 
 
 
+Right now, I’d do **these phases next, in this order**:
 
+### 🔵 Current branch, keep waiting in background
 
-Phase 3 is now complete and verified end-to-end. Final state:
-- 1 Market — DS-000001, 5 stocks (AAPL, MSFT, JNJ, XOM, WMT) × ~30y daily bars, 37,735 rows. Split reconciliation verified: AAPL 7:1 split 2014-06-09 (close 23.42 → 161.4 raw / 7) and 4:1 split 2020-08-31 (close 129.04 → 499.2 / 4) both produce continuous adjusted prices.
-- 2 SEC EDGAR — DS-000002, 5 companies' XBRL companyfacts, 130,800 rows (2009–2026).
-- 3 FRED — DS-000003, DFF + CPIAUCSL + UNRATE, 28,240 rows (1947–2026).
-- 4 Registry — all 3 snapshots logged with fingerprints, checksums, validation=ok.
-- 5 Raw immutability — all PASS (re-checksummed sealed zone).
-- 6 Reproducibility — process twice → identical bytes, matches stored artifact and registry checksum. PASS.
-- 7 Dataset snapshots — experiment-pinnable deliverables with schema versions and date ranges.
-- Tests: 65 pass.
-Bugs fixed along the way: polars silently dropping split columns when the first event row is a dividend (explicit schema now), SEC val mixed int/text (Utf8 in raw, Float64 in normalized, text facts as warnings), idempotent artifact registration, SEC date handling, FRED ./dtype handling, and the reproducibility check globbing the IMMUTABLE.json marker. README status updated.
-Next step when you're ready: expand the symbol list (5 → 20 → 50) — that's a config change only, per the script's design.
+* **Phase 26-R**: Real OOS evaluation
+  ⏳ Blocked until the quarantined data reaches **60 trading days**
+* **Phase 27-R**: Economic validation
+  Only if 26-R passes
+* **Phase 28-R**: Paper promotion gate
+  Only if 27-R passes
 
+Do **not** sit around waiting for these.
 
+---
 
-Phase 4 (Point-in-Time & Temporal Truth Engine) is complete. Final state:
-- Temporal classification of every record (event/publication/effective/ingestion, vintage id+date) via src/orbit/temporal/adapters.py; canonical timing frames feed rules, engine, snapshot, features.
-- Strict availability: publication_time < as_of (exact tie rejected); date-precision → next day 00:00 UTC; market bars at session close 16:00 America/New_York → UTC (never ts_utc); missing publication never invented; event after as_of rejected; revised macro without ALFRED vintages rejected + reported as limitation (DFF non_revised).
-- Vintage resolution keeps the latest version released before as_of per (series, observation); superseded versions audited as VINTAGE_SUPERSEDED in the snapshot's excluded set, never dropped.
-- PointInTimeSnapshot: records + excluded with decision trails, deterministic content digest (wall-clock excluded), provenance chain to TemporalSource (checksum, manifest, artifacts), decision counts, record lookup.
-- asof_join: full gating per left decision_time, most-recent-observation attach, deterministic tie-breaks, null joins; collision-safe (left columns never shadow right); duplicate left record_ids preserved via _join_idx.
-- Feature-time guards: completed_bars (session-close semantics) and assert_no_future_refs (strict; Date vs Datetime semantics).
-- 6 permanent synthetic leak fixtures + future_feature fixture, all must fail the engine (regressions).
-- Macro schema v1.1.0 (vintage_date) with v1.0.0 backward compatibility; pipeline threads vintage_date + manifest vintage_semantics; vintage_note now records the source semantic (alfred_vintage_requested / latest_published_vintage).
-- Audits: (1) roadmap compliance re-verified after revision, (2) code review, (3) adversarial quant review (20 attack scenarios, all pass), (4) independent second pass - all MAJOR/MINOR findings addressed.
-- Tests: 185 pass (99 Phase 1-3 + 76 Phase 4 + 10 regression tests added during revision). Docs: docs/phase4_temporal_truth.md + README updated; before_completing_phases revised per protocol.
+# 🟢 What you should actively do now
 
-Revision notes: Phase 4 was initially committed at 3989b12 (175 tests). A formal revision pass per the `before_completing_phases` protocol identified the following real code bugs and probe expectations needing correction:
-- R1 (MAJOR): asof_join ShapeError when left frame collides with decision columns (`allowed`, `decision_code`) — collision detection only covered raw right columns, not evaluated decision columns; renamed with polars cross-join suffixes `_right` causing schema mismatch between joined groups and null groups.
-- R4 (MAJOR): asof_join crashes when left frame has no `record_id` column (sort on `right_record_id` missing).
-- R8 (MAJOR): Timing.__post_init__ only normalized non-datetime values; tz-aware datetimes stayed aware and crashed `decide()` comparisons.
-- R3, R7, R10: probe expectation errors (wrong expectation about null-row column retention, 0-row frame broadcast, NaN digest equality) — code was correct.
-- Additional fixes from the second independent pass: collision-safe rename map (`_right_rename_map`) with deduped universe to prevent DuplicateError when a decision-named column (e.g. `allowed`) exists on both raw right and the engine-decision columns; always-include right record_id in tie_cols to preserve largest-record_id determinism even without a left record_id; empty-right null-join now uses the same `_right_side_schema` as the no-qualifying path (no silent column destruction); `normalize_instant` now handles Z-suffix ISO strings and raises clean TypeError on bad types; `Timing.__post_init__` coerce plain-string `publication_precision` to enum and parse string `vintage_date` to date; null `publication_precision` conservatively treated as DATE (next-day availability) preventing a temporal look-ahead leak.
-All fixes verified: 185 tests pass, revision_probe.py R1-R13 + S1-S7 all pass, audit3.py 20 adversarial checks pass.
+## **1. Phase 29-R: New Research Branch Selection**
 
-Second independent pass: initial REJECT verdict (4 MAJOR findings in the restructured asof_join) → all 4 fixed plus 2 additional MAJOR regressions (rename-map dedup + empty-right column preservation) identified and fixed. Final verdict: APPROVE.
+Pick the next **2 to 3 hypotheses/data directions** to research.
 
+My recommendation:
 
+1. **Yield curve / interest-rate structure**
+2. **Credit stress / credit spreads**
+3. **Sector × macro interactions**
 
-Third independent pass (fresh adversarial audit of the shipped implementation, per protocol "second independent pass" escalation):
-- F1 (MAJOR): `_resolve_vintages` DROPPED rejected vintage rows whenever at least one other version of the same observation was allowed — the revision's rejection vanished from the audit trail, breaking auditability (a reviewer could not see the rejected release). Fixed: `rest` now keeps rows with null vintage_date OR disallowed (rejected rows survive as `excluded`), and the allowed/not-allowed resolution no longer destroys them. Regression tests: rejected revision preserved at evaluate level and snapshot level; adversarial end-to-end revision test; monotonic-information invariant.
-- F2 (MAJOR): market payloads contained RETROACTIVELY split-adjusted OHLCV presented as as-published values (verified on real DS-000001 data: 2014-06-06 AAPL close 23.05607 is the post-7:1/4:1 value; the real published close was 645.57 = x28). A pre-split historical snapshot was silently carrying post-split prices — a quantitative backtest leak. Fixed: `market_timing_frame` reconstructs as-published OHLCV from the sibling `events.parquet` (raw = adjusted x product of split ratios with ex_date > trade_date; raw volume = volume / factor; ex-date itself is NOT undone); payload gains `price_basis` = `as_published` or explicit `provider_split_adjusted` when no events artifact exists; `adjclose`/`adjustment` excluded; the engine auto-loads the sibling events artifact. Regression tests: unit reconstruction (x28, x4, factor-1), provider-basis fallback, engine snapshot with real split events, adversarial future-split leak test.
-- F3 (MAJOR): `effective_time` was parsed but never enforced — a record public at t but only applicable after t would be admitted. Fixed: new `EFFECTIVE_AFTER_AS_OF` gate in both `decide()` and `evaluate()` (rule 4), documented as a forward contract (current sources: effective == publication). Regression tests: after/at/before gates incl. a second-gate scenario.
-- F4 (MINOR): `evaluate()` vs `decide()` inconsistency — unknown `series_policy` values and precision case variants ("DATE" vs "date") were handled differently between the vectorized engine and the rule loop. Fixed: engine policy allow-list now matches the rule loop (`not in ["", "non_revised"]`), precision is casefolded, invalid precision values raise ValueError instead of silently defaulting. Regression tests: policy-agreement + precision-case + invalid-precision.
-- F5 (MINOR): contract config conventions (`exchange_tz`, `session_close`, ...) were parsed and ignored. Fixed: `IMPLEMENTED_CONVENTIONS` validation raises ValueError on any convention the engine does not enforce. Regression test: mismatched session_close rejected at load.
-- F6: release calendar (prompt §8) was absent. Implemented: `ReleaseCalendar`/`ReleaseCalendarEntry` with `enabled`/`evidence`/weekday guards; FRED timing sharpens a release to the scheduled instant (08:30 America/New_York) only for enabled+weekday-matching entries, else the next-day convention; `"release_calendar": []` in default config. Regression tests: absent/disabled/enabled EST/enabled EDT/weekday-mismatch.
-- All fixes verified: 207 tests pass (46 rules, 42 engine, 20 leaks + Phase 1-3), no Phase 1-3 regression.
-Final verdict: PASS — implementation, tests, documentation, and architecture consistent with the ORBIT roadmap.
+This is your **next phase**.
 
+---
 
+## **2. Phase 30-R: Data Acquisition + PIT Audit**
 
-Fourth protocol run (full 3-review protocol executed again on the shipped state):
-Review 1 (requirements) / Review 2 (technical) / Review 3 (research-quantitative):
-- P1 (MEDIUM): volume as-published reconstruction divided the split factor out of EVERY provider's volume, but stooq_csv volume is RAW shares (documented in the market schema sidecar; yahoo volume is split-adjusted). Dividing raw shares corrupts the as-published share count and any dollar-volume feature built on it. Fixed: `_volume_is_split_adjusted()` (provider map yahoo_chart_api->split_adjusted, stooq_csv->raw; explicit `volume_basis` override; unknown provider keeps the canonical split-adjusted contract). Regression tests: stooq volume kept verbatim while OHLC still reconstructed; yahoo still divides; explicit override.
-- P2 (LOW): OHLC reconstruction multiplied by the split factor regardless of the recorded `adjustment` basis - a future raw-basis provider would have every price corrupted. Fixed: reconstruction runs only when the `adjustment` column (if present) is entirely within the adjusted labels; a raw-basis frame keeps verbatim prices and is still marked `price_basis: as_published` (they ARE as-published). Regression test.
-- P3 (MEDIUM): contract accepted `default_series_policy: "non_revised"` and garbage policy values (`"revised "`) silently - a config typo could admit revised series point-in-time (leak-by-config), contradicting the documented conservative default. Fixed: `default_series_policy` added to IMPLEMENTED_CONVENTIONS (must be "revised"; flipping refused at load), and pydantic validators casefold/normalize all policy values to {revised, non_revised}, raising on anything else. Regression tests: non_revised default rejected; values normalized; garbage rejected.
-- P4 (LOW): `TemporalTruthEngine(registry=...)` was a dead parameter (nothing used it) and snapshot.py had a wrong type annotation (`parts: list[Any]` for a dict). Fixed: parameter removed, annotation corrected.
-- Second independent pass:
-  - Differential fuzz: 400 randomized timing x as_of cases comparing `decide()` vs `evaluate()` — 0 mismatches (the two decision paths agree exactly).
-  - P5 (MAJOR-adjacent, second pass): a bars frame already carrying its own `factor` column made the split-factor join produce `factor_right`, and the multiplier silently read the BARS' factor (e.g. 999.0) — every reconstructed price corrupted (verified by probe: close 23.06 -> 23033 instead of 161.39). Fixed: the joined factor uses a collision-free reserved name (`_split_factor`). Regression test.
-  - P6: probe confirmed `available_instant` upcasts Date->Datetime in the engine's when/then branches, so asof_join null groups and joined groups keep identical schemas (no crash on date-precision rights).
-  - Verified: `observation_date` is pl.Date in the macro schema (adapter's `_day_start` path is type-safe); SEC end/filed are ISO strings handled with strict=False; events ts ex-date rule matches the Phase 3 normalizer's `_session_date`.
-- All fixes verified: 212 tests pass (46 rules, 47 engine, 20 leaks + 99 Phase 1-3), no Phase 1-3 regression; README/docs updated.
-Final verdict: PASS.
+Get only the data required for the branches selected in Phase 29-R.
 
+For example:
 
+* Treasury yields
+* term spreads
+* credit spreads
+* sector data
 
-Fifth protocol run (fresh 3-review pass on untouched areas):
-Review 1 (requirements): registry integration verified by test_build_temporal_source_from_registry (engine consumes Phase 3 registry records: domain/provider/checksum/manifest/downloaded_at); no requirement gaps found beyond the dead API surface below.
-Review 2 (technical):
-- P7: TemporalTruthEngine(data_root=...) was STORED BUT INERT - artifact resolution always used the global data zone, so a sandboxed engine silently read the wrong data (same class of bug as the removed registry param). Fixed: `_normalized_dir()` honors the engine data_root; `_artifact_paths` resolves through it. Regression test: sandboxed engine resolves to the temp root and snapshots its data.
-- P8: Timing(publication_precision='DATE') RAISED on the record path while the vectorized engine casefolds 'date' - identical input, different behavior per path. Fixed: Timing casefolds exactly like evaluate(); genuinely invalid values still raise ValueError. Regression test.
-- P9: trace_rule() crashed with AttributeError on publication_precision=None (decide() treated it as DATE); deeper, decide() ALSO mislabeled the allowance code for null precision (ALLOWED_BEFORE_PUBLICATION) while the engine reported ALLOWED_DATE_PRECISION - a provenance-code divergence. Fixed: trace handles null precision; decide() now uses the SAME precision predicate for the code as for the boundary (null/unknown -> allowed_date_precision_next_day). Regression tests.
-Review 3 (research): 600-case differential fuzz v2 with exotic inputs (null/uppercase/mixed-case precisions, policy casing, vintage+effective cross-products, random as-of instants) - decide() vs evaluate(): 0 mismatches; invariant `allowed -> available_instant < as_of`: 0 breaks.
-Second independent pass: probed missing-publication_precision frames (loud ColumnNotFoundError - acceptable for the documented timing-frame contract), empty-artifact snapshots (clean 0-record snapshot with stable digest), mixed-provider volume frames (documented canonical default).
-- All fixes verified: 215 tests pass (49 rules, 47 engine, 20 leaks + 99 Phase 1-3), no Phase 1-3 regression; README/docs updated.
-Final verdict: PASS.
+Then audit:
 
+* availability dates
+* release delays
+* revisions
+* leakage risk
+* PIT correctness
 
+---
 
-Targeted exit audit (last untouched corners before close-out):
-- E1 (MEDIUM): MarketDataAccessor (Phase 2, feeds the UniverseEngine membership/liquidity filters) served RETROACTIVELY SPLIT-ADJUSTED closes as historical closes - a pre-split 'last close' was the post-split price, and trailing dollar volume used adjusted dollars. Same leak class the temporal engine already fixes, still present in the accessor. Fixed: the accessor now loads the sibling events artifact and reconstructs AS-PUBLISHED OHLCV through `as_published_bars` (the canonical reconstruction extracted from market_timing_frame and now shared by the engine and the accessor - one source of point-in-time truth). Regression test: pre-split close 645.57 (never 23.06) and raw-dollar volume across the 7:1/4:1 split chain.
-- E2: verified the extraction did not change the temporal payload contract (all market payload tests still pass; price_basis is added exactly once).
-- E3: hypotheses/seeds.py + seed_hypotheses.md are consistent with the temporal conventions (publication-time semantics, point-in-time closes) - no contradiction.
-- E4: registry edge cases in build_temporal_source (missing manifest_path, null downloaded_at) are handled by Optional fields - no crash path found.
-- All fixes verified: 216 tests pass, no Phase 1-3 regression; README/docs updated.
-Final verdict: PASS. Phase 4 complete.
+## **3. Phase 31-R: Exploratory Research**
 
+Actually test those new hypotheses using your historical data.
 
-Phase 5 (Labeling & Outcome Engine) - full 3-review protocol run on the shipped state:
-Review 1 (requirements) / Review 2 (technical) / Review 3 (research-quantitative) + second independent pass:
-- L1 (LOW): LabelSnapshot.equals() compared data_refs ORDER-sensitively while content_digest sorts them - two snapshots with identical digests could compare unequal, an identity inconsistency. Fixed: sorted comparison; regression test (reordered refs equal, genuinely different refs not).
-- L2 (MEDIUM): VOLATILITY/DRAWDOWN contracts silently accepted a SIMPLE_TOTAL_RETURN convention while the estimators/drawdown math is close-to-close PRICE returns only - the label row would record a convention that misdescribes the computed value. Fixed: validator rejects SIMPLE_TOTAL_RETURN for VOLATILITY/DRAWDOWN; regression tests.
-- L3 (LOW): __import__ hack in an engine test cleaned to a direct import.
-- L4 (DOC): MISSING_DIVIDEND_DATA reserved semantics documented (events artifact required for total return - its absence raises, never a silent price-return label; the artifact is the authoritative dividend ledger per instrument, an empty dividend list means no dividends).
-- L5 (LOW): empty_label_frame canonical-schema check tightened (was order-agnostic, now exact canonical column order) - 0-row frames are validated like non-empty frames.
-- Second independent pass: adversarial live probes on the shipped engine: reverse-split ratio 0.5 (as-published identity holds, no artificial returns), summer DST 20:00 UTC strict boundary, offset-aware ISO decision strings, benchmark dividends counted in excess total return - all pass. normalize_instant audited (tz-aware -> naive UTC) and reused verbatim from Phase 4; entry-bar/as-published agreement with TemporalTruthEngine and completed_bars verified by integration tests.
-- All fixes verified: 298 tests pass (216 Phase 1-4 + 82 Phase 5), no Phase 1-4 regression; README/docs updated.
-Final verdict: PASS. Phase 5 complete.
+Each branch gets a strict experiment budget, for example:
 
+* 20 experiments maximum
+* review at 5
+* review at 10
+* review at 15
+* stop or continue based on evidence
 
+This is where we search for more predictive signals.
 
+---
 
+## **4. Phase 32-R: Cross-Branch Evidence Review**
 
+Compare all branches honestly.
 
+At this point you'll have something like:
 
+| Branch         | Result                     |
+| -------------- | -------------------------- |
+| Volatility     | Strong exploratory support |
+| Yield curve    | ?                          |
+| Credit stress  | ?                          |
+| Sector × macro | ?                          |
 
+Only the good ones move forward.
 
+---
 
+# 🟣 Then we start making ORBIT smarter
 
+## **5. Phase 33-R: Advanced Model Evaluation**
 
+Now test whether richer models actually improve the surviving hypotheses.
 
+You already have the model toolbox:
 
+* Ridge
+* Lasso
+* ElasticNet
+* HistGradientBoosting
+* LightGBM
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Here we determine:
 
+> Which models genuinely extract more information?
 
+Not just which one gets the prettiest in-sample number.
 
+---
 
+## **6. Phase 34-R: Feature & Interaction Architecture**
 
+For surviving signals, test:
 
+* interactions
+* lag structures
+* representations
+* cross-feature relationships
+* sector-specific effects
 
+Example:
 
+```text
+Yield curve change
+        ×
+Technology sector
+        ↓
+H-20 return prediction
+```
 
+This is where ORBIT starts becoming more sophisticated than just throwing independent features into Ridge.
 
+---
 
+## **7. Phase 35-R: Multi-Horizon Research**
 
+Build the proper architecture for different prediction horizons:
 
+* H-5
+* H-10
+* H-20
+* possibly H-40
 
+Different mechanisms should be tested at different horizons.
 
+---
 
+## **8. Phase 36-R: Regime Intelligence**
 
+Build a proper regime layer:
 
-##how to get more data:
-Getting gigabytes of high-quality financial data for free can feel like a bottleneck, but you do not need to pay thousands of dollars for retail or machine learning projects. The trick is knowing which platforms allow bulk historical downloading without blocking your IP. [1, 2] 
-Here is the ultimate roadmap to sourcing gigabytes of clean financial data completely free, categorized by asset class and format.
-------------------------------
-## 🌐 1. Cryptocurrency (The Easiest Way to Get Gigabytes)
-Crypto exchanges are incredibly open with their historical data compared to traditional stock markets. You can easily pull millions of data points here. [3, 4] 
+* low/high volatility
+* risk-on/risk-off
+* credit stress
+* rate regimes
+* macro transitions
 
-* 
-* Binance Vision (data.binance.vision): This is the holy grail for free ML data. Binance hosts compressed ZIP files of every single trade and 1-minute candle (OHLCV) since their launch. You can download hundreds of gigabytes of historical data directly via a web browser or using a python script with the binance-historical-data library. [5, 6, 7] 
-* CryptoDataDownload: A fantastic website providing pre-compiled, free historical CSV files for dozens of major crypto exchanges (Binance, Bitfinex, Coinbase) mapped across daily and hourly timeframes. Excellent for immediate use without writing a scraper. [8, 9, 10] 
-* CCXT Library (Python): If you want to build a live data harvester, use the open-source [CCXT Library GitHub](https://github.com/ccxt/ccxt). It normalizes the APIs of over 100 crypto exchanges, allowing you to fetch historical candles recursively (fetch_ohlcv) without cost. [11, 12, 13, 14] 
-* 
+Then determine whether models should behave differently depending on the market environment.
 
-------------------------------
-## 📈 2. US Stocks & Equities
-Stock market data is heavily protected by licensing fees, but several excellent free options exist for personal research. [15, 16] 
+---
 
-* 
-* Yahoo Finance (yfinance library): The most popular entryway for Python developers. By installing the library (pip install yfinance), you can pull decades of daily data for thousands of global stocks, indexes, and ETFs in seconds.
-* ⚠️ Limitation: Yahoo Finance handles data requests via unofficial endpoints. If you try to pull 1-minute data for 500 stocks over a long period sequentially, your IP address will get rate-limited or temporarily blocked. [1, 17, 18] 
-* Alpaca Markets: A developer-focused stock broker that offers a Free Tier API. By signing up for a free paper trading account, you gain access to high-quality, historical stock market data (up to 5 years of daily/hourly data, and 1-minute bars with certain lookback restrictions) via their Python SDK. [19, 20, 21, 22, 23] 
-* Polygon.io: Offers a very stable, official free tier. It provides 5 historical years of end-of-day stock options, but limits you to 5 API calls per minute. Great for building small daily tracking datasets. [24, 25, 26, 27, 28] 
-* 
+## **9. Phase 37-R: Multi-Signal Model**
 
-------------------------------
-## 📊 3. Macroeconomic & Alternative Data
-If you are building a multi-modal ML model or Transformer, price action alone isn't enough. You need alternative data to find an edge.
+This is where things get interesting.
 
-* 
-* FRED (Federal Reserve Economic Data): Run by the Federal Reserve Bank of St. Louis. It contains over 800,000 free economic time series (Interest rates, GDP, CPI, employment figures). They offer a clean, free API (fredapi in Python) to dump this data straight into your model features. [29, 30, 31, 32, 33] 
-* Kenneth French Data Library: Completely free academic datasets containing the famous Fama-French benchmark factors (Market risk, size, value factors) updated monthly. This is standard institutional data for macro-quant testing. [34] 
-* 
+Once we have multiple independently supported signals:
 
-------------------------------
-## 🛠️ Execution Plan to Avoid Getting Blocked
-If you want to pull down 5 GB of data for an ML project, do not write a basic while True: loop. Follow this pipeline to scrape safely:
+```text
+Volatility signal
+Yield curve signal
+Credit signal
+Sector interaction
+        ↓
+   Multi-signal model
+        ↓
+ Better predictions
+        ↓
+ Portfolio engine
+```
 
-   1. Leverage Dumps First: Download bulk historical .zip or .csv files from sources like Binance Vision or [CryptoDataDownload](https://www.cryptodatadownload.com/) first. This skips API rate limits entirely.
-   2. Implement Request Throttling: When using yfinance or exchange REST APIs, use the time.sleep(run_time) function between asset requests. Limit yourself to roughly 1 request every 1.5 seconds.
-   3. Store in Binary Formats: Do not save millions of lines into .csv files; your RAM will choke when loading it into an ML model. Use Parquet (df.to_parquet()) or HDF5. They compress data down to 20% of a normal CSV's size and load into Python up to 100x faster. [6, 8, 35] 
+This would be the first stage where I'd call ORBIT a **substantially bigger and smarter predictive system**.
 
-------------------------------
-To narrow down your source, tell me:
+---
 
-* 
-* Are you targeting Crypto or Stocks for this machine learning model?
-* What minimum time interval does your strategy need? (e.g., Daily bars, 1-Minute candles, or Tick data?)
-* 
+# The exact order I recommend
 
-I can give you the exact, copy-paste Python code to pull that specific dataset down cleanly.
+```text
+NOW
+ │
+ ├── Phase 29-R  ⭐ DO THIS NEXT
+ │
+ ├── Phase 30-R
+ │
+ ├── Phase 31-R
+ │
+ ├── Phase 32-R
+ │
+ ├── Phase 33-R  ← richer models
+ │
+ ├── Phase 34-R  ← interactions/features
+ │
+ ├── Phase 35-R  ← multi-horizon
+ │
+ ├── Phase 36-R  ← regime intelligence
+ │
+ └── Phase 37-R  ← first multi-signal model
+```
 
-[1] [https://marketxls.com](https://marketxls.com/blog/yahoo-finance-api-ultimate-guide)
-[2] [https://www.reddit.com](https://www.reddit.com/r/algotrading/comments/1kvm3wk/where_can_i_find_quality_datasets_for_algorithmic/)
-[3] [https://massive.com](https://massive.com/docs/flat-files/crypto/overview)
-[4] [https://javascript.plainenglish.io](https://javascript.plainenglish.io/so-you-want-to-build-a-stock-trading-app-like-robinhood-bd6903fc9ae7)
-[5] [https://pypi.org](https://pypi.org/project/binance-historical-data/)
-[6] [https://www.binance.com](https://www.binance.com/en/academy/articles/how-to-get-trading-data-via-the-binance-api)
-[7] [https://support.binance.us](https://support.binance.us/en/articles/9843310-introducing-historical-market-data-from-binance-us-download-for-free)
-[8] https://www.cryptodatadownload.com
-[9] [https://www.cryptodatadownload.com](https://www.cryptodatadownload.com/data/binance/)
-[10] https://www.cryptodatadownload.com
-[11] [https://www.linkedin.com](https://www.linkedin.com/pulse/download-historical-data-all-cryptocoins-ccxt-gursel-karacor)
-[12] [https://github.com](https://github.com/ccxt/ccxt)
-[13] https://ccxt.com
-[14] [https://medium.com](https://medium.com/zupitek/10-python-library-to-gather-market-data-easily-93bbe4c5f3a5)
-[15] [https://www.koji.so](https://www.koji.so/blog/best-free-user-research-tools-2026)
-[16] [https://www.xignite.com](https://www.xignite.com/product/global-real-time-stock-quote-data/)
-[17] [https://iproyal.com](https://iproyal.com/blog/yahoo-finance-api-python/)
-[18] [https://medium.com](https://medium.com/@trading.dude/why-yfinance-keeps-getting-blocked-and-what-to-use-instead-92d84bb2cc01)
-[19] [https://medium.com](https://medium.com/coinmonks/the-7-best-real-time-stock-data-apis-for-investors-and-developers-in-2026-in-depth-analysis-61614dc9bf6c)
-[20] [https://www.edgeful.com](https://www.edgeful.com/blog/posts/yahoo-finance-api-alternatives)
-[21] [https://github.com](https://github.com/MarketDataApp/sdk-py)
-[22] [https://medium.com](https://medium.com/@caiyuefeng0301/how-to-get-high-quality-us-stock-historical-data-1min-to-daily-f3b403f441e3)
-[23] [https://www.talkoptions.in](https://www.talkoptions.in/paper-trading-software)
-[24] [https://www.reddit.com](https://www.reddit.com/r/learnprogramming/comments/1svwqfn/best_way_to_obtain_quality_financial_data/)
-[25] [https://medium.com](https://medium.com/coinmonks/the-7-best-real-time-stock-data-apis-for-investors-and-developers-in-2026-in-depth-analysis-61614dc9bf6c)
-[26] [https://www.quantvps.com](https://www.quantvps.com/blog/market-data-sources-for-algorithmic-trading)
-[27] [https://dhan.co](https://dhan.co/support/platforms/dhanhq-api/how-can-i-retrieve-data-for-expired-futures-contracts-using-the-apis/)
-[28] [https://technologyadvice.com](https://technologyadvice.com/blog/sales/free-inventory-management-software/)
-[29] [https://openstax.org](https://openstax.org/books/principles-finance/pages/3-6-sources-and-characteristics-of-economic-data)
-[30] [https://guides.libraries.emory.edu](https://guides.libraries.emory.edu/c.php?g=50105&p=6546545)
-[31] [https://guides.library.cmu.edu](https://guides.library.cmu.edu/CMIST/data)
-[32] [https://blog.marketingdatascience.ai](https://blog.marketingdatascience.ai/how-to-create-your-own-basic-economic-forecast-using-multiple-regression-in-python-35c09bb9e6b3)
-[33] [https://play.google.com](https://play.google.com/store/apps/details?id=org.mifos.kmp.template)
-[34] [https://medium.com](https://medium.com/@_SSP/best-free-data-sources-for-algorithmic-trading-77a7c1c00356)
-[35] [https://medium.com](https://medium.com/@benthepythondev0/how-to-scrape-yahoo-finance-stock-data-in-2026-python-no-code-api-15a6025e4eb0)
+At the same time:
+
+```text
+BACKGROUND TRACK
+
+36/60 OOS days
+      ↓
+60/60
+      ↓
+Phase 26-R
+      ↓
+Phase 27-R
+      ↓
+Phase 28-R
+```
+
+## So: **your next phase should be Phase 29-R.**
+
+That's the one I'd make the prompt for next. It starts finding ORBIT's **next independent sources of predictive information**, while the current volatility hypothesis quietly waits for its real OOS exam.

@@ -1,0 +1,57 @@
+{
+  "scorecard_id": "SCORE-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "dimensions": {
+    "mechanism_consistency": {
+      "status": "PARTIAL",
+      "rationale": "Macro-sensitivity mechanism is economically justified but incremental IC near zero"
+    },
+    "directional_consistency": {
+      "status": "PASS",
+      "rationale": "Mean incr IC = 0.000576"
+    },
+    "incremental_predictive_value": {
+      "status": "PARTIAL",
+      "rationale": "Mean incr IC = 0.000576"
+    },
+    "horizon_consistency": {
+      "status": "TEMPORALLY_UNSTABLE"
+    },
+    "temporal_stability": {
+      "status": "TEMPORALLY_UNSTABLE"
+    },
+    "universe_stability": {
+      "status": "PARTIAL"
+    },
+    "model_stability": {
+      "status": "NOT_VARIED"
+    },
+    "representation_stability": {
+      "status": "PARTIAL"
+    },
+    "sector_concentration": {
+      "status": "PARTIAL",
+      "rationale": "Sector labels are PIT_SAFE_WITH_LAG"
+    },
+    "statistical_support": {
+      "status": "FAIL"
+    },
+    "pit_integrity": {
+      "status": "PASS",
+      "rationale": "Macro data PIT_NATIVE, sector PIT_SAFE_WITH_LAG"
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "rationale": "Deterministic pipeline"
+    },
+    "economic_relevance": {
+      "status": "PARTIAL",
+      "rationale": "Effect size small, economic significance unclear"
+    }
+  },
+  "pass_count": 3,
+  "partial_count": 6,
+  "fail_count": 1,
+  "insufficient_count": 3
+}

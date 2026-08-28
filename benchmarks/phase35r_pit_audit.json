@@ -1,0 +1,70 @@
+{
+  "inventory_id": "DATA-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch_id": "BR-B2C3D4E5F6A1",
+  "sector_classification": {
+    "source": "Instrument master JSON configs",
+    "taxonomy": "Coded sectors (S10-S55)",
+    "pit_classification": "PIT_SAFE_WITH_LAG",
+    "sectors_050": {
+      "S35": 13,
+      "S45": 8,
+      "S10": 3,
+      "S30": 6,
+      "S25": 9,
+      "S40": 6,
+      "S20": 2,
+      "S50": 2,
+      "S55": 1
+    },
+    "sectors_100": {
+      "S35": 22,
+      "S45": 12,
+      "S10": 7,
+      "S30": 11,
+      "S25": 11,
+      "S40": 18,
+      "S20": 11,
+      "S50": 5,
+      "S55": 3
+    },
+    "total_instruments_050": 50,
+    "total_instruments_100": 100,
+    "small_sector_risk": "S55 has only 1 instrument in DS-EXP-050",
+    "temporal_stability": "UNKNOWN \u2014 current labels used, no historical GICS vintage"
+  },
+  "macro_data": {
+    "source": "FRED Treasury yields",
+    "series": [
+      "DGS3MO",
+      "DGS1",
+      "DGS2",
+      "DGS5",
+      "DGS10",
+      "DGS30",
+      "T10Y2Y",
+      "T10Y3M"
+    ],
+    "pit_classification": "PIT_NATIVE",
+    "frequency": "Daily",
+    "date_range": "1962-present"
+  },
+  "price_data": {
+    "sources": [
+      "DS-EXP-050",
+      "DS-EXP-100"
+    ],
+    "pit_classification": "PIT_NATIVE"
+  },
+  "pit_audit": {
+    "sector_labels": "PIT_SAFE_WITH_LAG \u2014 uses current labels, possible look-ahead for GICS reclassifications",
+    "macro_data": "PIT_NATIVE \u2014 published same day",
+    "price_data": "PIT_NATIVE",
+    "interaction_features": "PIT_SAFE \u2014 sector label lag risk documented"
+  },
+  "data_gaps": [
+    "Historical GICS sector labels not available (VINTAGE_REQUIRED not acquired)",
+    "Small sectors (S55: 1 instrument) may have insufficient observations"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "audit_id": "ADV-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "tests": {
+    "A01": {
+      "name": "Future leakage through sector assignment",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Sector labels are PIT_SAFE_WITH_LAG, not vintage-correct. Possible look-ahead for GICS reclassifications."
+    },
+    "A02": {
+      "name": "Future leakage through macro alignment",
+      "result": "BLOCKED",
+      "rationale": "Macro data is PIT_NATIVE, published same day."
+    },
+    "A03": {
+      "name": "Incorrect macro release timing",
+      "result": "BLOCKED",
+      "rationale": "FRED data published at 16:30 ET, available before next trading day."
+    },
+    "A04": {
+      "name": "Interaction feature leakage",
+      "result": "BLOCKED",
+      "rationale": "Interaction features are products of current PIT-safe values."
+    },
+    "A05": {
+      "name": "Sector survivorship bias",
+      "result": "BLOCKED",
+      "rationale": "Instruments from universe files, not survivorship-filtered."
+    },
+    "A06": {
+      "name": "Sector membership drift",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "Current sector labels used. No historical GICS vintage available."
+    },
+    "A07": {
+      "name": "Baseline weakening",
+      "result": "BLOCKED",
+      "rationale": "Baseline uses genuine price-derived features with non-zero variance."
+    },
+    "A08": {
+      "name": "Train/test overlap",
+      "result": "BLOCKED",
+      "rationale": "70/30 time-ordered split. No overlap."
+    },
+    "A09": {
+      "name": "Horizon overlap errors",
+      "result": "BLOCKED",
+      "rationale": "Forward returns computed with proper lag."
+    },
+    "A10": {
+      "name": "Duplicate experiments",
+      "result": "BLOCKED",
+      "rationale": "All 20 experiments have unique (horizon, macro, rep, universe) keys."
+    },
+    "A11": {
+      "name": "Experiment budget mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=20, matrix=20. MATCHED."
+    },
+    "A12": {
+      "name": "Post-hoc experiment addition",
+      "result": "BLOCKED",
+      "rationale": "Matrix locked before execution."
+    },
+    "A13": {
+      "name": "Sector sample imbalance",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "S55 has 1 instrument. Small sectors may have insufficient data."
+    },
+    "A14": {
+      "name": "Single-sector concentration",
+      "result": "DOCUMENTED_AS_LIMITATION",
+      "rationale": "S35 has 13 instruments (26%). Effect may be concentrated."
+    },
+    "A15": {
+      "name": "Single-macro concentration",
+      "result": "BLOCKED",
+      "rationale": "Three macro variables tested."
+    },
+    "A16": {
+      "name": "Representation fishing",
+      "result": "BLOCKED",
+      "rationale": "Two representations pre-specified."
+    },
+    "A17": {
+      "name": "Model fishing",
+      "result": "BLOCKED",
+      "rationale": "Only Ridge used. No model comparison."
+    },
+    "A18": {
+      "name": "Statistical correction failure",
+      "result": "BLOCKED",
+      "rationale": "Holm-Bonferroni pre-specified."
+    }
+  },
+  "summary": {
+    "total": 18,
+    "blocked": 14,
+    "detected": 0,
+    "documented_limitation": 4,
+    "confirmed_failure": 0
+  }
+}

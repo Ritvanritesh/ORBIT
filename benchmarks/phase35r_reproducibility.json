@@ -1,0 +1,9 @@
+{
+  "repro_id": "REPRO-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "plan_digest": "5a4754ccca99e4fe5ad2f80771db818e29b3e44f2d174c3893aa5e494f5d4337",
+  "deterministic": true,
+  "classification": "EXACT_REPRODUCTION",
+  "rationale": "Deterministic pipeline with fixed seed produces identical results"
+}

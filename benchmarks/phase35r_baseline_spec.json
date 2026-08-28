@@ -1,0 +1,42 @@
+{
+  "baseline_id": "BASE-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch_id": "BR-B2C3D4E5F6A1",
+  "baseline_name": "Momentum_Trend_Sector_v1",
+  "features": [
+    {
+      "feature_id": "RET_5D",
+      "name": "5-Day Return",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "RET_10D",
+      "name": "10-Day Return",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "RET_20D",
+      "name": "20-Day Return",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "VOL_20D",
+      "name": "20-Day Volatility",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature_id": "SECTOR_RET_20",
+      "name": "Sector 20-Day Return",
+      "pit": "PIT_NATIVE"
+    }
+  ],
+  "n_baseline_features": 5,
+  "integrity_checks": {
+    "features_non_degenerate": true,
+    "features_non_constant": true,
+    "prediction_variance_positive": true
+  },
+  "treatment_difference": "ONLY the addition of sector x macro interaction features",
+  "baseline_digest": "a89007a1247512a4329e62c35ab5cd977b546c3e65cf83a6c416b398c4cf6e9b"
+}

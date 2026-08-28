@@ -1,0 +1,24 @@
+{
+  "review_id": "REVIEW-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch_id": "BR-B2C3D4E5F6A1",
+  "outcome": "C",
+  "outcome_label": "EXPLORATORY_SUPPORT",
+  "eligibility": "ELIGIBLE_WITH_LIMITATIONS",
+  "answers": {
+    "incremental_value_added": true,
+    "consistent_with_mechanism": true,
+    "broad_or_concentrated": "PARTIALLY_CONCENTRATED \u2014 sector labels are PIT_SAFE_WITH_LAG",
+    "stable_across_conditions": "TEMPORALLY_UNSTABLE",
+    "sufficient_for_registration": true,
+    "limitations": [
+      "Sector labels are PIT_SAFE_WITH_LAG (not vintage-correct)",
+      "Small sectors (S55: 1 instrument) may have insufficient data",
+      "Effect size is small",
+      "Only Ridge tested",
+      "No historical GICS sector labels available"
+    ]
+  },
+  "recommendation": "Advance with limitations"
+}

@@ -1,0 +1,26 @@
+{
+  "context_id": "CONTEXT-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch": {
+    "branch_id": "BR-B2C3D4E5F6A1",
+    "branch_name": "Sector x Macro Interaction",
+    "research_question_id": "RQ-29R-002",
+    "hypothesis_family": "sector_macro_interaction",
+    "status": "PROPOSED",
+    "experiment_budget": 20,
+    "priority": 2,
+    "selection_timestamp": "2026-08-26T14:32:12.503269"
+  },
+  "inherited_definition": {
+    "mechanism": "Different sectors have different exposures to macroeconomic factors, creating predictive information that disappears when all equities are modeled as homogeneous",
+    "addresses_gap": "GAP-003",
+    "data_feasibility": "UNCERTAIN",
+    "pit_risk": "MODERATE",
+    "hostile_review": "11/15 PASS, 4 LIMITATION",
+    "limitations": [
+      "Sector classification must be PIT-compatible",
+      "Small sectors may have insufficient observations"
+    ]
+  }
+}

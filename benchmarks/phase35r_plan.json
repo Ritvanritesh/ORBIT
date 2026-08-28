@@ -1,0 +1,283 @@
+{
+  "plan_id": "PLAN-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch_id": "BR-B2C3D4E5F6A1",
+  "budget": 20,
+  "n_experiments": 20,
+  "budget_matches_matrix": true,
+  "horizons": [
+    10,
+    20
+  ],
+  "macro_variables": [
+    "SLOPE_10Y2Y",
+    "LEVEL_10Y",
+    "CHANGE_5D"
+  ],
+  "representations": [
+    "SECTOR_X_MACRO",
+    "SECTOR_RELATIVE"
+  ],
+  "models": [
+    "Ridge"
+  ],
+  "universes": [
+    "DS-EXP-050",
+    "DS-EXP-100"
+  ],
+  "experiment_matrix": [
+    {
+      "experiment_id": "EXP-001",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-002",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-003",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-004",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-005",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-006",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-007",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-008",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": true
+    },
+    {
+      "experiment_id": "EXP-009",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "CHANGE_5D",
+      "macro_column": "change_5d_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-010",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "CHANGE_5D",
+      "macro_column": "change_5d_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-011",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "CHANGE_5D",
+      "macro_column": "change_5d_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-012",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 10,
+      "macro_variable": "CHANGE_5D",
+      "macro_column": "change_5d_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-013",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-014",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-015",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-016",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "SLOPE_10Y2Y",
+      "macro_column": "slope_10y2y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-017",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-018",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_X_MACRO",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-019",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-050",
+      "data_origin": "REAL",
+      "primary": false
+    },
+    {
+      "experiment_id": "EXP-020",
+      "branch_id": "BR-B2C3D4E5F6A1",
+      "horizon": 20,
+      "macro_variable": "LEVEL_10Y",
+      "macro_column": "level_10y",
+      "representation": "SECTOR_RELATIVE",
+      "model": "Ridge",
+      "universe": "DS-EXP-100",
+      "data_origin": "REAL",
+      "primary": false
+    }
+  ],
+  "checkpoints": [
+    5,
+    10,
+    15,
+    20
+  ],
+  "stopping_rules": {
+    "futility": "Zero positive incremental IC in first 5 experiments",
+    "data_issue": "Any data quality failure",
+    "budget_exhausted": "20 experiments completed"
+  },
+  "plan_digest": "5a4754ccca99e4fe5ad2f80771db818e29b3e44f2d174c3893aa5e494f5d4337"
+}

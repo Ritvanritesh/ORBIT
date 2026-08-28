@@ -1,0 +1,42 @@
+{
+  "spec_id": "FEAT-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "representations": [
+    {
+      "name": "SECTOR_X_MACRO",
+      "description": "Sector one-hot encoding multiplied by macro variable value",
+      "formula": "sector_onehot * macro_value",
+      "n_features": "n_sectors * n_macro_vars",
+      "economic_interpretation": "Each sector has its own sensitivity to each macro variable",
+      "leakage_risk": "LOW \u2014 sector labels PIT_SAFE_WITH_LAG, macro PIT_NATIVE",
+      "redundancy_risk": "MODERATE \u2014 sector dummies may capture sector fixed effects"
+    },
+    {
+      "name": "SECTOR_RELATIVE",
+      "description": "Sector return relative to market, interacted with macro variable",
+      "formula": "(sector_return - market_return) * macro_value",
+      "n_features": "n_macro_vars",
+      "economic_interpretation": "Macro sensitivity of sector relative performance",
+      "leakage_risk": "LOW \u2014 all PIT_NATIVE or PIT_SAFE",
+      "redundancy_risk": "LOW \u2014 captures differential macro exposure"
+    }
+  ],
+  "macro_variables": [
+    {
+      "name": "SLOPE_10Y2Y",
+      "description": "10Y-2Y yield spread",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "name": "LEVEL_10Y",
+      "description": "10Y yield level",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "name": "CHANGE_5D",
+      "description": "5-day change in 10Y yield",
+      "pit": "PIT_NATIVE"
+    }
+  ]
+}

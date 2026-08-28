@@ -1,0 +1,37 @@
+{
+  "mechanism_id": "MECH-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "branch_id": "BR-B2C3D4E5F6A1",
+  "economic_rationale": "Different equity sectors have structurally different exposures to macroeconomic variables. For example, financials are sensitive to interest rate levels and yield curve shape, utilities are sensitive to rate changes (capital-intensive), technology may be more sensitive to growth expectations, and energy/commodities are sensitive to inflation and commodity prices. When a macro variable changes, its predictive implication for future equity returns is NOT uniform across sectors. Modeling all equities as having identical macro sensitivity discards sector-specific predictive information.",
+  "causal_pathway": "Macro variable change -> Sector-specific exposure mechanism -> Differential expected return implications -> Cross-sectional predictive information",
+  "expected_directional_relationships": [
+    "Interest rate increases may negatively predict financial sector returns but positively predict bank earnings (complex, non-uniform)",
+    "Yield curve steepening may differentially affect financials vs. technology",
+    "Rate level changes may have larger impact on capital-intensive sectors (utilities, industrials)"
+  ],
+  "conditions_under_which_mechanism_fails": [
+    "If all sectors have identical macro sensitivity, interactions add no information",
+    "If macro variables have no predictive power at any horizon, interactions cannot create it",
+    "If sector classifications are noisy or unstable, interaction signals become noise",
+    "If the macro regime is stable, sector-specific differences may be negligible"
+  ],
+  "alternative_explanations": [
+    "Sector momentum rather than macro sensitivity",
+    "Market cap effects masquerading as sector effects",
+    "Liquidity differences across sectors",
+    "Idiosyncratic sector events correlated with macro"
+  ],
+  "confounders": [
+    "Sector membership overlaps with market cap exposure",
+    "Macro variables are correlated with each other",
+    "Sector returns are autocorrelated"
+  ],
+  "falsification_criteria": [
+    "Mean incremental IC <= 0 across all interaction experiments",
+    "Fewer than 40% of experiments show positive incremental IC",
+    "Effect is driven by a single sector with <5 instruments",
+    "Effect is driven by a single macro variable"
+  ],
+  "mechanism_vs_feature_engineering": "This is a MECHANISM-based hypothesis. The economic rationale (differential sector exposure to macro) is testable and falsifiable. Feature construction follows from the mechanism, not from data mining."
+}

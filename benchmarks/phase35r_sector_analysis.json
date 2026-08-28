@@ -1,0 +1,8 @@
+{
+  "analysis_id": "SECTOR-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "note": "Sector analysis requires sector-level IC decomposition. Simplified analysis performed.",
+  "sector_concentration_risk": "MODERATE \u2014 sector labels are PIT_SAFE_WITH_LAG, not vintage-correct",
+  "small_sector_risk": "S55 has only 1 instrument in DS-EXP-050"
+}

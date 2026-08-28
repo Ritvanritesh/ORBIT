@@ -1,0 +1,23 @@
+{
+  "stats_id": "STAT-35R",
+  "phase": "35R",
+  "timestamp": "2026-08-28T13:14:20.584351+00:00",
+  "overall_test": {
+    "test": "One-sample t-test (H0: mean incremental IC = 0)",
+    "t_statistic": 0.6353213319908138,
+    "p_value_nominal": 0.5327964894271292,
+    "n_experiments": 20,
+    "mean_ic": 0.0005764827874379048
+  },
+  "multiple_testing": {
+    "n_tests": 20,
+    "correction": "Holm-Bonferroni",
+    "family_wise_alpha": 0.05,
+    "corrected_alpha_per_test": 0.0025,
+    "any_significant_after_correction": "False"
+  },
+  "effect_size": {
+    "cohens_d": 0.1457527096222953
+  },
+  "exploratory_note": "All p-values are exploratory, not confirmatory"
+}
