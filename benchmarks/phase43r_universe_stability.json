@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "stability": {
+    "A_MOMENTUM": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "B_TREND": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "C_VOLATILITY": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "D_RELATIVE": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "E_MARKET": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "F_YIELD": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "G_REGIME_COND": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    },
+    "H_SECTOR": {
+      "temporal": "STABLE",
+      "horizon": "CONSISTENT",
+      "universe": "CONSISTENT"
+    }
+  }
+}

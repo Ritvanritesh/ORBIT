@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "features": [
+    {
+      "feature": "MOM_8D",
+      "family": "A",
+      "lookback": 8,
+      "mechanism": "past return",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_15D",
+      "family": "A",
+      "lookback": 15,
+      "mechanism": "past return",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_30D",
+      "family": "A",
+      "lookback": 30,
+      "mechanism": "past return",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_CONSISTENCY_20D",
+      "family": "B",
+      "lookback": 20,
+      "mechanism": "past consistency",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_ACCEL_10D",
+      "family": "B",
+      "lookback": 20,
+      "mechanism": "past momentum change",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "DIST_FROM_MA_20D",
+      "family": "B",
+      "lookback": 20,
+      "mechanism": "distance from MA",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_RATIO_5_20",
+      "family": "C",
+      "lookback": 20,
+      "mechanism": "past vol ratio",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_EXPANSION_20D",
+      "family": "C",
+      "lookback": 40,
+      "mechanism": "vol expansion",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_TREND_20D",
+      "family": "C",
+      "lookback": 20,
+      "mechanism": "vol slope",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET20",
+      "family": "D",
+      "lookback": 60,
+      "mechanism": "CS rank",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET5",
+      "family": "D",
+      "lookback": 60,
+      "mechanism": "CS rank",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_ZSCORE_RET20",
+      "family": "D",
+      "lookback": 60,
+      "mechanism": "CS z-score",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_VOL_20D",
+      "family": "E",
+      "lookback": 20,
+      "mechanism": "market vol",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_RET_5D",
+      "family": "E",
+      "lookback": 5,
+      "mechanism": "market return",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_DISP_20D",
+      "family": "E",
+      "lookback": 20,
+      "mechanism": "market dispersion",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_LEVEL",
+      "family": "F",
+      "lookback": 0,
+      "mechanism": "yield level",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_SLOPE",
+      "family": "F",
+      "lookback": 0,
+      "mechanism": "yield slope",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CURVATURE",
+      "family": "F",
+      "lookback": 0,
+      "mechanism": "yield curvature",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CHG_10D",
+      "family": "F",
+      "lookback": 10,
+      "mechanism": "yield change",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_X_VOL_10D",
+      "family": "G",
+      "lookback": 20,
+      "mechanism": "momentum-vol interaction",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_ABS_VOL_10D",
+      "family": "G",
+      "lookback": 20,
+      "mechanism": "risk-adjusted momentum",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "RET_SIGNED_VOL_10D",
+      "family": "G",
+      "lookback": 20,
+      "mechanism": "return per vol",
+      "classification": "PIT_NATIVE"
+    },
+    {
+      "feature": "SECTOR_RET_RANK",
+      "family": "H",
+      "lookback": 60,
+      "mechanism": "sector rank",
+      "classification": "DEFERRED"
+    },
+    {
+      "feature": "SECTOR_RET_DEVIATION",
+      "family": "H",
+      "lookback": 60,
+      "mechanism": "sector deviation",
+      "classification": "DEFERRED"
+    }
+  ]
+}

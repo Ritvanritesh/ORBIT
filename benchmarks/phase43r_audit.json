@@ -1,0 +1,6 @@
+{
+  "all_artifacts": true,
+  "budget_match": true,
+  "pit_pass": true,
+  "oos_access": false
+}

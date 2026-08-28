@@ -1,0 +1,12 @@
+{
+  "selected_families": [
+    "A_MOMENTUM",
+    "B_TREND",
+    "C_VOLATILITY",
+    "D_RELATIVE",
+    "F_YIELD",
+    "G_REGIME_COND"
+  ],
+  "total_features": 19,
+  "n_families": 6
+}

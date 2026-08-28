@@ -1,0 +1,125 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "features": [
+    {
+      "feature": "MOM_8D",
+      "family": "A",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_15D",
+      "family": "A",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_30D",
+      "family": "A",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_CONSISTENCY_20D",
+      "family": "B",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "TREND_ACCEL_10D",
+      "family": "B",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "DIST_FROM_MA_20D",
+      "family": "B",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_RATIO_5_20",
+      "family": "C",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_EXPANSION_20D",
+      "family": "C",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "VOL_TREND_20D",
+      "family": "C",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET20",
+      "family": "D",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_PCTILE_RET5",
+      "family": "D",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "CS_ZSCORE_RET20",
+      "family": "D",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_VOL_20D",
+      "family": "E",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_RET_5D",
+      "family": "E",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MKT_DISP_20D",
+      "family": "E",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_LEVEL",
+      "family": "F",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_SLOPE",
+      "family": "F",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CURVATURE",
+      "family": "F",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "YC_CHG_10D",
+      "family": "F",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_X_VOL_10D",
+      "family": "G",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "MOM_ABS_VOL_10D",
+      "family": "G",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "RET_SIGNED_VOL_10D",
+      "family": "G",
+      "pit": "PIT_NATIVE"
+    },
+    {
+      "feature": "SECTOR_RET_RANK",
+      "family": "H",
+      "pit": "DEFERRED"
+    },
+    {
+      "feature": "SECTOR_RET_DEVIATION",
+      "family": "H",
+      "pit": "DEFERRED"
+    }
+  ]
+}

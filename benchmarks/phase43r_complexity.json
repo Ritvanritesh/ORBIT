@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "complexity": {
+    "A_MOMENTUM": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "B_TREND": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "C_VOLATILITY": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "D_RELATIVE": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "E_MARKET": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "F_YIELD": {
+      "n_features": 4,
+      "complexity_score": 4.0
+    },
+    "G_REGIME_COND": {
+      "n_features": 3,
+      "complexity_score": 3.0
+    },
+    "H_SECTOR": {
+      "n_features": 2,
+      "complexity_score": 2.0
+    }
+  }
+}

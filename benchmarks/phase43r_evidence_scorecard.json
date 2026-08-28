@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "n_families_evaluated": 8,
+  "families_positive": 6,
+  "families_meaningful": 6,
+  "supported_families": [
+    "A_MOMENTUM",
+    "B_TREND",
+    "C_VOLATILITY",
+    "D_RELATIVE",
+    "F_YIELD",
+    "G_REGIME_COND"
+  ]
+}

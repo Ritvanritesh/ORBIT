@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "redundancy": {
+    "A_MOMENTUM": {
+      "avg_corr": 0.6431787309242963,
+      "classification": "HIGH"
+    },
+    "B_TREND": {
+      "avg_corr": 0.3773644087680532,
+      "classification": "MODERATE"
+    },
+    "C_VOLATILITY": {
+      "avg_corr": 0.3092872322486471,
+      "classification": "MODERATE"
+    },
+    "D_RELATIVE": {
+      "avg_corr": 0.7672567723445575,
+      "classification": "HIGH"
+    },
+    "E_MARKET": {
+      "avg_corr": 0.389852158233621,
+      "classification": "MODERATE"
+    },
+    "F_YIELD": {
+      "avg_corr": 0.46512998802142663,
+      "classification": "MODERATE"
+    },
+    "G_REGIME_COND": {
+      "avg_corr": 0.496455644685797,
+      "classification": "MODERATE"
+    },
+    "H_SECTOR": {
+      "avg_corr": 0,
+      "classification": "LOW"
+    }
+  }
+}

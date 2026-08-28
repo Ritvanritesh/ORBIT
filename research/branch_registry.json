@@ -386,6 +386,35 @@
         "budget": 6,
         "oos_status": "DATA_NOT_READY"
       }
+    },
+    {
+      "branch_id": "BR-D4E5F6A1B2C3",
+      "name": "Feature System Expansion",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T15:44:59.708138+00:00",
+      "result": {
+        "families": 8,
+        "supported": [],
+        "features": 0
+      }
+    },
+    {
+      "branch_id": "BR-D4E5F6A1B2C3",
+      "name": "Feature System Expansion",
+      "status": "EXPLORATORY_COMPLETE",
+      "created": "2026-08-28T15:52:38.871337+00:00",
+      "result": {
+        "families": 8,
+        "supported": [
+          "A_MOMENTUM",
+          "B_TREND",
+          "C_VOLATILITY",
+          "D_RELATIVE",
+          "F_YIELD",
+          "G_REGIME_COND"
+        ],
+        "features": 19
+      }
     }
   ],
   "prevention_rules": [
@@ -409,7 +438,7 @@
     "confirmatory_registrations": "array of registration IDs",
     "final_classification": "string (nullable)"
   },
-  "last_updated": "2026-08-28T14:43:35.435621+00:00",
+  "last_updated": "2026-08-28T15:52:38.871337+00:00",
   "phase29r_update": {
     "phase": "29R",
     "timestamp": "2026-08-26T14:32:12.503269+00:00",

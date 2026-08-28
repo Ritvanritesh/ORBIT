@@ -1,0 +1,176 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "budget": 24,
+  "matrix": [
+    {
+      "id": "SCR-001",
+      "stage": "A",
+      "family": "A_MOMENTUM",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-002",
+      "stage": "A",
+      "family": "A_MOMENTUM",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-003",
+      "stage": "A",
+      "family": "B_TREND",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-004",
+      "stage": "A",
+      "family": "B_TREND",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-005",
+      "stage": "A",
+      "family": "C_VOLATILITY",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-006",
+      "stage": "A",
+      "family": "C_VOLATILITY",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-007",
+      "stage": "A",
+      "family": "D_RELATIVE",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-008",
+      "stage": "A",
+      "family": "D_RELATIVE",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-009",
+      "stage": "A",
+      "family": "E_MARKET",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-010",
+      "stage": "A",
+      "family": "E_MARKET",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-011",
+      "stage": "A",
+      "family": "F_YIELD",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-012",
+      "stage": "A",
+      "family": "F_YIELD",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-013",
+      "stage": "A",
+      "family": "G_REGIME_COND",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-014",
+      "stage": "A",
+      "family": "G_REGIME_COND",
+      "universe": "100"
+    },
+    {
+      "id": "SCR-015",
+      "stage": "A",
+      "family": "H_SECTOR",
+      "universe": "050"
+    },
+    {
+      "id": "SCR-016",
+      "stage": "A",
+      "family": "H_SECTOR",
+      "universe": "100"
+    },
+    {
+      "id": "COM-017",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY"
+      ],
+      "universe": "050"
+    },
+    {
+      "id": "COM-018",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "F_YIELD"
+      ],
+      "universe": "050"
+    },
+    {
+      "id": "COM-019",
+      "stage": "B",
+      "families": [
+        "B_TREND",
+        "D_RELATIVE"
+      ],
+      "universe": "050"
+    },
+    {
+      "id": "COM-020",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY"
+      ],
+      "universe": "050"
+    },
+    {
+      "id": "COM-021",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "C_VOLATILITY"
+      ],
+      "universe": "100"
+    },
+    {
+      "id": "COM-022",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "F_YIELD"
+      ],
+      "universe": "100"
+    },
+    {
+      "id": "COM-023",
+      "stage": "B",
+      "families": [
+        "B_TREND",
+        "D_RELATIVE"
+      ],
+      "universe": "100"
+    },
+    {
+      "id": "COM-024",
+      "stage": "B",
+      "families": [
+        "A_MOMENTUM",
+        "B_TREND",
+        "C_VOLATILITY"
+      ],
+      "universe": "100"
+    }
+  ]
+}

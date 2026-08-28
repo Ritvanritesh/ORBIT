@@ -1,0 +1,138 @@
+{
+  "tests": {
+    "A01": {
+      "name": "future_price_leakage",
+      "result": "BLOCKED",
+      "rationale": "Historical data only"
+    },
+    "A02": {
+      "name": "future_return_leakage",
+      "result": "BLOCKED",
+      "rationale": "Forward returns only in labels"
+    },
+    "A03": {
+      "name": "centered_rolling_window",
+      "result": "BLOCKED",
+      "rationale": "Backward-looking windows"
+    },
+    "A04": {
+      "name": "incorrect_lookback_alignment",
+      "result": "BLOCKED",
+      "rationale": "Aligned to bar timestamps"
+    },
+    "A05": {
+      "name": "future_cs_membership",
+      "result": "BLOCKED",
+      "rationale": "CS from available instruments"
+    },
+    "A06": {
+      "name": "survivorship_leakage",
+      "result": "BLOCKED",
+      "rationale": "Addressed in pipeline"
+    },
+    "A07": {
+      "name": "macro_timing",
+      "result": "BLOCKED",
+      "rationale": "Published values"
+    },
+    "A08": {
+      "name": "yield_timing",
+      "result": "BLOCKED",
+      "rationale": "Aligned to bar dates"
+    },
+    "A09": {
+      "name": "revised_data",
+      "result": "BLOCKED",
+      "rationale": "No revised data used"
+    },
+    "A10": {
+      "name": "forward_fill",
+      "result": "BLOCKED",
+      "rationale": "Deterministic fill"
+    },
+    "A11": {
+      "name": "missing_leakage",
+      "result": "BLOCKED",
+      "rationale": "NaN excluded"
+    },
+    "A12": {
+      "name": "duplicate_features",
+      "result": "BLOCKED",
+      "rationale": "Unique IDs"
+    },
+    "A13": {
+      "name": "redundant_inclusion",
+      "result": "BLOCKED",
+      "rationale": "Redundancy measured"
+    },
+    "A14": {
+      "name": "hidden_search",
+      "result": "BLOCKED",
+      "rationale": "Families predefined"
+    },
+    "A15": {
+      "name": "post_hoc_lookback",
+      "result": "BLOCKED",
+      "rationale": "Fixed before execution"
+    },
+    "A16": {
+      "name": "budget_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Budget=24 Matrix=24"
+    },
+    "A17": {
+      "name": "duplicate_experiments",
+      "result": "BLOCKED",
+      "rationale": "All unique"
+    },
+    "A18": {
+      "name": "unmatched_baseline",
+      "result": "BLOCKED",
+      "rationale": "Matched per experiment"
+    },
+    "A19": {
+      "name": "incorrect_incr",
+      "result": "BLOCKED",
+      "rationale": "IC(exp)-IC(base)"
+    },
+    "A20": {
+      "name": "horizon_mismatch",
+      "result": "BLOCKED",
+      "rationale": "Both horizons reported"
+    },
+    "A21": {
+      "name": "universe_contamination",
+      "result": "BLOCKED",
+      "rationale": "Separate evaluation"
+    },
+    "A22": {
+      "name": "train_test",
+      "result": "BLOCKED",
+      "rationale": "Time-ordered split"
+    },
+    "A23": {
+      "name": "protected_oos",
+      "result": "BLOCKED",
+      "rationale": "No OOS loaded"
+    },
+    "A24": {
+      "name": "registration_mod",
+      "result": "BLOCKED",
+      "rationale": "All immutable"
+    },
+    "A25": {
+      "name": "artifact_mod",
+      "result": "BLOCKED",
+      "rationale": "All additive"
+    },
+    "A26": {
+      "name": "nondeterministic",
+      "result": "BLOCKED",
+      "rationale": "Deterministic"
+    }
+  },
+  "summary": {
+    "total": 26,
+    "blocked": 26
+  }
+}

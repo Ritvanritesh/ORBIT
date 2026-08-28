@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-08-28T15:52:38.871337+00:00",
+  "family_stats": {
+    "A_MOMENTUM": {
+      "h10_mean": 0.02843869497780137,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.025004999701381283,
+      "h20_pos_pct": 1.0,
+      "n": 8,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "B_TREND": {
+      "h10_mean": 0.021256369802462056,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.018358495234827212,
+      "h20_pos_pct": 1.0,
+      "n": 6,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "C_VOLATILITY": {
+      "h10_mean": 0.027338297323693656,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.02888439060214631,
+      "h20_pos_pct": 1.0,
+      "n": 6,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "D_RELATIVE": {
+      "h10_mean": 0.020383687166093928,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.011412393442491162,
+      "h20_pos_pct": 1.0,
+      "n": 4,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "E_MARKET": {
+      "h10_mean": -8.03873634325214e-12,
+      "h10_pos_pct": 0.0,
+      "h20_mean": 3.627209643752849e-12,
+      "h20_pos_pct": 1.0,
+      "n": 2,
+      "classification": "WEAK"
+    },
+    "F_YIELD": {
+      "h10_mean": 0.05321606509625165,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.035771499513502836,
+      "h20_pos_pct": 1.0,
+      "n": 4,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "G_REGIME_COND": {
+      "h10_mean": 0.018721030269822636,
+      "h10_pos_pct": 1.0,
+      "h20_mean": 0.013503131014398054,
+      "h20_pos_pct": 1.0,
+      "n": 2,
+      "classification": "STRONG_CANDIDATE"
+    },
+    "H_SECTOR": {
+      "h10_mean": 0.0,
+      "h10_pos_pct": 0.0,
+      "h20_mean": 0.0,
+      "h20_pos_pct": 0.0,
+      "n": 2,
+      "classification": "WEAK"
+    }
+  }
+}

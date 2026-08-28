@@ -1,0 +1,14 @@
+{
+  "total": 24,
+  "exploratory_only": true,
+  "families": [
+    "A_MOMENTUM",
+    "B_TREND",
+    "C_VOLATILITY",
+    "D_RELATIVE",
+    "E_MARKET",
+    "F_YIELD",
+    "G_REGIME_COND",
+    "H_SECTOR"
+  ]
+}
