@@ -1,0 +1,11 @@
+{
+  "phase": "51-R",
+  "objective": "Compare V1 vs V2 datasets using classical models",
+  "status": "COMPLETE",
+  "results": {
+    "total_experiments": 32,
+    "complete": 32,
+    "mean_delta_ic": 0.0,
+    "classification": "NO_EFFECT"
+  }
+}

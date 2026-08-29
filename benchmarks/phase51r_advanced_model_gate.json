@@ -1,0 +1,15 @@
+{
+  "MLP": {
+    "classification": "JUSTIFIED",
+    "next_step": "Phase 52-R small MLP experiment"
+  },
+  "TCN": {
+    "classification": "JUSTIFIED",
+    "next_step": "Phase 52-R small TCN experiment"
+  },
+  "TRANSFORMER": {
+    "classification": "BORDERLINE",
+    "next_step": "Phase 52-R minimal Transformer experiment only if MLP/TCN show value"
+  },
+  "overall": "MLP_AND_TCN_JUSTIFIED"
+}

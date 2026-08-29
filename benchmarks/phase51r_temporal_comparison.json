@@ -1,0 +1,23 @@
+{
+  "early": {
+    "v1_mean_ic": null,
+    "v2_mean_ic": null,
+    "v1_n": 0,
+    "v2_n": 0,
+    "delta": null
+  },
+  "middle": {
+    "v1_mean_ic": -0.001,
+    "v2_mean_ic": -0.001,
+    "v1_n": 16,
+    "v2_n": 16,
+    "delta": 0.0
+  },
+  "late": {
+    "v1_mean_ic": 0.011,
+    "v2_mean_ic": 0.011,
+    "v1_n": 16,
+    "v2_n": 16,
+    "delta": 0.0
+  }
+}

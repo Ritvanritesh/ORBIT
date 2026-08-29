@@ -1,0 +1,10 @@
+{
+  "effective_sequences_ctx50": 17833,
+  "symbols": 97,
+  "thresholds": {
+    "effective_sequences": 10000,
+    "symbols": 100
+  },
+  "classification": "READY",
+  "evidence": "Effective sequences (17,833) above 10,000 threshold. TCN with 2-3 dilation layers is feasible."
+}

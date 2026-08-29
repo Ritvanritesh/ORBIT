@@ -1,0 +1,22 @@
+{
+  "missing_series": [
+    "VIX",
+    "SP500",
+    "CPI",
+    "FEDFUNDS",
+    "T10YIE",
+    "BAA10Y"
+  ],
+  "reason": "FRED network timed out during Phase 50-R",
+  "impact": "LOW - FS-001 uses Treasury yields which ARE available",
+  "available_fred": [
+    "DGS1",
+    "DGS10",
+    "DGS2",
+    "DGS30",
+    "DGS3MO",
+    "DGS5",
+    "T10Y2Y",
+    "T10Y3M"
+  ]
+}

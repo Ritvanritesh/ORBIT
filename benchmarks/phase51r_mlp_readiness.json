@@ -1,0 +1,10 @@
+{
+  "effective_observations": 18950,
+  "symbols": 97,
+  "thresholds": {
+    "effective": 5000,
+    "symbols": 50
+  },
+  "classification": "READY",
+  "evidence": "Effective observations (18,950) well above 5,000 threshold. MLP with <10K parameters is feasible."
+}

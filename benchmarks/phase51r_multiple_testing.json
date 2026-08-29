@@ -1,0 +1,10 @@
+{
+  "total_experiments": 32,
+  "model_families": 4,
+  "feature_families": 2,
+  "horizons": 2,
+  "datasets": 2,
+  "uncorrected_p_values": "REPORTED",
+  "correction": "NONE (exploratory phase)",
+  "note": "This is exploratory benchmarking; statistical significance is not used for promotion"
+}

@@ -1,0 +1,142 @@
+{
+  "model": "ElasticNet",
+  "experiments": [
+    {
+      "exp_id": 9,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 10,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 11,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 12,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 13,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 14,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 15,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    },
+    {
+      "exp_id": 16,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.0,
+      "p_value": 1.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.0,
+        "late": 0.0
+      }
+    }
+  ],
+  "n_complete": 8
+}

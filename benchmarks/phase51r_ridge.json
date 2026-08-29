@@ -1,0 +1,142 @@
+{
+  "model": "Ridge",
+  "experiments": [
+    {
+      "exp_id": 1,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.043355,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.08060363825852677,
+        "late": 0.03264606645973533
+      }
+    },
+    {
+      "exp_id": 2,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.043355,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.08060363825852677,
+        "late": 0.03264606645973533
+      }
+    },
+    {
+      "exp_id": 3,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": 0.064655,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.15084820596456014,
+        "late": 0.033254777082855666
+      }
+    },
+    {
+      "exp_id": 4,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": 0.064655,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.15084820596456014,
+        "late": 0.033254777082855666
+      }
+    },
+    {
+      "exp_id": 5,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.026049,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.020051505887486786,
+        "late": 0.03134808202888056
+      }
+    },
+    {
+      "exp_id": 6,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.026049,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.020051505887486786,
+        "late": 0.03134808202888056
+      }
+    },
+    {
+      "exp_id": 7,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.015331,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.015538697563746078,
+        "late": 0.010100756301106175
+      }
+    },
+    {
+      "exp_id": 8,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.015331,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.015538697563746078,
+        "late": 0.010100756301106175
+      }
+    }
+  ],
+  "n_complete": 8
+}

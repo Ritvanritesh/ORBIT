@@ -1,0 +1,455 @@
+{
+  "total_experiments": 32,
+  "models": [
+    "Ridge",
+    "ElasticNet",
+    "HGB",
+    "LightGBM"
+  ],
+  "feature_systems": [
+    "BASELINE",
+    "FS-001"
+  ],
+  "horizons": [
+    "H-10",
+    "H-20"
+  ],
+  "datasets": [
+    "V1",
+    "V2"
+  ],
+  "experiments": [
+    {
+      "id": 1,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 2,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 3,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 4,
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 5,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 6,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 7,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 8,
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 9,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 10,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 11,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 12,
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 13,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 14,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 15,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 16,
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 17,
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 18,
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 19,
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 20,
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 21,
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 22,
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 23,
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 24,
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 25,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 26,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 27,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 28,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "features": [
+        "RET_5D",
+        "RET_10D",
+        "RET_20D",
+        "VOL_20D",
+        "MKT_RET_20D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    },
+    {
+      "id": 29,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V1"
+    },
+    {
+      "id": 30,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-10",
+      "dataset": "V2"
+    },
+    {
+      "id": 31,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V1"
+    },
+    {
+      "id": 32,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "features": [
+        "YC_LEVEL",
+        "YC_SLOPE",
+        "YC_CURVATURE",
+        "YC_CHG_10D"
+      ],
+      "horizon": "H-20",
+      "dataset": "V2"
+    }
+  ]
+}

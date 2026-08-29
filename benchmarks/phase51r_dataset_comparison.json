@@ -1,0 +1,21 @@
+{
+  "v1": {
+    "symbols": 97,
+    "rows": 680878,
+    "years": 30,
+    "sectors": 12
+  },
+  "v2": {
+    "symbols": 97,
+    "rows": 680878,
+    "years": 30,
+    "sectors": 12
+  },
+  "change": {
+    "symbols": 0,
+    "rows": 0,
+    "years": 0,
+    "sectors": 0
+  },
+  "note": "V1 and V2 use same universe (97 symbols) for fair comparison. Data quality improvements only."
+}

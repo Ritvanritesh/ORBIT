@@ -1,0 +1,15 @@
+{
+  "Q1_raw_data_increased": "YES - raw observations increased from 680,878 to 828,010 (+21.6%)",
+  "Q2_effective_info_increased": "PARTIALLY - effective observations increased from ~16,821 to ~18,950 (+12.7%)",
+  "Q3_predictive_performance_improved": "MARGINAL - mean deltaIC=0.0000 (NO_EFFECT)",
+  "Q4_temporal_stability_improved": "MIXED - temporal stability varies by period",
+  "Q5_cross_sectional_robustness_improved": "SAME_UNIVERSE - cross-section unchanged for fair comparison",
+  "Q6_model_ranking_changed": "MINIMAL - model ranking largely preserved",
+  "Q7_nonlinear_models_benefited_more": "NO_CLEAR_EVIDENCE - nonlinear models did not disproportionately benefit",
+  "Q8_additional_data_reduced_variance": "PARTIAL - variance SIMILAR_VARIANCE",
+  "Q9_mlp_justified": "YES - MLP is READY",
+  "Q10_tcn_justified": "YES - TCN is READY",
+  "Q11_transformer_justified": "BORDERLINE - Transformer is BORDERLINE",
+  "Q12_highest_info_gain_next": "CRSP survivorship data, VIX/SP500/CPI from alternative source, sector indices",
+  "primary_conclusion": "V2 provides marginal data scaling improvement (+12.7% effective obs) but the dominant effect is classical model robustness. MLP and TCN are now justified for small experiments. Transformer remains BORDERLINE."
+}

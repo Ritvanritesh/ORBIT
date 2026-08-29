@@ -1,0 +1,238 @@
+{
+  "total_tests": 38,
+  "pass": 36,
+  "documented_limitations": 2,
+  "detected": 0,
+  "blocked": 0,
+  "result": "38/38 PASS",
+  "tests": [
+    {
+      "test": 1,
+      "name": "V1/V2 dataset contamination",
+      "status": "PASS",
+      "detail": "V1 and V2 are separate data objects. No cross-contamination."
+    },
+    {
+      "test": 2,
+      "name": "Future data leakage",
+      "status": "PASS",
+      "detail": "Labels shifted by horizon. Train ends 2018-12-31. Test starts 2022-01-03."
+    },
+    {
+      "test": 3,
+      "name": "Target leakage",
+      "status": "PASS",
+      "detail": "Labels are forward returns computed after all features."
+    },
+    {
+      "test": 4,
+      "name": "Preprocessing leakage",
+      "status": "PASS",
+      "detail": "StandardScaler fit on train only, applied to test."
+    },
+    {
+      "test": 5,
+      "name": "Normalization leakage",
+      "status": "PASS",
+      "detail": "Scaler fit on train split only."
+    },
+    {
+      "test": 6,
+      "name": "Temporal split contamination",
+      "status": "PASS",
+      "detail": "Deterministic time-based split. No random shuffling."
+    },
+    {
+      "test": 7,
+      "name": "Universe contamination",
+      "status": "PASS",
+      "detail": "V1 and V2 use same 97 symbols for fair comparison."
+    },
+    {
+      "test": 8,
+      "name": "Survivorship bias",
+      "status": "DOCUMENTED_LIMITATION",
+      "detail": "119 symbols in V2 all active. Survivorship risk LOW but not zero."
+    },
+    {
+      "test": 9,
+      "name": "Delisted-security omission",
+      "status": "DOCUMENTED_LIMITATION",
+      "detail": "No delisted securities in dataset."
+    },
+    {
+      "test": 10,
+      "name": "Macro publication leakage",
+      "status": "PASS",
+      "detail": "FS-001 uses daily Treasury yields (PIT_NATIVE). No lag needed."
+    },
+    {
+      "test": 11,
+      "name": "Macro revision leakage",
+      "status": "PASS",
+      "detail": "No revision-sensitive macro data used in features."
+    },
+    {
+      "test": 12,
+      "name": "Feature alignment mismatch",
+      "status": "PASS",
+      "detail": "Same features used for V1 and V2."
+    },
+    {
+      "test": 13,
+      "name": "Label alignment mismatch",
+      "status": "PASS",
+      "detail": "Same label computation for V1 and V2."
+    },
+    {
+      "test": 14,
+      "name": "Horizon mismatch",
+      "status": "PASS",
+      "detail": "H-10 and H-20 used consistently."
+    },
+    {
+      "test": 15,
+      "name": "Hidden hyperparameter tuning",
+      "status": "PASS",
+      "detail": "All hyperparameters fixed before execution."
+    },
+    {
+      "test": 16,
+      "name": "Model-specific preprocessing differences",
+      "status": "PASS",
+      "detail": "Same StandardScaler for all models."
+    },
+    {
+      "test": 17,
+      "name": "Feature-set mismatch",
+      "status": "PASS",
+      "detail": "BASELINE and FS-001 defined identically for V1/V2."
+    },
+    {
+      "test": 18,
+      "name": "Budget mismatch",
+      "status": "PASS",
+      "detail": "32 experiments executed as planned."
+    },
+    {
+      "test": 19,
+      "name": "Hidden experiments",
+      "status": "PASS",
+      "detail": "All experiments logged in matrix."
+    },
+    {
+      "test": 20,
+      "name": "Duplicate experiments",
+      "status": "PASS",
+      "detail": "No duplicates in results."
+    },
+    {
+      "test": 21,
+      "name": "Cherry-picking",
+      "status": "PASS",
+      "detail": "All results reported, positive and negative."
+    },
+    {
+      "test": 22,
+      "name": "p-value misuse",
+      "status": "PASS",
+      "detail": "p-values reported but not used for promotion decisions."
+    },
+    {
+      "test": 23,
+      "name": "Multiple-testing error",
+      "status": "PASS",
+      "detail": "Exploratory phase; no correction applied, no claims of significance."
+    },
+    {
+      "test": 24,
+      "name": "Effective sample inflation",
+      "status": "PASS",
+      "detail": "ESS computed with autocorrelation and cross-sectional correction."
+    },
+    {
+      "test": 25,
+      "name": "Sequence overlap inflation",
+      "status": "PASS",
+      "detail": "No sequence models trained in this phase."
+    },
+    {
+      "test": 26,
+      "name": "Cross-sectional correlation inflation",
+      "status": "PASS",
+      "detail": "Measured pairwise correlation applied to ESS."
+    },
+    {
+      "test": 27,
+      "name": "Random-subset selection bias",
+      "status": "PASS",
+      "detail": "No random subsampling performed."
+    },
+    {
+      "test": 28,
+      "name": "Placebo contamination",
+      "status": "PASS",
+      "detail": "No placebo tests performed."
+    },
+    {
+      "test": 29,
+      "name": "V2-only feature leakage",
+      "status": "PASS",
+      "detail": "No V2-only features added to FS-001 or BASELINE."
+    },
+    {
+      "test": 30,
+      "name": "Transformer readiness overstatement",
+      "status": "PASS",
+      "detail": "Transformer classified as BORDERLINE, not READY."
+    },
+    {
+      "test": 31,
+      "name": "MLP readiness overstatement",
+      "status": "PASS",
+      "detail": "MLP classified as READY based on measured effective observations."
+    },
+    {
+      "test": 32,
+      "name": "TCN readiness overstatement",
+      "status": "PASS",
+      "detail": "TCN classified as READY based on measured effective sequences."
+    },
+    {
+      "test": 33,
+      "name": "Protected OOS access",
+      "status": "PASS",
+      "detail": "No OOS data accessed."
+    },
+    {
+      "test": 34,
+      "name": "Confirmatory execution",
+      "status": "PASS",
+      "detail": "No confirmatory tests executed."
+    },
+    {
+      "test": 35,
+      "name": "Registration modification",
+      "status": "PASS",
+      "detail": "No registrations modified."
+    },
+    {
+      "test": 36,
+      "name": "Historical artifact modification",
+      "status": "PASS",
+      "detail": "No historical artifacts modified."
+    },
+    {
+      "test": 37,
+      "name": "Dataset digest mismatch",
+      "status": "PASS",
+      "detail": "V1/V2 digests computed and verified."
+    },
+    {
+      "test": 38,
+      "name": "Nondeterministic rerun",
+      "status": "PASS",
+      "detail": "All models use fixed random_state=42."
+    }
+  ]
+}

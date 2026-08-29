@@ -1,0 +1,19 @@
+{
+  "phase": "51-R",
+  "phase_name": "SCALED_DATASET_BENCHMARK",
+  "completion_time_utc": "2026-08-29T08:20:17.003485Z",
+  "elapsed_seconds": 68.2,
+  "verdict": "C",
+  "gate": "YELLOW",
+  "verdict_meaning": "NO_MEANINGFUL_SCALING_EFFECT",
+  "artifacts_created": 31,
+  "results_summary": {
+    "mean_delta_ic": 0.0,
+    "classification": "NO_EFFECT",
+    "improved": 0,
+    "degraded": 0,
+    "mlp_justified": "READY",
+    "tcn_justified": "READY",
+    "transformer_justified": "BORDERLINE"
+  }
+}

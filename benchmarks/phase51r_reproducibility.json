@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "item": "V1 inventory reproduces",
+      "status": "PASS"
+    },
+    {
+      "item": "V2 inventory reproduces",
+      "status": "PASS"
+    },
+    {
+      "item": "Experiment matrix reproduces",
+      "status": "PASS"
+    },
+    {
+      "item": "Budget reproduces",
+      "status": "PASS"
+    },
+    {
+      "item": "Model results reproduce",
+      "status": "PASS",
+      "detail": "Fixed random_state=42, deterministic splits"
+    },
+    {
+      "item": "Temporal partitions reproduce",
+      "status": "PASS"
+    },
+    {
+      "item": "Universe partitions reproduce",
+      "status": "PASS"
+    },
+    {
+      "item": "Effective sample estimates reproduce",
+      "status": "PASS"
+    },
+    {
+      "item": "Scaling-effect calculations reproduce",
+      "status": "PASS"
+    },
+    {
+      "item": "Advanced-model readiness scores reproduce",
+      "status": "PASS"
+    },
+    {
+      "item": "Final evidence scorecard reproduces",
+      "status": "PASS"
+    },
+    {
+      "item": "Final decision reproduces",
+      "status": "PASS"
+    }
+  ],
+  "all_pass": true,
+  "result": "PASS"
+}

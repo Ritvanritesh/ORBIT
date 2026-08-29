@@ -1,0 +1,12 @@
+{
+  "v1": {
+    "raw": 680878,
+    "effective": 16821
+  },
+  "v2": {
+    "raw": 680878,
+    "effective": 18950
+  },
+  "change_pct": 12.7,
+  "methodology": "Venables-Ripley autocorrelation + cross-sectional correlation"
+}

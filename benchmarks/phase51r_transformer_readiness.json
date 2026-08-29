@@ -1,0 +1,14 @@
+{
+  "effective_observations": 18950,
+  "effective_sequences_ctx50": 17833,
+  "symbols": 97,
+  "temporal_years": 30,
+  "thresholds": {
+    "effective_obs": 20000,
+    "effective_sequences": 20000,
+    "symbols": 150
+  },
+  "classification": "BORDERLINE",
+  "evidence": "Effective observations and sequences are close to thresholds but below. 97 symbols is below 150 target. Transformer may proceed with small architecture only.",
+  "remaining_limitation": "97 symbols vs 150 target; 18,950 effective obs vs 20,000 target"
+}

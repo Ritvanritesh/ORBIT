@@ -1,0 +1,159 @@
+{
+  "mean_delta_ic": 0.0,
+  "median_delta_ic": 0.0,
+  "variance_v1": 0.000647,
+  "variance_v2": 0.000647,
+  "variance_change": 0.0,
+  "improved": 0,
+  "degraded": 0,
+  "unchanged": 16,
+  "total_comparisons": 16,
+  "improvement_rate": 0.0,
+  "deltas": [
+    {
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "v1_ic": 0.043355,
+      "v2_ic": 0.043355,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "Ridge",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "v1_ic": 0.064655,
+      "v2_ic": 0.064655,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "v1_ic": 0.026049,
+      "v2_ic": 0.026049,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "Ridge",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "v1_ic": 0.015331,
+      "v2_ic": 0.015331,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "v1_ic": 0.0,
+      "v2_ic": 0.0,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "v1_ic": 0.0,
+      "v2_ic": 0.0,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "v1_ic": 0.0,
+      "v2_ic": 0.0,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "ElasticNet",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "v1_ic": 0.0,
+      "v2_ic": 0.0,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "v1_ic": 0.004559,
+      "v2_ic": 0.004559,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "HGB",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "v1_ic": -0.037805,
+      "v2_ic": -0.037805,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "v1_ic": 0.024178,
+      "v2_ic": 0.024178,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "HGB",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "v1_ic": 0.026898,
+      "v2_ic": 0.026898,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "v1_ic": 0.004559,
+      "v2_ic": 0.004559,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "v1_ic": -0.037805,
+      "v2_ic": -0.037805,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "v1_ic": 0.024178,
+      "v2_ic": 0.024178,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    },
+    {
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "v1_ic": 0.026898,
+      "v2_ic": 0.026898,
+      "delta_ic": 0.0,
+      "direction": "UNCHANGED"
+    }
+  ],
+  "classification": "NO_EFFECT"
+}

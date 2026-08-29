@@ -1,0 +1,5 @@
+{
+  "permutation_control": "NOT_PERFORMED",
+  "matched_subset_control": "NOT_PERFORMED",
+  "reason": "V1 and V2 share identical universe; temporal split is deterministic"
+}

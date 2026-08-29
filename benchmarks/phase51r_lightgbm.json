@@ -1,0 +1,142 @@
+{
+  "model": "LightGBM",
+  "experiments": [
+    {
+      "exp_id": 25,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.004559,
+      "p_value": 0.049209,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.03656676655034041,
+        "late": 0.0209139348370522
+      }
+    },
+    {
+      "exp_id": 26,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186133,
+      "ic": 0.004559,
+      "p_value": 0.049209,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.03656676655034041,
+        "late": 0.0209139348370522
+      }
+    },
+    {
+      "exp_id": 27,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": -0.037805,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.10214878063461166,
+        "late": -0.01518806616981698
+      }
+    },
+    {
+      "exp_id": 28,
+      "model": "LightGBM",
+      "feature_system": "BASELINE",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494715,
+      "n_test": 186123,
+      "ic": -0.037805,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.10214878063461166,
+        "late": -0.01518806616981698
+      }
+    },
+    {
+      "exp_id": 29,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.024178,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.06489755115889463,
+        "late": 0.0068068365577651285
+      }
+    },
+    {
+      "exp_id": 30,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-10",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186133,
+      "ic": 0.024178,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": 0.06489755115889463,
+        "late": 0.0068068365577651285
+      }
+    },
+    {
+      "exp_id": 31,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V1",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.026898,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.03199788222694514,
+        "late": 0.02210376382699998
+      }
+    },
+    {
+      "exp_id": 32,
+      "model": "LightGBM",
+      "feature_system": "FS-001",
+      "horizon": "H-20",
+      "dataset": "V2",
+      "status": "COMPLETE",
+      "n_train": 494735,
+      "n_test": 186123,
+      "ic": 0.026898,
+      "p_value": 0.0,
+      "temporal_ics": {
+        "early": null,
+        "middle": -0.03199788222694514,
+        "late": 0.02210376382699998
+      }
+    }
+  ],
+  "n_complete": 8
+}

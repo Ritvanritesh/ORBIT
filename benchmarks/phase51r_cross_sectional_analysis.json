@@ -1,0 +1,7 @@
+{
+  "v1_symbols": 97,
+  "v2_symbols": 97,
+  "additional_symbols": 0,
+  "information_gain": "SAME_UNIVERSE_FOR_FAIR_COMPARISON",
+  "note": "V1 and V2 use identical universe to isolate data quality effect"
+}
