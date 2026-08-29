@@ -1,0 +1,17 @@
+{
+  "methodology": "Venables-Ripley autocorrelation + cross-sectional correlation correction",
+  "avg_autocorrelation": -0.0284,
+  "avg_cross_sectional_correlation": 0.2806,
+  "raw_rows": 828010,
+  "symbols": 119,
+  "trading_days": 7552,
+  "effective_temporal": 7994.0,
+  "effective_cross_sectional": 18950.0,
+  "effective_total": 18950.0,
+  "effective_ratio": 0.0229,
+  "comparison_to_v1": {
+    "v1_effective": 16821,
+    "v2_effective": 18950.0,
+    "improvement_pct": 12.7
+  }
+}

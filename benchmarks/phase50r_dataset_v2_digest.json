@@ -1,0 +1,10 @@
+{
+  "digest": "69bf0d5348b5ac522796175ab0907a2ecd357c1f3f67f6f9748d57fb5c9a10bf",
+  "algorithm": "SHA-256",
+  "inputs": {
+    "universe_size": 119,
+    "equity_rows": 828010,
+    "macro_series": 8,
+    "quality_gate": "GREEN"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "issues": {
+    "missing_values": 0,
+    "duplicate_rows": 0,
+    "zero_prices": 0,
+    "negative_volume": 0,
+    "impossible_ohlc": 0,
+    "null_adjclose": 0
+  },
+  "total_rows": 828010,
+  "quality_gate": "GREEN",
+  "assessment": "ACCEPTABLE"
+}

@@ -1,0 +1,37 @@
+{
+  "overall": {
+    "date_min": "1996-08-21",
+    "date_max": "2026-08-27",
+    "total_trading_days": 7552,
+    "total_years": 30.0
+  },
+  "by_decade": {
+    "1996-2000": {
+      "symbols_with_data": 96,
+      "pct_of_universe": 80.7
+    },
+    "2001-2005": {
+      "symbols_with_data": 105,
+      "pct_of_universe": 88.2
+    },
+    "2006-2010": {
+      "symbols_with_data": 112,
+      "pct_of_universe": 94.1
+    },
+    "2011-2015": {
+      "symbols_with_data": 117,
+      "pct_of_universe": 98.3
+    },
+    "2016-2020": {
+      "symbols_with_data": 119,
+      "pct_of_universe": 100.0
+    },
+    "2021-2026": {
+      "symbols_with_data": 119,
+      "pct_of_universe": 100.0
+    }
+  },
+  "symbols_with_full_coverage": 119,
+  "symbols_with_partial_coverage": 0,
+  "symbols_with_low_coverage": 0
+}

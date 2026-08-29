@@ -1,0 +1,103 @@
+{
+  "series_classifications": {
+    "VIX": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Real-time",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "SP500": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Real-time",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "BAA10Y": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "FEDFUNDS": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day (estimated)",
+      "revision": "Minor revisions to estimate",
+      "vintage": "Not needed"
+    },
+    "CPIAUCSL": {
+      "pit": "PIT_SAFE_WITH_LAG",
+      "lag": "~30-45 days",
+      "publication": "~30 days after reference",
+      "revision": "Minor revisions possible",
+      "vintage": "Not available via FRED CSV"
+    },
+    "T10YIE": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Real-time",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "DGS10": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "DGS2": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "DGS5": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "DGS30": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "DGS3MO": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "T10Y2Y": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    },
+    "T10Y3M": {
+      "pit": "PIT_NATIVE",
+      "lag": "0",
+      "publication": "Same day",
+      "revision": "None",
+      "vintage": "Not needed"
+    }
+  },
+  "cpi_specific": {
+    "vintage_available": false,
+    "revision_history": "CPIAUCSL is occasionally revised but revisions are minor for historical values",
+    "safe_lag": "Use observation_date + 45 days as effective publication date",
+    "forward_fill": "Monthly CPI forward-filled to daily using last known value",
+    "weekend_handling": "FRED reports business-day observations; weekend dates use Friday value"
+  },
+  "overall_assessment": "ALL_SERIES_PIT_COMPLIANT"
+}

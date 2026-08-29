@@ -1,0 +1,169 @@
+{
+  "total_symbols_audited": 119,
+  "symbols_with_no_gaps": 119,
+  "symbols_with_gaps": 0,
+  "symbols_with_null_close": 0,
+  "avg_missing_pct": 0.0,
+  "details": [
+    {
+      "symbol": "AAPL",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ABBV",
+      "total_rows": 3429,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ABT",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ACN",
+      "total_rows": 6309,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ADBE",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ADI",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "ADP",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "AFL",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "AIG",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "AMZN",
+      "total_rows": 7362,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "AON",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "APD",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "AVGO",
+      "total_rows": 4286,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "BAC",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "BDX",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "BRK-B",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "BSX",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "BXP",
+      "total_rows": 7344,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "CAG",
+      "total_rows": 7546,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    },
+    {
+      "symbol": "CAT",
+      "total_rows": 7547,
+      "null_close": 0,
+      "null_volume": 0,
+      "close_missing_pct": 0.0,
+      "date_gaps": 0
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "datasets": {
+    "ORBIT_DS-EXP-100": {
+      "source": "Yahoo Finance Chart API",
+      "retrieval_date": "Pre-existing",
+      "coverage": "1996-08-21 to 2026-08-20",
+      "frequency": "daily",
+      "units": "USD (adjusted close)",
+      "timezone": "US/Eastern",
+      "revision_policy": "None (historical data frozen)",
+      "pit_classification": "PIT_NATIVE",
+      "license": "Yahoo Finance Terms of Service"
+    },
+    "VIXCLS": {
+      "source": "FRED (Federal Reserve Bank of St. Louis)",
+      "url": "https://fred.stlouisfed.org/series/VIXCLS",
+      "coverage": "1990-01-02 to present",
+      "frequency": "daily",
+      "units": "Index level",
+      "timezone": "US/Central",
+      "revision_policy": "None",
+      "pit_classification": "PIT_NATIVE"
+    },
+    "SP500": {
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/SP500",
+      "coverage": "2013-01-07 to present (daily)",
+      "frequency": "daily",
+      "units": "Index level",
+      "pit_classification": "PIT_NATIVE"
+    },
+    "BAA10Y": {
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/BAA10Y",
+      "coverage": "1983-01-03 to present",
+      "frequency": "daily",
+      "units": "Percent",
+      "pit_classification": "PIT_NATIVE"
+    },
+    "FEDFUNDS": {
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/FEDFUNDS",
+      "coverage": "1954-07-01 to present",
+      "frequency": "monthly",
+      "units": "Percent",
+      "pit_classification": "PIT_NATIVE"
+    },
+    "CPIAUCSL": {
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "coverage": "1947-01-01 to present",
+      "frequency": "monthly",
+      "units": "Index (1982-1984=100)",
+      "pit_classification": "PIT_SAFE_WITH_LAG"
+    },
+    "T10YIE": {
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/T10YIE",
+      "coverage": "2003-01-02 to present",
+      "frequency": "daily",
+      "units": "Percent",
+      "pit_classification": "PIT_NATIVE"
+    }
+  }
+}

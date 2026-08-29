@@ -1,0 +1,46 @@
+{
+  "sequences_by_context": {
+    "context_20": {
+      "context_length": 20,
+      "horizon": 10,
+      "v2_sequences": {
+        "raw_sequences": 895237,
+        "per_symbol": 7523,
+        "effective_independent": 44762.0,
+        "overlap_ratio": 20.0
+      }
+    },
+    "context_50": {
+      "context_length": 50,
+      "horizon": 10,
+      "v2_sequences": {
+        "raw_sequences": 891667,
+        "per_symbol": 7493,
+        "effective_independent": 17833.0,
+        "overlap_ratio": 50.0
+      }
+    },
+    "context_100": {
+      "context_length": 100,
+      "horizon": 10,
+      "v2_sequences": {
+        "raw_sequences": 885717,
+        "per_symbol": 7443,
+        "effective_independent": 8857.0,
+        "overlap_ratio": 100.0
+      }
+    },
+    "context_250": {
+      "context_length": 250,
+      "horizon": 10,
+      "v2_sequences": {
+        "raw_sequences": 867867,
+        "per_symbol": 7293,
+        "effective_independent": 3471.0,
+        "overlap_ratio": 250.0
+      }
+    }
+  },
+  "recommended_context_range": "50-100",
+  "assessment": "MATERIALLY_IMPROVED"
+}

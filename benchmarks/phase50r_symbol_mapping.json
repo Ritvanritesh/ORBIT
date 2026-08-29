@@ -1,0 +1,719 @@
+{
+  "mappings": [
+    {
+      "symbol": "AAPL",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ABBV",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ABT",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ACN",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ADBE",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ADI",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ADP",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "AFL",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "AIG",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "AMZN",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "AON",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "APD",
+      "sector": "Materials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "AVGO",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "BAC",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "BDX",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "BRK-B",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "BSX",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "BXP",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CAG",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CAT",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CB",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CCI",
+      "sector": "Real Estate",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CE",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CHD",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CL",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CLX",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CMCSA",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CME",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CMS",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "COST",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CRM",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CSCO",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CSX",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "CVX",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "D",
+      "sector": "Utilities",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "DE",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "DHR",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "DIS",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "DUK",
+      "sector": "Utilities",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "EL",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "EMN",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "EMR",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "EOG",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "F",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "FDX",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "FIS",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "FOXA",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "GILD",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "GIS",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "GM",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "GOOGL",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "HD",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "HRL",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "HST",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ICE",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "INTC",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ISRG",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "JNJ",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "JPM",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "KIM",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "KO",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "LMT",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "LOW",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "LUMN",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MA",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MCD",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MCK",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MDLZ",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "META",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MOS",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MPC",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MRK",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "MSFT",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NFLX",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NKE",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NOC",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NSC",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NVDA",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "NWE",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "O",
+      "sector": "Real Estate",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PEG",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PEP",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PFE",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PG",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PLD",
+      "sector": "Real Estate",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PNC",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PNW",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PSA",
+      "sector": "Real Estate",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "PSX",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "RPM",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SBUX",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SCHW",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SHW",
+      "sector": "Materials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SJM",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SLB",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SO",
+      "sector": "Utilities",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SON",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SYK",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "SYY",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "T",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TFC",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TGT",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TMO",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TMUS",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TSLA",
+      "sector": "Consumer Discretionary",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "TXN",
+      "sector": "Information Technology",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "UNH",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "UNP",
+      "sector": "Industrials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "USB",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "V",
+      "sector": "Financials",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "VICI",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "VRTX",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "VZ",
+      "sector": "Communication Services",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "WMB",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "WMT",
+      "sector": "Consumer Staples",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "WY",
+      "sector": "Unknown",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "XEL",
+      "sector": "Utilities",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "XOM",
+      "sector": "Energy",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    },
+    {
+      "symbol": "ZTS",
+      "sector": "Health Care",
+      "source": "Yahoo Finance",
+      "ticker_changes": "None detected"
+    }
+  ],
+  "total": 119
+}

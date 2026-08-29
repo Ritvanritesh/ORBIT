@@ -1,0 +1,20 @@
+{
+  "v2_equity": {
+    "rows": 828010,
+    "symbols": 119,
+    "columns": 15,
+    "estimated_size_MB": 94.76
+  },
+  "macro_data": {
+    "series_count": 8,
+    "total_rows": 113116,
+    "estimated_size_MB": 1.73
+  },
+  "total_raw_MB": 96.48,
+  "recommendations": {
+    "raw_archive": "Store parquet files only",
+    "clean_dataset": "Single parquet per version",
+    "feature_store": "Generated on-demand",
+    "training_data": "Not permanently stored"
+  }
+}

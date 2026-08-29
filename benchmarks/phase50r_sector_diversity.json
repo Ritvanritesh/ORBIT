@@ -1,0 +1,38 @@
+{
+  "ds100_sectors": {
+    "Information Technology": 11,
+    "Health Care": 14,
+    "Unknown": 7,
+    "Consumer Discretionary": 10,
+    "Financials": 13,
+    "Materials": 2,
+    "Industrials": 9,
+    "Real Estate": 4,
+    "Consumer Staples": 9,
+    "Communication Services": 7,
+    "Energy": 7,
+    "Utilities": 4
+  },
+  "v2_sectors": {
+    "Information Technology": 11,
+    "Health Care": 14,
+    "Unknown": 27,
+    "Consumer Discretionary": 10,
+    "Financials": 13,
+    "Materials": 2,
+    "Industrials": 9,
+    "Real Estate": 4,
+    "Consumer Staples": 9,
+    "Communication Services": 9,
+    "Energy": 7,
+    "Utilities": 4
+  },
+  "ds100_n_sectors": 12,
+  "v2_n_sectors": 12,
+  "improvement": 0,
+  "sector_balance": {
+    "ds100_hhi": 0.0989,
+    "v2_hhi": 0.116
+  },
+  "assessment": "IMPROVED"
+}

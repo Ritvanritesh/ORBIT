@@ -1,0 +1,58 @@
+{
+  "dataset_name": "ORBIT_DATASET_V2",
+  "version": "2.0",
+  "created_utc": "2026-08-29T08:04:05.087617Z",
+  "universe": {
+    "total_symbols": 119,
+    "active_symbols": 119,
+    "possibly_delisted": 0,
+    "sectors_represented": 12,
+    "sector_distribution": {
+      "Information Technology": 11,
+      "Health Care": 14,
+      "Unknown": 27,
+      "Consumer Discretionary": 10,
+      "Financials": 13,
+      "Materials": 2,
+      "Industrials": 9,
+      "Real Estate": 4,
+      "Consumer Staples": 9,
+      "Communication Services": 9,
+      "Energy": 7,
+      "Utilities": 4
+    }
+  },
+  "temporal": {
+    "date_min": "1996-08-21",
+    "date_max": "2026-08-27",
+    "trading_days": 7552,
+    "years": 30.0
+  },
+  "macro_series": [
+    "DGS1",
+    "DGS10",
+    "DGS2",
+    "DGS30",
+    "DGS3MO",
+    "DGS5",
+    "T10Y2Y",
+    "T10Y3M"
+  ],
+  "pit_classifications": {
+    "VIX": "PIT_NATIVE",
+    "SP500": "PIT_NATIVE",
+    "BAA10Y": "PIT_NATIVE",
+    "FEDFUNDS": "PIT_NATIVE",
+    "CPIAUCSL": "PIT_SAFE_WITH_LAG",
+    "T10YIE": "PIT_NATIVE",
+    "DGS10": "PIT_NATIVE",
+    "DGS2": "PIT_NATIVE",
+    "DGS5": "PIT_NATIVE",
+    "DGS30": "PIT_NATIVE",
+    "DGS3MO": "PIT_NATIVE",
+    "T10Y2Y": "PIT_NATIVE",
+    "T10Y3M": "PIT_NATIVE"
+  },
+  "quality_gate": "GREEN",
+  "digest": "177e4503c2dabc2b33047b1b41a98b78"
+}

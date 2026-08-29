@@ -1,0 +1,13 @@
+{
+  "effective_sequences_context50": 17833.0,
+  "effective_observations": 18950.0,
+  "symbols": 119,
+  "temporal_years": 30.0,
+  "thresholds": {
+    "effective_sequences": 20000,
+    "effective_obs": 20000,
+    "symbols": 150,
+    "years": 15
+  },
+  "classification": "BORDERLINE"
+}

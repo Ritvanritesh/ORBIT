@@ -1,0 +1,17 @@
+{
+  "raw_observations": 828010,
+  "effective_observations": 18950.0,
+  "symbols": 119,
+  "temporal_years": 30.0,
+  "thresholds": {
+    "raw": 20000,
+    "effective": 5000,
+    "symbols": 50
+  },
+  "ratios": {
+    "raw": 41.4,
+    "effective": 3.79,
+    "symbols": 2.38
+  },
+  "classification": "READY"
+}

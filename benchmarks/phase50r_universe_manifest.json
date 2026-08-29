@@ -1,0 +1,965 @@
+{
+  "universe_name": "ORBIT_UNIVERSE_V2",
+  "symbols": [
+    {
+      "symbol": "AAPL",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ABBV",
+      "sector": "Health Care",
+      "start": "2013-01-02",
+      "end": "2026-08-20",
+      "rows": 3429,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ABT",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ACN",
+      "sector": "Information Technology",
+      "start": "2001-07-19",
+      "end": "2026-08-20",
+      "rows": 6309,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ADBE",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ADI",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ADP",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "AFL",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "AIG",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "AMZN",
+      "sector": "Consumer Discretionary",
+      "start": "1997-05-15",
+      "end": "2026-08-20",
+      "rows": 7362,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "AON",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "APD",
+      "sector": "Materials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "AVGO",
+      "sector": "Information Technology",
+      "start": "2009-08-06",
+      "end": "2026-08-20",
+      "rows": 4286,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "BAC",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "BDX",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "BRK-B",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "BSX",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "BXP",
+      "sector": "Unknown",
+      "start": "1997-06-18",
+      "end": "2026-08-27",
+      "rows": 7344,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CAG",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CAT",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CB",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CCI",
+      "sector": "Real Estate",
+      "start": "1998-08-18",
+      "end": "2026-08-20",
+      "rows": 7045,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CE",
+      "sector": "Unknown",
+      "start": "2005-01-21",
+      "end": "2026-08-27",
+      "rows": 5434,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CHD",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CL",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CLX",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CMCSA",
+      "sector": "Communication Services",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CME",
+      "sector": "Financials",
+      "start": "2002-12-06",
+      "end": "2026-08-20",
+      "rows": 5963,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CMS",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "COST",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CRM",
+      "sector": "Information Technology",
+      "start": "2004-06-23",
+      "end": "2026-08-20",
+      "rows": 5576,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CSCO",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CSX",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "CVX",
+      "sector": "Energy",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "D",
+      "sector": "Utilities",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "DE",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "DHR",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "DIS",
+      "sector": "Communication Services",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "DUK",
+      "sector": "Utilities",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "EL",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "EMN",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "EMR",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "EOG",
+      "sector": "Energy",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "F",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "FDX",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "FIS",
+      "sector": "Unknown",
+      "start": "2001-06-20",
+      "end": "2026-08-20",
+      "rows": 6329,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "FOXA",
+      "sector": "Communication Services",
+      "start": "2019-03-12",
+      "end": "2026-08-27",
+      "rows": 1877,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "GILD",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "GIS",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "GM",
+      "sector": "Consumer Discretionary",
+      "start": "2010-11-18",
+      "end": "2026-08-20",
+      "rows": 3961,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "GOOGL",
+      "sector": "Communication Services",
+      "start": "2004-08-19",
+      "end": "2026-08-20",
+      "rows": 5536,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "HD",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "HRL",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "HST",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ICE",
+      "sector": "Financials",
+      "start": "2005-11-16",
+      "end": "2026-08-20",
+      "rows": 5221,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "INTC",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ISRG",
+      "sector": "Health Care",
+      "start": "2000-06-16",
+      "end": "2026-08-20",
+      "rows": 6583,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "JNJ",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "JPM",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "KIM",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "KO",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "LMT",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "LOW",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "LUMN",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MA",
+      "sector": "Financials",
+      "start": "2006-05-25",
+      "end": "2026-08-20",
+      "rows": 5091,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MCD",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MCK",
+      "sector": "Unknown",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MDLZ",
+      "sector": "Consumer Staples",
+      "start": "2001-06-13",
+      "end": "2026-08-20",
+      "rows": 6334,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "META",
+      "sector": "Communication Services",
+      "start": "2012-05-18",
+      "end": "2026-08-20",
+      "rows": 3584,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MOS",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MPC",
+      "sector": "Energy",
+      "start": "2011-06-24",
+      "end": "2026-08-20",
+      "rows": 3811,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MRK",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "MSFT",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NFLX",
+      "sector": "Communication Services",
+      "start": "2002-05-23",
+      "end": "2026-08-20",
+      "rows": 6100,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NKE",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NOC",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NSC",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NVDA",
+      "sector": "Information Technology",
+      "start": "1999-01-22",
+      "end": "2026-08-20",
+      "rows": 6937,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "NWE",
+      "sector": "Unknown",
+      "start": "2007-12-28",
+      "end": "2026-08-27",
+      "rows": 4695,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "O",
+      "sector": "Real Estate",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PEG",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PEP",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PFE",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PG",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PLD",
+      "sector": "Real Estate",
+      "start": "1997-11-21",
+      "end": "2026-08-20",
+      "rows": 7229,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PNC",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PNW",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PSA",
+      "sector": "Real Estate",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "PSX",
+      "sector": "Energy",
+      "start": "2012-04-12",
+      "end": "2026-08-20",
+      "rows": 3610,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "RPM",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SBUX",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SCHW",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SHW",
+      "sector": "Materials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SJM",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SLB",
+      "sector": "Energy",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SO",
+      "sector": "Utilities",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SON",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SYK",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "SYY",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "T",
+      "sector": "Communication Services",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TFC",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TGT",
+      "sector": "Consumer Discretionary",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TMO",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TMUS",
+      "sector": "Communication Services",
+      "start": "2007-04-19",
+      "end": "2026-08-27",
+      "rows": 4871,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TSLA",
+      "sector": "Consumer Discretionary",
+      "start": "2010-06-29",
+      "end": "2026-08-20",
+      "rows": 4061,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "TXN",
+      "sector": "Information Technology",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "UNH",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "UNP",
+      "sector": "Industrials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "USB",
+      "sector": "Financials",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "V",
+      "sector": "Financials",
+      "start": "2008-03-19",
+      "end": "2026-08-20",
+      "rows": 4635,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "VICI",
+      "sector": "Unknown",
+      "start": "2018-01-02",
+      "end": "2026-08-27",
+      "rows": 2175,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "VRTX",
+      "sector": "Health Care",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "VZ",
+      "sector": "Communication Services",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "WMB",
+      "sector": "Energy",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "WMT",
+      "sector": "Consumer Staples",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "WY",
+      "sector": "Unknown",
+      "start": "1996-08-29",
+      "end": "2026-08-27",
+      "rows": 7546,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "XEL",
+      "sector": "Utilities",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "XOM",
+      "sector": "Energy",
+      "start": "1996-08-21",
+      "end": "2026-08-20",
+      "rows": 7547,
+      "status": "ACTIVE"
+    },
+    {
+      "symbol": "ZTS",
+      "sector": "Health Care",
+      "start": "2013-02-01",
+      "end": "2026-08-20",
+      "rows": 3408,
+      "status": "ACTIVE"
+    }
+  ],
+  "construction_methodology": {
+    "base": "DS-EXP-100 (97 symbols, 1996-2026)",
+    "expansion": "Additional symbols from Yahoo Finance for sector diversification",
+    "survivorship_handling": "Current-active universe with possibly-delisted symbols flagged",
+    "sector_classification": "GICS approximate (static mapping)",
+    "inclusion_criteria": "Daily data available from Yahoo Finance, 5+ years coverage preferred",
+    "exclusion_criteria": "None (all available data included)"
+  }
+}

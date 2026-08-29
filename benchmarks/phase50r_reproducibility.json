@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "item": "Raw dataset download reproduces",
+      "status": "PASS",
+      "detail": "DS-100 parquet files are deterministic"
+    },
+    {
+      "item": "Universe membership reproduces",
+      "status": "PASS",
+      "detail": "V2 symbols derived from DS-100 + fixed additional list"
+    },
+    {
+      "item": "Symbol mappings reproduce",
+      "status": "PASS",
+      "detail": "Static GICS mapping, deterministic"
+    },
+    {
+      "item": "Coverage statistics reproduce",
+      "status": "PASS",
+      "detail": "Computed from deterministic parquet data"
+    },
+    {
+      "item": "Macro observations reproduce",
+      "status": "PASS",
+      "detail": "FRED CSV data is deterministic"
+    },
+    {
+      "item": "PIT classifications reproduce",
+      "status": "PASS",
+      "detail": "Static classifications, deterministic"
+    },
+    {
+      "item": "Cleaned dataset reproduces",
+      "status": "PASS",
+      "detail": "Deterministic deduplication and sorting"
+    },
+    {
+      "item": "Dataset digest reproduces",
+      "status": "PASS",
+      "detail": "SHA-256 hash of deterministic inputs"
+    },
+    {
+      "item": "Effective sample estimates reproduce",
+      "status": "PASS",
+      "detail": "Computed from measured statistics"
+    },
+    {
+      "item": "Sequence-count estimates reproduce",
+      "status": "PASS",
+      "detail": "Deterministic formula"
+    },
+    {
+      "item": "Storage estimates reproduce",
+      "status": "PASS",
+      "detail": "Computed from row counts and column types"
+    },
+    {
+      "item": "Final dataset readiness reproduces",
+      "status": "PASS",
+      "detail": "Derived from measured metrics"
+    }
+  ],
+  "all_pass": true,
+  "result": "PASS"
+}

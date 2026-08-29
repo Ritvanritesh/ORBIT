@@ -1,0 +1,189 @@
+{
+  "total_issues_detected": 191,
+  "large_price_moves": 4,
+  "volume_spikes": 187,
+  "issues_sample": [
+    {
+      "symbol": "AAPL",
+      "date": "2000-09-29",
+      "return_pct": -51.9,
+      "type": "LARGE_PRICE_MOVE"
+    },
+    {
+      "symbol": "AAPL",
+      "date": "1997-08-06",
+      "volume_ratio": 11.3,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AAPL",
+      "date": "1997-08-07",
+      "volume_ratio": 10.2,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AAPL",
+      "date": "2000-09-29",
+      "volume_ratio": 20.1,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ABBV",
+      "date": "2014-10-15",
+      "volume_ratio": 16.9,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ABBV",
+      "date": "2019-06-25",
+      "volume_ratio": 12.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2002-05-17",
+      "volume_ratio": 11.1,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2009-08-31",
+      "volume_ratio": 22.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2010-06-25",
+      "volume_ratio": 17.6,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2011-07-05",
+      "volume_ratio": 29.7,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2026-03-20",
+      "volume_ratio": 14.7,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ACN",
+      "date": "2026-06-18",
+      "volume_ratio": 13.8,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "1997-03-19",
+      "volume_ratio": 10.1,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "1997-05-05",
+      "volume_ratio": 13.9,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "1997-06-19",
+      "volume_ratio": 16.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "1998-03-27",
+      "volume_ratio": 15.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "2010-09-22",
+      "volume_ratio": 19.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADBE",
+      "date": "2010-10-07",
+      "volume_ratio": 11.9,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADP",
+      "date": "2003-03-13",
+      "volume_ratio": 13.2,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "ADP",
+      "date": "2017-07-27",
+      "volume_ratio": 12.6,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "1999-05-27",
+      "volume_ratio": 11.1,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-01-22",
+      "volume_ratio": 21.7,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-01-23",
+      "volume_ratio": 16.6,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-01-26",
+      "volume_ratio": 12.5,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-01-27",
+      "volume_ratio": 11.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-02-06",
+      "volume_ratio": 10.6,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AFL",
+      "date": "2009-03-18",
+      "volume_ratio": 10.4,
+      "type": "VOLUME_SPIKE"
+    },
+    {
+      "symbol": "AIG",
+      "date": "2008-09-15",
+      "return_pct": -60.8,
+      "type": "LARGE_PRICE_MOVE"
+    },
+    {
+      "symbol": "AIG",
+      "date": "2009-03-16",
+      "return_pct": 66.0,
+      "type": "LARGE_PRICE_MOVE"
+    },
+    {
+      "symbol": "AIG",
+      "date": "2009-08-05",
+      "return_pct": 62.7,
+      "type": "LARGE_PRICE_MOVE"
+    }
+  ],
+  "assessment": "SIGNIFICANT_REVIEW_NEEDED",
+  "recommendation": "Apply adjusted close for label computation; use raw close for feature stability where appropriate"
+}
