@@ -1,0 +1,34 @@
+{
+  "name": "ORBIT_DATASET_TARGET_ADVANCED",
+  "description": "Dataset for serious sequence-model research (TCN/Transformer)",
+  "specification": {
+    "symbols": 300,
+    "historical_years": 20,
+    "sampling_frequency": "daily",
+    "estimated_observations": 1512000,
+    "estimated_effective_observations": 12284.0,
+    "feature_categories": [
+      "price_technical",
+      "yield_curve",
+      "macro",
+      "market_regime",
+      "sector",
+      "cross_sectional"
+    ],
+    "macro_datasets": "ALL_PRIORITY_1_AND_2_DATASETS",
+    "pit_requirements": "All features must be PIT_NATIVE or PIT_SAFE_WITH_LAG or VINTAGE_REQUIRED with proper vintage snapshots",
+    "survivorship_requirements": "CRSP-based historically valid universe with delistings, sector changes, market-cap evolution",
+    "minimum_effective_sample_size": 20000,
+    "storage_estimate_GB": 50,
+    "compute_requirements": "GPU required for TCN and Transformer training"
+  },
+  "supported_models": [
+    "Ridge",
+    "ElasticNet",
+    "HGB",
+    "LightGBM",
+    "MLP",
+    "TCN",
+    "Transformer"
+  ]
+}

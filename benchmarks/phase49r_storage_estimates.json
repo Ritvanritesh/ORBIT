@@ -1,0 +1,47 @@
+{
+  "current": {
+    "ds_050_parquet_MB": 7.45,
+    "ds_100_parquet_MB": 14.56,
+    "fred_parquet_MB": 0.3,
+    "total_raw_MB": 22.31
+  },
+  "estimated_by_scenario": {
+    "minimum_50sym_10yr": {
+      "raw_archive_MB": 13.0,
+      "clean_dataset_MB": 19.0,
+      "feature_store_MB": 24.0,
+      "training_matrices_MB": 24.0,
+      "experiment_artifacts_MB": 500,
+      "total_estimated_MB": "2000",
+      "total_estimated_GB": "~2"
+    },
+    "target_150sym_15yr": {
+      "raw_archive_MB": 61.0,
+      "clean_dataset_MB": 87.0,
+      "feature_store_MB": 108.0,
+      "training_matrices_MB": 108.0,
+      "sequence_tensors_MB": 8583.0,
+      "experiment_artifacts_MB": 2000,
+      "total_estimated_MB": "15000",
+      "total_estimated_GB": "~15"
+    },
+    "ideal_300sym_20yr": {
+      "raw_archive_MB": 161.0,
+      "clean_dataset_MB": 231.0,
+      "feature_store_MB": 288.0,
+      "training_matrices_MB": 288.0,
+      "sequence_tensors_MB": 34332.0,
+      "experiment_artifacts_MB": 5000,
+      "total_estimated_MB": "50000",
+      "total_estimated_GB": "~50"
+    }
+  },
+  "recommendations": {
+    "raw_archive": "Store only parquet files. ~200 bytes per row. Delete intermediate CSV.",
+    "clean_dataset": "Single parquet per universe. ~100 bytes per row after cleaning.",
+    "feature_store": "Float32 features. ~200 bytes per row for 50 features.",
+    "training_data": "Float32 matrices. Generated on-demand, not permanently stored.",
+    "sequence_tensors": "Float32. Only generate for active experiments.",
+    "experiment_artifacts": "JSON + models. Keep only successful runs."
+  }
+}

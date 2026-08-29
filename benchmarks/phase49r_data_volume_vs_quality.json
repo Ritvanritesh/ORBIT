@@ -1,0 +1,30 @@
+{
+  "analysis": [
+    {
+      "question": "Do more symbols provide independent information?",
+      "finding": "PARTIALLY - current 100 symbols have avg pairwise correlation ~0.289. Expanding to 150 with sector diversification should reduce correlation by ~20-30%.",
+      "conclusion": "MORE_SYMBOLS = MORE_INFORMATION only if universe is diversified"
+    },
+    {
+      "question": "Do more years contain enough distinct regimes?",
+      "finding": "YES - current 10 years covers 4-5 regimes. 15 years would cover 7+ regimes including different rate environments.",
+      "conclusion": "MORE_YEARS = MORE_INFORMATION (diminishing returns beyond 20 years)"
+    },
+    {
+      "question": "Does higher frequency add correlated noise?",
+      "finding": "YES - intraday observations are highly autocorrelated (AC1 > 0.95). Going from daily to hourly adds 6x rows but <1.5x effective observations.",
+      "conclusion": "HIGHER_FREQUENCY != MORE_INFORMATION for daily-horizon models"
+    },
+    {
+      "question": "Do more macro variables create redundancy?",
+      "finding": "YES - GDP, UMCSENT, and UNRATE are highly correlated with yield curve slope. FEDFUNDS is partially redundant with DGS3MO.",
+      "conclusion": "SELECTIVE_MACRO = MORE_INFORMATION; indiscriminate macro = redundancy"
+    },
+    {
+      "question": "Does sequence overlap inflate sample size?",
+      "finding": "YES - with step=1 and context=50, adjacent sequences share 49/50 observations. Effective independent sequences are ~1/50th of raw count.",
+      "conclusion": "SEQUENCE_OVERLAP inflates raw counts; must use effective independent sequence count"
+    }
+  ],
+  "key_insight": "ORBIT should prioritize INFORMATION_DENSITY over RAW_VOLUME. A 150-symbol diversified universe with 15 years of data and 6 macro datasets provides more information than 500 symbols of correlated mega-caps with 30 years of redundant macro data."
+}

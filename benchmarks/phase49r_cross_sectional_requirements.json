@@ -1,0 +1,24 @@
+{
+  "current_symbols": 97,
+  "avg_cross_sectional_correlation": 0.2893,
+  "max_pairwise_correlation": 0.6591,
+  "assessment": "MODERATE",
+  "recommendations": {
+    "minimum": {
+      "symbols": 50,
+      "justification": "Current DS-050 provides adequate cross-section for linear/tree models"
+    },
+    "target": {
+      "symbols": 150,
+      "justification": "Diversified across sectors, market caps, and styles to reduce correlation and improve generalization",
+      "requirements": "Must include small/mid-cap, sector-diversified, delisted-inclusive universe"
+    },
+    "ideal": {
+      "symbols": 300,
+      "justification": "Broad US equity coverage with sufficient diversity for sequence model cross-sectional attention",
+      "requirements": "Historically valid universe with delistings, sector changes, and market-cap evolution"
+    }
+  },
+  "sector_diversity_requirement": "At least 8 GICS sectors represented with >= 10 symbols each in target universe",
+  "market_cap_diversity_requirement": "Include mega, large, mid, and small-cap to avoid pure correlation cluster"
+}

@@ -1,0 +1,72 @@
+{
+  "current_pit_status": {
+    "price_data": "PIT_NATIVE",
+    "treasury_yields": "PIT_NATIVE",
+    "volume": "PIT_NATIVE"
+  },
+  "candidate_datasets": {
+    "VIX": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Real-time market data, no revision"
+    },
+    "SP500_index": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Real-time market data, no revision"
+    },
+    "credit_spreads_BAA_AAA": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Daily market data, no revision"
+    },
+    "FEDFUNDS": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Published same day, no revision"
+    },
+    "CPIAUCSL": {
+      "classification": "PIT_SAFE_WITH_LAG",
+      "lag": "~30 days",
+      "notes": "Published monthly with ~30 day lag, rarely revised significantly"
+    },
+    "UNRATE": {
+      "classification": "PIT_SAFE_WITH_LAG",
+      "lag": "~30 days",
+      "notes": "Published monthly, minor revisions"
+    },
+    "INDPRO": {
+      "classification": "PIT_SAFE_WITH_LAG",
+      "lag": "~45 days",
+      "notes": "Published monthly with ~45 day lag, moderate revisions"
+    },
+    "GDP": {
+      "classification": "VINTAGE_REQUIRED",
+      "lag": "~60 days initial, multiple revisions",
+      "notes": "Heavily revised, requires vintage snapshots for proper PIT"
+    },
+    "T10YIE": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Real-time FRED series, no revision"
+    },
+    "sector_classification": {
+      "classification": "VINTAGE_REQUIRED",
+      "lag": "N/A",
+      "notes": "GICS classifications change over time; must use point-in-time classifications"
+    },
+    "market_cap": {
+      "classification": "PIT_NATIVE",
+      "lag": "0",
+      "notes": "Can be computed from price * shares; shares outstanding has lag"
+    },
+    "earnings": {
+      "classification": "VINTAGE_REQUIRED",
+      "lag": "quarterly + revisions",
+      "notes": "Heavily revised, requires vintage data for proper PIT"
+    }
+  },
+  "pit_rule": "No dataset may enter ORBIT predictive features without explicit PIT classification. PIT_NATIVE datasets may use current values. PIT_SAFE_WITH_LAG must use lagged publication dates. VINTAGE_REQUIRED must have vintage snapshots or be excluded.",
+  "current_compliance": "FULLY_COMPLIANT - all current features are PIT_NATIVE",
+  "proposed_additions_compliance": "ALL_PROPOSED_P1_DATASETS_ARE_PIT_NATIVE_OR_PIT_SAFE_WITH_LAG"
+}

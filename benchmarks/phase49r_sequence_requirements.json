@@ -1,0 +1,103 @@
+{
+  "sequence_lengths_evaluated": [
+    20,
+    50,
+    100,
+    250
+  ],
+  "horizon": 10,
+  "step_size": 1,
+  "requirements_by_context": {
+    "context_20": {
+      "context_length": 20,
+      "horizon": 10,
+      "current_100": {
+        "raw_sequences": 729246,
+        "per_symbol": 7518,
+        "effective_independent": 36462.0,
+        "overlap_ratio": 20.0
+      },
+      "target_150_15yr": {
+        "raw_sequences": 562650,
+        "per_symbol": 3751,
+        "effective_independent": 28132.0,
+        "overlap_ratio": 20.0
+      },
+      "ideal_300_20yr": {
+        "raw_sequences": 1503300,
+        "per_symbol": 5011,
+        "effective_independent": 75165.0,
+        "overlap_ratio": 20.0
+      }
+    },
+    "context_50": {
+      "context_length": 50,
+      "horizon": 10,
+      "current_100": {
+        "raw_sequences": 726336,
+        "per_symbol": 7488,
+        "effective_independent": 14527.0,
+        "overlap_ratio": 50.0
+      },
+      "target_150_15yr": {
+        "raw_sequences": 558150,
+        "per_symbol": 3721,
+        "effective_independent": 11163.0,
+        "overlap_ratio": 50.0
+      },
+      "ideal_300_20yr": {
+        "raw_sequences": 1494300,
+        "per_symbol": 4981,
+        "effective_independent": 29886.0,
+        "overlap_ratio": 50.0
+      }
+    },
+    "context_100": {
+      "context_length": 100,
+      "horizon": 10,
+      "current_100": {
+        "raw_sequences": 721486,
+        "per_symbol": 7438,
+        "effective_independent": 7215.0,
+        "overlap_ratio": 100.0
+      },
+      "target_150_15yr": {
+        "raw_sequences": 550650,
+        "per_symbol": 3671,
+        "effective_independent": 5506.0,
+        "overlap_ratio": 100.0
+      },
+      "ideal_300_20yr": {
+        "raw_sequences": 1479300,
+        "per_symbol": 4931,
+        "effective_independent": 14793.0,
+        "overlap_ratio": 100.0
+      }
+    },
+    "context_250": {
+      "context_length": 250,
+      "horizon": 10,
+      "current_100": {
+        "raw_sequences": 706936,
+        "per_symbol": 7288,
+        "effective_independent": 2828.0,
+        "overlap_ratio": 250.0
+      },
+      "target_150_15yr": {
+        "raw_sequences": 528150,
+        "per_symbol": 3521,
+        "effective_independent": 2113.0,
+        "overlap_ratio": 250.0
+      },
+      "ideal_300_20yr": {
+        "raw_sequences": 1434300,
+        "per_symbol": 4781,
+        "effective_independent": 5737.0,
+        "overlap_ratio": 250.0
+      }
+    }
+  },
+  "recommended_context_range": "50-100 periods",
+  "justification": "Context=50 captures ~2.5 months of daily data, sufficient for yield-curve regime shifts. Context=100 captures ~5 months. Context=250 is likely excessive for regime learning and dramatically reduces effective sequences.",
+  "sequence_overlap_warning": "With step=1, adjacent sequences share (context_len - 1) observations. Effective independent sequences are estimated at raw_count / overlap_ratio."
+}

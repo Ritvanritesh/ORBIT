@@ -1,0 +1,149 @@
+{
+  "scenario_a_minimum": {
+    "name": "MINIMUM",
+    "description": "Smallest expansion that enables additional model research beyond current Ridge",
+    "symbols": 50,
+    "years": 10,
+    "frequency": "daily",
+    "estimated_rows": 126000,
+    "estimated_effective_observations": 32728.0,
+    "supporting_datasets": [
+      "VIX",
+      "SP500",
+      "credit_spreads"
+    ],
+    "macro_datasets": [
+      "FEDFUNDS",
+      "CPIAUCSL"
+    ],
+    "storage_GB": 2,
+    "compute": "CPU sufficient for all model classes except Transformer",
+    "model_classes_supported": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM",
+      "MLP (small)"
+    ],
+    "not_sufficient_for": [
+      "TCN",
+      "Transformer"
+    ],
+    "timeline_weeks": 4,
+    "cost_estimate": "FREE (FRED + Yahoo Finance public data)"
+  },
+  "scenario_b_practical": {
+    "name": "PRACTICAL",
+    "description": "Realistic dataset that ORBIT can acquire and maintain with reasonable effort",
+    "symbols": 150,
+    "years": 15,
+    "frequency": "daily",
+    "estimated_rows": 567000,
+    "estimated_effective_observations": 9138.0,
+    "supporting_datasets": [
+      "VIX",
+      "SP500",
+      "credit_spreads",
+      "sector_indices"
+    ],
+    "macro_datasets": [
+      "FEDFUNDS",
+      "CPIAUCSL",
+      "UNRATE",
+      "T10YIE"
+    ],
+    "storage_GB": 15,
+    "compute": "CPU sufficient for all except Transformer; GPU recommended for TCN",
+    "model_classes_supported": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM",
+      "MLP",
+      "TCN (small)"
+    ],
+    "not_sufficient_for": [
+      "Transformer (serious exploration)"
+    ],
+    "timeline_weeks": 8,
+    "cost_estimate": "FREE (public data sources)"
+  },
+  "scenario_c_advanced": {
+    "name": "ADVANCED_MODEL_READY",
+    "description": "Dataset designed specifically for serious MLP/TCN/Transformer exploration",
+    "symbols": 250,
+    "years": 18,
+    "frequency": "daily",
+    "estimated_rows": 1134000,
+    "estimated_effective_observations": 8599.0,
+    "supporting_datasets": [
+      "VIX",
+      "SP500",
+      "credit_spreads",
+      "sector_indices",
+      "market_breadth"
+    ],
+    "macro_datasets": [
+      "FEDFUNDS",
+      "CPIAUCSL",
+      "UNRATE",
+      "T10YIE",
+      "INDPRO"
+    ],
+    "storage_GB": 35,
+    "compute": "GPU required for TCN and Transformer",
+    "model_classes_supported": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM",
+      "MLP",
+      "TCN",
+      "Transformer (small)"
+    ],
+    "not_sufficient_for": [
+      "Transformer (serious exploration with large context)"
+    ],
+    "timeline_weeks": 12,
+    "cost_estimate": "FREE (public data) + ~$50/month GPU compute"
+  },
+  "scenario_d_ideal": {
+    "name": "IDEAL",
+    "description": "Long-term target for mature ORBIT research system",
+    "symbols": 300,
+    "years": 20,
+    "frequency": "daily",
+    "estimated_rows": 1512000,
+    "estimated_effective_observations": 12284.0,
+    "supporting_datasets": [
+      "VIX",
+      "SP500",
+      "credit_spreads",
+      "sector_indices",
+      "market_breadth",
+      "options_skew"
+    ],
+    "macro_datasets": [
+      "FEDFUNDS",
+      "CPIAUCSL",
+      "UNRATE",
+      "T10YIE",
+      "INDPRO",
+      "UMCSENT"
+    ],
+    "storage_GB": 50,
+    "compute": "GPU required for all deep models; distributed training for large Transformer",
+    "model_classes_supported": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM",
+      "MLP",
+      "TCN",
+      "Transformer"
+    ],
+    "not_sufficient_for": [],
+    "timeline_weeks": 20,
+    "cost_estimate": "FREE (public data) + ~$100/month GPU compute"
+  }
+}

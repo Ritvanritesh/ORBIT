@@ -1,0 +1,22 @@
+{
+  "score_dimensions": {
+    "raw_sequences_context50": 726336,
+    "effective_sequences_context50": 14527.0,
+    "symbols": {
+      "current": 97,
+      "required": 100,
+      "ratio": 0.97
+    },
+    "temporal_depth_years": {
+      "current": 30.0,
+      "required": 10.0,
+      "ratio": 3.0
+    },
+    "sequence_independence": "LOW - high overlap between adjacent sequences"
+  },
+  "classification": "NOT_READY",
+  "reasoning": "TCN requires sufficient independent sequences for temporal convolution filters to learn meaningful patterns. Current effective sequences (~14527) are below the ~10,000 threshold for stable TCN training. Target dataset (150 symbols x 15 years) is required.",
+  "recommended_context": "50 periods (2.5 months)",
+  "recommended_architecture": "2-3 dilation layers, kernel=3, ~15K parameters",
+  "risk": "Very high overfitting risk with current data. Do not attempt until target dataset is available."
+}

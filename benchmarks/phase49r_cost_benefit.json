@@ -1,0 +1,81 @@
+{
+  "expansions": [
+    {
+      "dataset": "Equity universe expansion (50 -> 150 symbols)",
+      "data_cost": "FREE",
+      "storage_cost": "~$1/month additional",
+      "preprocessing_complexity": "MODERATE - need survivorship bias handling, delisted securities",
+      "pit_complexity": "LOW - price data is PIT_NATIVE",
+      "expected_information_gain": "HIGH - diversification reduces correlation, improves generalization",
+      "model_capabilities_unlocked": "MLP, TCN with adequate data",
+      "information_gain_per_complexity": "HIGH",
+      "priority": "PRIORITY_1"
+    },
+    {
+      "dataset": "Historical depth expansion (10 -> 15 years)",
+      "data_cost": "FREE",
+      "storage_cost": "~$0.50/month additional",
+      "preprocessing_complexity": "LOW - same pipeline, more data",
+      "pit_complexity": "LOW - historical price data is PIT_NATIVE",
+      "expected_information_gain": "HIGH - more regimes, better generalization across market cycles",
+      "model_capabilities_unlocked": "Better regime detection, more effective sequences for TCN",
+      "information_gain_per_complexity": "HIGH",
+      "priority": "PRIORITY_1"
+    },
+    {
+      "dataset": "VIX + SP500 + Credit Spreads",
+      "data_cost": "FREE",
+      "storage_cost": "~$0.10/month",
+      "preprocessing_complexity": "LOW - simple time series, PIT_NATIVE",
+      "pit_complexity": "NONE - all PIT_NATIVE",
+      "expected_information_gain": "HIGH - regime indicators, fear gauge, credit conditions",
+      "model_capabilities_unlocked": "Regime-conditional features, improved macro context",
+      "information_gain_per_complexity": "VERY_HIGH",
+      "priority": "PRIORITY_1"
+    },
+    {
+      "dataset": "FEDFUNDS + CPI + T10YIE",
+      "data_cost": "FREE",
+      "storage_cost": "~$0.05/month",
+      "preprocessing_complexity": "LOW - monthly frequency, simple join",
+      "pit_complexity": "LOW - PIT_SAFE_WITH_LAG for CPI",
+      "expected_information_gain": "HIGH - monetary policy, inflation, real rates",
+      "model_capabilities_unlocked": "Real rate features, inflation regime conditioning",
+      "information_gain_per_complexity": "VERY_HIGH",
+      "priority": "PRIORITY_1"
+    },
+    {
+      "dataset": "Delisted securities + survivorship correction",
+      "data_cost": "MODERATE - requires CRSP or equivalent",
+      "storage_cost": "~$1/month",
+      "preprocessing_complexity": "HIGH - need to merge active + delisted, handle symbol changes",
+      "pit_complexity": "MODERATE - delisting dates must be point-in-time",
+      "expected_information_gain": "HIGH - removes 3-6% IC bias from survivorship",
+      "model_capabilities_unlocked": "Unbiased evaluation, valid IC measurement",
+      "information_gain_per_complexity": "MODERATE",
+      "priority": "PRIORITY_1"
+    },
+    {
+      "dataset": "Fundamental data (earnings, valuation)",
+      "data_cost": "MODERATE to HIGH - requires paid data",
+      "storage_cost": "~$2/month",
+      "preprocessing_complexity": "HIGH - quarterly data, point-in-time earnings dates, revisions",
+      "pit_complexity": "HIGH - VINTAGE_REQUIRED for earnings",
+      "expected_information_gain": "LOW_TO_MEDIUM - marginal for daily prediction horizons",
+      "model_capabilities_unlocked": "Value/growth factor features for longer horizons",
+      "information_gain_per_complexity": "LOW",
+      "priority": "PRIORITY_3"
+    },
+    {
+      "dataset": "Alternative data (news, sentiment)",
+      "data_cost": "HIGH - requires API subscriptions",
+      "storage_cost": "~$5/month",
+      "preprocessing_complexity": "VERY HIGH - NLP pipeline, sentiment scoring",
+      "pit_complexity": "HIGH - publication timing critical",
+      "expected_information_gain": "UNCERTAIN - noisy, hard to validate",
+      "model_capabilities_unlocked": "Sentiment features, event-driven signals",
+      "information_gain_per_complexity": "LOW",
+      "priority": "REJECT"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "methodology": "Venables-Ripley autocorrelation correction + cross-sectional correlation adjustment",
+  "measured_autocorrelation": -0.0238,
+  "measured_cross_sectional_correlation": 0.2893,
+  "scenarios": {
+    "current_050": {
+      "raw_rows": 349374,
+      "symbols": 50,
+      "trading_days_per_symbol": 6987,
+      "years": 30.0,
+      "avg_autocorrelation": -0.0238,
+      "avg_cross_sectional_correlation": 0.2893,
+      "effective_temporal": 7328.0,
+      "effective_cross_sectional": 16364.0,
+      "effective_total_estimate": 16364.0,
+      "effective_ratio": 0.0468
+    },
+    "current_100": {
+      "raw_rows": 680878,
+      "symbols": 97,
+      "trading_days_per_symbol": 7019,
+      "years": 30.0,
+      "avg_autocorrelation": -0.0238,
+      "avg_cross_sectional_correlation": 0.2893,
+      "effective_temporal": 7362.0,
+      "effective_cross_sectional": 16821.0,
+      "effective_total_estimate": 16821.0,
+      "effective_ratio": 0.0247
+    },
+    "target_150_15yr": {
+      "raw_rows": 567000,
+      "symbols": 150,
+      "trading_days_per_symbol": 3780,
+      "years": 15.0,
+      "avg_autocorrelation": -0.0238,
+      "avg_cross_sectional_correlation": 0.2893,
+      "effective_temporal": 3965.0,
+      "effective_cross_sectional": 9138.0,
+      "effective_total_estimate": 9138.0,
+      "effective_ratio": 0.0161
+    },
+    "ideal_300_20yr": {
+      "raw_rows": 1512000,
+      "symbols": 300,
+      "trading_days_per_symbol": 5040,
+      "years": 20.0,
+      "avg_autocorrelation": -0.0238,
+      "avg_cross_sectional_correlation": 0.2893,
+      "effective_temporal": 5286.0,
+      "effective_cross_sectional": 12284.0,
+      "effective_total_estimate": 12284.0,
+      "effective_ratio": 0.0081
+    }
+  },
+  "interpretation": "Financial time series exhibit significant autocorrelation (typical AC1=0.03-0.10) and cross-sectional correlation (typical 0.15-0.40), reducing effective independent observations by 40-80% from raw row counts"
+}

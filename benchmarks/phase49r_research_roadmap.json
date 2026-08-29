@@ -1,0 +1,87 @@
+{
+  "stage_1": {
+    "name": "Survivorship Correction + Macro Enrichment",
+    "timeline": "Weeks 1-4",
+    "actions": [
+      "Acquire delisted securities data for current 97 symbols",
+      "Merge active + delisted into survivorship-free universe",
+      "Download VIX, SP500, credit_spreads (BAA-AAA) from FRED",
+      "Download FEDFUNDS, CPIAUCSL, T10YIE from FRED",
+      "Re-run CAND-RIDGE-FS001-001 confirmation on corrected universe",
+      "Measure survivorship bias impact on IC"
+    ],
+    "purpose": "Remove survivorship bias and enrich macro context",
+    "dataset_result": "50-100 symbols, 10 years, survivorship-corrected, 6 macro series",
+    "model_classes": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM"
+    ]
+  },
+  "stage_2": {
+    "name": "Universe Expansion + Historical Depth",
+    "timeline": "Weeks 5-12",
+    "actions": [
+      "Expand universe to 150 symbols across 8+ GICS sectors",
+      "Include delisted securities with delisting dates",
+      "Extend historical depth to 15 years (2011-2026)",
+      "Add sector indices and UNRATE",
+      "Validate data quality and PIT compliance",
+      "Benchmark all tree models on expanded dataset"
+    ],
+    "purpose": "Scaled benchmark with diversified universe",
+    "dataset_result": "150 symbols, 15 years, 10 macro/market series",
+    "model_classes": [
+      "Ridge",
+      "ElasticNet",
+      "HGB",
+      "LightGBM"
+    ]
+  },
+  "stage_3": {
+    "name": "MLP Readiness Gate",
+    "timeline": "Weeks 13-16",
+    "actions": [
+      "Verify effective sample size > 5000 for MLP",
+      "Benchmark small MLP (2 layers, <5K params)",
+      "Compare MLP vs LightGBM on expanded data",
+      "Assess whether nonlinearity improves over tree models"
+    ],
+    "purpose": "Evaluate whether MLP provides value over trees",
+    "dataset_result": "Same as Stage 2",
+    "model_classes": [
+      "MLP"
+    ]
+  },
+  "stage_4": {
+    "name": "TCN Readiness Gate",
+    "timeline": "Weeks 17-24",
+    "actions": [
+      "Verify effective sequences > 10,000 for TCN",
+      "Benchmark TCN with context=50 and context=100",
+      "Compare TCN vs MLP vs LightGBM",
+      "Assess whether temporal convolution adds value"
+    ],
+    "purpose": "Evaluate whether sequence models provide value",
+    "dataset_result": "Same as Stage 2",
+    "model_classes": [
+      "TCN"
+    ]
+  },
+  "stage_5": {
+    "name": "Transformer Readiness Gate",
+    "timeline": "Weeks 25+ (only if Stages 3-4 succeed)",
+    "actions": [
+      "Verify effective sequences > 20,000",
+      "Design minimal Transformer architecture",
+      "Benchmark Transformer vs TCN vs MLP",
+      "Assess whether attention mechanism provides value"
+    ],
+    "purpose": "Evaluate whether Transformer provides capability advantage",
+    "dataset_result": "May require Scenario C or D dataset",
+    "model_classes": [
+      "Transformer"
+    ]
+  }
+}

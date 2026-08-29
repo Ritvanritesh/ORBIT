@@ -1,0 +1,61 @@
+{
+  "current_coverage_years": 30.0,
+  "regime_coverage": {
+    "pre_gfc_bull_2003_2007": {
+      "trading_days": 1195,
+      "covered": true
+    },
+    "gfc_crisis_2007_2009": {
+      "trading_days": 378,
+      "covered": true
+    },
+    "post_gfc_recovery_2009_2013": {
+      "trading_days": 1198,
+      "covered": true
+    },
+    "taper_tantrum_2013": {
+      "trading_days": 170,
+      "covered": true
+    },
+    "bull_2014_2019": {
+      "trading_days": 1510,
+      "covered": true
+    },
+    "covid_crash_2020": {
+      "trading_days": 62,
+      "covered": true
+    },
+    "recovery_2020_2021": {
+      "trading_days": 423,
+      "covered": true
+    },
+    "inflation_high_rate_2022_2024": {
+      "trading_days": 753,
+      "covered": true
+    },
+    "rate_cut_cycle_2024_2026": {
+      "trading_days": 493,
+      "covered": true
+    }
+  },
+  "regimes_covered": 9,
+  "total_regimes_assessed": 9,
+  "recommendations": {
+    "minimum": {
+      "years": 10,
+      "justification": "Covers at least 2 full market cycles, adequate for linear and tree models"
+    },
+    "target": {
+      "years": 15,
+      "justification": "Covers 3+ distinct rate environments (low, rising, high), critical for yield-curve regime models"
+    },
+    "ideal": {
+      "years": 20,
+      "justification": "Full coverage of dot-com aftermath, GFC, zero-rate era, inflation era; sufficient for deep regime learning"
+    }
+  },
+  "minimum_regimes_required": 5,
+  "target_regimes_required": 7,
+  "ideal_regimes_required": 9,
+  "train_val_test_split_implication": "With 15 years: train=8yr, val=3yr, test=4yr gives meaningful temporal separation"
+}

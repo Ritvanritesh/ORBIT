@@ -1,0 +1,41 @@
+{
+  "model_to_data_matrix": {
+    "scenario_a_minimum_50sym_10yr": {
+      "Ridge": "READY",
+      "ElasticNet": "READY",
+      "HGB": "READY",
+      "LightGBM": "READY",
+      "MLP": "POSSIBLY_READY",
+      "TCN": "NOT_READY",
+      "Transformer": "NOT_READY"
+    },
+    "scenario_b_practical_150sym_15yr": {
+      "Ridge": "READY",
+      "ElasticNet": "READY",
+      "HGB": "READY",
+      "LightGBM": "READY",
+      "MLP": "READY",
+      "TCN": "POSSIBLY_READY",
+      "Transformer": "NOT_READY"
+    },
+    "scenario_c_advanced_250sym_18yr": {
+      "Ridge": "READY",
+      "ElasticNet": "READY",
+      "HGB": "READY",
+      "LightGBM": "READY",
+      "MLP": "READY",
+      "TCN": "READY",
+      "Transformer": "POSSIBLY_READY"
+    },
+    "scenario_d_ideal_300sym_20yr": {
+      "Ridge": "READY",
+      "ElasticNet": "READY",
+      "HGB": "READY",
+      "LightGBM": "READY",
+      "MLP": "READY",
+      "TCN": "READY",
+      "Transformer": "READY"
+    }
+  },
+  "interpretation": "Every model class is READY under the ideal scenario. Transformer only becomes READY under Scenario D. TCN requires at minimum Scenario B."
+}

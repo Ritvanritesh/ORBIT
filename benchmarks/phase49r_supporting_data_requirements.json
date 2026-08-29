@@ -1,0 +1,157 @@
+{
+  "price_technical": {
+    "current_status": "AVAILABLE",
+    "datasets": [
+      "OHLCV",
+      "adjusted_close",
+      "volume"
+    ],
+    "assessment": "SUFFICIENT for current models"
+  },
+  "market_data": {
+    "available": [
+      "treasury_yields_8_series"
+    ],
+    "missing": [
+      {
+        "name": "VIX",
+        "mechanism": "Market fear/volatility regime indicator",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "HIGH",
+        "redundancy": "LOW",
+        "priority": "PRIORITY_1",
+        "justification": "VIX level and VIX term structure are regime indicators that could improve yield-curve regime conditioning"
+      },
+      {
+        "name": "SP500_index",
+        "mechanism": "Broad market benchmark for relative returns",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "HIGH",
+        "redundancy": "MEDIUM (already have MKT_RET_20D from individual stocks)",
+        "priority": "PRIORITY_1",
+        "justification": "Enables proper market-beta and relative-strength features"
+      },
+      {
+        "name": "credit_spreads",
+        "mechanism": "Credit conditions indicator, recession predictor",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "HIGH",
+        "redundancy": "LOW",
+        "priority": "PRIORITY_1",
+        "justification": "BAA-AAA spread is leading recession indicator; complements yield curve"
+      },
+      {
+        "name": "sector_indices",
+        "mechanism": "Sector rotation, industry momentum",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "MEDIUM",
+        "redundancy": "MEDIUM (individual stock returns can approximate)",
+        "priority": "PRIORITY_2",
+        "justification": "Useful for sector-conditional features but individual stock data partially covers this"
+      },
+      {
+        "name": "market_breadth",
+        "mechanism": "Advance-decline, new highs-lows",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "LOW_TO_MEDIUM",
+        "redundancy": "HIGH (cross-sectional dispersion of stock returns approximates this)",
+        "priority": "PRIORITY_3",
+        "justification": "Marginal value above what cross-sectional stock data provides"
+      }
+    ]
+  },
+  "macro_data": {
+    "available": [
+      "fred_treasury_8_series"
+    ],
+    "missing": [
+      {
+        "name": "FEDFUNDS",
+        "mechanism": "Federal funds rate, monetary policy proxy",
+        "frequency": "monthly",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "HIGH",
+        "redundancy": "LOW (DGS3MO partially captures but FEDFUNFS is cleaner policy signal)",
+        "priority": "PRIORITY_1",
+        "justification": "Direct monetary policy rate; critical for rate-regime models"
+      },
+      {
+        "name": "CPIAUCSL",
+        "mechanism": "Inflation expectation, real rate computation",
+        "frequency": "monthly",
+        "pit_method": "PIT_SAFE_WITH_LAG",
+        "expected_value": "HIGH",
+        "redundancy": "LOW",
+        "priority": "PRIORITY_1",
+        "justification": "Enables real rate computation and inflation regime detection"
+      },
+      {
+        "name": "UNRATE",
+        "mechanism": "Economic cycle indicator",
+        "frequency": "monthly",
+        "pit_method": "PIT_SAFE_WITH_LAG",
+        "expected_value": "MEDIUM",
+        "redundancy": "MEDIUM (yield curve slope partially captures cycle)",
+        "priority": "PRIORITY_2",
+        "justification": "Useful for recession regime conditioning"
+      },
+      {
+        "name": "GDP",
+        "mechanism": "Economic growth indicator",
+        "frequency": "quarterly",
+        "pit_method": "VINTAGE_REQUIRED",
+        "expected_value": "LOW_TO_MEDIUM",
+        "redundancy": "HIGH (market data reacts before GDP released)",
+        "priority": "PRIORITY_3",
+        "justification": "Heavily revised, delayed publication, markets price in before release"
+      },
+      {
+        "name": "INDPRO",
+        "mechanism": "Industrial production, real economy proxy",
+        "frequency": "monthly",
+        "pit_method": "PIT_SAFE_WITH_LAG",
+        "expected_value": "MEDIUM",
+        "redundancy": "MEDIUM",
+        "priority": "PRIORITY_2",
+        "justification": "Real economy indicator with reasonable PIT implementation"
+      },
+      {
+        "name": "UMCSENT",
+        "mechanism": "Consumer sentiment, demand indicator",
+        "frequency": "monthly",
+        "pit_method": "PIT_SAFE_WITH_LAG",
+        "expected_value": "LOW_TO_MEDIUM",
+        "redundancy": "HIGH (VIX and market data proxy sentiment)",
+        "priority": "PRIORITY_3",
+        "justification": "Partially captured by existing market data"
+      },
+      {
+        "name": "T10YIE",
+        "mechanism": "10-year breakeven inflation expectation",
+        "frequency": "daily",
+        "pit_method": "PIT_NATIVE",
+        "expected_value": "HIGH",
+        "redundancy": "LOW",
+        "priority": "PRIORITY_1",
+        "justification": "Market-based inflation expectation; complements CPI and yield curve"
+      }
+    ]
+  },
+  "fundamental_data": {
+    "justification": "NOT_JUSTIFIED_FOR_CURRENT_PHASE",
+    "reasoning": "Fundamental data has publication lag, heavy revision, and low daily predictive power. ORBIT's yield-curve focus makes price/macro data more relevant. Fundamental data adds complexity without clear information gain for current hypothesis.",
+    "future_consideration": "May become relevant for longer-horizon models (H-60+)"
+  },
+  "alternative_data": {
+    "justification": "NOT_JUSTIFIED",
+    "reasoning": "News/sentiment data requires NLP pipeline, has high noise, and introduces look-ahead risk. Options data requires complex PIT handling. Not justified until simpler data sources are fully exploited."
+  },
+  "total_missing_high_priority": 4,
+  "total_missing_medium_priority": 3,
+  "total_missing_low_priority": 3
+}

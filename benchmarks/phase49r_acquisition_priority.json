@@ -1,0 +1,90 @@
+{
+  "priority_1_required": [
+    {
+      "item": "Survivorship-corrected universe (delisted securities)",
+      "reason": "Removes 3-6% IC bias; required for valid evaluation"
+    },
+    {
+      "item": "Universe expansion to 150 symbols (sector-diversified)",
+      "reason": "Reduces correlation, enables sequence models"
+    },
+    {
+      "item": "Historical depth to 15 years",
+      "reason": "More regimes, better generalization"
+    },
+    {
+      "item": "VIX index (daily)",
+      "reason": "Regime indicator, PIT_NATIVE, zero cost"
+    },
+    {
+      "item": "SP500 index (daily)",
+      "reason": "Market benchmark, relative returns, PIT_NATIVE"
+    },
+    {
+      "item": "Credit spreads BAA-AAA (daily)",
+      "reason": "Recession indicator, PIT_NATIVE"
+    },
+    {
+      "item": "FEDFUNDS (monthly)",
+      "reason": "Monetary policy rate, PIT_NATIVE"
+    },
+    {
+      "item": "CPI (monthly)",
+      "reason": "Inflation regime, PIT_SAFE_WITH_LAG"
+    },
+    {
+      "item": "T10YIE breakeven inflation (daily)",
+      "reason": "Market inflation expectation, PIT_NATIVE"
+    }
+  ],
+  "priority_2_useful": [
+    {
+      "item": "Sector indices (daily)",
+      "reason": "Sector rotation features; partially covered by individual stocks"
+    },
+    {
+      "item": "UNRATE (monthly)",
+      "reason": "Economic cycle; partially captured by yield curve slope"
+    },
+    {
+      "item": "INDPRO (monthly)",
+      "reason": "Real economy; moderate redundancy with market data"
+    },
+    {
+      "item": "Historical market-cap classifications",
+      "reason": "Size factor conditioning; adds complexity"
+    }
+  ],
+  "priority_3_future": [
+    {
+      "item": "Market breadth indicators",
+      "reason": "Marginal value above cross-sectional dispersion"
+    },
+    {
+      "item": "UMCSENT (monthly)",
+      "reason": "Partially captured by VIX and market data"
+    },
+    {
+      "item": "GDP (quarterly)",
+      "reason": "Heavily revised, VINTAGE_REQUIRED, markets price in early"
+    }
+  ],
+  "reject_not_justified": [
+    {
+      "item": "Fundamental data (earnings, valuation)",
+      "reason": "High complexity, low daily horizon value, requires paid data"
+    },
+    {
+      "item": "Alternative data (news, sentiment)",
+      "reason": "NLP pipeline required, noisy, look-ahead risk"
+    },
+    {
+      "item": "Options data",
+      "reason": "Complex PIT handling, marginal value for current models"
+    },
+    {
+      "item": "Intraday data (4h, 1h, 15m)",
+      "reason": "Microstructure noise for daily horizons, no information gain"
+    }
+  ]
+}

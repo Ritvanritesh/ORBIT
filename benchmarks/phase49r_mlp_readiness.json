@@ -1,0 +1,33 @@
+{
+  "score_dimensions": {
+    "raw_observations": {
+      "current": 680878,
+      "required": 20000,
+      "ratio": 34.04
+    },
+    "effective_observations": {
+      "current": 16821.0,
+      "required": 5000,
+      "ratio": 3.36
+    },
+    "symbols": {
+      "current": 97,
+      "required": 50,
+      "ratio": 1.94
+    },
+    "temporal_depth_years": {
+      "current": 30.0,
+      "required": 5.0,
+      "ratio": 6.0
+    },
+    "regime_diversity": {
+      "current": 9,
+      "required": 3,
+      "ratio": "SUFFICIENT"
+    }
+  },
+  "classification": "POSSIBLY_READY",
+  "reasoning": "Current data has sufficient rows and symbols for a small MLP experiment. Effective sample size is borderline. Recommended: proceed with simple MLP (2-3 layers, <10K params) on target dataset before attempting larger architectures.",
+  "recommended_architecture": "2-layer MLP, hidden=[64,32], ~2.5K parameters",
+  "risk": "Overfitting with current data if architecture exceeds ~10K parameters"
+}

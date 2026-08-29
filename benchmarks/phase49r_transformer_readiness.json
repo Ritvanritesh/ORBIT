@@ -1,0 +1,68 @@
+{
+  "score_dimensions": {
+    "raw_observations": {
+      "current": 680878,
+      "required_advanced": 100000,
+      "required_ideal": 500000
+    },
+    "effective_observations": {
+      "current": 16821.0,
+      "required_advanced": 20000,
+      "required_ideal": 100000
+    },
+    "symbols": {
+      "current": 97,
+      "required_advanced": 150,
+      "required_ideal": 300
+    },
+    "temporal_depth_years": {
+      "current": 30.0,
+      "required_advanced": 15,
+      "required_ideal": 20
+    },
+    "regime_diversity": {
+      "current": 9,
+      "required": 7
+    },
+    "sequence_count_context50": {
+      "current": 726336,
+      "required_advanced": 500000,
+      "required_ideal": 2000000
+    },
+    "sequence_independence": "LOW currently; IMPROVES with more symbols and years",
+    "parameter_count_estimate": "50K-500K for ORBIT-scale transformer",
+    "computational_feasibility": "Requires GPU for training; current CPU-only may be insufficient"
+  },
+  "current_scores": {
+    "raw_obs_ratio": 6.81,
+    "effective_obs_ratio": 0.84,
+    "symbols_ratio": 0.65,
+    "years_ratio": 2.0,
+    "aggregate": "NOT_READY"
+  },
+  "target_scores": {
+    "raw_obs_ratio": 5.67,
+    "effective_obs_ratio": 0.46,
+    "symbols_ratio": 1.0,
+    "years_ratio": 1.0,
+    "aggregate": "BORDERLINE"
+  },
+  "ideal_scores": {
+    "raw_obs_ratio": 3.02,
+    "effective_obs_ratio": 0.12,
+    "symbols_ratio": 1.0,
+    "years_ratio": 1.0,
+    "aggregate": "READY_FOR_SMALL_EXPERIMENT"
+  },
+  "classification": "NOT_READY",
+  "target_classification": "BORDERLINE",
+  "ideal_classification": "READY_FOR_SMALL_EXPERIMENT",
+  "reasoning": "Current data is far below Transformer requirements. Even the ideal scenario only reaches READY_FOR_SMALL_EXPERIMENT, not READY_FOR_SERIOUS_EXPLORATION. A Transformer may only proceed after MLP and TCN have been successfully benchmarked on expanded data, and the architecture demonstrates plausible capability advantage.",
+  "gate_conditions": [
+    "Target dataset acquired (150 symbols x 15 years minimum)",
+    "MLP successfully benchmarked and shows improvement with sequence models",
+    "TCN shows temporal convolution is beneficial",
+    "Architecture design is justified by specific capability need (e.g., long-range attention)",
+    "GPU compute available for training"
+  ]
+}

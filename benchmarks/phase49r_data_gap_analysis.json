@@ -1,0 +1,119 @@
+{
+  "missing_categories": [
+    "sector_classification",
+    "market_cap",
+    "shares_outstanding",
+    "delisted_securities",
+    "historical_constituents",
+    "earnings_data",
+    "valuation_metrics",
+    "options_data",
+    "sector_indices",
+    "vix_volatility",
+    "credit_spreads",
+    "inflation_data",
+    "unemployment_data",
+    "policy_rates",
+    "gdp_growth",
+    "financial_conditions_index",
+    "broad_market_indices",
+    "breadth_indicators"
+  ],
+  "coverage_gaps": {
+    "symbol_count_050": 50,
+    "symbol_count_100": 97,
+    "only_in_100_count": 47,
+    "min_rows_per_symbol": 3408,
+    "max_rows_per_symbol": 7547,
+    "median_rows": 7547,
+    "symbols_below_5000_rows": 9
+  },
+  "temporal_gaps": {
+    "missing_bull_market_pre_2008": true,
+    "missing_crisis_2008": false,
+    "missing_bull_2009_2020": false,
+    "missing_covid_crash": false,
+    "missing_high_rate_2022_2024": false,
+    "missing_inflation_2021_2023": false
+  },
+  "data_type_gaps": {
+    "fundamental_data": "NOT_AVAILABLE",
+    "options_data": "NOT_AVAILABLE",
+    "alternative_data": "NOT_AVAILABLE",
+    "sector_classification": "NOT_AVAILABLE",
+    "market_cap_history": "NOT_AVAILABLE",
+    "delisted_securities": "NOT_AVAILABLE"
+  },
+  "per_symbol_coverage": [
+    {
+      "symbol": "AAPL",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "ABT",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "ADBE",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "ADI",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "ADP",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "AFL",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "AIG",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "AON",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "APD",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    },
+    {
+      "symbol": "BAC",
+      "rows": 7547,
+      "date_min": "1996-08-21",
+      "date_max": "2026-08-20",
+      "trading_days": 7547
+    }
+  ]
+}

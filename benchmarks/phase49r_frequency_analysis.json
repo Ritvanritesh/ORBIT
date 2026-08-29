@@ -1,0 +1,53 @@
+{
+  "current_frequency": "daily",
+  "current_trading_days_per_year": 252.0,
+  "evaluation": {
+    "daily": {
+      "rows_per_year_per_symbol": 252,
+      "noise_level": "LOW_TO_MODERATE",
+      "pit_compatibility": "NATIVE",
+      "signal_half_life_compatibility": "EXCELLENT for H-5 to H-20",
+      "microstructure_noise": "MINIMAL at daily frequency",
+      "recommended": true,
+      "justification": "ORBIT H-5/H-10/H-20 horizons are optimally sampled at daily frequency. Higher frequency adds noise without information gain for these horizons."
+    },
+    "4_hour": {
+      "rows_per_year_per_symbol": 1008,
+      "noise_level": "MODERATE",
+      "pit_compatibility": "SAFE_WITH_LAG",
+      "signal_half_life_compatibility": "GOOD but sequence length increases 6x",
+      "microstructure_noise": "MODERATE intraday patterns",
+      "recommended": false,
+      "justification": "6x more rows but correlated intraday observations reduce effective sample size. Not justified until daily models are exhausted."
+    },
+    "hourly": {
+      "rows_per_year_per_symbol": 6048,
+      "noise_level": "HIGH",
+      "pit_compatibility": "SAFE_WITH_LAG",
+      "signal_half_life_compatibility": "MARGINAL for multi-day horizons",
+      "microstructure_noise": "HIGH intraday patterns, overnight gaps",
+      "recommended": false,
+      "justification": "Significant microstructure noise for daily-horizon prediction. Tripled storage and compute with minimal information gain."
+    },
+    "15_minute": {
+      "rows_per_year_per_symbol": 24192,
+      "noise_level": "VERY_HIGH",
+      "pit_compatibility": "REQUIRES_VINTAGE",
+      "signal_half_life_compatibility": "POOR for H-5+",
+      "microstructure_noise": "VERY HIGH bid-ask bounce, market microstructure",
+      "recommended": false,
+      "justification": "Extreme noise for ORBIT's prediction horizon. Requires minute-level PIT vintage data. Not scientifically justified."
+    },
+    "5_minute": {
+      "rows_per_year_per_symbol": 72576,
+      "noise_level": "EXTREME",
+      "pit_compatibility": "REQUIRES_VINTAGE",
+      "signal_half_life_compatibility": "UNSUITABLE for H-5+",
+      "microstructure_noise": "DOMINANT signal is noise",
+      "recommended": false,
+      "justification": "Pure microstructure noise for daily-horizon models. Storage and compute prohibitive. No information gain."
+    }
+  },
+  "recommendation": "DAILY",
+  "justification_summary": "Daily frequency is optimal for ORBIT's H-5/H-10/H-20 horizons. Higher frequencies add correlated noise without improving effective sample size. The marginal information from intraday data does not justify 6-290x storage/compute increase."
+}

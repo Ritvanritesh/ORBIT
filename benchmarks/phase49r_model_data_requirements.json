@@ -1,0 +1,43 @@
+{
+  "ridge_lasso_elasticnet": {
+    "min_rows": "500",
+    "min_symbols": "20",
+    "min_effective": "300",
+    "current_status": "READY",
+    "notes": "Linear models are data-efficient. Current data is sufficient."
+  },
+  "tree_models": {
+    "min_rows": "5000",
+    "min_symbols": "30",
+    "min_effective": "2000",
+    "current_status": "READY",
+    "notes": "Tree models handle moderate data well. Current data is sufficient for LightGBM/HGB."
+  },
+  "mlp": {
+    "min_rows": "20000",
+    "min_symbols": "50",
+    "min_effective": "5000",
+    "current_status": "POSSIBLY_READY",
+    "notes": "MLP with ~10K params needs ~10K independent examples. Current ESS is borderline. Target dataset would be sufficient.",
+    "parameter_estimate": "~5000-20000 parameters depending on architecture",
+    "data_to_param_ratio": "5-10x minimum recommended"
+  },
+  "tcn": {
+    "min_rows": "50000",
+    "min_symbols": "100",
+    "min_effective": "10000",
+    "current_status": "NOT_READY",
+    "notes": "TCN requires enough sequences for temporal convolution to learn. Current data provides ~200 effective sequences per symbol. Target dataset needed.",
+    "parameter_estimate": "~10000-50000 parameters",
+    "data_to_param_ratio": "10-20x minimum recommended"
+  },
+  "transformer": {
+    "min_rows": "100000",
+    "min_symbols": "150",
+    "min_effective": "20000",
+    "current_status": "NOT_READY",
+    "notes": "Transformer attention needs many independent sequences for stable attention patterns. Current data is far below requirement. Advanced dataset scenario needed.",
+    "parameter_estimate": "~50000-500000 parameters",
+    "data_to_param_ratio": "20-50x minimum recommended"
+  }
+}

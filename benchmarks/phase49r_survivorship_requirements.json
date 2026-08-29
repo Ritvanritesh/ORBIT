@@ -1,0 +1,45 @@
+{
+  "current_status": "POTENTIAL_BIAS",
+  "current_universe_construction": "DS-050 and DS-100 appear to use current-active symbols only",
+  "risk": "Symbols that delisted (bankruptcies, acquisitions, privatizations) are excluded, creating upward performance bias",
+  "requirements": {
+    "delisted_securities": {
+      "required": true,
+      "justification": "Must include delisted securities to avoid survivorship bias. Estimated 10-20% of historical universe may have delisted.",
+      "priority": "PRIORITY_1"
+    },
+    "historical_constituents": {
+      "required": true,
+      "justification": "Index membership changes over time; must use point-in-time constituents",
+      "priority": "PRIORITY_1"
+    },
+    "historical_sector_classification": {
+      "required": true,
+      "justification": "GICS classifications change; must track historical sector assignments",
+      "priority": "PRIORITY_2"
+    },
+    "historical_market_cap": {
+      "required": true,
+      "justification": "Market cap categories (mega/large/mid/small) change; must use point-in-time classification",
+      "priority": "PRIORITY_2"
+    },
+    "historical_liquidity": {
+      "required": true,
+      "justification": "Liquidity filtering must use point-in-time data to avoid look-ahead",
+      "priority": "PRIORITY_2"
+    }
+  },
+  "universe_construction_methodology": {
+    "method": "CRSP_AND_OR_BITCOIN_UNIVERSE",
+    "description": "Use CRSP or Russell indices for historically valid universe construction. Include all securities that were ever in the universe during the study period.",
+    "key_principle": "A stock that was in the universe on date T must remain in the training data for that date, even if it later delists.",
+    "minimum_requirements": [
+      "All active symbols as of study start date",
+      "All delisted symbols with delisting date >= study start",
+      "Point-in-time sector classification",
+      "Point-in-time market-cap classification",
+      "Delisting reason (bankruptcy, acquisition, merger, privatization)"
+    ]
+  },
+  "survivorship_bias_estimate": "If 15% of symbols delisted and delisted stocks underperform by 20-40%, ignoring delistings biases IC upward by approximately 3-6%"
+}
